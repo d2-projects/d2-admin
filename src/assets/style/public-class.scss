@@ -1,0 +1,41 @@
+@import 'public';
+
+// 补丁 base
+@import '~@/assets/style/fixed/base.scss';
+// 补丁 element
+@import '~@/assets/style/fixed/element.scss';
+// 补丁 markdown
+@import '~@/assets/style/fixed/markdown.scss';
+// 补丁 vue-splitpane
+@import '~@/assets/style/fixed/vue-splitpane.scss';
+// 补丁 vue-grid-layout
+@import '~@/assets/style/fixed/vue-grid-layout.scss';
+
+// 在这里写公用的class
+// 注意 这个文件里只写class
+// mixin等内容请在 public.scss 里书写
+
+html, body {
+  height: 100%;
+  background-color: $color-bg;
+  #app {
+    height: 100%;
+  }
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both
+}
+
+// 下边距
+.mb {
+  margin-bottom: $margin;
+}
+.mb-0 {
+  margin-bottom: 0px;
+}
