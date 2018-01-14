@@ -1,0 +1,12 @@
+// vue-splitpane 样式补丁
+
+@import '~@/assets/style/unit/_color.scss';
+
+.vue-grid-item {
+  &.vue-grid-placeholder {
+    border: 1px solid $color-border-1;
+    background-color: rgba(#FFF, .3);
+    opacity: 1;
+    border-radius: $border-radius;
+  }
+}
