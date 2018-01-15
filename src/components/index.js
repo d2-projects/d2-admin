@@ -48,3 +48,9 @@ Vue.component('CountUp', resolve => {
 Vue.component('Highlight', resolve => {
   require(['@/components/core/Highlight/index.vue'], resolve)
 })
+
+// 名称：页面Header
+// 用途：页面Header
+Vue.component('PageHeader', resolve => {
+  require(['@/components/demo/PageHeader/index.vue'], resolve)
+})

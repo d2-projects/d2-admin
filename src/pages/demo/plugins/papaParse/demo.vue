@@ -1,7 +1,10 @@
 <template>
   <Container>
-    <!-- <template slot="title">演示</tempalte> -->
-    <p slot="more"><GithubLink url="https://github.com/mholt/PapaParse"></GithubLink></p>
+    <PageHeader
+      slot="header"
+      title="基本示例"
+      url="https://github.com/mholt/PapaParse">
+    </PageHeader>
     <el-upload
       :before-upload="handleUpload"
       action="default">

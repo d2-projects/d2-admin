@@ -1,6 +1,6 @@
 <template>
   <el-tooltip :content="url" :placement="tooltipPlacement">
-    <a :href="url" target="_blank">
+    <a :href="url" target="_blank" class="link">
       View in Github
       <span class="fa fa-github"></span>
     </a>
@@ -19,4 +19,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import '~@/assets/style/unit/_color.scss';
+.link {
+  color: $color-primary;
+}
+</style>
 
