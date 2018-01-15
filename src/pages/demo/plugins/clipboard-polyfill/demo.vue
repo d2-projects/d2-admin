@@ -1,6 +1,10 @@
 <template>
   <Container>
-    <GithubLink url="https://github.com/lgarron/clipboard-polyfill"></GithubLink>
+    <PageHeader
+      slot="header"
+      title="基本示例"
+      url="https://github.com/lgarron/clipboard-polyfill">
+    </PageHeader>
     <el-row :gutter="10">
       <el-col :span="12">
         <div class="mb">

@@ -1,7 +1,10 @@
 <template>
   <Container>
-    <p slot="title">README.md</p>
-    <p slot="more"><GithubLink url="https://github.com/jbaysolutions/vue-grid-layout"></GithubLink></p>
+    <PageHeader
+      slot="header"
+      title="README.md"
+      url="https://github.com/jbaysolutions/vue-grid-layout">
+    </PageHeader>
     <Markdown url="https://raw.githubusercontent.com/jbaysolutions/vue-grid-layout/master/README.md"></Markdown>
   </Container>
 </template>

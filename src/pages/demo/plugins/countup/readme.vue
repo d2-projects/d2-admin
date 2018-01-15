@@ -1,7 +1,10 @@
 <template>
   <Container>
-    <p slot="title">README.md</p>
-    <p slot="more"><GithubLink url="https://github.com/inorganik/countUp.js"></GithubLink></p>
+    <PageHeader
+      slot="header"
+      title="README.md"
+      url="https://github.com/inorganik/countUp.js">
+    </PageHeader>
     <div>
       <Markdown url="https://raw.githubusercontent.com/inorganik/countUp.js/master/README.md"></Markdown>
     </div>

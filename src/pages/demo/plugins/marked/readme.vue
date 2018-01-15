@@ -1,7 +1,10 @@
 <template>
   <Container>
-    <p slot="title">README.md</p>
-    <p slot="more"><GithubLink url="https://github.com/chjj/marked"></GithubLink></p>
+    <PageHeader
+      slot="header"
+      title="README.md"
+      url="https://github.com/chjj/marked">
+    </PageHeader>
     <Markdown url="https://raw.githubusercontent.com/chjj/marked/master/README.md"></Markdown>
   </Container>
 </template>

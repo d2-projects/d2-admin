@@ -1,40 +1,52 @@
 <template>
-  <Container type="ghost" class="demo-plugin-countup-demo">
+  <Container type="ghost" class="page">
     <el-row :gutter="10">
       <el-col :span="6">
         <el-card>
           <p slot="title">只设置目标数字</p>
-          <CountUp :end="100"></CountUp>
+          <div class="group">
+            <CountUp :end="100"></CountUp>  
+          </div>
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card>
           <p slot="title">设置起止数值</p>
-          <CountUp :start="14" :end="100"></CountUp>
+          <div class="group">
+            <CountUp :start="14" :end="100"></CountUp>
+          </div>
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card>
           <p slot="title">小数位数</p>
-          <CountUp :end="100.00" :decimals="2"></CountUp>
+          <div class="group">
+            <CountUp :end="100.00" :decimals="2"></CountUp>  
+          </div>
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card>
           <p slot="title">动画时长</p>
-          <CountUp :end="100" :duration="6"></CountUp>
+          <div class="group">
+            <CountUp :end="100" :duration="6"></CountUp>
+          </div>
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card>
           <p slot="title">回调函数</p>
-          <CountUp :end="100" :callback="() => {className = 'end'}" :class="className"></CountUp>
+          <div class="group">
+            <CountUp :end="100" :callback="() => {className = 'end'}" :class="className"></CountUp>
+          </div>
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card>
           <p slot="title">结束一秒后更新数值</p>
-          <CountUp :end="end" :callback="update"></CountUp>
+          <div class="group">
+            <CountUp :end="end" :callback="update"></CountUp>
+          </div>
         </el-card>
       </el-col>
     </el-row>
@@ -62,18 +74,18 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
-.demo-plugin-countup-demo {
+.page {
   .el-card {
     @extend %unable-select;
     margin-bottom: 10px;
-    .el-card__body {
+    .group {
       display: flex;
       justify-content: center;
       align-items: center;
       span {
-        font-size: 40px;
+        font-size: 60px;
         &.end {
           padding: 0px 20px;
           border-radius: $border-radius;

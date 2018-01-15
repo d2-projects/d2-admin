@@ -23,6 +23,12 @@ html, body {
   }
 }
 
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
 .clearfix:before,
 .clearfix:after {
   display: table;
