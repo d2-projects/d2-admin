@@ -23,6 +23,9 @@ import '@/components'
 // 异步请求库
 import '@/plugin/axios'
 
+// mock接口设置
+import '@/mock/index.js'
+
 // vuex
 import store from '@/store/index.js'
 
