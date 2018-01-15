@@ -10,16 +10,12 @@
         <div class="mb">
           <el-button @click="download">下载演示CSV</el-button>
         </div>
-        <el-upload
-          :before-upload="handleUpload"
-          action="default">
+        <el-upload :before-upload="handleUpload" action="default">
           <el-button type="success">选择本地CSV文件</el-button>
         </el-upload>
       </el-col>
       <el-col :span="20">
-        <el-table
-          v-bind="table"
-          style="width: 100%">
+        <el-table v-bind="table" style="width: 100%">
           <el-table-column
             v-for="(item, index) in table.columns"
             :key="index"
@@ -62,7 +58,7 @@ export default {
       return false
     },
     download () {
-      window.location.href='http://fairyever.qiniudn.com/d2admin-vue-demo.csv'
+      window.location.href = 'http://fairyever.qiniudn.com/d2admin-vue-demo.csv'
     }
   }
 }
