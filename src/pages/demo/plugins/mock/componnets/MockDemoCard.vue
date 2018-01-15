@@ -50,6 +50,7 @@ export default {
   border-radius: $border-radius;
   border-width: 1px;
   border-style: solid;
+  font-size: 16px;
 }
 .col-l {
   background-color: lighten($color-info, 40%);
