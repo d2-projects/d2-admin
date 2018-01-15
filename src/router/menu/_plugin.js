@@ -236,6 +236,13 @@ export const pluginMenu = {
           path: 'mock/demoDPD',
           name: 'demo-plugin-mock-demoDPD',
           component: resolve => { require(['@/pages/demo/plugins/mock/demoDPD.vue'], resolve) }
+        },
+        {
+          title: '拦截Ajax请求',
+          icon: 'file-o',
+          path: 'mock/ajax',
+          name: 'demo-plugin-mock-ajax',
+          component: resolve => { require(['@/pages/demo/plugins/mock/ajax.vue'], resolve) }
         }
       ]
     }
