@@ -16,7 +16,7 @@
 
 <script>
 import Vue from 'vue'
-import * as tool from '@/assets/library/tool/tool.js'
+import clone from '@/assets/library/tool/clone.js'
 import Mock from 'mockjs'
 import settingDPD from './data/settingDPD'
 import MockDemoCard from './componnets/MockDemoCard'
@@ -28,7 +28,7 @@ export default {
     return {
       mockResult: [],
       settingDPD,
-      settingDPDClone: tool.clone(settingDPD)
+      settingDPDClone: clone(settingDPD)
     }
   },
   mounted () {
