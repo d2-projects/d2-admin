@@ -2,6 +2,7 @@
   <Container type="ghost">
     <el-card class="mb">
       <QuillEditor
+        style="min-height: 200px;"
         v-model="value"
         @text-change="textChangeHandler"
         @selection-change="selectionChangeHandler"
@@ -9,24 +10,24 @@
       </QuillEditor>
     </el-card>
     <el-card>
-      <Highlight :code="format"></Highlight>
+      <Highlight :code="formated"></Highlight>
     </el-card>
   </Container>
 </template>
 
 <script>
-import HTMLFormat from './fn'
+import formator from '@/assets/library/tool/format.js'
 import value from './value'
 export default {
   data () {
     return {
-      HTMLFormat,
+      formator,
       value
     }
   },
   computed: {
-    format () {
-      return HTMLFormat(this.value)
+    formated () {
+      return formator(this.value)
     }
   },
   methods: {

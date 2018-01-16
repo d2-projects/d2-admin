@@ -1,5 +1,5 @@
 /* eslint-disable */
-var HTMLFormat = (function() {
+var format = (function() {
   function style_html(html_source, indent_size, indent_character, max_char) {
     var Parser, multi_parser;
     function Parser() {
@@ -358,4 +358,4 @@ var HTMLFormat = (function() {
   }
 })();
 
-export default HTMLFormat
+export default format
