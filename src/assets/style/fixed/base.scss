@@ -1,7 +1,12 @@
 // 优化显示
 
-body {
+html, body {
   margin: 0px;
+  height: 100%;
+  background-color: $color-bg;
+  #app {
+    height: 100%;
+  }
 }
 
 pre {

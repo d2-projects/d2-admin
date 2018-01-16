@@ -15,14 +15,8 @@
 // 注意 这个文件里只写class
 // mixin等内容请在 public.scss 里书写
 
-html, body {
-  height: 100%;
-  background-color: $color-bg;
-  #app {
-    height: 100%;
-  }
-}
 
+// 浮动相关
 .fl {
   float: left;
 }
@@ -38,10 +32,35 @@ html, body {
   clear: both
 }
 
-// 下边距
+// 边距相关
+.m {
+  margin: $margin;
+}
+.mt {
+  margin-top: $margin;
+}
+.mr {
+  margin-right: $margin;
+}
 .mb {
   margin-bottom: $margin;
 }
+.ml {
+  margin-left: $margin;
+}
+
+.m-0 {
+  margin: 0px;
+}
+.mt-0 {
+  margin-top: 0px;
+}
+.mr-0 {
+  margin-right: 0px;
+}
 .mb-0 {
   margin-bottom: 0px;
+}
+.ml-0 {
+  margin-left: 0px;
 }
