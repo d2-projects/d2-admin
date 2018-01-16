@@ -1,6 +1,6 @@
 <template>
   <Container type="ghost">
-    <el-card class="mb">
+    <el-card class="dd-mb">
       <Markdown url="/static/markdownFiles/article/mock演示页面介绍.md"></Markdown>
     </el-card>
     <MockDemoCard

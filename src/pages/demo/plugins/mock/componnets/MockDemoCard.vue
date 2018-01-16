@@ -1,9 +1,9 @@
 <template>
-  <el-card class="mb">
-    <div slot="header" class="clearfix">
+  <el-card class="dd-mb">
+    <div slot="header" class="dd-clearfix">
       <el-button type="text" size="mini">{{title}}</el-button>
       <el-tooltip content="重新 mock 数据" placement="top-end">
-        <el-button type="primary" size="mini" @click="$emit('reload')" style="float: right;">刷新</el-button>
+        <el-button type="primary" size="mini" @click="$emit('reload')" class="dd-fr">刷新</el-button>
       </el-tooltip>
     </div>
     <el-row :gutter="10">

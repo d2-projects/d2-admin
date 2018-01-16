@@ -1,6 +1,6 @@
 <template>
   <Container type="ghost">
-    <el-card class="mb">
+    <el-card class="dd-mb">
       <QuillEditor
         style="min-height: 200px;"
         v-model="value"

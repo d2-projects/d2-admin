@@ -1,24 +1,24 @@
 <template>
   <Container type="ghost">
-    <el-card class="mb">
+    <el-card class="dd-mb">
       <p slot="title">javascript</p>
       <Highlight :code="codeJavascript"></Highlight>
     </el-card>
     <el-row :gutter="10">
       <el-col :span="8">
-        <el-card class="mb">
+        <el-card class="dd-mb">
           <p slot="title">css</p>
           <Highlight :code="codeCSS"></Highlight>
         </el-card>
       </el-col>
       <el-col :span="8">
-        <el-card class="mb">
+        <el-card class="dd-mb">
           <p slot="title">scss</p>
           <Highlight :code="codeSCSS"></Highlight>
         </el-card>
       </el-col>
       <el-col :span="8">
-        <el-card class="mb">
+        <el-card class="dd-mb">
           <p slot="title">html</p>
           <Highlight :code="codeHTML"></Highlight>
         </el-card>

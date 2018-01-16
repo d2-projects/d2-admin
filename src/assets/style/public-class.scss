@@ -17,50 +17,50 @@
 
 
 // 浮动相关
-.fl {
+.#{$prefix}-fl {
   float: left;
 }
-.fr {
+.#{$prefix}-fr {
   float: right;
 }
-.clearfix:before,
-.clearfix:after {
+.#{$prefix}-clearfix:before,
+.#{$prefix}-clearfix:after {
   display: table;
   content: "";
 }
-.clearfix:after {
+.#{$prefix}-clearfix:after {
   clear: both
 }
 
 // 边距相关
-.m {
+.#{$prefix}-m {
   margin: $margin;
 }
-.mt {
+.#{$prefix}-mt {
   margin-top: $margin;
 }
-.mr {
+.#{$prefix}-mr {
   margin-right: $margin;
 }
-.mb {
+.#{$prefix}-mb {
   margin-bottom: $margin;
 }
-.ml {
+.#{$prefix}-ml {
   margin-left: $margin;
 }
 
-.m-0 {
+.#{$prefix}-m-0 {
   margin: 0px;
 }
-.mt-0 {
+.#{$prefix}-mt-0 {
   margin-top: 0px;
 }
-.mr-0 {
+.#{$prefix}-mr-0 {
   margin-right: 0px;
 }
-.mb-0 {
+.#{$prefix}-mb-0 {
   margin-bottom: 0px;
 }
-.ml-0 {
+.#{$prefix}-ml-0 {
   margin-left: 0px;
 }
