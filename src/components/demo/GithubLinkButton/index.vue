@@ -6,15 +6,19 @@
       width="160"
       v-model="popover.visible">
       <p>访问 Github</p>
+      <p style="font-size: 10px;">{{name}}</p>
       <div style="text-align: right; margin: 0">
-        <el-button size="mini" type="text" @click="popover.visible = false">取消</el-button>
-        <el-button type="primary" size="mini" @click="jump">确定</el-button>
+        <el-button size="mini" type="text" @click="popover.visible = false">
+          取消
+        </el-button>
+        <el-button type="primary" size="mini" @click="jump">
+          确定
+        </el-button>
       </div>
     </el-popover>
     <el-button
       v-popover:pop
-      v-bind="$attrs"
-      @click="popover.visible = true">
+      v-bind="$attrs">
       view in
       <span class="fa fa-github"></span>
     </el-button>
