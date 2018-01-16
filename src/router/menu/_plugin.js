@@ -14,13 +14,6 @@ export const pluginMenu = {
       icon: 'font',
       children: [
         {
-          title: 'README',
-          icon: 'file-text',
-          path: 'marked/readme',
-          name: 'demo-plugin-marked-readme',
-          component: resolve => { require(['@/pages/demo/plugins/marked/readme.vue'], resolve) }
-        },
-        {
           title: '基本示例',
           icon: 'file-o',
           path: 'marked/demo',
@@ -28,7 +21,7 @@ export const pluginMenu = {
           component: resolve => { require(['@/pages/demo/plugins/marked/demo.vue'], resolve) }
         },
         {
-          title: '添加代码高亮',
+          title: '代码高亮',
           icon: 'file-o',
           path: 'marked/demoHighlight',
           name: 'demo-plugin-marked-demoHighlight',
