@@ -14,7 +14,6 @@
     "axios": "^0.17.1",
     "clipboard-polyfill": "^2.4.1",
     "countup.js": "^1.9.3",
-    "echarts": "^3.8.5",
     "element-ui": "^2.0.11",
     "github-markdown-css": "^2.10.0",
     "highlight.js": "^9.12.0",
