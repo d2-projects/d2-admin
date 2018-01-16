@@ -36,9 +36,9 @@ export const pluginMenu = {
         }
       ]
     },
-    // SimpleMDE
+    // MD编辑器
     {
-      title: 'SimpleMDE',
+      title: 'MD编辑器',
       icon: 'columns',
       children: [
         {
@@ -54,6 +54,27 @@ export const pluginMenu = {
           path: 'simpleMDE/demo',
           name: 'demo-plugin-simpleMDE-demo',
           component: resolve => { require(['@/pages/demo/plugins/simpleMDE/demo.vue'], resolve) }
+        }
+      ]
+    },
+    // 富文本编辑器
+    {
+      title: '富文本编辑器',
+      icon: 'edit',
+      children: [
+        {
+          title: 'README',
+          icon: 'file-text',
+          path: 'quill-editor/readme',
+          name: 'demo-plugin-quill-editor-readme',
+          component: resolve => { require(['@/pages/demo/plugins/quill-editor/readme.vue'], resolve) }
+        },
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'quill-editor/demo',
+          name: 'demo-plugin-quill-editor-demo',
+          component: resolve => { require(['@/pages/demo/plugins/quill-editor/demo.vue'], resolve) }
         }
       ]
     },
