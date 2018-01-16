@@ -3,13 +3,17 @@
     <el-row :gutter="10">
       <el-col :span="12">
         <el-card>
-          <p slot="title">markdown 源码</p>
+          <PageHeader
+            slot="header"
+            title="基本示例"
+            url="https://github.com/chjj/marked">
+          </PageHeader>
           <pre>{{mdSource}}</pre>
         </el-card>
       </el-col>
       <el-col :span="12">
         <el-card>
-          <p slot="title">markdown 解析结果</p>
+          <template slot="header">解析结果</template>
           <div class="markdown-body" v-html="markedHTML"></div>
         </el-card>
       </el-col>
