@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import echarts from 'echarts'
+// import { echarts } from '@/assets/library/echarts/echarts.common.min.js'
 import chartsMixin from '@/components/charts/chartsMixin.js'
 export default {
   mixins: [
@@ -114,7 +114,7 @@ export default {
         ]
       }
       this.$nextTick(() => {
-        this.chart = echarts.init(this.$refs.chart)
+        // this.chart = echarts.init(this.$refs.chart)
         this.chart.setOption(option)
         console.log(`pie/type1 [${this.name}] [图表实例化完毕]`)
       })
