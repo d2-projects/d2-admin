@@ -28,7 +28,7 @@
 
 <script>
 import Vue from 'vue'
-import * as tool from '@/assets/library/tool/tool.js'
+import clone from '@/assets/library/tool/clone.js'
 import Mock from 'mockjs'
 import settingDTD from './data/settingDTD'
 import MockDemoCard from './componnets/MockDemoCard'
@@ -47,7 +47,7 @@ export default {
     return {
       mockResult: [],
       settingDTD,
-      settingDTDClone: tool.clone(settingDTD)
+      settingDTDClone: clone(settingDTD)
     }
   },
   mounted () {

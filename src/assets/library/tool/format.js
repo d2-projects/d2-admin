@@ -1,5 +1,9 @@
 /* eslint-disable */
-var format = (function() {
+
+// 功能
+// 将HTML字符串格式化
+
+const format = (function() {
   function style_html(html_source, indent_size, indent_character, max_char) {
     var Parser, multi_parser;
     function Parser() {

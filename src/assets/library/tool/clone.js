@@ -1,4 +1,4 @@
-export const clone = (obj) => {
+const clone = (obj) => {
   var o
   if (typeof obj === 'object') {
     if (obj === null) {
@@ -19,3 +19,5 @@ export const clone = (obj) => {
   } else { o = obj }
   return o
 }
+
+export default clone
