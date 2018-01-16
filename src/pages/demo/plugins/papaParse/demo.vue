@@ -7,7 +7,7 @@
     </PageHeader>
     <el-row :gutter="10">
       <el-col :span="4">
-        <div class="mb">
+        <div class="dd-mb">
           <el-button @click="download">下载演示CSV</el-button>
         </div>
         <el-upload :before-upload="handleUpload" action="default">

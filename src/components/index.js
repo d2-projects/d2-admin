@@ -31,6 +31,12 @@ Vue.component('GithubLink', resolve => {
   require(['@/components/demo/GithubLink'], resolve)
 })
 
+// 名称：github 链接按钮
+// 用途：本质上这就是一个 github 的链接
+Vue.component('GithubLinkButton', resolve => {
+  require(['@/components/demo/GithubLinkButton'], resolve)
+})
+
 // 名称：SimpleMDE markdown 编辑器
 // 用途：SimpleMDE markdown 编辑器
 Vue.component('SimpleMDE', resolve => {

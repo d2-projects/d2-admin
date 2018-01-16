@@ -14,8 +14,12 @@
         <el-card>
           <el-tag size="mini" type="info" slot="header">Card {{item.i}}</el-tag>
           <template v-if="item.i === '0'">
-            <p>拖拽卡片调整位置</p>
-            <p>拖拽卡片右下角的手柄调整卡片大小</p>
+            <div class="dd-mb">拖拽卡片调整位置</div>
+            <div class="dd-mb">拖拽卡片右下角的手柄调整卡片大小</div>
+            <GithubLinkButton
+              url="https://github.com/jbaysolutions/vue-grid-layout"
+              type="success">
+            </GithubLinkButton>
           </template>
         </el-card>
       </GridItem>
@@ -29,16 +33,14 @@ export default {
     return {
       layout: {
         layout: [
-          {'x': 0, 'y': 0, 'w': 4, 'h': 5, 'i': '0'},
-          {'x': 2, 'y': 5, 'w': 2, 'h': 5, 'i': '1'},
-          {'x': 4, 'y': 0, 'w': 2, 'h': 5, 'i': '2'},
-          {'x': 6, 'y': 0, 'w': 4, 'h': 5, 'i': '3'},
-          {'x': 10, 'y': 0, 'w': 2, 'h': 10, 'i': '4'},
-          {'x': 10, 'y': 10, 'w': 2, 'h': 5, 'i': '5'},
-          {'x': 0, 'y': 5, 'w': 2, 'h': 5, 'i': '6'},
-          {'x': 0, 'y': 10, 'w': 8, 'h': 5, 'i': '7'},
-          {'x': 8, 'y': 10, 'w': 2, 'h': 5, 'i': '8'},
-          {'x': 4, 'y': 5, 'w': 6, 'h': 5, 'i': '9'}
+          {'x': 0, 'y': 0, 'w': 4, 'h': 10, 'i': '0'},
+          {'x': 4, 'y': 0, 'w': 2, 'h': 5, 'i': '1'},
+          {'x': 6, 'y': 0, 'w': 4, 'h': 5, 'i': '2'},
+          {'x': 10, 'y': 0, 'w': 2, 'h': 10, 'i': '3'},
+          {'x': 4, 'y': 5, 'w': 4, 'h': 5, 'i': '4'},
+          {'x': 8, 'y': 5, 'w': 2, 'h': 5, 'i': '5'},
+          {'x': 0, 'y': 10, 'w': 8, 'h': 5, 'i': '6'},
+          {'x': 8, 'y': 10, 'w': 4, 'h': 5, 'i': '7'}
         ],
         colNum: 12,
         rowHeight: 30,
@@ -55,7 +57,7 @@ export default {
     layoutUpdatedHandler (newLayout) {
       // console.log('layoutUpdatedHandler')
       newLayout.forEach(e => {
-        // console.log(`{'x': ${e.x}, 'y': ${e.y}, 'w': ${e.w}, 'h': ${e.h}, 'i': '${e.i}'},`)
+        console.log(`{'x': ${e.x}, 'y': ${e.y}, 'w': ${e.w}, 'h': ${e.h}, 'i': '${e.i}'},`)
       })
     },
     resizeHandler (i, newH, newW) {

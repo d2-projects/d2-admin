@@ -7,7 +7,7 @@
     </PageHeader>
     <el-row :gutter="10">
       <el-col :span="12">
-        <div class="mb">
+        <div class="dd-mb">
           <el-input v-model="text" style="width: 200px;"></el-input>
           <el-button @click="copyText()">将左侧输入框内的文字复制进剪贴板</el-button>
         </div>
@@ -15,12 +15,12 @@
       </el-col>
       <el-col :span="12">
         <el-alert
-          class="mb"
+          class="dd-mb"
           title="只有在 IE 浏览器下你才可以通过下面这两个按钮获取剪贴板数据"
           type="warning"
           show-icon>
         </el-alert>
-        <div class="mb">
+        <div class="dd-mb">
           <el-tooltip content="需要 IE 浏览器" placement="top">
             <el-button @click="readText">readText( )</el-button>
           </el-tooltip>
