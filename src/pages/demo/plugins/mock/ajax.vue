@@ -4,7 +4,7 @@
       <div slot="header">
         <el-button @click="ajax">发送请求</el-button>
       </div>
-      <el-table v-bind="table" style="width: 100%">
+      <el-table v-bind="table" style="width: 100%" class="mb">
         <el-table-column
           v-for="(item, index) in table.columns"
           :key="index"
@@ -12,6 +12,7 @@
           :label="item.label">
         </el-table-column>
       </el-table>
+      <Markdown url="/static/markdownFiles/article/mock拦截ajax.md"></Markdown>
     </el-card>
   </Container>
 </template>
@@ -31,7 +32,7 @@ export default {
   },
   methods: {
     ajax () {
-      this.$axios.get('/abc')
+      this.$axios.get('/api/demo/001')
       .then(res => {
         this.table.columns = Object.keys(res.data.list[0]).map(e => ({
           label: e,
