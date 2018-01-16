@@ -35,13 +35,6 @@ export const pluginMenu = {
       icon: 'columns',
       children: [
         {
-          title: 'README',
-          icon: 'file-text',
-          path: 'simpleMDE/readme',
-          name: 'demo-plugin-simpleMDE-readme',
-          component: resolve => { require(['@/pages/demo/plugins/simpleMDE/readme.vue'], resolve) }
-        },
-        {
           title: '基本示例',
           icon: 'file-o',
           path: 'simpleMDE/demo',
@@ -84,13 +77,6 @@ export const pluginMenu = {
       icon: 'object-group',
       children: [
         {
-          title: 'README',
-          icon: 'file-text',
-          path: 'vue-splitpane/readme',
-          name: 'demo-plugin-vue-splitpane-readme',
-          component: resolve => { require(['@/pages/demo/plugins/vue-splitpane/readme.vue'], resolve) }
-        },
-        {
           title: '基本示例',
           icon: 'file-o',
           path: 'vue-splitpane/demo',
@@ -104,13 +90,6 @@ export const pluginMenu = {
       title: '表格解析',
       icon: 'eye',
       children: [
-        {
-          title: 'README',
-          icon: 'file-text',
-          path: 'papaParse/readme',
-          name: 'demo-plugin-papaParse-readme',
-          component: resolve => { require(['@/pages/demo/plugins/papaParse/readme.vue'], resolve) }
-        },
         {
           title: '基本示例',
           icon: 'file-o',
@@ -126,13 +105,6 @@ export const pluginMenu = {
       icon: 'magic',
       children: [
         {
-          title: 'README',
-          icon: 'file-text',
-          path: 'countup/readme',
-          name: 'demo-plugin-countup-readme',
-          component: resolve => { require(['@/pages/demo/plugins/countup/readme.vue'], resolve) }
-        },
-        {
           title: '基本示例',
           icon: 'file-o',
           path: 'countup/demo',
@@ -146,13 +118,6 @@ export const pluginMenu = {
       title: '剪贴板',
       icon: 'clipboard',
       children: [
-        {
-          title: 'README',
-          icon: 'file-text',
-          path: 'clipboard-polyfill/readme',
-          name: 'demo-plugin-clipboard-polyfill-readme',
-          component: resolve => { require(['@/pages/demo/plugins/clipboard-polyfill/readme.vue'], resolve) }
-        },
         {
           title: '基本示例',
           icon: 'file-o',
@@ -168,13 +133,6 @@ export const pluginMenu = {
       icon: 'hdd-o',
       children: [
         {
-          title: 'README',
-          icon: 'file-text',
-          path: 'js-cookie/readme',
-          name: 'demo-plugin-js-cookie-readme',
-          component: resolve => { require(['@/pages/demo/plugins/js-cookie/readme.vue'], resolve) }
-        },
-        {
           title: '基本示例',
           icon: 'file-o',
           path: 'js-cookie/demo',
@@ -188,13 +146,6 @@ export const pluginMenu = {
       title: '代码高亮',
       icon: 'code',
       children: [
-        {
-          title: 'README',
-          icon: 'file-text',
-          path: 'highlight/readme',
-          name: 'demo-plugin-highlight-readme',
-          component: resolve => { require(['@/pages/demo/plugins/highlight/readme.vue'], resolve) }
-        },
         {
           title: '基本示例',
           icon: 'file-o',
@@ -210,28 +161,14 @@ export const pluginMenu = {
       icon: 'globe',
       children: [
         {
-          title: 'README',
-          icon: 'file-text',
-          path: 'mock/readme',
-          name: 'demo-plugin-mock-readme',
-          component: resolve => { require(['@/pages/demo/plugins/mock/readme.vue'], resolve) }
-        },
-        {
-          title: '语法规范',
-          icon: 'file-text',
-          path: 'mock/grammaticalNorm',
-          name: 'demo-plugin-mock-grammaticalNorm',
-          component: resolve => { require(['@/pages/demo/plugins/mock/grammaticalNorm.vue'], resolve) }
-        },
-        {
-          title: '数据模板示例',
+          title: '数据模板',
           icon: 'file-o',
           path: 'mock/demoDTD',
           name: 'demo-plugin-mock-demoDTD',
           component: resolve => { require(['@/pages/demo/plugins/mock/demoDTD.vue'], resolve) }
         },
         {
-          title: '数据占位符示例',
+          title: '数据占位符',
           icon: 'file-o',
           path: 'mock/demoDPD',
           name: 'demo-plugin-mock-demoDPD',
