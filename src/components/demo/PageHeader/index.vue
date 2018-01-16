@@ -1,7 +1,7 @@
 <template>
-  <div class="clearfix">
-    <span class="fl">{{title}}</span>
-    <span class="fr"><GithubLink :url="url"></GithubLink></span>
+  <div class="dd-clearfix">
+    <span class="dd-fl">{{title}}</span>
+    <span class="dd-fr"><GithubLink :url="url"></GithubLink></span>
   </div>
 </template>
 
