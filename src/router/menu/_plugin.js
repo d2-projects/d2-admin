@@ -1,6 +1,6 @@
 // [插件] 菜单
 export const pluginMenu = {
-  title: '插件',
+  title: '功能',
   path: '/demo/plugin',
   name: 'demo-plugin',
   component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
@@ -10,7 +10,7 @@ export const pluginMenu = {
   children: [
     // markdown 解析库
     {
-      title: 'md解析',
+      title: 'MD解析',
       icon: 'font',
       children: [
         {
