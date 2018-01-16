@@ -65,9 +65,9 @@ export const pluginMenu = {
         {
           title: '基本示例',
           icon: 'file-o',
-          path: 'quill-editor/demo',
-          name: 'demo-plugin-quill-editor-demo',
-          component: resolve => { require(['@/pages/demo/plugins/quill-editor/demo.vue'], resolve) }
+          path: 'quill/demo',
+          name: 'demo-plugin-quill-demo',
+          component: resolve => { require(['@/pages/demo/plugins/quill/demo.vue'], resolve) }
         }
       ]
     },

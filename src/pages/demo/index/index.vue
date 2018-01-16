@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost">
-    <Markdown url="https://raw.githubusercontent.com/inorganik/countUp.js/master/README.md"></Markdown>
+  <Container>
+    <Markdown url="/static/markdownFiles/article/首页.md"></Markdown>
   </Container>
 </template>
