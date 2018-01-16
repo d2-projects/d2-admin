@@ -1,22 +1,32 @@
 <template>
   <Container type="ghost">
-    <el-card>
+    <el-card class="mb">
       <QuillEditor
         v-model="value"
         @text-change="textChangeHandler"
         @selection-change="selectionChangeHandler"
         @editor-change="editorChangeHandler">
       </QuillEditor>
-      {{value}}
+    </el-card>
+    <el-card>
+      <Highlight :code="format"></Highlight>
     </el-card>
   </Container>
 </template>
 
 <script>
+import HTMLFormat from './fn'
+import value from './value'
 export default {
   data () {
     return {
-      value: '<p><strong style="background-color: rgb(240, 102, 102); color: rgb(255, 255, 255);">Hello</strong> <strong style="color: rgb(255, 255, 255); background-color: rgb(102, 163, 224);">World</strong></p>'
+      HTMLFormat,
+      value
+    }
+  },
+  computed: {
+    format () {
+      return HTMLFormat(this.value)
     }
   },
   methods: {
