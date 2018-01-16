@@ -77,13 +77,6 @@ export const pluginMenu = {
       icon: 'object-ungroup',
       children: [
         {
-          title: 'README',
-          icon: 'file-text',
-          path: 'vue-grid-layout/readme',
-          name: 'demo-plugin-vue-grid-layout-readme',
-          component: resolve => { require(['@/pages/demo/plugins/vue-grid-layout/readme.vue'], resolve) }
-        },
-        {
           title: '基本示例',
           icon: 'file-o',
           path: 'vue-grid-layout/demo',
