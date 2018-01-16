@@ -63,13 +63,6 @@ export const pluginMenu = {
       icon: 'edit',
       children: [
         {
-          title: 'README',
-          icon: 'file-text',
-          path: 'quill-editor/readme',
-          name: 'demo-plugin-quill-editor-readme',
-          component: resolve => { require(['@/pages/demo/plugins/quill-editor/readme.vue'], resolve) }
-        },
-        {
           title: '基本示例',
           icon: 'file-o',
           path: 'quill-editor/demo',
