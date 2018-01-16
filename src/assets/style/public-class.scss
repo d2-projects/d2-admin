@@ -49,6 +49,22 @@
   margin-left: $margin;
 }
 
+.#{$prefix}-m-10 {
+  margin: 10px;
+}
+.#{$prefix}-mt-10 {
+  margin-top: 10px;
+}
+.#{$prefix}-mr-10 {
+  margin-right: 10px;
+}
+.#{$prefix}-mb-10 {
+  margin-bottom: 10px;
+}
+.#{$prefix}-ml-10 {
+  margin-left: 10px;
+}
+
 .#{$prefix}-m-0 {
   margin: 0px;
 }

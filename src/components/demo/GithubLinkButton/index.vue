@@ -5,8 +5,11 @@
       placement="top"
       width="160"
       v-model="popover.visible">
-      <p>访问 Github</p>
-      <p style="font-size: 10px;">{{name}}</p>
+      <p class="dd-mt-0 dd-mb-10">
+        <span class="fa fa-github"></span>
+        github
+      </p>
+      <p class="dd-mt-0 dd-mb-10" style="font-size: 10px;">{{name}}</p>
       <div style="text-align: right; margin: 0">
         <el-button size="mini" type="text" @click="popover.visible = false">
           取消
@@ -19,8 +22,8 @@
     <el-button
       v-popover:pop
       v-bind="$attrs">
-      view in
       <span class="fa fa-github"></span>
+      {{name}}
     </el-button>
   </div>
 </template>
