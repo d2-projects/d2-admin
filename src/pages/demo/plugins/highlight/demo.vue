@@ -1,10 +1,16 @@
 <template>
   <Container type="ghost">
     <el-card class="dd-mb">
+      <PageHeader
+        title="组件封装演示"
+        url="https://github.com/isagalaev/highlight.js">
+      </PageHeader>
+    </el-card>
+    <el-card class="dd-mb">
       <p slot="title">javascript</p>
       <Highlight :code="codeJavascript"></Highlight>
     </el-card>
-    <el-row :gutter="10">
+    <el-row :gutter="20">
       <el-col :span="8">
         <el-card class="dd-mb">
           <p slot="title">css</p>

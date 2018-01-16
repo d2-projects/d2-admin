@@ -1,6 +1,12 @@
 <template>
   <Container type="ghost" class="page">
-    <el-row :gutter="10">
+    <el-card>
+      <PageHeader
+        title="组件封装演示"
+        url="https://github.com/inorganik/countUp.js">
+      </PageHeader>
+    </el-card>
+    <el-row :gutter="20">
       <el-col :span="6">
         <el-card>
           <p slot="title">只设置目标数字</p>
@@ -79,7 +85,7 @@ export default {
 .page {
   .el-card {
     @extend %unable-select;
-    margin-bottom: 10px;
+    margin-bottom: $margin;
     .group {
       display: flex;
       justify-content: center;

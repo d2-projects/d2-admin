@@ -1,6 +1,11 @@
 <template>
   <Container type="ghost">
     <el-card class="dd-mb">
+      <PageHeader
+        slot="header"
+        title="数据占位符"
+        url="https://github.com/nuysoft/Mock">
+      </PageHeader>
       <Markdown url="/static/markdownFiles/article/mock演示页面介绍.md"></Markdown>
     </el-card>
     <MockDemoCard
