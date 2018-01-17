@@ -23,6 +23,7 @@
     "papaparse": "^4.3.6",
     "quill": "^1.3.4",
     "simplemde": "^1.11.2",
+    "timeago.js": "^3.0.2",
     "vue": "^2.5.2",
     "vue-grid-layout": "^2.1.11",
     "vue-router": "^3.0.1",

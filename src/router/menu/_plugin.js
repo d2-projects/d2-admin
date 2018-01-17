@@ -71,17 +71,17 @@ export const pluginMenu = {
         }
       ]
     },
-    // 可调布局组件
+    // 时间计算
     {
-      title: '可调布局',
-      icon: 'object-group',
+      title: '时间计算',
+      icon: 'clock-o',
       children: [
         {
           title: '基本示例',
           icon: 'file-o',
-          path: 'vue-splitpane/demo',
-          name: 'demo-plugin-vue-splitpane-demo',
-          component: resolve => { require(['@/pages/demo/plugins/vue-splitpane/demo.vue'], resolve) }
+          path: 'timeago/demo',
+          name: 'demo-plugin-timeago-demo',
+          component: resolve => { require(['@/pages/demo/plugins/timeago/demo.vue'], resolve) }
         }
       ]
     },
@@ -180,6 +180,20 @@ export const pluginMenu = {
           path: 'mock/ajax',
           name: 'demo-plugin-mock-ajax',
           component: resolve => { require(['@/pages/demo/plugins/mock/ajax.vue'], resolve) }
+        }
+      ]
+    },
+    // 可调布局组件
+    {
+      title: '可调布局',
+      icon: 'object-group',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'vue-splitpane/demo',
+          name: 'demo-plugin-vue-splitpane-demo',
+          component: resolve => { require(['@/pages/demo/plugins/vue-splitpane/demo.vue'], resolve) }
         }
       ]
     }

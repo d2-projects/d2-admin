@@ -15,6 +15,10 @@
 // 注意 这个文件里只写class
 // mixin等内容请在 public.scss 里书写
 
+// 文字相关
+.#{$prefix}-text-center {
+  text-align: center;
+}
 
 // 浮动相关
 .#{$prefix}-fl {
