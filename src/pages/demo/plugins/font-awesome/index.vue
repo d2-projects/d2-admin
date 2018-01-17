@@ -6,8 +6,8 @@
         <el-col
           v-for="(iconItem, iconIndex) in item.icon"
           :key="iconIndex"
-          :span="4"
-          class="dd-m-10">
+          :span="6"
+          class="dd-p-10">
           <el-tag type="info">
             <span :class="'fa fa-' + iconItem"></span>
           </el-tag>
