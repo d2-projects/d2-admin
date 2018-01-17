@@ -36,7 +36,7 @@ export default {
   data () {
     return {
       icon,
-      showIndex: 0
+      showIndex: 12
     }
   },
   computed: {
