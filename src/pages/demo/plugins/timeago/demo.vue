@@ -39,6 +39,8 @@ export default {
       openPageDate: new Date(),
       // 打开页面已经过去的时间
       openPageDateAgo: '',
+      // 打开页面时间计时器
+      dateTimeRangeTimer: null,
       // 起止时间
       dateTimeRange: [new Date(2018, 0, 1, 0, 0), new Date()],
       // 上面起止时间的计算结果
@@ -48,9 +50,13 @@ export default {
   mounted () {
     // 刷新打开页面过去的时间
     this.refreshOpenPageDateAgo()
-    setInterval(this.refreshOpenPageDateAgo, 1000)
+    this.dateTimeRangeTimer = setInterval(this.refreshOpenPageDateAgo, 1000)
     // 刷新起止时间的计算结果
     this.refreshDateTimeRangeAgo()
+  },
+  beforeDestroy () {
+    // 清空计时器
+    clearInterval(this.dateTimeRangeTimer)
   },
   watch: {
     dateTimeRange () {
