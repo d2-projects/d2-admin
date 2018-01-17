@@ -6,7 +6,7 @@
       width="160"
       v-model="popover.visible">
       <p class="dd-mt-0 dd-mb-10">
-        <span class="fa fa-github"></span>
+        <i class="fa fa-github"></i>
         github
       </p>
       <p class="dd-mt-0 dd-mb-10" style="font-size: 10px;">{{name}}</p>
@@ -22,7 +22,7 @@
     <el-button
       v-popover:pop
       v-bind="$attrs">
-      <span class="fa fa-github"></span>
+      <i class="fa fa-github"></i>
       {{name}}
     </el-button>
   </div>
