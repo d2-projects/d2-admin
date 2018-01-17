@@ -7,7 +7,7 @@
       width="300"
       trigger="hover">
       <div class="icon-group">
-        <span :class="'fa fa-' + icon"></span>
+        <i :class="'fa fa-' + icon"></i>
       </div>
       <el-row :gutter="10">
         <el-col :span="12">
@@ -23,7 +23,7 @@
       </el-row>
     </el-popover>
     <el-tag type="info" v-popover:pop>
-      <span :class="'fa fa-' + icon"></span>
+      <i :class="'fa fa-' + icon"></i>
     </el-tag>
     <span style="font-size: 10px;">{{icon}}</span>
   </div>

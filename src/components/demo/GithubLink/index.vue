@@ -2,7 +2,7 @@
   <el-tooltip :content="url" :placement="tooltipPlacement">
     <a :href="url" target="_blank" class="link">
       View in Github
-      <span class="fa fa-github"></span>
+      <i class="fa fa-github"></i>
     </a>
   </el-tooltip>
 </template>
