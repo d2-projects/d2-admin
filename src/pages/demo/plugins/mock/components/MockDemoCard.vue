@@ -47,7 +47,7 @@ export default {
 @import '~@/assets/style/public.scss';
 .col {
   padding: $margin;
-  border-radius: $border-radius;
+  border-radius: 4px;
   border-width: 1px;
   border-style: solid;
   font-size: 16px;

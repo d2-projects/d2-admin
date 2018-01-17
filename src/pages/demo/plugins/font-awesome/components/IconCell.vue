@@ -5,7 +5,7 @@
       placement="right"
       :title="icon"
       width="300"
-      trigger="hover">
+      trigger="click">
       <div class="icon-group">
         <i :class="'fa fa-' + icon"></i>
       </div>

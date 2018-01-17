@@ -65,9 +65,16 @@ export const pluginMenu = {
         {
           title: '索引',
           icon: 'file-o',
-          path: 'font-awesome',
-          name: 'demo-font-awesome',
-          component: resolve => { require(['@/pages/demo/plugins/font-awesome/index.vue'], resolve) }
+          path: 'font-awesome/list',
+          name: 'demo-font-awesome-list',
+          component: resolve => { require(['@/pages/demo/plugins/font-awesome/list.vue'], resolve) }
+        },
+        {
+          title: '选择控件',
+          icon: 'file-o',
+          path: 'font-awesome/select',
+          name: 'demo-font-awesome-select',
+          component: resolve => { require(['@/pages/demo/plugins/font-awesome/select.vue'], resolve) }
         }
       ]
     },
