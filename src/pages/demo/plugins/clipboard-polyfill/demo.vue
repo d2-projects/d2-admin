@@ -55,19 +55,31 @@ export default {
     readText () {
       clipboard.readText().then((res) => {
         console.log(res)
-        this.$Message.success('读取成功 返回结果请查看控制台')
+        this.$message({
+          message: '读取成功 返回结果请查看控制台',
+          type: 'success'
+        })
       }, (err) => {
         console.log(err)
-        this.$Message.error('错误信息已经打印到控制台')
+        this.$message({
+          message: '错误信息已经打印到控制台',
+          type: 'error'
+        })
       })
     },
     read () {
       clipboard.read().then((res) => {
         console.log(res)
-        this.$Message.success('读取成功 返回结果请查看控制台')
+        this.$message({
+          message: '读取成功 返回结果请查看控制台',
+          type: 'success'
+        })
       }, (err) => {
         console.log(err)
-        this.$Message.error('错误信息已经打印到控制台')
+        this.$message({
+          message: '错误信息已经打印到控制台',
+          type: 'error'
+        })
       })
     }
   }

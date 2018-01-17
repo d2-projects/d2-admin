@@ -1,17 +1,19 @@
 <template>
   <Container type="ghost">
-    <el-card v-for="(item, index) in icon" :key="index" :class="index === icon.length - 1 ? '' : 'dd-mb'">
-      <template slot="header">{{item.title}}</template>
+    <el-card>
+      <template slot="header">
+        <el-radio-group v-model="showIndex" size="mini">
+          <el-radio-button
+            v-for="(item, index) in radioOptions"
+            :key="index"
+            :label="item.value">
+            {{item.label}}
+          </el-radio-button>
+        </el-radio-group>
+      </template>
       <el-row style="margin: -10px;">
-        <el-col
-          v-for="(iconItem, iconIndex) in item.icon"
-          :key="iconIndex"
-          :span="6"
-          class="dd-p-10">
-          <el-tag type="info">
-            <span :class="'fa fa-' + iconItem"></span>
-          </el-tag>
-          <span style="font-size: 10px;">{{iconItem}}</span>
+        <el-col v-for="(iconItem, iconIndex) in iconShow.icon" :key="iconIndex" :span="6" class="dd-p-10">
+          <IconCell :icon="iconItem"></IconCell>
         </el-col>
       </el-row>
     </el-card>
@@ -20,10 +22,26 @@
 
 <script>
 import icon from '@/assets/library/font-awesome-4.7.0-icon/icon.js'
+import IconCell from './components/IconCell'
 export default {
+  components: {
+    IconCell
+  },
   data () {
     return {
-      icon
+      icon,
+      showIndex: 0
+    }
+  },
+  computed: {
+    iconShow () {
+      return this.icon[this.showIndex]
+    },
+    radioOptions () {
+      return this.icon.map((e, index) => ({
+        label: e.title,
+        value: index
+      }))
     }
   }
 }
