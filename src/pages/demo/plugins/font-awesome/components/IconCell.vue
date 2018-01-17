@@ -62,6 +62,6 @@ export default {
 <style lang="scss" scoped>
 .icon-group {
   text-align: center;
-  font-size: 100px;
+  font-size: 200px;
 }
 </style>
