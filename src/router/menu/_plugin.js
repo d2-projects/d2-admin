@@ -60,7 +60,7 @@ export const pluginMenu = {
     // font-awesome
     {
       title: '图标库',
-      icon: 'edit',
+      icon: 'heart',
       children: [
         {
           title: '索引',
