@@ -94,7 +94,7 @@ export default {
         font-size: 60px;
         &.end {
           padding: 0px 20px;
-          border-radius: $border-radius;
+          border-radius: 4px;
           background-color: $color-success;
           color: #FFF;
         }

@@ -12,6 +12,12 @@
         </el-radio-group>
       </template>
       <el-row style="margin: -10px;">
+        <el-alert
+          title="点击图标复制代码"
+          type="info"
+          class="dd-m-10"
+          style="width: auto;">
+        </el-alert>
         <el-col v-for="(iconItem, iconIndex) in iconShow.icon" :key="iconIndex" :span="6" class="dd-p-10">
           <IconCell :icon="iconItem"></IconCell>
         </el-col>

@@ -66,3 +66,9 @@ Vue.component('Highlight', resolve => {
 Vue.component('PageHeader', resolve => {
   require(['@/components/demo/PageHeader'], resolve)
 })
+
+// 名称：IconSelect
+// 用途：图标选择器
+Vue.component('IconSelect', resolve => {
+  require(['@/components/core/IconSelect/index.vue'], resolve)
+})
