@@ -24,7 +24,7 @@ import Vue from 'vue'
 import clone from '@/assets/library/tool/clone.js'
 import Mock from 'mockjs'
 import settingDPD from './data/settingDPD'
-import MockDemoCard from './componnets/MockDemoCard'
+import MockDemoCard from './components/MockDemoCard'
 export default {
   components: {
     MockDemoCard

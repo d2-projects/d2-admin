@@ -26,26 +26,26 @@ export default {
   methods: {
     set (name = 'default-name', value = 'default-value') {
       Cookies.set(name, value)
-      this.$Message.info(`设置数据 ${name} = ${value}`)
+      this.$message.info(`设置数据 ${name} = ${value}`)
     },
     setExpires (name = 'default-name', value = 'default-value', expires = 1) {
       Cookies.set(name, value, {
         expires
       })
-      this.$Message.info(`设置数据 ${name} = ${value} 有效期 ${expires} 天`)
+      this.$message.info(`设置数据 ${name} = ${value} 有效期 ${expires} 天`)
     },
     get (name = 'default-name') {
       const value = Cookies.get(name)
-      this.$Message.info(`获取数据 ${name} = ${value}`)
+      this.$message.info(`获取数据 ${name} = ${value}`)
     },
     getAll () {
       const value = Cookies.get()
       console.log(value)
-      this.$Message.info('结果已经打印到控制台')
+      this.$message.info('结果已经打印到控制台')
     },
     remove (name = 'default-name') {
       Cookies.remove(name)
-      this.$Message.info(`删除数据 ${name}`)
+      this.$message.info(`删除数据 ${name}`)
     }
   }
 }

@@ -36,7 +36,7 @@ import Vue from 'vue'
 import clone from '@/assets/library/tool/clone.js'
 import Mock from 'mockjs'
 import settingDTD from './data/settingDTD'
-import MockDemoCard from './componnets/MockDemoCard'
+import MockDemoCard from './components/MockDemoCard'
 // mixin
 import regexp from './mixins/regexp'
 import fn from './mixins/function'
