@@ -57,6 +57,20 @@ export const pluginMenu = {
         }
       ]
     },
+    // font-awesome
+    {
+      title: '图标库',
+      icon: 'edit',
+      children: [
+        {
+          title: '索引',
+          icon: 'file-o',
+          path: 'font-awesome',
+          name: 'demo-font-awesome',
+          component: resolve => { require(['@/pages/demo/plugins/font-awesome/index.vue'], resolve) }
+        }
+      ]
+    },
     // 拖拽网格布局组件
     {
       title: '网格布局',
