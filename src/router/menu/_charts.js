@@ -1,5 +1,5 @@
 // [图表] 菜单
-export const chartsMenu = {
+export const menu = {
   title: '图表',
   path: '/demo/charts',
   name: 'demo-charts',
@@ -30,7 +30,7 @@ export const chartsMenu = {
 }
 
 // [图表] 路由设置
-export const chartsRouter = {
-  ...chartsMenu,
-  children: [].concat(...chartsMenu.children.map(e => e.children || e))
+export const router = {
+  ...menu,
+  children: [].concat(...menu.children.map(e => e.children || e))
 }
