@@ -2,6 +2,7 @@
   <div>
     <el-popover
       ref="pop"
+      v-model="pop"
       placement="bottom"
       width="300"
       trigger="click">
@@ -80,10 +81,17 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    autoClose: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   data () {
     return {
+      // 绑定弹出框
+      pop: false,
       // 所有图标
       icon,
       // 组件内输入框的值
@@ -130,6 +138,9 @@ export default {
   methods: {
     selectIcon (iconName = '') {
       this.$emit('input', iconName)
+      if (iconName && this.autoClose) {
+        this.pop = false
+      }
     }
   }
 }
