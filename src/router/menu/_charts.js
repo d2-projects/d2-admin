@@ -32,5 +32,5 @@ export const chartsMenu = {
 // [图表] 路由设置
 export const chartsRouter = {
   ...chartsMenu,
-  children: [].concat(...chartsMenu.children.map(e => e.children))
+  children: [].concat(...chartsMenu.children.map(e => e.children || e))
 }

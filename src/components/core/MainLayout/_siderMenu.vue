@@ -1,22 +1,32 @@
 <template>
   <el-menu class="el-menu-vertical-demo" v-bind="elMenu">
-    <el-submenu
-      v-for="(menu, index) in sideMenu"
-      :key="index"
-      :index="`${menu.title}${index}`">
-      <template slot="title">
-        <i v-if="menu.icon" :class="'fa fa-' + menu.icon"></i>
-        <span slot="title">{{menu.title}}</span>
-      </template>
+    <template v-for="(menu, index) in sideMenu">
       <el-menu-item
-        v-for="(menuItem, menuItemIndex) in menu.children"
-        :key="menuItemIndex"
-        :index="`${menuItem.name}${menuItemIndex}`"
-        @click.native="$router.push({name: menuItem.name})">
-        <i v-if="menu.icon" :class="'fa fa-' + menuItem.icon"></i>
-        {{menuItem.title}}
+        v-if="!menu.children"
+        :key="index"
+        :index="`${menu.title}${index}`"
+        @click.native="$router.push({name: menu.name})">
+        <i v-if="menu.icon" :class="'fa fa-' + menu.icon"></i>
+        {{menu.title}}
       </el-menu-item>
-    </el-submenu>
+      <el-submenu
+        v-if="menu.children"
+        :key="index"
+        :index="`${menu.title}${index}`">
+        <template slot="title">
+          <i v-if="menu.icon" :class="'fa fa-' + menu.icon"></i>
+          <span slot="title">{{menu.title}}</span>
+        </template>
+        <el-menu-item
+          v-for="(menuItem, menuItemIndex) in menu.children"
+          :key="menuItemIndex"
+          :index="`${menuItem.name}${menuItemIndex}`"
+          @click.native="$router.push({name: menuItem.name})">
+          <i v-if="menuItem.icon" :class="'fa fa-' + menuItem.icon"></i>
+          {{menuItem.title}}
+        </el-menu-item>
+      </el-submenu>
+    </template>
   </el-menu>
 </template>
 
