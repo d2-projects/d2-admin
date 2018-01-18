@@ -1,5 +1,5 @@
 // [插件] 菜单
-export const pluginMenu = {
+export const menu = {
   title: '功能',
   path: '/demo/plugin',
   name: 'demo-plugin',
@@ -222,7 +222,7 @@ export const pluginMenu = {
 }
 
 // [插件] 路由设置
-export const pluginRouter = {
-  ...pluginMenu,
-  children: [].concat(...pluginMenu.children.map(e => e.children || e))
+export const router = {
+  ...menu,
+  children: [].concat(...menu.children.map(e => e.children || e))
 }

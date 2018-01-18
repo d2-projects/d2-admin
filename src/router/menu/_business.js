@@ -1,5 +1,5 @@
 // [业务演示] 菜单
-export const businessMenu = {
+export const menu = {
   title: '业务演示',
   path: '/demo/business',
   name: 'demo-business',
@@ -16,7 +16,7 @@ export const businessMenu = {
 }
 
 // [图表] 路由设置
-export const businessRouter = {
-  ...businessMenu,
-  children: [].concat(...businessMenu.children.map(e => e.children || e))
+export const router = {
+  ...menu,
+  children: [].concat(...menu.children.map(e => e.children || e))
 }
