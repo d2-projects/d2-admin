@@ -4,18 +4,28 @@ export const menu = {
   path: '/demo/business',
   name: 'demo-business',
   component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
+  // redirect: {
+  //   name: ''
+  // },
   children: [
+    // 数据处理
     {
-      title: '数据过滤',
-      icon: 'document',
-      path: 'dataFilter',
-      name: 'demo-business-dataFilter',
-      component: resolve => { require(['@/pages/demo/business/dataFilter/index.vue'], resolve) }
+      title: '数据处理',
+      icon: 'flask',
+      children: [
+        {
+          title: '大型数据渲染',
+          icon: 'file-o',
+          path: 'data/largeData',
+          name: 'demo-business-data-largeData',
+          component: resolve => { require(['@/pages/demo/business/data/largeData/index.vue'], resolve) }
+        }
+      ]
     }
   ]
 }
 
-// [图表] 路由设置
+// [业务演示] 路由设置
 export const router = {
   ...menu,
   children: [].concat(...menu.children.map(e => e.children || e))
