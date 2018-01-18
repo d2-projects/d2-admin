@@ -1,11 +1,11 @@
 // [插件] 菜单
 export const menu = {
   title: '功能',
-  path: '/demo/plugin',
-  name: 'demo-plugin',
+  path: '/demo/plugins',
+  name: 'demo-plugins',
   component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
   // redirect: {
-  //   name: 'demo-plugin-marked-readme'
+  //   name: 'demo-plugins-marked-readme'
   // },
   children: [
     // markdown 解析库
@@ -17,14 +17,14 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'marked/demo',
-          name: 'demo-plugin-marked-demo',
+          name: 'demo-plugins-marked-demo',
           component: resolve => { require(['@/pages/demo/plugins/marked/demo.vue'], resolve) }
         },
         {
           title: '代码高亮',
           icon: 'file-o',
           path: 'marked/demoHighlight',
-          name: 'demo-plugin-marked-demoHighlight',
+          name: 'demo-plugins-marked-demoHighlight',
           component: resolve => { require(['@/pages/demo/plugins/marked/demoHighlight.vue'], resolve) }
         }
       ]
@@ -38,7 +38,7 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'simpleMDE/demo',
-          name: 'demo-plugin-simpleMDE-demo',
+          name: 'demo-plugins-simpleMDE-demo',
           component: resolve => { require(['@/pages/demo/plugins/simpleMDE/demo.vue'], resolve) }
         }
       ]
@@ -52,7 +52,7 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'quill/demo',
-          name: 'demo-plugin-quill-demo',
+          name: 'demo-plugins-quill-demo',
           component: resolve => { require(['@/pages/demo/plugins/quill/demo.vue'], resolve) }
         }
       ]
@@ -87,7 +87,7 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'vue-grid-layout/demo',
-          name: 'demo-plugin-vue-grid-layout-demo',
+          name: 'demo-plugins-vue-grid-layout-demo',
           component: resolve => { require(['@/pages/demo/plugins/vue-grid-layout/demo.vue'], resolve) }
         }
       ]
@@ -101,7 +101,7 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'timeago/demo',
-          name: 'demo-plugin-timeago-demo',
+          name: 'demo-plugins-timeago-demo',
           component: resolve => { require(['@/pages/demo/plugins/timeago/demo.vue'], resolve) }
         }
       ]
@@ -115,7 +115,7 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'papaParse/demo',
-          name: 'demo-plugin-papaParse-demo',
+          name: 'demo-plugins-papaParse-demo',
           component: resolve => { require(['@/pages/demo/plugins/papaParse/demo.vue'], resolve) }
         }
       ]
@@ -129,7 +129,7 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'countup/demo',
-          name: 'demo-plugin-countup-demo',
+          name: 'demo-plugins-countup-demo',
           component: resolve => { require(['@/pages/demo/plugins/countup/demo.vue'], resolve) }
         }
       ]
@@ -143,7 +143,7 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'clipboard-polyfill/demo',
-          name: 'demo-plugin-clipboard-polyfill-demo',
+          name: 'demo-plugins-clipboard-polyfill-demo',
           component: resolve => { require(['@/pages/demo/plugins/clipboard-polyfill/demo.vue'], resolve) }
         }
       ]
@@ -157,7 +157,7 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'js-cookie/demo',
-          name: 'demo-plugin-js-cookie-demo',
+          name: 'demo-plugins-js-cookie-demo',
           component: resolve => { require(['@/pages/demo/plugins/js-cookie/demo.vue'], resolve) }
         }
       ]
@@ -171,7 +171,7 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'highlight/demo',
-          name: 'demo-plugin-highlight-demo',
+          name: 'demo-plugins-highlight-demo',
           component: resolve => { require(['@/pages/demo/plugins/highlight/demo.vue'], resolve) }
         }
       ]
@@ -185,21 +185,21 @@ export const menu = {
           title: '数据模板',
           icon: 'file-o',
           path: 'mock/demoDTD',
-          name: 'demo-plugin-mock-demoDTD',
+          name: 'demo-plugins-mock-demoDTD',
           component: resolve => { require(['@/pages/demo/plugins/mock/demoDTD.vue'], resolve) }
         },
         {
           title: '数据占位符',
           icon: 'file-o',
           path: 'mock/demoDPD',
-          name: 'demo-plugin-mock-demoDPD',
+          name: 'demo-plugins-mock-demoDPD',
           component: resolve => { require(['@/pages/demo/plugins/mock/demoDPD.vue'], resolve) }
         },
         {
           title: '拦截Ajax请求',
           icon: 'file-o',
           path: 'mock/ajax',
-          name: 'demo-plugin-mock-ajax',
+          name: 'demo-plugins-mock-ajax',
           component: resolve => { require(['@/pages/demo/plugins/mock/ajax.vue'], resolve) }
         }
       ]
@@ -213,7 +213,7 @@ export const menu = {
           title: '基本示例',
           icon: 'file-o',
           path: 'vue-splitpane/demo',
-          name: 'demo-plugin-vue-splitpane-demo',
+          name: 'demo-plugins-vue-splitpane-demo',
           component: resolve => { require(['@/pages/demo/plugins/vue-splitpane/demo.vue'], resolve) }
         }
       ]
