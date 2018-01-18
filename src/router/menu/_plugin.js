@@ -224,5 +224,5 @@ export const pluginMenu = {
 // [插件] 路由设置
 export const pluginRouter = {
   ...pluginMenu,
-  children: [].concat(...pluginMenu.children.map(e => e.children))
+  children: [].concat(...pluginMenu.children.map(e => e.children || e))
 }
