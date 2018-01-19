@@ -9,7 +9,7 @@ export default [
       {
         path: 'index',
         name: 'index',
-        component: resolve => { require(['@/pages/demo/index/index.vue'], resolve) }
+        component: resolve => { require(['@/pages/core/index/index.vue'], resolve) }
       }
     ]
   }
