@@ -1,12 +1,12 @@
 <template>
   <Container>
     <div slot="header">
-      <el-tooltip effect="dark" content="生成数据需要几秒钟的时间" placement="top">
-        <el-button @click="makeData">生成数据</el-button>
+      <el-tooltip effect="dark" content="生成数据需要几秒钟的时间 依电脑配置而定" placement="top">
+        <el-button v-if="tableDataTemp.length === 0" @click="makeData">Mock 10,000 条数据</el-button>
       </el-tooltip>
-      <el-button @click="tableData = tableDataTemp">渲染数据</el-button>
+      <el-button v-if="tableDataTemp.length > 0" @click="tableData = tableDataTemp">渲染数据</el-button>
     </div>
-    <table border="1" class="gridtable">
+    <table v-if="tableData.length > 0" border="1" class="gridtable">
       <tr v-for="(item, index) in tableData" :key="index">
         <th v-for="(key, keyIndex) in Object.keys(item)" :key="keyIndex">{{item[key]}}</th>
       </tr>
@@ -20,13 +20,13 @@ export default {
   data () {
     return {
       tableDataTemp: [],
-      tableData: [{}]
+      tableData: []
     }
   },
   methods: {
     makeData () {
       this.tableDataTemp = Mock.mock({
-        'list|5000': [{
+        'list|10000': [{
           'id|+1': 1,
           'name': '@CNAME',
           'num1': '@NATURAL(10, 1000)',
