@@ -14,11 +14,11 @@ export const menu = {
       icon: 'flask',
       children: [
         {
-          title: '大型数据渲染',
+          title: '使用 Worker',
           icon: 'file-o',
-          path: 'data/largeData',
-          name: 'demo-business-data-largeData',
-          component: resolve => { require(['@/pages/demo/business/data/largeData/index.vue'], resolve) }
+          path: 'data/worker',
+          name: 'demo-business-data-worker',
+          component: resolve => { require(['@/pages/demo/business/data/worker/index.vue'], resolve) }
         }
       ]
     }
