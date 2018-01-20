@@ -70,7 +70,7 @@ export const menu = {
           component: resolve => { require(['@/pages/demo/plugins/font-awesome/list.vue'], resolve) }
         },
         {
-          title: '选择控件',
+          title: '图标选择器',
           icon: 'file-o',
           path: 'font-awesome/select',
           name: 'demo-font-awesome-select',
