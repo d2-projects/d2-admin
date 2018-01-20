@@ -3,7 +3,7 @@
     <el-popover
       ref="pop"
       v-model="pop"
-      placement="bottom"
+      :placement="placement"
       width="300"
       trigger="click">
       <div class="header dd-clearfix dd-mb-10" v-if="clearable">
@@ -24,7 +24,7 @@
           </el-row>
         </el-collapse-item>
       </el-collapse>
-      <div v-if="searchMode" class="group long">
+      <div v-if="searchMode" class="group">
         <div class="class" v-for="(item, index) in iconFilted" :key="index">
           <div class="class-title">{{item.title}}</div>
           <el-row class="class-row">
@@ -62,26 +62,37 @@
 import icon from '@/assets/library/font-awesome-4.7.0-icon/icon.js'
 export default {
   props: {
+    // 值
     value: {
       type: String,
       required: false,
       default: ''
     },
+    // 占位符
     placeholder: {
       type: String,
       required: false,
       default: '请选择'
     },
+    // 弹出界面的方向
+    placement: {
+      type: String,
+      required: false,
+      default: 'right'
+    },
+    // 是否可清空
     clearable: {
       type: Boolean,
       required: false,
       default: true
     },
+    // 是否允许用户输入
     userInput: {
       type: Boolean,
       required: false,
       default: false
     },
+    // 是否在选择后自动关闭
     autoClose: {
       type: Boolean,
       required: false,
@@ -154,9 +165,6 @@ export default {
   overflow-y: scroll;
   border-top: none;
   border-bottom: none;
-  &.long {
-    max-height: 600px;
-  }
   .class {
     .class-title {
       line-height: 30px;
