@@ -10,7 +10,7 @@ export default {
       }
     },
     "color": {
-      "value": "#ffffff"
+      "value": "#DCDFE6"
     },
     "shape": {
       "type": "circle",
@@ -28,7 +28,7 @@ export default {
       }
     },
     "opacity": {
-      "value": 0.5,
+      "value": 1,
       "random": false,
       "anim": {
         "enable": false,
@@ -38,7 +38,7 @@ export default {
       }
     },
     "size": {
-      "value": 3,
+      "value": 4,
       "random": true,
       "anim": {
         "enable": false,
@@ -50,9 +50,9 @@ export default {
     "line_linked": {
       "enable": true,
       "distance": 150,
-      "color": "#ffffff",
+      "color": "#DCDFE6",
       "opacity": 0.4,
-      "width": 1
+      "width": 2
     },
     "move": {
       "enable": true,
