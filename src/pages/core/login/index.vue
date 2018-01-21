@@ -15,12 +15,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
+<style lang="scss">
 .login {
+  background-color: #EDF4FA;
   height: 100%;
-  width: 100%;
-  background-color: $color-info;
+  canvas {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+  }
 }
 </style>
 
