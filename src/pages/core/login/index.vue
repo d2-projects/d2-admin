@@ -7,7 +7,7 @@
 require('particles.js')
 // 配置地址
 // https://vincentgarreau.com/particles.js/#default
-import config from './config/nasa'
+import config from './config/default'
 export default {
   mounted () {
     particlesJS('login', config)
@@ -20,7 +20,7 @@ export default {
 .login {
   height: 100%;
   width: 100%;
-  background-color: $color-text-main;
+  background-color: $color-info;
 }
 </style>
 
