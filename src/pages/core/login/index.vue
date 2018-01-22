@@ -82,6 +82,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~@/assets/style/public.scss';
 .login-page {
   background-color: #EDF4FA;
   height: 100%;
@@ -116,8 +117,8 @@ export default {
     }
   }
   .button-help {
-    width: calc(100% - 40px);
-    margin: 20px;
+    width: 100%;
+    margin-top: $margin;
   }
   // 背景
   .bg {
