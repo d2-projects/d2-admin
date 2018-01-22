@@ -70,10 +70,26 @@ export default {
     submit () {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
-          alert('submit!');
+          this.$axios({
+            method: 'post',
+            url: '/login',
+            data: {
+              username: this.formLogin.username,
+              password: this.formLogin.password
+            }
+          })
+            .then (res => {
+              if (res.data.code === 0) {
+                this.$message.success(res.data.msg)
+                setTimeout(() => {
+                  this.$router.push('index')
+                }, 300);
+              } else {
+                this.$message.error(res.data.msg)
+              }
+            })
         } else {
-          console.log('error submit!!');
-          return false;
+          return false
         }
       })
     }
