@@ -28,7 +28,12 @@
                 <i slot="prepend" class="fa fa-keyboard-o"></i>
               </el-input>
             </el-form-item>
-            <el-button @click="submit" type="primary" class="button-login">登陆</el-button>
+            <el-button
+              @click="submit"
+              type="primary"
+              class="button-login">
+              登陆
+            </el-button>
           </el-form>
         </el-card>
         <el-button type="info" class="button-help">
@@ -64,9 +69,11 @@ export default {
     }
   },
   mounted () {
+    // 初始化例子插件
     particlesJS('login', config)
   },
   methods: {
+    // 提交登陆信息
     submit () {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
@@ -132,6 +139,7 @@ export default {
       width: 100%;
     }
   }
+  // 帮助按钮
   .button-help {
     width: 100%;
     margin-top: $margin;
