@@ -30,7 +30,7 @@ Mock.mock('/login', 'post', ({url, type, body}) => {
   } else {
     return {
       code: 500,
-      msg: '没有找到匹配的用户'
+      msg: '用户名或密码错误'
     }
   }
 })
