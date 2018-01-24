@@ -26,21 +26,32 @@ export default {
     routeName () {
       return this.$route.name
     },
+    // 当前路由是否是顶级菜单
+    // 顶级菜单就是在顶栏里显示的菜单
+    // 二级菜单是在侧边栏显示的菜单
+    // 三级菜单是二级菜单展开的
+    routeIsTopLevel () {
+      return !!this.router.find(e => e.name === this.routeName)
+    },
     // 不管当前路由是不是顶级菜单 都返回这个路由所属的顶级菜单对象的name
     // 如果返回 undefined 代表这个路由不是在菜单里显示的路由
-    routeTopLevelName () {
-      if (this.router.find(e => e.name === this.routeName)) {
+    routeTopLevel () {
+      if (this.routeIsTopLevel) {
         return this.routeName
       } else {
-        const find = this.router.find(e => e.children.find(child => child.name === this.routeName))
+        const find = this.router.find(e => {
+          return e.children.find(child => {
+            return child.name === this.routeName
+          })
+        })
         return find ? find.name : undefined
       }
     },
     // 返回当前对象对应的顶级菜单 这个菜单可以在侧边栏菜单中直接使用
     // 如果返回 undefined 代表这个路由没有对应的一级路由也就没有菜单
     routeTopLevelMenu () {
-      if (this.routeTopLevelName) {
-        return this.menu.find(e => e.name === this.routeTopLevelName).children
+      if (this.routeTopLevel) {
+        return this.menu.find(e => e.name === this.routeTopLevel).children
       } else {
         return undefined
       }

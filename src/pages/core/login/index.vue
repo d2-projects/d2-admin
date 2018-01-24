@@ -7,33 +7,18 @@
       </div>
       <div class="form-group">
         <el-card>
-          <el-form
-            ref="loginForm"
-            label-position="top"
-            :rules="rules"
-            :model="formLogin">
+          <el-form ref="loginForm" label-position="top" :rules="rules" :model="formLogin">
             <el-form-item  prop="username">
-              <el-input
-                type="text"
-                v-model="formLogin.username"
-                placeholder="用户名">
+              <el-input type="text" v-model="formLogin.username" placeholder="用户名">
                 <i slot="prepend" class="fa fa-user-circle-o"></i>
               </el-input>
             </el-form-item>
             <el-form-item prop="password">
-              <el-input
-                type="password"
-                v-model="formLogin.password"
-                placeholder="密码">
+              <el-input type="password" v-model="formLogin.password" placeholder="密码">
                 <i slot="prepend" class="fa fa-keyboard-o"></i>
               </el-input>
             </el-form-item>
-            <el-button
-              @click="submit"
-              type="primary"
-              class="button-login">
-              登陆
-            </el-button>
+            <el-button @click="submit" type="primary" class="button-login">登陆</el-button>
           </el-form>
         </el-card>
         <el-button type="info" class="button-help">
