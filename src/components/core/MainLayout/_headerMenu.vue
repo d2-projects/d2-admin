@@ -27,22 +27,22 @@ export default {
       return this.$route.name
     },
     // 不管当前路由是不是顶级菜单 都返回这个路由所属的顶级菜单对象的name
-    // 如果返回 undefined 代表这个路由不是在菜单里显示的路由
+    // 如果返回 null 代表这个路由不是在菜单里显示的路由
     routeTopLevelName () {
       if (this.router.find(e => e.name === this.routeName)) {
         return this.routeName
       } else {
         const find = this.router.find(e => e.children.find(child => child.name === this.routeName))
-        return find ? find.name : undefined
+        return find ? find.name : null
       }
     },
-    // 返回当前对象对应的顶级菜单 这个菜单可以在侧边栏菜单中直接使用
-    // 如果返回 undefined 代表这个路由没有对应的一级路由也就没有菜单
+    // 返回当前对象对应的顶级菜单下的所有子菜单 这些菜单可以在侧边栏菜单中直接使用
+    // 如果返回 null 代表这个路由没有对应的一级路由也就没有菜单
     routeTopLevelMenu () {
       if (this.routeTopLevelName) {
         return this.menu.find(e => e.name === this.routeTopLevelName).children
       } else {
-        return undefined
+        return null
       }
     }
   },
