@@ -3,19 +3,18 @@ import Mock from 'mockjs'
 const userDB = [
   {
     username: 'admin',
-    password: 'admin'
-  },
-  {
-    username: 'FairyEver',
-    password: '000000'
+    password: 'admin',
+    avatar: 'http://fairyever.qiniudn.com/d2-admin-user.jpg'
   },
   {
     username: 'user1',
-    password: '111111'
+    password: '111111',
+    avatar: 'http://fairyever.qiniudn.com/d2-admin-user-2.jpg'
   },
   {
     username: 'user2',
-    password: '222222'
+    password: '222222',
+    avatar: ''
   }
 ]
 
@@ -25,7 +24,10 @@ Mock.mock('/login', 'post', ({url, type, body}) => {
   if (user) {
     return {
       code: 0,
-      msg: '登陆成功'
+      msg: '登陆成功',
+      data: {
+        ...user
+      }
     }
   } else {
     return {
