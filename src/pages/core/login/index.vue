@@ -109,19 +109,30 @@ export default {
   }
   // logo
   .logo-group {
-    margin-top: -100px;
+    margin-top: -75px - 70px;
+    position: relative;
+    top: 75px;
     img {
-      width: 100px;
+      height: 140px;
     }
   }
   // 登陆表单
   .form-group {
     width: 300px;
+    // 重新设置卡片阴影
     .el-card {
       box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
+      .el-card__body {
+        padding-top: 70px;
+      }
     }
+    // 登陆按钮
     .button-login {
       width: 100%;
+    }
+    // 输入框左边的图表区域缩窄
+    .el-input-group__prepend {
+      padding: 0px 14px;
     }
   }
   // 帮助按钮
