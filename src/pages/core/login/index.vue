@@ -2,9 +2,11 @@
   <div class="login-page">
     <div class="layer bg" id="login"></div>
     <div class="layer flex-center">
+      <!-- logo部分 -->
       <div class="logo-group">
         <img src="@/assets/image/logo/w500.png" alt="logo">
       </div>
+      <!-- 表单部分 -->
       <div class="form-group">
         <el-card>
           <el-form ref="loginForm" label-position="top" :rules="rules" :model="formLogin">
@@ -21,11 +23,12 @@
             <el-button @click="submit" type="primary" class="button-login">登陆</el-button>
           </el-form>
         </el-card>
-        <el-button type="info" class="button-help">
-          需要帮助
-          <i class="fa fa-question-circle"></i>
-        </el-button>
       </div>
+      <!-- 帮助按钮 -->
+      <el-button type="info" class="button-help">
+        需要帮助
+        <i class="fa fa-question-circle"></i>
+      </el-button>
     </div>
   </div>
 </template>
@@ -40,8 +43,8 @@ export default {
   data () {
     return {
       formLogin: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: 'admin'
       },
       rules: {
         username: [
@@ -62,6 +65,7 @@ export default {
     submit () {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
+          // 开始请求登录接口
           this.$http({
             method: 'post',
             url: '/login',
@@ -71,14 +75,9 @@ export default {
             }
           })
             .then (res => {
-              if (res.data.code === 0) {
-                this.$message.success(res.data.msg)
-                setTimeout(() => {
-                  this.$router.push('index')
-                }, 300);
-              } else {
-                this.$message.error(res.data.msg)
-              }
+              console.group('登录')
+              console.log(res)
+              console.groupEnd()
             })
         } else {
           return false
@@ -90,64 +89,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@/assets/style/public.scss';
-.login-page {
-  background-color: #EDF4FA;
-  height: 100%;
-  position: relative;
-  // 层
-  .layer {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    &.flex-center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-  }
-  // logo
-  .logo-group {
-    margin-top: -75px - 70px;
-    position: relative;
-    top: 75px;
-    img {
-      height: 140px;
-    }
-  }
-  // 登陆表单
-  .form-group {
-    width: 300px;
-    // 重新设置卡片阴影
-    .el-card {
-      box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
-      .el-card__body {
-        padding-top: 70px;
-      }
-    }
-    // 登陆按钮
-    .button-login {
-      width: 100%;
-    }
-    // 输入框左边的图表区域缩窄
-    .el-input-group__prepend {
-      padding: 0px 14px;
-    }
-  }
-  // 帮助按钮
-  .button-help {
-    width: 100%;
-    margin-top: $margin;
-  }
-  // 背景
-  .bg {
-    canvas {
-      display: block;
-      margin: 0px;
-      padding: 0px;
-    }
-  }
-}
+@import './style.scss';
 </style>
 
