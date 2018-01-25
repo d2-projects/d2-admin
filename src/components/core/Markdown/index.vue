@@ -50,7 +50,7 @@ export default {
     },
     // 从 url 加载原始数据
     async getReadme (name) {
-      const { data } = await this.$axios.get(name)
+      const { data } = await this.$http.get(name)
       return this.marked(data)
     },
     marked (data) {
