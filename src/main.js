@@ -29,11 +29,12 @@ import '@/mock/index.js'
 // vuex
 import store from '@/store/index.js'
 
-import d2Admin from '@/plugin/d2Admin'
+// log简化
+import pluginLog from '@/plugin/log'
 
 Vue.use(ElementUI)
 
-Vue.use(d2Admin)
+Vue.use(pluginLog)
 
 Vue.config.productionTip = false
 

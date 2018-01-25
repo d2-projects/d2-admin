@@ -75,9 +75,7 @@ export default {
             }
           })
             .then (res => {
-              console.group('登录')
-              console.log(res)
-              console.groupEnd()
+              this.$log('登录结果', res)
             })
         } else {
           return false
