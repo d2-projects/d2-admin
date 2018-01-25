@@ -62,7 +62,7 @@ export default {
     submit () {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
-          this.$axios({
+          this.$http({
             method: 'post',
             url: '/login',
             data: {

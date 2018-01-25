@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     ajax () {
-      this.$axios.get('/api/demo/001')
+      this.$http.get('/api/demo/001')
       .then(res => {
         this.table.columns = Object.keys(res.data.list[0]).map(e => ({
           label: e,
