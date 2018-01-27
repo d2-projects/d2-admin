@@ -74,8 +74,11 @@ export default {
               password: this.formLogin.password
             }
           })
-            .then (res => {
+            .then(res => {
               this.$log('登录结果', res)
+            })
+            .catch(err => {
+              console.log(err)
             })
         } else {
           return false
