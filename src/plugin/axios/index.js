@@ -4,11 +4,15 @@ import axios from 'axios'
 
 axios.interceptors.response.use(res => {
   // 在这里对返回的数据进行处理
-  if (res.data.code !== 0) {
-    Message.error(res.data.msg)
-    return Promise.reject(res.data.msg)
+  if (res.data.code) {
+    if (res.data.code !== 0) {
+      Message.error(res.data.msg)
+      return Promise.reject(res.data.msg)
+    } else {
+      return res.data.data
+    }
   } else {
-    return res.data.data
+    return res.data
   }
 }, err => {
   return Promise.reject(err)

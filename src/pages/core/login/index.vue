@@ -82,6 +82,9 @@ export default {
               }
               Cookies.set('username', res.username, setting)
               Cookies.set('password', res.password, setting)
+              this.$router.push({
+                name: 'index'
+              })
             })
             .catch(err => {
               this.$log('错误信息', err)
