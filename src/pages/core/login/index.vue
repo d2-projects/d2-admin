@@ -78,7 +78,7 @@ export default {
               this.$log('登录结果', res)
             })
             .catch(err => {
-              console.log(err)
+              this.$log('错误信息', err)
             })
         } else {
           return false
