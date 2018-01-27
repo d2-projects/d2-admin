@@ -3,6 +3,9 @@ export const menu = {
   title: '业务演示',
   path: '/demo/business',
   name: 'demo-business',
+  meta: {
+    requiresAuth: true
+  },
   component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
   // redirect: {
   //   name: ''
@@ -18,6 +21,9 @@ export const menu = {
           icon: 'file-o',
           path: 'data/worker',
           name: 'demo-business-data-worker',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/business/data/worker/index.vue'], resolve) }
         }
       ]

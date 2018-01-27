@@ -82,6 +82,7 @@ export default {
               }
               Cookies.set('username', res.username, setting)
               Cookies.set('password', res.password, setting)
+              Cookies.set('token', res.token, setting)
               this.$router.push({
                 name: 'index'
               })

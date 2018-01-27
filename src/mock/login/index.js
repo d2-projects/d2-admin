@@ -26,7 +26,8 @@ Mock.mock('/login', 'post', ({url, type, body}) => {
       code: 0,
       msg: '登陆成功',
       data: {
-        ...user
+        ...user,
+        token: '1234567890'
       }
     }
   } else {

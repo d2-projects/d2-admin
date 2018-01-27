@@ -3,6 +3,9 @@ export const menu = {
   title: '功能',
   path: '/demo/plugins',
   name: 'demo-plugins',
+  meta: {
+    requiresAuth: true
+  },
   component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
   // redirect: {
   //   name: 'demo-plugins-marked-readme'
@@ -18,6 +21,9 @@ export const menu = {
           icon: 'file-o',
           path: 'marked/demo',
           name: 'demo-plugins-marked-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/marked/demo.vue'], resolve) }
         },
         {
@@ -25,6 +31,9 @@ export const menu = {
           icon: 'file-o',
           path: 'marked/demoHighlight',
           name: 'demo-plugins-marked-demoHighlight',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/marked/demoHighlight.vue'], resolve) }
         }
       ]
@@ -39,6 +48,9 @@ export const menu = {
           icon: 'file-o',
           path: 'simpleMDE/demo',
           name: 'demo-plugins-simpleMDE-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/simpleMDE/demo.vue'], resolve) }
         }
       ]
@@ -53,6 +65,9 @@ export const menu = {
           icon: 'file-o',
           path: 'quill/demo',
           name: 'demo-plugins-quill-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/quill/demo.vue'], resolve) }
         }
       ]
@@ -67,6 +82,9 @@ export const menu = {
           icon: 'file-o',
           path: 'font-awesome/list',
           name: 'demo-font-awesome-list',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/font-awesome/list.vue'], resolve) }
         },
         {
@@ -74,6 +92,9 @@ export const menu = {
           icon: 'file-o',
           path: 'font-awesome/select',
           name: 'demo-font-awesome-select',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/font-awesome/select.vue'], resolve) }
         }
       ]
@@ -88,6 +109,9 @@ export const menu = {
           icon: 'file-o',
           path: 'vue-grid-layout/demo',
           name: 'demo-plugins-vue-grid-layout-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/vue-grid-layout/demo.vue'], resolve) }
         }
       ]
@@ -102,6 +126,9 @@ export const menu = {
           icon: 'file-o',
           path: 'timeago/demo',
           name: 'demo-plugins-timeago-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/timeago/demo.vue'], resolve) }
         }
       ]
@@ -116,6 +143,9 @@ export const menu = {
           icon: 'file-o',
           path: 'papaParse/demo',
           name: 'demo-plugins-papaParse-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/papaParse/demo.vue'], resolve) }
         }
       ]
@@ -130,6 +160,9 @@ export const menu = {
           icon: 'file-o',
           path: 'countup/demo',
           name: 'demo-plugins-countup-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/countup/demo.vue'], resolve) }
         }
       ]
@@ -144,6 +177,9 @@ export const menu = {
           icon: 'file-o',
           path: 'clipboard-polyfill/demo',
           name: 'demo-plugins-clipboard-polyfill-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/clipboard-polyfill/demo.vue'], resolve) }
         }
       ]
@@ -158,6 +194,9 @@ export const menu = {
           icon: 'file-o',
           path: 'js-cookie/demo',
           name: 'demo-plugins-js-cookie-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/js-cookie/demo.vue'], resolve) }
         }
       ]
@@ -172,6 +211,9 @@ export const menu = {
           icon: 'file-o',
           path: 'highlight/demo',
           name: 'demo-plugins-highlight-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/highlight/demo.vue'], resolve) }
         }
       ]
@@ -186,6 +228,9 @@ export const menu = {
           icon: 'file-o',
           path: 'mock/demoDTD',
           name: 'demo-plugins-mock-demoDTD',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/mock/demoDTD.vue'], resolve) }
         },
         {
@@ -193,6 +238,9 @@ export const menu = {
           icon: 'file-o',
           path: 'mock/demoDPD',
           name: 'demo-plugins-mock-demoDPD',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/mock/demoDPD.vue'], resolve) }
         },
         {
@@ -200,6 +248,9 @@ export const menu = {
           icon: 'file-o',
           path: 'mock/ajax',
           name: 'demo-plugins-mock-ajax',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/mock/ajax.vue'], resolve) }
         }
       ]
@@ -214,6 +265,9 @@ export const menu = {
           icon: 'file-o',
           path: 'vue-splitpane/demo',
           name: 'demo-plugins-vue-splitpane-demo',
+          meta: {
+            requiresAuth: true
+          },
           component: resolve => { require(['@/pages/demo/plugins/vue-splitpane/demo.vue'], resolve) }
         }
       ]

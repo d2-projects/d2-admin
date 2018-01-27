@@ -10,6 +10,9 @@ export default [
       {
         path: 'index',
         name: 'index',
+        meta: {
+          requiresAuth: true
+        },
         component: resolve => { require(['@/pages/core/index/index.vue'], resolve) }
       }
     ]
