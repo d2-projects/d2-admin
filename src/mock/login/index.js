@@ -31,7 +31,7 @@ Mock.mock('/login', 'post', ({url, type, body}) => {
     }
   } else {
     return {
-      code: 500,
+      code: 401,
       msg: '用户名或密码错误'
     }
   }
