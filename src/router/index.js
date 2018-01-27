@@ -1,16 +1,37 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Cookies from 'js-cookie'
 
 // 在菜单中显示的那部分路由
-import { router } from '@/router/menu/index.js'
+import * as menu from '@/router/menu/index.js'
 // 不在菜单中显示的那部分路由
-import invisibleRouter from './invisible/index.js'
+import invisible from './invisible/index.js'
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
+let router = new VueRouter({
   routes: [
-    ...router,
-    ...invisibleRouter
+    ...menu.router,
+    ...invisible
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  // 需要身份校验
+  if (to.meta.requiresAuth) {
+    // 这里暂时将cookie里是否存有token作为验证是否登陆的条件 请根据自身业务需要修改
+    if (Cookies.get('token')) {
+      next()
+    } else {
+      // 没有登陆的时候跳转到登陆界面
+      next({
+        name: 'login'
+      })
+    }
+  } else {
+    // 不需要身份校验 直接通过
+    next()
+  }
+})
+
+export default router
