@@ -39,6 +39,7 @@ require('particles.js')
 // 配置地址
 // https://vincentgarreau.com/particles.js/#default
 import config from './config/default'
+import Cookies from 'js-cookie'
 export default {
   data () {
     return {
@@ -76,6 +77,11 @@ export default {
           })
             .then(res => {
               this.$log('登录结果', res)
+              const setting = {
+                expires: 1
+              }
+              Cookies.set('username', res.username, setting)
+              Cookies.set('password', res.password, setting)
             })
             .catch(err => {
               this.$log('错误信息', err)
