@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     async getReadme () {
-      const { data } = await this.$http.get('/static/markdownFiles/demo/baseMarkdowmFile.md')
+      const data = await this.$http.get('/static/markdownFiles/demo/baseMarkdowmFile.md')
       return data
     }
   }
