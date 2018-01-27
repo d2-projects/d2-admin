@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost" class="body">
+  <Container type="ghost" class="demo-plugins-vue-grid-layout-demo">
     <GridLayout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">
@@ -79,9 +79,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '~@/assets/style/public.scss';
-.body {
+.demo-plugins-vue-grid-layout-demo {
   .vue-grid-layout {
     margin: -10px;
     .el-card {
