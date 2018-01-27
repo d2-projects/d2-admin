@@ -16,6 +16,7 @@
           <template v-if="item.i === '0'">
             <div class="dd-mb">拖拽卡片调整位置</div>
             <div class="dd-mb">拖拽卡片右下角的手柄调整卡片大小</div>
+            <div class="dd-mb">在控制台打印出数据变化</div>
             <GithubLinkButton
               name="vue-grid-layout"
               url="https://github.com/jbaysolutions/vue-grid-layout"
@@ -56,26 +57,23 @@ export default {
   },
   methods: {
     layoutUpdatedHandler (newLayout) {
-      // console.log('layoutUpdatedHandler')
+      console.group('layoutUpdatedHandler')
       newLayout.forEach(e => {
         console.log(`{'x': ${e.x}, 'y': ${e.y}, 'w': ${e.w}, 'h': ${e.h}, 'i': '${e.i}'},`)
       })
+      console.groupEnd()
     },
     resizeHandler (i, newH, newW) {
-      // console.log('resizeHandler')
-      // console.log(`i: ${i}, newH: ${newH}, newW: ${newW}`)
+      this.$log('resizeHandler', `i: ${i}, newH: ${newH}, newW: ${newW}`)
     },
     moveHandler (i, newX, newY) {
-      // console.log('moveHandler')
-      // console.log(`i: ${i}, newX: ${newX}, newY: ${newY}`)
+      this.$log('moveHandler', `i: ${i}, newX: ${newX}, newY: ${newY}`)
     },
     resizedHandler (i, newH, newW, newHPx, newWPx) {
-      // console.log('resizedHandler')
-      // console.log(`i: ${i}, newH: ${newH}, newW: ${newW}, newHPx: ${newHPx}, newWPx: ${newWPx}`)
+      this.$log('resizedHandler', `i: ${i}, newH: ${newH}, newW: ${newW}, newHPx: ${newHPx}, newWPx: ${newWPx}`)
     },
     movedHandler (i, newX, newY) {
-      // console.log('movedHandler')
-      // console.log(`i: ${i}, newX: ${newX}, newY: ${newY}`)
+      this.$log('movedHandler', `i: ${i}, newX: ${newX}, newY: ${newY}`)
     }
   }
 }
