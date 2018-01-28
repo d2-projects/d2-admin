@@ -11,7 +11,9 @@
         @move="moveHandler"
         @resized="resizedHandler"
         @moved="movedHandler">
-        <el-card></el-card>
+        <el-card>
+          <G2Line1></G2Line1>
+        </el-card>
       </GridItem>
     </GridLayout>
   </Container>
