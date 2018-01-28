@@ -30,12 +30,6 @@ export default {
       padding: [40, 40, 50, 60]
     }
   },
-  created () {
-    // 打印信息
-    this.$log('G2', ...[
-      `version ${this.G2.version}`
-    ])
-  },
   mounted () {
     // 如果设置了在 mounted 后自动初始化 就在这里初始化
     if (this.mountedInit) {
@@ -47,6 +41,7 @@ export default {
   watch: {
     // 数据改变
     data () {
+      console.log('111')
       this.changeData()
     }
   },
