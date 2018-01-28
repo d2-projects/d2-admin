@@ -18,4 +18,4 @@ axios.interceptors.response.use(res => {
   return Promise.reject(err)
 })
 
-Vue.prototype.$http = axios
+Vue.prototype.$axios = axios

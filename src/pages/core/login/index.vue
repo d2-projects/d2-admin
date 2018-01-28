@@ -67,7 +67,7 @@ export default {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           // 开始请求登录接口
-          this.$http({
+          this.$axios({
             method: 'post',
             url: '/login',
             data: {

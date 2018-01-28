@@ -2,7 +2,7 @@
   <Container type="ghost" :responsive="true" class="demo-chart-index">
     <GridLayout v-bind="layout">
       <GridItem v-bind="layout.layout[0]" @resize="resizeHandler('G2Line1')" @resized="resizedHandler('G2Line1')">
-        <el-card><G2Line1 ref="G2Line1" :data="G2Line1Data"></G2Line1></el-card>
+        <el-card><G2Line1 ref="G2Line1" :data="G2Line1"></G2Line1></el-card>
       </GridItem>
     </GridLayout>
   </Container>
@@ -29,23 +29,20 @@ export default {
         margin: [10, 10],
         useCssTransforms: true
       },
-      G2Line1Data: []
+      // 数据
+      G2Line1: []
     }
   },
   mounted () {
     setTimeout(() => {
-      this.G2Line1Data = [
-        { year: '1991', value: 3 },
-        { year: '1992', value: 4 },
-        { year: '1993', value: 3.5 },
-        { year: '1994', value: 5 },
-        { year: '1995', value: 4.9 },
-        { year: '1996', value: 6 },
-        { year: '1997', value: 7 },
-        { year: '1998', value: 9 },
-        { year: '1999', value: 13 }
+      const api = [
+        '/api/chart/G2Line1'
       ]
-    }, 3000)
+      this.$axios.all(api.map(e => this.$axios.get(e)))
+        .then(this.$axios.spread((G2Line1) => {
+          this.G2Line1 = G2Line1
+        }))
+    }, 300)
   },
   methods: {
     // 改变尺寸
