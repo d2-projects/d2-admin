@@ -1,0 +1,22 @@
+@import '~@/assets/style/public.scss';
+.demo-chart-index {
+  .vue-grid-layout {
+    margin: -10px;
+    .el-card {
+      @extend %unable-select;
+      height: 100%;
+      .el-card__body {
+        height: 100%;
+        padding: 0px;
+      }
+    }
+    .vue-resizable-handle {
+      bottom: 6px;
+      right: 6px;
+      opacity: .3;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+}
