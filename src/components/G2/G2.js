@@ -41,7 +41,6 @@ export default {
   watch: {
     // 数据改变
     data () {
-      console.log('111')
       this.changeData()
     }
   },

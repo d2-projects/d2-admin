@@ -34,17 +34,19 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
+    this.syncData()
+  },
+  methods: {
+    // 请求图表数据
+    syncData () {
       const api = [
-        '/api/chart/G2Line1'
+        {url: '/api/chart/G2Line', data: {code: 1}}
       ]
-      this.$axios.all(api.map(e => this.$axios.get(e)))
+      this.$axios.all(api.map(e => this.$axios.post(e.url, e.data)))
         .then(this.$axios.spread((G2Line1) => {
           this.G2Line1 = G2Line1
         }))
-    }, 300)
-  },
-  methods: {
+    },
     // 改变尺寸
     resizeHandler (name) {
       this.$nextTick(() => {
