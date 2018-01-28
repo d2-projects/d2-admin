@@ -1,18 +1,11 @@
 <template>
-  <Container type="ghost" class="demo-chart-index">
+  <Container type="ghost" :responsive="true" class="demo-chart-index">
     <GridLayout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">
-      <GridItem
-        v-for="(item, index) in layout.layout"
-        :key="index"
-        v-bind="item"
-        @resize="resizeHandler"
-        @move="moveHandler"
-        @resized="resizedHandler"
-        @moved="movedHandler">
+      <GridItem v-bind="layout.layout[0]" @resize="resizeHandler('G2Line1')" @resized="resizedHandler('G2Line1')">
         <el-card>
-          <G2Line1></G2Line1>
+          <G2Line1 ref="G2Line1"></G2Line1>
         </el-card>
       </GridItem>
     </GridLayout>
@@ -43,24 +36,15 @@ export default {
     }
   },
   methods: {
-    layoutUpdatedHandler (newLayout) {
-      console.group('layoutUpdatedHandler')
-      newLayout.forEach(e => {
-        console.log(`{'x': ${e.x}, 'y': ${e.y}, 'w': ${e.w}, 'h': ${e.h}, 'i': '${e.i}'},`)
+    resizeHandler (name) {
+      this.$nextTick(() => {
+        this.$refs[name].resize()  
       })
-      console.groupEnd()
     },
-    resizeHandler (i, newH, newW) {
-      this.$log('resizeHandler', `i: ${i}, newH: ${newH}, newW: ${newW}`)
-    },
-    moveHandler (i, newX, newY) {
-      this.$log('moveHandler', `i: ${i}, newX: ${newX}, newY: ${newY}`)
-    },
-    resizedHandler (i, newH, newW, newHPx, newWPx) {
-      this.$log('resizedHandler', `i: ${i}, newH: ${newH}, newW: ${newW}, newHPx: ${newHPx}, newWPx: ${newWPx}`)
-    },
-    movedHandler (i, newX, newY) {
-      this.$log('movedHandler', `i: ${i}, newX: ${newX}, newY: ${newY}`)
+    resizedHandler (name) {
+      this.$nextTick(() => {
+        this.$refs[name].resize()  
+      })
     }
   }
 }
