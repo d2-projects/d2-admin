@@ -1,24 +1,16 @@
 <template>
   <Container type="ghost" :responsive="true" class="demo-chart-index">
-    <GridLayout v-bind="layout">
+    <GridLayout v-bind="layout" @layout-updated="layoutUpdatedHandler">
       <GridItem v-bind="layout.layout[0]" @resize="resizeHandler('G2Line1')" @resized="resizedHandler('G2Line1')">
-        <el-card>
+        <el-card class="header-in">
           <div slot="header">近年趋势</div>
-          <G2Line1
-            ref="G2Line1"
-            :data="G2Line1"
-            title="近年趋势">
-          </G2Line1>
+          <G2Line1 ref="G2Line1" :data="G2Line1"></G2Line1>
         </el-card>
       </GridItem>
       <GridItem v-bind="layout.layout[1]" @resize="resizeHandler('G2Pie1')" @resized="resizedHandler('G2Pie1')">
-        <el-card>
-          <!-- <G2Line1
-            ref="G2Line2"
-            :data="G2Line1"
-            title="近年趋势2">
-          </G2Line1> -->
-          <G2Pie1 ref="G2Pie1"></G2Pie1>
+        <el-card class="header-in">
+          <div slot="header">人员分布</div>
+          <G2Pie1 ref="G2Pie1" :data="G2Pie1"></G2Pie1>
         </el-card>
       </GridItem>
     </GridLayout>

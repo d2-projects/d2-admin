@@ -10,6 +10,8 @@ export default {
   ],
   data () {
     return {
+      // 在组件 mounted 后立即初始化图表
+      autoInit: false,
       // [图表设置项] padding
       padding: [30, 40, 50, 50]
     }
