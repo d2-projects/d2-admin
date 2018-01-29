@@ -59,6 +59,15 @@ export default {
     }
   },
   methods: {
+    // 创建图表对象
+    creatChart () {
+      this.chart = new this.G2.Chart({
+        container: this.$refs.chart,
+        forceFit: this.forceFit,
+        height: this.G2.DomUtil.getHeight(this.$refs.chart),
+        padding: this.padding
+      })
+    },
     // 重绘大小
     resize (width, height) {
       if (this.chart) {

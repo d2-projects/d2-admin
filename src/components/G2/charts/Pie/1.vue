@@ -29,12 +29,7 @@ export default {
     },
     // 初始化图表
     initHandler () {
-      this.chart = new this.G2.Chart({
-        container: this.$refs.chart,
-        forceFit: this.forceFit,
-        height: this.G2.DomUtil.getHeight(this.$refs.chart),
-        padding: this.padding
-      })
+      this.creatChart()
       this.chart.source(this.dvMaker(), {
         percent: {
           formatter: val => {
