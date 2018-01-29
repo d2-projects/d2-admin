@@ -3,6 +3,7 @@
     <GridLayout v-bind="layout">
       <GridItem v-bind="layout.layout[0]" @resize="resizeHandler('G2Line1')" @resized="resizedHandler('G2Line1')">
         <el-card>
+          <div slot="header">近年趋势</div>
           <G2Line1
             ref="G2Line1"
             :data="G2Line1"

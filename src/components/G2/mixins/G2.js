@@ -17,23 +17,11 @@ export default {
       required: false,
       default: true
     },
-    // [图表设置项] 标题
-    title: {
-      type: String,
-      required: false,
-      default: ''
-    },
     // [图表设置项] 高度
     height: {
       type: Number,
       required: false,
       default: 300
-    },
-    // [图表设置项] padding
-    padding: {
-      type: Array,
-      required: false,
-      default: () => [50, 50, 50, 50]
     },
     // [图表设置项] 开启自动填充父元素高度
     autoHeight: {
@@ -55,7 +43,9 @@ export default {
       // 数据处理模块
       dataSet,
       // 图表实例
-      chart: null
+      chart: null,
+      // [图表设置项] padding
+      padding: [40, 40, 40, 40]
     }
   },
   mounted () {
