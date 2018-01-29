@@ -213,7 +213,7 @@ export const menu = {
     },
     // markdown 解析库
     {
-      title: 'MD解析',
+      title: 'markdown解析',
       icon: 'font',
       children: [
         {
