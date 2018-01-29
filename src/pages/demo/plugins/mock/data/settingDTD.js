@@ -59,27 +59,31 @@ export default [
         qq: '1711467488',
         tel: '123-4567-8910',
         city: 'beijing',
-        phone: 'Apple',
         mail: '1711467488liyang@gmail.com',
         github: 'https://github.com/FairyEver',
-        blog: 'http://www.fairyever.com/'
+        blog: 'http://www.fairyever.com/',
+        creatDate: '2018-1-1',
+        updateDate: '2018-1-2',
+        delFlag: 0
       }
     }
   },
   {
-    title: '随机选择3-6个属性',
+    title: '随机选择4-8个属性',
     json: {
-      "obj|3-6": {
+      "obj|4-8": {
         name: 'FairyEver',
         use: 'vue.js',
         sex: 1,
         qq: '1711467488',
         tel: '123-4567-8910',
         city: 'beijing',
-        phone: 'Apple',
         mail: '1711467488liyang@gmail.com',
         github: 'https://github.com/FairyEver',
-        blog: 'http://www.fairyever.com/'
+        blog: 'http://www.fairyever.com/',
+        creatDate: '2018-1-1',
+        updateDate: '2018-1-2',
+        delFlag: 0
       }
     }
   },

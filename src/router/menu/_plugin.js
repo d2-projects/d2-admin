@@ -11,47 +11,40 @@ export const menu = {
   //   name: 'demo-plugins-marked-readme'
   // },
   children: [
-    // markdown 解析库
+    // mock
     {
-      title: 'MD解析',
-      icon: 'font',
+      title: '模拟数据',
+      icon: 'globe',
       children: [
         {
-          title: '基本示例',
+          title: '数据模板',
           icon: 'file-o',
-          path: 'marked/demo',
-          name: 'demo-plugins-marked-demo',
+          path: 'mock/demoDTD',
+          name: 'demo-plugins-mock-demoDTD',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/plugins/marked/demo.vue'], resolve) }
+          component: resolve => { require(['@/pages/demo/plugins/mock/demoDTD.vue'], resolve) }
         },
         {
-          title: '代码高亮',
+          title: '数据占位符',
           icon: 'file-o',
-          path: 'marked/demoHighlight',
-          name: 'demo-plugins-marked-demoHighlight',
+          path: 'mock/demoDPD',
+          name: 'demo-plugins-mock-demoDPD',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/plugins/marked/demoHighlight.vue'], resolve) }
-        }
-      ]
-    },
-    // MD编辑器
-    {
-      title: 'MD编辑器',
-      icon: 'columns',
-      children: [
+          component: resolve => { require(['@/pages/demo/plugins/mock/demoDPD.vue'], resolve) }
+        },
         {
-          title: '基本示例',
+          title: '拦截Ajax请求',
           icon: 'file-o',
-          path: 'simpleMDE/demo',
-          name: 'demo-plugins-simpleMDE-demo',
+          path: 'mock/ajax',
+          name: 'demo-plugins-mock-ajax',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/plugins/simpleMDE/demo.vue'], resolve) }
+          component: resolve => { require(['@/pages/demo/plugins/mock/ajax.vue'], resolve) }
         }
       ]
     },
@@ -69,6 +62,23 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/quill/demo.vue'], resolve) }
+        }
+      ]
+    },
+    // MD编辑器
+    {
+      title: 'markdown编辑器',
+      icon: 'columns',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'simpleMDE/demo',
+          name: 'demo-plugins-simpleMDE-demo',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/simpleMDE/demo.vue'], resolve) }
         }
       ]
     },
@@ -113,40 +123,6 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/vue-grid-layout/demo.vue'], resolve) }
-        }
-      ]
-    },
-    // 时间计算
-    {
-      title: '时间计算',
-      icon: 'clock-o',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'timeago/demo',
-          name: 'demo-plugins-timeago-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/timeago/demo.vue'], resolve) }
-        }
-      ]
-    },
-    // papaParse
-    {
-      title: '表格解析',
-      icon: 'eye',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'papaParse/demo',
-          name: 'demo-plugins-papaParse-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/papaParse/demo.vue'], resolve) }
         }
       ]
     },
@@ -218,43 +194,6 @@ export const menu = {
         }
       ]
     },
-    // mock
-    {
-      title: '模拟数据',
-      icon: 'globe',
-      children: [
-        {
-          title: '数据模板',
-          icon: 'file-o',
-          path: 'mock/demoDTD',
-          name: 'demo-plugins-mock-demoDTD',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/mock/demoDTD.vue'], resolve) }
-        },
-        {
-          title: '数据占位符',
-          icon: 'file-o',
-          path: 'mock/demoDPD',
-          name: 'demo-plugins-mock-demoDPD',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/mock/demoDPD.vue'], resolve) }
-        },
-        {
-          title: '拦截Ajax请求',
-          icon: 'file-o',
-          path: 'mock/ajax',
-          name: 'demo-plugins-mock-ajax',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/mock/ajax.vue'], resolve) }
-        }
-      ]
-    },
     // 可调布局组件
     {
       title: '可调布局',
@@ -269,6 +208,67 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/vue-splitpane/demo.vue'], resolve) }
+        }
+      ]
+    },
+    // markdown 解析库
+    {
+      title: 'MD解析',
+      icon: 'font',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'marked/demo',
+          name: 'demo-plugins-marked-demo',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/marked/demo.vue'], resolve) }
+        },
+        {
+          title: '代码高亮',
+          icon: 'file-o',
+          path: 'marked/demoHighlight',
+          name: 'demo-plugins-marked-demoHighlight',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/marked/demoHighlight.vue'], resolve) }
+        }
+      ]
+    },
+    // 时间计算
+    {
+      title: '时间计算',
+      icon: 'clock-o',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'timeago/demo',
+          name: 'demo-plugins-timeago-demo',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/timeago/demo.vue'], resolve) }
+        }
+      ]
+    },
+    // papaParse
+    {
+      title: '表格解析',
+      icon: 'eye',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'papaParse/demo',
+          name: 'demo-plugins-papaParse-demo',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/papaParse/demo.vue'], resolve) }
         }
       ]
     }
