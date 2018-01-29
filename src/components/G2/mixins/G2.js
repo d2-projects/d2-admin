@@ -33,7 +33,7 @@ export default {
     padding: {
       type: Array,
       required: false,
-      default: () => [40, 40, 50, 60]
+      default: () => [50, 50, 50, 50]
     },
     // [图表设置项] 开启自动填充父元素高度
     autoHeight: {

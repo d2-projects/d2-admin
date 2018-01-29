@@ -10,13 +10,14 @@
           </G2Line1>
         </el-card>
       </GridItem>
-      <GridItem v-bind="layout.layout[1]" @resize="resizeHandler('G2Line2')" @resized="resizedHandler('G2Line2')">
+      <GridItem v-bind="layout.layout[1]" @resize="resizeHandler('G2Pie1')" @resized="resizedHandler('G2Pie1')">
         <el-card>
-          <G2Line1
+          <!-- <G2Line1
             ref="G2Line2"
             :data="G2Line1"
             title="近年趋势2">
-          </G2Line1>
+          </G2Line1> -->
+          <G2Pie1 ref="G2Pie1"></G2Pie1>
         </el-card>
       </GridItem>
     </GridLayout>
