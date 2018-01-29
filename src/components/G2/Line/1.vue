@@ -3,17 +3,11 @@
 </template>
 
 <script>
-import G2Mixin from './G2'
+import G2Mixin from '../mixins/G2'
 export default {
   mixins: [
     G2Mixin
   ],
-  data () {
-    return {
-      // 在组件 mounted 后立即初始化图表
-      mountedInit: false
-    }
-  },
   methods: {
     // 初始化图表
     initHandler () {
@@ -37,6 +31,16 @@ export default {
         lineWidth: 1
       })
       this.chart.render()
+    },
+    // 数据源改变 重新渲染新的数据
+    changeData () {
+      if (this.chart) {
+        // 已经初始化过图表 更新数据
+        this.chart.changeData(this.data)
+      } else {
+        // 没有图表 新创建一个实例
+        this.initHandler()
+      }
     }
   }
 }

@@ -2,7 +2,22 @@
   <Container type="ghost" :responsive="true" class="demo-chart-index">
     <GridLayout v-bind="layout">
       <GridItem v-bind="layout.layout[0]" @resize="resizeHandler('G2Line1')" @resized="resizedHandler('G2Line1')">
-        <el-card><G2Line1 ref="G2Line1" :data="G2Line1"></G2Line1></el-card>
+        <el-card>
+          <G2Line1
+            ref="G2Line1"
+            :data="G2Line1"
+            title="近年趋势">
+          </G2Line1>
+        </el-card>
+      </GridItem>
+      <GridItem v-bind="layout.layout[1]" @resize="resizeHandler('G2Line2')" @resized="resizedHandler('G2Line2')">
+        <el-card>
+          <G2Line1
+            ref="G2Line2"
+            :data="G2Line1"
+            title="近年趋势2">
+          </G2Line1>
+        </el-card>
       </GridItem>
     </GridLayout>
   </Container>

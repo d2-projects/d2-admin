@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@antv/data-set": "^0.8.5",
     "@antv/g2": "^3.0.4",
     "axios": "^0.17.1",
     "clipboard-polyfill": "^2.4.1",
