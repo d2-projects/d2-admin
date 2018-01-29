@@ -2,8 +2,11 @@ export default {
   data () {
     return {
       // 数据
-      G2Line1: [],
-      G2Pie1: []
+      chartData: {
+        G2Line1: [],
+        G2Pie1: [],
+        G2Column1: []
+      }
     }
   },
   mounted () {
@@ -15,12 +18,16 @@ export default {
     syncData () {
       const api = [
         {url: '/api/chart/G2Line', data: {code: 1}},
-        {url: '/api/chart/G2Pie', data: {code: 1}}
+        {url: '/api/chart/G2Pie', data: {code: 1}},
+        {url: '/api/chart/G2Column', data: {code: 1}}
       ]
       this.$axios.all(api.map(e => this.$axios.post(e.url, e.data)))
-        .then(this.$axios.spread((G2Line1, G2Pie1) => {
-          this.G2Line1 = G2Line1
-          this.G2Pie1 = G2Pie1
+        .then(this.$axios.spread((G2Line1, G2Pie1, G2Column1) => {
+          this.chartData = {
+            G2Line1,
+            G2Pie1,
+            G2Column1
+          }
         }))
     }
   }
