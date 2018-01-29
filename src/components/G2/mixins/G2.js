@@ -15,7 +15,7 @@ export default {
     autoInit: {
       type: Boolean,
       required: false,
-      default: false
+      default: true
     },
     // [图表设置项] 标题
     title: {
@@ -40,6 +40,12 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    // [图表设置项] 自动宽度
+    forceFit: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   data () {
@@ -49,9 +55,7 @@ export default {
       // 数据处理模块
       dataSet,
       // 图表实例
-      chart: null,
-      // [图表设置项] 自动宽度
-      forceFit: true
+      chart: null
     }
   },
   mounted () {
@@ -69,37 +73,10 @@ export default {
     }
   },
   methods: {
-    // 创建图表
-    creatChart () {
-      this.chart = new this.G2.Chart({
-        container: this.$refs.chart,
-        forceFit: this.forceFit,
-        height: this.G2.DomUtil.getHeight(this.$refs.chart),
-        padding: this.padding
-      })
-    },
-    // 设置图表的标题
-    setChartTitle () {
-      if (!this.title) {
-        return
-      }
-      this.chart.guide().text({
-        top: true,
-        position: ['min', 'max'],
-        content: this.title,
-        style: {
-          fill: '#666', // 文本颜色
-          fontSize: '16', // 文本大小
-          fontWeight: 'bold' // 文本粗细
-        },
-        offsetX: 0,
-        offsetY: 0
-      })
-    },
     // 重绘大小
-    resize () {
+    resize (width, height) {
       if (this.chart) {
-        this.chart.changeSize(this.G2.DomUtil.getWidth(this.$refs.chart), this.G2.DomUtil.getHeight(this.$refs.chart))
+        this.chart.changeSize(width || this.G2.DomUtil.getWidth(this.$refs.chart), height || this.G2.DomUtil.getHeight(this.$refs.chart))
       }
     }
   }

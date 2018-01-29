@@ -11,8 +11,24 @@ export default {
   methods: {
     // 初始化图表
     initHandler () {
-      this.creatChart()
-      this.setChartTitle()
+      this.chart = new this.G2.Chart({
+        container: this.$refs.chart,
+        forceFit: this.forceFit,
+        height: this.G2.DomUtil.getHeight(this.$refs.chart),
+        padding: this.padding
+      })
+      this.chart.guide().text({
+        top: true,
+        position: ['min', 'max'],
+        content: this.title,
+        style: {
+          fill: '#666', // 文本颜色
+          fontSize: '16', // 文本大小
+          fontWeight: 'bold' // 文本粗细
+        },
+        offsetX: 0,
+        offsetY: 0
+      })
       this.chart.source(this.data)
       this.chart.scale('value', {
         min: 0
