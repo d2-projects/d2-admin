@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import G2Mixin from '../mixins/G2'
+import G2Mixin from '@/components/G2/mixins/G2.js'
 export default {
   mixins: [
     G2Mixin
