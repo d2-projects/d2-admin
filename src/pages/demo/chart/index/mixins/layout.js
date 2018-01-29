@@ -4,10 +4,7 @@ export default {
       layout: {
         layout: [
           {'x': 0, 'y': 0, 'w': 8, 'h': 9, 'i': '0'},
-          {'x': 8, 'y': 9, 'w': 4, 'h': 7, 'i': '1'},
-          {'x': 0, 'y': 9, 'w': 4, 'h': 7, 'i': '2'},
-          {'x': 8, 'y': 0, 'w': 4, 'h': 9, 'i': '3'},
-          {'x': 4, 'y': 9, 'w': 4, 'h': 7, 'i': '4'}
+          {'x': 8, 'y': 0, 'w': 4, 'h': 9, 'i': '1'}
         ],
         colNum: 12,
         rowHeight: 30,
@@ -21,6 +18,13 @@ export default {
     }
   },
   methods: {
+    layoutUpdatedHandler (newLayout) {
+      console.group('layoutUpdatedHandler')
+      newLayout.forEach(e => {
+        console.log(`{'x': ${e.x}, 'y': ${e.y}, 'w': ${e.w}, 'h': ${e.h}, 'i': '${e.i}'},`)
+      })
+      console.groupEnd()
+    },
     // 改变尺寸
     resizeHandler (name) {
       this.$nextTick(() => {

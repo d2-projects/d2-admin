@@ -1,5 +1,5 @@
 import G2 from '@antv/g2'
-import * as dataSet from '@antv/data-set'
+import * as DataSet from '@antv/data-set'
 // 关闭 G2 的体验改进计划打点请求
 G2.track(false)
 
@@ -10,12 +10,6 @@ export default {
       type: Array,
       required: false,
       default: () => []
-    },
-    // 在组件 mounted 后立即初始化图表
-    autoInit: {
-      type: Boolean,
-      required: false,
-      default: true
     },
     // [图表设置项] 高度
     height: {
@@ -41,9 +35,11 @@ export default {
       // 在页面中不需要再引入 直接使用 this.G2
       G2,
       // 数据处理模块
-      dataSet,
+      DataSet,
       // 图表实例
       chart: null,
+      // 在组件 mounted 后立即初始化图表
+      autoInit: true,
       // [图表设置项] padding
       padding: [40, 40, 40, 40]
     }
