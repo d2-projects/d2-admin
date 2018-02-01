@@ -11,7 +11,7 @@
           <el-button @click="download">下载演示CSV</el-button>
         </div>
         <el-upload :before-upload="handleUpload" action="default">
-          <el-button type="success">选择本地CSV文件</el-button>
+          <el-button type="success">选择 CSV 文件</el-button>
         </el-upload>
       </el-col>
       <el-col :span="20">
