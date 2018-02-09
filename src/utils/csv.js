@@ -30,11 +30,12 @@ export default function csv(columns, datas, options, noHeader = false) {
 
     if (columns) {
         columnOrder = columns.map(v => {
+            console.log(v)
             if (typeof v === 'string') return v;
             if (!noHeader) {
-                column.push(typeof v.title !== 'undefined' ? v.title : v.key);
+                column.push(typeof v.label !== 'undefined' ? v.label : v.prop);
             }
-            return v.key;
+            return v.prop;
         });
         if (column.length > 0) appendLine(content, column, options);
     } else {
