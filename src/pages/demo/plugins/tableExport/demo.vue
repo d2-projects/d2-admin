@@ -44,7 +44,11 @@ export default {
   },
   methods: {
     exportCsv (params = {}) {
-      const noHeader = false
+      const paramsDefault = {
+        noHeader: false
+      }
+      const _params = Object.assign({}, params, paramsDefault)
+      const noHeader = _params.noHeader
       const data = Csv(this.table.columns, this.table.data, params, noHeader)
       ExportCsv.download('table.csv', data)
     }
