@@ -275,7 +275,7 @@ export const menu = {
     // export
     {
       title: '表格导出',
-      icon: 'eye',
+      icon: 'download',
       children: [
         {
           title: '基本示例',
