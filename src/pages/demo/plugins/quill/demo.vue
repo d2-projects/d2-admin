@@ -16,18 +16,18 @@
 </template>
 
 <script>
-import formator from '@/assets/library/tool/format.js'
+import htmlFormat from '@/utils/htmlFormat.js'
 import value from './value'
 export default {
   data () {
     return {
-      formator,
+      htmlFormat,
       value
     }
   },
   computed: {
     formated () {
-      return formator(this.value)
+      return htmlFormat(this.value)
     }
   },
   methods: {
