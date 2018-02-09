@@ -34,11 +34,11 @@ export default {
     ajax () {
       this.$axios.get('/api/demo/001')
       .then(res => {
-        this.table.columns = Object.keys(res.data.list[0]).map(e => ({
+        this.table.columns = Object.keys(res.list[0]).map(e => ({
           label: e,
           prop: e
         }))
-        this.table.data = res.data.list
+        this.table.data = res.list
       })
     }
   }
