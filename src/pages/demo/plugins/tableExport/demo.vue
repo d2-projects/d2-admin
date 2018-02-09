@@ -4,12 +4,12 @@
       slot="header"
       title="基本示例">
     </PageHeader>
-    <!-- <div>
+    <div>
       <el-button @click="exportCsv">
         <Icon name="download"></Icon>
         exportCsv
       </el-button>
-    </div> -->
+    </div>
     <el-table v-bind="table" style="width: 100%" class="dd-mb">
       <el-table-column
         v-for="(item, index) in table.columns"
@@ -38,9 +38,6 @@ export default {
         border: true
       }
     }
-  },
-  mounted () {
-    this.exportCsv()
   },
   methods: {
     exportCsv (params = {}) {
