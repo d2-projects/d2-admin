@@ -271,6 +271,23 @@ export const menu = {
           component: resolve => { require(['@/pages/demo/plugins/papaParse/demo.vue'], resolve) }
         }
       ]
+    },
+    // export
+    {
+      title: '表格导出',
+      icon: 'eye',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'tableExport/demo',
+          name: 'demo-plugins-tableExport-demo',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/tableExport/demo.vue'], resolve) }
+        }
+      ]
     }
   ]
 }
