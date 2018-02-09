@@ -33,7 +33,7 @@
 
 <script>
 import Vue from 'vue'
-import clone from '@/assets/library/tool/clone.js'
+import clone from '@/utils/clone.js'
 import Mock from 'mockjs'
 import settingDTD from './data/settingDTD'
 import MockDemoCard from './components/MockDemoCard'
