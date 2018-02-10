@@ -14,7 +14,7 @@ export const menu = {
     // 图标
     {
       title: '图标',
-      icon: 'flask',
+      icon: 'font-awesome',
       children: [
         {
           title: '演示',
