@@ -7,7 +7,7 @@
     <div class="dd-mb">
       <el-button @click="exportCsv">
         <Icon name="download"></Icon>
-        exportCsv
+        导出CSV
       </el-button>
     </div>
     <el-table v-bind="table" style="width: 100%" class="dd-mb">
