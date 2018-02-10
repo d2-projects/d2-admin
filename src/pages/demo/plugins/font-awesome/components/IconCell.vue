@@ -44,7 +44,7 @@ export default {
       return `fa fa-${this.icon}`
     },
     iconHtml () {
-      return `<i class="fa fa-${this.icon}"></i>`
+      return `<i class="fa fa-${this.icon}" aria-hidden="true"></i>`
     }
   },
   methods: {
