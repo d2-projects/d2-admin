@@ -41,6 +41,7 @@ export default {
   },
   methods: {
     exportCsv (params = {}) {
+      this.$export.csv()
       // 默认值
       const paramsDefault = {
         noHeader: false
