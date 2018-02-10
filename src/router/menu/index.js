@@ -1,17 +1,20 @@
-import * as plugin from './_plugin'
 import * as business from './_business'
 import * as chart from './_chart'
+import * as plugin from './_plugin'
+import * as components from './_components'
 
 // 菜单
 export const menu = [
-  plugin.menu,
   business.menu,
-  chart.menu
+  chart.menu,
+  plugin.menu,
+  components.menu
 ]
 
 // 路由
 export const router = [
-  plugin.router,
   business.router,
-  chart.router
+  chart.router,
+  plugin.router,
+  components.router
 ]
