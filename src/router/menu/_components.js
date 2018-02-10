@@ -17,14 +17,24 @@ export const menu = {
       icon: 'font-awesome',
       children: [
         {
-          title: '演示',
+          title: '图标组件',
           icon: 'file-o',
-          path: 'data/icon',
-          name: 'demo-components-icon',
+          path: 'data/icon/icon',
+          name: 'demo-components-icon-icon',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/components/icon/index.vue'], resolve) }
+          component: resolve => { require(['@/pages/demo/components/icon/icon.vue'], resolve) }
+        },
+        {
+          title: '图标选择器',
+          icon: 'file-o',
+          path: 'data/icon/select',
+          name: 'demo-components-icon-select',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/icon/select.vue'], resolve) }
         }
       ]
     }
