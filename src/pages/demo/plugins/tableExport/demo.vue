@@ -41,12 +41,15 @@ export default {
   },
   methods: {
     exportCsv (params = {}) {
+      // 默认值
       const paramsDefault = {
         noHeader: false
       }
+      // 合并参数
       const _params = Object.assign({}, params, paramsDefault)
-      const noHeader = _params.noHeader
-      const data = Csv(this.table.columns, this.table.data, params, noHeader)
+      // 生成数据
+      const data = Csv(this.table.columns, this.table.data, params, _params.noHeader)
+      // 下载数据
       ExportCsv.download('table.csv', data)
     }
   }
