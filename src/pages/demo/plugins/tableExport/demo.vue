@@ -24,9 +24,6 @@
 <script>
 // 假数据
 import table from './data'
-// 库
-import Csv from '@/utils/csv.js'
-import ExportCsv from '@/utils/export-csv.js'
 export default {
   data () {
     return {
@@ -42,16 +39,6 @@ export default {
   methods: {
     exportCsv (params = {}) {
       this.$export.csv()
-      // 默认值
-      const paramsDefault = {
-        noHeader: false
-      }
-      // 合并参数
-      const _params = Object.assign({}, params, paramsDefault)
-      // 生成数据
-      const data = Csv(this.table.columns, this.table.data, params, _params.noHeader)
-      // 下载数据
-      ExportCsv.download('table.csv', data)
     }
   }
 }
