@@ -21,7 +21,7 @@ export default {
           // 下载数据
           ExportCsv.download('table.csv', data)
           // 完成
-          resolve()
+          resolve(data)
         })
       }
     }
