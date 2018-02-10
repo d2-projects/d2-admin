@@ -29,12 +29,15 @@ import '@/mock/index.js'
 // vuex
 import store from '@/store/index.js'
 
-// log简化
+// 插件 log简化
 import pluginLog from '@/plugin/log'
+// 插件 导出文件
+import pluginExport from '@/plugin/export'
 
 Vue.use(ElementUI)
 
 Vue.use(pluginLog)
+Vue.use(pluginExport)
 
 Vue.config.productionTip = false
 
