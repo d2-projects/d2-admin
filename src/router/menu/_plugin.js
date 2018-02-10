@@ -1,6 +1,6 @@
 // [插件] 菜单
 export const menu = {
-  title: '功能',
+  title: '插件',
   path: '/demo/plugins',
   name: 'demo-plugins',
   meta: {
@@ -96,16 +96,6 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/font-awesome/list.vue'], resolve) }
-        },
-        {
-          title: '图标选择器',
-          icon: 'file-o',
-          path: 'font-awesome/select',
-          name: 'demo-font-awesome-select',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/font-awesome/select.vue'], resolve) }
         }
       ]
     },
