@@ -101,7 +101,7 @@ export const menu = {
     },
     // 拖拽网格布局组件
     {
-      title: '网格布局',
+      title: '可拖拽网格布局',
       icon: 'object-ungroup',
       children: [
         {
@@ -113,6 +113,40 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/vue-grid-layout/demo.vue'], resolve) }
+        }
+      ]
+    },
+    // papaParse
+    {
+      title: '表格解析',
+      icon: 'eye',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'papaParse/demo',
+          name: 'demo-plugins-papaParse-demo',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/papaParse/demo.vue'], resolve) }
+        }
+      ]
+    },
+    // export
+    {
+      title: '表格导出',
+      icon: 'download',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'tableExport/demo',
+          name: 'demo-plugins-tableExport-demo',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/tableExport/demo.vue'], resolve) }
         }
       ]
     },
@@ -242,40 +276,6 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/timeago/demo.vue'], resolve) }
-        }
-      ]
-    },
-    // papaParse
-    {
-      title: '表格解析',
-      icon: 'eye',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'papaParse/demo',
-          name: 'demo-plugins-papaParse-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/papaParse/demo.vue'], resolve) }
-        }
-      ]
-    },
-    // export
-    {
-      title: '表格导出',
-      icon: 'download',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'tableExport/demo',
-          name: 'demo-plugins-tableExport-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/tableExport/demo.vue'], resolve) }
         }
       ]
     }
