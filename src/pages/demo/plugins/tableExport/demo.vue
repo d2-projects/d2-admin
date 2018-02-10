@@ -18,6 +18,7 @@
         :label="item.label">
       </el-table-column>
     </el-table>
+    <Markdown url="/static/markdownFiles/article/插件 - 导出数据.md"></Markdown>
   </Container>
 </template>
 
