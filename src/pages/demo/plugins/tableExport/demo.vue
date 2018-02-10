@@ -38,7 +38,10 @@ export default {
   },
   methods: {
     exportCsv (params = {}) {
-      this.$export.csv()
+      this.$export.csv({
+        columns: this.table.columns,
+        data: this.table.data
+      })
     }
   }
 }
