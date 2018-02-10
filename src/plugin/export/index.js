@@ -13,7 +13,8 @@ export default {
           noHeader: false
         }
         // 合并参数
-        const _params = Object.assign({}, params, paramsDefault)
+        const _params = Object.assign({}, paramsDefault, params)
+        console.log(_params)
         // 生成数据
         const data = Csv(_params.columns, _params.data, params, _params.noHeader)
         // 下载数据
