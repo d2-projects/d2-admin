@@ -1,7 +1,7 @@
 import Mock from 'mockjs'
 
 const mockData = Mock.mock({
-  'data|4-10': [{
+  'data|3-6': [{
     'id|+1': 1,
     'name': '@CNAME',
     'delFlag|1': [0, 1],
