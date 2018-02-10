@@ -4,7 +4,7 @@
       slot="header"
       title="基本示例">
     </PageHeader>
-    <div>
+    <div class="dd-mb">
       <el-button @click="exportCsv">
         <Icon name="download"></Icon>
         exportCsv
