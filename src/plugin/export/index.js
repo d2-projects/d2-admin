@@ -27,12 +27,19 @@ export default {
         })
       },
       // 导出 Excel
-      excel () {
-        const tHeader = ['Id', 'Title', 'Author', 'Readings', 'Date']
-        const data = [
-          ['1', 'name']
-        ]
-        Excel.export_json_to_excel(tHeader, data, 'demo')
+      excel (params) {
+        // 默认值
+        const paramsDefault = {
+          columns: [],
+          data: []
+        }
+        // 合并参数
+        const _params = Object.assign({}, paramsDefault, params)
+        // 从参数中派生数据
+        const header = _params.columns.map(e => e.label)
+        const data = _params.data.map(row => _params.columns.map(col => row[col.prop]))
+        // 导出 Excel
+        Excel.export_json_to_excel(header, data, 'demo')
       }
     }
   }
