@@ -62,15 +62,15 @@ const csv = {
             oWin.document.charset = 'utf-8';
             oWin.document.write(text);
             oWin.document.close();
-            oWin.document.execCommand('SaveAs', filename);
+            oWin.document.execCommand('SaveAs', filename + '.csv');
             oWin.close();
         } else if (has('ie') === 10 || this._isIE11() || this._isEdge()) {
             const BOM = '\uFEFF';
             const csvData = new Blob([BOM + text], { type: 'text/csv' });
-            navigator.msSaveBlob(csvData, filename);
+            navigator.msSaveBlob(csvData, filename + '.csv');
         } else {
             const link = document.createElement('a');
-            link.download = filename;
+            link.download = filename + '.csv';
             link.href = this._getDownloadUrl(text);
             document.body.appendChild(link);
             link.click();
