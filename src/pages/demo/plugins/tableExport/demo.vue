@@ -49,7 +49,10 @@ export default {
       })
     },
     exportExcel () {
-      this.$export.excel()
+      this.$export.excel({
+        columns: this.table.columns,
+        data: this.table.data
+      })
     }
   }
 }
