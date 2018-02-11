@@ -26,18 +26,25 @@ export default {
       },
       // 导出 Excel
       excel (params) {
-        // 默认值
-        const paramsDefault = {
-          columns: [],
-          data: []
-        }
-        // 合并参数
-        const _params = Object.assign({}, paramsDefault, params)
-        // 从参数中派生数据
-        const header = _params.columns.map(e => e.label)
-        const data = _params.data.map(row => _params.columns.map(col => row[col.prop]))
-        // 导出 Excel
-        Excel.export_json_to_excel(header, data, 'demo')
+        return new Promise((resolve, reject) => {
+          // 默认值
+          const paramsDefault = {
+            columns: [],
+            data: []
+          }
+          // 合并参数
+          const _params = Object.assign({}, paramsDefault, params)
+          // 从参数中派生数据
+          const header = _params.columns.map(e => e.label)
+          const data = _params.data.map(row => _params.columns.map(col => row[col.prop]))
+          // 导出 Excel
+          Excel.export_json_to_excel(header, data, 'demo')
+          // 完成
+          resolve({
+            header,
+            data
+          })
+        })
       }
     }
   }
