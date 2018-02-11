@@ -2,7 +2,6 @@
 import Csv from './_csv'
 import ExportCsv from './_export-csv'
 import * as Excel from './_export2Excel'
-
 export default {
   install (Vue, options) {
     Vue.prototype.$export = {
@@ -17,7 +16,6 @@ export default {
           }
           // 合并参数
           const _params = Object.assign({}, paramsDefault, params)
-          console.log(_params)
           // 生成数据
           const data = Csv(_params.columns, _params.data, params, _params.noHeader)
           // 下载数据
