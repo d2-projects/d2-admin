@@ -4,7 +4,6 @@ const mockData = Mock.mock({
   'data|3-6': [{
     'id|+1': 1,
     'name': '@CNAME',
-    'delFlag|1': [0, 1],
     'creatDate': '@DATE',
     'address': '@CITY',
     'zip': '@ZIP'
@@ -13,8 +12,26 @@ const mockData = Mock.mock({
 
 export default {
   data: mockData.data,
-  columns: Object.keys(mockData.data[0]).map(e => ({
-    label: e,
-    prop: e
-  }))
+  columns: [
+    {
+      label: 'ID',
+      prop: 'id'
+    },
+    {
+      label: '名称',
+      prop: 'name'
+    },
+    {
+      label: '创建日期',
+      prop: 'creatDate'
+    },
+    {
+      label: '地址',
+      prop: 'address'
+    },
+    {
+      label: '邮编',
+      prop: 'zip'
+    }
+  ]
 }
