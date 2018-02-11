@@ -30,7 +30,6 @@ export default function csv(columns, datas, options, noHeader = false) {
 
     if (columns) {
         columnOrder = columns.map(v => {
-            console.log(v)
             if (typeof v === 'string') return v;
             if (!noHeader) {
                 column.push(typeof v.label !== 'undefined' ? v.label : v.prop);
