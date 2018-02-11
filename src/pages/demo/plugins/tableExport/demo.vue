@@ -9,6 +9,10 @@
         <Icon name="download"></Icon>
         导出CSV
       </el-button>
+      <el-button @click="exportExcel">
+        <Icon name="download"></Icon>
+        导出Excel
+      </el-button>
     </div>
     <el-table v-bind="table" style="width: 100%" class="dd-mb">
       <el-table-column
@@ -43,6 +47,9 @@ export default {
         columns: this.table.columns,
         data: this.table.data
       })
+    },
+    exportExcel () {
+      this.$export.excel()
     }
   }
 }
