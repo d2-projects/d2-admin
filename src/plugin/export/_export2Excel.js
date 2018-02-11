@@ -150,6 +150,6 @@ export function export_json_to_excel(th, jsonData, defaultTitle) {
     wb.Sheets[ws_name] = ws;
 
     var wbout = XLSX.write(wb, {bookType: 'xlsx', bookSST: false, type: 'binary'});
-    var title = defaultTitle || 'excel-list'
+    var title = defaultTitle || 'table'
     FileSaver.saveAs(new Blob([s2ab(wbout)], {type: "application/octet-stream"}), title + ".xlsx")
 }

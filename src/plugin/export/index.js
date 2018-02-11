@@ -12,6 +12,7 @@ export default {
           const paramsDefault = {
             columns: [],
             data: [],
+            title: 'table',
             noHeader: false
           }
           // 合并参数
@@ -19,7 +20,7 @@ export default {
           // 生成数据
           const data = Csv(_params.columns, _params.data, params, _params.noHeader)
           // 下载数据
-          ExportCsv.download('table.csv', data)
+          ExportCsv.download(_params.title, data)
           // 完成
           resolve(data)
         })
@@ -30,7 +31,8 @@ export default {
           // 默认值
           const paramsDefault = {
             columns: [],
-            data: []
+            data: [],
+            title: 'table'
           }
           // 合并参数
           const _params = Object.assign({}, paramsDefault, params)
@@ -38,7 +40,7 @@ export default {
           const header = _params.columns.map(e => e.label)
           const data = _params.data.map(row => _params.columns.map(col => row[col.prop]))
           // 导出 Excel
-          Excel.export_json_to_excel(header, data, 'demo')
+          Excel.export_json_to_excel(header, data, _params.title)
           // 完成
           resolve({
             header,
