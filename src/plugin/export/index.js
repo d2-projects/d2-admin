@@ -22,7 +22,7 @@ export default {
           // 下载数据
           ExportCsv.download(_params.title, data)
           // 完成
-          resolve(data)
+          resolve()
         })
       },
       // 导出 Excel
@@ -42,10 +42,7 @@ export default {
           // 导出 Excel
           Excel.export_json_to_excel(header, data, _params.title)
           // 完成
-          resolve({
-            header,
-            data
-          })
+          resolve()
         })
       }
     }

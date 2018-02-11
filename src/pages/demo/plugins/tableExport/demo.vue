@@ -47,8 +47,8 @@ export default {
         columns: this.table.columns,
         data: this.table.data
       })
-        .then(data => {
-          this.$log('exportCsv', data)
+        .then(() => {
+          this.$message('导出CSV成功')
         })
     },
     exportExcel () {
@@ -56,8 +56,8 @@ export default {
         columns: this.table.columns,
         data: this.table.data
       })
-        .then(data => {
-          this.$log('exportExcel', data)
+        .then(() => {
+          this.$message('导出表格成功')
         })
     }
   }
