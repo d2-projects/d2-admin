@@ -2,6 +2,7 @@
 import Csv from './_csv'
 import ExportCsv from './_export-csv'
 import * as Excel from './_export2Excel'
+
 export default {
   install (Vue, options) {
     Vue.prototype.$export = {
@@ -28,7 +29,9 @@ export default {
       // 导出 Excel
       excel () {
         const tHeader = ['Id', 'Title', 'Author', 'Readings', 'Date']
-        const data = []
+        const data = [
+          ['1', 'name']
+        ]
         Excel.export_json_to_excel(tHeader, data, 'demo')
       }
     }
