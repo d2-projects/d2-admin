@@ -1,10 +1,11 @@
 // 库
 import Csv from './_csv'
 import ExportCsv from './_export-csv'
+import * as excel from './_export2Excel'
 export default {
   install (Vue, options) {
-    // 导出
     Vue.prototype.$export = {
+      // 导出 CSV
       csv (params) {
         return new Promise((resolve, reject) => {
           // 默认值
@@ -23,6 +24,12 @@ export default {
           // 完成
           resolve(data)
         })
+      },
+      // 导出 Excel
+      excel () {
+        const tHeader = ['Id', 'Title', 'Author', 'Readings', 'Date']
+        const data = []
+        excel.export_json_to_excel(tHeader, data, 'demo')
       }
     }
   }
