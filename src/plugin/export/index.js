@@ -1,6 +1,6 @@
 // 库
-import Csv from '@/utils/csv.js'
-import ExportCsv from '@/utils/export-csv.js'
+import Csv from './_csv'
+import ExportCsv from './_export-csv'
 export default {
   install (Vue, options) {
     // 导出
