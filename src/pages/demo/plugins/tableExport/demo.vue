@@ -47,12 +47,18 @@ export default {
         columns: this.table.columns,
         data: this.table.data
       })
+        .then(data => {
+          this.$log('exportCsv', data)
+        })
     },
     exportExcel () {
       this.$export.excel({
         columns: this.table.columns,
         data: this.table.data
       })
+        .then(data => {
+          this.$log('exportExcel', data)
+        })
     }
   }
 }
