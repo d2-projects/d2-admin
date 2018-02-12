@@ -18,26 +18,17 @@ function generateArray(table) {
             var rowspan = cell.getAttribute('rowspan');
             var cellValue = cell.innerText;
             if (cellValue !== "" && cellValue == +cellValue) cellValue = +cellValue;
-
-            //Skip ranges
             ranges.forEach(function (range) {
                 if (R >= range.s.r && R <= range.e.r && outRow.length >= range.s.c && outRow.length <= range.e.c) {
                     for (var i = 0; i <= range.e.c - range.s.c; ++i) outRow.push(null);
                 }
             });
-
-            //Handle Row Span
             if (rowspan || colspan) {
                 rowspan = rowspan || 1;
                 colspan = colspan || 1;
                 ranges.push({s: {r: R, c: outRow.length}, e: {r: R + rowspan - 1, c: outRow.length + colspan - 1}});
-            }
-            ;
-
-            //Handle Value
+            };
             outRow.push(cellValue !== "" ? cellValue : null);
-
-            //Handle Colspan
             if (colspan) for (var k = 0; k < colspan - 1; ++k) outRow.push(null);
         }
         out.push(outRow);
@@ -95,49 +86,46 @@ function s2ab(s) {
 
 export function export_table_to_excel(id) {
     var theTable = document.getElementById(id);
-    console.log('a')
     var oo = generateArray(theTable);
     var ranges = oo[1];
-
-    /* original data */
     var data = oo[0];
     var ws_name = "SheetJS";
-    console.log(data);
-
     var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
-
-    /* add ranges to worksheet */
-    // ws['!cols'] = ['apple', 'banan'];
     ws['!merges'] = ranges;
-
-    /* add worksheet to workbook */
     wb.SheetNames.push(ws_name);
     wb.Sheets[ws_name] = ws;
-
     var wbout = XLSX.write(wb, {bookType: 'xlsx', bookSST: false, type: 'binary'});
-
     FileSaver.saveAs(new Blob([s2ab(wbout)], {type: "application/octet-stream"}), "test.xlsx")
 }
 
-function formatJson(jsonData) {
-    console.log(jsonData)
-}
 export function export_json_to_excel(th, jsonData, defaultTitle) {
-
-    /* original data */
-
     var data = jsonData;
     data.unshift(th);
     var ws_name = "SheetJS";
 
     var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
-
-
-    /* add worksheet to workbook */
+    const colWidth = data.map(row => row.map(val => {
+      if (val == null) {
+        return {'wch': 10};
+      }
+      else if (val.toString().charCodeAt(0) > 255) {
+        return {'wch': val.toString().length * 2};
+      } else {
+        return {'wch': val.toString().length};
+      }
+    }))
+    let result = colWidth[0];
+    for (let i = 1; i < colWidth.length; i++) {
+      for (let j = 0; j < colWidth[i].length; j++) {
+        if (result[j]['wch'] < colWidth[i][j]['wch']) {
+          result[j]['wch'] = colWidth[i][j]['wch'];
+        }
+      }
+    }
+    ws['!cols'] = result;
     wb.SheetNames.push(ws_name);
     wb.Sheets[ws_name] = ws;
-
     var wbout = XLSX.write(wb, {bookType: 'xlsx', bookSST: false, type: 'binary'});
-    var title = defaultTitle || '列表'
+    var title = defaultTitle || 'table'
     FileSaver.saveAs(new Blob([s2ab(wbout)], {type: "application/octet-stream"}), title + ".xlsx")
 }
