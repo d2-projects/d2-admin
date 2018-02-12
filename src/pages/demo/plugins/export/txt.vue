@@ -30,6 +30,9 @@ export default {
         text: this.text,
         title: '文本'
       })
+        .then(() => {
+          this.$message('导出文本成功')
+        })
     }
   }
 }
