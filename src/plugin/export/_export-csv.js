@@ -1,8 +1,9 @@
+/* eslint-disable */
+
 /*
+  此代码来源于iview表格组件的CSV导出部分
   https://github.com/iview/iview
 */
-
-/* eslint-disable */
 
 function has (browser) {
     const ua = navigator.userAgent;
