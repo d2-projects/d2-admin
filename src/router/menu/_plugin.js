@@ -147,6 +147,16 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/export/table.vue'], resolve) }
+        },
+        {
+          title: '导出文本',
+          icon: 'file-o',
+          path: 'export/txt',
+          name: 'demo-plugins-export-txt',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/export/txt.vue'], resolve) }
         }
       ]
     },

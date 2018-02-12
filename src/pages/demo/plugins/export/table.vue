@@ -2,7 +2,7 @@
   <Container>
     <PageHeader
       slot="header"
-      title="基本示例">
+      title="导出表格">
     </PageHeader>
     <div class="dd-mb">
       <el-button @click="exportCsv">
@@ -22,7 +22,7 @@
         :label="item.label">
       </el-table-column>
     </el-table>
-    <Markdown url="/static/markdownFiles/article/插件 - 导出数据.md"></Markdown>
+    <Markdown url="/static/markdownFiles/article/插件 - 导出.md"></Markdown>
   </Container>
 </template>
 
