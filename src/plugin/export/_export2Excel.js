@@ -1,6 +1,6 @@
 /* eslint-disable */
-import FileSaver from 'file-saver'
 import './_blob'
+import FileSaver from 'file-saver'
 import XLSX from 'xlsx'
 
 function generateArray(table) {
