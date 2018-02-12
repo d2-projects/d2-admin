@@ -11,7 +11,10 @@
       v-model="text">
     </el-input>
     <div class="dd-mt dd-mb">
-      <el-button @click="exportTxt">保存为 txt</el-button>
+      <el-button type="primary" @click="exportTxt">
+        <Icon name="download"></Icon>
+        保存为 txt
+      </el-button>
     </div>
     <Markdown url="/static/markdownFiles/article/插件 - 导出.md"></Markdown>
   </Container>
