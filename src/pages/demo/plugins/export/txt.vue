@@ -6,7 +6,7 @@
     </PageHeader>
     <el-input
       type="textarea"
-      :autosize="{ minRows: 2, maxRows: 4}"
+      :autosize="{minRows: 2, maxRows: 4}"
       placeholder="请输入内容"
       v-model="text">
     </el-input>
@@ -26,7 +26,10 @@ export default {
   },
   methods: {
     exportTxt () {
-      console.log('1')
+      this.$export.txt({
+        text: this.text,
+        title: '文本'
+      })
     }
   }
 }

@@ -57,7 +57,7 @@ export default {
           const _params = Object.assign({}, paramsDefault, params)
           console.log(typeof _params.text)
           // 导出
-          const blob = new Blob(['Hello, world!'], {type: 'text/plain;charset=utf-8'})
+          const blob = new Blob([_params.text], {type: 'text/plain;charset=utf-8'})
           FileSaver.saveAs(blob, _params.title + '.txt')
           // 完成
           resolve()
