@@ -1,6 +1,7 @@
 // 库
 import Csv from './_csv'
 import ExportCsv from './_export-csv'
+import FileSaver from 'file-saver'
 import * as Excel from './_export2Excel'
 export default {
   install (Vue, options) {
@@ -41,6 +42,14 @@ export default {
           const data = _params.data.map(row => _params.columns.map(col => row[col.prop]))
           // 导出 Excel
           Excel.export_json_to_excel(header, data, _params.title)
+          // 完成
+          resolve()
+        })
+      },
+      txt (params) {
+        return new Promise((resolve, reject) => {
+          const blob = new Blob(['Hello, world!'], {type: 'text/plain;charset=utf-8'})
+          FileSaver.saveAs(blob, 'hello world.txt')
           // 完成
           resolve()
         })
