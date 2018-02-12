@@ -139,14 +139,14 @@ export const menu = {
       icon: 'download',
       children: [
         {
-          title: '基本示例',
+          title: '导出表格',
           icon: 'file-o',
-          path: 'export/demo',
-          name: 'demo-plugins-export-demo',
+          path: 'export/table',
+          name: 'demo-plugins-export-table',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/plugins/export/demo.vue'], resolve) }
+          component: resolve => { require(['@/pages/demo/plugins/export/table.vue'], resolve) }
         }
       ]
     },

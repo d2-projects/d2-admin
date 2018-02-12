@@ -48,8 +48,17 @@ export default {
       },
       txt (params) {
         return new Promise((resolve, reject) => {
+          // 默认值
+          const paramsDefault = {
+            text: '',
+            title: 'text'
+          }
+          // 合并参数
+          const _params = Object.assign({}, paramsDefault, params)
+          console.log(typeof _params.text)
+          // 导出
           const blob = new Blob(['Hello, world!'], {type: 'text/plain;charset=utf-8'})
-          FileSaver.saveAs(blob, 'hello world.txt')
+          FileSaver.saveAs(blob, _params.title + '.txt')
           // 完成
           resolve()
         })
