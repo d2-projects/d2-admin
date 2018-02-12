@@ -135,18 +135,18 @@ export const menu = {
     },
     // export
     {
-      title: '表格导出',
+      title: '导出',
       icon: 'download',
       children: [
         {
           title: '基本示例',
           icon: 'file-o',
-          path: 'tableExport/demo',
-          name: 'demo-plugins-tableExport-demo',
+          path: 'export/demo',
+          name: 'demo-plugins-export-demo',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/plugins/tableExport/demo.vue'], resolve) }
+          component: resolve => { require(['@/pages/demo/plugins/export/demo.vue'], resolve) }
         }
       ]
     },
