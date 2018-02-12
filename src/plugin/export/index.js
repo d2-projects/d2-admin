@@ -51,7 +51,7 @@ export default {
           // 默认值
           const paramsDefault = {
             text: '',
-            title: 'text'
+            title: '文本'
           }
           // 合并参数
           const _params = Object.assign({}, paramsDefault, params)
