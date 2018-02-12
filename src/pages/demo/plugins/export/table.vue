@@ -5,11 +5,11 @@
       title="导出表格">
     </PageHeader>
     <div class="dd-mb">
-      <el-button @click="exportCsv">
+      <el-button type="primary" @click="exportCsv">
         <Icon name="download"></Icon>
         导出CSV
       </el-button>
-      <el-button @click="exportExcel">
+      <el-button type="primary" @click="exportExcel">
         <Icon name="download"></Icon>
         导出Excel
       </el-button>
