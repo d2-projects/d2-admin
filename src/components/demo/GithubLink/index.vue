@@ -1,7 +1,9 @@
+<i18n src="./lang.json"></i18n>
+
 <template>
   <el-tooltip :content="url" :placement="tooltipPlacement">
     <a :href="url" target="_blank" class="link">
-      View in Github
+      {{$t('label')}}
       <i class="fa fa-github"></i>
     </a>
   </el-tooltip>
