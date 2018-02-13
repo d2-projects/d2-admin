@@ -4,10 +4,10 @@ import VueI18n from 'vue-i18n'
 Vue.use(VueI18n)
 
 export default new VueI18n({
-  locale: 'CN',
+  locale: 'cn',
   messages: {
-    'CN': require('./lang/cn/'),
-    'JA': require('./lang/ja/'),
-    'EN': require('./lang/en/')
+    'cn': require('./lang/cn/').default,
+    'ja': require('./lang/ja/').default,
+    'en': require('./lang/en/').default
   }
 })
