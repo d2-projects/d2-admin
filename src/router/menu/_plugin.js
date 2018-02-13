@@ -54,14 +54,14 @@ export const menu = {
       icon: 'book',
       children: [
         {
-          title: '基本示例',
+          title: '示例 1',
           icon: 'file-o',
-          path: 'vue-i18n/demo',
-          name: 'demo-plugins-vue-i18n-demo',
+          path: 'vue-i18n/demo-1',
+          name: 'demo-plugins-vue-i18n-demo-1',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/plugins/vue-i18n/demo.vue'], resolve) }
+          component: resolve => { require(['@/pages/demo/plugins/vue-i18n/demo-1.vue'], resolve) }
         }
       ]
     },
