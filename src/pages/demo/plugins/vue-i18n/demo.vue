@@ -1,12 +1,12 @@
 <template>
   <Container>
     <div>
-      <el-radio-group v-model="lang">
+      <el-radio-group v-model="lang" @change="handleChange">
         <el-radio-button label="CN">中文</el-radio-button>
-        <el-radio-button label="EN">英语</el-radio-button>
+        <el-radio-button label="EN">English</el-radio-button>
       </el-radio-group>
     </div>
-    {{$t('message.hello')}}
+    <p>{{$t('message.hello')}}</p>
   </Container>
 </template>
 
@@ -14,7 +14,12 @@
 export default {
   data () {
     return {
-      lang: ''
+      lang: 'CN'
+    }
+  },
+  methods: {
+    handleChange (val) {
+      this.$i18n.locale = val
     }
   }
 }
