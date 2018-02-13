@@ -7,11 +7,11 @@
     <div class="dd-mb">
       <el-button type="primary" @click="exportCsv">
         <Icon name="download"></Icon>
-        导出CSV
+        导出 CSV
       </el-button>
       <el-button type="primary" @click="exportExcel">
         <Icon name="download"></Icon>
-        导出Excel
+        导出 Excel
       </el-button>
     </div>
     <el-table v-bind="table" style="width: 100%" class="dd-mb">
