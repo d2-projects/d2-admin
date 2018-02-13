@@ -7,6 +7,7 @@ export default new VueI18n({
   locale: 'CN',
   messages: {
     'CN': require('./lang/cn'),
+    'JA': require('./lang/ja'),
     'EN': require('./lang/en')
   }
 })
