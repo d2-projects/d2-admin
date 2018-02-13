@@ -5,7 +5,7 @@
       title="示例2"
       url="http://kazupon.github.io/vue-i18n/en/">
     </PageHeader>
-    <div>
+    <div class="dd-mb">
       <el-radio-group v-model="lang" @change="handleChange">
         <el-radio-button label="CN">中文</el-radio-button>
         <el-radio-button label="EN">English</el-radio-button>
