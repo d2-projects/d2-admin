@@ -51,7 +51,7 @@ export const menu = {
     // 多国语
     {
       title: '多国语',
-      icon: 'edit',
+      icon: 'book',
       children: [
         {
           title: '基本示例',
