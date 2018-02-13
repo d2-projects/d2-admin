@@ -1,4 +1,3 @@
 export const message = {
-  language: 'language',
-  hello: 'hello world'
+  hello: 'Hello World'
 }
