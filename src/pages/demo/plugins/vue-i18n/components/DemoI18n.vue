@@ -1,17 +1,25 @@
-<i18n>
-{
-  "cn": {
-    "hello": "你好!"
-  },
-  "en": {
-    "hello": "hello world!"
-  },
-  "ja": {
-    "hello": "こんにちは、世界！"
-  }
-}
-</i18n>
+<i18n src="./lang.json"></i18n>
 
 <template>
-  <el-button>{{$t('hello')}}</el-button>
+  <div>
+    <el-tag>{{$t('hello')}}</el-tag>
+    <p>{{$t('vue')}}</p>
+    <p>{{$t('check.title')}}</p>
+    <el-checkbox-group v-model="check">
+      <el-checkbox label="a">{{$t('check.label.Beijing')}}</el-checkbox>
+      <el-checkbox label="b">{{$t('check.label.Tokyo')}}</el-checkbox>
+      <el-checkbox label="c">{{$t('check.label.NewYork')}}</el-checkbox>
+    </el-checkbox-group>
+  </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      check: ['a', 'b']
+    }
+  }
+}
+</script>
+

@@ -15,6 +15,9 @@ export default {
       lang: 'cn'
     }
   },
+  created () {
+    this.lang = this.$i18n.locale
+  },
   methods: {
     handleChange (val) {
       this.$i18n.locale = val
