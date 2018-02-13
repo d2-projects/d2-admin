@@ -37,6 +37,7 @@
     "xlsx": "^0.12.0"
   },
   "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.2.1",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
