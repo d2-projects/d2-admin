@@ -1,4 +1,4 @@
-export const lang = {
+export default {
   pub: {
     pageHeader: {
       demo: 'Demo'

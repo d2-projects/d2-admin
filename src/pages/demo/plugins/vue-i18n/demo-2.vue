@@ -2,7 +2,7 @@
   <Container>
     <PageHeader
       slot="header"
-      :title="`${$t('lang.pub.pageHeader.demo')} 2`"
+      :title="`${$t('pub.pageHeader.demo')} 2`"
       url="http://kazupon.github.io/vue-i18n/en/">
     </PageHeader>
     <DemoI18nControl></DemoI18nControl>

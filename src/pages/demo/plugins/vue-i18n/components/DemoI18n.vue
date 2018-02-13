@@ -1,3 +1,3 @@
 <template>
-  <el-button>{{$t('lang.hello')}}</el-button>
+  <el-button>Hello</el-button>
 </template>
