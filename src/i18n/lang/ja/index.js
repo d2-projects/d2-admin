@@ -1,6 +1,6 @@
 import pub from './_pub'
 
-export const message = {
+export const lang = {
   pub,
   hello: 'こんにちは、世界'
 }
