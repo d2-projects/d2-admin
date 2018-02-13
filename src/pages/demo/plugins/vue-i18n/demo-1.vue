@@ -1,5 +1,10 @@
 <template>
   <Container>
+    <PageHeader
+      slot="header"
+      title="示例1"
+      url="http://kazupon.github.io/vue-i18n/en/">
+    </PageHeader>
     <div>
       <el-radio-group v-model="lang" @change="handleChange">
         <el-radio-button label="CN">中文</el-radio-button>
