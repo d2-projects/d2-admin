@@ -48,6 +48,23 @@ export const menu = {
         }
       ]
     },
+    // 多国语
+    {
+      title: '多国语',
+      icon: 'edit',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'vue-i18n/demo',
+          name: 'demo-plugins-vue-i18n-demo',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/vue-i18n/demo.vue'], resolve) }
+        }
+      ]
+    },
     // 富文本编辑器
     {
       title: '富文本编辑器',
