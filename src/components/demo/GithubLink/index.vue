@@ -11,9 +11,13 @@
 export default {
   props: {
     url: {
+      type: String,
+      required: false,
       default: 'https://github.com/FairyEver'
     },
     tooltipPlacement: {
+      type: String,
+      required: false,
       default: 'top-end'
     }
   }

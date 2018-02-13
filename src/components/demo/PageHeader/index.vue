@@ -1,7 +1,9 @@
 <template>
   <div class="dd-clearfix">
     <span v-if="title" class="dd-fl">{{title}}</span>
-    <span v-if="url" class="dd-fr"><GithubLink :url="url"></GithubLink></span>
+    <span class="dd-fr">
+      <GithubLink v-if="url" :url="url"></GithubLink>
+    </span>
   </div>
 </template>
 
