@@ -2,7 +2,7 @@
   <Container>
     <PageHeader
       slot="header"
-      title="示例 2"
+      :title="`${$t('message.pub.pageHeader.demo')} 2`"
       url="http://kazupon.github.io/vue-i18n/en/">
     </PageHeader>
     <DemoI18nControl></DemoI18nControl>
