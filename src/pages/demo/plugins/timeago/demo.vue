@@ -9,7 +9,7 @@
     <el-card class="dd-mb">
       <div class="dd-text-center">
         <h1 style="font-size: 30px;">您在{{openPageDateAgo}}打开的此页面</h1>
-        <p style="font-size: 10px;">请稍等一下 会自动刷新</p>
+        <p style="font-size: 10px;">请稍等一下 10秒后会开始自动刷新</p>
       </div>
     </el-card>
     <el-card class="dd-mb">
