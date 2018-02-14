@@ -19,7 +19,7 @@ export const menu = {
         {
           title: '图标组件',
           icon: 'file-o',
-          path: 'data/icon/icon',
+          path: 'icon/icon',
           name: 'demo-components-icon-icon',
           meta: {
             requiresAuth: true
@@ -29,12 +29,29 @@ export const menu = {
         {
           title: '图标选择器',
           icon: 'file-o',
-          path: 'data/icon/select',
+          path: 'icon/select',
           name: 'demo-components-icon-select',
           meta: {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/components/icon/select.vue'], resolve) }
+        }
+      ]
+    },
+    // 数字动画
+    {
+      title: '数字动画',
+      icon: 'magic',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'countup/demo',
+          name: 'demo-components-countup-demo',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/countup/demo.vue'], resolve) }
         }
       ]
     }
