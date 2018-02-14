@@ -72,6 +72,16 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/vue-i18n/demo-2.vue'], resolve) }
+        },
+        {
+          title: '文档',
+          icon: 'file-o',
+          path: 'vue-i18n/doc',
+          name: 'demo-plugins-vue-i18n-doc',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/vue-i18n/doc.vue'], resolve) }
         }
       ]
     },
