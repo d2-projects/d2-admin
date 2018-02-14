@@ -85,6 +85,50 @@ export const menu = {
         }
       ]
     },
+    // 导入
+    {
+      title: '导入',
+      icon: 'upload',
+      children: [
+        {
+          title: 'CSV',
+          icon: 'file-o',
+          path: 'import/csv',
+          name: 'demo-plugins-import-csv',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/import/csv.vue'], resolve) }
+        }
+      ]
+    },
+    // export
+    {
+      title: '导出',
+      icon: 'download',
+      children: [
+        {
+          title: '导出表格',
+          icon: 'file-o',
+          path: 'export/table',
+          name: 'demo-plugins-export-table',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/export/table.vue'], resolve) }
+        },
+        {
+          title: '导出文本',
+          icon: 'file-o',
+          path: 'export/txt',
+          name: 'demo-plugins-export-txt',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/export/txt.vue'], resolve) }
+        }
+      ]
+    },
     // 富文本编辑器
     {
       title: '富文本编辑器',
@@ -150,50 +194,6 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/vue-grid-layout/demo.vue'], resolve) }
-        }
-      ]
-    },
-    // papaParse
-    {
-      title: '表格解析',
-      icon: 'eye',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'papaParse/demo',
-          name: 'demo-plugins-papaParse-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/papaParse/demo.vue'], resolve) }
-        }
-      ]
-    },
-    // export
-    {
-      title: '导出',
-      icon: 'download',
-      children: [
-        {
-          title: '导出表格',
-          icon: 'file-o',
-          path: 'export/table',
-          name: 'demo-plugins-export-table',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/export/table.vue'], resolve) }
-        },
-        {
-          title: '导出文本',
-          icon: 'file-o',
-          path: 'export/txt',
-          name: 'demo-plugins-export-txt',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/export/txt.vue'], resolve) }
         }
       ]
     },
