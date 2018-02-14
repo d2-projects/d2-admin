@@ -74,7 +74,7 @@ export const menu = {
           component: resolve => { require(['@/pages/demo/plugins/vue-i18n/demo-2.vue'], resolve) }
         },
         {
-          title: '文档',
+          title: '使用方法',
           icon: 'file-o',
           path: 'vue-i18n/doc',
           name: 'demo-plugins-vue-i18n-doc',
