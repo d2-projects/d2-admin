@@ -5,26 +5,18 @@
       title="基本示例"
       url="https://github.com/mholt/PapaParse">
     </PageHeader>
-    <el-row :gutter="10">
-      <el-col :span="4">
-        <div class="dd-mb">
-          <el-button @click="download">下载演示CSV</el-button>
-        </div>
-        <el-upload :before-upload="handleUpload" action="default">
-          <el-button type="success">选择 CSV 文件</el-button>
-        </el-upload>
-      </el-col>
-      <el-col :span="20">
-        <el-table v-bind="table" style="width: 100%">
-          <el-table-column
-            v-for="(item, index) in table.columns"
-            :key="index"
-            :prop="item.prop"
-            :label="item.label">
-          </el-table-column>
-        </el-table>
-      </el-col>
-    </el-row>
+    <div class="dd-mb">
+      <el-button @click="download">下载演示CSV</el-button>
+      <el-button type="success">选择要导入的 CSV 文件</el-button>
+    </div>
+    <el-table v-bind="table" style="width: 100%">
+      <el-table-column
+        v-for="(item, index) in table.columns"
+        :key="index"
+        :prop="item.prop"
+        :label="item.label">
+      </el-table-column>
+    </el-table>
   </Container>
 </template>
 
