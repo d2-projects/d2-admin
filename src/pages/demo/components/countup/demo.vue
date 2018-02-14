@@ -27,7 +27,7 @@
         <el-card>
           <p slot="title">小数位数</p>
           <div class="group">
-            <CountUp :end="100.00" :decimals="2"></CountUp>  
+            <CountUp :end="100" :decimals="2"></CountUp>
           </div>
         </el-card>
       </el-col>
