@@ -2,6 +2,7 @@
 
 <template>
   <div>
+    <p>{{$t('subtitle')}}</p>
     <el-tag>{{$t('hello')}}</el-tag>
     <p>{{$t('vue')}}</p>
     <p>{{$t('check.title')}}</p>
