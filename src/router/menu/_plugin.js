@@ -197,23 +197,6 @@ export const menu = {
         }
       ]
     },
-    // countup
-    {
-      title: '数字动画',
-      icon: 'magic',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'countup/demo',
-          name: 'demo-plugins-countup-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/countup/demo.vue'], resolve) }
-        }
-      ]
-    },
     // clipboard-polyfill
     {
       title: '剪贴板',
