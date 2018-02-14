@@ -2,7 +2,7 @@
   <Container>
     <PageHeader
       slot="header"
-      title="基本示例"
+      title="导入 CSV"
       url="https://github.com/mholt/PapaParse">
     </PageHeader>
     <div class="dd-mb">
