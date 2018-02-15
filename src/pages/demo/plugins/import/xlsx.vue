@@ -5,17 +5,17 @@
       title="导入 xlsx"
       url="https://github.com/SheetJS/js-xlsx">
     </PageHeader>
-    <!-- <div class="dd-mb">
+    <div class="dd-mb">
       <el-button @click="download">
         <Icon name="download"></Icon>
-        下载演示CSV
+        下载演示 .xlsx 表格
       </el-button>
-    </div> -->
+    </div>
     <div class="dd-mb">
       <el-upload :before-upload="handleUpload" action="default">
         <el-button type="success">
           <Icon name="file-o"></Icon>
-          选择要导入的 xlsx 文件
+          选择要导入的 .xlsx 表格
         </el-button>
       </el-upload>
     </div>
@@ -27,7 +27,7 @@
         :label="item.label">
       </el-table-column>
     </el-table>
-    <Markdown url="/static/markdownFiles/article/插件 - 导入 - csv.md"></Markdown>
+    <!-- <Markdown url="/static/markdownFiles/article/插件 - 导入 - csv.md"></Markdown> -->
   </Container>
 </template>
 
@@ -74,10 +74,10 @@ export default {
         const headers = []
         const range = XLSX.utils.decode_range(sheet['!ref'])
         let C
-        const R = range.s.r /* start in the first row */
-        for (C = range.s.c; C <= range.e.c; ++C) { /* walk every column in the range */
-          var cell = sheet[XLSX.utils.encode_cell({ c: C, r: R })] /* find the cell in the first row */
-          var hdr = 'UNKNOWN ' + C // <-- replace with your desired default
+        const R = range.s.r
+        for (C = range.s.c; C <= range.e.c; ++C) {
+          var cell = sheet[XLSX.utils.encode_cell({ c: C, r: R })]
+          var hdr = 'UNKNOWN ' + C
           if (cell && cell.t) hdr = XLSX.utils.format_cell(cell)
           headers.push(hdr)
         }
@@ -94,6 +94,9 @@ export default {
         this.generateDate({ header, results })
       }
       reader.readAsArrayBuffer(file)
+    },
+    download () {
+      window.location.href = 'http://fairyever.qiniudn.com/d2-admin-import-xlsx-demo.xlsx'
     }
   }
 }
