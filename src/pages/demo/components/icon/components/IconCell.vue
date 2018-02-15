@@ -10,14 +10,19 @@
         <i :class="'fa fa-' + icon"></i>
       </div>
       <el-row :gutter="10">
-        <el-col :span="12">
+        <el-col :span="8">
           <el-tooltip effect="dark" :content="iconClass" placement="top">
-            <el-button @click="copy(iconClass)" style="width: 100%;">复制Class</el-button>
+            <el-button @click="copy(iconClass)" style="width: 100%;">Class</el-button>
           </el-tooltip>
         </el-col>
-        <el-col :span="12">
+        <el-col :span="8">
           <el-tooltip effect="dark" :content="iconHtml" placement="top">
-            <el-button @click="copy(iconHtml)" style="width: 100%;">复制HTML</el-button>
+            <el-button @click="copy(iconHtml)" style="width: 100%;">HTML</el-button>
+          </el-tooltip>
+        </el-col>
+        <el-col :span="8">
+          <el-tooltip effect="dark" :content="iconComponent" placement="top">
+            <el-button @click="copy(iconComponent)" style="width: 100%;">组件</el-button>
           </el-tooltip>
         </el-col>
       </el-row>
@@ -47,6 +52,9 @@ export default {
     },
     iconHtml () {
       return `<i class="fa fa-${this.icon}" aria-hidden="true"></i>`
+    },
+    iconComponent () {
+      return `<Icon name="${this.icon}"></Icon>`
     }
   },
   methods: {
