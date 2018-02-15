@@ -9,6 +9,7 @@
         @editor-change="editorChangeHandler">
       </QuillEditor>
     </el-card>
+    <p>输出</p>
     <el-card>
       <Highlight :code="formated"></Highlight>
     </el-card>
