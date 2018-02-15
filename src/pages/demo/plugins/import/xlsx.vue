@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     handleUpload (file) {
-      this.$import.excel(file)
+      this.$import.xlsx(file)
         .then(({header, results}) => {
           this.table.columns = header.map(e => {
             return {

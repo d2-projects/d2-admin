@@ -19,8 +19,8 @@ export default {
           })
         })
       },
-      // 导入 excel
-      excel (file) {
+      // 导入 xlsx
+      xlsx (file) {
         return new Promise((resolve, reject) => {
           const reader = new FileReader()
           const fixdata = data => {
