@@ -21,6 +21,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    highlight: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   data () {
@@ -55,7 +60,7 @@ export default {
     },
     marked (data) {
       return marked(data, {
-        highlight: (code) => highlight.highlightAuto(code).value
+        ...this.highlight ? {highlight: (code) => highlight.highlightAuto(code).value} : {}
       })
     }
   }
