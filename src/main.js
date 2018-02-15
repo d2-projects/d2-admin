@@ -33,11 +33,14 @@ import store from '@/store/index.js'
 // 插件 log简化
 import pluginLog from '@/plugin/log'
 // 插件 导出文件
+import pluginImport from '@/plugin/import'
+// 插件 导出文件
 import pluginExport from '@/plugin/export'
 
 Vue.use(ElementUI)
 
 Vue.use(pluginLog)
+Vue.use(pluginImport)
 Vue.use(pluginExport)
 
 Vue.config.productionTip = false
