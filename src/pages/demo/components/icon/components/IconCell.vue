@@ -22,10 +22,12 @@
         </el-col>
       </el-row>
     </el-popover>
-    <el-tag type="info" v-popover:pop>
-      <i :class="'fa fa-' + icon"></i>
-    </el-tag>
-    <span style="font-size: 10px;">{{icon}}</span>
+    <span v-popover:pop>
+      <el-tag type="info">
+        <i :class="'fa fa-' + icon"></i>
+      </el-tag>
+      <span style="font-size: 10px;">{{icon}}</span>
+    </span>
   </div>
 </template>
 
