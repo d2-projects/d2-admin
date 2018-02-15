@@ -1,7 +1,9 @@
 /* eslint-disable */
+
 // 库
 import papa from 'papaparse'
 import xlsx from 'xlsx'
+
 export default {
   install (Vue, options) {
     Vue.prototype.$import = {
