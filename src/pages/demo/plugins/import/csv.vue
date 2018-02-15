@@ -6,10 +6,20 @@
       url="https://github.com/mholt/PapaParse">
     </PageHeader>
     <div class="dd-mb">
-      <el-button @click="download">下载演示CSV</el-button>
-      <el-button type="success">选择要导入的 CSV 文件</el-button>
+      <el-button @click="download">
+        <Icon name="download"></Icon>
+        下载演示CSV
+      </el-button>
     </div>
-    <el-table v-bind="table" style="width: 100%">
+    <div class="dd-mb">
+      <el-upload :before-upload="handleUpload" action="default">
+        <el-button type="success">
+          <Icon name="file-o"></Icon>
+          选择要导入的 CSV 文件
+        </el-button>
+      </el-upload>
+    </div>
+    <el-table v-bind="table" class="dd-mb">
       <el-table-column
         v-for="(item, index) in table.columns"
         :key="index"
@@ -17,6 +27,7 @@
         :label="item.label">
       </el-table-column>
     </el-table>
+    <Markdown url="/static/markdownFiles/article/插件 - 导入 - csv.md"></Markdown>
   </Container>
 </template>
 
