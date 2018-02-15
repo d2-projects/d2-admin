@@ -47,7 +47,7 @@ export default {
     }
   },
   methods: {
-    generateDate({ header, results }) {
+    generateDate ({header, results}) {
       this.table.columns = header.map(e => {
         return {
           label: e,
@@ -57,48 +57,43 @@ export default {
       this.table.data = results
     },
     handleUpload(file) {
-      // document.getElementById('excel-upload-input').click()
-      this.handkeFileChange(file)
+      this.readerData(file)
       return false
     },
-    handkeFileChange(file) {
-      const itemFile = file
-      this.readerData(itemFile)
-    },
-    readerData(itemFile) {
+    readerData(file) {
       const reader = new FileReader()
+      const fixdata = data => {
+        let o = ''
+        let l = 0
+        const w = 10240
+        for (; l < data.byteLength / w; ++l) o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w, l * w + w)))
+        o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w)))
+        return o
+      }
+      const get_header_row = sheet => {
+        const headers = []
+        const range = XLSX.utils.decode_range(sheet['!ref'])
+        let C
+        const R = range.s.r /* start in the first row */
+        for (C = range.s.c; C <= range.e.c; ++C) { /* walk every column in the range */
+          var cell = sheet[XLSX.utils.encode_cell({ c: C, r: R })] /* find the cell in the first row */
+          var hdr = 'UNKNOWN ' + C // <-- replace with your desired default
+          if (cell && cell.t) hdr = XLSX.utils.format_cell(cell)
+          headers.push(hdr)
+        }
+        return headers
+      }
       reader.onload = e => {
         const data = e.target.result
-        const fixedData = this.fixdata(data)
+        const fixedData = fixdata(data)
         const workbook = XLSX.read(btoa(fixedData), { type: 'base64' })
         const firstSheetName = workbook.SheetNames[0]
         const worksheet = workbook.Sheets[firstSheetName]
-        const header = this.get_header_row(worksheet)
+        const header = get_header_row(worksheet)
         const results = XLSX.utils.sheet_to_json(worksheet)
         this.generateDate({ header, results })
       }
-      reader.readAsArrayBuffer(itemFile)
-    },
-    fixdata(data) {
-      let o = ''
-      let l = 0
-      const w = 10240
-      for (; l < data.byteLength / w; ++l) o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w, l * w + w)))
-      o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w)))
-      return o
-    },
-    get_header_row(sheet) {
-      const headers = []
-      const range = XLSX.utils.decode_range(sheet['!ref'])
-      let C
-      const R = range.s.r /* start in the first row */
-      for (C = range.s.c; C <= range.e.c; ++C) { /* walk every column in the range */
-        var cell = sheet[XLSX.utils.encode_cell({ c: C, r: R })] /* find the cell in the first row */
-        var hdr = 'UNKNOWN ' + C // <-- replace with your desired default
-        if (cell && cell.t) hdr = XLSX.utils.format_cell(cell)
-        headers.push(hdr)
-      }
-      return headers
+      reader.readAsArrayBuffer(file)
     }
   }
 }
