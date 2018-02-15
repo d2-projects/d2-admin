@@ -6,7 +6,7 @@ import * as Excel from './_export2Excel'
 export default {
   install (Vue, options) {
     Vue.prototype.$export = {
-      // 导出 CSV
+      // 导出 csv
       csv (params) {
         return new Promise((resolve, reject) => {
           // 默认值
@@ -26,7 +26,7 @@ export default {
           resolve()
         })
       },
-      // 导出 Excel
+      // 导出 excel
       excel (params) {
         return new Promise((resolve, reject) => {
           // 默认值
@@ -40,12 +40,13 @@ export default {
           // 从参数中派生数据
           const header = _params.columns.map(e => e.label)
           const data = _params.data.map(row => _params.columns.map(col => row[col.prop]))
-          // 导出 Excel
+          // 导出
           Excel.export_json_to_excel(header, data, _params.title)
           // 完成
           resolve()
         })
       },
+      // 导出 文本文档
       txt (params) {
         return new Promise((resolve, reject) => {
           // 默认值

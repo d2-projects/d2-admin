@@ -3,6 +3,7 @@ import papa from 'papaparse'
 export default {
   install (Vue, options) {
     Vue.prototype.$import = {
+      // 导入 csv
       csv (file) {
         return new Promise((resolve, reject) => {
           papa.parse(file, {
