@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import papa from 'papaparse'
 export default {
   data () {
     return {
@@ -47,17 +46,14 @@ export default {
   },
   methods: {
     handleUpload (file) {
-      papa.parse(file, {
-        header: true,
-        skipEmptyLines: true,
-        complete: (results, file) => {
-          this.table.columns = Object.keys(results.data[0]).map(e => ({
+      this.$import.csv(file)
+        .then(res => {
+          this.table.columns = Object.keys(res.data[0]).map(e => ({
             label: e,
             prop: e
           }))
-          this.table.data = results.data
-        }
-      })
+          this.table.data = res.data
+        })
       return false
     },
     download () {
