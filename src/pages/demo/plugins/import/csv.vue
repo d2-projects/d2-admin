@@ -61,7 +61,7 @@ export default {
       return false
     },
     download () {
-      window.location.href = 'http://fairyever.qiniudn.com/d2admin-vue-demo.csv'
+      window.location.href = 'http://fairyever.qiniudn.com/d2-admin-import-csv-demo.csv'
     }
   }
 }
