@@ -173,23 +173,6 @@ export const menu = {
         }
       ]
     },
-    // font-awesome
-    {
-      title: '图标库',
-      icon: 'heart',
-      children: [
-        {
-          title: '索引',
-          icon: 'file-o',
-          path: 'font-awesome/list',
-          name: 'demo-font-awesome-list',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/font-awesome/list.vue'], resolve) }
-        }
-      ]
-    },
     // 拖拽网格布局组件
     {
       title: '可拖拽网格布局',
