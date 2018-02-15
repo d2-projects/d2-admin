@@ -2,20 +2,20 @@
   <Container>
     <PageHeader
       slot="header"
-      title="导入 CSV"
+      title="导入 csv"
       url="https://github.com/mholt/PapaParse">
     </PageHeader>
     <div class="dd-mb">
       <el-button @click="download">
         <Icon name="download"></Icon>
-        下载演示CSV
+        下载演示 .csv 表格
       </el-button>
     </div>
     <div class="dd-mb">
       <el-upload :before-upload="handleUpload" action="default">
         <el-button type="success">
           <Icon name="file-o"></Icon>
-          选择要导入的 CSV 文件
+          选择要导入的 .csv 表格
         </el-button>
       </el-upload>
     </div>
