@@ -91,7 +91,7 @@ export const menu = {
       icon: 'upload',
       children: [
         {
-          title: 'CSV',
+          title: 'csv',
           icon: 'file-o',
           path: 'import/csv',
           name: 'demo-plugins-import-csv',
@@ -99,6 +99,16 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/import/csv.vue'], resolve) }
+        },
+        {
+          title: 'xlsx',
+          icon: 'file-o',
+          path: 'import/xlsx',
+          name: 'demo-plugins-import-xlsx',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/import/xlsx.vue'], resolve) }
         }
       ]
     },
