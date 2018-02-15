@@ -3,7 +3,7 @@
     <PageHeader
       slot="header"
       title="导入 xlsx"
-      url="https://github.com/mholt/PapaParse">
+      url="https://github.com/SheetJS/js-xlsx">
     </PageHeader>
     <!-- <div class="dd-mb">
       <el-button @click="download">
@@ -15,7 +15,7 @@
       <el-upload :before-upload="handleUpload" action="default">
         <el-button type="success">
           <Icon name="file-o"></Icon>
-          选择要导入的 CSV 文件
+          选择要导入的 xlsx 文件
         </el-button>
       </el-upload>
     </div>
