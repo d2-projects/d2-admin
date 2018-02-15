@@ -17,6 +17,16 @@ export const menu = {
       icon: 'font-awesome',
       children: [
         {
+          title: '索引',
+          icon: 'file-o',
+          path: 'icon/list',
+          name: 'demo-components-icon-list',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/icon/list.vue'], resolve) }
+        },
+        {
           title: '图标组件',
           icon: 'file-o',
           path: 'icon/icon',
