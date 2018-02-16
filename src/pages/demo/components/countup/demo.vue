@@ -2,7 +2,7 @@
   <Container type="ghost" class="page">
     <el-card>
       <PageHeader
-        title="数字动画组件封装演示"
+        title="数字动画组件"
         url="https://github.com/inorganik/countUp.js">
       </PageHeader>
     </el-card>
