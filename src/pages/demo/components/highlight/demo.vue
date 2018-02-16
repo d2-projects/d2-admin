@@ -2,7 +2,7 @@
   <Container type="ghost">
     <el-card class="dd-mb">
       <PageHeader
-        title="代码高亮组件封装演示"
+        title="代码高亮组件"
         url="https://github.com/isagalaev/highlight.js">
       </PageHeader>
     </el-card>
