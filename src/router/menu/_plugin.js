@@ -142,11 +142,11 @@ export const menu = {
     // 导入和导出
     {
       title: '导入和导出',
-      icon: 'upload',
+      icon: 'download',
       children: [
         {
           title: '导入csv文件',
-          icon: 'upload',
+          icon: 'download',
           path: 'import/csv',
           name: 'demo-plugins-import-csv',
           meta: {
@@ -156,7 +156,7 @@ export const menu = {
         },
         {
           title: '导入xlsx文件',
-          icon: 'upload',
+          icon: 'download',
           path: 'import/xlsx',
           name: 'demo-plugins-import-xlsx',
           meta: {
@@ -166,7 +166,7 @@ export const menu = {
         },
         {
           title: '导出表格',
-          icon: 'download',
+          icon: 'cloud-download',
           path: 'export/table',
           name: 'demo-plugins-export-table',
           meta: {
@@ -176,7 +176,7 @@ export const menu = {
         },
         {
           title: '导出文本',
-          icon: 'download',
+          icon: 'cloud-download',
           path: 'export/txt',
           name: 'demo-plugins-export-txt',
           meta: {
