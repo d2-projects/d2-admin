@@ -11,6 +11,33 @@ export const menu = {
   //   name: ''
   // },
   children: [
+    // 编辑器
+    {
+      title: '编辑器',
+      icon: 'font',
+      children: [
+        {
+          title: '富文本',
+          icon: 'file-o',
+          path: 'editor/quill',
+          name: 'demo-components-editor-quill',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/editor/quill/demo.vue'], resolve) }
+        },
+        {
+          title: 'markdown',
+          icon: 'file-o',
+          path: 'editor/simpleMDE',
+          name: 'demo-components-editor-simpleMDE',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/editor/simpleMDE/demo.vue'], resolve) }
+        }
+      ]
+    },
     // 图标
     {
       title: '图标',
