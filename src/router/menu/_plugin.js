@@ -75,6 +75,33 @@ export const menu = {
         }
       ]
     },
+    // 编辑器
+    {
+      title: '编辑器',
+      icon: 'font',
+      children: [
+        {
+          title: '富文本',
+          icon: 'file-o',
+          path: 'editor/quill',
+          name: 'demo-plugins-editor-quill',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/editor/quill/demo.vue'], resolve) }
+        },
+        {
+          title: 'markdown',
+          icon: 'file-o',
+          path: 'editor/simpleMDE',
+          name: 'demo-plugins-editor-simpleMDE',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/editor/simpleMDE/demo.vue'], resolve) }
+        }
+      ]
+    },
     // 多国语
     {
       title: '多国语',
@@ -163,40 +190,6 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/export/txt.vue'], resolve) }
-        }
-      ]
-    },
-    // 富文本编辑器
-    {
-      title: '富文本编辑器',
-      icon: 'edit',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'quill/demo',
-          name: 'demo-plugins-quill-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/quill/demo.vue'], resolve) }
-        }
-      ]
-    },
-    // MD编辑器
-    {
-      title: 'markdown编辑器',
-      icon: 'columns',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'simpleMDE/demo',
-          name: 'demo-plugins-simpleMDE-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/simpleMDE/demo.vue'], resolve) }
         }
       ]
     },
