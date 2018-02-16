@@ -108,7 +108,7 @@ export const menu = {
       icon: 'book',
       children: [
         {
-          title: '示例 1',
+          title: '演示页面 1',
           icon: 'file-o',
           path: 'vue-i18n/demo-1',
           name: 'demo-plugins-vue-i18n-demo-1',
@@ -118,7 +118,7 @@ export const menu = {
           component: resolve => { require(['@/pages/demo/plugins/vue-i18n/demo-1.vue'], resolve) }
         },
         {
-          title: '示例 2',
+          title: '演示页面 2',
           icon: 'file-o',
           path: 'vue-i18n/demo-2',
           name: 'demo-plugins-vue-i18n-demo-2',
