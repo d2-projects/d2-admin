@@ -11,7 +11,7 @@ export default {
     code: {
       type: String,
       required: false,
-      default: `console.log('Hello')`
+      default: `console.log('you lost code prop')`
     }
   },
   data () {
