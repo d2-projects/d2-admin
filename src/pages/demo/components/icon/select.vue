@@ -9,16 +9,22 @@
       <div class="title-group">
         <p class="title">一般用法</p>
         <p class="sub-title">
-          icon = {{icon || '未选择'}}
-          <i v-if="icon" :class="'fa fa-' + icon"></i>
+          <template v-if="icon">
+            选择的图标 {{icon}}
+            <i :class="'fa fa-' + icon"></i>
+          </template>
+          <template v-else>未选择</template>
         </p>
       </div>
       <IconSelect v-model="icon"></IconSelect>
       <div class="title-group">
         <p class="title">用户可以输入</p>
         <p class="sub-title">
-          icon2 = {{icon2 || '未选择'}}
-          <i v-if="icon2" :class="'fa fa-' + icon2"></i>
+          <template v-if="icon2">
+            选择的图标 {{icon2}}
+            <i :class="'fa fa-' + icon2"></i>
+          </template>
+          <template v-else>未选择</template>
         </p>
       </div>
       <IconSelect v-model="icon2" :user-input="true"></IconSelect>
