@@ -1,6 +1,11 @@
 <template>
   <Container type="ghost">
     <el-card class="dd-mb">
+      <PageHeader
+        slot="header"
+        title="图标选择器"
+        url="https://github.com/FairyEver/d2admin-vue-element/blob/master/src/components/core/IconSelect/index.vue">
+      </PageHeader>
       <div class="title-group">
         <p class="title">一般用法</p>
         <p class="sub-title">
