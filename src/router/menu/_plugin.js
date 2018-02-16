@@ -75,33 +75,6 @@ export const menu = {
         }
       ]
     },
-    // 编辑器
-    {
-      title: '编辑器',
-      icon: 'font',
-      children: [
-        {
-          title: '富文本',
-          icon: 'file-o',
-          path: 'editor/quill',
-          name: 'demo-plugins-editor-quill',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/editor/quill/demo.vue'], resolve) }
-        },
-        {
-          title: 'markdown',
-          icon: 'file-o',
-          path: 'editor/simpleMDE',
-          name: 'demo-plugins-editor-simpleMDE',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/editor/simpleMDE/demo.vue'], resolve) }
-        }
-      ]
-    },
     // 多国语
     {
       title: '多国语',
