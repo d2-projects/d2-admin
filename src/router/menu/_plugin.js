@@ -220,23 +220,6 @@ export const menu = {
         }
       ]
     },
-    // highlight
-    {
-      title: '代码高亮',
-      icon: 'code',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'highlight/demo',
-          name: 'demo-plugins-highlight-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/highlight/demo.vue'], resolve) }
-        }
-      ]
-    },
     // markdown 解析库
     {
       title: 'markdown解析',
