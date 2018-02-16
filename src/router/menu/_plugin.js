@@ -139,14 +139,14 @@ export const menu = {
         }
       ]
     },
-    // 导入
+    // 导入和导出
     {
-      title: '导入',
+      title: '导入和导出',
       icon: 'upload',
       children: [
         {
-          title: 'csv',
-          icon: 'file-o',
+          title: '导入csv文件',
+          icon: 'upload',
           path: 'import/csv',
           name: 'demo-plugins-import-csv',
           meta: {
@@ -155,25 +155,18 @@ export const menu = {
           component: resolve => { require(['@/pages/demo/plugins/import/csv.vue'], resolve) }
         },
         {
-          title: 'xlsx',
-          icon: 'file-o',
+          title: '导入xlsx文件',
+          icon: 'upload',
           path: 'import/xlsx',
           name: 'demo-plugins-import-xlsx',
           meta: {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/import/xlsx.vue'], resolve) }
-        }
-      ]
-    },
-    // export
-    {
-      title: '导出',
-      icon: 'download',
-      children: [
+        },
         {
           title: '导出表格',
-          icon: 'file-o',
+          icon: 'download',
           path: 'export/table',
           name: 'demo-plugins-export-table',
           meta: {
@@ -183,7 +176,7 @@ export const menu = {
         },
         {
           title: '导出文本',
-          icon: 'file-o',
+          icon: 'download',
           path: 'export/txt',
           name: 'demo-plugins-export-txt',
           meta: {
