@@ -48,6 +48,33 @@ export const menu = {
         }
       ]
     },
+    // 布局
+    {
+      title: '布局',
+      icon: 'object-ungroup',
+      children: [
+        {
+          title: '可拖动网格布局',
+          icon: 'file-o',
+          path: 'layout/grid',
+          name: 'demo-plugins-layout-grid',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/layout/grid.vue'], resolve) }
+        },
+        {
+          title: '可调布局',
+          icon: 'file-o',
+          path: 'layout/splitpane',
+          name: 'demo-plugins-layout-splitpane',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/layout/splitpane.vue'], resolve) }
+        }
+      ]
+    },
     // 多国语
     {
       title: '多国语',
@@ -173,23 +200,6 @@ export const menu = {
         }
       ]
     },
-    // 拖拽网格布局组件
-    {
-      title: '可拖拽网格布局',
-      icon: 'object-ungroup',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'vue-grid-layout/demo',
-          name: 'demo-plugins-vue-grid-layout-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/vue-grid-layout/demo.vue'], resolve) }
-        }
-      ]
-    },
     // clipboard-polyfill
     {
       title: '剪贴板',
@@ -238,23 +248,6 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/plugins/highlight/demo.vue'], resolve) }
-        }
-      ]
-    },
-    // 可调布局组件
-    {
-      title: '可调布局',
-      icon: 'object-group',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'vue-splitpane/demo',
-          name: 'demo-plugins-vue-splitpane-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/vue-splitpane/demo.vue'], resolve) }
         }
       ]
     },
