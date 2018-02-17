@@ -11,10 +11,16 @@ export default {
     required: false,
     default: false
   },
-  // 在组件 mounted 后立即初始化图表 (非G2自带)
+  // 在组件 mounted 后自动初始化图表 (非G2自带)
   autoInit: {
     type: Boolean,
     required: false,
     default: true
+  },
+  // 在组件 mounted 后自动初始化图表的延时 (非G2自带)
+  autoInitDelay: {
+    type: Number,
+    required: false,
+    default: 0
   }
 }
