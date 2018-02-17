@@ -21,16 +21,6 @@ export const menu = {
         requiresAuth: true
       },
       component: resolve => { require(['@/pages/demo/chart/index/index.vue'], resolve) }
-    },
-    {
-      title: '图表演示2',
-      icon: 'file-o',
-      path: 'index2',
-      name: 'demo-chart-index2',
-      meta: {
-        requiresAuth: true
-      },
-      component: resolve => { require(['@/pages/demo/chart/index2/index.vue'], resolve) }
     }
   ]
 }
