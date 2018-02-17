@@ -75,6 +75,33 @@ export const menu = {
         }
       ]
     },
+    // markdown 解析库
+    {
+      title: 'markdown解析',
+      icon: 'font',
+      children: [
+        {
+          title: '基本示例',
+          icon: 'file-o',
+          path: 'marked/demo',
+          name: 'demo-components-markdown-demo',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/markdown/demo.vue'], resolve) }
+        },
+        {
+          title: '代码高亮',
+          icon: 'file-o',
+          path: 'marked/demoHighlight',
+          name: 'demo-components-markdown-demoHighlight',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/markdown/demoHighlight.vue'], resolve) }
+        }
+      ]
+    },
     // 数字动画
     {
       title: '数字动画',
