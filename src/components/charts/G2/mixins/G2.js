@@ -1,5 +1,4 @@
 // 所有 G2 图表组件都引用此 mixin
-
 import G2 from '@antv/g2'
 import * as DataSet from '@antv/data-set'
 
@@ -24,6 +23,12 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    // 在组件 mounted 后立即初始化图表 (非G2自带)
+    autoInit: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   data () {
@@ -33,9 +38,7 @@ export default {
       // 数据处理模块
       DataSet,
       // 图表实例
-      chart: null,
-      // 在组件 mounted 后立即初始化图表
-      autoInit: true
+      chart: null
     }
   },
   mounted () {
