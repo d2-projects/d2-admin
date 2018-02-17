@@ -97,7 +97,7 @@ export default {
   methods: {
     // 创建图表对象
     creatChart () {
-      // API http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html
+      // http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html
       this.chart = new this.G2.Chart({
         // 对应图表的 DOM 容器
         container: this.$refs.chart,
@@ -123,8 +123,13 @@ export default {
     },
     // 重绘大小
     resize (width, height) {
+      // 如果已经初始化过图表
       if (this.chart) {
-        this.chart.changeSize(width || this.G2.DomUtil.getWidth(this.$refs.chart), height || this.G2.DomUtil.getHeight(this.$refs.chart))
+        const w = width || this.G2.DomUtil.getWidth(this.$refs.chart)
+        const h = height || this.G2.DomUtil.getHeight(this.$refs.chart)
+        this.chart.changeSize(w, h)
+      } else {
+        // 以后看着办
       }
     }
   }
