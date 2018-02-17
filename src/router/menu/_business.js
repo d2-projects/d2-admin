@@ -1,6 +1,6 @@
 // [业务演示] 菜单
 export const menu = {
-  title: '业务演示',
+  title: '示例业务界面',
   path: '/demo/business',
   name: 'demo-business',
   meta: {
