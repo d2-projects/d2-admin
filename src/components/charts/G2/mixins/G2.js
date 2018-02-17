@@ -30,7 +30,7 @@ export default {
   mounted () {
     // 如果设置了在 mounted 后自动初始化 就在这里初始化
     if (this.autoInit) {
-      // 可以设置延时初始化
+      // 可以设置延时初始化 默认时间为 0
       setTimeout(() => {
         this.$nextTick(() => {
           this.init()
