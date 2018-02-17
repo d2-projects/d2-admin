@@ -54,14 +54,9 @@ export default {
       // 初始化
       this.$nextTick(() => {
         if (this.chart) {
-          this.$log(
-            '@/components/charts/G2/mixins/G2.js',
-            '图表初始化取消',
-            '原因是在初始化时检测到已经存在图表实例'
-          )
-        } else {
-          this.init()
+          this.chart.destroy()
         }
+        this.init()
       })
     },
     // 创建图表对象
