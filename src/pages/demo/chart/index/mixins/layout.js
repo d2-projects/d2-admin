@@ -22,7 +22,9 @@ export default {
   methods: {
     // 更新指定的图表
     chartResize (name) {
-      this.$refs[name].resize()
+      this.$nextTick(() => {
+        this.$refs[name].resize()
+      })
     },
     // 布局组件发生变化
     layoutUpdatedHandler (newLayout) {

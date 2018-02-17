@@ -6,7 +6,10 @@
         @resize="handleResize('G2LineBase1')"
         @resized="handleResized('G2LineBase1')">
         <el-card class="header-in">
-          <div slot="header">近年趋势</div>
+          <ChartCardHeader
+            slot="header"
+            title="近年行情">
+          </ChartCardHeader>
           <G2LineBase ref="G2LineBase1" v-bind="chart[0]"></G2LineBase>
         </el-card>
       </GridItem>
@@ -17,11 +20,15 @@
 <script>
 import layout from './mixins/layout'
 import chart from './mixins/chart'
+import ChartCardHeader from './components/ChartCardHeader'
 export default {
   mixins: [
     layout,
     chart
-  ]
+  ],
+  components: {
+    ChartCardHeader
+  }
 }
 </script>
 
