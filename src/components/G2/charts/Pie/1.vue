@@ -70,11 +70,9 @@ export default {
     changeData () {
       if (this.chart) {
         // 已经初始化过图表 更新数据
-        console.log(1)
         this.chart.changeData(this.dvMaker())
       } else {
         // 没有图表 新创建一个实例
-        console.log(2)
         this.initHandler()
       }
     }
