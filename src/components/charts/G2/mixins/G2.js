@@ -2,34 +2,20 @@
 import G2 from '@antv/g2'
 import * as DataSet from '@antv/data-set'
 
-// Chart对象属性参数 初始化的时候使用
-import ChartProps from './_ChartProps'
+// Chart对象属性参数
+import propsChart from './props/chart'
+// 扩展属性
+import propsD2 from './props/d2'
 
 // 关闭 G2 的体验改进计划打点请求
 G2.track(false)
 
 export default {
   props: {
-    // Chart对象属性参数 初始化的时候使用
-    ...ChartProps,
-    // 图表数据 此 data 非 官方文档中的 data
-    data: {
-      type: Array,
-      required: false,
-      default: () => []
-    },
-    // 高度 开启自动填充父元素 (非G2自带)
-    autoHeight: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    // 在组件 mounted 后立即初始化图表 (非G2自带)
-    autoInit: {
-      type: Boolean,
-      required: false,
-      default: true
-    }
+    // Chart对象属性参数
+    ...propsChart,
+    // 扩展属性
+    ...propsD2
   },
   data () {
     return {
