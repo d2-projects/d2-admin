@@ -36,15 +36,7 @@ export default {
     },
     // 数据源改变 重新渲染新的数据
     changeData () {
-      if (this.chart) {
-        // 已经初始化过图表 更新数据
-        this.$log('changeData', '已经初始化过图表 只更新数据')
-        this.chart.changeData(this.data)
-      } else {
-        // 没有图表 新创建一个实例
-        this.$log('changeData', '没有图表 新创建一个实例')
-        this.init()
-      }
+      this.chart.changeData(this.data)
     }
   }
 }

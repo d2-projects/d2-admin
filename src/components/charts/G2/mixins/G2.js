@@ -30,26 +30,40 @@ export default {
       chart: null
     }
   },
-  async mounted () {
+  mounted () {
     // 如果设置了在 mounted 后自动初始化 就在这里初始化
     if (this.autoInit) {
-      // 延时
-      await sleep(this.autoInitDelay)
-      // 初始化
-      this.$nextTick(() => {
-        this.init()
-      })
+      this.startInit()
     }
   },
   watch: {
     // 数据改变
     data () {
-      this.$nextTick(() => {
+      if (this.chart) {
         this.changeData()
-      })
+      } else {
+        this.startInit()
+      }
     }
   },
   methods: {
+    // 开始初始化
+    async startInit () {
+      // 延时
+      await sleep(this.autoInitDelay)
+      // 初始化
+      this.$nextTick(() => {
+        if (this.chart) {
+          this.$log(
+            '@/components/charts/G2/mixins/G2.js',
+            '图表初始化取消',
+            '原因是在初始化时检测到已经存在图表实例'
+          )
+        } else {
+          this.init()
+        }
+      })
+    },
     // 创建图表对象
     creatChart () {
       // http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html
