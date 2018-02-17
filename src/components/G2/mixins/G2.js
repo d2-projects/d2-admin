@@ -1,5 +1,6 @@
 import G2 from '@antv/g2'
 import * as DataSet from '@antv/data-set'
+
 // 关闭 G2 的体验改进计划打点请求
 G2.track(false)
 
