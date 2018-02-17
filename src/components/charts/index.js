@@ -1,3 +1,3 @@
-// import Vue from 'vue'
+import Vue from 'vue'
 
-// Vue.component('G2Line1', resolve => { require(['@/components/G2/charts/Line/1.vue'], resolve) })
+Vue.component('G2LineBase', resolve => { require(['@/components/charts/G2/components/Line/base.vue'], resolve) })
