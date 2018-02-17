@@ -14,19 +14,25 @@ export default {
       required: false,
       default: () => []
     },
-    // [图表设置项] 高度
+    // 宽度
+    width: {
+      type: Number,
+      required: false,
+      default: 400
+    },
+    // 高度
     height: {
       type: Number,
       required: false,
       default: 300
     },
-    // [图表设置项] 开启自动填充父元素高度
+    // 高度 开启自动填充父元素 (非G2自带)
     autoHeight: {
       type: Boolean,
       required: false,
       default: false
     },
-    // [图表设置项] 自动宽度 建议为 true
+    // 自动宽度 建议为 true
     forceFit: {
       type: Boolean,
       required: false,
@@ -43,7 +49,7 @@ export default {
       chart: null,
       // 在组件 mounted 后立即初始化图表
       autoInit: true,
-      // [图表设置项] padding
+      // padding
       padding: [40, 40, 40, 40]
     }
   },
@@ -64,9 +70,12 @@ export default {
   methods: {
     // 创建图表对象
     creatChart () {
+      // API http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html
       this.chart = new this.G2.Chart({
-        // ref = chart 的元素为图表容器
+        // 对应图表的 DOM 容器
         container: this.$refs.chart,
+        // 指定图表的宽度，单位为 'px'，当 forceFit: true 时宽度配置不生效
+        width: this.width,
         // 自动宽度
         forceFit: this.forceFit,
         // 高度
