@@ -4,6 +4,7 @@
     <span class="dd-fr">
       <Icon
         class="chart-card-header-icon"
+        :class="{active}"
         name="refresh"
         @click.native="handleRefresh">
       </Icon>
@@ -20,8 +21,17 @@ export default {
       default: ''
     }
   },
+  data () {
+    return {
+      active: false
+    }
+  },
   methods: {
     handleRefresh () {
+      this.active = true
+      setTimeout(() => {
+        this.active = false
+      }, 1000)
       this.$emit('refresh')
     }
   }
@@ -32,6 +42,10 @@ export default {
 @import '~@/assets/style/public.scss';
 .chart-card-header-icon {
   color: $color-text-sub;
+  transition: all .3s;
+  &.active {
+    transform: rotate(360deg);
+  }
 }
 </style>
 
