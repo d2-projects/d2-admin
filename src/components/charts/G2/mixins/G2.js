@@ -95,6 +95,7 @@ export default {
     init () {
       this.$log(
         '@/components/charts/G2/mixins/G2.js',
+        '图表没有正确初始化',
         '如果你看到这条消息 请检查是否在图表组件中设置init方法'
       )
     },
@@ -102,6 +103,7 @@ export default {
     refreshData () {
       this.$log(
         '@/components/charts/G2/mixins/G2.js',
+        '图表没有正确刷新数据',
         '如果你看到这条消息 请检查是否在图表组件中设置refreshData方法'
       )
     }
