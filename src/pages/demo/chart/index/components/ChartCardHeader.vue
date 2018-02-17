@@ -2,9 +2,11 @@
   <div>
     {{title}}
     <span class="dd-fr">
-      <el-tooltip effect="dark" content="刷新数据" placement="top">
-        <Icon class="chart-card-header-icon" name="refresh"></Icon>
-      </el-tooltip>
+      <Icon
+        class="chart-card-header-icon"
+        name="refresh"
+        @click="handleRefresh">
+      </Icon>
     </span>
   </div>
 </template>
@@ -16,6 +18,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    }
+  },
+  methods: {
+    handleRefresh () {
+      this.$emit('refresh')
     }
   }
 }
