@@ -65,7 +65,9 @@ export default {
     // 创建图表对象
     creatChart () {
       this.chart = new this.G2.Chart({
+        // ref = chart 的元素为图表容器
         container: this.$refs.chart,
+        // 自动宽度
         forceFit: this.forceFit,
         // 高度
         // 设置 autoHeight = true 后取 $refs.chart 的高度
