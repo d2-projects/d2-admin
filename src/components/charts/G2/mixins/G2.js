@@ -29,13 +29,11 @@ export default {
   },
   mounted () {
     // 如果设置了在 mounted 后自动初始化 就在这里初始化
-    setTimeout(() => {
-      if (this.autoInit) {
-        this.$nextTick(() => {
-          this.init()
-        })
-      }
-    }, 300)
+    if (this.autoInit) {
+      this.$nextTick(() => {
+        this.init()
+      })
+    }
   },
   watch: {
     // 数据改变
