@@ -3,7 +3,6 @@
     <GridLayout v-bind="layout" @layout-updated="layoutUpdatedHandler">
       <GridItem
         v-bind="layout.layout[0]"
-        @resize="handleResize('G2LineBase1')"
         @resized="handleResized('G2LineBase1')">
         <el-card class="header-in">
           <ChartCardHeader
@@ -81,10 +80,6 @@ export default {
         console.log(`{'x': ${e.x}, 'y': ${e.y}, 'w': ${e.w}, 'h': ${e.h}, 'i': '${e.i}'},`)
       })
       console.groupEnd()
-    },
-    // 改变尺寸
-    handleResize (name) {
-      // this.chartResize(name)
     },
     // 改变尺寸完成
     handleResized (name) {
