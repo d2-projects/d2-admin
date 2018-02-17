@@ -1,60 +1,18 @@
 // 所有 G2 图表组件都引用此 mixin
 
 import G2 from '@antv/g2'
-// import * as DataSet from '@antv/data-set'
+import * as DataSet from '@antv/data-set'
+
+// Chart对象属性参数 初始化的时候使用
+import ChartProps from './_ChartProps'
 
 // 关闭 G2 的体验改进计划打点请求
 G2.track(false)
 
 export default {
   props: {
-    // 宽度 http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html#_width
-    width: {
-      type: Number,
-      required: false,
-      default: 400
-    },
-    // 高度 http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html#_height
-    height: {
-      type: Number,
-      required: false,
-      default: 300
-    },
-    // 设置图表的内边距 http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html#_padding
-    padding: {
-      required: false,
-      default: () => [40, 40, 40, 40]
-    },
-    // 设置图表整体的边框和背景样式 http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html#_background
-    background: {
-      type: Object,
-      required: false,
-      default: () => ({})
-    },
-    // 图表绘图区域的边框和背景样式 http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html#_plotBackground
-    plotBackground: {
-      type: Object,
-      required: false,
-      default: () => ({})
-    },
-    // 图表的宽度自适应开关 http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html#_forceFit
-    forceFit: {
-      type: Boolean,
-      required: false,
-      default: true
-    },
-    // 图表动画开关 http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html#_animate
-    animate: {
-      type: Boolean,
-      required: false,
-      default: true
-    },
-    // 设置设备像素比  http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html#_pixelRatio
-    pixelRatio: {
-      type: Number,
-      required: false,
-      default: window.devicePixelRatio
-    },
+    // Chart对象属性参数 初始化的时候使用
+    ...ChartProps,
     // 图表数据 此 data 非 官方文档中的 data
     data: {
       type: Array,
@@ -73,7 +31,7 @@ export default {
       // 在页面中不需要再引入 直接使用 this.G2
       G2,
       // 数据处理模块
-      // DataSet,
+      DataSet,
       // 图表实例
       chart: null,
       // 在组件 mounted 后立即初始化图表
