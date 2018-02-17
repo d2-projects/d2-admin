@@ -68,12 +68,6 @@ export default {
           })
         }))
     },
-    // 更新指定的图表
-    chartResize (name) {
-      this.$nextTick(() => {
-        this.$refs[name].resize()
-      })
-    },
     // 布局组件发生变化
     layoutUpdatedHandler (newLayout) {
       console.group('layoutUpdatedHandler')
@@ -84,7 +78,9 @@ export default {
     },
     // 改变尺寸完成
     handleResized (name) {
-      this.chartResize(name)
+      this.$nextTick(() => {
+        this.$refs[name].resize()
+      })
     },
     // 用户触发了卡片右上角的刷新按钮
     handleRefreshData (index) {

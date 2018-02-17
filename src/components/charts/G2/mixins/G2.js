@@ -7,6 +7,9 @@ import propsChart from './props/chart'
 // 扩展属性
 import propsD2 from './props/d2'
 
+// 工具
+import sleep from '@/utils/sleep.js'
+
 // 关闭 G2 的体验改进计划打点请求
 G2.track(false)
 
@@ -27,15 +30,15 @@ export default {
       chart: null
     }
   },
-  mounted () {
+  async mounted () {
     // 如果设置了在 mounted 后自动初始化 就在这里初始化
     if (this.autoInit) {
-      // 可以设置延时初始化 默认时间为 0
-      setTimeout(() => {
-        this.$nextTick(() => {
-          this.init()
-        })
-      }, this.autoInitDelay)
+      // 延时
+      await sleep(this.autoInitDelay)
+      // 初始化
+      this.$nextTick(() => {
+        this.init()
+      })
     }
   },
   watch: {
