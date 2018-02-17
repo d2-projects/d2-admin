@@ -36,7 +36,7 @@ export default {
   watch: {
     // 数据改变
     data () {
-      this.refreshData()
+      this.changeData()
     }
   },
   methods: {
@@ -86,11 +86,11 @@ export default {
       )
     },
     // 更新数据
-    refreshData () {
+    changeData () {
       this.$log(
         '@/components/charts/G2/mixins/G2.js',
         '图表没有正确刷新数据',
-        '如果你看到这条消息 请检查是否在图表组件中设置refreshData方法'
+        '如果你看到这条消息 请检查是否在图表组件中设置changeData方法'
       )
     }
   }
