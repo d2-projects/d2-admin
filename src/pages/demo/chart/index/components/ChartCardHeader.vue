@@ -5,7 +5,7 @@
       <Icon
         class="chart-card-header-icon"
         name="refresh"
-        @click="handleRefresh">
+        @click.native="handleRefresh">
       </Icon>
     </span>
   </div>

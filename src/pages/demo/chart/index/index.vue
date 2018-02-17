@@ -9,9 +9,12 @@
           <ChartCardHeader
             slot="header"
             title="近年行情"
-            @refresh="handleRefreshData('G2LineBase1')">
+            @refresh="handleRefreshData(0)">
           </ChartCardHeader>
-          <G2LineBase ref="G2LineBase1" v-bind="chart[0]"></G2LineBase>
+          <G2LineBase
+            ref="G2LineBase1"
+            v-bind="chart[0]">
+          </G2LineBase>
         </el-card>
       </GridItem>
     </GridLayout>
@@ -88,8 +91,12 @@ export default {
       this.chartResize(name)
     },
     // 用户触发了卡片右上角的刷新按钮
-    handleRefreshData (name) {
-      //
+    handleRefreshData (index) {
+      const api = this.chart[index].api
+      this.$axios.post(api.url, api.data)
+        .then(res => {
+          this.chart[index].data = res
+        })
     }
   }
 }
