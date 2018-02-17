@@ -1,0 +1,28 @@
+@import '~@/assets/style/public.scss';
+.demo-chart-index {
+  .vue-grid-layout {
+    margin: -10px;
+    .el-card {
+      @extend %unable-select;
+      height: 100%;
+      .el-card__body {
+        height: 100%;
+        padding: 0px;
+      }
+      // 有header的卡片的body高度需要减去header
+      &.header-in {
+        .el-card__body {
+          height: calc(100% - 59px);
+        }
+      }
+    }
+    .vue-resizable-handle {
+      bottom: 6px;
+      right: 6px;
+      opacity: .3;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@ export const menu = {
   children: [
     // 数据处理
     {
-      title: '首页',
+      title: '图表演示1',
       icon: 'file-o',
       path: 'index',
       name: 'demo-chart-index',
@@ -23,7 +23,7 @@ export const menu = {
       component: resolve => { require(['@/pages/demo/chart/index/index.vue'], resolve) }
     },
     {
-      title: '首页2',
+      title: '图表演示2',
       icon: 'file-o',
       path: 'index2',
       name: 'demo-chart-index2',
