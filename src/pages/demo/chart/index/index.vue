@@ -7,7 +7,7 @@
         @resized="resizedHandler('G2Line1')">
         <el-card class="header-in">
           <div slot="header">近年趋势</div>
-          1
+          
         </el-card>
       </GridItem>
     </GridLayout>
