@@ -1,3 +1,6 @@
+// 功能
+// 深拷贝
+
 const clone = (obj) => {
   var o
   if (typeof obj === 'object') {
