@@ -3,7 +3,8 @@ export default {
     return {
       chart: [
         {
-          data: []
+          data: [],
+          padding: [30, 40, 50, 50]
         }
       ]
     }
