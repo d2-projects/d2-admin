@@ -2,19 +2,17 @@
   <Container type="ghost" :responsive="true" class="demo-chart-index">
     <GridLayout v-bind="layout" @layout-updated="layoutUpdatedHandler">
       <!-- 卡片 -->
-      <GridItem
-        v-bind="layout.layout[0]"
-        @resized="handleResized('G2LineBase1')">
+      <GridItem v-bind="layout.layout[0]" @resized="handleResized('G2LineBase0')">
         <el-card class="header-in">
-          <ChartCardHeader
-            slot="header"
-            title="近年行情"
-            @refresh="handleRefreshData(0)">
-          </ChartCardHeader>
-          <G2LineBase
-            ref="G2LineBase1"
-            v-bind="chart[0]">
-          </G2LineBase>
+          <ChartCardHeader slot="header" title="近年行情" @refresh="handleRefreshData(0)"></ChartCardHeader>
+          <G2LineBase ref="G2LineBase0" v-bind="chart[0]"></G2LineBase>
+        </el-card>
+      </GridItem>
+      <!-- 卡片 -->
+      <GridItem v-bind="layout.layout[1]" @resized="handleResized('G2LineBase1')">
+        <el-card class="header-in">
+          <ChartCardHeader slot="header" title="近年行情" @refresh="handleRefreshData(1)"></ChartCardHeader>
+          <G2LineBase ref="G2LineBase1" v-bind="chart[1]"></G2LineBase>
         </el-card>
       </GridItem>
     </GridLayout>
@@ -30,6 +28,11 @@ export default {
   data () {
     return {
       chart: [
+        {
+          api: {url: '/api/chart/G2Line', data: {code: 1}},
+          data: [],
+          padding: [30, 40, 50, 50]
+        },
         {
           api: {url: '/api/chart/G2Line', data: {code: 1}},
           data: [],
