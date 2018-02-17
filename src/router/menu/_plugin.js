@@ -193,33 +193,6 @@ export const menu = {
         }
       ]
     },
-    // markdown 解析库
-    {
-      title: 'markdown解析',
-      icon: 'font',
-      children: [
-        {
-          title: '基本示例',
-          icon: 'file-o',
-          path: 'marked/demo',
-          name: 'demo-plugins-marked-demo',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/marked/demo.vue'], resolve) }
-        },
-        {
-          title: '代码高亮',
-          icon: 'file-o',
-          path: 'marked/demoHighlight',
-          name: 'demo-plugins-marked-demoHighlight',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/plugins/marked/demoHighlight.vue'], resolve) }
-        }
-      ]
-    },
     // 时间计算
     {
       title: '时间计算',
