@@ -3,11 +3,11 @@
     <GridLayout v-bind="layout" @layout-updated="layoutUpdatedHandler">
       <GridItem
         v-bind="layout.layout[0]"
-        @resize="resizeHandler('G2Line1')"
-        @resized="resizedHandler('G2Line1')">
+        @resize="handleResize('G2LineBase1')"
+        @resized="handleResized('G2LineBase1')">
         <el-card class="header-in">
           <div slot="header">近年趋势</div>
-          <G2LineBase v-bind="chart[0]"></G2LineBase>
+          <G2LineBase ref="G2LineBase1" v-bind="chart[0]"></G2LineBase>
         </el-card>
       </GridItem>
     </GridLayout>

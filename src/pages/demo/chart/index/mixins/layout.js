@@ -21,8 +21,8 @@ export default {
   },
   methods: {
     // 更新指定的图表
-    chartResize () {
-      this.$log('chartResize')
+    chartResize (name) {
+      this.$refs[name].resize()
     },
     // 布局组件发生变化
     layoutUpdatedHandler (newLayout) {
@@ -33,12 +33,12 @@ export default {
       console.groupEnd()
     },
     // 改变尺寸
-    resizeHandler (name) {
-      this.chartResize()
+    handleResize (name) {
+      // this.chartResize(name)
     },
     // 改变尺寸完成
-    resizedHandler (name) {
-      this.chartResize()
+    handleResized (name) {
+      this.chartResize(name)
     }
   }
 }
