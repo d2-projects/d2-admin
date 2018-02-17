@@ -2,7 +2,6 @@ export default {
   data () {
     return {
       layout: {
-        // 调整布局时 复制 layoutUpdatedHandler() 输出的日志到这里
         layout: [
           {'x': 0, 'y': 0, 'w': 8, 'h': 9, 'i': '0'},
           {'x': 8, 'y': 0, 'w': 4, 'h': 9, 'i': '1'},
@@ -20,11 +19,6 @@ export default {
     }
   },
   methods: {
-    // 更新指定的图表
-    chartResize () {
-      this.$log('chartResize')
-    },
-    // 布局组件发生变化
     layoutUpdatedHandler (newLayout) {
       console.group('layoutUpdatedHandler')
       newLayout.forEach(e => {
@@ -34,11 +28,15 @@ export default {
     },
     // 改变尺寸
     resizeHandler (name) {
-      this.chartResize()
+      this.$nextTick(() => {
+        this.$refs[name].resize()
+      })
     },
     // 改变尺寸完成
     resizedHandler (name) {
-      this.chartResize()
+      this.$nextTick(() => {
+        this.$refs[name].resize()
+      })
     }
   }
 }
