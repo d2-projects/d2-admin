@@ -44,15 +44,13 @@ export default {
   mounted () {
     // 如果设置了在 mounted 后自动初始化 就在这里初始化
     if (this.autoInit) {
-      setTimeout(() => {
-        this.initHandler()
-      }, 0)
+      this.init()
     }
   },
   watch: {
     // 数据改变
     data () {
-      this.changeData()
+      this.refreshData()
     }
   },
   methods: {
@@ -92,6 +90,20 @@ export default {
       } else {
         // 以后看着办
       }
+    },
+    // 初始化
+    init () {
+      this.$log(
+        '@/components/charts/G2/mixins/G2.js',
+        '如果你看到这条消息 请检查是否在图表组件中设置init方法'
+      )
+    },
+    // 更新数据
+    refreshData () {
+      this.$log(
+        '@/components/charts/G2/mixins/G2.js',
+        '如果你看到这条消息 请检查是否在图表组件中设置refreshData方法'
+      )
     }
   }
 }
