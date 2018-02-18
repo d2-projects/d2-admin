@@ -9,7 +9,7 @@ export default {
   autoHeight: {
     type: Boolean,
     required: false,
-    default: false
+    default: true
   },
   // 在组件 mounted 后自动初始化图表 (非G2自带)
   autoInit: {
