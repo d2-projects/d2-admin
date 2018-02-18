@@ -1,16 +1,5 @@
 import Mock from 'mockjs'
-
-const r = (add = 0) => {
-  return Math.round(Math.random() * 100) + add
-}
-
-const returnMaker = (data = []) => {
-  return {
-    code: 0,
-    msg: '请求成功',
-    data
-  }
-}
+import * as fn from './_publicFunction'
 
 Mock.mock('/api/chart/G2Line', 'post', ({body, type, url}) => {
   const _body = JSON.parse(body)
@@ -23,7 +12,7 @@ Mock.mock('/api/chart/G2Line', 'post', ({body, type, url}) => {
         year: e,
         value: 0
       })).map(e => {
-        e.value = last + r()
+        e.value = last + fn.r()
         last = e.value
         return e
       }).map(e => ({
@@ -31,19 +20,19 @@ Mock.mock('/api/chart/G2Line', 'post', ({body, type, url}) => {
         y: e.value
       }))
       last = 0
-      return returnMaker(data)
+      return fn.returnMaker(data)
     }
     // 阶梯折线图
     case 'step': {
       const month = ['3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月']
       const data = month.map(e => ({
         month: e,
-        value: r()
+        value: fn.r()
       })).map(e => ({
         x: e.month,
         y: e.value
       }))
-      return returnMaker(data)
+      return fn.returnMaker(data)
     }
     default:
       return {}
