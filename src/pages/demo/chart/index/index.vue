@@ -29,6 +29,20 @@
           <G2BarBase :ref="chart[3].refName" v-bind="chart[3]"></G2BarBase>
         </el-card>
       </GridItem>
+      <!-- 卡片 -->
+      <GridItem v-bind="layout.layout[4]" @resized="handleResized(chart[4].refName)">
+        <el-card class="header-in">
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(4)" title="近年行情"></ChartCardHeader>
+          
+        </el-card>
+      </GridItem>
+      <!-- 卡片 -->
+      <GridItem v-bind="layout.layout[5]" @resized="handleResized(chart[5].refName)">
+        <el-card class="header-in">
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(5)" title="近年行情"></ChartCardHeader>
+          
+        </el-card>
+      </GridItem>
     </GridLayout>
   </Container>
 </template>
@@ -73,7 +87,9 @@ export default {
           {'x': 0, 'y': 0, 'w': 4, 'h': 7, 'i': '0'},
           {'x': 4, 'y': 0, 'w': 4, 'h': 7, 'i': '1'},
           {'x': 8, 'y': 0, 'w': 4, 'h': 7, 'i': '2'},
-          {'x': 0, 'y': 7, 'w': 4, 'h': 7, 'i': '3'}
+          {'x': 0, 'y': 7, 'w': 4, 'h': 7, 'i': '3'},
+          {'x': 4, 'y': 7, 'w': 4, 'h': 7, 'i': '4'},
+          {'x': 8, 'y': 7, 'w': 4, 'h': 7, 'i': '5'}
         ],
         colNum: 12,
         rowHeight: 30,
