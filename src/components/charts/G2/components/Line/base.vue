@@ -9,6 +9,22 @@ export default {
   mixins: [
     G2
   ],
+  // 公用参数在 G2 mixin 中
+  // 这个组件特有的参数添加在这里
+  props: {
+    // 横轴字段名
+    keyNameX: {
+      type: String,
+      required: false,
+      default: 'x'
+    },
+    // 纵轴字段名
+    keyNameY: {
+      type: String,
+      required: false,
+      default: 'y'
+    }
+  },
   methods: {
     // 初始化图表
     init () {
