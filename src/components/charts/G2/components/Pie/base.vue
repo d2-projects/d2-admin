@@ -26,6 +26,7 @@ export default {
     },
     // 初始化图表
     init () {
+      console.log('pie base')
       // mixin 中提供 creatChart
       this.creatChart()
       // 本组件的特殊设置
