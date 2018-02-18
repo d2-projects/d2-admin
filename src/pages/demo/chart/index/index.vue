@@ -33,7 +33,7 @@
       <GridItem v-bind="layout.layout[4]" @resized="handleResized(chart[4].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(4)" title="近年行情"></ChartCardHeader>
-          
+          <G2PieBase :ref="chart[4].refName" v-bind="chart[4]"></G2PieBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
@@ -77,6 +77,12 @@ export default {
         {
           api: {url: '/api/chart/G2Bar', data: {type: 'base'}},
           refName: 'G2BarBase',
+          data: [],
+          padding: [30, 40, 50, 50]
+        },
+        {
+          api: {url: '/api/chart/G2Pie', data: {type: 'base'}},
+          refName: 'G2PieBase',
           data: [],
           padding: [30, 40, 50, 50]
         }
