@@ -16,17 +16,20 @@ Mock.mock('/api/chart/G2Line', 'post', ({body, type, url}) => {
   const _body = JSON.parse(body)
   switch (_body.type) {
     case 'base': {
-      let lastValue = 0
+      let last = 0
       const year = ['1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999']
       const data = year.map(e => ({
         year: e,
         value: 0
       })).map(e => {
-        e.value = lastValue + r()
-        lastValue = e.value
+        e.value = last + r()
+        last = e.value
         return e
-      })
-      lastValue = 0
+      }).map(e => ({
+        x: e.year,
+        y: e.value
+      }))
+      last = 0
       return returnMaker(data)
     }
     case 'step': {
@@ -37,7 +40,10 @@ Mock.mock('/api/chart/G2Line', 'post', ({body, type, url}) => {
       })).map(e => {
         e.value = r()
         return e
-      })
+      }).map(e => ({
+        x: e.month,
+        y: e.value
+      }))
       return returnMaker(data)
     }
     default:

@@ -16,10 +16,10 @@ export default {
       this.creatChart()
       // 本组件的特殊设置
       this.chart.source(this.data)
-      this.chart.scale('value', {
+      this.chart.scale('y', {
         min: 0
       })
-      this.chart.scale('year', {
+      this.chart.scale('x', {
         range: [0, 1]
       })
       this.chart.tooltip({
@@ -27,8 +27,8 @@ export default {
           type: 'line'
         }
       })
-      this.chart.line().position('year*value')
-      this.chart.point().position('year*value').size(4).shape('circle').style({
+      this.chart.line().position('x*y')
+      this.chart.point().position('x*y').size(4).shape('circle').style({
         stroke: '#fff',
         lineWidth: 1
       })
