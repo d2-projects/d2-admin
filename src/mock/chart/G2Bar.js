@@ -6,17 +6,7 @@ Mock.mock('/api/chart/G2Bar', 'post', ({body, type, url}) => {
   switch (_body.type) {
     // 基础折线图
     case 'base': {
-      const year = ['3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月']
-      const data = year.map(e => ({
-        year: e,
-        value: fn.r()
-      })).map(e => ({
-        x: e.year,
-        y: e.value
-      })).sort((a, b) => {
-        return a.y - b.y
-      })
-      return fn.returnMaker(data)
+      return fn.returnMaker(['中国', '日本', '美国', '法国', '英国'].map(x => ({x, y: fn.r()})).sort((a, b) => a.y - b.y))
     }
     default:
       return {}
