@@ -29,12 +29,12 @@ export default {
     return {
       chart: [
         {
-          api: {url: '/api/chart/G2Line', data: {code: 1}},
+          api: {url: '/api/chart/G2Line', data: {type: 'base'}},
           data: [],
           padding: [30, 40, 50, 50]
         },
         {
-          api: {url: '/api/chart/G2Line', data: {code: 2}},
+          api: {url: '/api/chart/G2Line', data: {type: 'step'}},
           data: [],
           padding: [30, 40, 50, 50]
         }
