@@ -1,5 +1,5 @@
 import Mock from 'mockjs'
-import * as fn from './_publicFunction'
+import * as fn from './_fn'
 
 Mock.mock('/api/chart/G2Line', 'post', ({body, type, url}) => {
   const _body = JSON.parse(body)
