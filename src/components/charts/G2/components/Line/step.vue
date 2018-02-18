@@ -15,23 +15,12 @@ export default {
       // mixin 中提供 creatChart
       this.creatChart()
       // 本组件的特殊设置
-      this.chart.source(this.data)
-      this.chart.scale('value', {
-        min: 0
-      })
-      this.chart.scale('year', {
-        range: [0, 1]
-      })
-      this.chart.tooltip({
-        crosshairs: {
-          type: 'line'
+      this.chart.source(this.data, {
+        month: {
+          range: [0, 1]
         }
       })
-      this.chart.line().position('year*value')
-      this.chart.point().position('year*value').size(4).shape('circle').style({
-        stroke: '#fff',
-        lineWidth: 1
-      })
+      this.chart.line().position('month*value').shape('hv')
       // 渲染图表
       this.chart.render()
     },

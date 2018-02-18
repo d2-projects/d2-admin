@@ -9,10 +9,10 @@
         </el-card>
       </GridItem>
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[1]" @resized="handleResized('G2LineBase1')">
+      <GridItem v-bind="layout.layout[1]" @resized="handleResized('G2LineStep1')">
         <el-card class="header-in">
           <ChartCardHeader slot="header" title="近年行情" @refresh="handleRefreshData(1)"></ChartCardHeader>
-          <G2LineBase ref="G2LineBase1" v-bind="chart[1]"></G2LineBase>
+          <G2LineStep ref="G2LineStep1" v-bind="chart[1]"></G2LineStep>
         </el-card>
       </GridItem>
     </GridLayout>
@@ -34,7 +34,7 @@ export default {
           padding: [30, 40, 50, 50]
         },
         {
-          api: {url: '/api/chart/G2Line', data: {code: 1}},
+          api: {url: '/api/chart/G2Line', data: {code: 2}},
           data: [],
           padding: [30, 40, 50, 50]
         }
@@ -42,8 +42,8 @@ export default {
       layout: {
         // 调整布局时 复制 layoutUpdatedHandler() 输出的日志到这里
         layout: [
-          {'x': 0, 'y': 0, 'w': 8, 'h': 9, 'i': '0'},
-          {'x': 8, 'y': 0, 'w': 4, 'h': 9, 'i': '1'},
+          {'x': 0, 'y': 0, 'w': 7, 'h': 9, 'i': '0'},
+          {'x': 7, 'y': 0, 'w': 5, 'h': 9, 'i': '1'},
           {'x': 0, 'y': 9, 'w': 4, 'h': 7, 'i': '2'}
         ],
         colNum: 12,
