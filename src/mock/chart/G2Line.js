@@ -36,11 +36,8 @@ Mock.mock('/api/chart/G2Line', 'post', ({body, type, url}) => {
       const month = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
       const data = month.map(e => ({
         month: e,
-        value: 0
-      })).map(e => {
-        e.value = r()
-        return e
-      }).map(e => ({
+        value: r()
+      })).map(e => ({
         x: e.month,
         y: e.value
       }))
