@@ -2,24 +2,24 @@
   <Container type="ghost" :responsive="true" class="demo-chart-index">
     <GridLayout v-bind="layout" @layout-updated="layoutUpdatedHandler">
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[0]" @resized="handleResized('G2LineBase')">
+      <GridItem v-bind="layout.layout[0]" @resized="handleResized(chart[0].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" title="近年行情" @refresh="handleRefreshData(0)"></ChartCardHeader>
-          <G2LineBase ref="G2LineBase" v-bind="chart[0]"></G2LineBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(0)" title="近年行情"></ChartCardHeader>
+          <G2LineBase :ref="chart[0].refName" v-bind="chart[0]"></G2LineBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[1]" @resized="handleResized('G2LineStep')">
+      <GridItem v-bind="layout.layout[1]" @resized="handleResized(chart[1].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" title="近年行情" @refresh="handleRefreshData(1)"></ChartCardHeader>
-          <G2LineStep ref="G2LineStep" v-bind="chart[1]"></G2LineStep>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(1)" title="近年行情"></ChartCardHeader>
+          <G2LineStep :ref="chart[1].refName" v-bind="chart[1]"></G2LineStep>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[2]" @resized="handleResized('G2ColumnBase')">
+      <GridItem v-bind="layout.layout[2]" @resized="handleResized(chart[2].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" title="近年行情" @refresh="handleRefreshData(2)"></ChartCardHeader>
-          <G2ColumnBase ref="G2ColumnBase" v-bind="chart[2]"></G2ColumnBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(2)" title="近年行情"></ChartCardHeader>
+          <G2ColumnBase :ref="chart[2].refName" v-bind="chart[2]"></G2ColumnBase>
         </el-card>
       </GridItem>
     </GridLayout>
@@ -37,16 +37,19 @@ export default {
       chart: [
         {
           api: {url: '/api/chart/G2Line', data: {type: 'base'}},
+          refName: 'G2LineBase',
           data: [],
           padding: [30, 40, 50, 50]
         },
         {
           api: {url: '/api/chart/G2Line', data: {type: 'step'}},
+          refName: 'G2LineStep',
           data: [],
           padding: [30, 40, 50, 50]
         },
         {
           api: {url: '/api/chart/G2Column', data: {type: 'base'}},
+          refName: 'G2ColumnBase',
           data: [],
           padding: [30, 40, 50, 50]
         }
@@ -54,9 +57,9 @@ export default {
       layout: {
         // 调整布局时 复制 layoutUpdatedHandler() 输出的日志到这里
         layout: [
-          {'x': 0, 'y': 0, 'w': 7, 'h': 9, 'i': '0'},
-          {'x': 7, 'y': 0, 'w': 5, 'h': 9, 'i': '1'},
-          {'x': 0, 'y': 9, 'w': 4, 'h': 7, 'i': '2'}
+          {'x': 0, 'y': 0, 'w': 4, 'h': 7, 'i': '0'},
+          {'x': 4, 'y': 0, 'w': 4, 'h': 7, 'i': '1'},
+          {'x': 8, 'y': 0, 'w': 4, 'h': 7, 'i': '2'}
         ],
         colNum: 12,
         rowHeight: 30,
