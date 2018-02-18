@@ -18,8 +18,8 @@ Mock.mock('/api/chart/G2Line', 'post', ({body, type, url}) => {
     case 'base': {
       let lastValue = 0
       const year = ['1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999']
-      const data = year.map(y => ({
-        year: y,
+      const data = year.map(e => ({
+        year: e,
         value: 0
       })).map(e => {
         e.value = lastValue + r()
@@ -31,8 +31,8 @@ Mock.mock('/api/chart/G2Line', 'post', ({body, type, url}) => {
     }
     case 'step': {
       const month = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
-      const data = month.map(y => ({
-        month: y,
+      const data = month.map(e => ({
+        month: e,
         value: 0
       })).map(e => {
         e.value = r()
