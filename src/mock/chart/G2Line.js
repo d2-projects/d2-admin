@@ -7,32 +7,20 @@ Mock.mock('/api/chart/G2Line', 'post', ({body, type, url}) => {
     // 基础折线图
     case 'base': {
       let last = 0
-      const year = ['1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999']
-      const data = year.map(e => ({
-        year: e,
-        value: 0
+      const data = ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'].map(x => ({
+        x,
+        y: 0
       })).map(e => {
-        e.value = last + fn.r()
-        last = e.value
+        e.y = last + fn.r()
+        last = e.y
         return e
-      }).map(e => ({
-        x: e.year,
-        y: e.value
-      }))
+      })
       last = 0
       return fn.returnMaker(data)
     }
     // 阶梯折线图
     case 'step': {
-      const month = ['3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月']
-      const data = month.map(e => ({
-        month: e,
-        value: fn.r()
-      })).map(e => ({
-        x: e.month,
-        y: e.value
-      }))
-      return fn.returnMaker(data)
+      return fn.returnMaker(['3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月'].map(x => ({x, y: fn.r()})))
     }
     default:
       return {}
