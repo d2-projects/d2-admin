@@ -16,11 +16,11 @@ export default {
       this.creatChart()
       // 本组件的特殊设置
       this.chart.source(this.data, {
-        month: {
+        x: {
           range: [0, 1]
         }
       })
-      this.chart.line().position('month*value').shape('hv')
+      this.chart.line().position('x*y').shape('hv')
       // 渲染图表
       this.chart.render()
     },
