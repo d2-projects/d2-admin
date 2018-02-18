@@ -22,6 +22,13 @@
           <G2ColumnBase :ref="chart[2].refName" v-bind="chart[2]"></G2ColumnBase>
         </el-card>
       </GridItem>
+      <!-- 卡片 -->
+      <GridItem v-bind="layout.layout[3]" @resized="handleResized(chart[3].refName)">
+        <el-card class="header-in">
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(3)" title="近年行情"></ChartCardHeader>
+          <G2BarBase :ref="chart[3].refName" v-bind="chart[3]"></G2BarBase>
+        </el-card>
+      </GridItem>
     </GridLayout>
   </Container>
 </template>
@@ -52,6 +59,12 @@ export default {
           refName: 'G2ColumnBase',
           data: [],
           padding: [30, 40, 50, 50]
+        },
+        {
+          api: {url: '/api/chart/G2Bar', data: {type: 'base'}},
+          refName: 'G2BarBase',
+          data: [],
+          padding: [30, 40, 50, 50]
         }
       ],
       layout: {
@@ -59,7 +72,8 @@ export default {
         layout: [
           {'x': 0, 'y': 0, 'w': 4, 'h': 7, 'i': '0'},
           {'x': 4, 'y': 0, 'w': 4, 'h': 7, 'i': '1'},
-          {'x': 8, 'y': 0, 'w': 4, 'h': 7, 'i': '2'}
+          {'x': 8, 'y': 0, 'w': 4, 'h': 7, 'i': '2'},
+          {'x': 0, 'y': 7, 'w': 4, 'h': 7, 'i': '3'}
         ],
         colNum: 12,
         rowHeight: 30,
