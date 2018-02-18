@@ -33,7 +33,7 @@ export default {
       this.chart.source(this.dvMaker(), {
         percent: {
           formatter: val => {
-            val = (val * 100) + '%'
+            val = (val * 100).toFixed(2) + '%'
             return val
           }
         }
@@ -54,7 +54,7 @@ export default {
           }
         })
         .tooltip('item*percent', (item, percent) => {
-          percent = percent * 100 + '%'
+          percent = (percent * 100).toFixed(2) + '%'
           return {
             name: item,
             value: percent
