@@ -26,16 +26,12 @@ export default {
     },
     // 初始化图表
     init () {
-      console.log('pie base')
       // mixin 中提供 creatChart
       this.creatChart()
       // 本组件的特殊设置
       this.chart.source(this.dvMaker(), {
         percent: {
-          formatter: val => {
-            val = (val * 100).toFixed(2) + '%'
-            return val
-          }
+          formatter: val => (val * 100).toFixed(2) + '%'
         }
       })
       this.chart.coord('theta', {
@@ -49,17 +45,12 @@ export default {
         .position('percent')
         .color('item')
         .label('percent', {
-          formatter: (val, item) => {
-            return item.point.item + ': ' + val
-          }
+          formatter: (val, item) => item.point.item + ': ' + val
         })
-        .tooltip('item*percent', (item, percent) => {
-          percent = (percent * 100).toFixed(2) + '%'
-          return {
-            name: item,
-            value: percent
-          }
-        })
+        .tooltip('item*percent', (item, percent) => ({
+          name: item,
+          value: (percent * 100).toFixed(2) + '%'
+        }))
         .style({
           lineWidth: 1,
           stroke: '#fff'
