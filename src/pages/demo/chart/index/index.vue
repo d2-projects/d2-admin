@@ -3,50 +3,50 @@
     <el-row :gutter="20">
       <el-col class="col" :span="8">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData('G2LineBase')" title="G2LineBase"></ChartCardHeader>
-          <G2LineBase ref="G2LineBase" v-bind="chart[0]"></G2LineBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(0)" title="G2LineBase"></ChartCardHeader>
+          <G2LineBase :ref="chart[0].refName" v-bind="chart[0]"></G2LineBase>
         </el-card>
       </el-col>
       <el-col class="col" :span="8">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData('G2LineStep')" title="G2LineStep"></ChartCardHeader>
-          <G2LineStep ref="G2LineStep" v-bind="chart[1]"></G2LineStep>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(1)" title="G2LineStep"></ChartCardHeader>
+          <G2LineStep :ref="chart[1].refName" v-bind="chart[1]"></G2LineStep>
         </el-card>
       </el-col>
       <el-col class="col" :span="8">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData('G2ColumnBase')" title="G2ColumnBase"></ChartCardHeader>
-          <G2ColumnBase ref="G2ColumnBase" v-bind="chart[2]"></G2ColumnBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(2)" title="G2ColumnBase"></ChartCardHeader>
+          <G2ColumnBase :ref="chart[2].refName" v-bind="chart[2]"></G2ColumnBase>
         </el-card>
       </el-col>
       <el-col class="col" :span="8">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData('G2BarBase')" title="G2BarBase"></ChartCardHeader>
-          <G2BarBase ref="G2BarBase" v-bind="chart[3]"></G2BarBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(3)" title="G2BarBase"></ChartCardHeader>
+          <G2BarBase :ref="chart[3].refName" v-bind="chart[3]"></G2BarBase>
         </el-card>
       </el-col>
       <el-col class="col" :span="8">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData('G2PieBase')" title="G2PieBase"></ChartCardHeader>
-          <G2PieBase ref="G2PieBase" v-bind="chart[4]"></G2PieBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(4)" title="G2PieBase"></ChartCardHeader>
+          <G2PieBase :ref="chart[4].refName" v-bind="chart[4]"></G2PieBase>
         </el-card>
       </el-col>
       <el-col class="col" :span="8">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData('G2NightingaleRoseBase')" title="G2NightingaleRoseBase"></ChartCardHeader>
-          <G2NightingaleRoseBase ref="G2NightingaleRoseBase" v-bind="chart[5]"></G2NightingaleRoseBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(5)" title="G2NightingaleRoseBase"></ChartCardHeader>
+          <G2NightingaleRoseBase :ref="chart[5].refName" v-bind="chart[5]"></G2NightingaleRoseBase>
         </el-card>
       </el-col>
       <el-col class="col" :span="8">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData('G2RadarBase')" title="G2RadarBase"></ChartCardHeader>
-          <G2RadarBase ref="G2RadarBase" v-bind="chart[6]"></G2RadarBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(6)" title="G2RadarBase"></ChartCardHeader>
+          <G2RadarBase :ref="chart[6].refName" v-bind="chart[6]"></G2RadarBase>
         </el-card>
       </el-col>
       <el-col class="col" :span="8">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData('G2AreaBase')" title="G2AreaBase"></ChartCardHeader>
-          <G2AreaBase ref="G2AreaBase" v-bind="chart[7]"></G2AreaBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(7)" title="G2AreaBase"></ChartCardHeader>
+          <G2AreaBase :ref="chart[7].refName" v-bind="chart[7]"></G2AreaBase>
         </el-card>
       </el-col>
     </el-row>
