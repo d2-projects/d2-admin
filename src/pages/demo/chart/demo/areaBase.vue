@@ -1,8 +1,8 @@
 <template>
   <Container type="ghost" :responsive="true">
-    <ChartDemoCard>
-      <template slot-scope="props">
-        <G2AreaBase :data="props.data" v-bind="chart"></G2AreaBase>
+    <ChartDemoCard v-bind="card">
+      <template slot-scope="{data}">
+        <G2AreaBase :data="data" v-bind="chart"></G2AreaBase>
       </template>
     </ChartDemoCard>
   </Container>
@@ -16,6 +16,16 @@ export default {
   ],
   data () {
     return {
+      // 给卡片容器的参数
+      card: {
+        api: {
+          url: '/api/chart/G2Area',
+          data: {
+            type: 'base'
+          }
+        }
+      },
+      // 给图表的参数
       chart: {
         // 图表设置
       }
