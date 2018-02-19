@@ -17,14 +17,18 @@ export default {
       // 本组件的特殊设置
       this.chart.source(this.data)
       this.chart.coord('polar')
-      this.chart.legend({
-        position: 'right',
-        offsetY: 0,
-        offsetX: -140
-      })
       this.chart.axis(false)
+      // tooltip 设置
+      this.chart.tooltip({
+        showTitle: false,
+        itemTpl: '<li><span style="background-color:{color}" class="g2-tooltip-marker"></span>{name}: {value}</li>'
+      })
+      // 创建图形
       this.chart.interval().position('item*count')
         .color('item', this.G2.Global.colors_pie_16)
+        .label('count', {
+          formatter: (val, item) => item.point.item + ': ' + val
+        })
         .style({
           lineWidth: 1,
           stroke: '#fff'
