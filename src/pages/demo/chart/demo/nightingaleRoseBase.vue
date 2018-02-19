@@ -3,6 +3,7 @@
     <ChartDemoCard v-bind="card" @resize="$refs.chart.resize()">
       <G2NightingaleRoseBase slot-scope="{data}" ref="chart" :data="data" v-bind="chart"></G2NightingaleRoseBase>
     </ChartDemoCard>
+    <Markdown url="/static/markdownFiles/article/组件 - 图表.md"></Markdown>
   </Container>
 </template>
 
