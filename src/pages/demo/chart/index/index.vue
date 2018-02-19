@@ -50,6 +50,13 @@
           <G2RadarBase :ref="chart[6].refName" v-bind="chart[6]"></G2RadarBase>
         </el-card>
       </GridItem>
+      <!-- 卡片 -->
+      <GridItem v-bind="layout.layout[7]" @resized="handleResized(chart[7].refName)">
+        <el-card class="header-in">
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(7)" title="近年行情"></ChartCardHeader>
+          <G2AreaBase :ref="chart[7].refName" v-bind="chart[7]"></G2AreaBase>
+        </el-card>
+      </GridItem>
     </GridLayout>
   </Container>
 </template>
@@ -100,6 +107,12 @@ export default {
           refName: 'G2RadarBase',
           data: [],
           padding: [30, 30, 30, 30]
+        },
+        {
+          api: {url: '/api/chart/G2Area', data: {type: 'base'}},
+          refName: 'G2AreaBase',
+          data: [],
+          padding: [30, 30, 30, 30]
         }
       ],
       layout: {
@@ -111,7 +124,8 @@ export default {
           {'x': 0, 'y': 7, 'w': 4, 'h': 7, 'i': '3'},
           {'x': 4, 'y': 7, 'w': 4, 'h': 7, 'i': '4'},
           {'x': 8, 'y': 7, 'w': 4, 'h': 7, 'i': '5'},
-          {'x': 0, 'y': 14, 'w': 4, 'h': 7, 'i': '6'}
+          {'x': 0, 'y': 14, 'w': 4, 'h': 7, 'i': '6'},
+          {'x': 4, 'y': 14, 'w': 4, 'h': 7, 'i': '7'}
         ],
         colNum: 12,
         rowHeight: 30,
