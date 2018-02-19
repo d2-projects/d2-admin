@@ -10,3 +10,5 @@ Vue.component('G2LineStep', resolve => { require(['@/components/charts/G2/compon
 Vue.component('G2NightingaleRoseBase', resolve => { require(['@/components/charts/G2/components/NightingaleRose/base.vue'], resolve) })
 
 Vue.component('G2PieBase', resolve => { require(['@/components/charts/G2/components/Pie/base.vue'], resolve) })
+
+Vue.component('G2RadarBase', resolve => { require(['@/components/charts/G2/components/Radar/base.vue'], resolve) })
