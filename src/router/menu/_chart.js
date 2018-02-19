@@ -25,7 +25,7 @@ export const menu = {
     // 所有
     {
       title: '所有',
-      icon: 'file-o',
+      icon: 'th',
       path: 'index',
       name: 'demo-chart-index',
       meta: {
@@ -36,7 +36,7 @@ export const menu = {
     // 单独演示
     {
       title: '单独演示',
-      icon: 'file-o',
+      icon: 'bar-chart',
       children: [
         maker('面积图', 'areaBase'),
         maker('条形图', 'barBase'),

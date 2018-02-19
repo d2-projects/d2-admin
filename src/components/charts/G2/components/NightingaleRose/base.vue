@@ -9,6 +9,13 @@ export default {
   mixins: [
     G2
   ],
+  // 新加参数 或者覆盖 mixin 中的默认参数
+  props: {
+    padding: {
+      required: false,
+      default: () => [40, 40, 40, 40]
+    }
+  },
   methods: {
     // 初始化图表
     init () {

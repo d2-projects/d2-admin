@@ -9,6 +9,13 @@ export default {
   mixins: [
     G2
   ],
+  // 新加参数 或者覆盖 mixin 中的默认参数
+  props: {
+    padding: {
+      required: false,
+      default: () => [30, 30, 30, 30]
+    }
+  },
   data () {
     return {
       // DataView数据转换设置

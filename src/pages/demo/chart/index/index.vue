@@ -93,20 +93,17 @@ export default {
         {
           api: {url: '/api/chart/G2Pie', data: {type: 'base'}},
           refName: 'G2PieBase',
-          data: [],
-          padding: [30, 30, 30, 30]
+          data: []
         },
         {
           api: {url: '/api/chart/G2NightingaleRose', data: {type: 'base'}},
           refName: 'G2NightingaleRoseBase',
-          data: [],
-          padding: [40, 40, 40, 40]
+          data: []
         },
         {
           api: {url: '/api/chart/G2Radar', data: {type: 'base'}},
           refName: 'G2RadarBase',
-          data: [],
-          padding: [30, 30, 30, 30]
+          data: []
         },
         {
           api: {url: '/api/chart/G2Area', data: {type: 'base'}},
