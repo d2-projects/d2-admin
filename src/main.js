@@ -25,7 +25,7 @@ import '@/components'
 import '@/plugin/axios'
 
 // mock接口设置
-import '@/mock/index.js'
+import '@/mock/register'
 
 // vuex
 import store from '@/store/index.js'
