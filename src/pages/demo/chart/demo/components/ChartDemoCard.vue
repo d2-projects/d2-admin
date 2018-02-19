@@ -34,8 +34,7 @@ export default {
   computed: {
     style () {
       return {
-        height: this.height + 'px',
-        margin: '-20px'
+        height: this.height + 'px'
       }
     }
   },
