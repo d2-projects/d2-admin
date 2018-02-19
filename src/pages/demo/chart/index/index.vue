@@ -84,7 +84,7 @@ export default {
           api: {url: '/api/chart/G2Pie', data: {type: 'base'}},
           refName: 'G2PieBase',
           data: [],
-          padding: [30, 40, 50, 50]
+          padding: [30, 30, 30, 30]
         }
       ],
       layout: {
