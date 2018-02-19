@@ -14,7 +14,7 @@ export default {
   // 设置图表的内边距 http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html#_padding
   padding: {
     required: false,
-    default: () => [40, 40, 40, 40]
+    default: () => [30, 40, 50, 50]
   },
   // 设置图表整体的边框和背景样式 http://antv.alipay.com/zh-cn/g2/3.x/api/chart.html#_background
   background: {
