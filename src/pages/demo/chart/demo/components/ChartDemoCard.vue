@@ -1,7 +1,10 @@
 <template>
   <el-card>
     <div slot="header">
-      <el-button size="mini" @click="syncData">加载数据</el-button>
+      <el-button size="mini" @click="syncData">
+        <Icon name="refresh"></Icon>
+        加载数据
+      </el-button>
       <el-radio-group v-model="height" size="mini">
         <el-radio-button v-for="(item, index) in heightOptions" :key="index" :label="item">{{item}}px</el-radio-button>
       </el-radio-group>
@@ -24,7 +27,7 @@ export default {
   data () {
     return {
       data: [],
-      height: 300,
+      height: 500,
       heightOptions: [300, 400, 500, 600]
     }
   },
