@@ -16,13 +16,21 @@ export default {
       this.creatChart()
       // 本组件的特殊设置
       this.chart.source(this.data)
-      this.chart.axis('x', {
-        label: {
-          offset: 12
+      this.chart.scale({
+        y: {
+          min: 0
+        },
+        x: {
+          range: [0, 1]
         }
       })
-      this.chart.coord().transpose()
-      this.chart.interval().position('x*y')
+      this.chart.tooltip({
+        crosshairs: {
+          type: 'line'
+        }
+      })
+      this.chart.area().position('x*y')
+      this.chart.line().position('x*y').size(2)
       // 渲染图表
       this.chart.render()
     },

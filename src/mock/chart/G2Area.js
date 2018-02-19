@@ -6,7 +6,17 @@ Mock.mock('/api/chart/G2Area', 'post', ({body, type, url}) => {
   switch (_body.type) {
     // 基础折线图
     case 'base': {
-      return fn.returnMaker(['3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月'].map(x => ({x, y: fn.r()})))
+      let last = 0
+      const data = ['3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月'].map(x => ({
+        x,
+        y: 0
+      })).map(e => {
+        e.y = last + fn.r()
+        last = e.y
+        return e
+      })
+      last = 0
+      return fn.returnMaker(data)
     }
     default:
       return {}
