@@ -34,13 +34,16 @@ export default {
           formatter: val => (val * 100).toFixed(2) + '%'
         }
       })
+      // 设置坐标系
       this.chart.coord('theta', {
-        radius: 0.75
+        radius: 0.7
       })
+      // tooltip 设置
       this.chart.tooltip({
         showTitle: false,
         itemTpl: '<li><span style="background-color:{color}" class="g2-tooltip-marker"></span>{name}: {value}</li>'
       })
+      // 创建图形
       this.chart.intervalStack()
         .position('percent')
         .color('item')
