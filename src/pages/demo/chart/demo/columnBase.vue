@@ -1,6 +1,6 @@
 <template>
   <Container type="ghost" :responsive="true">
-    <ChartDemoCard v-bind="card" @resize="$refs.chart.resize()">
+    <ChartDemoCard class="dd-mb" v-bind="card" @resize="$refs.chart.resize()">
       <G2ColumnBase slot-scope="{data}" ref="chart" :data="data" v-bind="chart"></G2ColumnBase>
     </ChartDemoCard>
     <el-card>
