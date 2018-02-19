@@ -40,7 +40,7 @@
       <GridItem v-bind="layout.layout[5]" @resized="handleResized(chart[5].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(5)" title="近年行情"></ChartCardHeader>
-          
+          <G2NightingaleRoseBase :ref="chart[5].refName" v-bind="chart[5]"></G2NightingaleRoseBase>
         </el-card>
       </GridItem>
     </GridLayout>
@@ -59,30 +59,32 @@ export default {
         {
           api: {url: '/api/chart/G2Line', data: {type: 'base'}},
           refName: 'G2LineBase',
-          data: [],
-          padding: [30, 40, 50, 50]
+          data: []
         },
         {
           api: {url: '/api/chart/G2Line', data: {type: 'step'}},
           refName: 'G2LineStep',
-          data: [],
-          padding: [30, 40, 50, 50]
+          data: []
         },
         {
           api: {url: '/api/chart/G2Column', data: {type: 'base'}},
           refName: 'G2ColumnBase',
-          data: [],
-          padding: [30, 40, 50, 50]
+          data: []
         },
         {
           api: {url: '/api/chart/G2Bar', data: {type: 'base'}},
           refName: 'G2BarBase',
-          data: [],
-          padding: [30, 40, 50, 50]
+          data: []
         },
         {
           api: {url: '/api/chart/G2Pie', data: {type: 'base'}},
           refName: 'G2PieBase',
+          data: [],
+          padding: [30, 30, 30, 30]
+        },
+        {
+          api: {url: '/api/chart/G2NightingaleRose', data: {type: 'base'}},
+          refName: 'G2NightingaleRoseBase',
           data: [],
           padding: [30, 30, 30, 30]
         }
