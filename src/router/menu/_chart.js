@@ -1,6 +1,7 @@
-const maker = (name) => {
+// 工具 图表演示页面 路由生成
+const maker = (title, name) => {
   return {
-    title: '面积图',
+    title: title,
     icon: 'file-o',
     path: `demo/${name}`,
     name: `demo-chart-demo-${name}`,
@@ -37,14 +38,14 @@ export const menu = {
       title: '单独演示',
       icon: 'file-o',
       children: [
-        maker('areaBase'),
-        maker('barBase'),
-        maker('columnBase'),
-        maker('lineBase'),
-        maker('lineStep'),
-        maker('nightingaleRoseBase'),
-        maker('pieBase'),
-        maker('radarBase')
+        maker('面积图', 'areaBase'),
+        maker('条形图', 'barBase'),
+        maker('柱形图', 'columnBase'),
+        maker('折线图', 'lineBase'),
+        maker('阶梯折线图', 'lineStep'),
+        maker('南丁格尔玫瑰图', 'nightingaleRoseBase'),
+        maker('饼图', 'pieBase'),
+        maker('雷达图', 'radarBase')
       ]
     }
   ]
