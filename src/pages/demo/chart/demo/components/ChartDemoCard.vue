@@ -1,7 +1,10 @@
 <template>
   <el-card>
     <div slot="header">
-      <el-button @click="syncData">加载数据</el-button>
+      <el-button size="mini" @click="syncData">加载数据</el-button>
+      <el-radio-group v-model="height" size="mini">
+        <el-radio-button v-for="(item, index) in heightOptions" :key="index" :label="item">{{item}}px</el-radio-button>
+      </el-radio-group>
     </div>
     <div :style="style">
       <slot :data="data"></slot>
@@ -21,7 +24,8 @@ export default {
   data () {
     return {
       data: [],
-      height: 300
+      height: 300,
+      heightOptions: [300, 400, 500, 600]
     }
   },
   computed: {
@@ -29,6 +33,11 @@ export default {
       return {
         height: this.height + 'px'
       }
+    }
+  },
+  watch: {
+    style () {
+      this.resize()
     }
   },
   mounted () {
@@ -45,7 +54,9 @@ export default {
     },
     // 重新适应大小
     resize () {
-      // this.$refs.chart.resize()
+      this.$nextTick(() => {
+        this.$emit('resize')
+      })
     }
   }
 }
