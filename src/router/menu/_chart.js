@@ -7,9 +7,6 @@ export const menu = {
     requiresAuth: true
   },
   component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
-  redirect: {
-    name: 'demo-chart-index'
-  },
   children: [
     // 所有
     {
