@@ -16,13 +16,19 @@ export default {
       this.creatChart()
       // 本组件的特殊设置
       this.chart.source(this.data)
-      this.chart.axis('x', {
-        label: {
-          offset: 12
-        }
+      this.chart.coord('polar')
+      this.chart.legend({
+        position: 'right',
+        offsetY: 0,
+        offsetX: -140
       })
-      this.chart.coord().transpose()
-      this.chart.interval().position('x*y')
+      this.chart.axis(false)
+      this.chart.interval().position('item*count')
+        .color('item', this.G2.Global.colors_pie_16)
+        .style({
+          lineWidth: 1,
+          stroke: '#fff'
+        })
       // 渲染图表
       this.chart.render()
     },
