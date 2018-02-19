@@ -1,70 +1,63 @@
 <template>
   <Container type="ghost" :responsive="true" class="demo-chart-index">
-    <el-row :gutter="20">
-      <el-col class="col" :span="8">
-        <el-card class="header-in"></el-card>
-      </el-col>
-      <el-col :span="8"></el-col>
-      <el-col :span="8"></el-col>
-    </el-row>
-    <!-- <GridLayout v-bind="layout" @layout-updated="layoutUpdatedHandler"> -->
+    <GridLayout v-bind="layout" @layout-updated="layoutUpdatedHandler">
       <!-- 卡片 -->
-      <!-- <GridItem v-bind="layout.layout[0]" @resized="handleResized(chart[0].refName)">
+      <GridItem v-bind="layout.layout[0]" @resized="handleResized(chart[0].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(0)" title="G2LineBase"></ChartCardHeader>
           <G2LineBase :ref="chart[0].refName" v-bind="chart[0]"></G2LineBase>
         </el-card>
-      </GridItem> -->
+      </GridItem>
       <!-- 卡片 -->
-      <!-- <GridItem v-bind="layout.layout[1]" @resized="handleResized(chart[1].refName)">
+      <GridItem v-bind="layout.layout[1]" @resized="handleResized(chart[1].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(1)" title="G2LineStep"></ChartCardHeader>
           <G2LineStep :ref="chart[1].refName" v-bind="chart[1]"></G2LineStep>
         </el-card>
-      </GridItem> -->
+      </GridItem>
       <!-- 卡片 -->
-      <!-- <GridItem v-bind="layout.layout[2]" @resized="handleResized(chart[2].refName)">
+      <GridItem v-bind="layout.layout[2]" @resized="handleResized(chart[2].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(2)" title="G2ColumnBase"></ChartCardHeader>
           <G2ColumnBase :ref="chart[2].refName" v-bind="chart[2]"></G2ColumnBase>
         </el-card>
-      </GridItem> -->
+      </GridItem>
       <!-- 卡片 -->
-      <!-- <GridItem v-bind="layout.layout[3]" @resized="handleResized(chart[3].refName)">
+      <GridItem v-bind="layout.layout[3]" @resized="handleResized(chart[3].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(3)" title="G2BarBase"></ChartCardHeader>
           <G2BarBase :ref="chart[3].refName" v-bind="chart[3]"></G2BarBase>
         </el-card>
-      </GridItem> -->
+      </GridItem>
       <!-- 卡片 -->
-      <!-- <GridItem v-bind="layout.layout[4]" @resized="handleResized(chart[4].refName)">
+      <GridItem v-bind="layout.layout[4]" @resized="handleResized(chart[4].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(4)" title="G2PieBase"></ChartCardHeader>
           <G2PieBase :ref="chart[4].refName" v-bind="chart[4]"></G2PieBase>
         </el-card>
-      </GridItem> -->
+      </GridItem>
       <!-- 卡片 -->
-      <!-- <GridItem v-bind="layout.layout[5]" @resized="handleResized(chart[5].refName)">
+      <GridItem v-bind="layout.layout[5]" @resized="handleResized(chart[5].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(5)" title="G2NightingaleRoseBase"></ChartCardHeader>
           <G2NightingaleRoseBase :ref="chart[5].refName" v-bind="chart[5]"></G2NightingaleRoseBase>
         </el-card>
-      </GridItem> -->
+      </GridItem>
       <!-- 卡片 -->
-      <!-- <GridItem v-bind="layout.layout[6]" @resized="handleResized(chart[6].refName)">
+      <GridItem v-bind="layout.layout[6]" @resized="handleResized(chart[6].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(6)" title="G2RadarBase"></ChartCardHeader>
           <G2RadarBase :ref="chart[6].refName" v-bind="chart[6]"></G2RadarBase>
         </el-card>
-      </GridItem> -->
+      </GridItem>
       <!-- 卡片 -->
-      <!-- <GridItem v-bind="layout.layout[7]" @resized="handleResized(chart[7].refName)">
+      <GridItem v-bind="layout.layout[7]" @resized="handleResized(chart[7].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(7)" title="G2AreaBase"></ChartCardHeader>
           <G2AreaBase :ref="chart[7].refName" v-bind="chart[7]"></G2AreaBase>
         </el-card>
-      </GridItem> -->
-    <!-- </GridLayout> -->
+      </GridItem>
+    </GridLayout>
   </Container>
 </template>
 
@@ -117,7 +110,28 @@ export default {
           refName: 'G2AreaBase',
           data: []
         }
-      ]
+      ],
+      layout: {
+        // 调整布局时 复制 layoutUpdatedHandler() 输出的日志到这里
+        layout: [
+          {'x': 0, 'y': 0, 'w': 4, 'h': 7, 'i': '0'},
+          {'x': 4, 'y': 0, 'w': 4, 'h': 7, 'i': '1'},
+          {'x': 8, 'y': 0, 'w': 4, 'h': 7, 'i': '2'},
+          {'x': 0, 'y': 7, 'w': 4, 'h': 7, 'i': '3'},
+          {'x': 4, 'y': 7, 'w': 4, 'h': 7, 'i': '4'},
+          {'x': 8, 'y': 7, 'w': 4, 'h': 7, 'i': '5'},
+          {'x': 0, 'y': 14, 'w': 4, 'h': 7, 'i': '6'},
+          {'x': 4, 'y': 14, 'w': 4, 'h': 7, 'i': '7'}
+        ],
+        colNum: 12,
+        rowHeight: 30,
+        isDraggable: true,
+        isResizable: true,
+        isMirrored: false,
+        verticalCompact: true,
+        margin: [10, 10],
+        useCssTransforms: true
+      }
     }
   },
   mounted () {
@@ -133,6 +147,20 @@ export default {
             this.chart[index].data = e
           })
         }))
+    },
+    // 布局组件发生变化
+    layoutUpdatedHandler (newLayout) {
+      console.group('layoutUpdatedHandler')
+      newLayout.forEach(e => {
+        console.log(`{'x': ${e.x}, 'y': ${e.y}, 'w': ${e.w}, 'h': ${e.h}, 'i': '${e.i}'},`)
+      })
+      console.groupEnd()
+    },
+    // 改变尺寸完成
+    handleResized (name) {
+      this.$nextTick(() => {
+        this.$refs[name].resize()
+      })
     },
     // 用户触发了卡片右上角的刷新按钮
     handleRefreshData (index) {
