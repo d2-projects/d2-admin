@@ -111,8 +111,7 @@ export default {
         {
           api: {url: '/api/chart/G2Area', data: {type: 'base'}},
           refName: 'G2AreaBase',
-          data: [],
-          padding: [30, 30, 30, 30]
+          data: []
         }
       ],
       layout: {
