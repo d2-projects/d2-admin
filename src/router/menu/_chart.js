@@ -1,3 +1,16 @@
+const maker = (name) => {
+  return {
+    title: '面积图',
+    icon: 'file-o',
+    path: `demo/${name}`,
+    name: `demo-chart-demo-${name}`,
+    meta: {
+      requiresAuth: true
+    },
+    component: resolve => { require([`@/pages/demo/chart/demo/${name}.vue`], resolve) }
+  }
+}
+
 // [图表] 菜单
 export const menu = {
   title: '图表',
@@ -24,16 +37,14 @@ export const menu = {
       title: '单独演示',
       icon: 'file-o',
       children: [
-        {
-          title: '面积图',
-          icon: 'file-o',
-          path: 'demo/areaBase',
-          name: 'demo-chart-demo-areaBase',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/chart/demo/areaBase.vue'], resolve) }
-        }
+        maker('areaBase'),
+        maker('barBase'),
+        maker('columnBase'),
+        maker('lineBase'),
+        maker('lineStep'),
+        maker('nightingaleRoseBase'),
+        maker('pieBase'),
+        maker('radarBase')
       ]
     }
   ]
