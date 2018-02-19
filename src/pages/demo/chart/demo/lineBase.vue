@@ -3,7 +3,9 @@
     <ChartDemoCard v-bind="card" @resize="$refs.chart.resize()">
       <G2LineBase slot-scope="{data}" ref="chart" :data="data" v-bind="chart"></G2LineBase>
     </ChartDemoCard>
-    <Markdown url="/static/markdownFiles/article/组件 - 图表.md"></Markdown>
+    <el-card>
+      <Markdown url="/static/markdownFiles/article/组件 - 图表.md"></Markdown>
+    </el-card>
   </Container>
 </template>
 
