@@ -4,56 +4,56 @@
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[0]" @resized="handleResized(chart[0].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(0)" title="近年行情"></ChartCardHeader>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(0)" title="G2LineBase"></ChartCardHeader>
           <G2LineBase :ref="chart[0].refName" v-bind="chart[0]"></G2LineBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[1]" @resized="handleResized(chart[1].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(1)" title="近年行情"></ChartCardHeader>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(1)" title="G2LineStep"></ChartCardHeader>
           <G2LineStep :ref="chart[1].refName" v-bind="chart[1]"></G2LineStep>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[2]" @resized="handleResized(chart[2].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(2)" title="近年行情"></ChartCardHeader>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(2)" title="G2ColumnBase"></ChartCardHeader>
           <G2ColumnBase :ref="chart[2].refName" v-bind="chart[2]"></G2ColumnBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[3]" @resized="handleResized(chart[3].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(3)" title="近年行情"></ChartCardHeader>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(3)" title="G2BarBase"></ChartCardHeader>
           <G2BarBase :ref="chart[3].refName" v-bind="chart[3]"></G2BarBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[4]" @resized="handleResized(chart[4].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(4)" title="近年行情"></ChartCardHeader>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(4)" title="G2PieBase"></ChartCardHeader>
           <G2PieBase :ref="chart[4].refName" v-bind="chart[4]"></G2PieBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[5]" @resized="handleResized(chart[5].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(5)" title="近年行情"></ChartCardHeader>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(5)" title="G2NightingaleRoseBase"></ChartCardHeader>
           <G2NightingaleRoseBase :ref="chart[5].refName" v-bind="chart[5]"></G2NightingaleRoseBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[6]" @resized="handleResized(chart[6].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(6)" title="近年行情"></ChartCardHeader>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(6)" title="G2RadarBase"></ChartCardHeader>
           <G2RadarBase :ref="chart[6].refName" v-bind="chart[6]"></G2RadarBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[7]" @resized="handleResized(chart[7].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(7)" title="近年行情"></ChartCardHeader>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(7)" title="G2AreaBase"></ChartCardHeader>
           <G2AreaBase :ref="chart[7].refName" v-bind="chart[7]"></G2AreaBase>
         </el-card>
       </GridItem>
