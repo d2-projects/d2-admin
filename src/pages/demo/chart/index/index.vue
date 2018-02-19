@@ -86,7 +86,7 @@ export default {
           api: {url: '/api/chart/G2NightingaleRose', data: {type: 'base'}},
           refName: 'G2NightingaleRoseBase',
           data: [],
-          padding: [30, 30, 30, 30]
+          padding: [40, 40, 40, 40]
         }
       ],
       layout: {
