@@ -1,7 +1,7 @@
 <template>
   <el-card>
     <div slot="header">
-      <el-button size="mini" @click="syncData">
+      <el-button type="primary" size="mini" @click="syncData">
         <Icon name="refresh"></Icon>
         加载数据
       </el-button>
