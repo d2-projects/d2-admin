@@ -32,7 +32,7 @@ export default {
       this.chart.source(this.dvMaker(), {
         value: {
           min: 0,
-          max: 80
+          max: 100
         }
       })
       this.chart.coord('polar', {
