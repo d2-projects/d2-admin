@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       data: [],
-      height: 500,
+      height: 400,
       heightOptions: [300, 400, 500, 600]
     }
   },
