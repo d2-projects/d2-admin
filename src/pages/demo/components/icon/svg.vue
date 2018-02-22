@@ -15,7 +15,7 @@
       </el-row>
     </el-card>
     <el-card>
-      <Markdown url="/static/markdownFiles/article/组件 - 图标组件.md"></Markdown>
+      <Markdown url="/static/markdownFiles/article/组件 - 图标组件 - svg.md"></Markdown>
     </el-card>
   </Container>
 </template>
