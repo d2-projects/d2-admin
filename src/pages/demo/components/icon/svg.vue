@@ -1,5 +1,5 @@
 <template>
   <Container>
-    Hello
+    <IconSvg name="alarm"></IconSvg>
   </Container>
 </template>
