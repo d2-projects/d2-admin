@@ -1,9 +1,7 @@
-import alarm from './svg/alarm.svg'
-
-console.log(alarm)
+import Vue from 'vue'
 
 const requireAll = requireContext => requireContext.keys().map(requireContext)
 const req = require.context('./svg', false, /\.svg$/)
 const iconMap = requireAll(req)
 
-console.log(iconMap.map(e => e.default.id))
+Vue.prototype.$IconSvg = iconMap.map(e => e.default.id.slice(3))
