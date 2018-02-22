@@ -29,5 +29,5 @@ console.log(this.$IconSvg)
 
 ## 参考
 
-演示图标来源 [iconfont.cn @小啊小二饼 《2.5D工作日记》](http://iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=8219)
+演示图标来源 [iconfont.cn @龙正昆《常用的50个4px双色图标库》](http://iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=4878)
 
