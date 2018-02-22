@@ -1,6 +1,6 @@
 <template>
   <svg aria-hidden="true">
-    <use :xlink:href="iconName"></use>
+    <use :xlink:href="icon"></use>
   </svg>
 </template>
 
@@ -13,8 +13,8 @@ export default {
     }
   },
   computed: {
-    iconName () {
-      return `#icon-${this.name}`
+    icon () {
+      return `#dd-${this.name}`
     }
   }
 }
