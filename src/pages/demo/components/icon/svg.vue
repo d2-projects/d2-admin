@@ -1,17 +1,22 @@
 <template>
-  <Container>
-    <PageHeader
-      slot="header"
-      title="SVG图标组件">
-    </PageHeader>
-    <el-row>
-      <el-col class="icon-card" :span="4" v-for="(icon, index) in $IconSvg" :key="index">
-        <IconSvg class="icon" :name="icon"></IconSvg>
-        <div class="icon-title">
-          <span>{{icon}}</span>
-        </div>
-      </el-col>
-    </el-row>
+  <Container type="ghost">
+    <el-card class="dd-mb">
+      <PageHeader
+        slot="header"
+        title="SVG图标组件">
+      </PageHeader>
+      <el-row>
+        <el-col class="icon-card" :span="4" v-for="(icon, index) in $IconSvg" :key="index">
+          <IconSvg class="icon" :name="icon"></IconSvg>
+          <div class="icon-title">
+            <span>{{icon}}</span>
+          </div>
+        </el-col>
+      </el-row>
+    </el-card>
+    <el-card>
+      <Markdown url="/static/markdownFiles/article/组件 - 图标组件.md"></Markdown>
+    </el-card>
   </Container>
 </template>
 
@@ -23,16 +28,23 @@
   align-items: center;
   flex-direction: column;
   height: 150px;
+  &:hover {
+    .icon {
+      transform: scale(1.1);
+    }
+    .icon-title {
+      color: $color-text-main;
+    }
+  }
 }
 .icon {
   height: 80px;
   width: 80px;
+  transition: all .3s;
 }
 .icon-title {
   font-size: 12px;
   margin-top: 10px;
-  span {
-    color: $color-text-sub;
-  }
+  color: $color-text-placehoder;
 }
 </style>
