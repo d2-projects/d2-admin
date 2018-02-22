@@ -64,6 +64,16 @@ export const menu = {
           component: resolve => { require(['@/pages/demo/components/icon/icon.vue'], resolve) }
         },
         {
+          title: '图标组件 SVG',
+          icon: 'file-o',
+          path: 'icon/svg',
+          name: 'demo-components-icon-svg',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/icon/svg.vue'], resolve) }
+        },
+        {
           title: '图标选择器',
           icon: 'file-o',
           path: 'icon/select',
