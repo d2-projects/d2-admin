@@ -6,10 +6,28 @@
 
 ## 使用方法
 
+首先将下载的 .svg 图标放入 `src/assets/icons/svg` 文件夹下
+
+然后使用组件
+
 ```
-<IconSvg name="your-svg-file-name"></IconSvg>
+<IconSvg name="刚才的svg文件名"></IconSvg>
+```
+
+## 获取已经注册的所有图标
+
+你已经发现了，只需要将图标文件放入项目中就会自动注册
+
+这是因为D2Admin已经配置好 `webpack` 和 `svg-sprite-loader` 相关设置，`src/assets/icons/svg` 文件夹中的图标会自动注册，全部打包成 svg-sprite，同时名称会自动注册到 `Vue.$IconSvg` 属性中
+
+所以如果你需要检查项目中已经注册的所有图标，可以通过如下方式
+
+```
+// 在 vue 单文件组件中
+console.log(this.$IconSvg)
 ```
 
 ## 参考
 
 演示图标来源 [iconfont.cn @小啊小二饼 《2.5D工作日记》](http://iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=8219)
+
