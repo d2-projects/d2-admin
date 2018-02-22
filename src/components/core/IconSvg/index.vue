@@ -13,7 +13,7 @@ export default {
     }
   },
   computed: {
-    iconName() {
+    iconName () {
       return `#icon-${this.name}`
     }
   }
