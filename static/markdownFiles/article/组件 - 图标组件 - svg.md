@@ -18,7 +18,7 @@
 
 你已经发现了，只需要将图标文件放入项目中就会自动注册
 
-这是因为D2Admin已经配置好 `webpack` 和 `svg-sprite-loader` 相关设置，`src/assets/icons/svg` 文件夹中的图标会自动注册，全部打包成 svg-sprite，同时名称会自动注册到 `Vue.$IconSvg` 属性中
+这是因为已经对 `webpack` 和 `svg-sprite-loader` 进行了相关设置，`src/assets/icons/svg` 文件夹中的图标会自动注册到项目中，文件全部打包成 svg-sprite，名称注册到 `Vue.$IconSvg` 属性中
 
 所以如果你需要检查项目中已经注册的所有图标，可以通过如下方式
 
