@@ -12,6 +12,9 @@ import '@/assets/library/font-awesome-4.7.0/css/font-awesome.min.css'
 // simplemde css
 import 'simplemde/dist/simplemde.min.css'
 
+// svg图标
+import '@/assets/icons/index.js'
+
 // markdown主题
 import 'github-markdown-css'
 
