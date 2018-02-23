@@ -19,10 +19,11 @@
 </template>
 
 <script>
+import text from './text'
 export default {
   data () {
     return {
-      text: ''
+      text
     }
   }
 }
