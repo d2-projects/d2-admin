@@ -53,6 +53,9 @@ export default {
         // 挂载元素
         element: this.$refs.mde
       })
+      this.mde.codemirror.on('change', () => {
+        this.$emit('input', this.mde.value())
+      })
     }
   }
 }
