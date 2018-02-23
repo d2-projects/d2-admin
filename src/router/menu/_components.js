@@ -44,7 +44,7 @@ export const menu = {
       icon: 'font-awesome',
       children: [
         {
-          title: '索引',
+          title: 'FontAwesome',
           icon: 'file-o',
           path: 'icon/list',
           name: 'demo-components-icon-list',
