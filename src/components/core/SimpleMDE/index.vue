@@ -1,7 +1,5 @@
 <template>
-  <div class="markdown-editor">
-    <textarea ref="mde"></textarea>
-  </div>
+  <textarea ref="mde"></textarea>
 </template>
 
 <script>
@@ -60,19 +58,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.markdown-editor {
-  .markdown-body {
-    padding: 0.5em;
-  }
-}
-.markdown-editor {
-  .editor-preview-active {
-    display: block;
-  }
-  .editor-preview-active-side {
-    display: block;
-  }
-}
-</style>
