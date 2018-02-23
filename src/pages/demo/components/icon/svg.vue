@@ -41,6 +41,7 @@
   height: 80px;
   width: 80px;
   transition: all .3s;
+  cursor: pointer;
 }
 .icon-title {
   font-size: 12px;
