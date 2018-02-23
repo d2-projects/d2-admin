@@ -1,6 +1,11 @@
 <template>
   <Container type="ghost">
     <el-card class="dd-mb">
+      <PageHeader
+        slot="header"
+        title="基本示例"
+        url="https://github.com/quilljs/quill">
+      </PageHeader>
       <QuillEditor
         style="min-height: 200px;"
         v-model="value"
@@ -9,8 +14,8 @@
         @editor-change="editorChangeHandler">
       </QuillEditor>
     </el-card>
-    <p>输出</p>
     <el-card>
+      <template slot="header">输出</template>
       <Highlight :code="formated"></Highlight>
     </el-card>
   </Container>
