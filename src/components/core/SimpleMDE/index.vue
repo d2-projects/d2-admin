@@ -8,6 +8,12 @@
 import SimpleMDE from 'simplemde'
 export default {
   props: {
+    // 值
+    value: {
+      type: String,
+      required: false,
+      default: ''
+    },
     // 配置参数
     config: {
       type: Object,
@@ -37,9 +43,14 @@ export default {
   methods: {
     // 初始化
     init () {
+      // 合并参数
       const config = Object.assign({}, this.defaultConfig, this.config)
+      // 初始化
       this.mde = new SimpleMDE({
         ...config,
+        // 初始值
+        initialValue: this.value,
+        // 挂载元素
         element: this.$refs.mde
       })
     }
