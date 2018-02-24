@@ -3,7 +3,6 @@
     <div class="spin-group" v-if="!markedHTML">
       <div>正在加载</div>
     </div>
-    <img src="/static/image/baidu-pan-logo.png">
     <div class="markdown-body" v-html="markedHTML"></div>
   </div>
 </template>
@@ -68,6 +67,7 @@ export default {
     marked (data) {
       const renderer = new marked.Renderer()
       renderer.blockquote = (quote) => {
+        // 百度网盘
         return bandupan(quote) || `<blockquote>${quote}</blockquote>`
       }
       return marked(data, {
@@ -89,6 +89,18 @@ export default {
     align-items: center;
     flex-direction: column;
     color: $color-primary;
+  }
+}
+$baidupanHeight: 40px;
+.baidupan {
+  height: $baidupanHeight;
+  overflow: hidden;
+  margin-bottom: 16px;
+  .l {
+    float: left;
+  }
+  .r {
+    float: left;
   }
 }
 </style>
