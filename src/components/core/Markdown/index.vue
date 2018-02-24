@@ -119,6 +119,7 @@ $baidupanHeight: 30px;
       float: left;
       height: $baidupanHeight;
       line-height: $baidupanHeight;
+      color: $color-text-main;
     }
     .pwd {
       float: left;
