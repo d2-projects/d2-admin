@@ -101,8 +101,10 @@ $baidupanHeight: 30px;
     border: 1px solid #dfe2e5;
     padding: 10px;
     float: left;
-    user-select: none;
     cursor: pointer;
+    &:hover {
+      border: 1px solid $color-primary;
+    }
     .icon {
       float: left;
       height: $baidupanHeight;
@@ -117,6 +119,12 @@ $baidupanHeight: 30px;
       float: left;
       height: $baidupanHeight;
       line-height: $baidupanHeight;
+    }
+    .pwd {
+      float: left;
+      height: $baidupanHeight;
+      line-height: $baidupanHeight;
+      margin-left: 10px;
     }
   }
 }
