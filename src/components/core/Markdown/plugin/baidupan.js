@@ -16,12 +16,12 @@ export default (quote) => {
     const pwd = _quote.match(/[a-z0-9]{4}$/i)
     return `<div class="baidupan">
       <div class="container">
-        <div class="icon">
-          <img src="/static/image/baidu-pan-logo.png">
-        </div>
-        <div class="url">
-          <a href="${url[0]}">${url[0]}</a>
-        </div>
+        <a href="${url[0]}">
+          <div class="icon">
+            <img src="/static/image/baidu-pan-logo.png">
+          </div>
+          <div class="url">${url[0]}</div>
+        </a>
         <div class="pwd">
           密码
           <span>${pwd[0]}</span>
