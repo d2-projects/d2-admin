@@ -109,6 +109,16 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/components/markdown/demoHighlight.vue'], resolve) }
+        },
+        {
+          title: '自定义渲染',
+          icon: 'file-o',
+          path: 'marked/demoRender',
+          name: 'demo-components-markdown-demoRender',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/markdown/demoRender.vue'], resolve) }
         }
       ]
     },
