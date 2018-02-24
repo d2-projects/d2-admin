@@ -36,6 +36,13 @@ export default {
     renderer.blockquote = (quote) => {
       // 链接: https://pan.baidu.com/s/1pMNNDZP 密码: vc95
       // https://pan.baidu.com/s/1c3gQGxE
+      // 获取去掉HTML标签的内容
+      const quoteText = quote.replace(/<[^<>]+>/g, '').trim()
+      // 分享链接地址
+      const bdShareUrl = /^https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+$/i
+      if (bdShareUrl.test(quoteText)) {
+        return `<div style="color: red;">${quoteText}</div>`
+      }
       return `<blockquote>${quote}</blockquote>`
     }
     this.markedHTML = marked(this.mdSource, {
