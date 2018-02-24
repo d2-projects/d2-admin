@@ -4,14 +4,12 @@ export default (quote) => {
   const bdShareUrlPwd = /^链接: https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+ 密码: [a-z0-9]{4}$/i
   if (bdShareUrl.test(_quote)) {
     return `<div class="baidupan">
-      <div class="container">
+      <a href="${_quote}" class="container">
         <div class="icon">
           <img src="/static/image/baidu-pan-logo.png">
         </div>
-        <div class="url">
-          <a href="${_quote}">${_quote}</a>
-        </div>
-      </div>
+        <div class="url">${_quote}</div>
+      </a>
     </div>`
   } else if (bdShareUrlPwd.test(_quote)) {
     const url = _quote.match(/https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+/i)
