@@ -99,6 +99,16 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/components/markdown/demo.vue'], resolve) }
+        },
+        {
+          title: '文档',
+          icon: 'file-o',
+          path: 'marked/doc',
+          name: 'demo-components-markdown-doc',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/markdown/doc.vue'], resolve) }
         }
       ]
     },

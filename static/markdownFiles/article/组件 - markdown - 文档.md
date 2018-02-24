@@ -12,5 +12,37 @@
 加载一个.md文件
 
 ```
-<markdown url="/static/markdownFiles/article/组件 - markdown - 演示.md"></markdown>
+<markdown url="/static/markdownFiles/article/xxxx.md"></markdown>
 ```
+
+加载资源
+
+```
+const md = `# Header
+
+## title
+
+text`
+
+<markdown :md="md"></markdown>
+```
+
+## 百度网盘分享链接优化
+
+当书写类似下面的分享链接时
+
+> 需要 `baidupan = true`
+
+```
+普通分享链接
+
+> https://pan.baidu.com/s/1kW6uUwB
+
+私密分享链接
+
+> 链接: https://pan.baidu.com/s/1ggFW21l 密码: 877y
+```
+
+markdown 中引用部分的文本由于被识别为百度云的分享链接，所以不会被当做 `blockquote` 渲染，会以一种特别的块来显示
+
+> 了解 D2Admin 是如何匹配百度云链接的？ [查看源码](https://github.com/FairyEver/d2admin-vue-element/blob/master/src/components/core/Markdown/plugin/baidupan.js)
