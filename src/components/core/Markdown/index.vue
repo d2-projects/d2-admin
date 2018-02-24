@@ -91,26 +91,31 @@ export default {
     color: $color-primary;
   }
 }
+// 百度云
 $baidupanHeight: 30px;
+$baidupanPadding: 10px;
 .baidupan {
   overflow: hidden;
   margin-bottom: 16px;
   .container {
-    height: $baidupanHeight + 20px;
+    height: $baidupanHeight + 2 * $baidupanPadding;
     border-radius: 4px;
     border: 1px solid #dfe2e5;
-    padding: 10px;
+    padding: $baidupanPadding;
     float: left;
     cursor: pointer;
     &:hover {
       border: 1px solid $color-primary;
+      .line {
+        background-color: $color-primary;
+      }
     }
     .icon {
       float: left;
       height: $baidupanHeight;
       text-align: center;
       width: 40px;
-      margin-right: 10px;
+      margin-right: $baidupanPadding;
       img {
         width: 40px;
       }
@@ -121,11 +126,17 @@ $baidupanHeight: 30px;
       line-height: $baidupanHeight;
       color: $color-text-main;
     }
+    .line {
+      float: left;
+      height: $baidupanHeight + 2 * $baidupanPadding;
+      width: 1px;
+      margin: -$baidupanPadding $baidupanPadding;
+      background-color: #dfe2e5;
+    }
     .pwd {
       float: left;
       height: $baidupanHeight;
       line-height: $baidupanHeight;
-      margin-left: 10px;
     }
   }
 }

@@ -22,6 +22,7 @@ export default (quote) => {
           </div>
           <div class="url">${url[0]}</div>
         </a>
+        <div class="line"></div>
         <div class="pwd">
           密码
           <span>${pwd[0]}</span>
