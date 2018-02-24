@@ -91,7 +91,7 @@ export const menu = {
       icon: 'font',
       children: [
         {
-          title: '基本示例',
+          title: '效果演示',
           icon: 'file-o',
           path: 'marked/demo',
           name: 'demo-components-markdown-demo',
