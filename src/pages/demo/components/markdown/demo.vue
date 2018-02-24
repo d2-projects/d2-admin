@@ -1,5 +1,10 @@
 <template>
   <Container>
-    <markdown url="/static/markdownFiles/article/组件 - markdown.md"></markdown>
+    <PageHeader
+      slot="header"
+      title="效果演示"
+      url="https://github.com/FairyEver/d2admin-vue-element/blob/master/src/components/core/Markdown/index.vue">
+    </PageHeader>
+    <markdown url="/static/markdownFiles/article/组件 - markdown - 演示.md"></markdown>
   </Container>
 </template>
