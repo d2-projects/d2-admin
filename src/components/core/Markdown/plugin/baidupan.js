@@ -14,7 +14,15 @@ export default (quote) => {
   } else if (bdShareUrlPwd.test(_quote)) {
     const url = _quote.match(/https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+/i)
     const pwd = _quote.match(/[a-z0-9]{4}$/i)
-    return `<div style="color: blue;">${url[0]} - ${pwd[0]}</div>`
+    return `<div class="baidupan">
+      <a href="${_quote}" class="container">
+        <div class="icon">
+          <img src="/static/image/baidu-pan-logo.png">
+        </div>
+        <div class="url">${url[0]}</div>
+        <div class="pwd">${pwd[0]}</div>
+      </a>
+    </div>`
   } else {
     return false
   }
