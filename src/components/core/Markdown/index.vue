@@ -10,6 +10,7 @@
 <script>
 import marked from 'marked'
 import highlight from 'highlight.js'
+import bandupan from './plugin/baidupan'
 export default {
   props: {
     url: {
@@ -66,18 +67,19 @@ export default {
     marked (data) {
       const renderer = new marked.Renderer()
       renderer.blockquote = (quote) => {
+        bandupan().then(() => {
+          console.log('----')
+        })
         const _quote = quote.replace(/<[^<>]+>/g, '').trim()
         const bdShareUrl = /^https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+$/i
         const bdShareUrlPwd = /^链接: https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+ 密码: [a-z0-9]{4}$/i
         if (bdShareUrl.test(_quote)) {
           return `<div style="color: red;">${_quote}</div>`
-        }
-        if (bdShareUrlPwd.test(_quote)) {
+        } else if (bdShareUrlPwd.test(_quote)) {
           const url = _quote.match(/https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+/i)
           const pwd = _quote.match(/[a-z0-9]{4}$/i)
           return `<div style="color: blue;">${url[0]} - ${pwd[0]}</div>`
         }
-        // 一般的
         return `<blockquote>${quote}</blockquote>`
       }
       return marked(data, {
