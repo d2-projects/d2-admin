@@ -53,7 +53,6 @@ export default {
     // 使用 md 初始化
     initWithMd () {
       this.markedHTML = this.marked(this.md)
-      console.log(this.markedHTML)
     },
     // 使用 url 初始化
     async initWithUrl () {
