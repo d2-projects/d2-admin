@@ -46,7 +46,9 @@ export default {
       }
       // 如果是带有密码的分享链接
       if (bdShareUrlPwd.test(quoteText)) {
-        return `<div style="color: blue;">${quoteText}</div>`
+        const url = quoteText.match(/https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+/i)
+        const pwd = quoteText.match(/[a-z0-9]{4}$/i)
+        return `<div style="color: blue;">${url[0]}   ${pwd[0]}</div>`
       }
       // 一般的
       return `<blockquote>${quote}</blockquote>`
