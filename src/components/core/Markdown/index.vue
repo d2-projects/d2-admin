@@ -26,6 +26,12 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    // 百度网盘分享链接特殊样式
+    baidupan: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   data () {
