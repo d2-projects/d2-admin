@@ -102,6 +102,8 @@ $baidupanHeight: 40px;
     padding: 5px;
     padding-right: 15px;
     float: left;
+    user-select: none;
+    cursor: pointer;
     .icon {
       float: left;
       height: $baidupanHeight;
