@@ -91,16 +91,15 @@ export default {
     color: $color-primary;
   }
 }
-$baidupanHeight: 40px;
+$baidupanHeight: 30px;
 .baidupan {
   overflow: hidden;
   margin-bottom: 16px;
   .container {
-    height: $baidupanHeight + 10px;
+    height: $baidupanHeight + 20px;
     border-radius: 4px;
     border: 1px solid #dfe2e5;
-    padding: 5px;
-    padding-right: 15px;
+    padding: 10px;
     float: left;
     user-select: none;
     cursor: pointer;
@@ -108,10 +107,10 @@ $baidupanHeight: 40px;
       float: left;
       height: $baidupanHeight;
       text-align: center;
-      width: 50px;
+      width: 40px;
+      margin-right: 10px;
       img {
         width: 40px;
-        margin-top: 4px;
       }
     }
     .url {
