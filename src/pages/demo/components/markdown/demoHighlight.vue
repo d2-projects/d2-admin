@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     async getReadme () {
-      const data = await this.$axios.get('/static/markdownFiles/demo/baseMarkdowmFile.md')
+      const data = await this.$axios.get('/static/markdownFiles/demo/base.md')
       return data
     }
   }

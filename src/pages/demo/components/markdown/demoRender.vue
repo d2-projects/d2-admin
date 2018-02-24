@@ -23,7 +23,6 @@
 
 <script>
 import marked from 'marked'
-import highlight from 'highlight.js'
 export default {
   data () {
     return {
@@ -33,15 +32,19 @@ export default {
   },
   async mounted () {
     this.mdSource = await this.getReadme(this.url)
+    const renderer = new marked.Renderer()
+    renderer.blockquote = (quote) => {
+      // 链接: https://pan.baidu.com/s/1pMNNDZP 密码: vc95
+      // https://pan.baidu.com/s/1c3gQGxE
+      return `<blockquote>${quote}</blockquote>`
+    }
     this.markedHTML = marked(this.mdSource, {
-      highlight: (code) => {
-        return highlight.highlightAuto(code).value
-      }
+      renderer
     })
   },
   methods: {
     async getReadme () {
-      const data = await this.$axios.get('/static/markdownFiles/demo/baseMarkdowmFile.md')
+      const data = await this.$axios.get('/static/markdownFiles/demo/baiduyun.md')
       return data
     }
   }
