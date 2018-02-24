@@ -34,15 +34,21 @@ export default {
     this.mdSource = await this.getReadme(this.url)
     const renderer = new marked.Renderer()
     renderer.blockquote = (quote) => {
-      // 链接: https://pan.baidu.com/s/1pMNNDZP 密码: vc95
-      // https://pan.baidu.com/s/1c3gQGxE
       // 获取去掉HTML标签的内容
       const quoteText = quote.replace(/<[^<>]+>/g, '').trim()
       // 分享链接地址
       const bdShareUrl = /^https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+$/i
+      // 带密码的分享链接
+      const bdShareUrlPwd = /^链接: https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+ 密码: [a-z0-9]{4}$/i
+      // 如果是一般的分享链接
       if (bdShareUrl.test(quoteText)) {
         return `<div style="color: red;">${quoteText}</div>`
       }
+      // 如果是带有密码的分享链接
+      if (bdShareUrlPwd.test(quoteText)) {
+        return `<div style="color: blue;">${quoteText}</div>`
+      }
+      // 一般的
       return `<blockquote>${quote}</blockquote>`
     }
     this.markedHTML = marked(this.mdSource, {
