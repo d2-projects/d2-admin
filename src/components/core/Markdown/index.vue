@@ -93,14 +93,30 @@ export default {
 }
 $baidupanHeight: 40px;
 .baidupan {
-  height: $baidupanHeight;
   overflow: hidden;
   margin-bottom: 16px;
-  .l {
+  .container {
+    height: $baidupanHeight + 10px;
+    border-radius: 4px;
+    border: 1px solid #dfe2e5;
+    padding: 5px;
+    padding-right: 15px;
     float: left;
-  }
-  .r {
-    float: left;
+    .icon {
+      float: left;
+      height: $baidupanHeight;
+      text-align: center;
+      width: 50px;
+      img {
+        width: 40px;
+        margin-top: 4px;
+      }
+    }
+    .url {
+      float: left;
+      height: $baidupanHeight;
+      line-height: $baidupanHeight;
+    }
   }
 }
 </style>
