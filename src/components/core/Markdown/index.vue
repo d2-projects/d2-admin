@@ -3,6 +3,7 @@
     <div class="spin-group" v-if="!markedHTML">
       <div>正在加载</div>
     </div>
+    <img src="/static/image/baidu-pan-logo.png">
     <div class="markdown-body" v-html="markedHTML"></div>
   </div>
 </template>
@@ -67,20 +68,7 @@ export default {
     marked (data) {
       const renderer = new marked.Renderer()
       renderer.blockquote = (quote) => {
-        bandupan().then(() => {
-          console.log('----')
-        })
-        const _quote = quote.replace(/<[^<>]+>/g, '').trim()
-        const bdShareUrl = /^https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+$/i
-        const bdShareUrlPwd = /^链接: https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+ 密码: [a-z0-9]{4}$/i
-        if (bdShareUrl.test(_quote)) {
-          return `<div style="color: red;">${_quote}</div>`
-        } else if (bdShareUrlPwd.test(_quote)) {
-          const url = _quote.match(/https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+/i)
-          const pwd = _quote.match(/[a-z0-9]{4}$/i)
-          return `<div style="color: blue;">${url[0]} - ${pwd[0]}</div>`
-        }
-        return `<blockquote>${quote}</blockquote>`
+        return bandupan(quote) || `<blockquote>${quote}</blockquote>`
       }
       return marked(data, {
         ...this.highlight ? {highlight: (code) => highlight.highlightAuto(code).value} : {},
