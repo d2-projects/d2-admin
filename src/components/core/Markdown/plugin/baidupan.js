@@ -1,8 +1,8 @@
 export default (quote) => {
   const _quote = quote.replace(/<[^<>]+>/g, '').trim()
-  const bdShareUrl = /^https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+$/i
-  const bdShareUrlPwd = /^链接: https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+ 密码: [a-z0-9]{4}$/i
-  if (bdShareUrl.test(_quote)) {
+  const bdPanUrl = /^https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+$/i
+  const bdPanUrlPwd = /^链接: https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+ 密码: [a-z0-9]{4}$/i
+  if (bdPanUrl.test(_quote)) {
     return `<div class="baidupan">
       <a href="${_quote}" class="container">
         <div class="icon">
@@ -11,7 +11,7 @@ export default (quote) => {
         <div class="url">${_quote}</div>
       </a>
     </div>`
-  } else if (bdShareUrlPwd.test(_quote)) {
+  } else if (bdPanUrlPwd.test(_quote)) {
     const url = _quote.match(/https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+/i)
     const pwd = _quote.match(/[a-z0-9]{4}$/i)
     return `<div class="baidupan">
