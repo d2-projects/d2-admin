@@ -15,7 +15,7 @@ export default {
   autoInit: {
     type: Boolean,
     required: false,
-    default: true
+    default: false
   },
   // 在组件 mounted 后自动初始化图表的 延时 (非G2自带)
   autoInitDelay: {

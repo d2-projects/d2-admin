@@ -107,7 +107,9 @@ export default {
   },
   mounted () {
     // 请求图表数据
-    this.syncData()
+    setTimeout(() => {
+      this.syncData()
+    }, 1000)
   },
   methods: {
     // 请求图表数据
