@@ -12,7 +12,7 @@ alert('Hello World')
 
 > 引用文字
 
-分享一个我很早前的一副设计作品 [in Lofter](http://fairyever.lofter.com/post/16ff00_6796fe8)
+分享一个我很早前的一副设计作品 [in Lofter](http://fairyever.lofter.com/post/16ff00_6796fe8) 借此演示百度云链接的显示优化
 
 > https://pan.baidu.com/s/1kW6uUwB
 
