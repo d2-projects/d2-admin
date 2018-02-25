@@ -35,6 +35,7 @@ export default {
     if (this.autoInit) {
       this.startInit()
     }
+    this.$emit('ready')
   },
   watch: {
     // 数据改变
