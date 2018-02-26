@@ -33,6 +33,17 @@ export const menu = {
       },
       component: resolve => { require(['@/pages/demo/chart/index/index.vue'], resolve) }
     },
+    // 动态尺寸
+    {
+      title: '动态尺寸',
+      icon: 'th',
+      path: 'dynamicSize',
+      name: 'demo-chart-dynamicSize',
+      meta: {
+        requiresAuth: true
+      },
+      component: resolve => { require(['@/pages/demo/chart/dynamicSize/index.vue'], resolve) }
+    },
     // 单独演示
     {
       title: '单独演示',
