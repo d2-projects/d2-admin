@@ -5,56 +5,56 @@
       <GridItem v-bind="layout.layout[0]" @resized="handleResized(chart[0].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(0)" title="G2LineBase"></ChartCardHeader>
-          <G2LineBase :ref="chart[0].refName" v-bind="chart[0]"></G2LineBase>
+          <G2LineBase :ref="chart[0].refName" v-bind="chart[0]" @ready="isReady(0)"></G2LineBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[1]" @resized="handleResized(chart[1].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(1)" title="G2LineStep"></ChartCardHeader>
-          <G2LineStep :ref="chart[1].refName" v-bind="chart[1]"></G2LineStep>
+          <G2LineStep :ref="chart[1].refName" v-bind="chart[1]" @ready="isReady(1)"></G2LineStep>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[2]" @resized="handleResized(chart[2].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(2)" title="G2ColumnBase"></ChartCardHeader>
-          <G2ColumnBase :ref="chart[2].refName" v-bind="chart[2]"></G2ColumnBase>
+          <G2ColumnBase :ref="chart[2].refName" v-bind="chart[2]" @ready="isReady(2)"></G2ColumnBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[3]" @resized="handleResized(chart[3].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(3)" title="G2BarBase"></ChartCardHeader>
-          <G2BarBase :ref="chart[3].refName" v-bind="chart[3]"></G2BarBase>
+          <G2BarBase :ref="chart[3].refName" v-bind="chart[3]" @ready="isReady(3)"></G2BarBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[4]" @resized="handleResized(chart[4].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(4)" title="G2PieBase"></ChartCardHeader>
-          <G2PieBase :ref="chart[4].refName" v-bind="chart[4]"></G2PieBase>
+          <G2PieBase :ref="chart[4].refName" v-bind="chart[4]" @ready="isReady(4)"></G2PieBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[5]" @resized="handleResized(chart[5].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(5)" title="G2NightingaleRoseBase"></ChartCardHeader>
-          <G2NightingaleRoseBase :ref="chart[5].refName" v-bind="chart[5]"></G2NightingaleRoseBase>
+          <G2NightingaleRoseBase :ref="chart[5].refName" v-bind="chart[5]" @ready="isReady(5)"></G2NightingaleRoseBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[6]" @resized="handleResized(chart[6].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(6)" title="G2RadarBase"></ChartCardHeader>
-          <G2RadarBase :ref="chart[6].refName" v-bind="chart[6]"></G2RadarBase>
+          <G2RadarBase :ref="chart[6].refName" v-bind="chart[6]" @ready="isReady(6)"></G2RadarBase>
         </el-card>
       </GridItem>
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[7]" @resized="handleResized(chart[7].refName)">
         <el-card class="header-in">
           <ChartCardHeader slot="header" @refresh="handleRefreshData(7)" title="G2AreaBase"></ChartCardHeader>
-          <G2AreaBase :ref="chart[7].refName" v-bind="chart[7]"></G2AreaBase>
+          <G2AreaBase :ref="chart[7].refName" v-bind="chart[7]" @ready="isReady(7)"></G2AreaBase>
         </el-card>
       </GridItem>
     </GridLayout>
@@ -73,41 +73,49 @@ export default {
         {
           api: {url: '/api/chart/G2Line', data: {type: 'base'}},
           refName: 'G2LineBase',
+          ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Line', data: {type: 'step'}},
           refName: 'G2LineStep',
+          ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Column', data: {type: 'base'}},
           refName: 'G2ColumnBase',
+          ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Bar', data: {type: 'base'}},
           refName: 'G2BarBase',
+          ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Pie', data: {type: 'base'}},
           refName: 'G2PieBase',
+          ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2NightingaleRose', data: {type: 'base'}},
           refName: 'G2NightingaleRoseBase',
+          ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Radar', data: {type: 'base'}},
           refName: 'G2RadarBase',
+          ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Area', data: {type: 'base'}},
           refName: 'G2AreaBase',
+          ready: false,
           data: []
         }
       ],
@@ -134,11 +142,23 @@ export default {
       }
     }
   },
-  mounted () {
-    // 请求图表数据
-    this.syncData()
+  computed: {
+    ready () {
+      return !this.chart.find(e => !e.ready)
+    }
+  },
+  watch: {
+    ready (ready) {
+      if (ready) {
+        this.syncData()
+      }
+    }
   },
   methods: {
+    // 图表 mounted
+    isReady (index) {
+      this.chart[index].ready = true
+    },
     // 请求图表数据
     syncData () {
       this.$axios.all(this.chart.map(e => this.$axios.post(e.api.url, e.api.data)))
