@@ -156,7 +156,19 @@ export default {
       }
     }
   },
+  mounted () {
+    // 显示提示
+    this.showInfo();
+  },
   methods: {
+    // 显示提示
+    showInfo () {
+      this.$notify({
+        title: '提示',
+        message: '你可以按住卡片标题拖拽卡片；或者在每个卡片的右下角拖动，调整大小检查图表自动更新',
+        duration: 10000
+      })
+    },
     // 图表 mounted
     isReady (index) {
       this.chart[index].ready = true
