@@ -36,7 +36,7 @@ export const menu = {
     // 动态尺寸
     {
       title: '动态尺寸',
-      icon: 'th',
+      icon: 'refresh',
       path: 'dynamicSize',
       name: 'demo-chart-dynamicSize',
       meta: {
