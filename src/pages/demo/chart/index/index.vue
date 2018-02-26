@@ -124,10 +124,19 @@ export default {
     ready (ready) {
       if (ready) {
         this.syncData()
+        this.showInfo()
       }
     }
   },
   methods: {
+    // 显示提示
+    showInfo () {
+      this.$notify({
+        title: '提示',
+        message: '点击卡片右上角的刷新按钮可以重新载入某个图表的数据',
+        duration: 10000
+      })
+    },
     // 图表 mounted
     isReady (index) {
       this.chart[index].ready = true
