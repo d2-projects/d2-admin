@@ -114,11 +114,13 @@ export default {
     }
   },
   computed: {
+    // 所有的图表已经 mounted
     ready () {
       return !this.chart.find(e => !e.ready)
     }
   },
   watch: {
+    // 在所有的图表 mounted 后加载数据
     ready (ready) {
       if (ready) {
         this.syncData()
