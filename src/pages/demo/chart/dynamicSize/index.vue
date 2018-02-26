@@ -153,12 +153,9 @@ export default {
     ready (ready) {
       if (ready) {
         this.syncData()
+        this.showInfo()
       }
     }
-  },
-  mounted () {
-    // 显示提示
-    this.showInfo();
   },
   methods: {
     // 显示提示
