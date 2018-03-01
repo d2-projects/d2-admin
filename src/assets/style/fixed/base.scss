@@ -6,7 +6,11 @@ html, body {
   background-color: $color-bg;
   font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
   #app {
-    height: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
   }
 }
 
