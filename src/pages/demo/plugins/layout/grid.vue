@@ -55,8 +55,8 @@ export default {
       }
     }
   },
-  // 加载完成后显示提示
   mounted () {
+    // 加载完成后显示提示
     this.showInfo()
   },
   methods: {
