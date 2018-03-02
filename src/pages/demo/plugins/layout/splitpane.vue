@@ -18,3 +18,23 @@
     </div>
   </Container>
 </template>
+
+<script>
+export default {
+  mounted () {
+    // 加载完成后显示提示
+    this.showInfo()
+  },
+  methods: {
+    // 显示提示
+    showInfo () {
+      this.$notify({
+        title: '提示',
+        message: '在横向或者纵向的分割线上拖拽调整分区大小',
+        duration: 10000
+      })
+    }
+  }
+}
+</script>
+
