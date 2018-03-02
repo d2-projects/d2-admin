@@ -64,8 +64,7 @@ export default {
     showInfo () {
       this.$notify({
         title: '提示',
-        message: '你可以按住卡片拖拽改变位置；或者在每个卡片的右下角拖动，调整卡片大小',
-        duration: 10000
+        message: '你可以按住卡片拖拽改变位置；或者在每个卡片的右下角拖动，调整卡片大小'
       })
     },
     // 测试代码

@@ -30,8 +30,7 @@ export default {
     showInfo () {
       this.$notify({
         title: '提示',
-        message: '在横向或者纵向的分割线上拖拽调整分区大小',
-        duration: 10000
+        message: '在横向或者纵向的分割线上拖拽调整分区大小'
       })
     }
   }
