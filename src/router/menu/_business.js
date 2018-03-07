@@ -35,6 +35,16 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/business/container/ghost.vue'], resolve) }
+        },
+        {
+          title: '撑满',
+          icon: 'file-o',
+          path: 'container/full',
+          name: 'demo-business-container-full',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/business/container/full.vue'], resolve) }
         }
       ]
     }
