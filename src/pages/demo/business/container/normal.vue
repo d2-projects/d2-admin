@@ -1,5 +1,5 @@
 <template>
   <Container>
-    worker
+    Container
   </Container>
 </template>
