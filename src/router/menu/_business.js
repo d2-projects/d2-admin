@@ -14,7 +14,7 @@ export const menu = {
     // 页面容器
     {
       title: '页面容器',
-      icon: 'flask',
+      icon: 'window-restore',
       children: [
         {
           title: '卡片',
