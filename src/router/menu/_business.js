@@ -1,6 +1,6 @@
 // [业务演示] 菜单
 export const menu = {
-  title: '示例业务界面',
+  title: '示例界面',
   path: '/demo/business',
   name: 'demo-business',
   meta: {
@@ -11,20 +11,20 @@ export const menu = {
   //   name: ''
   // },
   children: [
-    // 数据处理
+    // 页面容器
     {
-      title: '数据处理',
+      title: '页面容器',
       icon: 'flask',
       children: [
         {
-          title: '使用 Worker',
+          title: '卡片',
           icon: 'file-o',
-          path: 'data/worker',
-          name: 'demo-business-data-worker',
+          path: 'container/normal',
+          name: 'demo-business-container-normal',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/business/data/worker/index.vue'], resolve) }
+          component: resolve => { require(['@/pages/demo/business/container/normal.vue'], resolve) }
         }
       ]
     }
