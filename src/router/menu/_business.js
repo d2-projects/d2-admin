@@ -25,6 +25,16 @@ export const menu = {
             requiresAuth: true
           },
           component: resolve => { require(['@/pages/demo/business/container/normal.vue'], resolve) }
+        },
+        {
+          title: '隐形',
+          icon: 'file-o',
+          path: 'container/ghost',
+          name: 'demo-business-container-ghost',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/business/container/ghost.vue'], resolve) }
         }
       ]
     }
