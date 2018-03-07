@@ -11,6 +11,10 @@
     <div v-if="type === 'ghost'">
       <slot></slot>
     </div>
+    <!-- [full] 撑满 -->
+    <div v-if="type === 'full'">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
