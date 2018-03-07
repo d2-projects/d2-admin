@@ -1,5 +1,7 @@
 <template>
   <Container type="ghost">
-    这是一个最基础的页面容器，它看起来像一个卡片，它会将页面区域和导航区域区分开
+    <p style="margin-top: 0px;">这是一个隐形的页面容器</p>
+    <p>没有边界和背景颜色</p>
+    <p style="margin-bottom: 0px;">适合一些比较特殊的页面</p>
   </Container>
 </template>
