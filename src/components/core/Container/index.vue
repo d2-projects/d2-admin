@@ -11,8 +11,8 @@
     <div v-if="type === 'ghost'">
       <slot></slot>
     </div>
-    <!-- [full] 撑满 -->
-    <div v-if="type === 'full'">
+    <!-- [full-card] 撑满 -->
+    <div v-if="type === 'full-card'">
       <slot></slot>
     </div>
   </div>
