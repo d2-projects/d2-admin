@@ -5,7 +5,7 @@
         <img src="@/assets/image/logo/header.png">
       </div>
       <HeaderMenu></HeaderMenu>
-      <span @click="toggleFullScreen">全屏</span>
+      <HeaderRight></HeaderRight>
     </el-header>
     <el-container>
       <el-aside style="width: 200px;">
@@ -19,23 +19,19 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
-import SiderMenu from '@/components/core/MainLayout/_siderMenu.vue'
-import HeaderMenu from '@/components/core/MainLayout/_headerMenu.vue'
+import SiderMenu from './_siderMenu'
+import HeaderMenu from './_headerMenu'
+import HeaderRight from './_headerRight'
 export default {
   components: {
     SiderMenu,
-    HeaderMenu
+    HeaderMenu,
+    HeaderRight
   },
   data () {
     return {
       theme: 'default'
     }
-  },
-  methods: {
-    ...mapMutations([
-      'toggleFullScreen'
-    ])
   }
 }
 </script>

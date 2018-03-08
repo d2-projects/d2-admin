@@ -45,6 +45,17 @@ $color: #409EFF;
           }
         }
       }
+      // 顶栏按钮
+      .btn-group {
+        float: right;
+        height: 60px;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        .btn-text {
+          color: $color-text-normal;
+        }
+      }
     }
     // 顶栏下面
     .el-container {
