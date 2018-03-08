@@ -14,10 +14,7 @@
       </el-button>
     </el-tooltip>
     <el-dropdown class="dd-mr">
-      <span class="el-dropdown-link">
-        用户
-        <i class="el-icon-arrow-down el-icon--right"></i>
-      </span>
+      <span class="el-dropdown-link">你好</span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>注销</el-dropdown-item>
         <el-dropdown-item>个人中心</el-dropdown-item>
