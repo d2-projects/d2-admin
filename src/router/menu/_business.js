@@ -39,12 +39,12 @@ export const menu = {
         {
           title: '撑满',
           icon: 'file-o',
-          path: 'container/full',
-          name: 'demo-business-container-full',
+          path: 'container/full-card',
+          name: 'demo-business-container-full-card',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/business/container/full.vue'], resolve) }
+          component: resolve => { require(['@/pages/demo/business/container/full-card.vue'], resolve) }
         }
       ]
     }
