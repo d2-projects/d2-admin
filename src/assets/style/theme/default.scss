@@ -5,6 +5,9 @@ $color: #409EFF;
 // 默认主题
 .layout-main {
   &.default {
+    height: 100vh;
+    width: 100vw;
+    background-color: $color-bg;
     // [全局设置]
     // 关闭所有卡片的阴影
     .el-card {
@@ -13,8 +16,6 @@ $color: #409EFF;
         box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
       }
     }
-    height: 100vh;
-    width: 100vw;
     // [布局]
     .el-header {
       padding: 0px;
