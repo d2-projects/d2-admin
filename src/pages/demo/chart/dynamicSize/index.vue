@@ -162,7 +162,7 @@ export default {
     showInfo () {
       this.$notify({
         title: '提示',
-        message: '你可以按住卡片标题拖拽卡片；或者在每个卡片的右下角拖动，调整大小检查图表自动更新',
+        message: '你可以按住卡片标题拖拽卡片；或者在每个卡片的右下角拖动，调整大小检查图表尺寸的自适应效果',
         duration: 10000
       })
     },
