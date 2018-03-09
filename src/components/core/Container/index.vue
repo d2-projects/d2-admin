@@ -19,9 +19,6 @@
 
 <script>
 export default {
-  components: {
-    CardFull: () => import('./_CardFull.vue')
-  },
   props: {
     // 容器样式
     type: {
