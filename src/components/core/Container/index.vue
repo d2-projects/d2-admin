@@ -2,9 +2,7 @@
   <div class="container-component" :class="{responsive}">
     <!-- [card] 卡片容器 -->
     <el-card v-if="type === 'card'">
-      <div v-if="$slots.header" slot="header">
-        <slot name="header"></slot>
-      </div>
+      <slot v-if="$slots.header" name="header" slot="header"></slot>
       <slot></slot>
     </el-card>
     <!-- [ghost] 隐形的容器 -->
@@ -12,14 +10,18 @@
       <slot></slot>
     </div>
     <!-- [full-card] 撑满 -->
-    <div v-if="type === 'full-card'">
+    <card-full v-if="type === 'full-card'">
+      <slot v-if="$slots.header" name="header" slot="header"></slot>
       <slot></slot>
-    </div>
+    </card-full>
   </div>
 </template>
 
 <script>
 export default {
+  components: {
+    CardFull: () => import('./_CardFull.vue')
+  },
   props: {
     // 容器样式
     type: {
@@ -33,11 +35,27 @@ export default {
       required: false,
       default: false
     }
+  },
+  data () {
+    return {
+      headerHeight: 0
+    }
+  },
+  computed: {
+    fullCardBodyStyle () {
+      return {
+
+      }
+    }
+  },
+  mounted () {
+    console.log(this.$refs.fullCardHeader.offsetHeight + 18 * 2)
   }
 }
 </script>
 
 <style lang="scss">
+@import '~@/assets/style/public.scss';
 .container-component {
   margin-right: 20px;
   margin-bottom: 20px;
@@ -57,6 +75,18 @@ export default {
     margin: 0px auto;
     margin-bottom: 20px;
     max-width: 1920px - 200px;
+  }
+}
+.full-card {
+  position: absolute;
+  top: 0px;
+  right: $margin;
+  bottom: $margin;
+  left: 0px;
+  .el-card__header {
+    position: absolute;
+    top: 0px;
+    width: 100%;
   }
 }
 </style>
