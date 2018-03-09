@@ -35,21 +35,6 @@ export default {
       required: false,
       default: false
     }
-  },
-  data () {
-    return {
-      headerHeight: 0
-    }
-  },
-  computed: {
-    fullCardBodyStyle () {
-      return {
-
-      }
-    }
-  },
-  mounted () {
-    console.log(this.$refs.fullCardHeader.offsetHeight + 18 * 2)
   }
 }
 </script>
@@ -75,18 +60,6 @@ export default {
     margin: 0px auto;
     margin-bottom: 20px;
     max-width: 1920px - 200px;
-  }
-}
-.full-card {
-  position: absolute;
-  top: 0px;
-  right: $margin;
-  bottom: $margin;
-  left: 0px;
-  .el-card__header {
-    position: absolute;
-    top: 0px;
-    width: 100%;
   }
 }
 </style>
