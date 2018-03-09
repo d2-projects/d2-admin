@@ -12,6 +12,7 @@
 <script>
 export default {
   props: {
+    // 定位 上 右 下 左
     top: {
       type: Number,
       required: false,
@@ -71,4 +72,3 @@ export default {
   }
 }
 </style>
-
