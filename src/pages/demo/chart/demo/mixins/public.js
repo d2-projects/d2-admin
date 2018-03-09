@@ -1,7 +1,5 @@
-import ChartDemoCard from '../components/ChartDemoCard.vue'
-
 export default {
   components: {
-    ChartDemoCard
+    ChartDemoCard: () => import('../components/ChartDemoCard.vue')
   }
 }
