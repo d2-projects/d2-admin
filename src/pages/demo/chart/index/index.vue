@@ -54,10 +54,9 @@
 </template>
 
 <script>
-import ChartCardHeader from './components/ChartCardHeader'
 export default {
   components: {
-    ChartCardHeader
+    ChartCardHeader: () => import('./components/ChartCardHeader')
   },
   data () {
     return {

@@ -11,12 +11,10 @@
 </template>
 
 <script>
-import DemoI18nControl from './components/DemoI18nControl'
-import DemoI18n from './components/DemoI18n'
 export default {
   components: {
-    DemoI18nControl,
-    DemoI18n
+    DemoI18nControl: () => import('./components/DemoI18nControl'),
+    DemoI18n: () => import('./components/DemoI18n')
   }
 }
 </script>

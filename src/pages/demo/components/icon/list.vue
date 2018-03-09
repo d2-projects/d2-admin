@@ -28,10 +28,9 @@
 
 <script>
 import icon from '@/assets/library/font-awesome-4.7.0-icon/icon.js'
-import IconCell from './components/IconCell'
 export default {
   components: {
-    IconCell
+    IconCell: () => import('./components/IconCell')
   },
   data () {
     return {

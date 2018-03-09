@@ -19,14 +19,11 @@
 </template>
 
 <script>
-import SiderMenu from './_siderMenu'
-import HeaderMenu from './_headerMenu'
-import HeaderRight from './_headerRight'
 export default {
   components: {
-    SiderMenu,
-    HeaderMenu,
-    HeaderRight
+    SiderMenu: () => import('./_siderMenu'),
+    HeaderMenu: () => import('./_headerMenu'),
+    HeaderRight: () => import('./_headerRight')
   },
   data () {
     return {
