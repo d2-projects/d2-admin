@@ -11,6 +11,43 @@ export const menu = {
   //   name: ''
   // },
   children: [
+    // 页面容器
+    {
+      title: '页面容器',
+      icon: 'window-restore',
+      children: [
+        {
+          title: '卡片',
+          icon: 'file-o',
+          path: 'container/normal',
+          name: 'demo-components-container-normal',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/container/normal.vue'], resolve) }
+        },
+        {
+          title: '隐形',
+          icon: 'file-o',
+          path: 'container/ghost',
+          name: 'demo-components-container-ghost',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/container/ghost.vue'], resolve) }
+        },
+        {
+          title: '撑满',
+          icon: 'file-o',
+          path: 'container/full-card',
+          name: 'demo-components-container-full-card',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/container/full-card.vue'], resolve) }
+        }
+      ]
+    },
     // 编辑器
     {
       title: '编辑器',
