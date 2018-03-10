@@ -17,6 +17,16 @@ export const menu = {
       icon: 'window-restore',
       children: [
         {
+          title: '文档',
+          icon: 'file-o',
+          path: 'container',
+          name: 'demo-components-container',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/components/container/index.vue'], resolve) }
+        },
+        {
           title: '卡片',
           icon: 'file-o',
           path: 'container/normal',
