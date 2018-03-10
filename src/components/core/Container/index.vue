@@ -7,6 +7,7 @@
     </el-card>
     <!-- [ghost] 隐形的容器 -->
     <div v-if="type === 'ghost'">
+      <slot name="header"></slot>
       <slot></slot>
     </div>
     <!-- [full-card] 撑满 -->
