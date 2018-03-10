@@ -25,7 +25,7 @@
       </div>
     </el-card>
     <el-card>
-      <Markdown url="/static/markdownFiles/article/timeago演示代码.md"></Markdown>
+      <Markdown url="/static/markdownFiles/article/插件 - timeago.md"></Markdown>
     </el-card>
   </Container>
 </template>
