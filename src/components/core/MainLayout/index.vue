@@ -9,7 +9,7 @@
     </el-header>
     <el-container>
       <el-aside style="width: 200px;">
-        <SiderMenu></SiderMenu>
+        <SideMenu></SideMenu>
       </el-aside>
       <el-main>
         <router-view></router-view>
@@ -21,9 +21,9 @@
 <script>
 export default {
   components: {
-    SiderMenu: () => import('./_siderMenu'),
-    HeaderMenu: () => import('./_headerMenu'),
-    HeaderRight: () => import('./_headerRight')
+    SideMenu: () => import('./components/SideMenu'),
+    HeaderMenu: () => import('./components/HeaderMenu'),
+    HeaderRight: () => import('./components/HeaderRight')
   },
   data () {
     return {
