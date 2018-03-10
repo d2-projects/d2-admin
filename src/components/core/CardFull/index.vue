@@ -3,7 +3,7 @@
     <div class="dd-card-full__header" ref="header">
       <slot name="header"></slot>
     </div>
-    <div class="dd-card-full__body">
+    <div class="dd-card-full__body" :style="bodyStyle">
       <slot></slot>
     </div>
   </div>
@@ -34,8 +34,13 @@ export default {
       default: 0
     }
   },
+  data () {
+    return {
+      headerHeight: 0
+    }
+  },
   mounted () {
-    console.log(this.$refs.header.offsetHeight)
+    this.headerHeight = this.$refs.header.offsetHeight
   },
   computed: {
     cardStyle () {
@@ -44,6 +49,11 @@ export default {
         right: `${this.right}px`,
         bottom: `${this.bottom}px`,
         left: `${this.left}px`
+      }
+    },
+    bodyStyle () {
+      return {
+        top: `${this.headerHeight}px`
       }
     }
   }
@@ -63,12 +73,19 @@ export default {
     box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
   }
   .dd-card-full__header {
+    position: absolute;
+    width: 100%;
     padding: 18px 20px;
     border-bottom: 1px solid #ebeef5;
     box-sizing: border-box;
   }
   .dd-card-full__body {
+    position: absolute;
     padding: 20px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: auto;
   }
 }
 </style>
