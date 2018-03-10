@@ -1,8 +1,6 @@
 <template>
   <div class="btn-group">
-    <!-- 全屏按钮 -->
     <FullScreen></FullScreen>
-    <!-- 用户菜单 -->
     <UserDropdown></UserDropdown>
   </div>
 </template>
