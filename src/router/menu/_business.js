@@ -39,12 +39,12 @@ export const menu = {
     //     {
     //       title: '撑满',
     //       icon: 'file-o',
-    //       path: 'container/full-card',
-    //       name: 'demo-business-container-full-card',
+    //       path: 'container/card-full',
+    //       name: 'demo-business-container-card-full',
     //       meta: {
     //         requiresAuth: true
     //       },
-    //       component: resolve => { require(['@/pages/demo/business/container/full-card.vue'], resolve) }
+    //       component: resolve => { require(['@/pages/demo/business/container/card-full.vue'], resolve) }
     //     }
     //   ]
     // }
