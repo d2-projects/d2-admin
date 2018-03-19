@@ -10,8 +10,8 @@
       <slot name="header"></slot>
       <slot></slot>
     </div>
-    <!-- [full-card] 撑满 -->
-    <card-full v-if="type === 'full-card'" :right="20" :bottom="20">
+    <!-- [card-full] 撑满 -->
+    <card-full v-if="type === 'card-full'" :right="20" :bottom="20">
       <slot v-if="$slots.header" name="header" slot="header"></slot>
       <slot></slot>
     </card-full>
