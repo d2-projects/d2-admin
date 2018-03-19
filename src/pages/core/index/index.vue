@@ -18,7 +18,7 @@
     <div class="page-index-body">
       <img class="page-index-body__logo" src="@/assets/image/logo/w500.png">
       <p class="page-index-body__title">欢迎你，朋友。这是D2Admin</p>
-      <p class="page-index-body__sub-title">一个追求简洁和上手即用的前端模板</p>
+      <p class="page-index-body__sub-title dd-mt-0">一个追求简洁和上手即用的前端模板</p>
     </div>
   </Container>
 </template>
