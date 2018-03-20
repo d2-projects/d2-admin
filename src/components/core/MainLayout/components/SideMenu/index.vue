@@ -1,33 +1,42 @@
 <template>
-  <el-menu class="el-menu-vertical-demo" v-bind="elMenu">
-    <template v-for="(menu, index) in sideMenu">
-      <el-menu-item
-        v-if="!menu.children"
-        :key="index"
-        :index="`${menu.title}${index}`"
-        @click.native="$router.push({name: menu.name})">
-        <i v-if="menu.icon" :class="'fa fa-' + menu.icon"></i>
-        {{menu.title}}
-      </el-menu-item>
-      <el-submenu
-        v-if="menu.children"
-        :key="index"
-        :index="`${menu.title}${index}`">
-        <template slot="title">
-          <i v-if="menu.icon" :class="'fa fa-' + menu.icon"></i>
-          <span slot="title">{{menu.title}}</span>
-        </template>
+  <div>
+    <el-menu
+      v-if="sideMenu.length > 0"
+      class="dd-side-menu"
+      :collapse="collapse"
+      :unique-opened="true">
+      <template v-for="(menu, index) in sideMenu">
         <el-menu-item
-          v-for="(menuItem, menuItemIndex) in menu.children"
-          :key="menuItemIndex"
-          :index="`${menuItem.name}${menuItemIndex}`"
-          @click.native="$router.push({name: menuItem.name})">
-          <i v-if="menuItem.icon" :class="'fa fa-' + menuItem.icon"></i>
-          {{menuItem.title}}
+          v-if="!menu.children"
+          :key="index"
+          :index="`${menu.title}${index}`"
+          @click.native="$router.push({name: menu.name})">
+          <i v-if="menu.icon" :class="'fa fa-' + menu.icon"></i>
+          {{menu.title}}
         </el-menu-item>
-      </el-submenu>
-    </template>
-  </el-menu>
+        <el-submenu
+          v-if="menu.children"
+          :key="index"
+          :index="`${menu.title}${index}`">
+          <template slot="title">
+            <i v-if="menu.icon" :class="'fa fa-' + menu.icon"></i>
+            <span slot="title">{{menu.title}}</span>
+          </template>
+          <el-menu-item
+            v-for="(menuItem, menuItemIndex) in menu.children"
+            :key="menuItemIndex"
+            :index="`${menuItem.name}${menuItemIndex}`"
+            @click.native="$router.push({name: menuItem.name})">
+            <i v-if="menuItem.icon" :class="'fa fa-' + menuItem.icon"></i>
+            {{menuItem.title}}
+          </el-menu-item>
+        </el-submenu>
+      </template>
+    </el-menu>
+    <div v-else class="dd-side-menu-empty">
+      没有菜单
+    </div>
+  </div>
 </template>
 
 <script>
@@ -38,10 +47,7 @@ export default {
     return {
       menu,
       router,
-      elMenu: {
-        collapse: false,
-        uniqueOpened: true
-      }
+      collapse: false
     }
   },
   computed: {
@@ -53,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss">
-.el-menu-vertical-demo:not(.el-menu--collapse) {
+.dd-side-menu:not(.el-menu--collapse) {
   width: 200px;
   min-height: 400px;
 }
