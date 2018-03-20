@@ -1,5 +1,7 @@
 <template>
-  <el-menu class="el-menu-demo" mode="horizontal">
+  <el-menu
+    class="el-menu-demo"
+    mode="horizontal">
     <el-menu-item index="index" @click.native="active({name: 'index'})">首页</el-menu-item>
     <el-menu-item
       v-for="(item, index) in menu"

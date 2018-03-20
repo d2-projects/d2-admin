@@ -64,6 +64,15 @@ $color: #409EFF;
     .el-container {
       // 侧边栏
       .el-aside {
+        .dd-side-menu-empty {
+          background-color: rgba(#000, .03);
+          margin: $margin;
+          margin-top: 0px;
+          border-radius: 4px;
+          line-height: 100px;
+          text-align: center;
+          color: $color-text-sub;
+        }
         .el-menu {
           background-color: transparent;
           .el-menu-item {
