@@ -1,8 +1,9 @@
 <template>
   <el-container class="layout-main" :class="theme">
     <el-header>
-      <div class="logo-group">
-        <img src="@/assets/image/logo/header.png">
+      <div class="logo-group" :style="logoGroupStyle">
+        <img :style="{opacity: collapse ? 1 : 0}" src="@/assets/image/logo/header-icon-only.png">
+        <img :style="{opacity: collapse ? 0 : 1}" src="@/assets/image/logo/header.png">
       </div>
       <div class="toggle-sidemenu-btn" @click="toggleAside">
         <Icon name="bars"></Icon>
@@ -35,6 +36,11 @@ export default {
     }
   },
   computed: {
+    logoGroupStyle () {
+      return {
+        width: `${this.collapse ? '65' : '200'}px`
+      }
+    },
     asideStyle () {
       return {
         width: `${this.collapse ? '65' : '200'}px`
