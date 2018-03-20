@@ -81,6 +81,8 @@ $color: #409EFF;
     .el-container {
       // 侧边栏
       .el-aside {
+        transition: width .3s;
+        overflow: inherit;
         .dd-side-menu-empty {
           background-color: rgba(#000, .03);
           margin: $margin;
@@ -91,18 +93,19 @@ $color: #409EFF;
           color: $color-text-sub;
         }
         .el-menu {
-          background-color: transparent;
+          background-color: $color-bg;
+          border-right: none;
           .el-menu-item {
             &:focus {
-              background-color: transparent;
+              background-color: $color-bg;
             }
             &:hover {
-              background-color: transparent;
+              background-color: $color-bg;
             }
           }
           .el-submenu__title {
             &:hover {
-              background-color: transparent;
+              background-color: $color-bg;
             }
           }
         }

@@ -4,15 +4,15 @@
       <div class="logo-group">
         <img src="@/assets/image/logo/header.png">
       </div>
-      <div class="toggle-sidemenu-btn">
+      <div class="toggle-sidemenu-btn" @click="toggleAside">
         <Icon name="bars"></Icon>
       </div>
       <HeaderMenu></HeaderMenu>
       <HeaderRight></HeaderRight>
     </el-header>
     <el-container>
-      <el-aside style="width: 200px;">
-        <SideMenu></SideMenu>
+      <el-aside :style="asideStyle">
+        <SideMenu :collapse="collapse"></SideMenu>
       </el-aside>
       <el-main>
         <router-view></router-view>
@@ -30,7 +30,20 @@ export default {
   },
   data () {
     return {
-      theme: 'default'
+      theme: 'default',
+      collapse: false
+    }
+  },
+  computed: {
+    asideStyle () {
+      return {
+        width: `${this.collapse ? '65' : '200'}px`
+      }
+    }
+  },
+  methods: {
+    toggleAside () {
+      this.collapse = !this.collapse
     }
   }
 }
