@@ -43,11 +43,17 @@
 import { mapState } from 'vuex'
 import { menu, router } from '@/router/menu/index.js'
 export default {
+  props: {
+    collapse: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
   data () {
     return {
       menu,
-      router,
-      collapse: false
+      router
     }
   },
   computed: {
