@@ -96,6 +96,13 @@ $color: #409EFF;
         .el-menu {
           background-color: $color-bg;
           border-right: none;
+          &.el-menu--collapse {
+            .el-submenu {
+              .el-menu {
+                background-color: #FFF;
+              }
+            }
+          }
           .el-menu-item {
             &:focus {
               background-color: $color-bg;
