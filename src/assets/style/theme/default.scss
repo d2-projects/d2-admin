@@ -24,7 +24,6 @@ $color: #409EFF;
         float: left;
         text-align: center;
         img {
-          transition: all .3s;
           height: 60px;
         }
       }
@@ -38,8 +37,9 @@ $color: #409EFF;
         user-select: none;
         cursor: pointer;
         i {
-          font-size: 24px;
+          font-size: 20px;
           color: $color-text-normal;
+          margin-top: 4px;
           &:hover {
             color: $color-primary;
           }

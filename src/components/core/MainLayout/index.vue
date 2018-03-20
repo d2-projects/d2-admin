@@ -2,8 +2,8 @@
   <el-container class="layout-main" :class="theme">
     <el-header>
       <div class="logo-group" :style="logoGroupStyle">
-        <img :style="{opacity: collapse ? 1 : 0}" src="@/assets/image/logo/header-icon-only.png">
-        <img :style="{opacity: collapse ? 0 : 1}" src="@/assets/image/logo/header.png">
+        <img v-if="collapse" src="@/assets/image/logo/header-icon-only.png">
+        <img v-else src="@/assets/image/logo/header.png">
       </div>
       <div class="toggle-sidemenu-btn" @click="toggleAside">
         <Icon name="bars"></Icon>

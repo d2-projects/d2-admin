@@ -33,7 +33,7 @@
         </el-submenu>
       </template>
     </el-menu>
-    <div v-else class="dd-side-menu-empty">
+    <div v-if="sideMenu.length === 0 && !collapse" class="dd-side-menu-empty">
       没有菜单
     </div>
   </div>
