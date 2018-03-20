@@ -3,8 +3,8 @@ export default {
     sideMenu: []
   },
   mutations: {
-    setSideMenu (state, props) {
-      state.sideMenu = props.sideMenu
+    setSideMenu (state, {sideMenu}) {
+      state.sideMenu = sideMenu
     }
   }
 }

@@ -23,6 +23,7 @@ export default {
   },
   computed: {
     // 当前路由的name
+    // 仅仅是返回当前的name而已
     routeName () {
       return this.$route.name
     },
@@ -39,27 +40,23 @@ export default {
     // 返回当前对象对应的顶级菜单下的所有子菜单 这些菜单可以在侧边栏菜单中直接使用
     // 如果返回 null 代表这个路由没有对应的一级路由也就没有菜单
     routeTopLevelMenu () {
-      if (this.routeTopLevelName) {
-        return this.menu.find(e => e.name === this.routeTopLevelName).children
-      } else {
-        return null
-      }
+      return this.routeTopLevelName ? this.menu.find(e => e.name === this.routeTopLevelName).children : null
     }
   },
   watch: {
     routeName () {
-      this.doSetSideMenu()
+      this.refreshSideMenu()
     }
   },
   mounted () {
-    this.doSetSideMenu()
+    this.refreshSideMenu()
   },
   methods: {
     ...mapMutations([
       'setSideMenu'
     ]),
     // 更新一次侧边栏
-    doSetSideMenu () {
+    refreshSideMenu () {
       if (this.routeTopLevelMenu) {
         this.setSideMenu({
           sideMenu: this.routeTopLevelMenu
