@@ -102,6 +102,9 @@ $color: #409EFF;
                 background-color: #FFF;
               }
             }
+            .el-submenu__title {
+              text-align: center;
+            }
           }
           .el-menu-item {
             &:focus {
