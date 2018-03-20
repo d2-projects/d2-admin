@@ -20,10 +20,11 @@ $color: #409EFF;
     .el-header {
       padding: 0px;
       .logo-group {
-        width: 200px;
+        transition: width .3s;
         float: left;
         text-align: center;
         img {
+          transition: all .3s;
           height: 60px;
         }
       }
