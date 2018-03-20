@@ -4,6 +4,9 @@
       <div class="logo-group">
         <img src="@/assets/image/logo/header.png">
       </div>
+      <div class="toggle-sidemenu-btn">
+        <Icon name="bars"></Icon>
+      </div>
       <HeaderMenu></HeaderMenu>
       <HeaderRight></HeaderRight>
     </el-header>

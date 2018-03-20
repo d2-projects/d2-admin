@@ -27,6 +27,23 @@ $color: #409EFF;
           height: 60px;
         }
       }
+      .toggle-sidemenu-btn {
+        float: left;
+        height: 60px;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+        i {
+          font-size: 24px;
+          color: $color-text-normal;
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
       // 顶栏菜单
       .el-menu {
         float: left;
