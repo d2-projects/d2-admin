@@ -19,7 +19,8 @@ let router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // 需要身份校验
   if (to.meta.requiresAuth) {
-    // 这里暂时将cookie里是否存有token作为验证是否登陆的条件 请根据自身业务需要修改
+    // 这里暂时将cookie里是否存有token作为验证是否登陆的条件
+    // 请根据自身业务需要修改
     if (Cookies.get('token')) {
       next()
     } else {
