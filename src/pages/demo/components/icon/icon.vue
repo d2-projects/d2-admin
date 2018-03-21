@@ -12,7 +12,7 @@
       <Icon name="github" class="icon-class-demo"></Icon>
     </el-card>
     <el-card>
-      <Markdown url="/static/markdownFiles/article/组件 - 图标组件.md"></Markdown>
+      <Markdown url="/static/md/组件 - 图标组件.md"></Markdown>
     </el-card>
   </Container>
 </template>

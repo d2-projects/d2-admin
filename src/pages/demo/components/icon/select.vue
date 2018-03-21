@@ -30,7 +30,7 @@
       <IconSelect v-model="icon2" :user-input="true"></IconSelect>
     </el-card>
     <el-card>
-      <Markdown url="/static/markdownFiles/article/组件 - 图标选择器.md"></Markdown>
+      <Markdown url="/static/md/组件 - 图标选择器.md"></Markdown>
     </el-card>
   </Container>
 </template>
