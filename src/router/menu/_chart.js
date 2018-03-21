@@ -21,17 +21,26 @@ export const menu = {
     requiresAuth: true
   },
   component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
+  redirect: {
+    name: 'demo-chart-index'
+  },
   children: [
+    // 首页
+    {
+      path: 'index',
+      name: 'demo-chart-index',
+      component: resolve => { require(['@/pages/demo/chart/index/index.vue'], resolve) }
+    },
     // 所有
     {
       title: '所有',
       icon: 'th',
-      path: 'index',
-      name: 'demo-chart-index',
+      path: 'all',
+      name: 'demo-chart-all',
       meta: {
         requiresAuth: true
       },
-      component: resolve => { require(['@/pages/demo/chart/index/index.vue'], resolve) }
+      component: resolve => { require(['@/pages/demo/chart/all/index.vue'], resolve) }
     },
     // 动态尺寸
     {

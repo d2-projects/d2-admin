@@ -11,6 +11,7 @@ export const menu = {
     name: 'demo-plugins-index'
   },
   children: [
+    // 首页
     {
       path: 'index',
       name: 'demo-plugins-index',
