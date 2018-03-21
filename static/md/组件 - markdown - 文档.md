@@ -12,7 +12,7 @@
 加载一个.md文件
 
 ```
-<markdown url="/static/markdownFiles/article/xxxx.md"></markdown>
+<markdown url="/static/md/xxxx.md"></markdown>
 ```
 
 加载资源

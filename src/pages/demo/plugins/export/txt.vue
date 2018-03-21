@@ -16,7 +16,7 @@
         保存为 txt
       </el-button>
     </div>
-    <Markdown url="/static/markdownFiles/article/插件 - 导出.md"></Markdown>
+    <Markdown url="/static/md/插件 - 导出.md"></Markdown>
   </Container>
 </template>
 

@@ -57,7 +57,7 @@
       </el-col>
     </el-row>
     <el-card>
-      <Markdown url="/static/markdownFiles/article/组件 - 数字动画.md"></Markdown>
+      <Markdown url="/static/md/组件 - 数字动画.md"></Markdown>
     </el-card>
   </Container>
 </template>
