@@ -1,7 +1,7 @@
 <template>
   <Container type="ghost">
-    <p style="margin-top: 0px;">这是一个隐形的页面容器</p>
-    <p>没有边界和背景颜色</p>
-    <p style="margin-bottom: 0px;">适合一些比较特殊的页面</p>
+    <el-card style="width: 50%;">
+      <Markdown url="/static/md/组件 - 页面容器 - 隐形.md"></Markdown>
+    </el-card>
   </Container>
 </template>

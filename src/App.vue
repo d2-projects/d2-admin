@@ -11,6 +11,5 @@ export default {
 </script>
 
 <style lang="scss">
-// 公用 class
 @import '~@/assets/style/public-class.scss';
 </style>
