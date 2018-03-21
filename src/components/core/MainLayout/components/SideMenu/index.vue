@@ -6,14 +6,16 @@
       :collapse="collapse"
       :unique-opened="true">
       <template v-for="(menu, index) in sideMenu">
+        <!-- 没有子菜单的菜单项 -->
         <el-menu-item
-          v-if="!menu.children"
+          v-if="!menu.children && menu.title"
           :key="index"
           :index="`${menu.title}${index}`"
           @click.native="$router.push({name: menu.name})">
           <i v-if="menu.icon" :class="'fa fa-' + menu.icon"></i>
-          {{menu.title}}
+          <span slot="title">{{menu.title}}</span>
         </el-menu-item>
+        <!-- 有子菜单的项目 -->
         <el-submenu
           v-if="menu.children"
           :key="index"
