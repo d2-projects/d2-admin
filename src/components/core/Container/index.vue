@@ -1,12 +1,12 @@
 <template>
   <div class="container-component" :class="{responsive}">
     <!-- [card] 卡片容器 -->
-    <el-card v-if="type === 'card'">
+    <el-card v-if="type === 'card'" class="dd-mr dd-mb">
       <slot v-if="$slots.header" name="header" slot="header"></slot>
       <slot></slot>
     </el-card>
     <!-- [ghost] 隐形的容器 -->
-    <div v-if="type === 'ghost'">
+    <div v-if="type === 'ghost'" class="dd-mr dd-mb">
       <slot name="header"></slot>
       <slot></slot>
     </div>
@@ -40,8 +40,16 @@ export default {
 <style lang="scss">
 @import '~@/assets/style/public.scss';
 .container-component {
-  margin-right: 20px;
-  margin-bottom: 20px;
+  // margin-right: 20px;
+  // margin-bottom: 20px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  // padding-right: $margin;
+  // padding-bottom: $margin;
+  overflow: auto;
 }
 @media (min-width: 576px) {
   // 根据你的需要在这里添加样式
