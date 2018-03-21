@@ -29,6 +29,9 @@ export const menu = {
     {
       path: 'index',
       name: 'demo-chart-index',
+      meta: {
+        requiresAuth: true
+      },
       component: resolve => { require(['@/pages/demo/chart/index/index.vue'], resolve) }
     },
     // 所有

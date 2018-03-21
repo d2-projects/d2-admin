@@ -15,6 +15,9 @@ export const menu = {
     {
       path: 'index',
       name: 'demo-components-index',
+      meta: {
+        requiresAuth: true
+      },
       component: resolve => { require(['@/pages/demo/components/index/index.vue'], resolve) }
     },
     // 页面容器
