@@ -7,10 +7,15 @@ export const menu = {
     requiresAuth: true
   },
   component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
-  // redirect: {
-  //   name: 'demo-plugins-marked-readme'
-  // },
+  redirect: {
+    name: 'demo-plugins-index'
+  },
   children: [
+    {
+      path: 'index',
+      name: 'demo-plugins-index',
+      component: resolve => { require(['@/pages/demo/plugins/index/index.vue'], resolve) }
+    },
     // mock
     {
       title: '模拟数据',
