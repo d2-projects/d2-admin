@@ -7,10 +7,19 @@ export const menu = {
     requiresAuth: true
   },
   component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
-  // redirect: {
-  //   name: ''
-  // },
+  redirect: {
+    name: 'demo-business-index'
+  },
   children: [
+    // 首页
+    {
+      path: 'index',
+      name: 'demo-business-index',
+      meta: {
+        requiresAuth: true
+      },
+      component: resolve => { require(['@/pages/demo/business/index/index.vue'], resolve) }
+    }
     // 页面容器
     // {
     //   title: '页面容器',

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-menu
-      v-if="sideMenu.length > 0"
+      v-if="sideMenu.filter(e => e.title).length > 0"
       class="dd-side-menu"
       :collapse="collapse"
       :unique-opened="true">
@@ -35,7 +35,7 @@
         </el-submenu>
       </template>
     </el-menu>
-    <div v-if="sideMenu.length === 0 && !collapse" class="dd-side-menu-empty">
+    <div v-if="sideMenu.filter(e => e.title).length === 0 && !collapse" class="dd-side-menu-empty">
       没有菜单
     </div>
   </div>
