@@ -1,10 +1,30 @@
 <template>
   <div class="page-index-body">
-    <img class="page-index-body__logo" src="@/assets/image/logo/w500.png">
-    <p class="page-index-body__title">这是D2Admin</p>
-    <p class="page-index-body__sub-title dd-mt-0">一个追求简洁和上手即用的前端模板</p>
+    <div class="page-index-body__logo">
+      <slot></slot>
+    </div>
+    <p class="page-index-body__title">{{title}}</p>
+    <p class="page-index-body__sub-title dd-mt-0">{{subTitle}}</p>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: false,
+      default: 'Title'
+    },
+    subTitle: {
+      type: String,
+      required: false,
+      default: 'subTitle'
+    }
+  }
+}
+</script>
+
 
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
@@ -26,7 +46,9 @@
   justify-content: center;
   align-items: center;
   .page-index-body__logo {
-    width: 200px;
+    img {
+      width: 200px;
+    }
   }
   .page-index-body__title {
     color: $color-text-main;
