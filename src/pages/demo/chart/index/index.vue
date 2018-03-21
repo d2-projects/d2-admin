@@ -1,9 +1,9 @@
 <template>
   <Container type="card-full">
     <PageIndexArticle
-      title="内置组件"
-      sub-title="D2Admin 为你提供了一些上手即用的组件">
-      <img src="@/assets/image/logo/w500-component.png">
+      title="内置 G2 图表库"
+      sub-title="如果用不到 建议删除相关代码和依赖">
+      <img src="@/assets/image/logo/w500-chart.png">
     </PageIndexArticle>
   </Container>
 </template>
