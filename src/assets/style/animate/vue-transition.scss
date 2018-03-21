@@ -1,0 +1,15 @@
+// 过渡动画
+.fade-enter-active {
+  transition: all .5s;
+}
+.fade-leave-active {
+  transition: all .5s;
+}
+.fade-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}

@@ -11,6 +11,9 @@
 // 补丁 vue-grid-layout
 @import '~@/assets/style/fixed/vue-grid-layout.scss';
 
+// 动画
+@import '~@/assets/style/animate/vue-transition.scss';
+
 // 在这里写公用的class
 // 注意 这个文件里只写class
 // mixin等内容请在 public.scss 里书写
