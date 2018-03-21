@@ -15,6 +15,9 @@ export const menu = {
     {
       path: 'index',
       name: 'demo-plugins-index',
+      meta: {
+        requiresAuth: true
+      },
       component: resolve => { require(['@/pages/demo/plugins/index/index.vue'], resolve) }
     },
     // mock
