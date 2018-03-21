@@ -1,6 +1,6 @@
 <template>
   <div class="dd-card-full" :style="cardStyle">
-    <div class="dd-card-full__header" ref="header">
+    <div v-if="$slots.header" class="dd-card-full__header" ref="header">
       <slot name="header"></slot>
     </div>
     <div class="dd-card-full__body" :style="bodyStyle">
@@ -40,7 +40,7 @@ export default {
     }
   },
   mounted () {
-    this.headerHeight = this.$refs.header.offsetHeight
+    this.headerHeight = this.$slots.header ? this.$refs.header.offsetHeight : 0
   },
   computed: {
     cardStyle () {
