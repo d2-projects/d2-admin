@@ -16,7 +16,7 @@
         <SideMenu :collapse="collapse"></SideMenu>
       </el-aside>
       <el-main>
-        <transition name="fade">
+        <transition name="fade-transverse">
           <router-view></router-view>
         </transition>
       </el-main>
