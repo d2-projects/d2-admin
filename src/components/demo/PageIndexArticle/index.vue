@@ -1,10 +1,10 @@
 <template>
-  <div class="page-index-body">
-    <div class="page-index-body__logo">
+  <div class="page-index-article-body">
+    <div class="page-index-article-body__logo">
       <slot></slot>
     </div>
-    <p class="page-index-body__title">{{title}}</p>
-    <p class="page-index-body__sub-title dd-mt-0">{{subTitle}}</p>
+    <p class="page-index-article-body__title">{{title}}</p>
+    <p class="page-index-article-body__sub-title dd-mt-0">{{subTitle}}</p>
   </div>
 </template>
 
@@ -25,17 +25,16 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
-.page-index-header {
+.page-index-article-header {
   overflow: hidden;
-  .page-index-header__title {
+  .page-index-article-header__title {
     display: inline-block;
     padding: 12px 20px;
   }
 }
-.page-index-body {
+.page-index-article-body {
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -45,15 +44,15 @@ export default {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  .page-index-body__logo {
+  .page-index-article-body__logo {
     img {
       width: 200px;
     }
   }
-  .page-index-body__title {
+  .page-index-article-body__title {
     color: $color-text-main;
   }
-  .page-index-body__sub-title {
+  .page-index-article-body__sub-title {
     color: $color-text-sub;
   }
 }
