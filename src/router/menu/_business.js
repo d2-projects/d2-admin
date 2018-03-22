@@ -19,44 +19,24 @@ export const menu = {
         requiresAuth: true
       },
       component: resolve => { require(['@/pages/demo/business/index/index.vue'], resolve) }
+    },
+    // 用户中心
+    {
+      title: '用户中心',
+      icon: 'window-restore',
+      children: [
+        {
+          title: '主页',
+          icon: 'file-o',
+          path: 'user-center/home',
+          name: 'demo-business-user-center-home',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/business/user-center/home/index.vue'], resolve) }
+        }
+      ]
     }
-    // 页面容器
-    // {
-    //   title: '页面容器',
-    //   icon: 'window-restore',
-    //   children: [
-    //     {
-    //       title: '卡片',
-    //       icon: 'file-o',
-    //       path: 'container/normal',
-    //       name: 'demo-business-container-normal',
-    //       meta: {
-    //         requiresAuth: true
-    //       },
-    //       component: resolve => { require(['@/pages/demo/business/container/normal.vue'], resolve) }
-    //     },
-    //     {
-    //       title: '隐形',
-    //       icon: 'file-o',
-    //       path: 'container/ghost',
-    //       name: 'demo-business-container-ghost',
-    //       meta: {
-    //         requiresAuth: true
-    //       },
-    //       component: resolve => { require(['@/pages/demo/business/container/ghost.vue'], resolve) }
-    //     },
-    //     {
-    //       title: '撑满',
-    //       icon: 'file-o',
-    //       path: 'container/card-full',
-    //       name: 'demo-business-container-card-full',
-    //       meta: {
-    //         requiresAuth: true
-    //       },
-    //       component: resolve => { require(['@/pages/demo/business/container/card-full.vue'], resolve) }
-    //     }
-    //   ]
-    // }
   ]
 }
 
