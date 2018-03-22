@@ -14,6 +14,7 @@
     <card-full v-if="type === 'card-full'" :right="20" :bottom="20">
       <slot v-if="$slots.header" name="header" slot="header"></slot>
       <slot></slot>
+      <slot v-if="$slots.footer" name="footer" slot="footer"></slot>
     </card-full>
   </div>
 </template>

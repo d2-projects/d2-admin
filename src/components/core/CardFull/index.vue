@@ -6,6 +6,9 @@
     <div class="dd-card-full__body" :style="bodyStyle">
       <slot></slot>
     </div>
+    <div v-if="$slots.footer" class="dd-card-full__footer" ref="footer">
+      <slot name="footer"></slot>
+    </div>
   </div>
 </template>
 
@@ -36,11 +39,13 @@ export default {
   },
   data () {
     return {
-      headerHeight: 0
+      headerHeight: 0,
+      footerHeight: 0
     }
   },
   mounted () {
     this.headerHeight = this.$slots.header ? this.$refs.header.offsetHeight : 0
+    this.footerHeight = this.$slots.footer ? this.$refs.footer.offsetHeight : 0
   },
   computed: {
     cardStyle () {
@@ -53,7 +58,8 @@ export default {
     },
     bodyStyle () {
       return {
-        top: `${this.headerHeight}px`
+        top: `${this.headerHeight}px`,
+        bottom: `${this.footerHeight}px`
       }
     }
   }
@@ -74,6 +80,8 @@ export default {
   }
   .dd-card-full__header {
     position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
     padding: 18px 20px;
     border-bottom: 1px solid #ebeef5;
@@ -86,6 +94,15 @@ export default {
     right: 0px;
     bottom: 0px;
     overflow: auto;
+  }
+  .dd-card-full__footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 18px 20px;
+    border-top: 1px solid #ebeef5;
+    box-sizing: border-box;
   }
 }
 </style>
