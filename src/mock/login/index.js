@@ -4,17 +4,7 @@ const userDB = [
   {
     username: 'admin',
     password: 'admin',
-    avatar: 'http://fairyever.qiniudn.com/d2-admin-user.jpg'
-  },
-  {
-    username: 'user1',
-    password: '111111',
-    avatar: 'http://fairyever.qiniudn.com/d2-admin-user-2.jpg'
-  },
-  {
-    username: 'user2',
-    password: '222222',
-    avatar: ''
+    name: '管理员'
   }
 ]
 
