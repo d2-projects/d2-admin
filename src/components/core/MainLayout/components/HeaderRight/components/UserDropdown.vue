@@ -12,7 +12,7 @@
 import Cookies from 'js-cookie'
 export default {
   methods: {
-    logOff() {
+    logOff () {
       this.$confirm('注销此账户吗?', '注销', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
