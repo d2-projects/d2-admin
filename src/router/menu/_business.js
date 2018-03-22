@@ -23,10 +23,10 @@ export const menu = {
     // 用户中心
     {
       title: '用户中心',
-      icon: 'window-restore',
+      icon: 'user',
       children: [
         {
-          title: '主页',
+          title: '个人中心首页',
           icon: 'file-o',
           path: 'user-center/home',
           name: 'demo-business-user-center-home',

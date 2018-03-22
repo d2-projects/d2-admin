@@ -17,7 +17,7 @@ Mock.mock('/login', 'post', ({url, type, body}) => {
       msg: '登陆成功',
       data: {
         ...user,
-        token: '1234567890'
+        token: 'd787syv8dys8cas80d9s0a0d8f79ads56f7s4d56f879a8as89fd980s7dg'
       }
     }
   } else {
