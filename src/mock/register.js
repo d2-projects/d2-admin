@@ -1,6 +1,6 @@
 import Mock from 'mockjs'
 
-import '@/mock/demo/register.js'
+import '@/mock/ajax-demo'
 
 import '@/mock/login'
 
