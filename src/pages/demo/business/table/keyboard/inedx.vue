@@ -51,10 +51,19 @@ export default {
   methods: {
     // 请求数据
     async getData () {
-      this.table.data = await this.dataMaker()
+      this.table.data = this.dataFilter(await this.dataMaker())
     },
-    // 生成数据 模拟 Ajax
-    // 没有必要写在全局 mock 设置中，就在这里这样写了，这样删文件的时候也好处理
+    // 过滤数据部分 模拟过滤掉 star 字段
+    dataFilter (val) {
+      const rowFilter = ({
+        id = '',
+        name = '',
+        address1 = '',
+        address2 = ''
+      }) => ({id, name, address1, address2})
+      return val.map(e => rowFilter(val))
+    },
+    // 模拟返回数据。没有必要写在全局 mock 设置中，就在这里这样写了，这样删文件的时候也好处理
     dataMaker () {
       return new Promise((resolve, reject) => {
         resolve(Mock.mock({
@@ -62,7 +71,8 @@ export default {
             'id|+1': 1,
             'name': '@CNAME',
             'address1': '@CITY',
-            'address2': '@CITY'
+            'address2': '@CITY',
+            'star|1-5': '★'
           }]
         }).list)
       })
