@@ -60,10 +60,7 @@ export default {
         border: true
       },
       inputSetting: {
-        size: 'small',
-        style: {
-          maxWidth: '200px'
-        }
+        size: 'small'
       }
     }
   },
