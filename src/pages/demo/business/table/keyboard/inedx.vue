@@ -1,46 +1,23 @@
 <template>
   <Container type="card-full">
     <template slot="header">
-      <el-button type="primary" @click="ajax">
-        <Icon name="paper-plane"></Icon>
-        发送请求
-      </el-button>
+      <el-button type="primary" @click="getData"><Icon name="paper-plane"></Icon> 发送请求</el-button>
     </template>
     <el-table v-bind="table">
-      <el-table-column
-        prop="id"
-        label="id"
-        width="50"
-        align="center">
-      </el-table-column>
-      <el-table-column
-        prop="name"
-        label="姓名"
-        width="100">
+      <el-table-column prop="id" label="id" width="50" align="center"></el-table-column>
+      <el-table-column prop="name" label="姓名" width="100">
         <template slot-scope="scope">
-          <el-input
-            v-bind="inputSetting"
-            placeholder="姓名">
-          </el-input>
+          <el-input v-bind="inputSetting" placeholder="姓名"></el-input>
         </template>
       </el-table-column>
-      <el-table-column
-        prop="address1"
-        label="出生地">
+      <el-table-column prop="address1" label="出生地" align="center">
         <template slot-scope="scope">
-          <el-input
-            v-bind="inputSetting"
-            placeholder="出生地">
-          </el-input>
+          <el-input v-bind="inputSetting" placeholder="出生地"></el-input>
         </template>
       </el-table-column>
-      <el-table-column
-        prop="address2"
-        label="现居地">
+      <el-table-column prop="address2" label="现居地" align="center">
         <template slot-scope="scope">
-          <el-input
-            v-bind="inputSetting"
-            placeholder="现居地">
+          <el-input v-bind="inputSetting" placeholder="现居地">
           </el-input>
         </template>
       </el-table-column>
@@ -60,12 +37,19 @@ export default {
         border: true
       },
       inputSetting: {
-        size: 'small'
+        size: 'small',
+        style: {
+          maxWidth: '200px'
+        }
       }
     }
   },
+  mounted () {
+    // 自动请求数据
+    this.getData()
+  },
   methods: {
-    ajax () {
+    getData () {
       this.table.data = Mock.mock({
         'list|4-10': [{
           'id|+1': 1,
