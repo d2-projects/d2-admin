@@ -36,6 +36,23 @@ export const menu = {
           component: resolve => { require(['@/pages/demo/business/user-center/home/index.vue'], resolve) }
         }
       ]
+    },
+    // 表格
+    {
+      title: '表格示例',
+      icon: 'table',
+      children: [
+        {
+          title: '键盘访问',
+          icon: 'file-o',
+          path: 'table/keyboard',
+          name: 'demo-business-table-keyboard',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/business/table/keyboard/inedx.vue'], resolve) }
+        }
+      ]
     }
   ]
 }
