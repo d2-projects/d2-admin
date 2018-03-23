@@ -49,15 +49,23 @@ export default {
     this.getData()
   },
   methods: {
-    getData () {
-      this.table.data = Mock.mock({
-        'list|4-10': [{
-          'id|+1': 1,
-          'name': '@CNAME',
-          'address1': '@CITY',
-          'address2': '@CITY'
-        }]
-      }).list
+    // 请求数据
+    async getData () {
+      this.table.data = await this.dataMaker()
+    },
+    // 生成数据 模拟 Ajax
+    // 没有必要写在全局 mock 设置中，就在这里这样写了，这样删文件的时候也好处理
+    dataMaker () {
+      return new Promise((resolve, reject) => {
+        resolve(Mock.mock({
+          'list|4-10': [{
+            'id|+1': 1,
+            'name': '@CNAME',
+            'address1': '@CITY',
+            'address2': '@CITY'
+          }]
+        }).list)
+      })
     }
   }
 }
