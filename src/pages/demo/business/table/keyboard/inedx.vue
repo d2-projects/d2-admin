@@ -30,12 +30,14 @@ import Mock from 'mockjs'
 export default {
   data () {
     return {
+      // 绑定到表格的数据
       table: {
         data: [],
         size: 'mini',
         stripe: true,
         border: true
       },
+      // 表格中输入框的通用设置
       inputSetting: {
         size: 'small',
         style: {
