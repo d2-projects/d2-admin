@@ -63,7 +63,7 @@ export default {
         address1 = '',
         address2 = ''
       }) => ({id, name, address1, address2})
-      return val.map(e => rowFilter(val))
+      return val.map(e => rowFilter(e))
     },
     // 模拟返回数据。没有必要写在全局 mock 设置中，就在这里这样写了，这样删文件的时候也好处理
     dataMaker () {
