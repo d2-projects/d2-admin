@@ -1,14 +1,22 @@
 export default {
   mounted () {
-    // 键盘控制扩展初始化
-    this.keyboardExtentInit()
+    // 写法 1 测试有效
+    window.onload = () => {
+      console.log(this.$refs)
+      console.log('----')
+      for (let prop in this.$refs) {
+        console.log(this.$refs[prop])
+      }
+    }
   },
   methods: {
-    // 键盘控制扩展初始化
+    // 初始化
     keyboardExtentInit () {
-      console.group('keyboardExtentInit')
-      console.log()
-      console.groupEnd()
+      //
+    },
+    // 返回ref名称
+    keyboardExtentRefNameMaker (scope) {
+      return `${scope.$index}${scope.column.property}`
     }
   }
 }

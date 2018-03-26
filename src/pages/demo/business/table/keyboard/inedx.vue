@@ -7,17 +7,29 @@
       <el-table-column prop="id" label="id" width="50" align="center"></el-table-column>
       <el-table-column prop="name" label="姓名" width="100">
         <template slot-scope="scope">
-          <el-input v-bind="inputSetting" placeholder="姓名" :ref="`${scope.$index}${scope.column.property}`"></el-input>
+          <el-input
+            v-bind="inputSetting"
+            placeholder="姓名"
+            :ref="keyboardExtentRefNameMaker(scope)">
+          </el-input>
         </template>
       </el-table-column>
       <el-table-column prop="address1" label="出生地" align="center">
         <template slot-scope="scope">
-          <el-input v-bind="inputSetting" placeholder="出生地" :ref="`${scope.$index}${scope.column.property}`"></el-input>
+          <el-input
+            v-bind="inputSetting"
+            placeholder="出生地"
+            :ref="keyboardExtentRefNameMaker(scope)">
+          </el-input>
         </template>
       </el-table-column>
       <el-table-column prop="address2" label="现居地" align="center">
         <template slot-scope="scope">
-          <el-input v-bind="inputSetting" placeholder="现居地" :ref="`${scope.$index}${scope.column.property}`"></el-input>
+          <el-input
+            v-bind="inputSetting"
+            placeholder="现居地"
+            :ref="keyboardExtentRefNameMaker(scope)">
+          </el-input>
         </template>
       </el-table-column>
     </el-table>
@@ -26,7 +38,11 @@
 
 <script>
 import Mock from 'mockjs'
+import keyboardExtent from './keyboard-extend'
 export default {
+  mixins: [
+    keyboardExtent
+  ],
   data () {
     return {
       // 绑定到表格的数据
@@ -45,10 +61,9 @@ export default {
       }
     }
   },
-  mounted () {
+  created () {
     // 自动请求数据
     this.getData()
-    console.log(this.$refs)
   },
   methods: {
     // 请求数据
