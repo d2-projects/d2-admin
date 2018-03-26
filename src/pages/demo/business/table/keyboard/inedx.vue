@@ -1,7 +1,7 @@
 <template>
   <Container type="card-full">
     <template slot="header">
-      <el-button type="primary" @click="getData"><Icon name="paper-plane"></Icon> 发送请求</el-button>
+      当前激活的单元格
     </template>
     <el-table v-bind="table">
       <el-table-column prop="id" label="id" width="50" align="center"></el-table-column>
