@@ -110,11 +110,15 @@ export default {
       await sleep(1000)
       for (const propName in this.$refs) {
         if (/^kb-\d+-[a-zA-Z0-9-]+-kb$/.test(propName) && this.$refs.hasOwnProperty(propName)) {
-          const input = this.$refs[propName].$refs.input
-          if (input) {
-            input.addEventListener('keydown', e => {
-              console.log(e)
-            })
+          try {
+            const input = this.$refs[propName].$refs.input
+            if (input) {
+              input.addEventListener('keydown', e => {
+                console.log(e)
+              })
+            }
+          } catch (error) {
+            console.log(error)
           }
         }
       }
