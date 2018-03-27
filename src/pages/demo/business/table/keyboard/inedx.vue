@@ -110,15 +110,11 @@ export default {
       await sleep(1000)
       for (const propName in this.$refs) {
         if (/^kb-\d+-[a-zA-Z0-9-]+-kb$/.test(propName) && this.$refs.hasOwnProperty(propName)) {
-          try {
-            const input = this.$refs[propName].$refs.input
-            if (input) {
-              input.addEventListener('keydown', e => {
-                console.log(e)
-              })
-            }
-          } catch (error) {
-            console.log(error)
+          const input = require('lodash.get')(this.$refs[propName], '$refs.input', false)
+          if (input) {
+            input.addEventListener('keydown', e => {
+              console.log(e)
+            })
           }
         }
       }
