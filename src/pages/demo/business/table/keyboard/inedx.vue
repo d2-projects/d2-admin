@@ -10,7 +10,8 @@
           <el-input
             v-bind="inputSetting"
             placeholder="姓名"
-            :ref="keyboardExtentRefNameMaker(scope)">
+            :ref="refMaker(scope)"
+            @focus="handleFocus(scope)">
           </el-input>
         </template>
       </el-table-column>
@@ -19,7 +20,8 @@
           <el-input
             v-bind="inputSetting"
             placeholder="出生地"
-            :ref="keyboardExtentRefNameMaker(scope)">
+            :ref="refMaker(scope)"
+            @focus="handleFocus(scope)">
           </el-input>
         </template>
       </el-table-column>
@@ -28,7 +30,8 @@
           <el-input
             v-bind="inputSetting"
             placeholder="现居地"
-            :ref="keyboardExtentRefNameMaker(scope)">
+            :ref="refMaker(scope)"
+            @focus="handleFocus(scope)">
           </el-input>
         </template>
       </el-table-column>
@@ -37,12 +40,9 @@
 </template>
 
 <script>
+import sleep from '@/utils/sleep.js'
 import Mock from 'mockjs'
-import keyboardExtent from './keyboard-extend'
 export default {
-  mixins: [
-    keyboardExtent
-  ],
   data () {
     return {
       // 绑定到表格的数据
@@ -64,6 +64,9 @@ export default {
   created () {
     // 自动请求数据
     this.getData()
+  },
+  mounted () {
+    this.keyboardExtentInit()
   },
   methods: {
     // 请求数据
@@ -93,6 +96,30 @@ export default {
           }]
         }).list)
       })
+    },
+    // 返回ref名称
+    refMaker (scope) {
+      return `kb-${scope.$index}-${scope.column.property}-kb`
+    },
+    // 接收用户在表格元素上的“focus”事件 (也可能是别的事件触发)
+    handleFocus (scope) {
+      console.log(scope)
+    },
+    // 初始化键盘访问
+    async keyboardExtentInit () {
+      await sleep(1000)
+      for (const propName in this.$refs) {
+        const reg = /^kb-\d+-[a-zA-Z0-9-]+-kb$/
+        console.log(reg.test(propName))
+        if (this.$refs.hasOwnProperty(propName)) {
+          const input = this.$refs[propName].$refs.input
+          if (input) {
+            input.addEventListener('keydown', e => {
+              console.log(e)
+            })
+          }
+        }
+      }
     }
   }
 }
