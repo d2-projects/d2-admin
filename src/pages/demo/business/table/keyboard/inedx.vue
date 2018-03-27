@@ -109,9 +109,7 @@ export default {
     async keyboardExtentInit () {
       await sleep(1000)
       for (const propName in this.$refs) {
-        const reg = /^kb-\d+-[a-zA-Z0-9-]+-kb$/
-        console.log(reg.test(propName))
-        if (this.$refs.hasOwnProperty(propName)) {
+        if (/^kb-\d+-[a-zA-Z0-9-]+-kb$/.test(propName) && this.$refs.hasOwnProperty(propName)) {
           const input = this.$refs[propName].$refs.input
           if (input) {
             input.addEventListener('keydown', e => {
