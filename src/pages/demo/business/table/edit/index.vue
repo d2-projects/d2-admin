@@ -42,7 +42,9 @@ export default {
         size: 'mini',
         stripe: true,
         border: true
-      }
+      },
+      // 请求得到的原始数据
+      dataBackUp: {}
     }
   },
   created () {
