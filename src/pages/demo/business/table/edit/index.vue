@@ -23,7 +23,7 @@
       </el-table-column>
       <el-table-column label="操作" width="100" align="center">
         <template slot-scope="scope">
-          <el-button size="small">编辑</el-button>
+          <el-button v-bind="editButtonSettingMaker(scope)">编辑</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -66,7 +66,7 @@ export default {
         name,
         address1,
         address2,
-        __edit: true // 在这里可以添加额外的判断逻辑
+        __edit: false // 在这里可以添加额外的判断逻辑
       })
       return val.map(e => rowFilter(e))
     },
@@ -93,6 +93,13 @@ export default {
         style: {
           maxWidth: '200px'
         }
+      }
+    },
+    // 返回编辑按钮需要的参数
+    editButtonSettingMaker (scope) {
+      const isEdit = scope.row.__edit
+      return {
+        size: 'small'
       }
     },
     // 测试
