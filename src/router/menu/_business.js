@@ -43,14 +43,14 @@ export const menu = {
       icon: 'table',
       children: [
         {
-          title: '键盘访问',
+          title: '可编辑',
           icon: 'file-o',
-          path: 'table/keyboard',
-          name: 'demo-business-table-keyboard',
+          path: 'table/edit',
+          name: 'demo-business-table-edit',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/business/table/keyboard/inedx.vue'], resolve) }
+          component: resolve => { require(['@/pages/demo/business/table/edit/index.vue'], resolve) }
         }
       ]
     }

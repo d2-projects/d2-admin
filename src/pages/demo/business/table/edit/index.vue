@@ -7,32 +7,23 @@
       <el-table-column prop="id" label="id" width="50" align="center"></el-table-column>
       <el-table-column prop="name" label="姓名" width="100">
         <template slot-scope="scope">
-          <el-input
-            v-bind="inputSetting"
-            placeholder="姓名"
-            :ref="refMaker(scope)"
-            @focus="handleFocus(scope)">
-          </el-input>
+          <el-input v-bind="inputSettingMaker(scope)"></el-input>
+          <!-- <button @click="log(scope)">测试</button> -->
         </template>
       </el-table-column>
       <el-table-column prop="address1" label="出生地" align="center">
         <template slot-scope="scope">
-          <el-input
-            v-bind="inputSetting"
-            placeholder="出生地"
-            :ref="refMaker(scope)"
-            @focus="handleFocus(scope)">
-          </el-input>
+          <el-input v-bind="inputSettingMaker(scope)"></el-input>
         </template>
       </el-table-column>
       <el-table-column prop="address2" label="现居地" align="center">
         <template slot-scope="scope">
-          <el-input
-            v-bind="inputSetting"
-            placeholder="现居地"
-            :ref="refMaker(scope)"
-            @focus="handleFocus(scope)">
-          </el-input>
+          <el-input v-bind="inputSettingMaker(scope)"></el-input>
+        </template>
+      </el-table-column>
+      <el-table-column label="操作" width="100" align="center">
+        <template slot-scope="scope">
+          <el-button size="small">编辑</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -40,7 +31,7 @@
 </template>
 
 <script>
-import sleep from '@/utils/sleep.js'
+// import sleep from '@/utils/sleep.js'
 import Mock from 'mockjs'
 export default {
   data () {
@@ -51,13 +42,6 @@ export default {
         size: 'mini',
         stripe: true,
         border: true
-      },
-      // 表格中输入框的通用设置
-      inputSetting: {
-        size: 'small',
-        style: {
-          maxWidth: '200px'
-        }
       }
     }
   },
@@ -65,22 +49,25 @@ export default {
     // 自动请求数据
     this.getData()
   },
-  mounted () {
-    this.keyboardExtentInit()
-  },
   methods: {
     // 请求数据
     async getData () {
       this.table.data = this.dataFilter(await this.dataMaker())
     },
-    // 过滤数据部分 模拟过滤掉 star 字段
+    // 过滤数据部分 模拟过滤掉 star 字段 并且添加 __edit 字段
     dataFilter (val) {
       const rowFilter = ({
         id = '',
         name = '',
         address1 = '',
         address2 = ''
-      }) => ({id, name, address1, address2})
+      }) => ({
+        id,
+        name,
+        address1,
+        address2,
+        __edit: true // 在这里可以添加额外的判断逻辑
+      })
       return val.map(e => rowFilter(e))
     },
     // 模拟返回数据。没有必要写在全局 mock 设置中，就在这里这样写了，这样删文件的时候也好处理
@@ -97,27 +84,20 @@ export default {
         }).list)
       })
     },
-    // 返回ref名称
-    refMaker (scope) {
-      return `kb-${scope.$index}-${scope.column.property}-kb`
-    },
-    // 接收用户在表格元素上的“focus”事件 (也可能是别的事件触发)
-    handleFocus (scope) {
-      console.log(scope)
-    },
-    // 初始化键盘访问
-    async keyboardExtentInit () {
-      await sleep(1000)
-      for (const propName in this.$refs) {
-        if (/^kb-\d+-[a-zA-Z0-9-]+-kb$/.test(propName) && this.$refs.hasOwnProperty(propName)) {
-          const input = require('lodash.get')(this.$refs[propName], '$refs.input', false)
-          if (input) {
-            input.addEventListener('keydown', e => {
-              console.log(e)
-            })
-          }
+    // 返回输入组件需要的参数
+    inputSettingMaker (scope) {
+      return {
+        value: scope.row[scope.column.property],
+        placeholder: scope.column.label,
+        size: 'small',
+        style: {
+          maxWidth: '200px'
         }
       }
+    },
+    // 测试
+    log (scope) {
+      console.log(scope)
     }
   }
 }
