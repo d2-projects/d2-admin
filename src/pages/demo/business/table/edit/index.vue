@@ -44,7 +44,7 @@ export default {
         border: true
       },
       // 请求得到的原始数据
-      dataBackUp: {}
+      dataOriginal: null
     }
   },
   created () {
