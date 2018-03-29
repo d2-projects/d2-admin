@@ -54,7 +54,9 @@ export default {
   methods: {
     // 请求数据
     async getData () {
-      this.table.data = this.dataFilter(await this.dataMaker())
+      const dataOriginal = this.dataFilter(await this.dataMaker())
+      this.dataOriginal = dataOriginal
+      this.table.data = dataOriginal
     },
     // 过滤数据部分 模拟过滤掉 star 字段 并且添加 __edit 字段
     dataFilter (val) {
@@ -101,7 +103,8 @@ export default {
     editButtonSettingMaker (scope) {
       const isEdit = scope.row.__edit
       return {
-        size: 'small'
+        size: 'small',
+        type: isEdit ? 'primary' : ''
       }
     },
     // 测试
