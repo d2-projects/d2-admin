@@ -33,6 +33,7 @@
 <script>
 // import sleep from '@/utils/sleep.js'
 import Mock from 'mockjs'
+import _clonedeep from 'lodash.clonedeep'
 export default {
   data () {
     return {
@@ -54,9 +55,12 @@ export default {
   methods: {
     // 请求数据
     async getData () {
-      const dataOriginal = this.dataFilter(await this.dataMaker())
-      this.dataOriginal = dataOriginal
-      this.table.data = dataOriginal
+      // 拿到数据
+      const data = this.dataFilter(await this.dataMaker())
+      // 保存备份
+      this.dataOriginal = _clonedeep(data)
+      // 将值赋给表格
+      this.table.data = _clonedeep(data)
     },
     // 过滤数据部分 模拟过滤掉 star 字段 并且添加 __edit 字段
     dataFilter (val) {
