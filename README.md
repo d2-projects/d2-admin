@@ -1,6 +1,6 @@
-# iview-dashboard
+# d2admin-vue-element
 
-> A management system framework based on iview
+> A management system framework based on vue & element
 
 ## Build Setup
 
