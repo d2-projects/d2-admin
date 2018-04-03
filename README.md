@@ -1,4 +1,6 @@
-# D2admin-vue-element
+<p align="center">
+  <img width="550" src="http://fairyever.qiniudn.com/github-banner.png">
+</p>
 
 基于 `vue.js` 和 `ElementUI` 的管理系统前端解决方案
 
