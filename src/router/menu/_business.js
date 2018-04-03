@@ -36,23 +36,6 @@ export const menu = {
           component: resolve => { require(['@/pages/demo/business/user-center/home/index.vue'], resolve) }
         }
       ]
-    },
-    // 表格
-    {
-      title: '表格示例',
-      icon: 'table',
-      children: [
-        {
-          title: '可编辑',
-          icon: 'file-o',
-          path: 'table/edit',
-          name: 'demo-business-table-edit',
-          meta: {
-            requiresAuth: true
-          },
-          component: resolve => { require(['@/pages/demo/business/table/edit/index.vue'], resolve) }
-        }
-      ]
     }
   ]
 }

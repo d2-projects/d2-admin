@@ -1,21 +1,46 @@
-# d2admin-vue-element
+# D2admin-vue-element
 
-> A management system framework based on vue & element
+基于 `vue.js` 和 `ElementUI` 的管理系统前端解决方案
 
-## Build Setup
+<p>
+  <a href="https://github.com/vuejs/vue">
+    <img src="https://img.shields.io/badge/vue-2.5.2-brightgreen.svg" alt="vue">
+  </a>
+  <a href="https://github.com/ElemeFE/element">
+    <img src="https://img.shields.io/badge/element--ui-2.0.11-brightgreen.svg" alt="element-ui">
+  </a>
+  <a href="https://github.com/vuejs/vuex/">
+    <img src="https://img.shields.io/badge/vuex-3.0.1-brightgreen.svg" alt="vuex">
+  </a>
+  <a href="https://github.com/axios/axios">
+    <img src="https://img.shields.io/badge/axios-0.17.1-brightgreen.svg" alt="axios">
+  </a>
+</p>
 
-``` bash
-# install dependencies
-npm install
+> 此项目只适合作为模板使用，在使用前请先检查您不需要的功能，删除相关代码和依赖插件。不建议直接作为您项目的起始代码。
 
-# serve with hot reload at localhost:8080
-npm run dev
+## 功能
 
-# build for production with minification
-npm run build
+* 简约主题
+* 登陆和注销
+* 根据路由自动生成菜单
+* 可折叠侧边栏
+* 多国语言支持
+* 富文本编辑器
+* Markdown 编辑器
+* 全屏
+* Fontawesome 图标库
+* Fontawesome 图标选择器（组件）
+* 自动引入 SVG 图标
+* 前端假数据支持（ mock ）
+* 集成 G2 图表
+* 图表自适应可拖拽大小的卡片容器（示例）
+* 剪贴板操作
+* Cookie操作
+* 时间差计算工具
+* 导出 Excel （ xlsx 格式 + CSV 格式 ）
+* 导入 Excel （ xlsx 格式 + CSV 格式 ）
+* 数字动画
+* 可拖拽调整大小的切分布局
+* 可拖拽调整大小和位置的网格布局
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
