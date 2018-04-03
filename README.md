@@ -38,7 +38,7 @@
 * Fontawesome 图标选择器（组件）
 * 自动引入下载的 SVG 图标
 * 前端假数据支持（ mock ）
-* 集成 G2 图表 [More ...](https://github.com/FairyEver/d2admin-vue-element/blob/master/static/md/%E7%BB%84%E4%BB%B6%20-%20%E5%9B%BE%E8%A1%A8.md)
+* 集成 G2 图表
 * 图表自适应可拖拽大小的卡片容器（示例）
 * 简化剪贴板操作
 * 简化Cookie操作
