@@ -20,6 +20,14 @@
                 <i slot="prepend" class="fa fa-keyboard-o"></i>
               </el-input>
             </el-form-item>
+            <el-form-item prop="code">
+              <el-input type="text" v-model="formLogin.code" placeholder="- - - -">
+                <template slot="prepend">验证码</template>
+                <template slot="append">
+                  <img class="login-code" src="static/image/login-code.png" alt="">
+                </template>
+              </el-input>
+            </el-form-item>
             <el-button @click="submit" type="primary" class="button-login">登陆</el-button>
           </el-form>
         </el-card>
@@ -45,7 +53,8 @@ export default {
     return {
       formLogin: {
         username: 'admin',
-        password: 'admin'
+        password: 'admin',
+        code: 'v9am'
       },
       rules: {
         username: [
@@ -53,6 +62,9 @@ export default {
         ],
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' }
+        ],
+        code: [
+          { required: true, message: '请输入验证码', trigger: 'blur' }
         ]
       }
     }
