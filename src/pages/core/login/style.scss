@@ -50,6 +50,13 @@
     .el-input-group__prepend {
       padding: 0px 14px;
     }
+    .login-code {
+      height: 40px - 2px;
+      display: block;
+      margin: 0px -20px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
   }
   // 帮助按钮
   .button-help {
