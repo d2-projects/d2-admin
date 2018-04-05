@@ -218,6 +218,23 @@ export const menu = {
           component: resolve => { require(['@/pages/demo/plugins/timeago/demo.vue'], resolve) }
         }
       ]
+    },
+    // 多环境发布
+    {
+      title: '多环境发布',
+      icon: 'paper-plane',
+      children: [
+        {
+          title: '检验环境',
+          icon: 'file-o',
+          path: 'build',
+          name: 'demo-plugins-build',
+          meta: {
+            requiresAuth: true
+          },
+          component: resolve => { require(['@/pages/demo/plugins/build/index.vue'], resolve) }
+        }
+      ]
     }
   ]
 }
