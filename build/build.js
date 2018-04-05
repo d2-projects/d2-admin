@@ -20,7 +20,7 @@ const config = require('../config')
 // webpack 生产环境的核心配置文件
 const webpackConfig = require('./webpack.prod.conf')
 
-// 定义一个 loading
+// 定义一个 loading 并开始
 const spinner = ora('building for production...')
 spinner.start()
 
