@@ -1,8 +1,8 @@
 <template>
   <Container type="card-full">
     <template slot="header">
-      我是插入到 header 中的内容
+      用户中心
     </template>
-    主体
+    doing...
   </Container>
 </template>
