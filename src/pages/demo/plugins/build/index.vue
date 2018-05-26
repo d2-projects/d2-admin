@@ -1,12 +1,8 @@
 <template>
   <Container type="card-full">
     <template slot="header">
-      多环境发布 测试
+      多环境发布
     </template>
-    <el-row>
-      <el-col :span="8">8</el-col>
-      <el-col :span="8">8</el-col>
-      <el-col :span="8">8</el-col>
-    </el-row>
+    <p>当前是{{$env ? '开发' : '生产'}}环境</p>
   </Container>
 </template>
