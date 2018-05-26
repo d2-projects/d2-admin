@@ -144,3 +144,5 @@
 单独图表示例
 
 ![Snip20180526_21](http://fairyever.qiniudn.com/Snip20180526_21.png)
+
+
