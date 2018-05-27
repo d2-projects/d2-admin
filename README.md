@@ -4,7 +4,9 @@
 
 基于 `vue.js` 和 `ElementUI` 的管理系统前端解决方案
 
-欢迎大家一起维护
+**欢迎大家一起维护**
+
+[预览地址 / preview](http://fairyever.coding.me/d2admin-vue-element-preview/#/)
 
 <p>
   <a href="https://github.com/vuejs/vue">
