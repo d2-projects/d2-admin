@@ -55,7 +55,8 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/d2admin-vue-element/',
+    // 请根据你的站点地址修改这里
+    assetsPublicPath: '/d2admin-vue-element-preview/',
 
     /**
      * Source Maps
