@@ -4,10 +4,6 @@
 
 基于 `vue.js` 和 `ElementUI` 的管理系统前端解决方案
 
-**欢迎大家一起维护**
-
-[预览地址 / preview](http://fairyever.coding.me/d2admin-vue-element-preview/#/)
-
 <p>
   <a href="https://github.com/vuejs/vue">
     <img src="https://img.shields.io/badge/vue-2.5.2-brightgreen.svg" alt="vue">
@@ -23,8 +19,11 @@
   </a>
 </p>
 
-> 此项目适合作为模板使用，在使用前请先检查您不需要的功能，删除相关代码和依赖插件，以减少代码体积。
-> 不建议直接作为您项目的起始代码。
+**欢迎大家一起维护**
+
+[预览地址 / preview](http://fairyever.coding.me/d2admin-vue-element-preview/#/)
+
+> 此项目适合作为模板使用。因为现在集成了很多的插件和组件，首次加载会占用较多的时间，虽然已经做了首屏加载动画，还是建议您在发布的时候一定要删除没有用到的代码。比如项目没有用到图表，最好将集成的图表库以及封装的图表组件删除。
 
 ## 功能
 
