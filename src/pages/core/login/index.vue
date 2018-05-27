@@ -37,6 +37,9 @@
         需要帮助
         <i class="fa fa-question-circle"></i>
       </el-button>
+      <!-- 因为预览仓库在 coding 所以要放置logo -->
+      <!-- 您在使用时请删除这里的代码 -->
+      <p class="coding-info">Hosted by <a href="https://pages.coding.me">Coding Pages</a></p>
     </div>
   </div>
 </template>
@@ -117,5 +120,12 @@ export default {
 
 <style lang="scss">
 @import './style.scss';
+.coding-info {
+  font-size: 12px;
+  a {
+    font-weight: bold;
+    color: $color-primary;
+  }
+}
 </style>
 
