@@ -109,6 +109,41 @@
 ├─ package-lock.json
 └─ package.json
 ```
+
+## 使用
+
+安装依赖
+
+```
+npm i
+```
+
+运行
+
+```
+npm run dev
+```
+
+在以下环境测试可用
+
+```
+➜  ~ npm -v
+5.6.0
+➜  ~ node -v
+v8.11.1
+➜  ~ nrm -V
+1.0.2
+➜  ~ nrm ls
+  npm ---- https://registry.npmjs.org/
+  cnpm --- http://r.cnpmjs.org/
+* taobao - https://registry.npm.taobao.org/
+  nj ----- https://registry.nodejitsu.com/
+  rednpm - http://registry.mirror.cqupt.edu.cn/
+  npmMirror  https://skimdb.npmjs.com/registry/
+  edunpm - http://registry.enpmjs.org/
+```
+
+> 不建议使用 `cnpm`
       
 ## 预览
 
