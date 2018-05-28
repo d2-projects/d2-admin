@@ -19,9 +19,11 @@
   </a>
 </p>
 
-**欢迎大家一起维护**
+QQ交流群 `788196238` 欢迎大家一起维护
 
-[预览地址 d2admin.fairyever.com](http://d2admin.fairyever.com/)
+[线上预览地址 d2admin.fairyever.com](http://d2admin.fairyever.com/)
+
+为了观看体验，预览截图放在最后
 
 > 此项目适合作为模板使用。因为现在集成了很多的插件和组件，首次加载会占用较多的时间，虽然已经做了首屏加载动画，还是建议您在发布的时候一定要删除没有用到的代码。比如项目没有用到图表，最好将集成的图表库以及封装的图表组件删除。
 
@@ -60,6 +62,54 @@
 * markdown 内代码高亮
 * 为 markdown 扩展了百度云链接解析和优化显示
 
+## 目录结构
+
+```
+├─ build // 打包设置
+├─ config // 发布设置
+├─ preview-image // github 介绍页面使用的插图 以后可能去掉
+├─ src
+│  ├─ assets
+│  │  ├─ icons // 存放 svg 图标
+│  │  ├─ image // 图片
+│  │  ├─ library // 库
+│  │  └─ style // 公用样式
+│  ├─ components
+│  │  ├─ charts // 封装图表组件
+│  │  ├─ core // 核心组件
+│  │  ├─ demo // 只会在示例页面中使用的组件
+│  ├─ i18n // 多国语言配置
+│  ├─ mock // mock 数据设置
+│  ├─ pages
+│  │  ├─ core // 系统页面
+│  │  └─ demo // 演示页面
+│  │     ├─ business // 业务页面示例
+│  │     ├─ chart // 图表
+│  │     ├─ components // 组件
+│  │     └─ plugins // 插件
+│  ├─ plugin // 插件
+│  ├─ router // 路由
+│  │  ├─ invisible
+│  │  └─ menu
+│  ├─ store // 全局状态
+│  ├─ utils // 通用工具
+│  ├─ App.vue
+│  └─ main.js // 入口文件
+├─ static
+├─ .babelrc
+├─ .editorconfig
+├─ .eslintignore
+├─ .eslintrc.js
+├─ .gitignore
+├─ .postcssrc.js
+├─ LICENSE
+├─ README.md
+├─ design.sketch
+├─ index.html
+├─ package-lock.json
+└─ package.json
+```
+      
 ## 预览
 
 登陆
