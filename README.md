@@ -19,7 +19,7 @@
   </a>
 </p>
 
-QQ交流群 `788196238` 欢迎大家一起维护
+欢迎大家一起维护
 
 [线上预览地址 d2admin.fairyever.com](http://d2admin.fairyever.com/)
 
