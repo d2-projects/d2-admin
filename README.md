@@ -128,7 +128,7 @@ v8.11.1
 
 > Not recommended for use `cnpm`
       
-## 预览
+## preview
 
 login
 
