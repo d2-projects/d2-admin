@@ -143,6 +143,8 @@ v8.11.1
   edunpm - http://registry.enpmjs.org/
 ```
 
+如果安装失败，请升级您的 node.js 和 npm
+
 > 不建议使用 `cnpm`
       
 ## 预览
