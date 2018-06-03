@@ -57,6 +57,7 @@ function sideBarGuide (title) {
       collapsable: false,
       children: [
         '',
+        'q-a',
         'change-log'
       ]
     }
