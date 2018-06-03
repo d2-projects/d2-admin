@@ -21,7 +21,7 @@ Solution of management system front-end based on `vue.js` and `ElementUI`
 
 Welcome everyone to maintain
 
-[中文文档](https://github.com/FairyEver/d2admin-vue-element/blob/master/doc/zh-cn.md)
+[文档 / documentation](https://fairyever.github.io/d2admin-vue-element-doc/)
 
 [预览 / Online preview address](http://d2admin.fairyever.com/)
 
