@@ -1,13 +1,11 @@
 @import '~@/assets/style/public.scss';
 
-$color: #409EFF;
-
 // 默认主题
 .layout-main {
-  &.default {
+  &.classic {
     height: 100vh;
     width: 100vw;
-    background-color: $color-bg;
+    background-color: #EFF4F8;
     // [全局设置]
     // 关闭所有卡片的阴影
     .el-card {
@@ -52,13 +50,13 @@ $color: #409EFF;
         background-color: transparent;
         .el-menu-item {
           border-bottom: none;
-          border-top: 2px solid $color-bg;
+          border-top: 2px solid #EFF4F8;
           &:hover {
             background-color: transparent;
           }
           &.is-active {
             border-bottom: none;
-            border-top: 2px solid $color;
+            border-top: 2px solid $color-primary;
             background-color: transparent;
           }
         }
@@ -94,12 +92,12 @@ $color: #409EFF;
           color: $color-text-sub;
         }
         .el-menu {
-          background-color: $color-bg;
+          background-color: transparent;
           border-right: none;
           &.el-menu--collapse {
             .el-submenu {
               .el-menu {
-                background-color: #FFF;
+                background-color: transparent;
               }
             }
             .el-submenu__title {
@@ -108,15 +106,15 @@ $color: #409EFF;
           }
           .el-menu-item {
             &:focus {
-              background-color: $color-bg;
+              background-color: rgba(#000, .05);
             }
             &:hover {
-              background-color: $color-bg;
+              background-color: rgba(#000, .05);
             }
           }
           .el-submenu__title {
             &:hover {
-              background-color: $color-bg;
+              background-color: rgba(#000, .05);
             }
           }
         }

@@ -33,7 +33,7 @@ export default {
   },
   data () {
     return {
-      theme: 'default',
+      theme: 'classic',
       collapse: false
     }
   },
@@ -59,6 +59,6 @@ export default {
 
 <style lang="scss">
 // 主题
-@import '~@/assets/style/theme/default.scss';
+@import '~@/assets/style/theme/classic.scss';
 </style>
 
