@@ -21,7 +21,7 @@ Solution of management system front-end based on `vue.js` and `ElementUI`
 
 Welcome everyone to maintain
 
-[Documentation (English)](https://fairyever.github.io/d2admin-vue-element-doc/) / [中文文档](https://fairyever.github.io/d2admin-vue-element-doc/zh/)
+[Documentation (English)](https://fairyever.github.io/d2admin-vue-element/) / [中文文档](https://fairyever.github.io/d2admin-vue-element/zh/)
 
 [Online preview / 在线预览](http://d2admin.fairyever.com/)
 
@@ -129,90 +129,3 @@ v8.11.1
 ```
 
 > Not recommended for use `cnpm`
-      
-## preview
-
-login
-
-![Snip20180526_1](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_1.png)
-
-dashboard
-
-![Snip20180526_2](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_2.png)
-
-mock data demo
-
-![Snip20180526_3](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_3.png)
-
-dragable and modified size card
-
-![Snip20180526_4](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_4.png)
-
-dragable layout
-
-![Snip20180526_5](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_5.png)
-
-multi-language support
-
-![Snip20180526_6](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_6.png)
-
-import `csv` `xlsx`
-export `csv` `xlsx` and text
-
-![Snip20180526_7](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_7.png)
-
-![Snip20180526_8](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_8.png)
-
-three modes page container component
-
-![Snip20180526_9](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_9.png)
-
-integrated rich text editor
-
-![Snip20180526_10](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_10.png)
-
-integrated markdown editor
-
-![Snip20180526_11](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_11.png)
-
-integrated icon font
-
-![Snip20180526_12](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_12.png)
-
-encapsulation icon component
-
-![Snip20180526_13](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_13.png)
-
-support automatically import SVG folder icon, and through the use of components
-
-![Snip20180526_14](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_14.png)
-
-icon selector component
-
-![Snip20180526_15](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_15.png)
-
-Integrated markdown rendering function and optimized the Baidu cloud sharing link in the rendering result display
-
-![Snip20180526_16](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_16.png)
-
-integrated digital animation plug-in
-
-![Snip20180526_17](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_17.png)
-
-hightLight in source code viewer
-
-![Snip20180526_18](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_18.png)
-
-integrated chart
-
-![Snip20180526_19](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_19.png)
-
-support chart drag and resize and drag and drop locations
-
-![Snip20180526_20](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_20.png)
-
-separate chart example
-
-![Snip20180526_21](https://raw.githubusercontent.com/FairyEver/d2admin-vue-element/master/doc/image/Snip20180526_21.png)
-
-
