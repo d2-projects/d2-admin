@@ -58,7 +58,8 @@ export default {
           message: '读取成功 返回结果请查看控制台',
           type: 'success'
         })
-      }, (err) => {
+      }, err => {
+        console.log(err)
         this.$message({
           message: '错误信息已经打印到控制台',
           type: 'error'

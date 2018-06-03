@@ -68,10 +68,14 @@ export default {
 
 
 <style lang="scss" scoped>
+$border-color: #d8dfea;
 .dd-card-full {
   position: absolute;
-  border-radius: 4px;
-  border: 1px solid #ebeef5;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
   background-color: #fff;
   overflow: hidden;
   color: #303133;
@@ -84,7 +88,7 @@ export default {
     left: 0px;
     width: 100%;
     padding: 18px 20px;
-    border-bottom: 1px solid #ebeef5;
+    border-bottom: 1px solid $border-color;
     box-sizing: border-box;
   }
   .dd-card-full__body {
@@ -101,7 +105,7 @@ export default {
     left: 0px;
     width: 100%;
     padding: 18px 20px;
-    border-top: 1px solid #ebeef5;
+    border-top: 1px solid $border-color;
     box-sizing: border-box;
   }
 }
