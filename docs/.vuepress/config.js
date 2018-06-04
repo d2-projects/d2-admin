@@ -58,6 +58,7 @@ function sideBarGuide (title) {
       children: [
         '',
         'q-a',
+        'pr',
         'change-log'
       ]
     }
