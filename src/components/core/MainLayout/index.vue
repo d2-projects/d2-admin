@@ -2,7 +2,7 @@
   <el-container class="layout-main" :class="theme">
     <!-- 顶栏 -->
     <el-header>
-      <div class="logo-group" :style="{width: collapse ? asideWidth : asideWidthCollapse}">
+      <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
         <img v-if="collapse" src="@/assets/image/logo/header-icon-only.png">
         <img v-else src="@/assets/image/logo/header.png">
       </div>
@@ -15,7 +15,7 @@
     <!-- 下面 主体 -->
     <el-container>
       <!-- 主体 侧边栏 -->
-      <el-aside :style="{width: collapse ? asideWidth : asideWidthCollapse}">
+      <el-aside :style="{width: collapse ? asideWidthCollapse : asideWidth}">
         <SideMenu :collapse="collapse"></SideMenu>
       </el-aside>
       <!-- 主体 -->
@@ -39,8 +39,9 @@ export default {
     return {
       theme: 'classic',
       collapse: false,
-      asideWidth: '65px',
-      asideWidthCollapse: '200px'
+      // 侧边栏宽度
+      asideWidth: '200px',
+      asideWidthCollapse: '65px'
     }
   },
   methods: {
