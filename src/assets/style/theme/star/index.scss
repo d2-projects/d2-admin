@@ -17,7 +17,9 @@ $theme-container-full-border-color: #d8dfea;
       border-top: 1px solid $theme-container-full-border-color;
     }
   }
+  // 顶栏
   .el-header {
+    // 切换按钮
     .toggle-aside-btn {
       i {
         color: #FFF;
@@ -26,6 +28,7 @@ $theme-container-full-border-color: #d8dfea;
         }
       }
     }
+    // 菜单
     .el-menu {
       .el-menu-item {
         color: #FFF;
@@ -34,6 +37,17 @@ $theme-container-full-border-color: #d8dfea;
         }
         &.is-active {
           border-top-color: #FFF;
+        }
+      }
+    }
+    // 顶栏右侧
+    .dd-header-right {
+      .btn-text {
+        color: #FFF;
+      }
+      .el-dropdown {
+        .el-dropdown-link {
+          color: #FFF;
         }
       }
     }
