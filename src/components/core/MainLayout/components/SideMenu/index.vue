@@ -4,11 +4,21 @@
       :collapse="collapse"
       :unique-opened="true"
       :router="true">
+      <!-- 循环每条菜单 -->
       <template v-for="(menu, menuIndex) in menus">
-        <el-menu-item :key="menuIndex" :index="menu.path">
+        <!-- 单个菜单 -->
+        <el-menu-item :key="`level1-item-${menuIndex}`" :index="menu.path">
           <i :class="`fa fa-${menu.icon}`"></i>
           <span slot="title">{{menu.title}}</span>
         </el-menu-item>
+        <!-- 有子菜单 -->
+        <el-submenu :key="`level1-submenu-${menuIndex}`" index="1">
+          <template slot="title">
+            <i class="el-icon-location"></i>
+            <span>导航一</span>
+          </template>
+          <el-menu-item index="1-1">选项1</el-menu-item>
+        </el-submenu>
       </template>
       <!-- <el-menu-item index="2">
         <i class="el-icon-menu"></i>
