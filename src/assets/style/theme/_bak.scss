@@ -2,16 +2,62 @@
 
 $theme-color: #EFF4F8;
 
+$border-color: #d8dfea;
 // 默认主题
 .layout-main {
   &.classic {
     height: 100vh;
     width: 100vw;
     background-color: $theme-color;
+    background-image: url('/static/image/bg/2.jpg');
+    background-size: cover;
+    background-position: center;
     .el-card {
       box-shadow: none;
       &:hover {
-        box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
+        // box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
+        box-shadow: none;
+      }
+    }
+    .dd-card-full {
+      position: absolute;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      border-top: 1px solid $border-color;
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+      background-color: #fff;
+      overflow: hidden;
+      color: #303133;
+      &:hover {
+        // box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
+        box-shadow: none;
+      }
+      .dd-card-full__header {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        padding: 18px 20px;
+        border-bottom: 1px solid $border-color;
+        box-sizing: border-box;
+      }
+      .dd-card-full__body {
+        position: absolute;
+        padding: 20px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        overflow: auto;
+      }
+      .dd-card-full__footer {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        padding: 18px 20px;
+        border-top: 1px solid $border-color;
+        box-sizing: border-box;
       }
     }
     // [布局] 顶栏
