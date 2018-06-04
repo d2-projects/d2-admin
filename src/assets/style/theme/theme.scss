@@ -80,11 +80,6 @@ $theme-color: #EFF4F8;
       .el-menu {
         background-color: transparent;
         border-right: none;
-        .el-submenu__title {
-          &:hover {
-            background-color: rgba(#000, .05);
-          }
-        }
       }
       // [菜单] 折叠状态
       .el-menu--collapse {

@@ -28,7 +28,7 @@ $theme-container-full-border-color: #d8dfea;
         }
       }
     }
-    // 菜单
+    // 顶栏菜单
     .el-menu {
       .el-menu-item {
         color: #FFF;
@@ -60,6 +60,16 @@ $theme-container-full-border-color: #d8dfea;
         .el-dropdown-link {
           color: #FFF;
         }
+      }
+    }
+  }
+  // [布局] 顶栏下面
+  .el-container {
+    // 侧边栏
+    .el-aside {
+      // [菜单] 正常状态
+      .el-menu {
+        
       }
     }
   }
