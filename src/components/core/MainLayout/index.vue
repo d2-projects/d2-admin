@@ -50,5 +50,5 @@ export default {
 
 <style lang="scss">
 // 主题
-@import '~@/assets/style/theme/classic.scss';
+@import '~@/assets/style/theme/classic/index.scss';
 </style>
