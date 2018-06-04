@@ -65,10 +65,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.dd-side-menu:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
-}
-</style>
