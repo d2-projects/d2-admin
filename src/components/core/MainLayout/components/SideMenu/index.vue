@@ -4,7 +4,10 @@
       :collapse="collapse"
       :unique-opened="true"
       :router="true">
-      <dd-menu v-for="(menu, menuIndex) in menus" :menu="menu" :key="menuIndex"/>
+      <template v-for="(menu, menuIndex) in menus">
+        <ddMenuItem v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
+        <dd-menu-have-children v-else :menu="menu" :key="menuIndex"/>
+      </template>
     </el-menu>
     <!-- <div v-if="sideMenu.filter(e => e.title).length === 0 && !collapse" class="dd-side-menu-empty">
       没有菜单
@@ -22,7 +25,8 @@ export default {
     }
   },
   components: {
-    ddMenu: () => import('./components/ddMenu.vue')
+    ddMenuItem: () => import('./components/ddMenuItem.vue'),
+    ddMenuHaveChildren: () => import('./components/ddMenuHaveChildren.vue')
   },
   data () {
     return {
