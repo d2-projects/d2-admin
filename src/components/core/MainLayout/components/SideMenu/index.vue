@@ -28,7 +28,7 @@ export default {
     return {
       menus: [
         {
-          path: '/a',
+          path: '/demo/components/container/card-full',
           title: 'menu-a',
           icon: 'plus'
         },
