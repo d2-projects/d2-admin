@@ -3,17 +3,17 @@
 $theme-name: 'star';
 $theme-bg-color: #EFF4F8;
 $theme-bg-image: '/static/image/bg/star.jpg';
-$theme-card-full-border-color: #d8dfea;
+$theme-container-full-border-color: #d8dfea;
 
 .theme-#{$theme-name} {
   background-color: $theme-bg-color;
   background-image: url($theme-bg-image);
-  .dd-card-full {
-    .dd-card-full__header {
-      border-bottom: 1px solid $theme-card-full-border-color;
+  .dd-container-full {
+    .dd-container-full__header {
+      border-bottom: 1px solid $theme-container-full-border-color;
     }
-    .dd-card-full__footer {
-      border-top: 1px solid $theme-card-full-border-color;
+    .dd-container-full__footer {
+      border-top: 1px solid $theme-container-full-border-color;
     }
   }
 }
