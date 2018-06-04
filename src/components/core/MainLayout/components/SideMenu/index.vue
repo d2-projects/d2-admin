@@ -1,48 +1,42 @@
 <template>
   <div>
     <el-menu
-      v-if="sideMenu.filter(e => e.title).length > 0"
       :collapse="collapse"
       :unique-opened="true">
-      <template v-for="(menu, index) in sideMenu">
-        <!-- 没有子菜单的菜单项 -->
-        <el-menu-item
-          v-if="!menu.children && menu.title"
-          :key="index"
-          :index="`${menu.title}${index}`"
-          @click.native="$router.push({name: menu.name})">
-          <i v-if="menu.icon" :class="'fa fa-' + menu.icon"></i>
-          <span slot="title">{{menu.title}}</span>
-        </el-menu-item>
-        <!-- 有子菜单的项目 -->
-        <el-submenu
-          v-if="menu.children"
-          :key="index"
-          :index="`${menu.title}${index}`">
-          <template slot="title">
-            <i v-if="menu.icon" :class="'fa fa-' + menu.icon"></i>
-            <span slot="title">{{menu.title}}</span>
-          </template>
-          <el-menu-item
-            v-for="(menuItem, menuItemIndex) in menu.children"
-            :key="menuItemIndex"
-            :index="`${menuItem.name}${menuItemIndex}`"
-            @click.native="$router.push({name: menuItem.name})">
-            <i v-if="menuItem.icon" :class="'fa fa-' + menuItem.icon"></i>
-            {{menuItem.title}}
-          </el-menu-item>
+      <el-submenu index="1">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>导航一</span>
+        </template>
+        <el-menu-item-group>
+          <template slot="title">分组一</template>
+          <el-menu-item index="1-1">选项1</el-menu-item>
+          <el-menu-item index="1-2">选项2</el-menu-item>
+        </el-menu-item-group>
+        <el-menu-item-group title="分组2">
+          <el-menu-item index="1-3">选项3</el-menu-item>
+        </el-menu-item-group>
+        <el-submenu index="1-4">
+          <template slot="title">选项4</template>
+          <el-menu-item index="1-4-1">选项1</el-menu-item>
         </el-submenu>
-      </template>
+      </el-submenu>
+      <el-menu-item index="2">
+        <i class="el-icon-menu"></i>
+        <span slot="title">导航二</span>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <i class="el-icon-setting"></i>
+        <span slot="title">导航四</span>
+      </el-menu-item>
     </el-menu>
-    <div v-if="sideMenu.filter(e => e.title).length === 0 && !collapse" class="dd-side-menu-empty">
+    <!-- <div v-if="sideMenu.filter(e => e.title).length === 0 && !collapse" class="dd-side-menu-empty">
       没有菜单
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import { menu, router } from '@/router/menu/index.js'
 export default {
   props: {
     collapse: {
@@ -50,17 +44,6 @@ export default {
       required: false,
       default: false
     }
-  },
-  data () {
-    return {
-      menu,
-      router
-    }
-  },
-  computed: {
-    ...mapState({
-      sideMenu: state => state.menu.sideMenu
-    })
   }
 }
 </script>
