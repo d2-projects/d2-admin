@@ -1,0 +1,37 @@
+.theme {
+  .dd-container-full {
+    position: absolute;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #FFF;
+    overflow: hidden;
+    color: #303133;
+    &:hover {
+      box-shadow: none;
+    }
+    .dd-container-full__header {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      padding: 18px 20px;
+      box-sizing: border-box;
+    }
+    .dd-container-full__body {
+      position: absolute;
+      padding: 20px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      overflow: auto;
+    }
+    .dd-container-full__footer {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      padding: 18px 20px;
+      box-sizing: border-box;
+    }
+  }
+}

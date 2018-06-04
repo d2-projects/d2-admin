@@ -6,7 +6,7 @@
         <img v-if="collapse" src="@/assets/image/logo/header-icon-only.png">
         <img v-else src="@/assets/image/logo/header.png">
       </div>
-      <div class="toggle-sidemenu-btn" @click="collapse = !collapse">
+      <div class="toggle-aside-btn" @click="collapse = !collapse">
         <Icon name="bars"/>
       </div>
       <HeaderMenu/>
@@ -50,5 +50,5 @@ export default {
 
 <style lang="scss">
 // 主题
-@import '~@/assets/style/theme/classic/index.scss';
+@import '~@/assets/style/theme/star/index.scss';
 </style>
