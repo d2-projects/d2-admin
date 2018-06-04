@@ -2,11 +2,12 @@
   <div>
     <el-menu
       :collapse="collapse"
-      :unique-opened="true">
+      :unique-opened="true"
+      :router="true">
       <template v-for="(menu, menuIndex) in menus">
-        <el-menu-item :key="menuIndex" index="2">
+        <el-menu-item :key="menuIndex" :index="menu.path">
           <i :class="`fa fa-${menu.icon}`"></i>
-          <span slot="title">导航二</span>
+          <span slot="title">{{menu.title}}</span>
         </el-menu-item>
       </template>
       <!-- <el-menu-item index="2">
