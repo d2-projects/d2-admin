@@ -4,12 +4,12 @@ module.exports = {
     '/': {
       lang: 'en-US',
       title: 'D2 Admin',
-      description: 'An elegant template for management system'
+      description: 'Elegant management system front-end integration'
     },
     '/zh/': {
       lang: 'zh-CN',
       title: 'D2 Admin',
-      description: '做一个优雅的管理系统模板'
+      description: '优雅的管理系统前端集成方案'
     }
   },
   themeConfig: {
