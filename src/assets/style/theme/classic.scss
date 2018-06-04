@@ -94,15 +94,9 @@ $theme-color: #EFF4F8;
           text-align: center;
           color: $color-text-sub;
         }
-        .dd-side-menu {
-          &:not(.el-menu--collapse) {
-            width: 200px;
-            min-height: 400px;
-          }
-        }
         // [菜单] 正常状态
         .el-menu {
-          background-color: red;
+          background-color: transparent;
           border-right: none;
           .el-submenu__title {
             &:hover {
@@ -112,7 +106,7 @@ $theme-color: #EFF4F8;
         }
         // [菜单] 折叠状态
         .el-menu--collapse {
-          background-color: blue;
+          background-color: transparent;
           .el-submenu__title {
             text-align: center;
           }
