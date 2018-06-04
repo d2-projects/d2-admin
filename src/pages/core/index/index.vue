@@ -1,5 +1,5 @@
 <template>
-  <Container type="card-full">
+  <Container type="full">
     <PageIndexArticle
       title="I AM D2ADMIN"
       sub-title="追求简约美感 & 上手即用的后台管理系统模板">

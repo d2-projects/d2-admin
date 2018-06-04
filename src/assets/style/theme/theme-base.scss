@@ -14,7 +14,7 @@ $theme-color: #EFF4F8;
       box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
     }
   }
-  .dd-card-full {
+  .dd-container-full {
     position: absolute;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -24,7 +24,7 @@ $theme-color: #EFF4F8;
     &:hover {
       box-shadow: none;
     }
-    .dd-card-full__header {
+    .dd-container-full__header {
       position: absolute;
       top: 0px;
       left: 0px;
@@ -32,7 +32,7 @@ $theme-color: #EFF4F8;
       padding: 18px 20px;
       box-sizing: border-box;
     }
-    .dd-card-full__body {
+    .dd-container-full__body {
       position: absolute;
       padding: 20px;
       left: 0px;
@@ -40,7 +40,7 @@ $theme-color: #EFF4F8;
       bottom: 0px;
       overflow: auto;
     }
-    .dd-card-full__footer {
+    .dd-container-full__footer {
       position: absolute;
       bottom: 0px;
       left: 0px;

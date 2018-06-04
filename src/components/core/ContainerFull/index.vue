@@ -1,12 +1,12 @@
 <template>
-  <div class="dd-card-full" :style="cardStyle">
-    <div v-if="$slots.header" class="dd-card-full__header" ref="header">
+  <div class="dd-container-full" :style="cardStyle">
+    <div v-if="$slots.header" class="dd-container-full__header" ref="header">
       <slot name="header"></slot>
     </div>
-    <div class="dd-card-full__body" :style="bodyStyle">
+    <div class="dd-container-full__body" :style="bodyStyle">
       <slot></slot>
     </div>
-    <div v-if="$slots.footer" class="dd-card-full__footer" ref="footer">
+    <div v-if="$slots.footer" class="dd-container-full__footer" ref="footer">
       <slot name="footer"></slot>
     </div>
   </div>

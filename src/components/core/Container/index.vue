@@ -11,7 +11,7 @@
       <slot></slot>
     </div>
     <!-- [container-full] 撑满 -->
-    <container-full v-if="type === 'card-full'" :right="10" :bottom="0">
+    <container-full v-if="type === 'full'" :right="10" :bottom="0">
       <slot v-if="$slots.header" name="header" slot="header"></slot>
       <slot></slot>
       <slot v-if="$slots.footer" name="footer" slot="footer"></slot>

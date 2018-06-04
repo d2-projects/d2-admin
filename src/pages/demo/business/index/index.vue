@@ -1,5 +1,5 @@
 <template>
-  <Container type="card-full">
+  <Container type="full">
     <PageIndexArticle
       title="示例业务页面"
       sub-title="如果用不到 建议删除相关代码">
