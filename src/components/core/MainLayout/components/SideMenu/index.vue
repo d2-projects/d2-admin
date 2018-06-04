@@ -2,7 +2,6 @@
   <div>
     <el-menu
       v-if="sideMenu.filter(e => e.title).length > 0"
-      class="dd-side-menu"
       :collapse="collapse"
       :unique-opened="true">
       <template v-for="(menu, index) in sideMenu">
