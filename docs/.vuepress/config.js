@@ -87,7 +87,8 @@ function sideBarComponents (title) {
         'icon-select',
         'icon-svg',
         'icon',
-        'markdown'
+        'markdown',
+        'locally-valid'
       ]
     }
   ]

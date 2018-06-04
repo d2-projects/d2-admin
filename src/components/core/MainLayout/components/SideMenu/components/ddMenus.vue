@@ -1,25 +1,24 @@
 <template>
   <div>
+    <!-- 没有子元素 -->
     <el-menu-item v-if="menu.children === undefined" :index="menu.path">
       <i :class="`fa fa-${menu.icon}`"></i>
       <span slot="title">{{menu.title}}</span>
     </el-menu-item>
-    <el-submenu v-else index="1">
+    <!-- 有子元素 -->
+    <el-submenu v-else :index="menu.path">
       <template slot="title">
         <i :class="`fa fa-${menu.icon}`"></i>
         <span slot="title">{{menu.title}}</span>
       </template>
-      <el-menu-item :index="menu.path">
-        <i :class="`fa fa-${menu.icon}`"></i>
-        <span slot="title">{{menu.title}}</span>
-      </el-menu-item>
+      <dd-menus v-for="(child, childIndex) in menu.children" :menu="child" :key="childIndex"/>
     </el-submenu>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'menus',
+  name: 'dd-menus',
   props: {
     menu: {
       require: false,
