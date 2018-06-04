@@ -6,22 +6,22 @@
         <img v-if="collapse" src="@/assets/image/logo/header-icon-only.png">
         <img v-else src="@/assets/image/logo/header.png">
       </div>
-      <div class="toggle-sidemenu-btn" @click="toggleAside">
-        <Icon name="bars"></Icon>
+      <div class="toggle-sidemenu-btn" @click="collapse = !collapse">
+        <Icon name="bars"/>
       </div>
-      <HeaderMenu></HeaderMenu>
-      <HeaderRight></HeaderRight>
+      <HeaderMenu/>
+      <HeaderRight/>
     </el-header>
     <!-- 下面 主体 -->
     <el-container>
       <!-- 主体 侧边栏 -->
       <el-aside :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-        <SideMenu :collapse="collapse"></SideMenu>
+        <SideMenu :collapse="collapse"/>
       </el-aside>
       <!-- 主体 -->
       <el-main>
         <transition name="fade-transverse">
-          <router-view></router-view>
+          <router-view/>
         </transition>
       </el-main>
     </el-container>
@@ -39,14 +39,10 @@ export default {
     return {
       theme: 'classic',
       collapse: false,
-      // 侧边栏宽度
+      // [侧边栏宽度] 正常状态
       asideWidth: '200px',
+      // [侧边栏宽度] 折叠状态
       asideWidthCollapse: '65px'
-    }
-  },
-  methods: {
-    toggleAside () {
-      this.collapse = !this.collapse
     }
   }
 }
@@ -56,4 +52,3 @@ export default {
 // 主题
 @import '~@/assets/style/theme/classic.scss';
 </style>
-
