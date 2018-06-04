@@ -19,8 +19,9 @@ export default {
   name: 'dd-menu',
   props: {
     menu: {
-      require: false,
-      default: () => []
+      type: Object,
+      required: false,
+      default: () => {}
     }
   }
 }
