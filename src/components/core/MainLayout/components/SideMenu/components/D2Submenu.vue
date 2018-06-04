@@ -5,15 +5,15 @@
       <span slot="title">{{menu.title}}</span>
     </template>
     <template v-for="(child, childIndex) in menu.children">
-      <ddMenuItem v-if="child.children === undefined" :menu="child" :key="childIndex"/>
-      <dd-menu-have-children v-else :menu="child" :key="childIndex"/>
+      <d2-menu-item v-if="child.children === undefined" :menu="child" :key="childIndex"/>
+      <d2-submenu v-else :menu="child" :key="childIndex"/>
     </template>
   </el-submenu>
 </template>
 
 <script>
 export default {
-  name: 'dd-menu-have-children',
+  name: 'D2Submenu',
   props: {
     menu: {
       type: Object,
@@ -22,7 +22,7 @@ export default {
     }
   },
   components: {
-    ddMenuItem: () => import('./ddMenuItem.vue')
+    D2MenuItem: () => import('./D2MenuItem.vue')
   }
 }
 </script>

@@ -5,8 +5,8 @@
       :unique-opened="true"
       :router="true">
       <template v-for="(menu, menuIndex) in menus">
-        <ddMenuItem v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
-        <dd-menu-have-children v-else :menu="menu" :key="menuIndex"/>
+        <d2-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
+        <d2-submenu v-else :menu="menu" :key="menuIndex"/>
       </template>
     </el-menu>
     <!-- <div v-if="sideMenu.filter(e => e.title).length === 0 && !collapse" class="dd-side-menu-empty">
@@ -25,8 +25,8 @@ export default {
     }
   },
   components: {
-    ddMenuItem: () => import('./components/ddMenuItem.vue'),
-    ddMenuHaveChildren: () => import('./components/ddMenuHaveChildren.vue')
+    D2MenuItem: () => import('./components/D2MenuItem.vue'),
+    D2Submenu: () => import('./components/D2Submenu.vue')
   },
   data () {
     return {
