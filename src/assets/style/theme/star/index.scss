@@ -39,6 +39,17 @@ $theme-container-full-border-color: #d8dfea;
           border-top-color: #FFF;
         }
       }
+      .el-submenu {
+        .el-submenu__title {
+          color: #FFF;
+          &:hover {
+            background-color: rgba(#000, 0.1);
+          }
+          .el-submenu__icon-arrow {
+            color: #FFF;
+          }
+        }
+      }
     }
     // 顶栏右侧
     .dd-header-right {
