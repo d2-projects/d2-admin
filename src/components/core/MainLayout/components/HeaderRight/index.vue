@@ -1,5 +1,5 @@
 <template>
-  <div class="btn-group">
+  <div class="dd-header-right">
     <FullScreen></FullScreen>
     <UserDropdown></UserDropdown>
   </div>

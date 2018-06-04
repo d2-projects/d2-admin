@@ -1,7 +1,5 @@
 @import '~@/assets/style/public.scss';
 
-@import './theme-dd-container-full.scss';
-
 $theme-color: #EFF4F8;
 
 // 主题公用
@@ -46,21 +44,16 @@ $theme-color: #EFF4F8;
         border-bottom: none;
         border-top: 2px solid transparent;
         &.is-active {
-          border-bottom: none;
-          border-top-color: $color-primary;
           background-color: transparent;
         }
       }
     }
     // 顶栏右侧的按钮
-    .btn-group {
+    .dd-header-right {
       float: right;
       height: 60px;
       display: flex;
       align-items: center;
-      .btn-text {
-        color: $color-text-normal;
-      }
       .el-dropdown {
         user-select: none;
         cursor: pointer;
@@ -105,6 +98,42 @@ $theme-color: #EFF4F8;
       padding: 0px;
       position: relative;
       overflow: hidden;
+    }
+  }
+  // [组件] dd-container-full
+  .dd-container-full {
+    position: absolute;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #FFF;
+    overflow: hidden;
+    color: #303133;
+    &:hover {
+      box-shadow: none;
+    }
+    .dd-container-full__header {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      padding: 18px 20px;
+      box-sizing: border-box;
+    }
+    .dd-container-full__body {
+      position: absolute;
+      padding: 20px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      overflow: auto;
+    }
+    .dd-container-full__footer {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      padding: 18px 20px;
+      box-sizing: border-box;
     }
   }
 }
