@@ -4,9 +4,7 @@
       :collapse="collapse"
       :unique-opened="true"
       :router="true">
-      <template v-for="(menu, menuIndex) in menus">
-        <dd-menus :menu="menu" :key="menuIndex"/>
-      </template>
+      <dd-menus v-for="(menu, menuIndex) in menus" :menu="menu" :key="menuIndex"/>
     </el-menu>
     <!-- <div v-if="sideMenu.filter(e => e.title).length === 0 && !collapse" class="dd-side-menu-empty">
       没有菜单
@@ -40,9 +38,26 @@ export default {
           icon: 'plus',
           children: [
             {
-              path: '/a',
+              path: '/c-1',
               title: 'menu-a',
               icon: 'plus'
+            },
+            {
+              path: '/c',
+              title: 'menu-a',
+              icon: 'plus',
+              children: [
+                {
+                  path: '/d',
+                  title: 'menu-a',
+                  icon: 'plus'
+                },
+                {
+                  path: '/d',
+                  title: 'menu-a',
+                  icon: 'plus'
+                }
+              ]
             }
           ]
         }
