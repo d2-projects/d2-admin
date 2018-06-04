@@ -1,4 +1,4 @@
-@import '../theme-base.scss';
+@import '../theme.scss';
 
 $theme-name: 'star';
 $theme-bg-color: #EFF4F8;
@@ -8,12 +8,34 @@ $theme-container-full-border-color: #d8dfea;
 .theme-#{$theme-name} {
   background-color: $theme-bg-color;
   background-image: url($theme-bg-image);
+  // [组件] dd-container-full
   .dd-container-full {
     .dd-container-full__header {
       border-bottom: 1px solid $theme-container-full-border-color;
     }
     .dd-container-full__footer {
       border-top: 1px solid $theme-container-full-border-color;
+    }
+  }
+  .el-header {
+    .toggle-aside-btn {
+      i {
+        color: #FFF;
+        &:hover {
+          color: #FFF;
+        }
+      }
+    }
+    .el-menu {
+      .el-menu-item {
+        color: #FFF;
+        &:hover {
+          background-color: rgba(#000, 0.1);
+        }
+        &.is-active {
+          border-top-color: #FFF;
+        }
+      }
     }
   }
 }
