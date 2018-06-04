@@ -1,7 +1,8 @@
 <template>
   <el-container class="layout-main" :class="theme">
+    <!-- 顶栏 -->
     <el-header>
-      <div class="logo-group" :style="logoGroupStyle">
+      <div class="logo-group" :style="{width: collapse ? asideWidth : asideWidthCollapse}">
         <img v-if="collapse" src="@/assets/image/logo/header-icon-only.png">
         <img v-else src="@/assets/image/logo/header.png">
       </div>
@@ -11,10 +12,13 @@
       <HeaderMenu></HeaderMenu>
       <HeaderRight></HeaderRight>
     </el-header>
+    <!-- 下面 主体 -->
     <el-container>
-      <el-aside :style="asideStyle">
+      <!-- 主体 侧边栏 -->
+      <el-aside :style="{width: collapse ? asideWidth : asideWidthCollapse}">
         <SideMenu :collapse="collapse"></SideMenu>
       </el-aside>
+      <!-- 主体 -->
       <el-main>
         <transition name="fade-transverse">
           <router-view></router-view>
@@ -34,19 +38,9 @@ export default {
   data () {
     return {
       theme: 'classic',
-      collapse: false
-    }
-  },
-  computed: {
-    logoGroupStyle () {
-      return {
-        width: `${this.collapse ? '65' : '200'}px`
-      }
-    },
-    asideStyle () {
-      return {
-        width: `${this.collapse ? '65' : '200'}px`
-      }
+      collapse: false,
+      asideWidth: '65px',
+      asideWidthCollapse: '200px'
     }
   },
   methods: {
