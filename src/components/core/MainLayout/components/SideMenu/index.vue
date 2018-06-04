@@ -4,22 +4,19 @@
       :collapse="collapse"
       :unique-opened="true"
       :router="true">
-      <!-- 循环每条菜单 -->
-      <template v-for="(menu, menuIndex) in menus">
-        <!-- 单个菜单 -->
-        <el-menu-item :key="`level1-item-${menuIndex}`" :index="menu.path">
+      <menus/>
+      <!-- <template v-for="(menu, menuIndex) in menus">
+        <el-menu-item v-if="menu.children === undefined" :key="`level1-item-${menuIndex}`" :index="menu.path">
           <i :class="`fa fa-${menu.icon}`"></i>
           <span slot="title">{{menu.title}}</span>
         </el-menu-item>
-        <!-- 有子菜单 -->
-        <el-submenu :key="`level1-submenu-${menuIndex}`" index="1">
+        <el-submenu v-else :key="`level1-submenu-${menuIndex}`" :index="`level1-submenu-${menuIndex}`">
           <template slot="title">
-            <i class="el-icon-location"></i>
-            <span>导航一</span>
+            <i :class="`fa fa-${menu.icon}`"></i>
+            <span slot="title">{{menu.title}}</span>
           </template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
         </el-submenu>
-      </template>
+      </template> -->
       <!-- <el-menu-item index="2">
         <i class="el-icon-menu"></i>
         <span slot="title">导航二</span>
@@ -62,10 +59,29 @@ export default {
       default: false
     }
   },
+  components: {
+    menus: () => import('./components/menus.vue')
+  },
   data () {
     return {
       menus: [
-        {path: '/a', title: 'menu-a', icon: 'plus'}
+        {
+          path: '/a',
+          title: 'menu-a',
+          icon: 'plus'
+        },
+        {
+          path: '/b',
+          title: 'menu-b',
+          icon: 'plus',
+          children: [
+            {
+              path: '/a',
+              title: 'menu-a',
+              icon: 'plus'
+            }
+          ]
+        }
       ]
     }
   }
