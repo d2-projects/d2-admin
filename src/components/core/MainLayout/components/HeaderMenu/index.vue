@@ -6,7 +6,7 @@
       v-for="menu in menus"
       :key="menu.path"
       :index="menu.path">
-      首页
+      {{menu.title}}
     </el-menu-item>
   </el-menu>
 </template>
@@ -26,4 +26,3 @@ export default {
   }
 }
 </script>
-
