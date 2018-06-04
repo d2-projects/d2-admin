@@ -69,7 +69,29 @@ $theme-container-full-border-color: #d8dfea;
     .el-aside {
       // [菜单] 正常状态
       .el-menu {
-        
+        .el-menu-item {
+          color: #FFF;
+          &:hover {
+            background-color: rgba(#000, 0.1);
+          }
+          i {
+            color: #FFF;
+          }
+        }
+      }
+      .el-submenu {
+        .el-submenu__title {
+          color: #FFF;
+          &:hover {
+            background-color: rgba(#000, 0.1);
+          }
+          i {
+            color: #FFF;
+          }
+          .el-submenu__icon-arrow {
+            color: #FFF;
+          }
+        }
       }
     }
   }
