@@ -4,7 +4,7 @@
       :collapse="collapse"
       :unique-opened="true"
       :router="true">
-      <dd-menus v-for="(menu, menuIndex) in menus" :menu="menu" :key="menuIndex"/>
+      <dd-menu v-for="(menu, menuIndex) in menus" :menu="menu" :key="menuIndex"/>
     </el-menu>
     <!-- <div v-if="sideMenu.filter(e => e.title).length === 0 && !collapse" class="dd-side-menu-empty">
       没有菜单
@@ -22,7 +22,7 @@ export default {
     }
   },
   components: {
-    ddMenus: () => import('./components/ddMenus.vue')
+    ddMenu: () => import('./components/ddMenu.vue')
   },
   data () {
     return {
