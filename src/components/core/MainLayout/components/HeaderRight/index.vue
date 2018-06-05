@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'HeaderRight',
   components: {
     FullScreen: () => import('./components/FullScreen.vue'),
     UserDropdown: () => import('./components/UserDropdown.vue')
