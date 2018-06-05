@@ -8,6 +8,8 @@ $theme-container-full-border-color: #d8dfea;
 .theme-#{$theme-name} {
   background-color: $theme-bg-color;
   background-image: url($theme-bg-image);
+  background-size: cover;
+  background-position: center;
   // 菜单项目
   @mixin theme-menu-hover-style {
     background-color: #eff4f8;
