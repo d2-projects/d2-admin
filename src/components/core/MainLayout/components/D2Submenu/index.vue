@@ -1,7 +1,7 @@
 <template>
   <el-submenu :index="menu.path">
     <template slot="title">
-      <i :class="`fa fa-${menu.icon}`"></i>
+      <i v-if="menu.icon" :class="`fa fa-${menu.icon}`"></i>
       <span slot="title">{{menu.title}}</span>
     </template>
     <template v-for="(child, childIndex) in menu.children">
