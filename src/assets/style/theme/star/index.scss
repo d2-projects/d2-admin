@@ -28,22 +28,19 @@ $theme-container-full-border-color: #d8dfea;
         }
       }
     }
-    @mixin header-el-menu-item {
-      background-color: transparent;
-      background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.00) 90%);
-      border-top-color: rgba(0, 0, 0, 0.6);
-    }
     // 顶栏菜单
     .el-menu {
       .el-menu-item {
         transition: border-top-color 0s;
         color: #FFF;
         &:hover {
-          @include header-el-menu-item;
+          background-color: rgba(#FFF, .3);
+        }
+        &:focus {
+          background-color: rgba(#FFF, .3);
         }
         &.is-active {
-          background-color: transparent;
-          border-top-color: #FFF;
+          background-color: rgba(#000, .3);
         }
       }
       .el-submenu {
@@ -51,7 +48,10 @@ $theme-container-full-border-color: #d8dfea;
           transition: border-top-color 0s;
           color: #FFF;
           &:hover {
-            @include header-el-menu-item;
+            background-color: rgba(#FFF, .3);
+          }
+          &:focus {
+            background-color: rgba(#FFF, .3);
           }
           .el-submenu__icon-arrow {
             color: #FFF;
@@ -75,22 +75,22 @@ $theme-container-full-border-color: #d8dfea;
   .el-container {
     // 侧边栏
     .el-aside {
-      @mixin aside-el-menu-item {
-        background-color: transparent;
-        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.00) 90%);
-      }
       // [菜单] 正常状态
       .el-menu {
+        margin-top: 10px;
         .el-menu-item {
           color: #FFF;
           &:hover {
-            @include aside-el-menu-item;
+            background-color: rgba(#FFF, .3);
           }
           &:focus {
-            @include aside-el-menu-item;
+            background-color: rgba(#FFF, .3);
           }
           i {
             color: #FFF;
+          }
+          &.is-active {
+            background-color: rgba(#000, .3);
           }
         }
       }
@@ -98,7 +98,7 @@ $theme-container-full-border-color: #d8dfea;
         .el-submenu__title {
           color: #FFF;
           &:hover {
-            @include aside-el-menu-item;
+            background-color: rgba(#FFF, .3);
           }
           i {
             color: #FFF;
