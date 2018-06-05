@@ -2,21 +2,22 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Cookies from 'js-cookie'
 
-import _path from 'path'
+// import _path from 'path'
+import _path2 from 'path-posix'
 import _get from 'lodash.get'
-import _replace from 'lodash.replace'
+// import _replace from 'lodash.replace'
 
-console.log(_path)
+console.log(_path2)
 
 Vue.use(VueRouter)
 
 const maker = ({publicPath, namePrefix, req}) => {
   return req.keys().map(req).map(page => {
-    const pageRegExp = new RegExp(`${_path.sep}page${_path.sep}`, 'g')
-    const path = _path.dirname(page.default.__file)
+    const pageRegExp = new RegExp(`${_path2.sep}page${_path2.sep}`, 'g')
+    const path = _path2.dirname(page.default.__file)
       .replace(publicPath, '')
-      .replace(pageRegExp, _path.sep)
-    const name = namePrefix + path.split(_path.sep).join('-').replace(/-page-/g, '-')
+      .replace(pageRegExp, _path2.sep)
+    const name = namePrefix + path.split(_path2.sep).join('-').replace(/-page-/g, '-')
     return {
       path: `${path}${_get(page, 'router.pathSuffix', '')}`,
       name,
