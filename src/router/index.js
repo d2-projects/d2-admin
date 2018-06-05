@@ -6,6 +6,8 @@ import _path from 'path'
 import _get from 'lodash.get'
 import _replace from 'lodash.replace'
 
+console.log(_path)
+
 Vue.use(VueRouter)
 
 const maker = ({publicPath, namePrefix, req}) => {
