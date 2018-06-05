@@ -22,7 +22,7 @@ export default {
     }
   },
   components: {
-    D2MenuItem: () => import('./D2MenuItem.vue')
+    D2MenuItem: () => import('../D2MenuItem/index.vue')
   }
 }
 </script>

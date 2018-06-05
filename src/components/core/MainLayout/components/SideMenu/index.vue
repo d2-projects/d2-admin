@@ -25,8 +25,8 @@ export default {
     }
   },
   components: {
-    D2MenuItem: () => import('./components/D2MenuItem.vue'),
-    D2Submenu: () => import('./components/D2Submenu.vue')
+    D2MenuItem: () => import('../D2MenuItem/index.vue'),
+    D2Submenu: () => import('../D2Submenu/index.vue')
   },
   data () {
     return {

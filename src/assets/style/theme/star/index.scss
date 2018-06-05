@@ -100,9 +100,6 @@ $theme-container-full-border-color: #d8dfea;
           &:hover {
             @include aside-el-menu-item;
           }
-          &:focus {
-            @include aside-el-menu-item;
-          }
           i {
             color: #FFF;
           }
