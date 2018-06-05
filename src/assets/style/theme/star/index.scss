@@ -42,6 +42,7 @@ $theme-container-full-border-color: #d8dfea;
           @include header-el-menu-item;
         }
         &.is-active {
+          background-color: transparent;
           border-top-color: #FFF;
         }
       }
@@ -85,6 +86,9 @@ $theme-container-full-border-color: #d8dfea;
           &:hover {
             @include aside-el-menu-item;
           }
+          &:focus {
+            @include aside-el-menu-item;
+          }
           i {
             color: #FFF;
           }
@@ -94,6 +98,9 @@ $theme-container-full-border-color: #d8dfea;
         .el-submenu__title {
           color: #FFF;
           &:hover {
+            @include aside-el-menu-item;
+          }
+          &:focus {
             @include aside-el-menu-item;
           }
           i {

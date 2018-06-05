@@ -32,7 +32,7 @@ export default {
     return {
       menus: [
         {
-          path: '/demo/components/container/container-full',
+          path: '/demo/components/container/full',
           title: 'menu-a',
           icon: 'plus'
         },
@@ -57,7 +57,7 @@ export default {
                   icon: 'plus'
                 },
                 {
-                  path: '/d',
+                  path: '/demo/components/container/full',
                   title: 'menu-a',
                   icon: 'plus'
                 }
