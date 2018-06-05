@@ -4,6 +4,9 @@ import Cookies from 'js-cookie'
 
 Vue.use(VueRouter)
 
+const res = require.context('@/pages/demo/plugins', true, /page\.vue$/)
+console.log(res.keys().map(res))
+
 let router = new VueRouter({
   routes: [
     // 首页
