@@ -1,6 +1,21 @@
 @import '~@/assets/style/public.scss';
 
-$theme-color: #EFF4F8;
+// 下面这部分是要根据主题修改的 但是没有办法加到主题中
+@mixin theme-menu-hover-style {
+  background-color: #eff4f8;
+}
+.el-submenu__title:hover {
+  @include theme-menu-hover-style;
+}
+.el-menu-item:hover {
+  @include theme-menu-hover-style;
+}
+.el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+  @include theme-menu-hover-style;
+}
+.el-menu--horizontal .el-menu .el-submenu__title:hover {
+  @include theme-menu-hover-style;
+}
 
 // 主题公用
 .theme {

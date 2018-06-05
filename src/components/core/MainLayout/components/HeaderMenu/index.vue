@@ -40,7 +40,24 @@ export default {
             {
               path: '/demo/chart',
               title: '图表',
-              icon: 'pie-chart'
+              icon: 'pie-chart',
+              children: [
+                {
+                  path: '/demo/plugins',
+                  title: '插件',
+                  icon: 'plug'
+                },
+                {
+                  path: '/demo/components',
+                  title: '组件',
+                  icon: 'puzzle-piece'
+                },
+                {
+                  path: '/demo/chart',
+                  title: '图表',
+                  icon: 'pie-chart'
+                }
+              ]
             }
           ]
         },
