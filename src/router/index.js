@@ -2,49 +2,67 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Cookies from 'js-cookie'
 
+import _path from 'path'
+import _get from 'lodash.get'
+import _replace from 'lodash.replace'
+
 Vue.use(VueRouter)
 
-const res = require.context('@/pages/demo/plugins', true, /page\.vue$/)
-console.log(res.keys().map(res))
+const maker = ({publicPath, namePrefix, req}) => {
+  return req.keys().map(req).map(page => {
+    const path = _replace(_path.dirname(page.default.__file), publicPath, '')
+    const name = namePrefix + path.split(_path.sep).join('-')
+    return {
+      path: `${path}${_get(page, 'router.pathSuffix', '')}`,
+      name,
+      ...page.router,
+      meta: { requiresAuth: true },
+      component: page.default
+    }
+  })
+}
+
+const routes = [
+  // 首页
+  {
+    path: '/',
+    redirect: { name: 'index' },
+    component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
+    children: [
+      {
+        path: 'index',
+        name: 'index',
+        meta: { requiresAuth: true },
+        component: resolve => { require(['@/pages/core/index/index.vue'], resolve) }
+      }
+    ]
+  },
+  {
+    path: '/demo/plugins',
+    name: 'demo-plugins',
+    meta: { requiresAuth: true },
+    redirect: { name: 'demo-plugins-index' },
+    component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
+    children: [
+      ...maker({
+        publicPath: 'src/pages/demo/plugins/',
+        namePrefix: 'demo-plugins-',
+        req: require.context('@/pages/demo/plugins', true, /page\.vue$/)
+      })
+    ]
+  },
+  // 登陆
+  {
+    path: '/login',
+    name: 'login',
+    component: resolve => { require(['@/pages/core/login/index.vue'], resolve) }
+  }
+]
+
+console.log(routes)
 
 let router = new VueRouter({
-  routes: [
-    // 首页
-    {
-      path: '/',
-      redirect: { name: 'index' },
-      component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
-      children: [
-        {
-          path: 'index',
-          name: 'index',
-          meta: { requiresAuth: true },
-          component: resolve => { require(['@/pages/core/index/index.vue'], resolve) }
-        }
-      ]
-    },
-    {
-      path: '/demo/plugins',
-      name: 'demo-plugins',
-      meta: { requiresAuth: true },
-      redirect: { name: 'demo-plugins-index' },
-      component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
-      children: [
-        {
-          path: 'index',
-          name: 'demo-plugins-index',
-          meta: { requiresAuth: true },
-          component: resolve => { require(['@/pages/demo/plugins/index/index.vue'], resolve) }
-        }
-      ]
-    },
-    // 登陆
-    {
-      path: '/login',
-      name: 'login',
-      component: resolve => { require(['@/pages/core/login/index.vue'], resolve) }
-    }
-  ]
+  routes
 })
 
 router.beforeEach((to, from, next) => {
