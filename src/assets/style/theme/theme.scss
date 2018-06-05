@@ -43,8 +43,11 @@ $theme-color: #EFF4F8;
       .el-menu-item {
         border-bottom: none;
         border-top: 2px solid transparent;
-        &.is-active {
-          background-color: transparent;
+      }
+      .el-submenu {
+        .el-submenu__title {
+          border-bottom: none;
+          border-top: 2px solid transparent;
         }
       }
     }
