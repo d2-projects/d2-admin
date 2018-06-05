@@ -43,13 +43,11 @@ const routes = [
     meta: { requiresAuth: true },
     redirect: { name: 'demo-plugins-index' },
     component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
-    children: [
-      ...maker({
-        publicPath: 'src/pages/demo/plugins/',
-        namePrefix: 'demo-plugins-',
-        req: require.context('@/pages/demo/plugins', true, /page\.vue$/)
-      })
-    ]
+    children: maker({
+      publicPath: 'src/pages/demo/plugins/',
+      namePrefix: 'demo-plugins-',
+      req: require.context('@/pages/demo/plugins', true, /page\.vue$/)
+    })
   },
   // 登陆
   {
