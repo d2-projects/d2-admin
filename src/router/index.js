@@ -2,11 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Cookies from 'js-cookie'
 
-// 在菜单中显示的那部分路由
-import * as menu from '@/router/menu/index.js'
-// 不在菜单中显示的那部分路由
-import invisible from './invisible/index.js'
-
 Vue.use(VueRouter)
 
 let router = new VueRouter({
@@ -14,14 +9,29 @@ let router = new VueRouter({
     // 首页
     {
       path: '/',
-      component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
       redirect: { name: 'index' },
+      component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
       children: [
         {
           path: 'index',
           name: 'index',
           meta: { requiresAuth: true },
           component: resolve => { require(['@/pages/core/index/index.vue'], resolve) }
+        }
+      ]
+    },
+    {
+      path: '/demo/plugins',
+      name: 'demo-plugins',
+      meta: { requiresAuth: true },
+      redirect: { name: 'demo-plugins-index' },
+      component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
+      children: [
+        {
+          path: 'index',
+          name: 'demo-plugins-index',
+          meta: { requiresAuth: true },
+          component: resolve => { require(['@/pages/demo/plugins/index/index.vue'], resolve) }
         }
       ]
     },
