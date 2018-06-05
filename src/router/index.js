@@ -15,16 +15,12 @@ let router = new VueRouter({
     {
       path: '/',
       component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
-      redirect: {
-        name: 'index'
-      },
+      redirect: { name: 'index' },
       children: [
         {
           path: 'index',
           name: 'index',
-          meta: {
-            requiresAuth: true
-          },
+          meta: { requiresAuth: true },
           component: resolve => { require(['@/pages/core/index/index.vue'], resolve) }
         }
       ]
