@@ -35,16 +35,16 @@
 import Vue from 'vue'
 import clone from '@/utils/clone.js'
 import Mock from 'mockjs'
-import settingDTD from './data/settingDTD'
-import regexp from './mixins/regexp'
-import fn from './mixins/function'
+import settingDTD from '../../data/settingDTD'
+import regexp from '../../mixins/regexp'
+import fn from '../../mixins/function'
 export default {
   mixins: [
     regexp,
     fn
   ],
   components: {
-    MockDemoCard: () => import('./components/MockDemoCard')
+    MockDemoCard: () => import('../../components/MockDemoCard')
   },
   data () {
     return {
