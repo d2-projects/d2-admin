@@ -57,5 +57,8 @@ new Vue({
   i18n,
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  mounted () {
+    document.body.className = 'theme-star'
+  }
 })
