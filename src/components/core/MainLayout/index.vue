@@ -1,5 +1,5 @@
 <template>
-  <el-container class="layout-main theme" :class="theme">
+  <el-container class="layout-main theme">
     <!-- 顶栏 -->
     <el-header>
       <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
@@ -37,7 +37,6 @@ export default {
   },
   data () {
     return {
-      theme: 'theme-star',
       collapse: false,
       // [侧边栏宽度] 正常状态
       asideWidth: '200px',

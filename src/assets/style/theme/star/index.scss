@@ -8,7 +8,22 @@ $theme-container-full-border-color: #d8dfea;
 .theme-#{$theme-name} {
   background-color: $theme-bg-color;
   background-image: url($theme-bg-image);
-
+  // 菜单项目
+  @mixin theme-menu-hover-style {
+    background-color: #eff4f8;
+  }
+  .el-submenu__title:hover {
+    @include theme-menu-hover-style;
+  }
+  .el-menu-item:hover {
+    @include theme-menu-hover-style;
+  }
+  .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+    @include theme-menu-hover-style;
+  }
+  .el-menu--horizontal .el-menu .el-submenu__title:hover {
+    @include theme-menu-hover-style;
+  }
   // [组件] dd-container-full
   .dd-container-full {
     .dd-container-full__header {
