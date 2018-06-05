@@ -10,8 +10,11 @@ Vue.use(VueRouter)
 
 const maker = ({publicPath, namePrefix, req}) => {
   return req.keys().map(req).map(page => {
-    const path = _replace(_path.dirname(page.default.__file), publicPath, '')
-    const name = namePrefix + path.split(_path.sep).join('-')
+    const pageRegExp = new RegExp(`${_path.sep}page${_path.sep}`, 'g')
+    const path = _path.dirname(page.default.__file)
+      .replace(publicPath, '')
+      .replace(pageRegExp, _path.sep)
+    const name = namePrefix + path.split(_path.sep).join('-').replace(/-page-/g, '-')
     return {
       path: `${path}${_get(page, 'router.pathSuffix', '')}`,
       name,
