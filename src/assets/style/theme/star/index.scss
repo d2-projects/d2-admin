@@ -8,6 +8,7 @@ $theme-container-full-border-color: #d8dfea;
 .theme-#{$theme-name} {
   background-color: $theme-bg-color;
   background-image: url($theme-bg-image);
+
   // [组件] dd-container-full
   .dd-container-full {
     .dd-container-full__header {
