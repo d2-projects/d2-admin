@@ -11,12 +11,21 @@ console.log(_path2)
 
 Vue.use(VueRouter)
 
+const path2Posix = pathString => pathString.split(_path2.sep).join('/')
+
 const routesMaker = ({publicPath, namePrefix, req}) => {
   return req.keys().map(req).map(page => {
+    // 匹配 '/page/'(posix) 或者 '\page\'(win)
     const pageRegExp = new RegExp(`${_path2.sep}page${_path2.sep}`, 'g')
-    const path = _path2.dirname(page.default.__file)
-      .replace(publicPath, '')
-      .replace(pageRegExp, _path2.sep)
+    // 每个文件的路径
+    const pagePath = _path2.dirname(page.default.__file)
+    console.log('pagePath', pagePath)
+    // 每个文件的路径 => posix 风格
+    const pagePathPosix = path2Posix(pagePath)
+    console.log('pagePathPosix', pagePathPosix)
+    // 路由中使用的路径
+    const path = pagePathPosix.replace(publicPath, '').replace(pageRegExp, _path2.sep)
+    console.log('path', path)
     const name = namePrefix + path.split(_path2.sep).join('-').replace(/-page-/g, '-')
     return {
       path: `${path}${_get(page, 'router.pathSuffix', '')}`,
