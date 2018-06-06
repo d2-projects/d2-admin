@@ -10,20 +10,25 @@ Vue.use(VueRouter)
 const routesMaker = ({publicPath, namePrefix, req}) => {
   const win2posix = pathString => pathString.split('\\').join('/')
   return req.keys().map(req).map(page => {
-    // 每个文件的路径
+    // 每个文件的路径 已经转换为 posix
     const pagePath = pathPosix.dirname(win2posix(page.default.__file))
     // 路由中使用的路径
     const path = pagePath
       .replace(win2posix(publicPath), '')
-      .replace(new RegExp(`${pathPosix.sep}page${pathPosix.sep}`, 'g'), pathPosix.sep)
-    const name = namePrefix + path.split(pathPosix.sep).join('-').replace(/-page-/g, '-')
-    return {
+      .replace(new RegExp('/page/', 'g'), '/')
+    const name = `${namePrefix}${path.split('/').join('-')}`
+    const route = {
       path: `${path}${_get(page, 'router.pathSuffix', '')}`,
       name,
       ...page.router,
       meta: { requiresAuth: true },
       component: page.default
     }
+    console.log(JSON.stringify({
+      path: route.path,
+      name: route.name
+    }))
+    return route
   })
 }
 
