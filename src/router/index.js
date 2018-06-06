@@ -11,7 +11,7 @@ console.log(_path2)
 
 Vue.use(VueRouter)
 
-const maker = ({publicPath, namePrefix, req}) => {
+const routesMaker = ({publicPath, namePrefix, req}) => {
   return req.keys().map(req).map(page => {
     const pageRegExp = new RegExp(`${_path2.sep}page${_path2.sep}`, 'g')
     const path = _path2.dirname(page.default.__file)
@@ -49,7 +49,7 @@ const routes = [
     meta: { requiresAuth: true },
     redirect: { name: 'demo-plugins-index' },
     component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
-    children: maker({
+    children: routesMaker({
       publicPath: 'src/pages/demo/plugins/',
       namePrefix: 'demo-plugins-',
       req: require.context('@/pages/demo/plugins', true, /page\.vue$/)
