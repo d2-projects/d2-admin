@@ -28,7 +28,7 @@
 
 <script>
 // 假数据
-import table from '../../data'
+import table from './data'
 export default {
   data () {
     return {

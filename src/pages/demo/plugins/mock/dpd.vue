@@ -23,10 +23,10 @@
 import Vue from 'vue'
 import clone from '@/utils/clone.js'
 import Mock from 'mockjs'
-import settingDPD from '../../data/settingDPD'
+import settingDPD from './data/settingDPD'
 export default {
   components: {
-    MockDemoCard: () => import('../../components/MockDemoCard')
+    MockDemoCard: () => import('./components/MockDemoCard')
   },
   data () {
     return {
