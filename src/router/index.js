@@ -2,35 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Cookies from 'js-cookie'
 
-import pathPosix from 'path-posix'
-import _get from 'lodash.get'
-
 Vue.use(VueRouter)
-
-const routesMaker = ({publicPath, namePrefix, req}) => {
-  const win2posix = pathString => pathString.split('\\').join('/')
-  return req.keys().map(req).map(page => {
-    // 每个文件的路径 已经转换为 posix
-    const pagePath = pathPosix.dirname(win2posix(page.default.__file))
-    // 路由中使用的路径
-    const path = pagePath
-      .replace(win2posix(publicPath), '')
-      .replace(new RegExp('/page/', 'g'), '/')
-    const name = `${namePrefix}${path.split('/').join('-')}`
-    const route = {
-      path: `${path}${_get(page, 'router.pathSuffix', '')}`,
-      name,
-      ...page.router,
-      meta: { requiresAuth: true },
-      component: page.default
-    }
-    console.log(JSON.stringify({
-      path: route.path,
-      name: route.name
-    }))
-    return route
-  })
-}
 
 const routes = [
   // 首页
@@ -53,11 +25,9 @@ const routes = [
     meta: { requiresAuth: true },
     redirect: { name: 'demo-plugins-index' },
     component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
-    children: routesMaker({
-      publicPath: 'src/pages/demo/plugins/',
-      namePrefix: 'demo-plugins-',
-      req: require.context('@/pages/demo/plugins', true, /page\.vue$/)
-    })
+    children: [
+
+    ]
   },
   // 登陆
   {
@@ -69,9 +39,7 @@ const routes = [
 
 console.log(routes)
 
-let router = new VueRouter({
-  routes
-})
+let router = new VueRouter({ routes })
 
 router.beforeEach((to, from, next) => {
   // 需要身份校验
