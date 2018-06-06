@@ -2,12 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Cookies from 'js-cookie'
 
-// import _path from 'path'
 import pathPosix from 'path-posix'
 import _get from 'lodash.get'
-// import _replace from 'lodash.replace'
-
-console.log(pathPosix)
 
 Vue.use(VueRouter)
 
