@@ -9,13 +9,13 @@ const routes = [
   {
     path: '/',
     redirect: { name: 'index' },
-    component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
+    component: () => import('@/components/core/MainLayout/index.vue'),
     children: [
       {
         path: 'index',
         name: 'index',
         meta: { requiresAuth: true },
-        component: resolve => { require(['@/pages/core/index/index.vue'], resolve) }
+        component: () => import('@/pages/core/index/index.vue')
       }
     ]
   },
@@ -24,16 +24,32 @@ const routes = [
     name: 'demo-plugins',
     meta: { requiresAuth: true },
     redirect: { name: 'demo-plugins-index' },
-    component: resolve => { require(['@/components/core/MainLayout/index.vue'], resolve) },
-    children: [
-
-    ]
+    component: () => import('@/components/core/MainLayout/index.vue'),
+    children: ((pub) => [
+      { path: 'build', name: `${pub}build`, component: () => import('@/pages/demo/plugins/build/index.vue') },
+      { path: 'clipboard-polyfill', name: `${pub}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill/index.vue') },
+      { path: 'export/table', name: `${pub}export-table`, component: () => import('@/pages/demo/plugins/export/table.vue') },
+      { path: 'export/txt', name: `${pub}export-txt`, component: () => import('@/pages/demo/plugins/export/txt.vue') },
+      { path: 'i18n/demo1', name: `${pub}i18n-demo1`, component: () => import('@/pages/demo/plugins/i18n/demo1.vue') },
+      { path: 'i18n/demo2', name: `${pub}i18n-demo2`, component: () => import('@/pages/demo/plugins/i18n/demo2.vue') },
+      { path: 'i18n/doc', name: `${pub}i18n-doc`, component: () => import('@/pages/demo/plugins/i18n/doc.vue') },
+      { path: 'import/csv', name: `${pub}import-csv`, component: () => import('@/pages/demo/plugins/import/csv.vue') },
+      { path: 'import/xlsx', name: `${pub}import-xlsx`, component: () => import('@/pages/demo/plugins/import/xlsx.vue') },
+      { path: 'index', name: `${pub}index`, component: () => import('@/pages/demo/plugins/index/index.vue') },
+      { path: 'js-cookie', name: `${pub}js-cookie`, component: () => import('@/pages/demo/plugins/js-cookie/index.vue') },
+      { path: 'layout/grid', name: `${pub}layout-grid`, component: () => import('@/pages/demo/plugins/layout/grid.vue') },
+      { path: 'layout/splitpane', name: `${pub}layout-splitpane`, component: () => import('@/pages/demo/plugins/layout/splitpane.vue') },
+      { path: 'mock/ajax', name: `${pub}mock-ajax`, component: () => import('@/pages/demo/plugins/mock/ajax.vue') },
+      { path: 'mock/dpd', name: `${pub}mock-dpd`, component: () => import('@/pages/demo/plugins/mock/dpd.vue') },
+      { path: 'mock/dtd', name: `${pub}mock-dtd`, component: () => import('@/pages/demo/plugins/mock/dtd.vue') },
+      { path: 'timeago', name: `${pub}timeago`, component: () => import('@/pages/demo/plugins/timeago/index.vue') }
+    ])('demo-plugins-')
   },
   // 登陆
   {
     path: '/login',
     name: 'login',
-    component: resolve => { require(['@/pages/core/login/index.vue'], resolve) }
+    component: () => import('@/pages/core/login/index.vue')
   }
 ]
 
