@@ -42,67 +42,36 @@ Welcome everyone to maintain
 ## feature
 
 * first screen loading wait for animation to avoid first loading white screen embarrassment.
-
 * brief theme
-
 * each plug-in and component is equipped with an introduction document
-
 * image resource sketch source file (you can regenerate all image resources in this file).
-
 * landing and cancellation
-
 * automatically generate menus based on Routing
-
 * folding side sidebar
-
 * multilingual support
-
 * rich text editor
-
 * Markdown editor
-
 * full screen function
-
 * Fontawesome Icon Library
-
 * Fontawesome icon selector (component)
-
 * automatic introduction of the downloaded SVG Icon
-
 * front-end false data support (mock)
-
 * integrated G2 chart
-
 * chart adaptable drag and drop size card container (example)
-
 * simplify the clipboard operation
-
 * simplifying the Cookie operation
-
 * time computing tool
-
 * import Excel (xlsx format + CSV format)
-
 * data export Excel (xlsx format + CSV format)
-
 * data export text
-
 * Digital Animation
-
 * can drag and drop the size of the cut layout
-
 * can drag and drop the size and location of the grid layout
-
 * provide three kinds of page container components (normal cards, invisible containers, fill pages).
-
 * code highlighting
-
 * load and parse the markdown file
-
 * GitHub style markdown display component
-
 * markdown code is high
-
 * extension of Baidu cloud link resolution and Optimization for markdown.
 
 ## Use
