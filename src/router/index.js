@@ -20,6 +20,28 @@ const routes = [
     ]
   },
   {
+    path: '/demo/components',
+    name: 'demo-components',
+    meta: { requiresAuth: true },
+    redirect: { name: 'demo-components-index' },
+    component: () => import('@/components/core/MainLayout/index.vue'),
+    children: ((pre) => [
+      { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue') },
+      { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue') },
+      { path: 'container/normal', name: `${pre}container-normal`, component: () => import('@/pages/demo/components/container/normal.vue') },
+      { path: 'countup', name: `${pre}countup`, component: () => import('@/pages/demo/components/countup/index.vue') },
+      { path: 'editor-quill', name: `${pre}editor-quill`, component: () => import('@/pages/demo/components/editor-quill/index.vue') },
+      { path: 'editor-simpleMDE', name: `${pre}editor-simpleMDE`, component: () => import('@/pages/demo/components/editor-simpleMDE/index.vue') },
+      { path: 'highlight', name: `${pre}highlight`, component: () => import('@/pages/demo/components/highlight/index.vue') },
+      { path: 'icon/icon', name: `${pre}icon-icon`, component: () => import('@/pages/demo/components/icon/icon.vue') },
+      { path: 'icon/list', name: `${pre}icon-list`, component: () => import('@/pages/demo/components/icon/list.vue') },
+      { path: 'icon/select', name: `${pre}icon-select`, component: () => import('@/pages/demo/components/icon/select.vue') },
+      { path: 'icon/svg', name: `${pre}icon-svg`, component: () => import('@/pages/demo/components/icon/svg.vue') },
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/components/index/index.vue') },
+      { path: 'markdown', name: `${pre}markdown`, component: () => import('@/pages/demo/components/markdown/index.vue') }
+    ])('demo-components-')
+  },
+  {
     path: '/demo/plugins',
     name: 'demo-plugins',
     meta: { requiresAuth: true },
@@ -32,7 +54,6 @@ const routes = [
       { path: 'export/txt', name: `${pre}export-txt`, component: () => import('@/pages/demo/plugins/export/txt.vue') },
       { path: 'i18n/demo1', name: `${pre}i18n-demo1`, component: () => import('@/pages/demo/plugins/i18n/demo1.vue') },
       { path: 'i18n/demo2', name: `${pre}i18n-demo2`, component: () => import('@/pages/demo/plugins/i18n/demo2.vue') },
-      { path: 'i18n/doc', name: `${pre}i18n-doc`, component: () => import('@/pages/demo/plugins/i18n/doc.vue') },
       { path: 'import/csv', name: `${pre}import-csv`, component: () => import('@/pages/demo/plugins/import/csv.vue') },
       { path: 'import/xlsx', name: `${pre}import-xlsx`, component: () => import('@/pages/demo/plugins/import/xlsx.vue') },
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/plugins/index/index.vue') },
@@ -53,7 +74,9 @@ const routes = [
   }
 ]
 
-console.log(routes)
+routes[2].children.forEach(e => {
+  console.log(`{ path: \`\${pre}${e.path}\`, title: 'title' }`)
+})
 
 let router = new VueRouter({ routes })
 

@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import menus from '@/menu/index.js'
 export default {
   name: 'HeaderMenu',
   components: {
@@ -18,54 +19,7 @@ export default {
   },
   data () {
     return {
-      menus: [
-        {
-          path: '/index',
-          title: '首页'
-        },
-        {
-          path: '/demo',
-          title: '功能',
-          children: [
-            {
-              path: '/demo/plugins',
-              title: '插件',
-              icon: 'plug'
-            },
-            {
-              path: '/demo/components',
-              title: '组件',
-              icon: 'puzzle-piece'
-            },
-            {
-              path: '/demo/chart',
-              title: '图表',
-              icon: 'pie-chart',
-              children: [
-                {
-                  path: '/demo/plugins',
-                  title: '插件',
-                  icon: 'plug'
-                },
-                {
-                  path: '/demo/components',
-                  title: '组件',
-                  icon: 'puzzle-piece'
-                },
-                {
-                  path: '/demo/chart',
-                  title: '图表',
-                  icon: 'pie-chart'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          path: '/demo/business',
-          title: '示例业务界面'
-        }
-      ]
+      menus
     }
   }
 }
