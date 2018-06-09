@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { side } from '@/menu/index.js'
 export default {
   props: {
     collapse: {
@@ -36,7 +37,8 @@ export default {
   watch: {
     '$route.matched': {
       handler (val) {
-        console.log(val)
+        const path = val[0].path
+        this.menus = side.filter(menu => menu.path === path)
       },
       immediate: true
     }
