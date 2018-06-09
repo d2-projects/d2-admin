@@ -38,6 +38,8 @@ const routes = [
       { path: 'icon/select', name: `${pre}icon-select`, component: () => import('@/pages/demo/components/icon/select.vue') },
       { path: 'icon/svg', name: `${pre}icon-svg`, component: () => import('@/pages/demo/components/icon/svg.vue') },
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/components/index/index.vue') },
+      { path: 'layout/grid', name: `${pre}layout-grid`, component: () => import('@/pages/demo/components/layout/grid.vue') },
+      { path: 'layout/splitpane', name: `${pre}layout-splitpane`, component: () => import('@/pages/demo/components/layout/splitpane.vue') },
       { path: 'markdown', name: `${pre}markdown`, component: () => import('@/pages/demo/components/markdown/index.vue') }
     ])('demo-components-')
   },
@@ -58,8 +60,6 @@ const routes = [
       { path: 'import/xlsx', name: `${pre}import-xlsx`, component: () => import('@/pages/demo/plugins/import/xlsx.vue') },
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/plugins/index/index.vue') },
       { path: 'js-cookie', name: `${pre}js-cookie`, component: () => import('@/pages/demo/plugins/js-cookie/index.vue') },
-      { path: 'layout/grid', name: `${pre}layout-grid`, component: () => import('@/pages/demo/plugins/layout/grid.vue') },
-      { path: 'layout/splitpane', name: `${pre}layout-splitpane`, component: () => import('@/pages/demo/plugins/layout/splitpane.vue') },
       { path: 'mock/ajax', name: `${pre}mock-ajax`, component: () => import('@/pages/demo/plugins/mock/ajax.vue') },
       { path: 'mock/dpd', name: `${pre}mock-dpd`, component: () => import('@/pages/demo/plugins/mock/dpd.vue') },
       { path: 'mock/dtd', name: `${pre}mock-dtd`, component: () => import('@/pages/demo/plugins/mock/dtd.vue') },
@@ -74,7 +74,7 @@ const routes = [
   }
 ]
 
-routes[2].children.forEach(e => {
+routes[1].children.forEach(e => {
   console.log(`{ path: \`\${pre}${e.path}\`, title: 'title' }`)
 })
 

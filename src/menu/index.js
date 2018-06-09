@@ -13,8 +13,23 @@ export default [
         icon: 'plug',
         children: ((pre) => [
           { path: `${pre}index`, title: '插件首页' },
-          { path: `${pre}build`, title: '环境区分' },
-          { path: `${pre}clipboard-polyfill`, title: '剪贴板访问' },
+          {
+            path: `${pre}mock`,
+            title: '模拟数据',
+            children: [
+              { path: `${pre}mock/ajax`, title: '拦截异步请求' },
+              { path: `${pre}mock/dpd`, title: 'DPD规则' },
+              { path: `${pre}mock/dtd`, title: 'DTD规则' }
+            ]
+          },
+          {
+            path: `${pre}import`,
+            title: '导入',
+            children: [
+              { path: `${pre}import/csv`, title: 'csv' },
+              { path: `${pre}import/xlsx`, title: 'xlsx' }
+            ]
+          },
           {
             path: `${pre}export`,
             title: '导出',
@@ -31,39 +46,51 @@ export default [
               { path: `${pre}i18n/demo2`, title: '示例2' }
             ]
           },
-          {
-            path: `${pre}import`,
-            title: '导入',
-            children: [
-              { path: `${pre}import/csv`, title: 'csv' },
-              { path: `${pre}import/xlsx`, title: 'xlsx' }
-            ]
-          },
-          { path: `${pre}js-cookie`, title: 'title' },
-          {
-            path: `${pre}layout`,
-            title: '布局',
-            children: [
-              { path: `${pre}layout/grid`, title: '可拖动卡片' },
-              { path: `${pre}layout/splitpane`, title: '分割面板' }
-            ]
-          },
-          {
-            path: `${pre}mock`,
-            title: '布局',
-            children: [
-              { path: `${pre}mock/ajax`, title: '拦截异步请求' },
-              { path: `${pre}mock/dpd`, title: 'DPD规则' },
-              { path: `${pre}mock/dtd`, title: 'DTD规则' }
-            ]
-          },
+          { path: `${pre}build`, title: '环境区分' },
+          { path: `${pre}clipboard-polyfill`, title: '剪贴板访问' },
+          { path: `${pre}js-cookie`, title: 'cookie读写' },
           { path: `${pre}timeago`, title: '计算已经过去的时间' }
         ])('/demo/plugins/')
       },
       {
         path: '/demo/components',
         title: '组件',
-        icon: 'puzzle-piece'
+        icon: 'puzzle-piece',
+        children: ((pre) => [
+          { path: `${pre}index`, title: '组件首页' },
+          {
+            path: `${pre}container`,
+            title: '布局容器',
+            children: [
+              { path: `${pre}container/full`, title: '填满' },
+              { path: `${pre}container/ghost`, title: '隐形' },
+              { path: `${pre}container/normal`, title: '一般' }
+            ]
+          },
+          {
+            path: `${pre}layout/grid`,
+            title: '高级布局',
+            children: [
+              { path: `${pre}layout/grid`, title: 'title' },
+              { path: `${pre}layout/splitpane`, title: 'title' }
+            ]
+          },
+          {
+            path: `${pre}icon`,
+            title: '图标',
+            children: [
+              { path: `${pre}icon/icon`, title: '图标组件' },
+              { path: `${pre}icon/list`, title: 'FontAwesome' },
+              { path: `${pre}icon/select`, title: '图标选择器' },
+              { path: `${pre}icon/svg`, title: 'SVG图标组件' }
+            ]
+          },
+          { path: `${pre}countup`, title: '数字动画' },
+          { path: `${pre}editor-quill`, title: '富文本编辑器' },
+          { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器' },
+          { path: `${pre}highlight`, title: '代码高亮显示' },
+          { path: `${pre}markdown`, title: 'markdown解析' }
+        ])('/demo/components/')
       },
       {
         path: '/demo/chart',
