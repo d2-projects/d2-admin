@@ -37,7 +37,8 @@ export default {
     '$route.matched': {
       handler (val) {
         console.log(val)
-      }
+      },
+      immediate: true
     }
   }
 }
