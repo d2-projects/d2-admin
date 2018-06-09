@@ -86,6 +86,16 @@ const routes = [
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/chart/index/index.vue') }
     ])('demo-chart-')
   },
+  {
+    path: '/demo/business',
+    name: 'demo-business',
+    meta: { requiresAuth: true },
+    redirect: { name: 'demo-business-index' },
+    component: () => import('@/components/core/MainLayout/index.vue'),
+    children: (pre => [
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/business/index/index.vue') }
+    ])('demo-business-')
+  },
   // 登陆
   {
     path: '/login',
