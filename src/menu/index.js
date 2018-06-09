@@ -71,8 +71,8 @@ export default [
             path: `${pre}layout/grid`,
             title: '高级布局',
             children: [
-              { path: `${pre}layout/grid`, title: 'title' },
-              { path: `${pre}layout/splitpane`, title: 'title' }
+              { path: `${pre}layout/grid`, title: '拖拽位置和大小' },
+              { path: `${pre}layout/splitpane`, title: '区域划分' }
             ]
           },
           {
