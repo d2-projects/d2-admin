@@ -34,8 +34,10 @@ export default {
     }
   },
   watch: {
-    $route (val) {
-      console.log(val)
+    '$route.matched': {
+      handler (val) {
+        console.log(val)
+      }
     }
   }
 }

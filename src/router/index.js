@@ -104,9 +104,9 @@ const routes = [
   }
 ]
 
-routes[3].children.forEach(e => {
-  console.log(`{ path: \`\${pre}${e.path}\`, title: 'title' }`)
-})
+// routes[3].children.forEach(e => {
+//   console.log(`{ path: \`\${pre}${e.path}\`, title: 'title' }`)
+// })
 
 let router = new VueRouter({ routes })
 
