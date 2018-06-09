@@ -11,7 +11,7 @@ export default [
         path: '/demo/plugins',
         title: '插件',
         icon: 'plug',
-        children: ((pre) => [
+        children: (pre => [
           { path: `${pre}index`, title: '插件首页' },
           {
             path: `${pre}mock`,
@@ -56,7 +56,7 @@ export default [
         path: '/demo/components',
         title: '组件',
         icon: 'puzzle-piece',
-        children: ((pre) => [
+        children: (pre => [
           { path: `${pre}index`, title: '组件首页' },
           {
             path: `${pre}container`,
@@ -95,7 +95,26 @@ export default [
       {
         path: '/demo/chart',
         title: '图表',
-        icon: 'pie-chart'
+        icon: 'pie-chart',
+        children: (pre => [
+          { path: `${pre}index`, title: '图表首页' },
+          {
+            path: `${pre}demo`,
+            title: '单图示例',
+            children: [
+              { path: `${pre}demo/areaBase`, title: '区域折线图' },
+              { path: `${pre}demo/barBase`, title: '条形图' },
+              { path: `${pre}demo/columnBase`, title: '柱形图' },
+              { path: `${pre}demo/lineBase`, title: '折线图' },
+              { path: `${pre}demo/lineStep`, title: '阶梯折线图' },
+              { path: `${pre}demo/nightingaleRoseBase`, title: '南丁格尔玫瑰图' },
+              { path: `${pre}demo/PieBase`, title: '饼图' },
+              { path: `${pre}demo/radarBase`, title: '雷达图' }
+            ]
+          },
+          { path: `${pre}all`, title: '示例' },
+          { path: `${pre}dynamicSize`, title: '动态尺寸与可拖拽' }
+        ])('/demo/chart/')
       }
     ]
   },
