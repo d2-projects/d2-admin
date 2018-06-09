@@ -1,6 +1,6 @@
 <template>
   <Container type="ghost">
-    <el-card class="dd-mb">
+    <el-card class="d2-mb">
       <PageHeader
         slot="header"
         title="SVG图标组件">

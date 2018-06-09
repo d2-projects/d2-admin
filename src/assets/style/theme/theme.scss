@@ -46,7 +46,7 @@
       }
     }
     // 顶栏右侧的按钮
-    .dd-header-right {
+    .d2-header-right {
       float: right;
       height: 60px;
       display: flex;
@@ -64,7 +64,7 @@
       transition: width .3s;
       overflow: inherit;
       // 空菜单
-      .dd-side-menu-empty {
+      .d2-side-menu-empty {
         background-color: rgba(#000, .03);
         margin: $margin;
         margin-top: 0px;
@@ -109,8 +109,8 @@
       overflow: hidden;
     }
   }
-  // [组件] dd-container-full
-  .dd-container-full {
+  // [组件] d2-container-full
+  .d2-container-full {
     position: absolute;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -120,7 +120,7 @@
     &:hover {
       box-shadow: none;
     }
-    .dd-container-full__header {
+    .d2-container-full__header {
       position: absolute;
       top: 0px;
       left: 0px;
@@ -128,7 +128,7 @@
       padding: 18px 20px;
       box-sizing: border-box;
     }
-    .dd-container-full__body {
+    .d2-container-full__body {
       position: absolute;
       padding: 20px;
       left: 0px;
@@ -136,7 +136,7 @@
       bottom: 0px;
       overflow: auto;
     }
-    .dd-container-full__footer {
+    .d2-container-full__footer {
       position: absolute;
       bottom: 0px;
       left: 0px;

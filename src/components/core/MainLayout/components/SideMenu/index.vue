@@ -9,7 +9,7 @@
         <d2-submenu v-else :menu="menu" :key="menuIndex"/>
       </template>
     </el-menu>
-    <!-- <div v-if="sideMenu.filter(e => e.title).length === 0 && !collapse" class="dd-side-menu-empty">
+    <!-- <div v-if="sideMenu.filter(e => e.title).length === 0 && !collapse" class="d2-side-menu-empty">
       没有菜单
     </div> -->
   </div>

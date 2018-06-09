@@ -6,8 +6,8 @@
       :placement="placement"
       width="300"
       trigger="click">
-      <div class="header dd-clearfix dd-mb-10" v-if="clearable">
-        <el-button type="danger" icon="el-icon-delete" size="mini" class="dd-fr" @click="selectIcon()">清空</el-button>
+      <div class="header d2-clearfix d2-mb-10" v-if="clearable">
+        <el-button type="danger" icon="el-icon-delete" size="mini" class="d2-fr" @click="selectIcon()">清空</el-button>
       </div>
       <el-input
         v-model="searchText"
