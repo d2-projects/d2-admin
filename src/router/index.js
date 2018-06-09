@@ -25,7 +25,7 @@ const routes = [
     meta: { requiresAuth: true },
     redirect: { name: 'demo-components-index' },
     component: () => import('@/components/core/MainLayout/index.vue'),
-    children: ((pre) => [
+    children: (pre => [
       { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue') },
       { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue') },
       { path: 'container/normal', name: `${pre}container-normal`, component: () => import('@/pages/demo/components/container/normal.vue') },
@@ -49,7 +49,7 @@ const routes = [
     meta: { requiresAuth: true },
     redirect: { name: 'demo-plugins-index' },
     component: () => import('@/components/core/MainLayout/index.vue'),
-    children: ((pre) => [
+    children: (pre => [
       { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build/index.vue') },
       { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill/index.vue') },
       { path: 'export/table', name: `${pre}export-table`, component: () => import('@/pages/demo/plugins/export/table.vue') },
@@ -66,6 +66,26 @@ const routes = [
       { path: 'timeago', name: `${pre}timeago`, component: () => import('@/pages/demo/plugins/timeago/index.vue') }
     ])('demo-plugins-')
   },
+  {
+    path: '/demo/chart',
+    name: 'demo-chart',
+    meta: { requiresAuth: true },
+    redirect: { name: 'demo-chart-index' },
+    component: () => import('@/components/core/MainLayout/index.vue'),
+    children: (pre => [
+      { path: 'all', name: `${pre}all`, component: () => import('@/pages/demo/chart/all/index.vue') },
+      { path: 'demo/areaBase', name: `${pre}demo-areaBase`, component: () => import('@/pages/demo/chart/demo/areaBase.vue') },
+      { path: 'demo/barBase', name: `${pre}demo-barBase`, component: () => import('@/pages/demo/chart/demo/barBase.vue') },
+      { path: 'demo/columnBase', name: `${pre}demo-columnBase`, component: () => import('@/pages/demo/chart/demo/columnBase.vue') },
+      { path: 'demo/lineBase', name: `${pre}demo-lineBase`, component: () => import('@/pages/demo/chart/demo/lineBase.vue') },
+      { path: 'demo/lineStep', name: `${pre}demo-lineStep`, component: () => import('@/pages/demo/chart/demo/lineStep.vue') },
+      { path: 'demo/nightingaleRoseBase', name: `${pre}demo-nightingaleRoseBase`, component: () => import('@/pages/demo/chart/demo/nightingaleRoseBase.vue') },
+      { path: 'demo/PieBase', name: `${pre}demo-PieBase`, component: () => import('@/pages/demo/chart/demo/PieBase.vue') },
+      { path: 'demo/radarBase', name: `${pre}demo-radarBase`, component: () => import('@/pages/demo/chart/demo/radarBase.vue') },
+      { path: 'dynamicSize', name: `${pre}dynamicSize`, component: () => import('@/pages/demo/chart/dynamicSize/index.vue') },
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/chart/index/index.vue') }
+    ])('demo-chart-')
+  },
   // 登陆
   {
     path: '/login',
@@ -74,7 +94,7 @@ const routes = [
   }
 ]
 
-routes[1].children.forEach(e => {
+routes[3].children.forEach(e => {
   console.log(`{ path: \`\${pre}${e.path}\`, title: 'title' }`)
 })
 
