@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown class="dd-mr">
+  <el-dropdown class="d2-mr">
     <span class="el-dropdown-link">你好</span>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item @click.native="logOff"><Icon name="power-off"></Icon> 注销</el-dropdown-item>

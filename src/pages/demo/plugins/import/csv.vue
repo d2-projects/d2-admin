@@ -5,13 +5,13 @@
       title="导入 csv"
       url="https://github.com/mholt/PapaParse">
     </PageHeader>
-    <div class="dd-mb">
+    <div class="d2-mb">
       <el-button @click="download">
         <Icon name="download"></Icon>
         下载演示 .csv 表格
       </el-button>
     </div>
-    <div class="dd-mb">
+    <div class="d2-mb">
       <el-upload :before-upload="handleUpload" action="default">
         <el-button type="success">
           <Icon name="file-o"></Icon>
@@ -19,7 +19,7 @@
         </el-button>
       </el-upload>
     </div>
-    <el-table v-bind="table" class="dd-mb">
+    <el-table v-bind="table" class="d2-mb">
       <el-table-column
         v-for="(item, index) in table.columns"
         :key="index"

@@ -10,7 +10,7 @@
       placeholder="请输入内容 然后点击保存按钮导出文本文档"
       v-model="text">
     </el-input>
-    <div class="dd-mt dd-mb">
+    <div class="d2-mt d2-mb">
       <el-button type="primary" @click="exportTxt">
         <Icon name="download"></Icon>
         保存为 txt

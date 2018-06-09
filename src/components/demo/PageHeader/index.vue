@@ -1,7 +1,7 @@
 <template>
-  <div class="dd-clearfix">
-    <span v-if="title" class="dd-fl">{{title}}</span>
-    <span class="dd-fr">
+  <div class="d2-clearfix">
+    <span v-if="title" class="d2-fl">{{title}}</span>
+    <span class="d2-fr">
       <GithubLink v-if="url" :url="url"></GithubLink>
     </span>
   </div>

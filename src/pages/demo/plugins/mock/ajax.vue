@@ -4,7 +4,7 @@
       <div slot="header">
         <el-button @click="ajax">发送请求</el-button>
       </div>
-      <el-table v-bind="table" style="width: 100%" class="dd-mb">
+      <el-table v-bind="table" style="width: 100%" class="d2-mb">
         <el-table-column
           v-for="(item, index) in table.columns"
           :key="index"

@@ -4,7 +4,7 @@
       <slot></slot>
     </div>
     <p class="page-index-article-body__title">{{title}}</p>
-    <p class="page-index-article-body__sub-title dd-mt-0">{{subTitle}}</p>
+    <p class="page-index-article-body__sub-title d2-mt-0">{{subTitle}}</p>
     <a target="blank" href="https://github.com/FairyEver/d2admin-vue-element">
       <img
         style="position: absolute; top: 0; right: 0; border: 0;"

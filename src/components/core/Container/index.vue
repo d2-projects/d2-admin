@@ -1,12 +1,12 @@
 <template>
   <div class="container-component" :class="{responsive}">
     <!-- [card] 卡片容器 -->
-    <el-card v-if="type === 'card'" class="dd-mr dd-mb">
+    <el-card v-if="type === 'card'" class="d2-mr d2-mb">
       <slot v-if="$slots.header" name="header" slot="header"></slot>
       <slot></slot>
     </el-card>
     <!-- [ghost] 隐形的容器 -->
-    <div v-if="type === 'ghost'" class="dd-mr dd-mb">
+    <div v-if="type === 'ghost'" class="d2-mr d2-mb">
       <slot name="header"></slot>
       <slot></slot>
     </div>

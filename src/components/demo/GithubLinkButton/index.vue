@@ -5,11 +5,11 @@
       placement="top"
       width="160"
       v-model="popover.visible">
-      <p class="dd-mt-0 dd-mb-10">
+      <p class="d2-mt-0 d2-mb-10">
         <i class="fa fa-github"></i>
         github
       </p>
-      <p class="dd-mt-0 dd-mb-10" style="font-size: 10px;">{{name}}</p>
+      <p class="d2-mt-0 d2-mb-10" style="font-size: 10px;">{{name}}</p>
       <div style="text-align: right; margin: 0">
         <el-button size="mini" type="text" @click="popover.visible = false">
           取消

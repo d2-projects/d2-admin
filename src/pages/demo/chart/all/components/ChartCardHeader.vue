@@ -1,7 +1,7 @@
 <template>
   <div>
     {{title}}
-    <span class="dd-fr">
+    <span class="d2-fr">
       <Icon
         class="chart-card-header-icon"
         :class="{active}"

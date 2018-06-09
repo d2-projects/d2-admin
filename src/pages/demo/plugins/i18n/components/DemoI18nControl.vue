@@ -1,5 +1,5 @@
 <template>
-  <div class="dd-mb">
+  <div class="d2-mb">
     <el-radio-group v-model="lang" @change="handleChange">
       <el-radio-button label="cn">中文</el-radio-button>
       <el-radio-button label="ja">日本語</el-radio-button>

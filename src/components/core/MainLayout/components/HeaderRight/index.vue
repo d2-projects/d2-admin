@@ -1,5 +1,5 @@
 <template>
-  <div class="dd-header-right">
+  <div class="d2-header-right">
     <FullScreen></FullScreen>
     <UserDropdown></UserDropdown>
   </div>

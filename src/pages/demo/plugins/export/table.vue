@@ -4,7 +4,7 @@
       slot="header"
       title="导出表格">
     </PageHeader>
-    <div class="dd-mb">
+    <div class="d2-mb">
       <el-button type="primary" @click="exportCsv">
         <Icon name="download"></Icon>
         导出 CSV
@@ -14,7 +14,7 @@
         导出 Excel
       </el-button>
     </div>
-    <el-table v-bind="table" style="width: 100%" class="dd-mb">
+    <el-table v-bind="table" style="width: 100%" class="d2-mb">
       <el-table-column
         v-for="(item, index) in table.columns"
         :key="index"

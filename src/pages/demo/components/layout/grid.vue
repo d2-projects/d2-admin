@@ -14,9 +14,9 @@
         <el-card>
           <el-tag size="mini" type="info" slot="header">Card {{item.i}}</el-tag>
           <template v-if="item.i === '0'">
-            <div class="dd-mb">拖拽卡片调整位置</div>
-            <div class="dd-mb">拖拽卡片右下角的手柄调整卡片大小</div>
-            <div class="dd-mb">在控制台打印出数据变化</div>
+            <div class="d2-mb">拖拽卡片调整位置</div>
+            <div class="d2-mb">拖拽卡片右下角的手柄调整卡片大小</div>
+            <div class="d2-mb">在控制台打印出数据变化</div>
             <GithubLinkButton
               name="vue-grid-layout"
               url="https://github.com/jbaysolutions/vue-grid-layout"
