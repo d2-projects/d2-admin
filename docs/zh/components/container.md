@@ -6,7 +6,7 @@
 
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
-| type | 容器类型 | 非 | String | card ghost card-full | card |
+| type | 容器类型 | 非 | String | card ghost full | card |
 | responsive | 响应式宽度 | 非 | Boolean |  | false |
 
 ::: tip
@@ -66,7 +66,7 @@ export default {
 
 ``` vue
 <template>
-  <Container type="card-full">
+  <Container type="full">
     <template slot="header">
       可选的 header 内容 ...
     </template>

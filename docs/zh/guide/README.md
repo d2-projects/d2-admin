@@ -4,6 +4,11 @@ d2admin-vue-element（以下简称 d2admin）是一个管理系统前端模板
 
 [Github仓库](https://github.com/FairyEver/d2admin-vue-element) - [预览地址](http://d2admin.fairyever.com/)
 
+<div>
+  <iframe src="//ghbtns.com/github-btn.html?user=FairyEver&repo=d2admin-vue-element&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+  <iframe src="//ghbtns.com/github-btn.html?user=FairyEver&repo=d2admin-vue-element&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+</div>
+
 ::: tip
 因为现在集成了很多的插件和组件，首次加载会占用较多的时间，虽然已经做了首屏加载动画，还是建议您在发布的时候一定要删除没有用到的代码。比如项目没有用到图表，最好将集成的图表库以及封装的图表组件删除。
 :::

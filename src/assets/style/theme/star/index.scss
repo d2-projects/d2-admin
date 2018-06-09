@@ -1,0 +1,132 @@
+@import '../theme.scss';
+
+$theme-name: 'star';
+$theme-bg-color: #EFF4F8;
+$theme-bg-image: '/static/image/bg/star.jpg';
+$theme-container-full-border-color: #d8dfea;
+
+.theme-#{$theme-name} {
+  .theme {
+    background-color: $theme-bg-color;
+    background-image: url($theme-bg-image);
+    background-size: cover;
+    background-position: center;
+  }
+  // 菜单项目
+  @mixin theme-menu-hover-style {
+    background-color: #eff4f8;
+  }
+  .el-submenu__title:hover {
+    @include theme-menu-hover-style;
+  }
+  .el-menu-item:hover {
+    @include theme-menu-hover-style;
+  }
+  .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+    @include theme-menu-hover-style;
+  }
+  .el-menu--horizontal .el-menu .el-submenu__title:hover {
+    @include theme-menu-hover-style;
+  }
+  // [组件] dd-container-full
+  .dd-container-full {
+    .dd-container-full__header {
+      border-bottom: 1px solid $theme-container-full-border-color;
+    }
+    .dd-container-full__footer {
+      border-top: 1px solid $theme-container-full-border-color;
+    }
+  }
+  // 顶栏
+  .el-header {
+    // 切换按钮
+    .toggle-aside-btn {
+      i {
+        color: #FFF;
+        &:hover {
+          color: #FFF;
+        }
+      }
+    }
+    // 顶栏菜单
+    .el-menu {
+      .el-menu-item {
+        transition: border-top-color 0s;
+        color: #FFF;
+        &:hover {
+          background-color: rgba(#FFF, .3);
+        }
+        &:focus {
+          background-color: rgba(#FFF, .3);
+        }
+        &.is-active {
+          background-color: rgba(#000, .3);
+        }
+      }
+      .el-submenu {
+        .el-submenu__title {
+          transition: border-top-color 0s;
+          color: #FFF;
+          &:hover {
+            background-color: rgba(#FFF, .3);
+          }
+          &:focus {
+            background-color: rgba(#FFF, .3);
+          }
+          .el-submenu__icon-arrow {
+            color: #FFF;
+          }
+        }
+      }
+    }
+    // 顶栏右侧
+    .dd-header-right {
+      .btn-text {
+        color: #FFF;
+      }
+      .el-dropdown {
+        .el-dropdown-link {
+          color: #FFF;
+        }
+      }
+    }
+  }
+  // [布局] 顶栏下面
+  .el-container {
+    // 侧边栏
+    .el-aside {
+      // [菜单] 正常状态
+      .el-menu {
+        .el-menu-item {
+          color: #FFF;
+          &:hover {
+            background-color: rgba(#FFF, .3);
+          }
+          &:focus {
+            background-color: rgba(#FFF, .3);
+          }
+          i {
+            color: #FFF;
+          }
+          &.is-active {
+            background-color: rgba(#000, .3);
+          }
+        }
+      }
+      .el-submenu {
+        .el-submenu__title {
+          color: #FFF;
+          &:hover {
+            background-color: rgba(#FFF, .3);
+          }
+          i {
+            color: #FFF;
+          }
+          .el-submenu__icon-arrow {
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+}

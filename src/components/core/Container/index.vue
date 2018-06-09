@@ -10,12 +10,12 @@
       <slot name="header"></slot>
       <slot></slot>
     </div>
-    <!-- [card-full] 撑满 -->
-    <card-full v-if="type === 'card-full'" :right="10" :bottom="0">
+    <!-- [container-full] 撑满 -->
+    <container-full v-if="type === 'full'" :right="20" :bottom="0">
       <slot v-if="$slots.header" name="header" slot="header"></slot>
       <slot></slot>
       <slot v-if="$slots.footer" name="footer" slot="footer"></slot>
-    </card-full>
+    </container-full>
   </div>
 </template>
 
@@ -34,6 +34,9 @@ export default {
       required: false,
       default: false
     }
+  },
+  components: {
+    containerFull: () => import('../ContainerFull/index.vue')
   }
 }
 </script>

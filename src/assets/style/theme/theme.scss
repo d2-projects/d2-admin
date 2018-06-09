@@ -1,0 +1,148 @@
+@import '~@/assets/style/public.scss';
+
+// 主题公用
+.theme {
+  height: 100vh;
+  width: 100vw;
+  // [布局] 顶栏
+  .el-header {
+    padding: 0px;
+    // logo区域
+    .logo-group {
+      transition: width .3s;
+      float: left;
+      text-align: center;
+      img {
+        height: 60px;
+      }
+    }
+    // 折叠侧边栏切换按钮
+    .toggle-aside-btn {
+      float: left;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+      i {
+        font-size: 20px;
+        margin-top: 4px;
+      }
+    }
+    // [菜单] 顶栏
+    .el-menu {
+      float: left;
+      border-bottom: none;
+      background-color: transparent;
+      .el-menu-item {
+        border-bottom: none;
+      }
+      .el-submenu {
+        .el-submenu__title {
+          border-bottom: none;
+        }
+      }
+    }
+    // 顶栏右侧的按钮
+    .dd-header-right {
+      float: right;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      .el-dropdown {
+        user-select: none;
+        cursor: pointer;
+      }
+    }
+  }
+  // [布局] 顶栏下面
+  .el-container {
+    // 侧边栏
+    .el-aside {
+      transition: width .3s;
+      overflow: inherit;
+      // 空菜单
+      .dd-side-menu-empty {
+        background-color: rgba(#000, .03);
+        margin: $margin;
+        margin-top: 0px;
+        border-radius: 4px;
+        line-height: 100px;
+        text-align: center;
+        color: $color-text-sub;
+      }
+      // [菜单] 正常状态
+      .el-menu {
+        background-color: transparent;
+        border-right: none;
+        .el-menu-item {
+          i {
+            margin-right: 5px;
+            font-size: 20px;
+          }
+        }
+      }
+      .el-submenu {
+        .el-submenu__title {
+          i {
+            margin-right: 5px;
+            font-size: 20px;
+          }
+          .el-submenu__icon-arrow {
+            margin-top: -10px;
+          }
+        }
+      }
+      // [菜单] 折叠状态
+      .el-menu--collapse {
+        background-color: transparent;
+        .el-submenu__title {
+          text-align: center;
+        }
+      }
+    }
+    .el-main {
+      padding: 0px;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+  // [组件] dd-container-full
+  .dd-container-full {
+    position: absolute;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #FFF;
+    overflow: hidden;
+    color: #303133;
+    &:hover {
+      box-shadow: none;
+    }
+    .dd-container-full__header {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      padding: 18px 20px;
+      box-sizing: border-box;
+    }
+    .dd-container-full__body {
+      position: absolute;
+      padding: 20px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      overflow: auto;
+    }
+    .dd-container-full__footer {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      padding: 18px 20px;
+      box-sizing: border-box;
+    }
+  }
+}

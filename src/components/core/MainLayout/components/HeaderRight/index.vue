@@ -1,5 +1,5 @@
 <template>
-  <div class="btn-group">
+  <div class="dd-header-right">
     <FullScreen></FullScreen>
     <UserDropdown></UserDropdown>
   </div>
@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'HeaderRight',
   components: {
     FullScreen: () => import('./components/FullScreen.vue'),
     UserDropdown: () => import('./components/UserDropdown.vue')

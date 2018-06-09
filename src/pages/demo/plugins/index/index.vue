@@ -1,5 +1,5 @@
 <template>
-  <Container type="card-full">
+  <Container type="full">
     <PageIndexArticle
       title="插件演示"
       sub-title="D2Admin 集成了许多实用插件">
