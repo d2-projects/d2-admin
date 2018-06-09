@@ -1,5 +1,5 @@
 <template>
-  <Container type="card-full">
+  <Container type="full">
     <template slot="header">
       用户中心
     </template>

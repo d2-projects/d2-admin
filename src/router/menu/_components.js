@@ -58,12 +58,12 @@ export const menu = {
         {
           title: '撑满',
           icon: 'file-o',
-          path: 'container/card-full',
-          name: 'demo-components-container-card-full',
+          path: 'container/full',
+          name: 'demo-components-container-full',
           meta: {
             requiresAuth: true
           },
-          component: resolve => { require(['@/pages/demo/components/container/card-full.vue'], resolve) }
+          component: resolve => { require(['@/pages/demo/components/container/full.vue'], resolve) }
         }
       ]
     },

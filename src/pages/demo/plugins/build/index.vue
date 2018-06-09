@@ -1,5 +1,5 @@
 <template>
-  <Container type="card-full">
+  <Container type="full">
     <template slot="header">
       多环境发布
     </template>
