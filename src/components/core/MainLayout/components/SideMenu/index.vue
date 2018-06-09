@@ -30,42 +30,12 @@ export default {
   },
   data () {
     return {
-      menus: [
-        {
-          path: '/demo/components/container/full',
-          title: 'menu-a',
-          icon: 'plus'
-        },
-        {
-          path: '/b',
-          title: 'menu-b',
-          icon: 'plus',
-          children: [
-            {
-              path: '/c-1',
-              title: 'menu-a',
-              icon: 'plus'
-            },
-            {
-              path: '/c',
-              title: 'menu-a',
-              icon: 'plus',
-              children: [
-                {
-                  path: '/d',
-                  title: 'menu-a',
-                  icon: 'plus'
-                },
-                {
-                  path: '/demo/components/container/full',
-                  title: 'menu-a',
-                  icon: 'plus'
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      menus: []
+    }
+  },
+  watch: {
+    $route (val) {
+      console.log(val)
     }
   }
 }
