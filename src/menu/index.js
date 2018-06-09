@@ -113,7 +113,14 @@ const demoChart = {
   ])('/demo/chart/')
 }
 
-// 菜单
+// 菜单 侧边栏
+export const side = [
+  demoPlugins,
+  demoComponents,
+  demoChart
+]
+
+// 菜单 顶栏
 export default [
   {
     path: '/index',
