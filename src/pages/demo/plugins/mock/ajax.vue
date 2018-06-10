@@ -1,10 +1,10 @@
 <template>
-  <Container type="ghost">
+  <d2-container type="ghost">
     <el-card>
       <div slot="header">
         <el-button @click="ajax">发送请求</el-button>
       </div>
-      <el-table v-bind="table" style="width: 100%" class="dd-mb">
+      <el-table v-bind="table" style="width: 100%" class="d2-mb">
         <el-table-column
           v-for="(item, index) in table.columns"
           :key="index"
@@ -12,9 +12,9 @@
           :label="item.label">
         </el-table-column>
       </el-table>
-      <Markdown url="/static/md/插件 - mock拦截ajax.md"></Markdown>
+      <d2-markdown url="/static/md/插件 - mock拦截ajax.md"/>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

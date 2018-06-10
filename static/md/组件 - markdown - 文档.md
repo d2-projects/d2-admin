@@ -12,7 +12,7 @@
 加载一个.md文件
 
 ```
-<markdown url="/static/md/xxxx.md"></markdown>
+<d2-markdown url="/static/md/xxxx.md"/>
 ```
 
 加载资源
@@ -24,7 +24,7 @@ const md = `# Header
 
 text`
 
-<markdown :md="md"></markdown>
+<d2-markdown :md="md"/>
 ```
 
 ## 百度网盘分享链接优化

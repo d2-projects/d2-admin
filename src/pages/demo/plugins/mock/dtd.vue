@@ -1,12 +1,8 @@
 <template>
-  <Container type="ghost">
-    <el-card class="dd-mb">
-      <PageHeader
-        slot="header"
-        title="数据模板"
-        url="https://github.com/nuysoft/Mock">
-      </PageHeader>
-      <Markdown url="/static/md/插件 - mock演示页面介绍.md"></Markdown>
+  <d2-container type="ghost">
+    <el-card class="d2-mb">
+      <d2-demo-page-header slot="header" title="数据模板"/>
+      <d2-markdown url="/static/md/插件 - mock演示页面介绍.md"/>
     </el-card>
     <MockDemoCard
       v-for="(item, index) in settingDTD"
@@ -28,7 +24,7 @@
       :mock="regexp.mocked"
       @reload="regexpMock()">
     </MockDemoCard>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

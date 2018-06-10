@@ -1,20 +1,16 @@
 <template>
-  <Container type="ghost">
-    <el-card class="dd-mb">
-      <PageHeader
-        slot="header"
-        title="图标组件"
-        url="https://github.com/FairyEver/d2admin-vue-element/blob/master/src/components/core/Icon/index.vue">
-      </PageHeader>
-      <Icon></Icon>
-      <Icon name="github"></Icon>
-      <Icon name="github" style="font-size: 100px;"></Icon>
-      <Icon name="github" class="icon-class-demo"></Icon>
+  <d2-container type="ghost">
+    <el-card class="d2-mb">
+      <d2-demo-page-header slot="header" title="图标组件"/>
+      <d2-icon/>
+      <d2-icon name="github"/>
+      <d2-icon name="github" style="font-size: 100px;"/>
+      <d2-icon name="github" class="icon-class-demo"/>
     </el-card>
     <el-card>
-      <Markdown url="/static/md/组件 - 图标组件.md"></Markdown>
+      <d2-markdown url="/static/md/组件 - 图标组件.md"/>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <style lang="scss">

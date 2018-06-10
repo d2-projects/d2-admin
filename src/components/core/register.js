@@ -1,11 +1,18 @@
 import Vue from 'vue'
 
-Vue.component('Container', resolve => { require(['@/components/core/Container'], resolve) })
-Vue.component('CountUp', resolve => { require(['@/components/core/CountUp'], resolve) })
-Vue.component('Highlight', resolve => { require(['@/components/core/Highlight'], resolve) })
-Vue.component('Icon', resolve => { require(['@/components/core/Icon'], resolve) })
-Vue.component('IconSelect', resolve => { require(['@/components/core/IconSelect/index.vue'], resolve) })
-Vue.component('IconSvg', resolve => { require(['@/components/core/IconSvg/index.vue'], resolve) })
-Vue.component('Markdown', resolve => { require(['@/components/core/Markdown'], resolve) })
-Vue.component('QuillEditor', resolve => { require(['@/components/core/QuillEditor'], resolve) })
-Vue.component('SimpleMDE', resolve => { require(['@/components/core/SimpleMDE'], resolve) })
+import { GridLayout, GridItem } from 'vue-grid-layout'
+import SplitPane from 'vue-splitpane'
+
+Vue.component('d2-grid-layout', GridLayout)
+Vue.component('d2-grid-item', GridItem)
+Vue.component('SplitPane', SplitPane)
+
+Vue.component('d2-container', () => import('@/components/core/d2-container'))
+Vue.component('d2-count-up', () => import('@/components/core/d2-count-up'))
+Vue.component('d2-highlight', () => import('@/components/core/d2-highlight'))
+Vue.component('d2-icon', () => import('@/components/core/d2-icon'))
+Vue.component('d2-icon-select', () => import('@/components/core/d2-icon-select/index.vue'))
+Vue.component('d2-icon-svg', () => import('@/components/core/d2-icon-svg/index.vue'))
+Vue.component('d2-markdown', () => import('@/components/core/d2-markdown'))
+Vue.component('d2-quill', () => import('@/components/core/d2-quill'))
+Vue.component('d2-mde', () => import('@/components/core/d2-mde'))

@@ -1,17 +1,14 @@
 <template>
-  <Container type="ghost" class="page">
+  <d2-container type="ghost" class="page">
     <el-card>
-      <PageHeader
-        title="数字动画组件"
-        url="https://github.com/inorganik/countUp.js">
-      </PageHeader>
+      <d2-demo-page-header title="数字动画组件"/>
     </el-card>
     <el-row :gutter="20">
       <el-col :span="6">
         <el-card>
           <p slot="title">只设置目标数字</p>
           <div class="group">
-            <CountUp :end="100"></CountUp>  
+            <d2-count-up :end="100"/>  
           </div>
         </el-card>
       </el-col>
@@ -19,7 +16,7 @@
         <el-card>
           <p slot="title">设置起止数值</p>
           <div class="group">
-            <CountUp :start="14" :end="100"></CountUp>
+            <d2-count-up :start="14" :end="100"/>
           </div>
         </el-card>
       </el-col>
@@ -27,7 +24,7 @@
         <el-card>
           <p slot="title">小数位数</p>
           <div class="group">
-            <CountUp :end="100" :decimals="2"></CountUp>
+            <d2-count-up :end="100" :decimals="2"/>
           </div>
         </el-card>
       </el-col>
@@ -35,7 +32,7 @@
         <el-card>
           <p slot="title">动画时长</p>
           <div class="group">
-            <CountUp :end="100" :duration="6"></CountUp>
+            <d2-count-up :end="100" :duration="6"/>
           </div>
         </el-card>
       </el-col>
@@ -43,7 +40,7 @@
         <el-card>
           <p slot="title">回调函数</p>
           <div class="group">
-            <CountUp :end="100" :callback="() => {className = 'end'}" :class="className"></CountUp>
+            <d2-count-up :end="100" :callback="() => {className = 'end'}" :class="className"/>
           </div>
         </el-card>
       </el-col>
@@ -51,15 +48,15 @@
         <el-card>
           <p slot="title">结束一秒后更新数值</p>
           <div class="group">
-            <CountUp :end="end" :callback="update"></CountUp>
+            <d2-count-up :end="end" :callback="update"/>
           </div>
         </el-card>
       </el-col>
     </el-row>
     <el-card>
-      <Markdown url="/static/md/组件 - 数字动画.md"></Markdown>
+      <d2-markdown url="/static/md/组件 - 数字动画.md"/>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

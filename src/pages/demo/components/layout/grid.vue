@@ -1,9 +1,9 @@
 <template>
-  <Container type="ghost" class="demo-plugins-vue-grid-layout-demo">
-    <GridLayout
+  <d2-container type="ghost" class="demo-plugins-vue-grid-layout-demo">
+    <d2-grid-layout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">
-      <GridItem
+      <d2-grid-item
         v-for="(item, index) in layout.layout"
         :key="index"
         v-bind="item"
@@ -14,19 +14,14 @@
         <el-card>
           <el-tag size="mini" type="info" slot="header">Card {{item.i}}</el-tag>
           <template v-if="item.i === '0'">
-            <div class="dd-mb">拖拽卡片调整位置</div>
-            <div class="dd-mb">拖拽卡片右下角的手柄调整卡片大小</div>
-            <div class="dd-mb">在控制台打印出数据变化</div>
-            <GithubLinkButton
-              name="vue-grid-layout"
-              url="https://github.com/jbaysolutions/vue-grid-layout"
-              type="success">
-            </GithubLinkButton>
+            <div class="d2-mb">拖拽卡片调整位置</div>
+            <div class="d2-mb">拖拽卡片右下角的手柄调整卡片大小</div>
+            <div class="d2-mb">在控制台打印出数据变化</div>
           </template>
         </el-card>
-      </GridItem>
-    </GridLayout>
-  </Container>
+      </d2-grid-item>
+    </d2-grid-layout>
+  </d2-container>
 </template>
 
 <script>

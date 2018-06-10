@@ -13,7 +13,7 @@ export default {
   props: {
     padding: {
       required: false,
-      default: () => [30, 30, 30, 30]
+      default: () => [40, 40, 40, 40]
     }
   },
   data () {

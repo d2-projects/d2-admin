@@ -1,23 +1,20 @@
 <template>
-  <Container>
-    <PageHeader
-      slot="header"
-      title="导出文本">
-    </PageHeader>
+  <d2-container>
+    <d2-demo-page-header slot="header" title="导出文本"/>
     <el-input
       type="textarea"
       :autosize="{minRows: 2, maxRows: 4}"
       placeholder="请输入内容 然后点击保存按钮导出文本文档"
       v-model="text">
     </el-input>
-    <div class="dd-mt dd-mb">
+    <div class="d2-mt d2-mb">
       <el-button type="primary" @click="exportTxt">
-        <Icon name="download"></Icon>
+        <d2-icon name="download"/>
         保存为 txt
       </el-button>
     </div>
-    <Markdown url="/static/md/插件 - 导出.md"></Markdown>
-  </Container>
+    <d2-markdown url="/static/md/插件 - 导出.md"/>
+  </d2-container>
 </template>
 
 <script>

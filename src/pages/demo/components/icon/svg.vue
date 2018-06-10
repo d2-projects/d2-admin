@@ -1,13 +1,10 @@
 <template>
-  <Container type="ghost">
-    <el-card class="dd-mb">
-      <PageHeader
-        slot="header"
-        title="SVG图标组件">
-      </PageHeader>
+  <d2-container type="ghost">
+    <el-card class="d2-mb">
+      <d2-demo-page-header slot="header" title="SVG图标组件"/>
       <el-row>
         <el-col class="icon-card" :span="4" v-for="(icon, index) in $IconSvg" :key="index">
-          <IconSvg class="icon" :name="icon"></IconSvg>
+          <d2-icon-svg class="icon" :name="icon"/>
           <div class="icon-title">
             <span>{{icon}}</span>
           </div>
@@ -15,9 +12,9 @@
       </el-row>
     </el-card>
     <el-card>
-      <Markdown url="/static/md/组件 - 图标组件 - svg.md"></Markdown>
+      <d2-markdown url="/static/md/组件 - 图标组件 - svg.md"/>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <style lang="scss" scoped>

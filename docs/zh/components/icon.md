@@ -12,22 +12,22 @@
 
 ``` vue
 // 这样用没有毛病 但是也没什么用
-<Icon></Icon>
+<d2-icon/>
 
 // 指定图标名称
-<Icon name="github"></Icon>
+<d2-icon name="github"/>
 
 // 设置行内样式
-<Icon name="github" style="font-size: 100px;"></Icon>
+<d2-icon name="github" style="font-size: 100px;"/>
 
 // 设置 class
-<Icon name="github" class="icon-class-demo"></Icon>
+<d2-icon name="github" class="icon-class-demo"/>
 ```
 
 这个组件只是简化了写法而已
 
 ``` vue
-<Icon name="github"></Icon>
+<d2-icon name="github"/>
 // 等同于
 <i class="fa fa-github" aria-hidden="true"></i>
 ```

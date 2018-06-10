@@ -1,39 +1,36 @@
 <template>
-  <Container type="ghost">
-    <el-card class="dd-mb">
-      <PageHeader
-        title="代码高亮组件"
-        url="https://github.com/isagalaev/highlight.js">
-      </PageHeader>
+  <d2-container type="ghost">
+    <el-card class="d2-mb">
+      <d2-demo-page-header title="代码高亮组件"/>
     </el-card>
-    <el-card class="dd-mb">
+    <el-card class="d2-mb">
       <p slot="title">javascript</p>
-      <Highlight :code="codeJavascript"></Highlight>
+      <d2-highlight :code="codeJavascript"/>
     </el-card>
     <el-row :gutter="20">
       <el-col :span="8">
-        <el-card class="dd-mb">
+        <el-card class="d2-mb">
           <p slot="title">css</p>
-          <Highlight :code="codeCSS"></Highlight>
+          <d2-highlight :code="codeCSS"/>
         </el-card>
       </el-col>
       <el-col :span="8">
-        <el-card class="dd-mb">
+        <el-card class="d2-mb">
           <p slot="title">scss</p>
-          <Highlight :code="codeSCSS"></Highlight>
+          <d2-highlight :code="codeSCSS"/>
         </el-card>
       </el-col>
       <el-col :span="8">
-        <el-card class="dd-mb">
+        <el-card class="d2-mb">
           <p slot="title">html</p>
-          <Highlight :code="codeHTML"></Highlight>
+          <d2-highlight :code="codeHTML"/>
         </el-card>
       </el-col>
     </el-row>
     <el-card>
-      <Markdown url="/static/md/组件 - 代码高亮.md"></Markdown>
+      <d2-markdown url="/static/md/组件 - 代码高亮.md"/>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

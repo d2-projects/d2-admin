@@ -9,7 +9,7 @@
 ## 示例
 
 ``` vue
-<Highlight code="alert('Hello')"></Highlight>
+<d2-highlight code="alert('Hello')"/>
 ```
 
 ::: tip

@@ -2,7 +2,7 @@
   <el-card>
     <div slot="header">
       <el-button type="primary" size="mini" @click="syncData">
-        <Icon name="refresh"></Icon>
+        <d2-icon name="refresh"/>
         加载数据
       </el-button>
       <el-radio-group v-model="height" size="mini">
@@ -10,7 +10,7 @@
       </el-radio-group>
     </div>
     <div :style="style">
-      <slot :data="data"></slot>
+      <slot :data="data"/>
     </div>
   </el-card>
 </template>
