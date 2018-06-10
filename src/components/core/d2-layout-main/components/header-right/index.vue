@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'HeaderRight',
+  name: 'd2-layout-main-header-right',
   components: {
     FullScreen: () => import('./components/FullScreen.vue'),
     UserDropdown: () => import('./components/UserDropdown.vue')

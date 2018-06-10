@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'D2MenuItem',
+  name: 'd2-menu-item',
   props: {
     menu: {
       type: Object,
