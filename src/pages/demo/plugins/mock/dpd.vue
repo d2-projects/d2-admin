@@ -6,7 +6,7 @@
         title="数据占位符"
         url="https://github.com/nuysoft/Mock">
       </PageHeader>
-      <Markdown url="/static/md/插件 - mock演示页面介绍.md"></Markdown>
+      <d2-markdown url="/static/md/插件 - mock演示页面介绍.md"/>
     </el-card>
     <MockDemoCard
       v-for="(item, index) in settingDPD"

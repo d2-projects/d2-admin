@@ -27,7 +27,7 @@
         :label="item.label">
       </el-table-column>
     </el-table>
-    <Markdown url="/static/md/插件 - 导入.md"></Markdown>
+    <d2-markdown url="/static/md/插件 - 导入.md"/>
   </d2-container>
 </template>
 
