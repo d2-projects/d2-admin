@@ -5,7 +5,7 @@
       <span slot="title">{{menu.title}}</span>
     </template>
     <template v-for="(child, childIndex) in menu.children">
-      <d2-menu-item v-if="child.children === undefined" :menu="child" :key="childIndex"/>
+      <d2-layout-main-menu-item v-if="child.children === undefined" :menu="child" :key="childIndex"/>
       <d2-submenu v-else :menu="child" :key="childIndex"/>
     </template>
   </el-submenu>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'd2-menu-sub',
+  name: 'd2-layout-main-menu-sub',
   props: {
     menu: {
       type: Object,
@@ -22,7 +22,7 @@ export default {
     }
   },
   components: {
-    'd2-menu-item': () => import('../-menu-item/index.vue')
+    'd2-layout-main-menu-item': () => import('../-menu-item/index.vue')
   }
 }
 </script>
