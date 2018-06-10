@@ -18,6 +18,7 @@
 <script>
 import { side } from '@/menu/index.js'
 export default {
+  name: 'd2-layout-main-side-menu',
   props: {
     collapse: {
       type: Boolean,
@@ -26,8 +27,8 @@ export default {
     }
   },
   components: {
-    D2MenuItem: () => import('../D2MenuItem/index.vue'),
-    D2Submenu: () => import('../D2Submenu/index.vue')
+    'd2-menu-item': () => import('../d2-menu-item/index.vue'),
+    'd2-sub-menu': () => import('../d2-sub-menu/index.vue')
   },
   data () {
     return {

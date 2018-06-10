@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/',
     redirect: { name: 'index' },
-    component: () => import('@/components/core/MainLayout/index.vue'),
+    component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: [
       {
         path: 'index',
@@ -24,7 +24,7 @@ const routes = [
     name: 'demo-components',
     meta: { requiresAuth: true },
     redirect: { name: 'demo-components-index' },
-    component: () => import('@/components/core/MainLayout/index.vue'),
+    component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
       { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue') },
       { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue') },
@@ -48,7 +48,7 @@ const routes = [
     name: 'demo-plugins',
     meta: { requiresAuth: true },
     redirect: { name: 'demo-plugins-index' },
-    component: () => import('@/components/core/MainLayout/index.vue'),
+    component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
       { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build/index.vue') },
       { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill/index.vue') },
@@ -71,7 +71,7 @@ const routes = [
     name: 'demo-chart',
     meta: { requiresAuth: true },
     redirect: { name: 'demo-chart-index' },
-    component: () => import('@/components/core/MainLayout/index.vue'),
+    component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
       { path: 'all', name: `${pre}all`, component: () => import('@/pages/demo/chart/all/index.vue') },
       { path: 'demo/areaBase', name: `${pre}demo-areaBase`, component: () => import('@/pages/demo/chart/demo/areaBase.vue') },
@@ -91,7 +91,7 @@ const routes = [
     name: 'demo-business',
     meta: { requiresAuth: true },
     redirect: { name: 'demo-business-index' },
-    component: () => import('@/components/core/MainLayout/index.vue'),
+    component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/business/index/index.vue') }
     ])('demo-business-')
