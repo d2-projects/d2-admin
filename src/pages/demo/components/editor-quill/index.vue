@@ -6,13 +6,12 @@
         title="基本示例"
         url="https://github.com/quilljs/quill">
       </PageHeader>
-      <QuillEditor
+      <d2-quill
         style="min-height: 200px;"
         v-model="value"
         @text-change="textChangeHandler"
         @selection-change="selectionChangeHandler"
-        @editor-change="editorChangeHandler">
-      </QuillEditor>
+        @editor-change="editorChangeHandler"/>
     </el-card>
     <el-card>
       <template slot="header">输出</template>

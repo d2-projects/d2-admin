@@ -12,6 +12,7 @@ import marked from 'marked'
 import highlight from 'highlight.js'
 import bandupan from './plugin/baidupan'
 export default {
+  name: 'd2-markdown',
   props: {
     url: {
       type: String,

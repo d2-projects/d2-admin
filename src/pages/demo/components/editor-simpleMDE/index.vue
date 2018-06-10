@@ -6,10 +6,9 @@
         title="基本示例"
         url="https://github.com/sparksuite/simplemde-markdown-editor">
       </PageHeader>
-      <SimpleMDE
+      <d2-mde
         v-model="text"
-        class="mde">
-      </SimpleMDE>
+        class="mde"/>
     </el-card>
     <el-card>
       <template slot="header">输出</template>

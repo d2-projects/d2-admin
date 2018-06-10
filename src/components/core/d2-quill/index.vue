@@ -8,7 +8,7 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 export default {
-  name: 'QuillEditor',
+  name: 'd2-quill',
   props: {
     value: {
       type: String,
