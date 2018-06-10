@@ -51,6 +51,15 @@
       height: 60px;
       display: flex;
       align-items: center;
+      .btn-text {
+        padding: 14px 12px;
+        border-radius: 4px;
+        margin: 0px !important;
+        margin-right: 10px !important;
+        &:last-child {
+          margin-right: 0px !important;
+        }
+      }
       .el-dropdown {
         user-select: none;
         cursor: pointer;
