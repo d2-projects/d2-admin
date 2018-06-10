@@ -1,10 +1,6 @@
 <template>
   <d2-container>
-    <PageHeader
-      slot="header"
-      title="基本示例"
-      url="https://github.com/PanJiaChen/vue-split-pane">
-    </PageHeader>
+    <PageHeader slot="header" title="基本示例"></PageHeader>
     <div style="height: 400px; margin: -16px;">
       <SplitPane :min-percent='20' :default-percent='30' split="vertical">
         <template slot="paneL"><div style="margin: 10px;">左</div></template>

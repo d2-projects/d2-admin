@@ -1,10 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader
-        title="代码高亮组件"
-        url="https://github.com/isagalaev/highlight.js">
-      </PageHeader>
+      <PageHeader title="代码高亮组件"></PageHeader>
     </el-card>
     <el-card class="d2-mb">
       <p slot="title">javascript</p>

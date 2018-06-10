@@ -1,10 +1,6 @@
 <template>
   <d2-container>
-    <PageHeader
-      slot="header"
-      title="导入 xlsx"
-      url="https://github.com/SheetJS/js-xlsx">
-    </PageHeader>
+    <PageHeader slot="header" title="导入 xlsx"></PageHeader>
     <div class="d2-mb">
       <el-button @click="download">
         <d2-icon name="download"/>

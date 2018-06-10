@@ -1,9 +1,6 @@
 <template>
   <d2-container>
-    <PageHeader
-      slot="header"
-      title="导出表格">
-    </PageHeader>
+    <PageHeader slot="header" title="导出表格"></PageHeader>
     <div class="d2-mb">
       <el-button type="primary" @click="exportCsv">
         <d2-icon name="download"/>

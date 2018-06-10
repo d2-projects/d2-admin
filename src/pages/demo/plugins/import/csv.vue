@@ -1,10 +1,6 @@
 <template>
   <d2-container>
-    <PageHeader
-      slot="header"
-      title="导入 csv"
-      url="https://github.com/mholt/PapaParse">
-    </PageHeader>
+    <PageHeader slot="header" title="导入 csv"></PageHeader>
     <div class="d2-mb">
       <el-button @click="download">
         <d2-icon name="download"/>

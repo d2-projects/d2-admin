@@ -1,11 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader
-        slot="header"
-        title="基本示例"
-        url="https://github.com/sparksuite/simplemde-markdown-editor">
-      </PageHeader>
+      <PageHeader slot="header" title="基本示例"></PageHeader>
       <d2-mde
         v-model="text"
         class="mde"/>

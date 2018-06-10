@@ -1,11 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader
-        slot="header"
-        title="数据占位符"
-        url="https://github.com/nuysoft/Mock">
-      </PageHeader>
+      <PageHeader slot="header" title="数据占位符"></PageHeader>
       <d2-markdown url="/static/md/插件 - mock演示页面介绍.md"/>
     </el-card>
     <MockDemoCard

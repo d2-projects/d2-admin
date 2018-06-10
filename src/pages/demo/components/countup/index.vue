@@ -1,10 +1,7 @@
 <template>
   <d2-container type="ghost" class="page">
     <el-card>
-      <PageHeader
-        title="数字动画组件"
-        url="https://github.com/inorganik/countUp.js">
-      </PageHeader>
+      <PageHeader title="数字动画组件"></PageHeader>
     </el-card>
     <el-row :gutter="20">
       <el-col :span="6">

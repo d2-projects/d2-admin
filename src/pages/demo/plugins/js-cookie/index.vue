@@ -1,11 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader
-        slot="header"
-        title="基本示例"
-        url="https://github.com/js-cookie/js-cookie">
-      </PageHeader>
+      <PageHeader slot="header" title="基本示例"></PageHeader>
       <p class="d2-mt-0">基本读写删</p>
       <el-button type="primary" @click="set('test-user-name', 'test-user')">set('test-user-name', 'normalValue')</el-button>
       <el-button type="info" @click="get('test-user-name')">get('test-user-name')</el-button>

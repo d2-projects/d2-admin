@@ -1,10 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader
-        title="基本示例"
-        url="https://github.com/hustcc/timeago.js">
-      </PageHeader>
+      <PageHeader title="基本示例"></PageHeader>
     </el-card>
     <el-card class="d2-mb">
       <div class="d2-text-center">

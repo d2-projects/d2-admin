@@ -1,10 +1,6 @@
 <template>
   <d2-container>
-    <PageHeader
-      slot="header"
-      title="基本示例"
-      url="https://github.com/lgarron/clipboard-polyfill">
-    </PageHeader>
+    <PageHeader slot="header" title="基本示例"></PageHeader>
     <el-row :gutter="10">
       <el-col :span="12">
         <div class="d2-mb">
