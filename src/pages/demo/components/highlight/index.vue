@@ -31,7 +31,7 @@
       </el-col>
     </el-row>
     <el-card>
-      <Markdown url="/static/md/组件 - 代码高亮.md"></Markdown>
+      <d2-markdown url="/static/md/组件 - 代码高亮.md"/>
     </el-card>
   </d2-container>
 </template>

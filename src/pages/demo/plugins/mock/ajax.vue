@@ -12,7 +12,7 @@
           :label="item.label">
         </el-table-column>
       </el-table>
-      <Markdown url="/static/md/插件 - mock拦截ajax.md"></Markdown>
+      <d2-markdown url="/static/md/插件 - mock拦截ajax.md"/>
     </el-card>
   </d2-container>
 </template>

@@ -4,7 +4,7 @@
       <G2BarBase slot-scope="{data}" ref="chart" :data="data" v-bind="chart"></G2BarBase>
     </ChartDemoCard>
     <el-card>
-      <Markdown url="/static/md/组件 - 图表.md"></Markdown>
+      <d2-markdown url="/static/md/组件 - 图表.md"/>
     </el-card>
   </d2-container>
 </template>

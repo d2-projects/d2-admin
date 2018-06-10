@@ -12,7 +12,7 @@
       <d2-icon name="github" class="icon-class-demo"></d2-icon>
     </el-card>
     <el-card>
-      <Markdown url="/static/md/组件 - 图标组件.md"></Markdown>
+      <d2-markdown url="/static/md/组件 - 图标组件.md"/>
     </el-card>
   </d2-container>
 </template>

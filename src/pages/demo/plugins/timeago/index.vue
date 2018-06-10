@@ -25,7 +25,7 @@
       </div>
     </el-card>
     <el-card>
-      <Markdown url="/static/md/插件 - timeago.md"></Markdown>
+      <d2-markdown url="/static/md/插件 - timeago.md"/>
     </el-card>
   </d2-container>
 </template>
