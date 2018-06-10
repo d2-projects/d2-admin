@@ -7,7 +7,7 @@
         <img v-else src="@/assets/image/logo/header.png">
       </div>
       <div class="toggle-aside-btn" @click="collapse = !collapse">
-        <Icon name="bars"/>
+        <d2-icon name="bars"/>
       </div>
       <HeaderMenu/>
       <HeaderRight/>

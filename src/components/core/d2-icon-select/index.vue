@@ -61,6 +61,7 @@
 <script>
 import icon from '@/assets/library/font-awesome-4.7.0-icon/icon.js'
 export default {
+  name: 'd2-icon-select',
   props: {
     // 值
     value: {

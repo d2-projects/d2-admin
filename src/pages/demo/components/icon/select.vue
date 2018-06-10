@@ -4,7 +4,7 @@
       <PageHeader
         slot="header"
         title="图标选择器"
-        url="https://github.com/FairyEver/d2admin-vue-element/blob/master/src/components/core/IconSelect/index.vue">
+        url="https://github.com/FairyEver/d2admin-vue-element/blob/master/src/components/core/d2-icon-select/index.vue">
       </PageHeader>
       <div class="title-group">
         <p class="title">一般用法</p>
@@ -16,7 +16,7 @@
           <template v-else>未选择</template>
         </p>
       </div>
-      <IconSelect v-model="icon"></IconSelect>
+      <d2-icon-select v-model="icon"></d2-icon-select>
       <div class="title-group">
         <p class="title">用户可以输入</p>
         <p class="sub-title">
@@ -27,7 +27,7 @@
           <template v-else>未选择</template>
         </p>
       </div>
-      <IconSelect v-model="icon2" :user-input="true"></IconSelect>
+      <d2-icon-select v-model="icon2" :user-input="true"></d2-icon-select>
     </el-card>
     <el-card>
       <Markdown url="/static/md/组件 - 图标选择器.md"></Markdown>

@@ -2,8 +2,8 @@
   <el-dropdown class="d2-mr">
     <span class="el-dropdown-link">你好</span>
     <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item @click.native="logOff"><Icon name="power-off"></Icon> 注销</el-dropdown-item>
-      <el-dropdown-item><Icon name="user-circle-o"></Icon> 个人中心</el-dropdown-item>
+      <el-dropdown-item @click.native="logOff"><d2-icon name="power-off"></d2-icon> 注销</el-dropdown-item>
+      <el-dropdown-item><d2-icon name="user-circle-o"></d2-icon> 个人中心</el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
 </template>

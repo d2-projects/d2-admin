@@ -2,12 +2,12 @@
   <div>
     {{title}}
     <span class="d2-fr">
-      <Icon
+      <d2-icon
         class="chart-card-header-icon"
         :class="{active}"
         name="refresh"
         @click.native="handleRefresh">
-      </Icon>
+      </d2-icon>
     </span>
   </div>
 </template>
