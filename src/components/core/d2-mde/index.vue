@@ -5,6 +5,7 @@
 <script>
 import SimpleMDE from 'simplemde'
 export default {
+  name: 'd2-mde',
   props: {
     // 值
     value: {

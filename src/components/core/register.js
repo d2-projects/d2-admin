@@ -7,5 +7,5 @@ Vue.component('d2-icon', resolve => { require(['@/components/core/d2-icon'], res
 Vue.component('d2-icon-select', resolve => { require(['@/components/core/d2-icon-select/index.vue'], resolve) })
 Vue.component('d2-icon-svg', resolve => { require(['@/components/core/d2-icon-svg/index.vue'], resolve) })
 Vue.component('d2-markdown', resolve => { require(['@/components/core/d2-markdown'], resolve) })
-Vue.component('QuillEditor', resolve => { require(['@/components/core/QuillEditor'], resolve) })
-Vue.component('SimpleMDE', resolve => { require(['@/components/core/SimpleMDE'], resolve) })
+Vue.component('d2-quill', resolve => { require(['@/components/core/d2-quill'], resolve) })
+Vue.component('d2-mde', resolve => { require(['@/components/core/d2-mde'], resolve) })
