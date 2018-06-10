@@ -1,7 +1,7 @@
 <template>
   <d2-container type="ghost" :responsive="true">
     <ChartDemoCard class="d2-mb" v-bind="card" @resize="$refs.chart.resize()">
-      <G2RadarBase slot-scope="{data}" ref="chart" :data="data" v-bind="chart"></G2RadarBase>
+      <d2-chart-radar-base slot-scope="{data}" ref="chart" :data="data" v-bind="chart"></d2-chart-radar-base>
     </ChartDemoCard>
     <el-card>
       <d2-markdown url="/static/md/组件 - 图表.md"/>
