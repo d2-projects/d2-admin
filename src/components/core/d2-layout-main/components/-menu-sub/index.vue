@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'd2-sub-menu',
+  name: 'd2-menu-sub',
   props: {
     menu: {
       type: Object,
@@ -22,7 +22,7 @@ export default {
     }
   },
   components: {
-    'd2-menu-item': () => import('../d2-menu-item/index.vue')
+    'd2-menu-item': () => import('../-menu-item/index.vue')
   }
 }
 </script>
