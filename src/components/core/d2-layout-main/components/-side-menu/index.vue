@@ -6,7 +6,7 @@
       :router="true">
       <template v-for="(menu, menuIndex) in menus">
         <d2-layout-main-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
-        <d2-submenu v-else :menu="menu" :key="menuIndex"/>
+        <d2-layout-main-menu-sub v-else :menu="menu" :key="menuIndex"/>
       </template>
     </el-menu>
     <!-- <div v-if="sideMenu.filter(e => e.title).length === 0 && !collapse" class="d2-menu-side-empty">

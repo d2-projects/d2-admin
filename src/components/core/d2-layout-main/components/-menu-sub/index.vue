@@ -6,7 +6,7 @@
     </template>
     <template v-for="(child, childIndex) in menu.children">
       <d2-layout-main-menu-item v-if="child.children === undefined" :menu="child" :key="childIndex"/>
-      <d2-submenu v-else :menu="child" :key="childIndex"/>
+      <d2-layout-main-menu-sub v-else :menu="child" :key="childIndex"/>
     </template>
   </el-submenu>
 </template>
