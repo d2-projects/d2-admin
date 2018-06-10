@@ -1,7 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader slot="header" title="图标选择器"></PageHeader>
+      <d2-demo-page-header slot="header" title="图标选择器"/>
       <div class="title-group">
         <p class="title">一般用法</p>
         <p class="sub-title">

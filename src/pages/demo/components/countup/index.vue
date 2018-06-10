@@ -1,7 +1,7 @@
 <template>
   <d2-container type="ghost" class="page">
     <el-card>
-      <PageHeader title="数字动画组件"></PageHeader>
+      <d2-demo-page-header title="数字动画组件"/>
     </el-card>
     <el-row :gutter="20">
       <el-col :span="6">

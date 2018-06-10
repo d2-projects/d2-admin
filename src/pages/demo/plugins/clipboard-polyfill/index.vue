@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <PageHeader slot="header" title="基本示例"></PageHeader>
+    <d2-demo-page-header slot="header" title="基本示例"/>
     <el-row :gutter="10">
       <el-col :span="12">
         <div class="d2-mb">

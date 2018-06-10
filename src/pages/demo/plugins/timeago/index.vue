@@ -1,7 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader title="基本示例"></PageHeader>
+      <d2-demo-page-header title="基本示例"/>
     </el-card>
     <el-card class="d2-mb">
       <div class="d2-text-center">
