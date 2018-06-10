@@ -15,13 +15,13 @@
 
 ``` vue
 // 基本使用方法
-<CountUp :end="100"></CountUp>
+<d2-count-up :end="100"></d2-count-up>
 
 // 设置始末值
-<CountUp :start="14" :end="100"></CountUp>
+<d2-count-up :start="14" :end="100"></d2-count-up>
 
 // 设置动画时间
-<CountUp :end="100" :decimals="2"></CountUp>
+<d2-count-up :end="100" :decimals="2"></d2-count-up>
 ```
 
 组件会在页面上渲染 `<span>` 标签
