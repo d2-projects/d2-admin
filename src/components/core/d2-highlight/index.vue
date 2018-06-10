@@ -1,5 +1,5 @@
 <template>
-  <pre class="high-light-component" v-html="highlightHTML"></pre>
+  <pre class="d2-highlight" v-html="highlightHTML"></pre>
 </template>
 
 <script>
@@ -7,6 +7,7 @@
 // http://highlightjs.readthedocs.io/en/latest/api.html#configure-options
 import highlight from 'highlight.js'
 export default {
+  name: 'd2-highlight',
   props: {
     code: {
       type: String,
@@ -36,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.high-light-component {
+.d2-highlight {
   margin: 0px;
   border-radius: 4px;
 }

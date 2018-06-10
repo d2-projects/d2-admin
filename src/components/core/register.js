@@ -1,8 +1,8 @@
 import Vue from 'vue'
 
 Vue.component('d2-container', resolve => { require(['@/components/core/d2-container'], resolve) })
-Vue.component('CountUp', resolve => { require(['@/components/core/CountUp'], resolve) })
-Vue.component('Highlight', resolve => { require(['@/components/core/Highlight'], resolve) })
+Vue.component('d2-count-up', resolve => { require(['@/components/core/d2-count-up'], resolve) })
+Vue.component('d2-highlight', resolve => { require(['@/components/core/d2-highlight'], resolve) })
 Vue.component('Icon', resolve => { require(['@/components/core/Icon'], resolve) })
 Vue.component('IconSelect', resolve => { require(['@/components/core/IconSelect/index.vue'], resolve) })
 Vue.component('IconSvg', resolve => { require(['@/components/core/IconSvg/index.vue'], resolve) })

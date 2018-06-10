@@ -8,25 +8,25 @@
     </el-card>
     <el-card class="d2-mb">
       <p slot="title">javascript</p>
-      <Highlight :code="codeJavascript"></Highlight>
+      <d2-highlight :code="codeJavascript"></d2-highlight>
     </el-card>
     <el-row :gutter="20">
       <el-col :span="8">
         <el-card class="d2-mb">
           <p slot="title">css</p>
-          <Highlight :code="codeCSS"></Highlight>
+          <d2-highlight :code="codeCSS"></d2-highlight>
         </el-card>
       </el-col>
       <el-col :span="8">
         <el-card class="d2-mb">
           <p slot="title">scss</p>
-          <Highlight :code="codeSCSS"></Highlight>
+          <d2-highlight :code="codeSCSS"></d2-highlight>
         </el-card>
       </el-col>
       <el-col :span="8">
         <el-card class="d2-mb">
           <p slot="title">html</p>
-          <Highlight :code="codeHTML"></Highlight>
+          <d2-highlight :code="codeHTML"></d2-highlight>
         </el-card>
       </el-col>
     </el-row>
