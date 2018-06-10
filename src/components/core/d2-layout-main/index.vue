@@ -9,14 +9,14 @@
       <div class="toggle-aside-btn" @click="collapse = !collapse">
         <d2-icon name="bars"/>
       </div>
-      <d2-layout-main-header-menu/>
+      <d2-layout-main-menu-header/>
       <d2-layout-main-header-right/>
     </el-header>
     <!-- 下面 主体 -->
     <el-container>
       <!-- 主体 侧边栏 -->
       <el-aside :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-        <d2-layout-main-side-menu :collapse="collapse"/>
+        <d2-layout-main-menu-side :collapse="collapse"/>
       </el-aside>
       <!-- 主体 -->
       <el-main>
@@ -32,8 +32,8 @@
 export default {
   name: 'd2-layout-main',
   components: {
-    'd2-layout-main-side-menu': () => import('./components/side-menu'),
-    'd2-layout-main-header-menu': () => import('./components/-header-menu'),
+    'd2-layout-main-menu-side': () => import('./components/-menu-side'),
+    'd2-layout-main-menu-header': () => import('./components/-menu-header'),
     'd2-layout-main-header-right': () => import('./components/-header-right')
   },
   data () {

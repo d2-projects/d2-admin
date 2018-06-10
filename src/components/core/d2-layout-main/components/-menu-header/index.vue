@@ -14,8 +14,8 @@ import menus from '@/menu/index.js'
 export default {
   name: 'd2-layout-main-menu-header',
   components: {
-    'd2-menu-item': () => import('../d2-menu-item/index.vue'),
-    'd2-menu-sub': () => import('../d2-menu-sub/index.vue')
+    'd2-menu-item': () => import('../-menu-item/index.vue'),
+    'd2-menu-sub': () => import('../-menu-sub/index.vue')
   },
   data () {
     return {
