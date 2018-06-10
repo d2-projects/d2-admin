@@ -33,8 +33,8 @@ export default {
   name: 'd2-layout-main',
   components: {
     'd2-layout-main-side-menu': () => import('./components/side-menu'),
-    'd2-layout-main-header-menu': () => import('./components/header-menu'),
-    'd2-layout-main-header-right': () => import('./components/header-right')
+    'd2-layout-main-header-menu': () => import('./components/-header-menu'),
+    'd2-layout-main-header-right': () => import('./components/-header-right')
   },
   data () {
     return {
