@@ -1,10 +1,11 @@
 <template>
-  <el-dropdown class="d2-mr">
-    <span class="el-dropdown-link">主题</span>
-    <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item>
-        <div style="height: 200px; width: 200px;"></div>
-      </el-dropdown-item>
-    </el-dropdown-menu>
-  </el-dropdown>
+  <el-tooltip
+    class="item"
+    effect="dark"
+    content="theme"
+    placement="bottom">
+    <el-button class="d2-ml-0 d2-mr btn-text" type="text">
+      <d2-icon name="gamepad"/>
+    </el-button>
+  </el-tooltip>
 </template>

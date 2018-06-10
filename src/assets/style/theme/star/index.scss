@@ -83,10 +83,8 @@ $theme-container-full-border-color: #d8dfea;
     .d2-header-right {
       .btn-text {
         color: #FFF;
-      }
-      .el-dropdown {
-        .el-dropdown-link {
-          color: #FFF;
+        &:hover {
+          background-color: rgba(#FFF, .1);
         }
       }
     }
