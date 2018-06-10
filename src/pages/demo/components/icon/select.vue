@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost">
+  <d2-container type="ghost">
     <el-card class="d2-mb">
       <PageHeader
         slot="header"
@@ -32,7 +32,7 @@
     <el-card>
       <Markdown url="/static/md/组件 - 图标选择器.md"></Markdown>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

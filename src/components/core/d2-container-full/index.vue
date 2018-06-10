@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: 'd2-container-full',
   props: {
     // 定位 上 右 下 左
     top: {

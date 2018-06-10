@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost" :responsive="true" class="demo-chart-index">
+  <d2-container type="ghost" :responsive="true" class="demo-chart-index">
     <el-row :gutter="20">
       <el-col class="col" :span="8">
         <el-card class="header-in">
@@ -50,7 +50,7 @@
         </el-card>
       </el-col>
     </el-row>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <d2-container>
     <PageHeader
       slot="header"
       title="基本示例"
@@ -16,7 +16,7 @@
         </template>
       </SplitPane>
     </div>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <d2-container>
     <PageHeader
       slot="header"
       title="导出文本">
@@ -17,7 +17,7 @@
       </el-button>
     </div>
     <Markdown url="/static/md/插件 - 导出.md"></Markdown>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

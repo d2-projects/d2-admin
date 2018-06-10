@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost" class="demo-plugins-vue-grid-layout-demo">
+  <d2-container type="ghost" class="demo-plugins-vue-grid-layout-demo">
     <GridLayout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">
@@ -26,7 +26,7 @@
         </el-card>
       </GridItem>
     </GridLayout>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

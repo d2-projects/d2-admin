@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost" :responsive="true" class="demo-chart-index">
+  <d2-container type="ghost" :responsive="true" class="demo-chart-index">
     <GridLayout v-bind="layout" @layout-updated="layoutUpdatedHandler">
       <!-- 卡片 -->
       <GridItem v-bind="layout.layout[0]" @resized="handleResized(chart[0].refName)">
@@ -58,7 +58,7 @@
         </el-card>
       </GridItem>
     </GridLayout>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

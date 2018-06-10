@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost">
+  <d2-container type="ghost">
     <el-card>
       <template slot="header">
         <el-radio-group v-model="showIndex" size="mini">
@@ -23,7 +23,7 @@
         </el-col>
       </el-row>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

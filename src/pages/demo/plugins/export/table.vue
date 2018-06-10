@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <d2-container>
     <PageHeader
       slot="header"
       title="导出表格">
@@ -23,7 +23,7 @@
       </el-table-column>
     </el-table>
     <Markdown url="/static/md/插件 - 导出.md"></Markdown>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost">
+  <d2-container type="ghost">
     <el-card class="d2-mb">
       <PageHeader
         slot="header"
@@ -17,7 +17,7 @@
       <p>获取所有可以获得的数据</p>
       <el-button type="info" @click="getAll">getAll</el-button>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost">
+  <d2-container type="ghost">
     <el-card>
       <div slot="header">
         <el-button @click="ajax">发送请求</el-button>
@@ -14,7 +14,7 @@
       </el-table>
       <Markdown url="/static/md/插件 - mock拦截ajax.md"></Markdown>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

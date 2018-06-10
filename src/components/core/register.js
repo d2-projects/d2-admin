@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-Vue.component('Container', resolve => { require(['@/components/core/Container'], resolve) })
+Vue.component('d2-container', resolve => { require(['@/components/core/d2-container'], resolve) })
 Vue.component('CountUp', resolve => { require(['@/components/core/CountUp'], resolve) })
 Vue.component('Highlight', resolve => { require(['@/components/core/Highlight'], resolve) })
 Vue.component('Icon', resolve => { require(['@/components/core/Icon'], resolve) })

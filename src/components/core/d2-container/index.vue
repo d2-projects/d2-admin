@@ -11,16 +11,17 @@
       <slot></slot>
     </div>
     <!-- [container-full] 撑满 -->
-    <container-full v-if="type === 'full'" :right="20" :bottom="0">
+    <d2-container-full v-if="type === 'full'" :right="20" :bottom="0">
       <slot v-if="$slots.header" name="header" slot="header"></slot>
       <slot></slot>
       <slot v-if="$slots.footer" name="footer" slot="footer"></slot>
-    </container-full>
+    </d2-container-full>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'd2-container',
   props: {
     // 容器样式
     type: {
@@ -36,7 +37,7 @@ export default {
     }
   },
   components: {
-    containerFull: () => import('../ContainerFull/index.vue')
+    'd2-container-full': () => import('../d2-container-full/index.vue')
   }
 }
 </script>

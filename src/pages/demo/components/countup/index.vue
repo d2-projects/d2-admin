@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost" class="page">
+  <d2-container type="ghost" class="page">
     <el-card>
       <PageHeader
         title="数字动画组件"
@@ -59,7 +59,7 @@
     <el-card>
       <Markdown url="/static/md/组件 - 数字动画.md"></Markdown>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>
