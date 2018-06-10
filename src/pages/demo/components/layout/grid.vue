@@ -1,9 +1,9 @@
 <template>
   <d2-container type="ghost" class="demo-plugins-vue-grid-layout-demo">
-    <GridLayout
+    <d2-grid-layout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">
-      <GridItem
+      <d2-grid-item
         v-for="(item, index) in layout.layout"
         :key="index"
         v-bind="item"
@@ -19,8 +19,8 @@
             <div class="d2-mb">在控制台打印出数据变化</div>
           </template>
         </el-card>
-      </GridItem>
-    </GridLayout>
+      </d2-grid-item>
+    </d2-grid-layout>
   </d2-container>
 </template>
 
