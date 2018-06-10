@@ -1,10 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader
-        slot="header"
-        title="SVG图标组件">
-      </PageHeader>
+      <PageHeader slot="header" title="SVG图标组件"></PageHeader>
       <el-row>
         <el-col class="icon-card" :span="4" v-for="(icon, index) in $IconSvg" :key="index">
           <d2-icon-svg class="icon" :name="icon"/>

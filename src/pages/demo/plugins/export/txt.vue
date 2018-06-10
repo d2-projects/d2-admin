@@ -1,9 +1,6 @@
 <template>
   <d2-container>
-    <PageHeader
-      slot="header"
-      title="导出文本">
-    </PageHeader>
+    <PageHeader slot="header" title="导出文本"></PageHeader>
     <el-input
       type="textarea"
       :autosize="{minRows: 2, maxRows: 4}"

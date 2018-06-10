@@ -1,11 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader
-        slot="header"
-        title="图标组件"
-        url="https://github.com/FairyEver/d2admin-vue-element/blob/master/src/components/core/Icon/index.vue">
-      </PageHeader>
+      <PageHeader slot="header" title="图标组件"></PageHeader>
       <d2-icon/>
       <d2-icon name="github"/>
       <d2-icon name="github" style="font-size: 100px;"/>

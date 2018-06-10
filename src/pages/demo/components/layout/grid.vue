@@ -17,11 +17,6 @@
             <div class="d2-mb">拖拽卡片调整位置</div>
             <div class="d2-mb">拖拽卡片右下角的手柄调整卡片大小</div>
             <div class="d2-mb">在控制台打印出数据变化</div>
-            <GithubLinkButton
-              name="vue-grid-layout"
-              url="https://github.com/jbaysolutions/vue-grid-layout"
-              type="success">
-            </GithubLinkButton>
           </template>
         </el-card>
       </GridItem>
