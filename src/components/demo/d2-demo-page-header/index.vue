@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'd2-demo-page-header',
   props: {
     title: {
       type: String,

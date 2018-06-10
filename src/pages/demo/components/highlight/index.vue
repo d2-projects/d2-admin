@@ -1,7 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader title="代码高亮组件"></PageHeader>
+      <d2-demo-page-header title="代码高亮组件"/>
     </el-card>
     <el-card class="d2-mb">
       <p slot="title">javascript</p>

@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <PageHeader slot="header" title="导入 xlsx"></PageHeader>
+    <d2-demo-page-header slot="header" title="导入 xlsx"/>
     <div class="d2-mb">
       <el-button @click="download">
         <d2-icon name="download"/>

@@ -1,7 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader slot="header" title="基本示例"></PageHeader>
+      <d2-demo-page-header slot="header" title="基本示例"/>
       <d2-quill
         style="min-height: 200px;"
         v-model="value"

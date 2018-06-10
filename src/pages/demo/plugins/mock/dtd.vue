@@ -1,7 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card class="d2-mb">
-      <PageHeader slot="header" title="数据模板"></PageHeader>
+      <d2-demo-page-header slot="header" title="数据模板"/>
       <d2-markdown url="/static/md/插件 - mock演示页面介绍.md"/>
     </el-card>
     <MockDemoCard
