@@ -7,7 +7,7 @@
       </PageHeader>
       <el-row>
         <el-col class="icon-card" :span="4" v-for="(icon, index) in $IconSvg" :key="index">
-          <d2-icon-svg class="icon" :name="icon"></d2-icon-svg>
+          <d2-icon-svg class="icon" :name="icon"/>
           <div class="icon-title">
             <span>{{icon}}</span>
           </div>

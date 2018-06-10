@@ -2,19 +2,19 @@
   <div class="container-component" :class="{responsive}">
     <!-- [card] 卡片容器 -->
     <el-card v-if="type === 'card'" class="d2-mr d2-mb">
-      <slot v-if="$slots.header" name="header" slot="header"></slot>
-      <slot></slot>
+      <slot v-if="$slots.header" name="header" slot="header"/>
+      <slot/>
     </el-card>
     <!-- [ghost] 隐形的容器 -->
     <div v-if="type === 'ghost'" class="d2-mr d2-mb">
-      <slot name="header"></slot>
-      <slot></slot>
+      <slot name="header"/>
+      <slot/>
     </div>
     <!-- [container-full] 撑满 -->
     <d2-container-full v-if="type === 'full'" :right="20" :bottom="0">
-      <slot v-if="$slots.header" name="header" slot="header"></slot>
-      <slot></slot>
-      <slot v-if="$slots.footer" name="footer" slot="footer"></slot>
+      <slot v-if="$slots.header" name="header" slot="header"/>
+      <slot/>
+      <slot v-if="$slots.footer" name="footer" slot="footer"/>
     </d2-container-full>
   </div>
 </template>

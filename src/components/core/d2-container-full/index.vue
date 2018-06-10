@@ -1,13 +1,13 @@
 <template>
   <div class="d2-container-full" :style="cardStyle">
     <div v-if="$slots.header" class="d2-container-full__header" ref="header">
-      <slot name="header"></slot>
+      <slot name="header"/>
     </div>
     <div class="d2-container-full__body" :style="bodyStyle">
-      <slot></slot>
+      <slot/>
     </div>
     <div v-if="$slots.footer" class="d2-container-full__footer" ref="footer">
-      <slot name="footer"></slot>
+      <slot name="footer"/>
     </div>
   </div>
 </template>

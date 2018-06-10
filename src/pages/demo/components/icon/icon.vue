@@ -6,10 +6,10 @@
         title="图标组件"
         url="https://github.com/FairyEver/d2admin-vue-element/blob/master/src/components/core/Icon/index.vue">
       </PageHeader>
-      <d2-icon></d2-icon>
-      <d2-icon name="github"></d2-icon>
-      <d2-icon name="github" style="font-size: 100px;"></d2-icon>
-      <d2-icon name="github" class="icon-class-demo"></d2-icon>
+      <d2-icon/>
+      <d2-icon name="github"/>
+      <d2-icon name="github" style="font-size: 100px;"/>
+      <d2-icon name="github" class="icon-class-demo"/>
     </el-card>
     <el-card>
       <d2-markdown url="/static/md/组件 - 图标组件.md"/>

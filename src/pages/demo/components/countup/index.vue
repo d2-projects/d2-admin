@@ -11,7 +11,7 @@
         <el-card>
           <p slot="title">只设置目标数字</p>
           <div class="group">
-            <d2-count-up :end="100"></d2-count-up>  
+            <d2-count-up :end="100"/>  
           </div>
         </el-card>
       </el-col>
@@ -19,7 +19,7 @@
         <el-card>
           <p slot="title">设置起止数值</p>
           <div class="group">
-            <d2-count-up :start="14" :end="100"></d2-count-up>
+            <d2-count-up :start="14" :end="100"/>
           </div>
         </el-card>
       </el-col>
@@ -27,7 +27,7 @@
         <el-card>
           <p slot="title">小数位数</p>
           <div class="group">
-            <d2-count-up :end="100" :decimals="2"></d2-count-up>
+            <d2-count-up :end="100" :decimals="2"/>
           </div>
         </el-card>
       </el-col>
@@ -35,7 +35,7 @@
         <el-card>
           <p slot="title">动画时长</p>
           <div class="group">
-            <d2-count-up :end="100" :duration="6"></d2-count-up>
+            <d2-count-up :end="100" :duration="6"/>
           </div>
         </el-card>
       </el-col>
@@ -43,7 +43,7 @@
         <el-card>
           <p slot="title">回调函数</p>
           <div class="group">
-            <d2-count-up :end="100" :callback="() => {className = 'end'}" :class="className"></d2-count-up>
+            <d2-count-up :end="100" :callback="() => {className = 'end'}" :class="className"/>
           </div>
         </el-card>
       </el-col>
@@ -51,7 +51,7 @@
         <el-card>
           <p slot="title">结束一秒后更新数值</p>
           <div class="group">
-            <d2-count-up :end="end" :callback="update"></d2-count-up>
+            <d2-count-up :end="end" :callback="update"/>
           </div>
         </el-card>
       </el-col>
