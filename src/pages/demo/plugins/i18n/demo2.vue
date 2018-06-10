@@ -1,13 +1,9 @@
 <template>
-  <Container>
-    <PageHeader
-      slot="header"
-      :title="`${$t('pub.pageHeader.demo')} 2`"
-      url="http://kazupon.github.io/vue-i18n/en/">
-    </PageHeader>
+  <d2-container>
+    <d2-demo-page-header slot="header" :title="`${$t('pub.pageHeader.demo')} 2`"/>
     <DemoI18nControl></DemoI18nControl>
     <DemoI18n></DemoI18n>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

@@ -1,12 +1,12 @@
 <template>
-  <Container type="ghost" :responsive="true">
-    <ChartDemoCard class="dd-mb" v-bind="card" @resize="$refs.chart.resize()">
-      <G2AreaBase slot-scope="{data}" ref="chart" :data="data" v-bind="chart"></G2AreaBase>
+  <d2-container type="ghost" :responsive="true">
+    <ChartDemoCard class="d2-mb" v-bind="card" @resize="$refs.chart.resize()">
+      <d2-chart-area-base slot-scope="{data}" ref="chart" :data="data" v-bind="chart"></d2-chart-area-base>
     </ChartDemoCard>
     <el-card>
-      <Markdown url="/static/md/组件 - 图表.md"></Markdown>
+      <d2-markdown url="/static/md/组件 - 图表.md"/>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

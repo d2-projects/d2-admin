@@ -54,7 +54,7 @@ export default {
       return `<i class="fa fa-${this.icon}" aria-hidden="true"></i>`
     },
     iconComponent () {
-      return `<Icon name="${this.icon}"></Icon>`
+      return `<d2-icon name="${this.icon}"/>`
     }
   },
   methods: {

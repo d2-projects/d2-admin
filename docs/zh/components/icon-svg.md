@@ -13,7 +13,7 @@
 然后使用组件
 
 ``` vue
-<IconSvg name="刚才的svg文件名"></IconSvg>
+<d2-icon-svg name="刚才的svg文件名"/>
 ```
 
 ## 获取已经注册的所有图标

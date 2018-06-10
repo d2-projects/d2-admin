@@ -1,19 +1,16 @@
 <template>
-  <Container type="ghost">
-    <el-card class="dd-mb">
-      <PageHeader
-        title="基本示例"
-        url="https://github.com/hustcc/timeago.js">
-      </PageHeader>
+  <d2-container type="ghost">
+    <el-card class="d2-mb">
+      <d2-demo-page-header title="基本示例"/>
     </el-card>
-    <el-card class="dd-mb">
-      <div class="dd-text-center">
+    <el-card class="d2-mb">
+      <div class="d2-text-center">
         <h1 style="font-size: 30px;">您在{{openPageDateAgo}}打开的此页面</h1>
         <p style="font-size: 10px;">请稍等一下 10秒后会开始自动刷新</p>
       </div>
     </el-card>
-    <el-card class="dd-mb">
-      <div class="dd-text-center">
+    <el-card class="d2-mb">
+      <div class="d2-text-center">
         <h1 style="font-size: 30px;">{{dateTimeRangeAgo}}</h1>
         <el-date-picker
           v-model="dateTimeRange"
@@ -25,9 +22,9 @@
       </div>
     </el-card>
     <el-card>
-      <Markdown url="/static/md/插件 - timeago.md"></Markdown>
+      <d2-markdown url="/static/md/插件 - timeago.md"/>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

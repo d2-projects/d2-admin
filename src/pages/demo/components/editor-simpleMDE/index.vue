@@ -1,21 +1,16 @@
 <template>
-  <Container type="ghost">
-    <el-card class="dd-mb">
-      <PageHeader
-        slot="header"
-        title="基本示例"
-        url="https://github.com/sparksuite/simplemde-markdown-editor">
-      </PageHeader>
-      <SimpleMDE
+  <d2-container type="ghost">
+    <el-card class="d2-mb">
+      <d2-demo-page-header slot="header" title="基本示例"/>
+      <d2-mde
         v-model="text"
-        class="mde">
-      </SimpleMDE>
+        class="mde"/>
     </el-card>
     <el-card>
       <template slot="header">输出</template>
       <pre>{{text}}</pre>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

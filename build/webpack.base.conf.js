@@ -57,7 +57,7 @@ module.exports = {
         loader: 'svg-sprite-loader',
         include: [resolve('src/assets/icons/svg')],
         options: {
-          symbolId: 'dd-[name]'
+          symbolId: 'd2-[name]'
         }
       },
       {

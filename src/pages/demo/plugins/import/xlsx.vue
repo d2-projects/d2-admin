@@ -1,25 +1,21 @@
 <template>
-  <Container>
-    <PageHeader
-      slot="header"
-      title="导入 xlsx"
-      url="https://github.com/SheetJS/js-xlsx">
-    </PageHeader>
-    <div class="dd-mb">
+  <d2-container>
+    <d2-demo-page-header slot="header" title="导入 xlsx"/>
+    <div class="d2-mb">
       <el-button @click="download">
-        <Icon name="download"></Icon>
+        <d2-icon name="download"/>
         下载演示 .xlsx 表格
       </el-button>
     </div>
-    <div class="dd-mb">
+    <div class="d2-mb">
       <el-upload :before-upload="handleUpload" action="default">
         <el-button type="success">
-          <Icon name="file-o"></Icon>
+          <d2-icon name="file-o"/>
           选择要导入的 .xlsx 表格
         </el-button>
       </el-upload>
     </div>
-    <el-table v-bind="table" class="dd-mb">
+    <el-table v-bind="table" class="d2-mb">
       <el-table-column
         v-for="(item, index) in table.columns"
         :key="index"
@@ -27,8 +23,8 @@
         :label="item.label">
       </el-table-column>
     </el-table>
-    <Markdown url="/static/md/插件 - 导入.md"></Markdown>
-  </Container>
+    <d2-markdown url="/static/md/插件 - 导入.md"/>
+  </d2-container>
 </template>
 
 <script>

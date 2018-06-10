@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost">
+  <d2-container type="ghost">
     <el-card>
       <template slot="header">
         <el-radio-group v-model="showIndex" size="mini">
@@ -15,15 +15,15 @@
         <el-alert
           title="点击图标复制代码"
           type="info"
-          class="dd-m-10"
+          class="d2-m-10"
           style="width: auto;">
         </el-alert>
-        <el-col v-for="(iconItem, iconIndex) in iconShow.icon" :key="iconIndex" :span="6" class="dd-p-10">
-          <IconCell :icon="iconItem"></IconCell>
+        <el-col v-for="(iconItem, iconIndex) in iconShow.icon" :key="iconIndex" :span="6" class="d2-p-10">
+          <d2-iconCell :icon="iconItem"></d2-iconCell>
         </el-col>
       </el-row>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

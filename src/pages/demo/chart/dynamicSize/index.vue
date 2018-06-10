@@ -1,64 +1,64 @@
 <template>
-  <Container type="ghost" :responsive="true" class="demo-chart-index">
-    <GridLayout v-bind="layout" @layout-updated="layoutUpdatedHandler">
+  <d2-container type="ghost" :responsive="true" class="demo-chart-index">
+    <d2-grid-layout v-bind="layout" @layout-updated="layoutUpdatedHandler">
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[0]" @resized="handleResized(chart[0].refName)">
+      <d2-grid-item v-bind="layout.layout[0]" @resized="handleResized(chart[0].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(0)" title="G2LineBase"></ChartCardHeader>
-          <G2LineBase :ref="chart[0].refName" v-bind="chart[0]" @ready="isReady(0)"></G2LineBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(0)" title="d2-chart-line-base"></ChartCardHeader>
+          <d2-chart-line-base :ref="chart[0].refName" v-bind="chart[0]" @ready="isReady(0)"></d2-chart-line-base>
         </el-card>
-      </GridItem>
+      </d2-grid-item>
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[1]" @resized="handleResized(chart[1].refName)">
+      <d2-grid-item v-bind="layout.layout[1]" @resized="handleResized(chart[1].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(1)" title="G2LineStep"></ChartCardHeader>
-          <G2LineStep :ref="chart[1].refName" v-bind="chart[1]" @ready="isReady(1)"></G2LineStep>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(1)" title="d2-chart-line-step"></ChartCardHeader>
+          <d2-chart-line-step :ref="chart[1].refName" v-bind="chart[1]" @ready="isReady(1)"></d2-chart-line-step>
         </el-card>
-      </GridItem>
+      </d2-grid-item>
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[2]" @resized="handleResized(chart[2].refName)">
+      <d2-grid-item v-bind="layout.layout[2]" @resized="handleResized(chart[2].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(2)" title="G2ColumnBase"></ChartCardHeader>
-          <G2ColumnBase :ref="chart[2].refName" v-bind="chart[2]" @ready="isReady(2)"></G2ColumnBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(2)" title="d2-chart-column-base"></ChartCardHeader>
+          <d2-chart-column-base :ref="chart[2].refName" v-bind="chart[2]" @ready="isReady(2)"></d2-chart-column-base>
         </el-card>
-      </GridItem>
+      </d2-grid-item>
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[3]" @resized="handleResized(chart[3].refName)">
+      <d2-grid-item v-bind="layout.layout[3]" @resized="handleResized(chart[3].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(3)" title="G2BarBase"></ChartCardHeader>
-          <G2BarBase :ref="chart[3].refName" v-bind="chart[3]" @ready="isReady(3)"></G2BarBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(3)" title="d2-chart-bar-base"></ChartCardHeader>
+          <d2-chart-bar-base :ref="chart[3].refName" v-bind="chart[3]" @ready="isReady(3)"></d2-chart-bar-base>
         </el-card>
-      </GridItem>
+      </d2-grid-item>
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[4]" @resized="handleResized(chart[4].refName)">
+      <d2-grid-item v-bind="layout.layout[4]" @resized="handleResized(chart[4].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(4)" title="G2PieBase"></ChartCardHeader>
-          <G2PieBase :ref="chart[4].refName" v-bind="chart[4]" @ready="isReady(4)"></G2PieBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(4)" title="d2-chart-pie-base"></ChartCardHeader>
+          <d2-chart-pie-base :ref="chart[4].refName" v-bind="chart[4]" @ready="isReady(4)"></d2-chart-pie-base>
         </el-card>
-      </GridItem>
+      </d2-grid-item>
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[5]" @resized="handleResized(chart[5].refName)">
+      <d2-grid-item v-bind="layout.layout[5]" @resized="handleResized(chart[5].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(5)" title="G2NightingaleRoseBase"></ChartCardHeader>
-          <G2NightingaleRoseBase :ref="chart[5].refName" v-bind="chart[5]" @ready="isReady(5)"></G2NightingaleRoseBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(5)" title="d2-chart-nightingale-rose-base"></ChartCardHeader>
+          <d2-chart-nightingale-rose-base :ref="chart[5].refName" v-bind="chart[5]" @ready="isReady(5)"></d2-chart-nightingale-rose-base>
         </el-card>
-      </GridItem>
+      </d2-grid-item>
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[6]" @resized="handleResized(chart[6].refName)">
+      <d2-grid-item v-bind="layout.layout[6]" @resized="handleResized(chart[6].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(6)" title="G2RadarBase"></ChartCardHeader>
-          <G2RadarBase :ref="chart[6].refName" v-bind="chart[6]" @ready="isReady(6)"></G2RadarBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(6)" title="d2-chart-radar-base"></ChartCardHeader>
+          <d2-chart-radar-base :ref="chart[6].refName" v-bind="chart[6]" @ready="isReady(6)"></d2-chart-radar-base>
         </el-card>
-      </GridItem>
+      </d2-grid-item>
       <!-- 卡片 -->
-      <GridItem v-bind="layout.layout[7]" @resized="handleResized(chart[7].refName)">
+      <d2-grid-item v-bind="layout.layout[7]" @resized="handleResized(chart[7].refName)">
         <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(7)" title="G2AreaBase"></ChartCardHeader>
-          <G2AreaBase :ref="chart[7].refName" v-bind="chart[7]" @ready="isReady(7)"></G2AreaBase>
+          <ChartCardHeader slot="header" @refresh="handleRefreshData(7)" title="d2-chart-area-base"></ChartCardHeader>
+          <d2-chart-area-base :ref="chart[7].refName" v-bind="chart[7]" @ready="isReady(7)"></d2-chart-area-base>
         </el-card>
-      </GridItem>
-    </GridLayout>
-  </Container>
+      </d2-grid-item>
+    </d2-grid-layout>
+  </d2-container>
 </template>
 
 <script>
@@ -71,49 +71,49 @@ export default {
       chart: [
         {
           api: {url: '/api/chart/G2Line', data: {type: 'base'}},
-          refName: 'G2LineBase',
+          refName: 'd2-chart-line-base',
           ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Line', data: {type: 'step'}},
-          refName: 'G2LineStep',
+          refName: 'd2-chart-line-step',
           ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Column', data: {type: 'base'}},
-          refName: 'G2ColumnBase',
+          refName: 'd2-chart-column-base',
           ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Bar', data: {type: 'base'}},
-          refName: 'G2BarBase',
+          refName: 'd2-chart-bar-base',
           ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Pie', data: {type: 'base'}},
-          refName: 'G2PieBase',
+          refName: 'd2-chart-pie-base',
           ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2NightingaleRose', data: {type: 'base'}},
-          refName: 'G2NightingaleRoseBase',
+          refName: 'd2-chart-nightingale-rose-base',
           ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Radar', data: {type: 'base'}},
-          refName: 'G2RadarBase',
+          refName: 'd2-chart-radar-base',
           ready: false,
           data: []
         },
         {
           api: {url: '/api/chart/G2Area', data: {type: 'base'}},
-          refName: 'G2AreaBase',
+          refName: 'd2-chart-area-base',
           ready: false,
           data: []
         }

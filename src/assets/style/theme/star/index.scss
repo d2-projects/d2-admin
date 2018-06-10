@@ -28,12 +28,12 @@ $theme-container-full-border-color: #d8dfea;
   .el-menu--horizontal .el-menu .el-submenu__title:hover {
     @include theme-menu-hover-style;
   }
-  // [组件] dd-container-full
-  .dd-container-full {
-    .dd-container-full__header {
+  // [组件] d2-container-full
+  .d2-container-full {
+    .d2-container-full__header {
       border-bottom: 1px solid $theme-container-full-border-color;
     }
-    .dd-container-full__footer {
+    .d2-container-full__footer {
       border-top: 1px solid $theme-container-full-border-color;
     }
   }
@@ -80,13 +80,11 @@ $theme-container-full-border-color: #d8dfea;
       }
     }
     // 顶栏右侧
-    .dd-header-right {
+    .d2-header-right {
       .btn-text {
         color: #FFF;
-      }
-      .el-dropdown {
-        .el-dropdown-link {
-          color: #FFF;
+        &:hover {
+          background-color: rgba(#FFF, .1);
         }
       }
     }
