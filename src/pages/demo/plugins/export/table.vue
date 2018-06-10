@@ -6,11 +6,11 @@
     </PageHeader>
     <div class="d2-mb">
       <el-button type="primary" @click="exportCsv">
-        <d2-icon name="download"></d2-icon>
+        <d2-icon name="download"/>
         导出 CSV
       </el-button>
       <el-button type="primary" @click="exportExcel">
-        <d2-icon name="download"></d2-icon>
+        <d2-icon name="download"/>
         导出 Excel
       </el-button>
     </div>

@@ -16,7 +16,7 @@
           <template v-else>未选择</template>
         </p>
       </div>
-      <d2-icon-select v-model="icon"></d2-icon-select>
+      <d2-icon-select v-model="icon"/>
       <div class="title-group">
         <p class="title">用户可以输入</p>
         <p class="sub-title">
@@ -27,7 +27,7 @@
           <template v-else>未选择</template>
         </p>
       </div>
-      <d2-icon-select v-model="icon2" :user-input="true"></d2-icon-select>
+      <d2-icon-select v-model="icon2" :user-input="true"/>
     </el-card>
     <el-card>
       <d2-markdown url="/static/md/组件 - 图标选择器.md"/>

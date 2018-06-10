@@ -9,12 +9,12 @@
     <el-row :gutter="10">
       <el-col :span="12">
         <div class="col col-l">
-          <d2-highlight :code="code"></d2-highlight>
+          <d2-highlight :code="code"/>
         </div>
       </el-col>
       <el-col :span="12">
         <div class="col col-r">
-          <d2-highlight :code="mock"></d2-highlight>
+          <d2-highlight :code="mock"/>
         </div>
       </el-col>
     </el-row>

@@ -15,7 +15,7 @@
     </el-card>
     <el-card>
       <template slot="header">输出</template>
-      <d2-highlight :code="formated"></d2-highlight>
+      <d2-highlight :code="formated"/>
     </el-card>
   </d2-container>
 </template>

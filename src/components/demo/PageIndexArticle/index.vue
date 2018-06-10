@@ -1,7 +1,7 @@
 <template>
   <div class="page-index-article-body">
     <div class="page-index-article-body__logo">
-      <slot></slot>
+      <slot/>
     </div>
     <p class="page-index-article-body__title">{{title}}</p>
     <p class="page-index-article-body__sub-title d2-mt-0">{{subTitle}}</p>

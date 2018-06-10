@@ -7,14 +7,14 @@
     </PageHeader>
     <div class="d2-mb">
       <el-button @click="download">
-        <d2-icon name="download"></d2-icon>
+        <d2-icon name="download"/>
         下载演示 .xlsx 表格
       </el-button>
     </div>
     <div class="d2-mb">
       <el-upload :before-upload="handleUpload" action="default">
         <el-button type="success">
-          <d2-icon name="file-o"></d2-icon>
+          <d2-icon name="file-o"/>
           选择要导入的 .xlsx 表格
         </el-button>
       </el-upload>
