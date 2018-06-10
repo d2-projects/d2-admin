@@ -1,7 +1,7 @@
 <template>
   <div class="d2-header-right">
-    <FullScreen></FullScreen>
-    <UserDropdown></UserDropdown>
+    <d2-layout-main-header-right-full-screen/>
+    <d2-layout-main-header-right-user/>
   </div>
 </template>
 
@@ -9,8 +9,8 @@
 export default {
   name: 'd2-layout-main-header-right',
   components: {
-    FullScreen: () => import('./components/FullScreen.vue'),
-    UserDropdown: () => import('./components/UserDropdown.vue')
+    'd2-layout-main-header-right-full-screen': () => import('./components/-full-screen.vue'),
+    'd2-layout-main-header-right-user': () => import('./components/-user.vue')
   }
 }
 </script>
