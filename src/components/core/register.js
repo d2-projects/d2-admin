@@ -3,8 +3,8 @@ import Vue from 'vue'
 import { GridLayout, GridItem } from 'vue-grid-layout'
 import SplitPane from 'vue-splitpane'
 
-Vue.component('GridLayout', GridLayout)
-Vue.component('GridItem', GridItem)
+Vue.component('d2-grid-layout', GridLayout)
+Vue.component('d2-grid-item', GridItem)
 Vue.component('SplitPane', SplitPane)
 
 Vue.component('d2-container', () => import('@/components/core/d2-container'))
