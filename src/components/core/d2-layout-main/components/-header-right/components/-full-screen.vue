@@ -1,6 +1,5 @@
 <template>
   <el-tooltip
-    class="item"
     effect="dark"
     :content="isFullScreen ? '退出全屏' : '全屏'"
     placement="bottom">
