@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  name: 'd2-icon',
   props: {
     name: {
       type: String,

@@ -5,8 +5,8 @@
     :content="isFullScreen ? '退出全屏' : '全屏'"
     placement="bottom">
     <el-button class="d2-mr btn-text" type="text" @click="toggleFullScreen">
-      <Icon v-if="isFullScreen" name="compress"></Icon>
-      <Icon v-else name="arrows-alt"></Icon>
+      <d2-icon v-if="isFullScreen" name="compress"></d2-icon>
+      <d2-icon v-else name="arrows-alt"></d2-icon>
     </el-button>
   </el-tooltip>
 </template>

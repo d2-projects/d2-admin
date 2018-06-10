@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'd2-icon-svg',
   props: {
     name: {
       type: String,
