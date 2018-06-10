@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost">
+  <d2-container type="ghost">
     <el-card class="d2-mb">
       <PageHeader
         slot="header"
@@ -15,7 +15,7 @@
       <template slot="header">输出</template>
       <pre>{{text}}</pre>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

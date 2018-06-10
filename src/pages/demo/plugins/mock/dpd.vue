@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost">
+  <d2-container type="ghost">
     <el-card class="d2-mb">
       <PageHeader
         slot="header"
@@ -16,7 +16,7 @@
       :mock="mockResult[index]"
       @reload="doMock(index)">
     </MockDemoCard>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

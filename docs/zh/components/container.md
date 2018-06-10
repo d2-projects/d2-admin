@@ -19,12 +19,12 @@
 
 ``` vue
 <template>
-  <Container>
+  <d2-container>
     <template slot="header">
       可选的 header 内容 ...
     </template>
     主体内容 ...
-  </Container>
+  </d2-container>
 </template>
 
 <script>
@@ -44,18 +44,18 @@ export default {
 高度根据内容适应
 
 ``` vue
-<Container>
+<d2-container>
   主体内容
-</Container>
+</d2-container>
 ```
 
 使用 `slot`
 
 ``` vue
-<Container>
+<d2-container>
   <template slot="header">我是插入到 header 中的内容</template>
   主体内容
-</Container>
+</d2-container>
 ```
 
 ## 自适应填充页面容器
@@ -66,7 +66,7 @@ export default {
 
 ``` vue
 <template>
-  <Container type="full">
+  <d2-container type="full">
     <template slot="header">
       可选的 header 内容 ...
     </template>
@@ -74,7 +74,7 @@ export default {
     <template slot="footer">
       可选的 footer 内容 ...
     </template>
-  </Container>
+  </d2-container>
 </template>
 ```
 
@@ -83,7 +83,7 @@ export default {
 不显示任何背景色和边框
 
 ``` vue
-<Container type="ghost">
+<d2-container type="ghost">
   主体内容
-</Container>
+</d2-container>
 ```

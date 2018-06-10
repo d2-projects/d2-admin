@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost">
+  <d2-container type="ghost">
     <el-card class="d2-mb">
       <PageHeader
         title="基本示例"
@@ -27,7 +27,7 @@
     <el-card>
       <Markdown url="/static/md/插件 - timeago.md"></Markdown>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <pre v-html="highlightHTML"></pre>
+  <pre class="high-light-component" v-html="highlightHTML"></pre>
 </template>
 
 <script>
@@ -34,3 +34,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.high-light-component {
+  margin: 0px;
+  border-radius: 4px;
+}
+</style>

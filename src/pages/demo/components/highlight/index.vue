@@ -1,5 +1,5 @@
 <template>
-  <Container type="ghost">
+  <d2-container type="ghost">
     <el-card class="d2-mb">
       <PageHeader
         title="代码高亮组件"
@@ -33,7 +33,7 @@
     <el-card>
       <Markdown url="/static/md/组件 - 代码高亮.md"></Markdown>
     </el-card>
-  </Container>
+  </d2-container>
 </template>
 
 <script>

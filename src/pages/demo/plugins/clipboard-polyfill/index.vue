@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <d2-container>
     <PageHeader
       slot="header"
       title="基本示例"
@@ -31,7 +31,7 @@
         <el-input type="textarea" placeholder="在这里检验你的剪贴板 ( text/plain 数据 )"></el-input>
       </el-col>
     </el-row>
-  </Container>
+  </d2-container>
 </template>
 
 <script>
