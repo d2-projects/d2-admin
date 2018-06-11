@@ -1,0 +1,157 @@
+@import '../theme.scss';
+@import './setting.scss';
+
+.theme-#{$theme-name} {
+
+  .layout-main {
+    background-color: $theme-bg-color;
+    background-image: url($theme-bg-image);
+  }
+  // 菜单项目
+  @mixin theme-menu-hover-style {
+    color: $theme-menu-item-color-hover;
+    i {
+      color: $theme-menu-item-color-hover;
+    }
+    background-color: $theme-menu-item-background-color-hover;
+  }
+  .el-submenu__title:hover {
+    @include theme-menu-hover-style;
+  }
+  .el-menu-item:hover {
+    @include theme-menu-hover-style;
+  }
+  .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+    @include theme-menu-hover-style;
+  }
+  .el-menu--horizontal .el-menu .el-submenu__title:hover {
+    @include theme-menu-hover-style;
+  }
+
+  // [组件] d2-container-full
+  .d2-container-full {
+    border: $theme-container-border-outer;
+    border-bottom: none;
+    .d2-container-full__header {
+      border-bottom: $theme-container-border-inner;
+    }
+    .d2-container-full__footer {
+      border-top: $theme-container-border-inner;
+    }
+  }
+  // [组件] d2-container-card
+  .d2-container-card {
+    border: $theme-container-border-outer;
+    .el-card__header {
+      border-bottom: $theme-container-border-inner;
+    }
+  }
+  
+  // 顶栏
+  .el-header {
+    // 切换按钮
+    .toggle-aside-btn {
+      i {
+        color: $theme-header-item-color;
+        background-color: $theme-header-item-background-color;
+        &:hover {
+          color: $theme-header-item-color-hover;
+        }
+      }
+    }
+    // 顶栏菜单
+    .el-menu {
+      .el-menu-item {
+        transition: border-top-color 0s;
+        color: $theme-header-item-color;
+        background-color: $theme-header-item-background-color;
+        &:hover {
+          color: $theme-header-item-color-hover;
+          background-color: $theme-header-item-background-color-hover;
+        }
+        &:focus {
+          color: $theme-header-item-color-focus;
+          background-color: $theme-header-item-background-color-focus;
+        }
+        &.is-active {
+          color: $theme-header-item-color-active;
+          background-color: $theme-header-item-background-color-active;
+        }
+      }
+      .el-submenu {
+        .el-submenu__title {
+          transition: border-top-color 0s;
+          color: $theme-header-item-color;
+          background-color: $theme-header-item-background-color;
+          .el-submenu__icon-arrow {
+            color: $theme-header-item-color;
+          }
+          &:hover {
+            color: $theme-header-item-color-hover;
+            background-color: $theme-header-item-background-color-hover;
+          }
+          &:focus {
+            color: $theme-header-item-color-focus;
+            background-color: $theme-header-item-background-color-focus;
+          }
+        }
+      }
+    }
+    // 顶栏右侧
+    .d2-header-right {
+      .btn-text {
+        color: $theme-header-item-color;
+        &.can-hover {
+          &:hover {
+            color: $theme-header-item-color-hover;
+            background-color: $theme-header-item-background-color-hover;
+          }
+        }
+      }
+    }
+  }
+  // [布局] 顶栏下面
+  .el-container {
+    // 侧边栏
+    .el-aside {
+      // [菜单] 正常状态
+      .el-menu {
+        .el-menu-item {
+          color: $theme-aside-item-color;
+          background-color: $theme-aside-item-background-color;
+          i {
+            color: $theme-aside-item-color;
+          }
+          &:hover {
+            color: $theme-aside-item-color-hover;
+            background-color: $theme-aside-item-background-color-hover;
+          }
+          &:focus {
+            color: $theme-aside-item-color-focus;
+            background-color: $theme-aside-item-background-color-focus;
+          }
+          &.is-active {
+            color: $theme-aside-item-color-active;
+            background-color: $theme-aside-item-background-color-active;
+          }
+        }
+      }
+      .el-submenu {
+        .el-submenu__title {
+          color: $theme-aside-item-color;
+          background-color: $theme-aside-item-background-color;
+          i {
+            color: $theme-aside-item-color;
+          }
+          .el-submenu__icon-arrow {
+            color: $theme-aside-item-color;
+          }
+          &:hover {
+            color: $theme-aside-item-color-hover;
+            background-color: $theme-aside-item-background-color-hover;
+          }
+        }
+      }
+    }
+  }
+}

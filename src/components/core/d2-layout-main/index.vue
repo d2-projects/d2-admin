@@ -66,5 +66,6 @@ export default {
 <style lang="scss">
 // 主题
 @import '~@/assets/style/theme/d2/index.scss';
+@import '~@/assets/style/theme/line/index.scss';
 @import '~@/assets/style/theme/star/index.scss';
 </style>
