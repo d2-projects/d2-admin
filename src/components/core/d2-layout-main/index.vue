@@ -3,8 +3,8 @@
     <!-- 顶栏 -->
     <el-header>
       <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-        <img v-if="collapse" src="@/assets/image/logo/header-icon-only.png">
-        <img v-else src="@/assets/image/logo/header.png">
+        <img v-if="collapse" :src="`/static/image/theme/${themeName}/logo/icon-only.png`">
+        <img v-else :src="`/static/image/theme/${themeName}/logo/all.png`">
       </div>
       <div class="toggle-aside-btn" @click="collapse = !collapse">
         <d2-icon name="bars"/>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'd2-layout-main',
   components: {
@@ -46,6 +46,11 @@ export default {
       asideWidthCollapse: '65px'
     }
   },
+  computed: {
+    ...mapState({
+      themeName: state => state.theme.name
+    })
+  },
   mounted () {
     // 加载主题
     this.loadTheme()
@@ -61,5 +66,6 @@ export default {
 <style lang="scss">
 // 主题
 @import '~@/assets/style/theme/d2/index.scss';
+@import '~@/assets/style/theme/line/index.scss';
 @import '~@/assets/style/theme/star/index.scss';
 </style>

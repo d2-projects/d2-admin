@@ -1,5 +1,5 @@
 <template>
-  <el-card>
+  <el-card shadow="never">
     <div slot="header">
       <el-button type="primary" size="mini" @click="syncData">
         <d2-icon name="refresh"/>
