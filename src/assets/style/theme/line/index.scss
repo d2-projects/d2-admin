@@ -32,6 +32,7 @@
   .d2-container-full {
     border: $theme-container-border-outer;
     border-bottom: none;
+    background-color: $theme-container-background-color;
     .d2-container-full__header {
       border-bottom: $theme-container-border-inner;
     }
@@ -42,6 +43,7 @@
   // [组件] d2-container-card
   .d2-container-card {
     border: $theme-container-border-outer;
+    background-color: $theme-container-background-color;
     .el-card__header {
       border-bottom: $theme-container-border-inner;
     }
