@@ -5,22 +5,16 @@
         <d2-icon name="diamond"/>
       </el-button>
     </el-tooltip>
-    <el-dialog title="主题" :visible.sync="dialogVisible">
-      <el-table :data="tableData">
-        <el-table-column prop="name" label="主题名称" width="100"></el-table-column>
-        <el-table-column
-          label="预览"
-          width="220">
-          <template slot-scope="scope">
-            <div
-              class="theme-preview"
-              :style="{'backgroundImage': `url(${ scope.row.preview })`}">
-            </div>
-          </template>
+    <el-dialog title="主题" width="500px" :visible.sync="dialogVisible">
+      <el-table v-bind="table">
+        <el-table-column prop="name" align="center" width="100"/>
+        <el-table-column label="预览" width="220">
+          <div slot-scope="scope" class="theme-preview" :style="{'backgroundImage': `url(${ scope.row.preview })`}"></div>
         </el-table-column>
-        <el-table-column
-          prop="address"
-          label="地址">
+        <el-table-column prop="address" align="center">
+          <template slot-scope="scope">
+            <el-button type="primary">使用</el-button>
+          </template>
         </el-table-column>
       </el-table>
     </el-dialog>
@@ -32,16 +26,20 @@ export default {
   data () {
     return {
       dialogVisible: false,
-      tableData: [
-        {
-          name: 'd2admin',
-          preview: '/static/image/theme-preview/d2admin@2x.png'
-        },
-        {
-          name: 'star',
-          preview: '/static/image/theme-preview/star@2x.png'
-        }
-      ]
+      table: {
+        data: [
+          {
+            name: 'd2admin',
+            preview: '/static/image/theme-preview/d2admin@2x.png'
+          },
+          {
+            name: 'star',
+            preview: '/static/image/theme-preview/star@2x.png'
+          }
+        ],
+        showHeader: false,
+        border: true
+      }
     }
   }
 }
