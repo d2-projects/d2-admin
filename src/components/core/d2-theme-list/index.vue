@@ -1,5 +1,5 @@
 <template>
-  <el-table v-bind="table">
+  <el-table :data="themeList" v-bind="table">
     <el-table-column prop="name" align="center" width="160"/>
     <el-table-column label="预览" width="220">
       <div slot-scope="scope" class="theme-preview" :style="{'backgroundImage': `url(${ scope.row.preview })`}"></div>
@@ -19,18 +19,6 @@ export default {
   data () {
     return {
       table: {
-        data: [
-          {
-            name: 'd2admin 经典',
-            value: 'd2',
-            preview: '/static/image/theme-preview/d2@2x.png'
-          },
-          {
-            name: '流星',
-            value: 'star',
-            preview: '/static/image/theme-preview/star@2x.png'
-          }
-        ],
         showHeader: false,
         border: true
       }
@@ -41,7 +29,8 @@ export default {
   },
   computed: {
     ...mapState({
-      themeName: state => state.theme.themeName
+      themeList: state => state.theme.list,
+      themeName: state => state.theme.name
     })
   },
   methods: {
