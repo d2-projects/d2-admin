@@ -30,6 +30,7 @@ $theme-aside-item-background-color-focus: rgba(#FFF, .3);
 $theme-aside-item-background-color-active: rgba(#000, .3);
 
 .theme-#{$theme-name} {
+
   .layout-main {
     background-color: $theme-bg-color;
     background-image: url($theme-bg-image);
@@ -116,8 +117,10 @@ $theme-aside-item-background-color-active: rgba(#000, .3);
     .d2-header-right {
       .btn-text {
         color: $theme-header-text-color;
-        &:hover {
-          background-color: $theme-header-item-background-color-hover;
+        &.can-hover {
+          &:hover {
+            background-color: $theme-header-item-background-color-hover;
+          }
         }
       }
     }
