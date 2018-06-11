@@ -6,12 +6,12 @@ export default {
       {
         name: 'd2admin 经典',
         value: 'd2',
-        preview: '/static/image/theme-preview/d2@2x.png'
+        preview: '/static/image/theme/d2/preview.png'
       },
       {
         name: '流星',
         value: 'star',
-        preview: '/static/image/theme-preview/star@2x.png'
+        preview: '/static/image/theme/star/preview.png'
       }
     ],
     name: ''
