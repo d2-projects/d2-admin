@@ -1,19 +1,14 @@
 <template>
-  <d2-container type="ghost">
-    <el-card class="d2-mb">
-      <d2-demo-page-header slot="header" title="SVG图标组件"/>
-      <el-row>
-        <el-col class="icon-card" :span="4" v-for="(icon, index) in $IconSvg" :key="index">
-          <d2-icon-svg class="icon" :name="icon"/>
-          <div class="icon-title">
-            <span>{{icon}}</span>
-          </div>
-        </el-col>
-      </el-row>
-    </el-card>
-    <el-card>
-      <d2-markdown url="/static/md/组件 - 图标组件 - svg.md"/>
-    </el-card>
+  <d2-container>
+    <template slot="header">SVG图标组件</template>
+    <el-row>
+      <el-col class="icon-card" :span="4" v-for="(icon, index) in $IconSvg" :key="index">
+        <d2-icon-svg class="icon" :name="icon"/>
+        <div class="icon-title">
+          <span>{{icon}}</span>
+        </div>
+      </el-col>
+    </el-row>
   </d2-container>
 </template>
 

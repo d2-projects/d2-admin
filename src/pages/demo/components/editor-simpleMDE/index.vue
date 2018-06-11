@@ -1,13 +1,10 @@
 <template>
-  <d2-container type="ghost">
-    <el-card class="d2-mb">
-      <d2-demo-page-header slot="header" title="基本示例"/>
-      <d2-mde
-        v-model="text"
-        class="mde"/>
-    </el-card>
-    <el-card>
-      <template slot="header">输出</template>
+  <d2-container>
+    <d2-demo-page-header slot="header" title="基本示例"/>
+    <d2-mde
+      v-model="text"
+      class="mde"/>
+    <el-card shadow="never">
       <pre>{{text}}</pre>
     </el-card>
   </d2-container>
