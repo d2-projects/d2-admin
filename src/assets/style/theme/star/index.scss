@@ -14,7 +14,8 @@ $theme-menu-item-color-hover: #FFF;
 $theme-menu-item-background-color-hover: #187181;
 
 // 顶栏上的文字颜色
-$theme-header-text-color: #FFF;
+$theme-header-item-color: #FFF;
+$theme-header-item-background-color: transparent;
 // 顶栏上的项目在 hover 时
 $theme-header-item-color-hover: #FFF;
 $theme-header-item-background-color-hover: rgba(#FFF, .3);
@@ -26,7 +27,8 @@ $theme-header-item-color-active: #FFF;
 $theme-header-item-background-color-active: rgba(#000, .3);
 
 // 侧边栏上的文字颜色
-$theme-aside-text-color: #FFF;
+$theme-aside-item-color: #FFF;
+$theme-aside-item-background-color: transparent;
 // 侧边栏上的项目在 hover 时
 $theme-aside-item-color-hover: #FFF;
 $theme-aside-item-background-color-hover: rgba(#FFF, .3);
@@ -84,9 +86,10 @@ $theme-aside-item-background-color-active: rgba(#000, .3);
     // 切换按钮
     .toggle-aside-btn {
       i {
-        color: $theme-header-text-color;
+        color: $theme-header-item-color;
+        background-color: $theme-header-item-background-color;
         &:hover {
-          color: $theme-header-text-color;
+          color: $theme-header-item-color-hover;
         }
       }
     }
@@ -94,28 +97,35 @@ $theme-aside-item-background-color-active: rgba(#000, .3);
     .el-menu {
       .el-menu-item {
         transition: border-top-color 0s;
-        color: $theme-header-text-color;
+        color: $theme-header-item-color;
+        background-color: $theme-header-item-background-color;
         &:hover {
+          color: $theme-header-item-color-hover;
           background-color: $theme-header-item-background-color-hover;
         }
         &:focus {
+          color: $theme-header-item-color-focus;
           background-color: $theme-header-item-background-color-focus;
         }
         &.is-active {
+          color: $theme-header-item-color-active;
           background-color: $theme-header-item-background-color-active;
         }
       }
       .el-submenu {
         .el-submenu__title {
           transition: border-top-color 0s;
-          color: $theme-header-text-color;
+          color: $theme-header-item-color;
+          background-color: $theme-header-item-background-color;
           .el-submenu__icon-arrow {
-            color: $theme-header-text-color;
+            color: $theme-header-item-color;
           }
           &:hover {
+            color: $theme-header-item-color-hover;
             background-color: $theme-header-item-background-color-hover;
           }
           &:focus {
+            color: $theme-header-item-color-focus;
             background-color: $theme-header-item-background-color-focus;
           }
         }
@@ -124,9 +134,10 @@ $theme-aside-item-background-color-active: rgba(#000, .3);
     // 顶栏右侧
     .d2-header-right {
       .btn-text {
-        color: $theme-header-text-color;
+        color: $theme-header-item-color;
         &.can-hover {
           &:hover {
+            color: $theme-header-item-color-hover;
             background-color: $theme-header-item-background-color-hover;
           }
         }
@@ -140,31 +151,37 @@ $theme-aside-item-background-color-active: rgba(#000, .3);
       // [菜单] 正常状态
       .el-menu {
         .el-menu-item {
-          color: $theme-aside-text-color;
+          color: $theme-aside-item-color;
+          background-color: $theme-aside-item-background-color;
           i {
-            color: $theme-aside-text-color;
+            color: $theme-aside-item-color;
           }
           &:hover {
+            color: $theme-aside-item-color-hover;
             background-color: $theme-aside-item-background-color-hover;
           }
           &:focus {
+            color: $theme-aside-item-color-focus;
             background-color: $theme-aside-item-background-color-focus;
           }
           &.is-active {
+            color: $theme-aside-item-color-active;
             background-color: $theme-aside-item-background-color-active;
           }
         }
       }
       .el-submenu {
         .el-submenu__title {
-          color: $theme-aside-text-color;
+          color: $theme-aside-item-color;
+          background-color: $theme-aside-item-background-color;
           i {
-            color: $theme-aside-text-color;
+            color: $theme-aside-item-color;
           }
           .el-submenu__icon-arrow {
-            color: $theme-aside-text-color;
+            color: $theme-aside-item-color;
           }
           &:hover {
+            color: $theme-aside-item-color-hover;
             background-color: $theme-aside-item-background-color-hover;
           }
         }
