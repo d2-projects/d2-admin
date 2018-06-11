@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
     return {
@@ -41,6 +42,19 @@ export default {
         border: true
       }
     }
+  },
+  computed: {
+    ...mapState({
+      themeName: state => state.theme.themeName
+    })
+  },
+  methods: {
+    ...mapMutations([
+      'setTheme'
+    ])
+  },
+  mounted () {
+    this.setTheme('d2')
   }
 }
 </script>
