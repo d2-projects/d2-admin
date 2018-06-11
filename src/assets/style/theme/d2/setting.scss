@@ -1,0 +1,38 @@
+// 主题名称
+$theme-name: 'd2';
+// 主题背景颜色
+$theme-bg-color: $color-bg;
+// 主题背景图片
+// $theme-bg-image: '/static/image/bg/xxx.jpg';
+// container组件的边框
+$theme-container-border: 1px solid $color-border-1;
+
+// 顶栏和侧边栏中展开的菜单 hover 状态下
+$theme-menu-item-color-hover: #293849;
+$theme-menu-item-background-color-hover: #ecf5ff;
+
+// 顶栏上的文字颜色
+$theme-header-item-color: $color-text-normal;
+$theme-header-item-background-color: transparent;
+// 顶栏上的项目在 hover 时
+$theme-header-item-color-hover: $color-text-main;
+$theme-header-item-background-color-hover: rgba(#000, .02);
+// 顶栏上的项目在 focus 时
+$theme-header-item-color-focus: $color-text-main;
+$theme-header-item-background-color-focus: rgba(#000, .02);
+// 顶栏上的项目在 active 时
+$theme-header-item-color-active: $color-text-main;
+$theme-header-item-background-color-active: rgba(#000, .03);
+
+// 侧边栏上的文字颜色
+$theme-aside-item-color: $color-text-normal;
+$theme-aside-item-background-color: transparent;
+// 侧边栏上的项目在 hover 时
+$theme-aside-item-color-hover: $color-text-main;
+$theme-aside-item-background-color-hover: rgba(#000, .02);
+// 侧边栏上的项目在 focus 时
+$theme-aside-item-color-focus: $color-text-main;
+$theme-aside-item-background-color-focus: rgba(#000, .02);
+// 侧边栏上的项目在 active 时
+$theme-aside-item-color-active: $color-text-main;
+$theme-aside-item-background-color-active: rgba(#000, .03);

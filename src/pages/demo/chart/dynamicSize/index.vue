@@ -3,57 +3,57 @@
     <d2-grid-layout v-bind="layout" @layout-updated="layoutUpdatedHandler">
       <!-- 卡片 -->
       <d2-grid-item v-bind="layout.layout[0]" @resized="handleResized(chart[0].refName)">
-        <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(0)" title="d2-chart-line-base"></ChartCardHeader>
+        <el-card shadow="never" class="header-in">
+          <d2-demo-chart-card-header slot="header" @refresh="handleRefreshData(0)" title="d2-chart-line-base"></d2-demo-chart-card-header>
           <d2-chart-line-base :ref="chart[0].refName" v-bind="chart[0]" @ready="isReady(0)"></d2-chart-line-base>
         </el-card>
       </d2-grid-item>
       <!-- 卡片 -->
       <d2-grid-item v-bind="layout.layout[1]" @resized="handleResized(chart[1].refName)">
-        <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(1)" title="d2-chart-line-step"></ChartCardHeader>
+        <el-card shadow="never" class="header-in">
+          <d2-demo-chart-card-header slot="header" @refresh="handleRefreshData(1)" title="d2-chart-line-step"></d2-demo-chart-card-header>
           <d2-chart-line-step :ref="chart[1].refName" v-bind="chart[1]" @ready="isReady(1)"></d2-chart-line-step>
         </el-card>
       </d2-grid-item>
       <!-- 卡片 -->
       <d2-grid-item v-bind="layout.layout[2]" @resized="handleResized(chart[2].refName)">
-        <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(2)" title="d2-chart-column-base"></ChartCardHeader>
+        <el-card shadow="never" class="header-in">
+          <d2-demo-chart-card-header slot="header" @refresh="handleRefreshData(2)" title="d2-chart-column-base"></d2-demo-chart-card-header>
           <d2-chart-column-base :ref="chart[2].refName" v-bind="chart[2]" @ready="isReady(2)"></d2-chart-column-base>
         </el-card>
       </d2-grid-item>
       <!-- 卡片 -->
       <d2-grid-item v-bind="layout.layout[3]" @resized="handleResized(chart[3].refName)">
-        <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(3)" title="d2-chart-bar-base"></ChartCardHeader>
+        <el-card shadow="never" class="header-in">
+          <d2-demo-chart-card-header slot="header" @refresh="handleRefreshData(3)" title="d2-chart-bar-base"></d2-demo-chart-card-header>
           <d2-chart-bar-base :ref="chart[3].refName" v-bind="chart[3]" @ready="isReady(3)"></d2-chart-bar-base>
         </el-card>
       </d2-grid-item>
       <!-- 卡片 -->
       <d2-grid-item v-bind="layout.layout[4]" @resized="handleResized(chart[4].refName)">
-        <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(4)" title="d2-chart-pie-base"></ChartCardHeader>
+        <el-card shadow="never" class="header-in">
+          <d2-demo-chart-card-header slot="header" @refresh="handleRefreshData(4)" title="d2-chart-pie-base"></d2-demo-chart-card-header>
           <d2-chart-pie-base :ref="chart[4].refName" v-bind="chart[4]" @ready="isReady(4)"></d2-chart-pie-base>
         </el-card>
       </d2-grid-item>
       <!-- 卡片 -->
       <d2-grid-item v-bind="layout.layout[5]" @resized="handleResized(chart[5].refName)">
-        <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(5)" title="d2-chart-nightingale-rose-base"></ChartCardHeader>
+        <el-card shadow="never" class="header-in">
+          <d2-demo-chart-card-header slot="header" @refresh="handleRefreshData(5)" title="d2-chart-nightingale-rose-base"></d2-demo-chart-card-header>
           <d2-chart-nightingale-rose-base :ref="chart[5].refName" v-bind="chart[5]" @ready="isReady(5)"></d2-chart-nightingale-rose-base>
         </el-card>
       </d2-grid-item>
       <!-- 卡片 -->
       <d2-grid-item v-bind="layout.layout[6]" @resized="handleResized(chart[6].refName)">
-        <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(6)" title="d2-chart-radar-base"></ChartCardHeader>
+        <el-card shadow="never" class="header-in">
+          <d2-demo-chart-card-header slot="header" @refresh="handleRefreshData(6)" title="d2-chart-radar-base"></d2-demo-chart-card-header>
           <d2-chart-radar-base :ref="chart[6].refName" v-bind="chart[6]" @ready="isReady(6)"></d2-chart-radar-base>
         </el-card>
       </d2-grid-item>
       <!-- 卡片 -->
       <d2-grid-item v-bind="layout.layout[7]" @resized="handleResized(chart[7].refName)">
-        <el-card class="header-in">
-          <ChartCardHeader slot="header" @refresh="handleRefreshData(7)" title="d2-chart-area-base"></ChartCardHeader>
+        <el-card shadow="never" class="header-in">
+          <d2-demo-chart-card-header slot="header" @refresh="handleRefreshData(7)" title="d2-chart-area-base"></d2-demo-chart-card-header>
           <d2-chart-area-base :ref="chart[7].refName" v-bind="chart[7]" @ready="isReady(7)"></d2-chart-area-base>
         </el-card>
       </d2-grid-item>
@@ -64,7 +64,7 @@
 <script>
 export default {
   components: {
-    ChartCardHeader: () => import('./components/ChartCardHeader')
+    'd2-demo-chart-card-header': () => import('./components/d2-demo-chart-card-header')
   },
   data () {
     return {

@@ -10,8 +10,8 @@ const demoPlugins = {
       title: '模拟数据',
       children: [
         { path: `${pre}mock/ajax`, title: '拦截异步请求' },
-        { path: `${pre}mock/dpd`, title: 'DPD规则' },
-        { path: `${pre}mock/dtd`, title: 'DTD规则' }
+        { path: `${pre}mock/dpd`, title: 'DPD 规则' },
+        { path: `${pre}mock/dtd`, title: 'DTD 规则' }
       ]
     },
     {
@@ -40,8 +40,8 @@ const demoPlugins = {
     },
     { path: `${pre}build`, title: '环境区分' },
     { path: `${pre}clipboard-polyfill`, title: '剪贴板访问' },
-    { path: `${pre}js-cookie`, title: 'cookie读写' },
-    { path: `${pre}timeago`, title: '计算已经过去的时间' }
+    { path: `${pre}js-cookie`, title: 'Cookie 读写' },
+    { path: `${pre}timeago`, title: '时间差计算' }
   ])('/demo/plugins/')
 }
 
@@ -58,7 +58,7 @@ const demoComponents = {
       children: [
         { path: `${pre}container/full`, title: '填满' },
         { path: `${pre}container/ghost`, title: '隐形' },
-        { path: `${pre}container/normal`, title: '一般' }
+        { path: `${pre}container/card`, title: '卡片' }
       ]
     },
     {

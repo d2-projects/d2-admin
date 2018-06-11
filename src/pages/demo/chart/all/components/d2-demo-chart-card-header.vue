@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: 'd2-demo-chart-card-header',
   props: {
     title: {
       type: String,

@@ -1,29 +1,29 @@
 <template>
   <d2-container type="ghost">
-    <el-card class="d2-mb">
+    <el-card shadow="never" class="d2-mb">
       <d2-demo-page-header slot="header" title="数据模板"/>
-      <d2-markdown url="/static/md/插件 - mock演示页面介绍.md"/>
+      <d2-markdown :md="doc"/>
     </el-card>
-    <MockDemoCard
+    <d2-demo-mock-card
       v-for="(item, index) in settingDTD"
       :key="index"
       :title="item.title"
       :code="JSON.stringify(item.json, null, 2)"
       :mock="mockResult[index]"
       @reload="doMock(index)">
-    </MockDemoCard>
-    <MockDemoCard
+    </d2-demo-mock-card>
+    <d2-demo-mock-card
       :title="fn.title"
       :code="fn.code"
       :mock="fn.mocked"
       @reload="fnMock()">
-    </MockDemoCard>
-    <MockDemoCard
+    </d2-demo-mock-card>
+    <d2-demo-mock-card
       :title="regexp.title"
       :code="regexp.code"
       :mock="regexp.mocked"
       @reload="regexpMock()">
-    </MockDemoCard>
+    </d2-demo-mock-card>
   </d2-container>
 </template>
 
@@ -34,19 +34,21 @@ import Mock from 'mockjs'
 import settingDTD from './data/settingDTD'
 import regexp from './mixins/regexp'
 import fn from './mixins/function'
+import doc from './md/doc.md'
 export default {
   mixins: [
     regexp,
     fn
   ],
   components: {
-    MockDemoCard: () => import('./components/MockDemoCard')
+    'd2-demo-mock-card': () => import('./components/d2-demo-mock-card')
   },
   data () {
     return {
       mockResult: [],
       settingDTD,
-      settingDTDClone: clone(settingDTD)
+      settingDTDClone: clone(settingDTD),
+      doc
     }
   },
   mounted () {
