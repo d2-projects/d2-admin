@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="ghost" class="demo-plugins-vue-grid-layout-demo">
+  <d2-container type="ghost" class="demo-layout-grid">
     <d2-grid-layout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">
@@ -11,7 +11,7 @@
         @move="moveHandler"
         @resized="resizedHandler"
         @moved="movedHandler">
-        <el-card>
+        <el-card shadow="never">
           <el-tag size="mini" type="info" slot="header">Card {{item.i}}</el-tag>
           <template v-if="item.i === '0'">
             <div class="d2-mb">拖拽卡片调整位置</div>
@@ -88,7 +88,7 @@ export default {
 
 <style lang="scss">
 @import '~@/assets/style/public.scss';
-.demo-plugins-vue-grid-layout-demo {
+.demo-layout-grid {
   .vue-grid-layout {
     margin: -10px;
     .el-card {
