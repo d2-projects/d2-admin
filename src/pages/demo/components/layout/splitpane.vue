@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <d2-demo-page-header slot="header" title="基本示例"/>
+    <template slot="header">基本示例</template>
     <div style="height: 400px; margin: -16px;">
       <SplitPane :min-percent='20' :default-percent='30' split="vertical">
         <template slot="paneL"><div style="margin: 10px;">左</div></template>
