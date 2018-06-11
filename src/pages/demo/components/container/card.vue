@@ -1,12 +1,12 @@
 <template>
   <d2-container>
-    <template slot="header">效果演示</template>
+    <template slot="header">我是插入到 header 中的内容</template>
     <d2-markdown :md="doc"/>
   </d2-container>
 </template>
 
 <script>
-import doc from './md/doc.md'
+import doc from './md/doc-card.md'
 export default {
   data () {
     return {
