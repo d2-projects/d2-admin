@@ -1,17 +1,17 @@
 <template>
   <d2-container type="ghost">
-    <el-card class="d2-mb">
+    <el-card shadow="never" class="d2-mb">
       <d2-demo-page-header slot="header" title="数据占位符"/>
       <d2-markdown url="/static/md/插件 - mock演示页面介绍.md"/>
     </el-card>
-    <MockDemoCard
+    <d2-demo-mock-card
       v-for="(item, index) in settingDPD"
       :key="index"
       :title="item.title"
       :code="JSON.stringify(item.json, null, 2)"
       :mock="mockResult[index]"
       @reload="doMock(index)">
-    </MockDemoCard>
+    </d2-demo-mock-card>
   </d2-container>
 </template>
 
@@ -22,7 +22,7 @@ import Mock from 'mockjs'
 import settingDPD from './data/settingDPD'
 export default {
   components: {
-    MockDemoCard: () => import('./components/MockDemoCard')
+    'd2-demo-mock-card': () => import('./components/d2-demo-mock-card')
   },
   data () {
     return {
