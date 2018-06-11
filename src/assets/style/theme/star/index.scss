@@ -40,6 +40,9 @@
   // [组件] d2-container-card
   .d2-container-card {
     border: $theme-container-border;
+    .el-card__header {
+      border-bottom: $theme-container-border;
+    }
   }
   // 顶栏
   .el-header {
