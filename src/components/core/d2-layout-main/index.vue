@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: 'd2-layout-main',
   components: {
@@ -44,6 +45,14 @@ export default {
       // [侧边栏宽度] 折叠状态
       asideWidthCollapse: '65px'
     }
+  },
+  mounted () {
+    this.loadTheme()
+  },
+  methods: {
+    ...mapMutations([
+      'loadTheme'
+    ])
   }
 }
 </script>
