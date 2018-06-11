@@ -15,7 +15,7 @@
         </el-button>
       </el-upload>
     </div>
-    <el-table v-bind="table" class="d2-mb">
+    <el-table v-bind="table">
       <el-table-column
         v-for="(item, index) in table.columns"
         :key="index"
