@@ -5,6 +5,7 @@
 
   .layout-main {
     background-color: $theme-bg-color;
+    // background-image: url($theme-bg-image);
   }
   // 菜单项目
   @mixin theme-menu-hover-style {
