@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <d2-demo-page-header slot="header" :title="`${$t('pub.pageHeader.demo')} 2`"/>
+    <template slot="header">{{`${$t('pub.pageHeader.demo')} 2`}}</template>
     <DemoI18nControl></DemoI18nControl>
     <DemoI18n></DemoI18n>
   </d2-container>

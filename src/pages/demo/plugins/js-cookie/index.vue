@@ -1,6 +1,6 @@
 <template>
-  <d2-container type="card">
-    <d2-demo-page-header slot="header" title="基本示例"/>
+  <d2-container>
+    <template slot="header">Cookie 读写</template>
     <p class="d2-mt-0">基本读写删</p>
     <el-button type="primary" @click="set('test-user-name', 'test-user')">set('test-user-name', 'normalValue')</el-button>
     <el-button type="info" @click="get('test-user-name')">get('test-user-name')</el-button>

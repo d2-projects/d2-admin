@@ -1,15 +1,12 @@
 <template>
   <d2-container type="ghost">
-    <el-card class="d2-mb">
-      <d2-demo-page-header title="基本示例"/>
-    </el-card>
-    <el-card class="d2-mb">
+    <el-card shadow="never" class="d2-mb">
       <div class="d2-text-center">
         <h1 style="font-size: 30px;">您在{{openPageDateAgo}}打开的此页面</h1>
         <p style="font-size: 10px;">请稍等一下 10秒后会开始自动刷新</p>
       </div>
     </el-card>
-    <el-card class="d2-mb">
+    <el-card shadow="never">
       <div class="d2-text-center">
         <h1 style="font-size: 30px;">{{dateTimeRangeAgo}}</h1>
         <el-date-picker
@@ -20,9 +17,6 @@
           end-placeholder="结束日期">
         </el-date-picker>
       </div>
-    </el-card>
-    <el-card>
-      <d2-markdown url="/static/md/插件 - timeago.md"/>
     </el-card>
   </d2-container>
 </template>

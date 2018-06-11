@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <d2-demo-page-header slot="header" title="基本示例"/>
+    <template slot="header">剪贴板访问</template>
     <el-row :gutter="10">
       <el-col :span="12">
         <div class="d2-mb">
@@ -12,7 +12,7 @@
       <el-col :span="12">
         <el-alert
           class="d2-mb"
-          title="只有在 IE 浏览器下你才可以通过下面这两个按钮获取剪贴板数据"
+          title="在 IE 浏览器或者高版本 Chrome 下你才可以通过下面这两个按钮获取剪贴板数据"
           type="warning"
           show-icon>
         </el-alert>

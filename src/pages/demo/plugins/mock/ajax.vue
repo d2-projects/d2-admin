@@ -1,9 +1,9 @@
 <template>
-  <d2-container type="card">
+  <d2-container>
     <div slot="header">
       <el-button @click="ajax">发送请求</el-button>
     </div>
-    <el-table v-bind="table" style="width: 100%" class="d2-mb">
+    <el-table v-bind="table" style="width: 100%">
       <el-table-column
         v-for="(item, index) in table.columns"
         :key="index"
@@ -11,7 +11,6 @@
         :label="item.label">
       </el-table-column>
     </el-table>
-    <d2-markdown url="/static/md/插件 - mock拦截ajax.md"/>
   </d2-container>
 </template>
 
