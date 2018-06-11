@@ -47,6 +47,7 @@ export default {
     }
   },
   mounted () {
+    // 加载主题
     this.loadTheme()
   },
   methods: {

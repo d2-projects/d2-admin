@@ -24,9 +24,6 @@ export default {
       }
     }
   },
-  mounted () {
-    this.setTheme('d2')
-  },
   computed: {
     ...mapState({
       themeList: state => state.theme.list,
