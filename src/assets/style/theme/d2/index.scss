@@ -5,7 +5,7 @@
 
   .layout-main {
     background-color: $theme-bg-color;
-    background-image: url($theme-bg-image);
+    // background-image: url($theme-bg-image);
   }
   // 菜单项目
   @mixin theme-menu-hover-style {
@@ -30,6 +30,8 @@
 
   // [组件] d2-container-full
   .d2-container-full {
+    border: $theme-container-border;
+    border-bottom: none;
     .d2-container-full__header {
       border-bottom: $theme-container-border;
     }

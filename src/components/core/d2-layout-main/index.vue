@@ -1,5 +1,5 @@
 <template>
-  <el-container class="layout-main theme">
+  <el-container class="layout-main">
     <!-- 顶栏 -->
     <el-header>
       <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: 'd2-layout-main',
   components: {
@@ -44,11 +45,21 @@ export default {
       // [侧边栏宽度] 折叠状态
       asideWidthCollapse: '65px'
     }
+  },
+  mounted () {
+    // 加载主题
+    this.loadTheme()
+  },
+  methods: {
+    ...mapMutations([
+      'loadTheme'
+    ])
   }
 }
 </script>
 
 <style lang="scss">
 // 主题
+@import '~@/assets/style/theme/d2/index.scss';
 @import '~@/assets/style/theme/star/index.scss';
 </style>

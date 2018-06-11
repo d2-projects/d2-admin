@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <d2-demo-page-header slot="header" title="导入 csv"/>
+    <template slot="header">导入 csv</template>
     <div class="d2-mb">
       <el-button @click="download">
         <d2-icon name="download"/>
@@ -23,7 +23,6 @@
         :label="item.label">
       </el-table-column>
     </el-table>
-    <d2-markdown url="/static/md/插件 - 导入.md"/>
   </d2-container>
 </template>
 
