@@ -1,5 +1,5 @@
 export default {
   components: {
-    ChartDemoCard: () => import('../components/ChartDemoCard.vue')
+    'd2-demo-chart-card': () => import('../components/d2-demo-chart-card.vue')
   }
 }
