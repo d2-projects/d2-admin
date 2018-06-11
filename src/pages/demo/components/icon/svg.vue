@@ -38,6 +38,6 @@
 .icon-title {
   font-size: 12px;
   margin-top: 10px;
-  color: $color-text-placehoder;
+  color: $color-text-normal;
 }
 </style>

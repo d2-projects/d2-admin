@@ -35,9 +35,11 @@
     background-color: $theme-container-background-color;
     .d2-container-full__header {
       border-bottom: $theme-container-border-inner;
+      background-color: $theme-container-header-footer-background-color;
     }
     .d2-container-full__footer {
       border-top: $theme-container-border-inner;
+      background-color: $theme-container-header-footer-background-color;
     }
   }
   // [组件] d2-container-card
@@ -46,6 +48,7 @@
     background-color: $theme-container-background-color;
     .el-card__header {
       border-bottom: $theme-container-border-inner;
+      background-color: $theme-container-header-footer-background-color;
     }
   }
   
