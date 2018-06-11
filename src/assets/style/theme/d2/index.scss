@@ -30,22 +30,28 @@
 
   // [组件] d2-container-full
   .d2-container-full {
-    border: $theme-container-border;
+    border: $theme-container-border-outer;
     border-bottom: none;
+    background-color: $theme-container-background-color;
     .d2-container-full__header {
-      border-bottom: $theme-container-border;
+      border-bottom: $theme-container-border-inner;
+      background-color: $theme-container-header-footer-background-color;
     }
     .d2-container-full__footer {
-      border-top: $theme-container-border;
+      border-top: $theme-container-border-inner;
+      background-color: $theme-container-header-footer-background-color;
     }
   }
   // [组件] d2-container-card
   .d2-container-card {
-    border: $theme-container-border;
+    border: $theme-container-border-outer;
+    background-color: $theme-container-background-color;
     .el-card__header {
-      border-bottom: $theme-container-border;
+      border-bottom: $theme-container-border-inner;
+      background-color: $theme-container-header-footer-background-color;
     }
   }
+  
   // 顶栏
   .el-header {
     // 切换按钮
