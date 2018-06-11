@@ -2,7 +2,7 @@
   <d2-container type="ghost">
     <el-card shadow="never" class="d2-mb">
       <d2-demo-page-header slot="header" title="数据模板"/>
-      <d2-markdown url="/static/md/插件 - mock演示页面介绍.md"/>
+      <d2-markdown :md="doc"/>
     </el-card>
     <d2-demo-mock-card
       v-for="(item, index) in settingDTD"
@@ -34,6 +34,7 @@ import Mock from 'mockjs'
 import settingDTD from './data/settingDTD'
 import regexp from './mixins/regexp'
 import fn from './mixins/function'
+import doc from './md/doc.md'
 export default {
   mixins: [
     regexp,
@@ -46,7 +47,8 @@ export default {
     return {
       mockResult: [],
       settingDTD,
-      settingDTDClone: clone(settingDTD)
+      settingDTDClone: clone(settingDTD),
+      doc
     }
   },
   mounted () {

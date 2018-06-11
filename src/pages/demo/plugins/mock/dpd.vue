@@ -2,7 +2,7 @@
   <d2-container type="ghost">
     <el-card shadow="never" class="d2-mb">
       <d2-demo-page-header slot="header" title="数据占位符"/>
-      <d2-markdown url="/static/md/插件 - mock演示页面介绍.md"/>
+      <d2-markdown :md="doc"/>
     </el-card>
     <d2-demo-mock-card
       v-for="(item, index) in settingDPD"
@@ -20,6 +20,7 @@ import Vue from 'vue'
 import clone from '@/utils/clone.js'
 import Mock from 'mockjs'
 import settingDPD from './data/settingDPD'
+import doc from './md/doc.md'
 export default {
   components: {
     'd2-demo-mock-card': () => import('./components/d2-demo-mock-card')
@@ -28,7 +29,8 @@ export default {
     return {
       mockResult: [],
       settingDPD,
-      settingDPDClone: clone(settingDPD)
+      settingDPDClone: clone(settingDPD),
+      doc
     }
   },
   mounted () {

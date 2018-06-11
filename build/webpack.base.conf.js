@@ -82,6 +82,10 @@ module.exports = {
         loaders: ["style", "css", "sass"]
       },
       {
+        test: /\.md$/,
+        loaders: ["text-loader"]
+      },
+      {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {

@@ -58,7 +58,7 @@ const demoComponents = {
       children: [
         { path: `${pre}container/full`, title: '填满' },
         { path: `${pre}container/ghost`, title: '隐形' },
-        { path: `${pre}container/normal`, title: '一般' }
+        { path: `${pre}container/card`, title: '卡片' }
       ]
     },
     {
