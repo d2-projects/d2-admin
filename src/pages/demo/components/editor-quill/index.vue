@@ -7,7 +7,9 @@
       @text-change="textChangeHandler"
       @selection-change="selectionChangeHandler"
       @editor-change="editorChangeHandler"/>
-    <d2-highlight :code="formated"/>
+    <el-card shadow="never" class="d2-mt">
+      <d2-highlight :code="formated"/>
+    </el-card>
   </d2-container>
 </template>
 
