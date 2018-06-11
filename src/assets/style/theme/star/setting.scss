@@ -5,7 +5,8 @@ $theme-bg-color: #EFF4F8;
 // 主题背景图片
 $theme-bg-image: '/static/image/bg/star.jpg';
 // container组件的边框
-$theme-container-border: 1px solid #d8dfea;
+$theme-container-border-inner: 1px solid #d8dfea;
+$theme-container-border-outer: 1px solid #d8dfea;
 
 // 顶栏和侧边栏中展开的菜单 hover 状态下
 $theme-menu-item-color-hover: #293849;
