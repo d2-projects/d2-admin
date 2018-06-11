@@ -1,18 +1,13 @@
 <template>
-  <d2-container type="ghost">
-    <el-card class="d2-mb">
-      <d2-demo-page-header slot="header" title="基本示例"/>
-      <d2-quill
-        style="min-height: 200px;"
-        v-model="value"
-        @text-change="textChangeHandler"
-        @selection-change="selectionChangeHandler"
-        @editor-change="editorChangeHandler"/>
-    </el-card>
-    <el-card>
-      <template slot="header">输出</template>
-      <d2-highlight :code="formated"/>
-    </el-card>
+  <d2-container>
+    <d2-demo-page-header slot="header" title="基本示例"/>
+    <d2-quill
+      style="min-height: 200px;"
+      v-model="value"
+      @text-change="textChangeHandler"
+      @selection-change="selectionChangeHandler"
+      @editor-change="editorChangeHandler"/>
+    <d2-highlight :code="formated"/>
   </d2-container>
 </template>
 
