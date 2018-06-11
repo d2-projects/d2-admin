@@ -9,6 +9,11 @@ export default {
         preview: '/static/image/theme/d2/preview@2x.png'
       },
       {
+        name: '简约线条',
+        value: 'line',
+        preview: '/static/image/theme/line/preview@2x.png'
+      },
+      {
         name: '流星',
         value: 'star',
         preview: '/static/image/theme/star/preview@2x.png'
