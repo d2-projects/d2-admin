@@ -44,11 +44,15 @@ export default {
       // [侧边栏宽度] 折叠状态
       asideWidthCollapse: '65px'
     }
+  },
+  mounted () {
+    document.body.className = 'theme-star'
   }
 }
 </script>
 
 <style lang="scss">
 // 主题
+@import '~@/assets/style/theme/d2admin/index.scss';
 @import '~@/assets/style/theme/star/index.scss';
 </style>
