@@ -4,7 +4,8 @@ $theme-name: 'd2';
 $theme-bg-color: $color-bg;
 // 主题背景图片
 // $theme-bg-image: '/static/image/bg/xxx.jpg';
-// container组件的边框
+// container组件
+$theme-container-background-color: rgba(#FFF, 1);
 $theme-container-border-inner: 1px solid $color-border-2;
 $theme-container-border-outer: 1px solid $color-border-1;
 
