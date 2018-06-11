@@ -1,5 +1,5 @@
 <template>
-  <el-container class="layout-main theme">
+  <el-container class="layout-main">
     <!-- 顶栏 -->
     <el-header>
       <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
