@@ -1,19 +1,52 @@
 @import '../theme.scss';
 
+// 主题名称
 $theme-name: 'd2admin';
+// 主题背景颜色
 $theme-bg-color: #EFF4F8;
+// 主题背景图片
 // $theme-bg-image: '/static/image/bg/star.jpg';
-$theme-container-full-border-color: #d8dfea;
+// container组件的边框
+$theme-container-border: 1px solid #d8dfea;
+
+// 顶栏和侧边栏中展开的菜单 hover 状态下的文字和图标颜色
+$theme-menu-item-color-hover: #293849;
+// 顶栏和侧边栏中展开的菜单 hover 状态下的背景颜色
+$theme-menu-item-background-color-hover: #F4F6F8;
+
+// 顶栏上的文字颜色
+$theme-header-text-color: #30312D;
+// 顶栏上的项目在 hover 时的背景颜色
+$theme-header-item-background-color-hover: rgba(#000, .03);
+// 顶栏上的项目在 focus 时的背景颜色
+$theme-header-item-background-color-focus: rgba(#000, .03);
+// 顶栏上的项目在 active 时的背景颜色
+$theme-header-item-background-color-active: rgba(#000, .05);
+
+// 侧边栏上的文字颜色
+$theme-aside-text-color: #30312D;
+// 侧边栏上的项目在 hover 时的背景颜色
+$theme-aside-item-background-color-hover: rgba(#000, .03);
+// 顶栏上的项目在 focus 时的背景颜色
+$theme-aside-item-background-color-focus: rgba(#000, .03);
+// 侧边栏上的项目在 active 时的背景颜色
+$theme-aside-item-background-color-active: rgba(#000, .05);
 
 .theme-#{$theme-name} {
-  .theme {
+
+  .layout-main {
     background-color: $theme-bg-color;
+    // background-image: url($theme-bg-image);
     background-size: cover;
     background-position: center;
   }
   // 菜单项目
   @mixin theme-menu-hover-style {
-    background-color: #eff4f8;
+    color: $theme-menu-item-color-hover;
+    i {
+      color: $theme-menu-item-color-hover;
+    }
+    background-color: $theme-menu-item-background-color-hover;
   }
   .el-submenu__title:hover {
     @include theme-menu-hover-style;
@@ -27,23 +60,28 @@ $theme-container-full-border-color: #d8dfea;
   .el-menu--horizontal .el-menu .el-submenu__title:hover {
     @include theme-menu-hover-style;
   }
+
   // [组件] d2-container-full
   .d2-container-full {
     .d2-container-full__header {
-      border-bottom: 1px solid $theme-container-full-border-color;
+      border-bottom: $theme-container-border;
     }
     .d2-container-full__footer {
-      border-top: 1px solid $theme-container-full-border-color;
+      border-top: $theme-container-border;
     }
+  }
+  // [组件] d2-container-card
+  .d2-container-card {
+    border: $theme-container-border;
   }
   // 顶栏
   .el-header {
     // 切换按钮
     .toggle-aside-btn {
       i {
-        color: #FFF;
+        color: $theme-header-text-color;
         &:hover {
-          color: #FFF;
+          color: $theme-header-text-color;
         }
       }
     }
@@ -51,29 +89,29 @@ $theme-container-full-border-color: #d8dfea;
     .el-menu {
       .el-menu-item {
         transition: border-top-color 0s;
-        color: #FFF;
+        color: $theme-header-text-color;
         &:hover {
-          background-color: rgba(#FFF, .3);
+          background-color: $theme-header-item-background-color-hover;
         }
         &:focus {
-          background-color: rgba(#FFF, .3);
+          background-color: $theme-header-item-background-color-focus;
         }
         &.is-active {
-          background-color: rgba(#000, .3);
+          background-color: $theme-header-item-background-color-active;
         }
       }
       .el-submenu {
         .el-submenu__title {
           transition: border-top-color 0s;
-          color: #FFF;
+          color: $theme-header-text-color;
+          .el-submenu__icon-arrow {
+            color: $theme-header-text-color;
+          }
           &:hover {
-            background-color: rgba(#FFF, .3);
+            background-color: $theme-header-item-background-color-hover;
           }
           &:focus {
-            background-color: rgba(#FFF, .3);
-          }
-          .el-submenu__icon-arrow {
-            color: #FFF;
+            background-color: $theme-header-item-background-color-focus;
           }
         }
       }
@@ -81,9 +119,11 @@ $theme-container-full-border-color: #d8dfea;
     // 顶栏右侧
     .d2-header-right {
       .btn-text {
-        color: #FFF;
-        &:hover {
-          background-color: rgba(#FFF, .1);
+        color: $theme-header-text-color;
+        &.can-hover {
+          &:hover {
+            background-color: $theme-header-item-background-color-hover;
+          }
         }
       }
     }
@@ -95,32 +135,32 @@ $theme-container-full-border-color: #d8dfea;
       // [菜单] 正常状态
       .el-menu {
         .el-menu-item {
-          color: #FFF;
+          color: $theme-aside-text-color;
+          i {
+            color: $theme-aside-text-color;
+          }
           &:hover {
-            background-color: rgba(#FFF, .3);
+            background-color: $theme-aside-item-background-color-hover;
           }
           &:focus {
-            background-color: rgba(#FFF, .3);
-          }
-          i {
-            color: #FFF;
+            background-color: $theme-aside-item-background-color-focus;
           }
           &.is-active {
-            background-color: rgba(#000, .3);
+            background-color: $theme-aside-item-background-color-active;
           }
         }
       }
       .el-submenu {
         .el-submenu__title {
-          color: #FFF;
-          &:hover {
-            background-color: rgba(#FFF, .3);
-          }
+          color: $theme-aside-text-color;
           i {
-            color: #FFF;
+            color: $theme-aside-text-color;
           }
           .el-submenu__icon-arrow {
-            color: #FFF;
+            color: $theme-aside-text-color;
+          }
+          &:hover {
+            background-color: $theme-aside-item-background-color-hover;
           }
         }
       }
