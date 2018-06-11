@@ -3,7 +3,7 @@
 $theme-name: 'star';
 $theme-bg-color: #EFF4F8;
 $theme-bg-image: '/static/image/bg/star.jpg';
-$theme-container-full-border-color: #d8dfea;
+$theme-container-border-color: #d8dfea;
 
 .theme-#{$theme-name} {
   .theme {
@@ -31,10 +31,10 @@ $theme-container-full-border-color: #d8dfea;
   // [组件] d2-container-full
   .d2-container-full {
     .d2-container-full__header {
-      border-bottom: 1px solid $theme-container-full-border-color;
+      border-bottom: 1px solid $theme-container-border-color;
     }
     .d2-container-full__footer {
-      border-top: 1px solid $theme-container-full-border-color;
+      border-top: 1px solid $theme-container-border-color;
     }
   }
   // 顶栏
