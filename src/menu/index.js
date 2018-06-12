@@ -80,11 +80,18 @@ const demoComponents = {
         { path: `${pre}icon/svg`, title: 'SVG图标组件' }
       ]
     },
+    {
+      path: `${pre}markdown`,
+      title: 'markdown 解析',
+      children: [
+        { path: `${pre}markdown/source`, title: '指定资源' },
+        { path: `${pre}markdown/url`, title: '异步加载文件' }
+      ]
+    },
     { path: `${pre}countup`, title: '数字动画' },
     { path: `${pre}editor-quill`, title: '富文本编辑器' },
     { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器' },
-    { path: `${pre}highlight`, title: '代码高亮显示' },
-    { path: `${pre}markdown`, title: 'markdown解析' }
+    { path: `${pre}highlight`, title: '代码高亮显示' }
   ])('/demo/components/')
 }
 
