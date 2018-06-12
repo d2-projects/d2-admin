@@ -6,7 +6,8 @@
     </el-table-column>
     <el-table-column prop="address" align="center">
       <template slot-scope="scope">
-        <el-button type="primary" @click="handleSelectTheme(scope.row.value)">使用</el-button>
+        <el-button v-if="themeName === scope.row.value" type="success" icon="el-icon-check" round>已激活</el-button>
+        <el-button v-else round @click="handleSelectTheme(scope.row.value)">使用</el-button>
       </template>
     </el-table-column>
   </el-table>
