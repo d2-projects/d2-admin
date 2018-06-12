@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <template slot="header">效果演示</template>
+    <template slot="header">指定资源</template>
     <d2-markdown :md="doc"/>
   </d2-container>
 </template>

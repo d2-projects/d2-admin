@@ -40,7 +40,8 @@ const routes = [
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/components/index/index.vue') },
       { path: 'layout/grid', name: `${pre}layout-grid`, component: () => import('@/pages/demo/components/layout/grid.vue') },
       { path: 'layout/splitpane', name: `${pre}layout-splitpane`, component: () => import('@/pages/demo/components/layout/splitpane.vue') },
-      { path: 'markdown', name: `${pre}markdown`, component: () => import('@/pages/demo/components/markdown/index.vue') }
+      { path: 'markdown/source', name: `${pre}markdown-source`, component: () => import('@/pages/demo/components/markdown/source.vue') },
+      { path: 'markdown/url', name: `${pre}markdown-url`, component: () => import('@/pages/demo/components/markdown/url.vue') }
     ])('demo-components-')
   },
   {
