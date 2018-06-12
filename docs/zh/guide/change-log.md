@@ -18,6 +18,7 @@
 * [ 修改 ] `d2-markdown` 组件 `md` 参数改名为 `source`
 * [ 修改 ] 删除了 `d2-markdown` 组件中图片的白色背景
 * [ 修改 ] 删除 `timeago` 插件，更换为更强大的 `dayjs`
+* [ 新增 ] `Tomorrow Night Blue` 主题
 
 ## v1.0.0
 
