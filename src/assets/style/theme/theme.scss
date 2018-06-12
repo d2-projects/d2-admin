@@ -71,16 +71,6 @@
     .el-aside {
       transition: width .3s;
       overflow: inherit;
-      // 空菜单
-      .d2-side-menu-empty {
-        background-color: rgba(#000, .03);
-        margin: $margin;
-        margin-top: 0px;
-        border-radius: 4px;
-        line-height: 100px;
-        text-align: center;
-        color: $color-text-sub;
-      }
       // [菜单] 正常状态
       .el-menu {
         background-color: transparent;

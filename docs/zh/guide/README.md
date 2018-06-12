@@ -34,7 +34,7 @@ d2admin-vue-element（以下简称 d2admin）是一个管理系统前端模板
 * 图表自适应可拖拽大小的卡片容器（示例）
 * 简化剪贴板操作
 * 简化Cookie操作
-* 时间计算工具
+* 时间日期计算工具
 * 导入 Excel （ xlsx 格式 + CSV 格式 ）
 * 数据导出 Excel （ xlsx 格式 + CSV 格式 ）
 * 数据导出文本

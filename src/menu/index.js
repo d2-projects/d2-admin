@@ -40,8 +40,8 @@ const demoPlugins = {
     },
     { path: `${pre}build`, title: '环境区分' },
     { path: `${pre}clipboard-polyfill`, title: '剪贴板访问' },
-    { path: `${pre}js-cookie`, title: 'Cookie 读写' },
-    { path: `${pre}timeago`, title: '时间差计算' }
+    { path: `${pre}day`, title: '日期计算' },
+    { path: `${pre}js-cookie`, title: 'Cookie 读写' }
   ])('/demo/plugins/')
 }
 
@@ -79,11 +79,18 @@ const demoComponents = {
         { path: `${pre}icon/svg`, title: 'SVG图标组件' }
       ]
     },
+    {
+      path: `${pre}markdown`,
+      title: 'markdown 解析',
+      children: [
+        { path: `${pre}markdown/source`, title: '指定资源' },
+        { path: `${pre}markdown/url`, title: '异步加载文件' }
+      ]
+    },
     { path: `${pre}countup`, title: '数字动画' },
     { path: `${pre}editor-quill`, title: '富文本编辑器' },
     { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器' },
-    { path: `${pre}highlight`, title: '代码高亮显示' },
-    { path: `${pre}markdown`, title: 'markdown解析' }
+    { path: `${pre}highlight`, title: '代码高亮显示' }
   ])('/demo/components/')
 }
 

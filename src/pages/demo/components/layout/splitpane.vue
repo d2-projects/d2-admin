@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <template slot="header">基本示例</template>
+    <template slot="header">区域划分</template>
     <div style="height: 400px; margin: -16px;">
       <SplitPane :min-percent='20' :default-percent='30' split="vertical">
         <template slot="paneL"><div style="margin: 10px;">左</div></template>
