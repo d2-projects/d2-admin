@@ -5,7 +5,7 @@
     </template>
     <h1>当前时间</h1>
     <el-row :gutter="20" class="d2-mt">
-      <el-col :span="8"><el-card shadow="never"><d2-highlight slot="header" :code="`now.format()`"/>{{now.format()}}</el-card></el-col>
+      <el-col :span="8"><el-card shadow="never"><d2-highlight slot="header" :code="`now.format('YYYY MM DD')`"/>{{now.format('YYYY MM DD')}}</el-card></el-col>
     </el-row>
     <h1>获取</h1>
     <el-row :gutter="20" class="d2-mt">
