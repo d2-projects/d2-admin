@@ -10,7 +10,11 @@
         <d2-icon name="bars"/>
       </div>
       <d2-layout-main-header-menu/>
-      <d2-layout-main-header-right/>
+      <div class="d2-header-right">
+        <d2-layout-main-header-right-full-screen/>
+        <d2-layout-main-header-right-theme/>
+        <d2-layout-main-header-right-user/>
+      </div>
     </el-header>
     <!-- 下面 主体 -->
     <el-container>
@@ -35,7 +39,10 @@ export default {
   components: {
     'd2-layout-main-menu-side': () => import('./components/-menu-side'),
     'd2-layout-main-header-menu': () => import('./components/-header-menu'),
-    'd2-layout-main-header-right': () => import('./components/-header-right')
+    'd2-layout-main-header-right': () => import('./components/-header-right'),
+    'd2-layout-main-header-right-full-screen': () => import('./components/-full-screen'),
+    'd2-layout-main-header-right-theme': () => import('./components/-theme'),
+    'd2-layout-main-header-right-user': () => import('./components/-user')
   },
   data () {
     return {
