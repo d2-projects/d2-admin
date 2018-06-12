@@ -1,8 +1,8 @@
 <template>
   <el-button-group>
-    <el-button size="mini">依赖</el-button>
+    <el-button v-if="title" size="mini">{{title}}</el-button>
     <el-button size="mini" @click="$open(link)">
-      <d2-icon name="link"/>
+      <d2-icon :name="icon"/>
       {{link}}
     </el-button>
   </el-button-group>
@@ -12,6 +12,16 @@
 export default {
   name: 'd2-demo-link-btn',
   props: {
+    title: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    icon: {
+      type: String,
+      required: false,
+      default: 'link'
+    },
     link: {
       type: String,
       required: false,
