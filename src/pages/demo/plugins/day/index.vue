@@ -47,10 +47,12 @@
     </el-row>
     <h1>查询</h1>
     <el-row :gutter="20" class="d2-mt">
-      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//是否之前\nnow.isBefore(now.add(1, 'day'), 'days')`"/>{{now.isBefore(now.add(1, 'day'), 'days')}}</el-card></el-col>
-      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//是否之前\nnow.isBefore(now.subtract(1, 'day'), 'days')`"/>{{now.isBefore(now.subtract(1, 'day'), 'days')}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//是否之前\nnow.isBefore(now.add(1, 'day'))`"/>{{now.isBefore(now.add(1, 'day'))}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//是否之前\nnow.isBefore(now.subtract(1, 'day'))`"/>{{now.isBefore(now.subtract(1, 'day'))}}</el-card></el-col>
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//是否相同\nnow.isSame(now)`"/>{{now.isSame(now)}}</el-card></el-col>
-      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//是否相同\nnow.isSame(now.add(1, 'day'), 'days')`"/>{{now.isSame(now.add(1, 'day'), 'days')}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//是否相同\nnow.isSame(now.add(1, 'day'))`"/>{{now.isSame(now.add(1, 'day'))}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never"><d2-highlight slot="header" :code="`//是否之后\nnow.isAfter(now.add(1, 'day'))`"/>{{now.isAfter(now.add(1, 'day'))}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never"><d2-highlight slot="header" :code="`//是否之后\nnow.isAfter(now.subtract(1, 'day'))`"/>{{now.isAfter(now.subtract(1, 'day'))}}</el-card></el-col>
     </el-row>
     <template slot="footer">
       <d2-demo-link-btn title="依赖" :link="link"/>
