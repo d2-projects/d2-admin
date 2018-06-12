@@ -17,6 +17,11 @@ export default {
         name: '流星',
         value: 'star',
         preview: '/static/image/theme/star/preview@2x.png'
+      },
+      {
+        name: 'tomorrow-night-blue',
+        value: 'tomorrow-night-blue',
+        preview: '/static/image/theme/tomorrow-night-blue/preview@2x.png'
       }
     ],
     name: ''
