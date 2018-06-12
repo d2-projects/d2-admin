@@ -45,15 +45,11 @@ export default {
 <style lang="scss">
 @import '~@/assets/style/public.scss';
 .container-component {
-  // margin-right: 20px;
-  // margin-bottom: 20px;
   position: absolute;
   top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
-  // padding-right: $margin;
-  // padding-bottom: $margin;
   overflow: auto;
 }
 @media (min-width: 576px) {

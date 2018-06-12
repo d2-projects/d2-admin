@@ -40,40 +40,26 @@
 }
 
 // 边距相关
-.#{$prefix}-m { margin: $margin; }
-.#{$prefix}-mt { margin-top: $margin; }
-.#{$prefix}-mr { margin-right: $margin; }
-.#{$prefix}-mb { margin-bottom: $margin; }
-.#{$prefix}-ml { margin-left: $margin; }
+$sizes: (0, 10, 15, 20);
 
-.#{$prefix}-m-10 { margin: 10px; }
-.#{$prefix}-mt-10 { margin-top: 10px; }
-.#{$prefix}-mr-10 { margin-right: 10px; }
-.#{$prefix}-mb-10 { margin-bottom: 10px; }
-.#{$prefix}-ml-10 { margin-left: 10px; }
+@for $index from 1 to 5 {
+  .#{$prefix}-m-#{nth($sizes, $index)} { margin: #{nth($sizes, $index)}px; }
+  .#{$prefix}-mt-#{nth($sizes, $index)} { margin-top: #{nth($sizes, $index)}px; }
+  .#{$prefix}-mr-#{nth($sizes, $index)} { margin-right: #{nth($sizes, $index)}px; }
+  .#{$prefix}-mb-#{nth($sizes, $index)} { margin-bottom: #{nth($sizes, $index)}px; }
+  .#{$prefix}-ml-#{nth($sizes, $index)} { margin-left: #{nth($sizes, $index)}px; }
+}
 
-.#{$prefix}-m-0 { margin: 0px; }
-.#{$prefix}-mt-0 { margin-top: 0px; }
-.#{$prefix}-mr-0 { margin-right: 0px; }
-.#{$prefix}-mb-0 { margin-bottom: 0px; }
-.#{$prefix}-ml-0 { margin-left: 0px; }
+// 快速使用
 
+.#{$prefix}-m { margin: 20px; }
+.#{$prefix}-mt { margin-top: 20px; }
+.#{$prefix}-mr { margin-right: 20px; }
+.#{$prefix}-mb { margin-bottom: 20px; }
+.#{$prefix}-ml { margin-left: 20px; }
 
-
-.#{$prefix}-p { padding: $margin; }
-.#{$prefix}-pt { padding-top: $margin; }
-.#{$prefix}-pr { padding-right: $margin; }
-.#{$prefix}-pb { padding-bottom: $margin; }
-.#{$prefix}-pl { padding-left: $margin; }
-
-.#{$prefix}-p-10 { padding: 10px; }
-.#{$prefix}-pt-10 { padding-top: 10px; }
-.#{$prefix}-pr-10 { padding-right: 10px; }
-.#{$prefix}-pb-10 { padding-bottom: 10px; }
-.#{$prefix}-pl-10 { padding-left: 10px; }
-
-.#{$prefix}-p-0 { padding: 0px; }
-.#{$prefix}-pt-0 { padding-top: 0px; }
-.#{$prefix}-pr-0 { padding-right: 0px; }
-.#{$prefix}-pb-0 { padding-bottom: 0px; }
-.#{$prefix}-pl-0 { padding-left: 0px; }
+.#{$prefix}-p { padding: 20px; }
+.#{$prefix}-pt { padding-top: 20px; }
+.#{$prefix}-pr { padding-right: 20px; }
+.#{$prefix}-pb { padding-bottom: 20px; }
+.#{$prefix}-pl { padding-left: 20px; }

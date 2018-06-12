@@ -47,7 +47,7 @@ export default {
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
 .col {
-  padding: $margin;
+  padding: 20px;
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;

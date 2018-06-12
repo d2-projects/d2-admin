@@ -40,8 +40,8 @@ export default {
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
 .title-group {
-  margin-top: $margin;
-  margin-bottom: $margin / 2;
+  margin-top: 20px;
+  margin-bottom: 10px;
   &:first-child {
     margin-top: 0px;
   }
