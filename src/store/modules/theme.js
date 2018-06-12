@@ -19,7 +19,7 @@ export default {
         preview: '/static/image/theme/star/preview@2x.png'
       },
       {
-        name: 'tomorrow-night-blue',
+        name: 'Tomorrow Night Blue (vsCode)',
         value: 'tomorrow-night-blue',
         preview: '/static/image/theme/tomorrow-night-blue/preview@2x.png'
       }
