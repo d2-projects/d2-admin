@@ -68,4 +68,5 @@ export default {
 @import '~@/assets/style/theme/d2/index.scss';
 @import '~@/assets/style/theme/line/index.scss';
 @import '~@/assets/style/theme/star/index.scss';
+@import '~@/assets/style/theme/tomorrow-night-blue/index.scss';
 </style>
