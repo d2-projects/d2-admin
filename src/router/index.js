@@ -40,7 +40,8 @@ const routes = [
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/components/index/index.vue') },
       { path: 'layout/grid', name: `${pre}layout-grid`, component: () => import('@/pages/demo/components/layout/grid.vue') },
       { path: 'layout/splitpane', name: `${pre}layout-splitpane`, component: () => import('@/pages/demo/components/layout/splitpane.vue') },
-      { path: 'markdown', name: `${pre}markdown`, component: () => import('@/pages/demo/components/markdown/index.vue') }
+      { path: 'markdown/source', name: `${pre}markdown-source`, component: () => import('@/pages/demo/components/markdown/source.vue') },
+      { path: 'markdown/url', name: `${pre}markdown-url`, component: () => import('@/pages/demo/components/markdown/url.vue') }
     ])('demo-components-')
   },
   {
@@ -52,6 +53,7 @@ const routes = [
     children: (pre => [
       { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build/index.vue') },
       { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill/index.vue') },
+      { path: 'day', name: `${pre}day`, component: () => import('@/pages/demo/plugins/day/index.vue') },
       { path: 'export/table', name: `${pre}export-table`, component: () => import('@/pages/demo/plugins/export/table.vue') },
       { path: 'export/txt', name: `${pre}export-txt`, component: () => import('@/pages/demo/plugins/export/txt.vue') },
       { path: 'i18n/demo1', name: `${pre}i18n-demo1`, component: () => import('@/pages/demo/plugins/i18n/demo1.vue') },
@@ -62,8 +64,7 @@ const routes = [
       { path: 'js-cookie', name: `${pre}js-cookie`, component: () => import('@/pages/demo/plugins/js-cookie/index.vue') },
       { path: 'mock/ajax', name: `${pre}mock-ajax`, component: () => import('@/pages/demo/plugins/mock/ajax.vue') },
       { path: 'mock/dpd', name: `${pre}mock-dpd`, component: () => import('@/pages/demo/plugins/mock/dpd.vue') },
-      { path: 'mock/dtd', name: `${pre}mock-dtd`, component: () => import('@/pages/demo/plugins/mock/dtd.vue') },
-      { path: 'timeago', name: `${pre}timeago`, component: () => import('@/pages/demo/plugins/timeago/index.vue') }
+      { path: 'mock/dtd', name: `${pre}mock-dtd`, component: () => import('@/pages/demo/plugins/mock/dtd.vue') }
     ])('demo-plugins-')
   },
   {

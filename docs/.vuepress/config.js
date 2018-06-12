@@ -70,8 +70,7 @@ function sideBarPlugins () {
     'data-export',
     'data-import',
     'i18n',
-    'mock',
-    'timeago'
+    'mock'
   ]
 }
 

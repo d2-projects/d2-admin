@@ -94,9 +94,6 @@ export default {
     .el-card {
       height: 100%;
       @extend %unable-select;
-      // .el-card__header {
-      //   padding: 8px $margin;
-      // }
     }
     .vue-resizable-handle {
       opacity: .3;
