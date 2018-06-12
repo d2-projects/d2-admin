@@ -19,7 +19,7 @@ export default {
       required: false,
       default: ''
     },
-    md: {
+    source: {
       type: String,
       required: false,
       default: ''
@@ -45,7 +45,7 @@ export default {
   mounted () {
     if (this.url) {
       this.initWithUrl()
-    } else if (this.md) {
+    } else if (this.source) {
       this.initWithMd()
     } else {
       console.log('not mounted init')
@@ -54,7 +54,7 @@ export default {
   methods: {
     // 使用 md 初始化
     initWithMd () {
-      this.markedHTML = this.marked(this.md)
+      this.markedHTML = this.marked(this.source)
     },
     // 使用 url 初始化
     async initWithUrl () {

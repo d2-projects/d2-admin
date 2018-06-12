@@ -3,7 +3,7 @@
     <template slot="header">
       我是插入到 header 中的内容
     </template>
-    <d2-markdown :md="doc"/>
+    <d2-markdown :source="doc"/>
     <template slot="footer">
       我是插入到 footer 中的内容
     </template>

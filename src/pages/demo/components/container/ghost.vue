@@ -1,7 +1,7 @@
 <template>
   <d2-container type="ghost">
     <el-card shadow="never" style="width: 50%;">
-      <d2-markdown :md="doc"/>
+      <d2-markdown :source="doc"/>
     </el-card>
   </d2-container>
 </template>
