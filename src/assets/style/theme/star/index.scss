@@ -94,10 +94,16 @@
           &:hover {
             color: $theme-header-item-color-hover;
             background-color: $theme-header-item-background-color-hover;
+            .el-submenu__icon-arrow {
+              color: $theme-header-item-color-hover;
+            }
           }
           &:focus {
             color: $theme-header-item-color-focus;
             background-color: $theme-header-item-background-color-focus;
+            .el-submenu__icon-arrow {
+              color: $theme-header-item-color-focus;
+            }
           }
         }
       }
@@ -130,14 +136,23 @@
           &:hover {
             color: $theme-aside-item-color-hover;
             background-color: $theme-aside-item-background-color-hover;
+            i {
+              color: $theme-aside-item-color-hover;
+            }
           }
           &:focus {
             color: $theme-aside-item-color-focus;
             background-color: $theme-aside-item-background-color-focus;
+            i {
+              color: $theme-aside-item-color-focus;
+            }
           }
           &.is-active {
             color: $theme-aside-item-color-active;
             background-color: $theme-aside-item-background-color-active;
+            i {
+              color: $theme-aside-item-color-active;
+            }
           }
         }
       }
@@ -154,6 +169,12 @@
           &:hover {
             color: $theme-aside-item-color-hover;
             background-color: $theme-aside-item-background-color-hover;
+            i {
+              color: $theme-aside-item-color-hover;
+            }
+            .el-submenu__icon-arrow {
+              color: $theme-aside-item-color-hover;
+            }
           }
         }
       }
