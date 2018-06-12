@@ -10,6 +10,7 @@
         <d2-icon name="bars"/>
       </div>
       <d2-layout-main-header-menu/>
+      <!-- 顶栏右侧 -->
       <div class="d2-header-right">
         <d2-layout-main-header-full-screen/>
         <d2-layout-main-header-theme/>
@@ -71,8 +72,5 @@ export default {
 
 <style lang="scss">
 // 主题
-@import '~@/assets/style/theme/d2/index.scss';
-@import '~@/assets/style/theme/line/index.scss';
-@import '~@/assets/style/theme/star/index.scss';
-@import '~@/assets/style/theme/tomorrow-night-blue/index.scss';
+@import '~@/assets/style/theme/register.scss';
 </style>
