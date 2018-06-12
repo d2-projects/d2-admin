@@ -11,9 +11,9 @@
       </div>
       <d2-layout-main-header-menu/>
       <div class="d2-header-right">
-        <d2-layout-main-header-right-full-screen/>
-        <d2-layout-main-header-right-theme/>
-        <d2-layout-main-header-right-user/>
+        <d2-layout-main-header-full-screen/>
+        <d2-layout-main-header-theme/>
+        <d2-layout-main-header-user/>
       </div>
     </el-header>
     <!-- 下面 主体 -->
@@ -39,10 +39,9 @@ export default {
   components: {
     'd2-layout-main-menu-side': () => import('./components/-menu-side'),
     'd2-layout-main-header-menu': () => import('./components/-header-menu'),
-    'd2-layout-main-header-right': () => import('./components/-header-right'),
-    'd2-layout-main-header-right-full-screen': () => import('./components/-full-screen'),
-    'd2-layout-main-header-right-theme': () => import('./components/-theme'),
-    'd2-layout-main-header-right-user': () => import('./components/-user')
+    'd2-layout-main-header-full-screen': () => import('./components/-full-screen'),
+    'd2-layout-main-header-theme': () => import('./components/-theme'),
+    'd2-layout-main-header-user': () => import('./components/-user')
   },
   data () {
     return {
