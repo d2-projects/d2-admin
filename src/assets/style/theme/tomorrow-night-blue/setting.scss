@@ -8,7 +8,7 @@ $theme-bg-color: #002147;
 // container组件
 $theme-container-background-color: #FFF;
 $theme-container-header-footer-background-color: #FFF;
-$theme-container-border-inner: 1px solid $color-border-2;
+$theme-container-border-inner: 1px solid $color-border-1;
 $theme-container-border-outer: none;
 
 // 顶栏和侧边栏中展开的菜单 hover 状态下
@@ -19,7 +19,7 @@ $theme-menu-item-background-color-hover: #ecf5ff;
 $theme-header-item-color: #FF929A;
 $theme-header-item-background-color: transparent;
 // 顶栏上的项目在 hover 时
-$theme-header-item-color-hover: #FFB870;
+$theme-header-item-color-hover: #FFEBA4;
 $theme-header-item-background-color-hover: #00162D;
 // 顶栏上的项目在 focus 时
 $theme-header-item-color-focus: #FFB870;
@@ -32,7 +32,7 @@ $theme-header-item-background-color-active: #00162D;
 $theme-aside-item-color: #FF929A;
 $theme-aside-item-background-color: transparent;
 // 侧边栏上的项目在 hover 时
-$theme-aside-item-color-hover: #FFB870;
+$theme-aside-item-color-hover: #FFEBA4;
 $theme-aside-item-background-color-hover: #00162D;
 // 侧边栏上的项目在 focus 时
 $theme-aside-item-color-focus: #FFB870;
