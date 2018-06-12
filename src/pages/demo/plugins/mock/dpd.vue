@@ -2,7 +2,7 @@
   <d2-container type="ghost">
     <el-card shadow="never" class="d2-mb">
       <d2-demo-page-header slot="header" title="数据占位符"/>
-      <d2-markdown :md="doc"/>
+      <d2-markdown :source="doc"/>
     </el-card>
     <d2-demo-mock-card
       v-for="(item, index) in settingDPD"

@@ -1,7 +1,7 @@
 <template>
   <d2-container>
     <template slot="header">我是插入到 header 中的内容</template>
-    <d2-markdown :md="doc"/>
+    <d2-markdown :source="doc"/>
   </d2-container>
 </template>
 
