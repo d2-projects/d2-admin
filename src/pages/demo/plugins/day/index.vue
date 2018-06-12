@@ -3,7 +3,7 @@
     <template slot="header">
       <el-button @click="handleReset">重新设置基础时间 this.now = dayjs()</el-button>
     </template>
-    <h1>当前时间</h1>
+    <h1 class="d2-mt-0">当前时间</h1>
     <el-row :gutter="20" class="d2-mt">
       <el-col :span="8"><el-card shadow="never"><d2-highlight slot="header" :code="`now.format('YYYY年M月D日 HH:mm:ss')`"/>{{now.format('YYYY年M月D日 HH:mm:ss')}}</el-card></el-col>
     </el-row>
@@ -43,7 +43,7 @@
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//序列化 Dayjs 对象时会返回 ISO 8601 格式的字符串\nnow.toJSON()`"/>{{now.toJSON()}}</el-card></el-col>
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//ISO 8601 字符串\nnow.toISOString()`"/>{{now.toISOString()}}</el-card></el-col>
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//字符串\nnow.toString()`"/>{{now.toString()}}</el-card></el-col>
-      <el-col :span="24"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`//对象\nnow.toObject()`"/>{{now.toObject()}}</el-card></el-col>
+      <el-col :span="24"><el-card shadow="never"><d2-highlight slot="header" :code="`//对象\nnow.toObject()`"/>{{now.toObject()}}</el-card></el-col>
     </el-row>
     <h1>查询</h1>
     <el-row :gutter="20" class="d2-mt">
