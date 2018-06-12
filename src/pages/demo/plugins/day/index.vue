@@ -5,7 +5,7 @@
     </template>
     <h1>当前时间</h1>
     <el-row :gutter="20" class="d2-mt">
-      <el-col :span="8"><el-card shadow="never"><d2-highlight slot="header" :code="`now.format('YYYY MM DD')`"/>{{now.format('YYYY MM DD')}}</el-card></el-col>
+      <el-col :span="8"><el-card shadow="never"><d2-highlight slot="header" :code="`now.format('YYYY年M月D日 HH:mm:ss')`"/>{{now.format('YYYY年M月D日 HH:mm:ss')}}</el-card></el-col>
     </el-row>
     <h1>获取</h1>
     <el-row :gutter="20" class="d2-mt">
@@ -26,10 +26,10 @@
     </el-row>
     <h1>操作</h1>
     <el-row :gutter="20" class="d2-mt">
-      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.add(1, 'day').format()`"/>{{now.add(1, 'day').format()}}</el-card></el-col>
-      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.subtract(7, 'year').format()`"/>{{now.subtract(7, 'year').format()}}</el-card></el-col>
-      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.startOf('year').format()`"/>{{now.startOf('year').format()}}</el-card></el-col>
-      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.endOf('month').format()`"/>{{now.endOf('month').format()}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.add(1, 'day').format('YYYY年M月D日 HH:mm:ss')`"/>{{now.add(1, 'day').format('YYYY年M月D日 HH:mm:ss')}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.subtract(7, 'year').format('YYYY年M月D日 HH:mm:ss')`"/>{{now.subtract(7, 'year').format('YYYY年M月D日 HH:mm:ss')}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.startOf('year').format('YYYY年M月D日 HH:mm:ss')`"/>{{now.startOf('year').format('YYYY年M月D日 HH:mm:ss')}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.endOf('month').format('YYYY年M月D日 HH:mm:ss')`"/>{{now.endOf('month').format('YYYY年M月D日 HH:mm:ss')}}</el-card></el-col>
     </el-row>
     <template slot="footer">
       <d2-demo-link-btn title="依赖" :link="link"/>
