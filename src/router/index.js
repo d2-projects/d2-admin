@@ -52,6 +52,7 @@ const routes = [
     children: (pre => [
       { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build/index.vue') },
       { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill/index.vue') },
+      { path: 'day', name: `${pre}day`, component: () => import('@/pages/demo/plugins/day/index.vue') },
       { path: 'export/table', name: `${pre}export-table`, component: () => import('@/pages/demo/plugins/export/table.vue') },
       { path: 'export/txt', name: `${pre}export-txt`, component: () => import('@/pages/demo/plugins/export/txt.vue') },
       { path: 'i18n/demo1', name: `${pre}i18n-demo1`, component: () => import('@/pages/demo/plugins/i18n/demo1.vue') },

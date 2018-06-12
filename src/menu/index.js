@@ -40,6 +40,7 @@ const demoPlugins = {
     },
     { path: `${pre}build`, title: '环境区分' },
     { path: `${pre}clipboard-polyfill`, title: '剪贴板访问' },
+    { path: `${pre}day`, title: '日期计算' },
     { path: `${pre}js-cookie`, title: 'Cookie 读写' },
     { path: `${pre}timeago`, title: '时间差计算' }
   ])('/demo/plugins/')
