@@ -28,6 +28,8 @@
     <el-row :gutter="20" class="d2-mt">
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.add(1, 'day').format()`"/>{{now.add(1, 'day').format()}}</el-card></el-col>
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.subtract(7, 'year').format()`"/>{{now.subtract(7, 'year').format()}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.startOf('year').format()`"/>{{now.startOf('year').format()}}</el-card></el-col>
+      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`now.endOf('month').format()`"/>{{now.endOf('month').format()}}</el-card></el-col>
     </el-row>
     <template slot="footer">
       <d2-demo-link-btn title="依赖" :link="link"/>
