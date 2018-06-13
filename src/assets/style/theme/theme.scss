@@ -4,6 +4,16 @@
   width: 100vw;
   background-size: cover;
   background-position: center;
+  position: relative;
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0px;
+  //   right: 0px;
+  //   bottom: 0px;
+  //   left: 0px;
+  //   background-color: rgba(#000, .5);
+  // }
   // [布局] 顶栏
   .el-header {
     padding: 0px;
