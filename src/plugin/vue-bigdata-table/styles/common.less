@@ -1,0 +1,29 @@
+@basic-blue: #3695FE;
+@border-color: #e9eaec;
+@sort-border-width: 4px;
+@sort-border-default: #bbbec4;
+@sort-border-hover: #495060;
+@sort-border-active: @basic-blue;
+// 超出用省略号代替
+.text-ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+// 选择单元格表格
+.select-border (@direction) {
+  border-@{direction}: 1px solid @basic-blue;
+}
+.no-select{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+}

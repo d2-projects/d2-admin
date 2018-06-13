@@ -82,6 +82,10 @@ module.exports = {
         loaders: ["style", "css", "sass"]
       },
       {
+        test: /\.less$/,
+        loaders: ["style", "css", "less"]
+      },
+      {
         test: /\.md$/,
         loaders: ["text-loader"]
       },
