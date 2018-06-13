@@ -3,7 +3,7 @@ $theme-name: 'star';
 // 主题背景颜色
 $theme-bg-color: #EFF4F8;
 // 主题背景图片
-$theme-bg-image: '/static/image/bg/star-squashed.jpg';
+$theme-bg-image: url('/static/image/bg/star-squashed.jpg');
 
 // container组件
 $theme-container-background-color: rgba(#FFF, .9);
