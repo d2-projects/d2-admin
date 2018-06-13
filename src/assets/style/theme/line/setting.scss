@@ -40,3 +40,11 @@ $theme-aside-item-background-color-focus: rgba(#000, .02);
 // 侧边栏上的项目在 active 时
 $theme-aside-item-color-active: $color-text-main;
 $theme-aside-item-background-color-active: rgba(#000, .03);
+
+// 侧边栏菜单为空的时候显示的元素
+$theme-aside-menu-empty-icon-color: $color-text-normal;
+$theme-aside-menu-empty-text-color: $color-text-normal;
+$theme-aside-menu-empty-background-color: rgba(#000, .03);
+$theme-aside-menu-empty-icon-color-hover: $color-text-main;
+$theme-aside-menu-empty-text-color-hover: $color-text-main;
+$theme-aside-menu-empty-background-color-hover: rgba(#000, .05);
