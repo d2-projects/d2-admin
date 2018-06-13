@@ -20,6 +20,7 @@
 * [ 修改 ] 删除 `timeago` 插件，更换为更强大的 `dayjs`
 * [ 新增 ] `Tomorrow Night Blue` 主题
 * [ 修改 ] `src/assets/style/public-class.scss` 写法优化
+* [ 新增 ] [vue-bigdata-table](https://github.com/lison16/vue-bigdata-table)组件
 
 ## v1.0.0
 
