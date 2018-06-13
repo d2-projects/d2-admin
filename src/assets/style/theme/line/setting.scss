@@ -1,9 +1,9 @@
 // 主题名称
 $theme-name: 'line';
 // 主题背景颜色
-$theme-bg-color: $color-bg;
+$theme-bg-color: #f8f8f9;
 // 主题背景图片
-$theme-bg-image: '/static/image/bg/line-squashed.jpg';
+$theme-bg-image: url('/static/image/bg/line-squashed.jpg');
 
 // container组件
 $theme-container-background-color: rgba(#FFF, .8);
