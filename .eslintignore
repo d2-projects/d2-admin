@@ -2,3 +2,4 @@
 /config/
 /dist/
 /*.js
+/src/plugin/vue-bigdata-table

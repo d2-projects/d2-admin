@@ -41,6 +41,8 @@ import pluginExport from '@/plugin/export'
 import pluginLog from '@/plugin/log'
 // 插件 打开页面
 import pluginOpen from '@/plugin/open'
+// 插件 支持百万级数据的表格
+import bigdataTable from '@/plugin/vue-bigdata-table'
 
 Vue.use(ElementUI)
 
@@ -48,6 +50,7 @@ Vue.use(pluginImport)
 Vue.use(pluginExport)
 Vue.use(pluginLog)
 Vue.use(pluginOpen)
+Vue.use(bigdataTable)
 
 Vue.config.productionTip = false
 
