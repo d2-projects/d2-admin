@@ -87,6 +87,7 @@ const demoComponents = {
         { path: `${pre}markdown/url`, title: '异步加载文件' }
       ]
     },
+    { path: `${pre}bigdata-table`, title: '超大量数据表格' },
     { path: `${pre}countup`, title: '数字动画' },
     { path: `${pre}editor-quill`, title: '富文本编辑器' },
     { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器' },

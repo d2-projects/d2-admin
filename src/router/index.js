@@ -26,6 +26,7 @@ const routes = [
     redirect: { name: 'demo-components-index' },
     component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
+      { path: 'bigdata-table', name: `${pre}bigdata-table`, component: () => import('@/pages/demo/components/bigdata-table/index.vue') },
       { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue') },
       { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue') },
       { path: 'container/card', name: `${pre}container-card`, component: () => import('@/pages/demo/components/container/card.vue') },
