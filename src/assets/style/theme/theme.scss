@@ -24,8 +24,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      user-select: none;
-      cursor: pointer;
+      @extend %unable-select;
       i {
         font-size: 20px;
         margin-top: 4px;
@@ -37,9 +36,11 @@
       border-bottom: none;
       background-color: transparent;
       .el-menu-item {
+        @extend %unable-select;
         border-bottom: none;
       }
       .el-submenu {
+        @extend %unable-select;
         .el-submenu__title {
           border-bottom: none;
         }
@@ -58,8 +59,7 @@
         margin-left: 10px !important;
       }
       .el-dropdown {
-        user-select: none;
-        cursor: pointer;
+        @extend %unable-select;
       }
     }
   }
@@ -71,6 +71,7 @@
       overflow: inherit;
       // [菜单] 正常状态
       .el-menu {
+        @extend %unable-select;
         background-color: transparent;
         border-right: none;
         .el-menu-item {
@@ -81,6 +82,7 @@
         }
       }
       .el-submenu {
+        @extend %unable-select;
         .el-submenu__title {
           i {
             margin-right: 5px;
@@ -101,8 +103,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        cursor: pointer;
-        user-select: none;
+        @extend %unable-select;
         i {
           font-size: 30px;
           margin-bottom: 10px;
@@ -177,6 +178,12 @@
       color: $theme-menu-item-color-hover;
     }
     background-color: $theme-menu-item-background-color-hover;
+  }
+  .el-submenu__title {
+    @extend %unable-select;
+  }
+  .el-menu-item {
+    @extend %unable-select;
   }
   .el-submenu__title:hover {
     @include theme-menu-hover-style;
