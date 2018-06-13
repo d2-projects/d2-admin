@@ -71,6 +71,6 @@ export default {
 </script>
 
 <style lang="scss">
-// 主题
+// 注册主题
 @import '~@/assets/style/theme/register.scss';
 </style>
