@@ -21,6 +21,8 @@
 * [ 新增 ] `Tomorrow Night Blue` 主题
 * [ 修改 ] `src/assets/style/public-class.scss` 写法优化
 * [ 新增 ] [vue-bigdata-table](https://github.com/lison16/vue-bigdata-table)组件
+* [ 修复 ] 侧边栏内容超过一屏后显示错误
+* [ 新增 ] 自定义滚动条演示页面
 
 ## v1.0.0
 
