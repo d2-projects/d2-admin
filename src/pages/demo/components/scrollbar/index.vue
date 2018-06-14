@@ -15,7 +15,6 @@
   </d2-container>
 </template>
 
-
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
 .demo-scrollbar-card {
