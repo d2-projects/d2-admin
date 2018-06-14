@@ -20,7 +20,7 @@
     <!-- 下面 主体 -->
     <el-container>
       <!-- 主体 侧边栏 -->
-      <el-aside :style="{width: collapse ? asideWidthCollapse : asideWidth}">
+      <el-aside ref="aside" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
         <d2-layout-main-menu-side :collapse="collapse"/>
       </el-aside>
       <!-- 主体 -->

@@ -6,7 +6,7 @@
       </el-button>
     </el-tooltip>
     <el-dialog title="主题" width="600px" :visible.sync="dialogVisible">
-      <d2-theme-list/>
+      <d2-theme-list style="margin-top: -20px;"/>
     </el-dialog>
   </div>
 </template>
