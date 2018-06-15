@@ -184,6 +184,7 @@
 
 .theme-#{$theme-name} {
 
+  // 背景图片和遮罩
   .layout-main-group {
     background-color: $theme-bg-color;
     background-image: $theme-bg-image;
@@ -191,6 +192,7 @@
       background-color: $theme-bg-mask;
     }
   }
+
   // 菜单项目
   @mixin theme-menu-hover-style {
     color: $theme-menu-item-color-hover;
