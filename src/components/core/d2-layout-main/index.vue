@@ -1,36 +1,39 @@
 <template>
-  <el-container class="layout-main">
-    <!-- 顶栏 -->
-    <el-header>
-      <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-        <img v-if="collapse" :src="`/static/image/theme/${themeName}/logo/icon-only.png`">
-        <img v-else :src="`/static/image/theme/${themeName}/logo/all.png`">
-      </div>
-      <div class="toggle-aside-btn" @click="collapse = !collapse">
-        <d2-icon name="bars"/>
-      </div>
-      <d2-layout-main-header-menu/>
-      <!-- 顶栏右侧 -->
-      <div class="d2-header-right">
-        <d2-layout-main-header-full-screen/>
-        <d2-layout-main-header-theme/>
-        <d2-layout-main-header-user/>
-      </div>
-    </el-header>
-    <!-- 下面 主体 -->
-    <el-container>
-      <!-- 主体 侧边栏 -->
-      <el-aside ref="aside" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-        <d2-layout-main-menu-side :collapse="collapse"/>
-      </el-aside>
-      <!-- 主体 -->
-      <el-main>
-        <transition name="fade-transverse">
-          <router-view/>
-        </transition>
-      </el-main>
+  <div class="layout-main-group">
+    <div class="layout-main-mask"></div>
+    <el-container class="layout-main">
+      <!-- 顶栏 -->
+      <el-header>
+        <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
+          <img v-if="collapse" :src="`/static/image/theme/${themeName}/logo/icon-only.png`">
+          <img v-else :src="`/static/image/theme/${themeName}/logo/all.png`">
+        </div>
+        <div class="toggle-aside-btn" @click="collapse = !collapse">
+          <d2-icon name="bars"/>
+        </div>
+        <d2-layout-main-header-menu/>
+        <!-- 顶栏右侧 -->
+        <div class="d2-header-right">
+          <d2-layout-main-header-full-screen/>
+          <d2-layout-main-header-theme/>
+          <d2-layout-main-header-user/>
+        </div>
+      </el-header>
+      <!-- 下面 主体 -->
+      <el-container>
+        <!-- 主体 侧边栏 -->
+        <el-aside ref="aside" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
+          <d2-layout-main-menu-side :collapse="collapse"/>
+        </el-aside>
+        <!-- 主体 -->
+        <el-main>
+          <transition name="fade-transverse">
+            <router-view/>
+          </transition>
+        </el-main>
+      </el-container>
     </el-container>
-  </el-container>
+  </div>
 </template>
 
 <script>

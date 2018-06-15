@@ -4,6 +4,8 @@ $theme-name: 'star';
 $theme-bg-color: #EFF4F8;
 // 主题背景图片
 $theme-bg-image: url('/static/image/bg/star-squashed.jpg');
+// 主题背景图片遮罩
+$theme-bg-mask: rgba(#000, .3);
 
 // container组件
 $theme-container-background-color: rgba(#FFF, .9);
