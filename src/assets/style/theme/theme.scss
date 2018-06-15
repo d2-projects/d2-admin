@@ -12,7 +12,6 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: rgba(#000, .3);
   }
   // 主体
   .layout-main {
@@ -188,6 +187,9 @@
   .layout-main-group {
     background-color: $theme-bg-color;
     background-image: $theme-bg-image;
+    .layout-main-mask {
+      background-color: $theme-bg-mask;
+    }
   }
   // 菜单项目
   @mixin theme-menu-hover-style {
