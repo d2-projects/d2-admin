@@ -1,10 +1,26 @@
-// 主题公用
-.layout-main {
+.layout-main-group {
   height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
   position: relative;
+  .layout-main-mask {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(#000, .3);
+  }
+}
+
+// 主题公用
+.layout-main {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
   // [布局] 顶栏
   .el-header {
     padding: 0px;
@@ -168,7 +184,7 @@
 
 .theme-#{$theme-name} {
 
-  .layout-main {
+  .layout-main-group {
     background-color: $theme-bg-color;
     background-image: $theme-bg-image;
   }
