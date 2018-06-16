@@ -122,6 +122,16 @@ const demoChart = {
   ])('/demo/chart/')
 }
 
+// 路由菜单 组件库
+const demoElement = {
+  path: '/demo/element',
+  title: '组件库',
+  icon: 'puzzle-piece',
+  children: (pre => [
+    { path: `${pre}index`, title: '组件库首页' }
+  ])('/demo/element/')
+}
+
 // 菜单 侧边栏
 export const side = [
   demoPlugins,
@@ -141,6 +151,7 @@ export default [
     children: [
       demoPlugins,
       demoComponents,
+      demoElement,
       demoChart
     ]
   },

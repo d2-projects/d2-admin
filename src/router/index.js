@@ -101,6 +101,16 @@ const routes = [
       { path: 'scrollbar', name: `${pre}scrollbar`, component: () => import('@/pages/demo/components/scrollbar/index.vue'), meta }
     ])('demo-components-')
   },
+  {
+    path: '/demo/element',
+    name: 'demo-element',
+    meta,
+    redirect: { name: 'demo-element-index' },
+    component: () => import('@/components/core/d2-layout-main/index.vue'),
+    children: (pre => [
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/element/index/index.vue'), meta }
+    ])('demo-element-')
+  },
   // 登陆
   {
     path: '/login',
@@ -108,10 +118,6 @@ const routes = [
     component: () => import('@/pages/core/login/index.vue')
   }
 ]
-
-// routes[3].children.forEach(e => {
-//   console.log(`{ path: \`\${pre}${e.path}\`, title: 'title' }`)
-// })
 
 let router = new VueRouter({ routes })
 
