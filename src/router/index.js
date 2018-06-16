@@ -22,31 +22,34 @@ const routes = [
     ]
   },
   {
-    path: '/demo/components',
-    name: 'demo-components',
+    path: '/demo/business',
+    name: 'demo-business',
     meta,
-    redirect: { name: 'demo-components-index' },
+    redirect: { name: 'demo-business-index' },
     component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
-      { path: 'bigdata-table', name: `${pre}bigdata-table`, component: () => import('@/pages/demo/components/bigdata-table/index.vue'), meta },
-      { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue'), meta },
-      { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue'), meta },
-      { path: 'container/card', name: `${pre}container-card`, component: () => import('@/pages/demo/components/container/card.vue'), meta },
-      { path: 'countup', name: `${pre}countup`, component: () => import('@/pages/demo/components/countup/index.vue'), meta },
-      { path: 'editor-quill', name: `${pre}editor-quill`, component: () => import('@/pages/demo/components/editor-quill/index.vue'), meta },
-      { path: 'editor-simpleMDE', name: `${pre}editor-simpleMDE`, component: () => import('@/pages/demo/components/editor-simpleMDE/index.vue'), meta },
-      { path: 'highlight', name: `${pre}highlight`, component: () => import('@/pages/demo/components/highlight/index.vue'), meta },
-      { path: 'icon/icon', name: `${pre}icon-icon`, component: () => import('@/pages/demo/components/icon/icon.vue'), meta },
-      { path: 'icon/list', name: `${pre}icon-list`, component: () => import('@/pages/demo/components/icon/list.vue'), meta },
-      { path: 'icon/select', name: `${pre}icon-select`, component: () => import('@/pages/demo/components/icon/select.vue'), meta },
-      { path: 'icon/svg', name: `${pre}icon-svg`, component: () => import('@/pages/demo/components/icon/svg.vue'), meta },
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/components/index/index.vue'), meta },
-      { path: 'layout/grid', name: `${pre}layout-grid`, component: () => import('@/pages/demo/components/layout/grid.vue'), meta },
-      { path: 'layout/splitpane', name: `${pre}layout-splitpane`, component: () => import('@/pages/demo/components/layout/splitpane.vue'), meta },
-      { path: 'markdown/source', name: `${pre}markdown-source`, component: () => import('@/pages/demo/components/markdown/source.vue'), meta },
-      { path: 'markdown/url', name: `${pre}markdown-url`, component: () => import('@/pages/demo/components/markdown/url.vue'), meta },
-      { path: 'scrollbar', name: `${pre}scrollbar`, component: () => import('@/pages/demo/components/scrollbar/index.vue'), meta }
-    ])('demo-components-')
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/business/index/index.vue'), meta }
+    ])('demo-business-')
+  },
+  {
+    path: '/demo/chart',
+    name: 'demo-chart',
+    meta,
+    redirect: { name: 'demo-chart-index' },
+    component: () => import('@/components/core/d2-layout-main/index.vue'),
+    children: (pre => [
+      { path: 'all', name: `${pre}all`, component: () => import('@/pages/demo/chart/all/index.vue'), meta },
+      { path: 'demo/areaBase', name: `${pre}demo-areaBase`, component: () => import('@/pages/demo/chart/demo/areaBase.vue'), meta },
+      { path: 'demo/barBase', name: `${pre}demo-barBase`, component: () => import('@/pages/demo/chart/demo/barBase.vue'), meta },
+      { path: 'demo/columnBase', name: `${pre}demo-columnBase`, component: () => import('@/pages/demo/chart/demo/columnBase.vue'), meta },
+      { path: 'demo/lineBase', name: `${pre}demo-lineBase`, component: () => import('@/pages/demo/chart/demo/lineBase.vue'), meta },
+      { path: 'demo/lineStep', name: `${pre}demo-lineStep`, component: () => import('@/pages/demo/chart/demo/lineStep.vue'), meta },
+      { path: 'demo/nightingaleRoseBase', name: `${pre}demo-nightingaleRoseBase`, component: () => import('@/pages/demo/chart/demo/nightingaleRoseBase.vue'), meta },
+      { path: 'demo/PieBase', name: `${pre}demo-PieBase`, component: () => import('@/pages/demo/chart/demo/PieBase.vue'), meta },
+      { path: 'demo/radarBase', name: `${pre}demo-radarBase`, component: () => import('@/pages/demo/chart/demo/radarBase.vue'), meta },
+      { path: 'dynamicSize', name: `${pre}dynamicSize`, component: () => import('@/pages/demo/chart/dynamicSize/index.vue'), meta },
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/chart/index/index.vue'), meta }
+    ])('demo-chart-')
   },
   {
     path: '/demo/plugins',
@@ -72,34 +75,31 @@ const routes = [
     ])('demo-plugins-')
   },
   {
-    path: '/demo/chart',
-    name: 'demo-chart',
+    path: '/demo/components',
+    name: 'demo-components',
     meta,
-    redirect: { name: 'demo-chart-index' },
+    redirect: { name: 'demo-components-index' },
     component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
-      { path: 'all', name: `${pre}all`, component: () => import('@/pages/demo/chart/all/index.vue'), meta },
-      { path: 'demo/areaBase', name: `${pre}demo-areaBase`, component: () => import('@/pages/demo/chart/demo/areaBase.vue'), meta },
-      { path: 'demo/barBase', name: `${pre}demo-barBase`, component: () => import('@/pages/demo/chart/demo/barBase.vue'), meta },
-      { path: 'demo/columnBase', name: `${pre}demo-columnBase`, component: () => import('@/pages/demo/chart/demo/columnBase.vue'), meta },
-      { path: 'demo/lineBase', name: `${pre}demo-lineBase`, component: () => import('@/pages/demo/chart/demo/lineBase.vue'), meta },
-      { path: 'demo/lineStep', name: `${pre}demo-lineStep`, component: () => import('@/pages/demo/chart/demo/lineStep.vue'), meta },
-      { path: 'demo/nightingaleRoseBase', name: `${pre}demo-nightingaleRoseBase`, component: () => import('@/pages/demo/chart/demo/nightingaleRoseBase.vue'), meta },
-      { path: 'demo/PieBase', name: `${pre}demo-PieBase`, component: () => import('@/pages/demo/chart/demo/PieBase.vue'), meta },
-      { path: 'demo/radarBase', name: `${pre}demo-radarBase`, component: () => import('@/pages/demo/chart/demo/radarBase.vue'), meta },
-      { path: 'dynamicSize', name: `${pre}dynamicSize`, component: () => import('@/pages/demo/chart/dynamicSize/index.vue'), meta },
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/chart/index/index.vue'), meta }
-    ])('demo-chart-')
-  },
-  {
-    path: '/demo/business',
-    name: 'demo-business',
-    meta,
-    redirect: { name: 'demo-business-index' },
-    component: () => import('@/components/core/d2-layout-main/index.vue'),
-    children: (pre => [
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/business/index/index.vue'), meta }
-    ])('demo-business-')
+      { path: 'bigdata-table', name: `${pre}bigdata-table`, component: () => import('@/pages/demo/components/bigdata-table/index.vue'), meta },
+      { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue'), meta },
+      { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue'), meta },
+      { path: 'container/card', name: `${pre}container-card`, component: () => import('@/pages/demo/components/container/card.vue'), meta },
+      { path: 'countup', name: `${pre}countup`, component: () => import('@/pages/demo/components/countup/index.vue'), meta },
+      { path: 'editor-quill', name: `${pre}editor-quill`, component: () => import('@/pages/demo/components/editor-quill/index.vue'), meta },
+      { path: 'editor-simpleMDE', name: `${pre}editor-simpleMDE`, component: () => import('@/pages/demo/components/editor-simpleMDE/index.vue'), meta },
+      { path: 'highlight', name: `${pre}highlight`, component: () => import('@/pages/demo/components/highlight/index.vue'), meta },
+      { path: 'icon/icon', name: `${pre}icon-icon`, component: () => import('@/pages/demo/components/icon/icon.vue'), meta },
+      { path: 'icon/list', name: `${pre}icon-list`, component: () => import('@/pages/demo/components/icon/list.vue'), meta },
+      { path: 'icon/select', name: `${pre}icon-select`, component: () => import('@/pages/demo/components/icon/select.vue'), meta },
+      { path: 'icon/svg', name: `${pre}icon-svg`, component: () => import('@/pages/demo/components/icon/svg.vue'), meta },
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/components/index/index.vue'), meta },
+      { path: 'layout/grid', name: `${pre}layout-grid`, component: () => import('@/pages/demo/components/layout/grid.vue'), meta },
+      { path: 'layout/splitpane', name: `${pre}layout-splitpane`, component: () => import('@/pages/demo/components/layout/splitpane.vue'), meta },
+      { path: 'markdown/source', name: `${pre}markdown-source`, component: () => import('@/pages/demo/components/markdown/source.vue'), meta },
+      { path: 'markdown/url', name: `${pre}markdown-url`, component: () => import('@/pages/demo/components/markdown/url.vue'), meta },
+      { path: 'scrollbar', name: `${pre}scrollbar`, component: () => import('@/pages/demo/components/scrollbar/index.vue'), meta }
+    ])('demo-components-')
   },
   // 登陆
   {
