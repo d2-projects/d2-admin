@@ -45,7 +45,9 @@ export default {
       // 设置 store
       state.name = name
       // 设置 Cookie
-      Cookies.set('themeName', name)
+      Cookies.set('themeName', name, {
+        expires: 365
+      })
       // 激活主题
       this.commit('activeTheme')
     },
