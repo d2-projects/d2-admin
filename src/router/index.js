@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Cookies from 'js-cookie'
 
+const meta = { requiresAuth: true }
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,7 +16,7 @@ const routes = [
       {
         path: 'index',
         name: 'index',
-        meta: { requiresAuth: true },
+        meta,
         component: () => import('@/pages/core/index/index.vue')
       }
     ]
@@ -22,81 +24,81 @@ const routes = [
   {
     path: '/demo/components',
     name: 'demo-components',
-    meta: { requiresAuth: true },
+    meta,
     redirect: { name: 'demo-components-index' },
     component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
-      { path: 'bigdata-table', name: `${pre}bigdata-table`, component: () => import('@/pages/demo/components/bigdata-table/index.vue') },
-      { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue') },
-      { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue') },
-      { path: 'container/card', name: `${pre}container-card`, component: () => import('@/pages/demo/components/container/card.vue') },
-      { path: 'countup', name: `${pre}countup`, component: () => import('@/pages/demo/components/countup/index.vue') },
-      { path: 'editor-quill', name: `${pre}editor-quill`, component: () => import('@/pages/demo/components/editor-quill/index.vue') },
-      { path: 'editor-simpleMDE', name: `${pre}editor-simpleMDE`, component: () => import('@/pages/demo/components/editor-simpleMDE/index.vue') },
-      { path: 'highlight', name: `${pre}highlight`, component: () => import('@/pages/demo/components/highlight/index.vue') },
-      { path: 'icon/icon', name: `${pre}icon-icon`, component: () => import('@/pages/demo/components/icon/icon.vue') },
-      { path: 'icon/list', name: `${pre}icon-list`, component: () => import('@/pages/demo/components/icon/list.vue') },
-      { path: 'icon/select', name: `${pre}icon-select`, component: () => import('@/pages/demo/components/icon/select.vue') },
-      { path: 'icon/svg', name: `${pre}icon-svg`, component: () => import('@/pages/demo/components/icon/svg.vue') },
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/components/index/index.vue') },
-      { path: 'layout/grid', name: `${pre}layout-grid`, component: () => import('@/pages/demo/components/layout/grid.vue') },
-      { path: 'layout/splitpane', name: `${pre}layout-splitpane`, component: () => import('@/pages/demo/components/layout/splitpane.vue') },
-      { path: 'markdown/source', name: `${pre}markdown-source`, component: () => import('@/pages/demo/components/markdown/source.vue') },
-      { path: 'markdown/url', name: `${pre}markdown-url`, component: () => import('@/pages/demo/components/markdown/url.vue') },
-      { path: 'scrollbar', name: `${pre}scrollbar`, component: () => import('@/pages/demo/components/scrollbar/index.vue') }
+      { path: 'bigdata-table', name: `${pre}bigdata-table`, component: () => import('@/pages/demo/components/bigdata-table/index.vue'), meta },
+      { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue'), meta },
+      { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue'), meta },
+      { path: 'container/card', name: `${pre}container-card`, component: () => import('@/pages/demo/components/container/card.vue'), meta },
+      { path: 'countup', name: `${pre}countup`, component: () => import('@/pages/demo/components/countup/index.vue'), meta },
+      { path: 'editor-quill', name: `${pre}editor-quill`, component: () => import('@/pages/demo/components/editor-quill/index.vue'), meta },
+      { path: 'editor-simpleMDE', name: `${pre}editor-simpleMDE`, component: () => import('@/pages/demo/components/editor-simpleMDE/index.vue'), meta },
+      { path: 'highlight', name: `${pre}highlight`, component: () => import('@/pages/demo/components/highlight/index.vue'), meta },
+      { path: 'icon/icon', name: `${pre}icon-icon`, component: () => import('@/pages/demo/components/icon/icon.vue'), meta },
+      { path: 'icon/list', name: `${pre}icon-list`, component: () => import('@/pages/demo/components/icon/list.vue'), meta },
+      { path: 'icon/select', name: `${pre}icon-select`, component: () => import('@/pages/demo/components/icon/select.vue'), meta },
+      { path: 'icon/svg', name: `${pre}icon-svg`, component: () => import('@/pages/demo/components/icon/svg.vue'), meta },
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/components/index/index.vue'), meta },
+      { path: 'layout/grid', name: `${pre}layout-grid`, component: () => import('@/pages/demo/components/layout/grid.vue'), meta },
+      { path: 'layout/splitpane', name: `${pre}layout-splitpane`, component: () => import('@/pages/demo/components/layout/splitpane.vue'), meta },
+      { path: 'markdown/source', name: `${pre}markdown-source`, component: () => import('@/pages/demo/components/markdown/source.vue'), meta },
+      { path: 'markdown/url', name: `${pre}markdown-url`, component: () => import('@/pages/demo/components/markdown/url.vue'), meta },
+      { path: 'scrollbar', name: `${pre}scrollbar`, component: () => import('@/pages/demo/components/scrollbar/index.vue'), meta }
     ])('demo-components-')
   },
   {
     path: '/demo/plugins',
     name: 'demo-plugins',
-    meta: { requiresAuth: true },
+    meta,
     redirect: { name: 'demo-plugins-index' },
     component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
-      { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build/index.vue') },
-      { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill/index.vue') },
-      { path: 'day', name: `${pre}day`, component: () => import('@/pages/demo/plugins/day/index.vue') },
-      { path: 'export/table', name: `${pre}export-table`, component: () => import('@/pages/demo/plugins/export/table.vue') },
-      { path: 'export/txt', name: `${pre}export-txt`, component: () => import('@/pages/demo/plugins/export/txt.vue') },
-      { path: 'i18n/demo1', name: `${pre}i18n-demo1`, component: () => import('@/pages/demo/plugins/i18n/demo1.vue') },
-      { path: 'i18n/demo2', name: `${pre}i18n-demo2`, component: () => import('@/pages/demo/plugins/i18n/demo2.vue') },
-      { path: 'import/csv', name: `${pre}import-csv`, component: () => import('@/pages/demo/plugins/import/csv.vue') },
-      { path: 'import/xlsx', name: `${pre}import-xlsx`, component: () => import('@/pages/demo/plugins/import/xlsx.vue') },
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/plugins/index/index.vue') },
-      { path: 'js-cookie', name: `${pre}js-cookie`, component: () => import('@/pages/demo/plugins/js-cookie/index.vue') },
-      { path: 'mock/ajax', name: `${pre}mock-ajax`, component: () => import('@/pages/demo/plugins/mock/ajax.vue') },
-      { path: 'mock/dpd', name: `${pre}mock-dpd`, component: () => import('@/pages/demo/plugins/mock/dpd.vue') },
-      { path: 'mock/dtd', name: `${pre}mock-dtd`, component: () => import('@/pages/demo/plugins/mock/dtd.vue') }
+      { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build/index.vue'), meta },
+      { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill/index.vue'), meta },
+      { path: 'day', name: `${pre}day`, component: () => import('@/pages/demo/plugins/day/index.vue'), meta },
+      { path: 'export/table', name: `${pre}export-table`, component: () => import('@/pages/demo/plugins/export/table.vue'), meta },
+      { path: 'export/txt', name: `${pre}export-txt`, component: () => import('@/pages/demo/plugins/export/txt.vue'), meta },
+      { path: 'i18n/demo1', name: `${pre}i18n-demo1`, component: () => import('@/pages/demo/plugins/i18n/demo1.vue'), meta },
+      { path: 'i18n/demo2', name: `${pre}i18n-demo2`, component: () => import('@/pages/demo/plugins/i18n/demo2.vue'), meta },
+      { path: 'import/csv', name: `${pre}import-csv`, component: () => import('@/pages/demo/plugins/import/csv.vue'), meta },
+      { path: 'import/xlsx', name: `${pre}import-xlsx`, component: () => import('@/pages/demo/plugins/import/xlsx.vue'), meta },
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/plugins/index/index.vue'), meta },
+      { path: 'js-cookie', name: `${pre}js-cookie`, component: () => import('@/pages/demo/plugins/js-cookie/index.vue'), meta },
+      { path: 'mock/ajax', name: `${pre}mock-ajax`, component: () => import('@/pages/demo/plugins/mock/ajax.vue'), meta },
+      { path: 'mock/dpd', name: `${pre}mock-dpd`, component: () => import('@/pages/demo/plugins/mock/dpd.vue'), meta },
+      { path: 'mock/dtd', name: `${pre}mock-dtd`, component: () => import('@/pages/demo/plugins/mock/dtd.vue'), meta }
     ])('demo-plugins-')
   },
   {
     path: '/demo/chart',
     name: 'demo-chart',
-    meta: { requiresAuth: true },
+    meta,
     redirect: { name: 'demo-chart-index' },
     component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
-      { path: 'all', name: `${pre}all`, component: () => import('@/pages/demo/chart/all/index.vue') },
-      { path: 'demo/areaBase', name: `${pre}demo-areaBase`, component: () => import('@/pages/demo/chart/demo/areaBase.vue') },
-      { path: 'demo/barBase', name: `${pre}demo-barBase`, component: () => import('@/pages/demo/chart/demo/barBase.vue') },
-      { path: 'demo/columnBase', name: `${pre}demo-columnBase`, component: () => import('@/pages/demo/chart/demo/columnBase.vue') },
-      { path: 'demo/lineBase', name: `${pre}demo-lineBase`, component: () => import('@/pages/demo/chart/demo/lineBase.vue') },
-      { path: 'demo/lineStep', name: `${pre}demo-lineStep`, component: () => import('@/pages/demo/chart/demo/lineStep.vue') },
-      { path: 'demo/nightingaleRoseBase', name: `${pre}demo-nightingaleRoseBase`, component: () => import('@/pages/demo/chart/demo/nightingaleRoseBase.vue') },
-      { path: 'demo/PieBase', name: `${pre}demo-PieBase`, component: () => import('@/pages/demo/chart/demo/PieBase.vue') },
-      { path: 'demo/radarBase', name: `${pre}demo-radarBase`, component: () => import('@/pages/demo/chart/demo/radarBase.vue') },
-      { path: 'dynamicSize', name: `${pre}dynamicSize`, component: () => import('@/pages/demo/chart/dynamicSize/index.vue') },
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/chart/index/index.vue') }
+      { path: 'all', name: `${pre}all`, component: () => import('@/pages/demo/chart/all/index.vue'), meta },
+      { path: 'demo/areaBase', name: `${pre}demo-areaBase`, component: () => import('@/pages/demo/chart/demo/areaBase.vue'), meta },
+      { path: 'demo/barBase', name: `${pre}demo-barBase`, component: () => import('@/pages/demo/chart/demo/barBase.vue'), meta },
+      { path: 'demo/columnBase', name: `${pre}demo-columnBase`, component: () => import('@/pages/demo/chart/demo/columnBase.vue'), meta },
+      { path: 'demo/lineBase', name: `${pre}demo-lineBase`, component: () => import('@/pages/demo/chart/demo/lineBase.vue'), meta },
+      { path: 'demo/lineStep', name: `${pre}demo-lineStep`, component: () => import('@/pages/demo/chart/demo/lineStep.vue'), meta },
+      { path: 'demo/nightingaleRoseBase', name: `${pre}demo-nightingaleRoseBase`, component: () => import('@/pages/demo/chart/demo/nightingaleRoseBase.vue'), meta },
+      { path: 'demo/PieBase', name: `${pre}demo-PieBase`, component: () => import('@/pages/demo/chart/demo/PieBase.vue'), meta },
+      { path: 'demo/radarBase', name: `${pre}demo-radarBase`, component: () => import('@/pages/demo/chart/demo/radarBase.vue'), meta },
+      { path: 'dynamicSize', name: `${pre}dynamicSize`, component: () => import('@/pages/demo/chart/dynamicSize/index.vue'), meta },
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/chart/index/index.vue'), meta }
     ])('demo-chart-')
   },
   {
     path: '/demo/business',
     name: 'demo-business',
-    meta: { requiresAuth: true },
+    meta,
     redirect: { name: 'demo-business-index' },
     component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/business/index/index.vue') }
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/business/index/index.vue'), meta }
     ])('demo-business-')
   },
   // 登陆
@@ -114,8 +116,8 @@ const routes = [
 let router = new VueRouter({ routes })
 
 router.beforeEach((to, from, next) => {
-  // 需要身份校验
-  if (to.meta.requiresAuth) {
+  // 验证当前路由所有的匹配中是否需要有登陆验证的
+  if (to.matched.some(r => r.meta.requiresAuth)) {
     // 这里暂时将cookie里是否存有token作为验证是否登陆的条件
     // 请根据自身业务需要修改
     if (Cookies.get('token')) {
