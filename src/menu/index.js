@@ -158,7 +158,7 @@ export default [
   },
   {
     path: '/demo',
-    title: '功能',
+    title: '集成功能',
     children: [
       demoPlugins,
       demoComponents,
