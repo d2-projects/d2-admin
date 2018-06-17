@@ -1,5 +1,6 @@
 <template>
   <d2-container type="ghost">
+    
     <el-card shadow="never" class="d2-mb">
       <template slot="header">主色</template>
       <el-row :gutter="20">
@@ -10,6 +11,7 @@
         </el-col>
       </el-row>
     </el-card>
+    
     <el-card shadow="never" class="d2-mb">
       <template slot="header">辅助色</template>
       <el-row :gutter="20">
@@ -35,6 +37,7 @@
         </el-col>
       </el-row>
     </el-card>
+    
     <el-card shadow="never">
       <template slot="header">中性色</template>
       <el-row :gutter="20" class="d2-mb">
@@ -82,6 +85,7 @@
         </el-col>
       </el-row>
     </el-card>
+    
   </d2-container>
 </template>
 
