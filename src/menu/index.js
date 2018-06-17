@@ -134,7 +134,8 @@ const demoElement = {
       title: '基础',
       children: [
         { path: `${pre}basic-layout`, title: '布局' },
-        { path: `${pre}basic-container`, title: '布局容器' }
+        { path: `${pre}basic-container`, title: '布局容器' },
+        { path: `${pre}basic-color`, title: '颜色' }
       ]
     }
   ])('/demo/element/')
