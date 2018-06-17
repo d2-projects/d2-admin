@@ -22,6 +22,59 @@ const routes = [
     ]
   },
   {
+    path: '/demo/business',
+    name: 'demo-business',
+    meta,
+    redirect: { name: 'demo-business-index' },
+    component: () => import('@/components/core/d2-layout-main/index.vue'),
+    children: (pre => [
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/business/index/index.vue'), meta }
+    ])('demo-business-')
+  },
+  {
+    path: '/demo/chart',
+    name: 'demo-chart',
+    meta,
+    redirect: { name: 'demo-chart-index' },
+    component: () => import('@/components/core/d2-layout-main/index.vue'),
+    children: (pre => [
+      { path: 'all', name: `${pre}all`, component: () => import('@/pages/demo/chart/all/index.vue'), meta },
+      { path: 'demo/areaBase', name: `${pre}demo-areaBase`, component: () => import('@/pages/demo/chart/demo/areaBase.vue'), meta },
+      { path: 'demo/barBase', name: `${pre}demo-barBase`, component: () => import('@/pages/demo/chart/demo/barBase.vue'), meta },
+      { path: 'demo/columnBase', name: `${pre}demo-columnBase`, component: () => import('@/pages/demo/chart/demo/columnBase.vue'), meta },
+      { path: 'demo/lineBase', name: `${pre}demo-lineBase`, component: () => import('@/pages/demo/chart/demo/lineBase.vue'), meta },
+      { path: 'demo/lineStep', name: `${pre}demo-lineStep`, component: () => import('@/pages/demo/chart/demo/lineStep.vue'), meta },
+      { path: 'demo/nightingaleRoseBase', name: `${pre}demo-nightingaleRoseBase`, component: () => import('@/pages/demo/chart/demo/nightingaleRoseBase.vue'), meta },
+      { path: 'demo/PieBase', name: `${pre}demo-PieBase`, component: () => import('@/pages/demo/chart/demo/PieBase.vue'), meta },
+      { path: 'demo/radarBase', name: `${pre}demo-radarBase`, component: () => import('@/pages/demo/chart/demo/radarBase.vue'), meta },
+      { path: 'dynamicSize', name: `${pre}dynamicSize`, component: () => import('@/pages/demo/chart/dynamicSize/index.vue'), meta },
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/chart/index/index.vue'), meta }
+    ])('demo-chart-')
+  },
+  {
+    path: '/demo/plugins',
+    name: 'demo-plugins',
+    meta,
+    redirect: { name: 'demo-plugins-index' },
+    component: () => import('@/components/core/d2-layout-main/index.vue'),
+    children: (pre => [
+      { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build/index.vue'), meta },
+      { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill/index.vue'), meta },
+      { path: 'day', name: `${pre}day`, component: () => import('@/pages/demo/plugins/day/index.vue'), meta },
+      { path: 'export/table', name: `${pre}export-table`, component: () => import('@/pages/demo/plugins/export/table.vue'), meta },
+      { path: 'export/txt', name: `${pre}export-txt`, component: () => import('@/pages/demo/plugins/export/txt.vue'), meta },
+      { path: 'i18n/demo1', name: `${pre}i18n-demo1`, component: () => import('@/pages/demo/plugins/i18n/demo1.vue'), meta },
+      { path: 'i18n/demo2', name: `${pre}i18n-demo2`, component: () => import('@/pages/demo/plugins/i18n/demo2.vue'), meta },
+      { path: 'import/csv', name: `${pre}import-csv`, component: () => import('@/pages/demo/plugins/import/csv.vue'), meta },
+      { path: 'import/xlsx', name: `${pre}import-xlsx`, component: () => import('@/pages/demo/plugins/import/xlsx.vue'), meta },
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/plugins/index/index.vue'), meta },
+      { path: 'js-cookie', name: `${pre}js-cookie`, component: () => import('@/pages/demo/plugins/js-cookie/index.vue'), meta },
+      { path: 'mock/ajax', name: `${pre}mock-ajax`, component: () => import('@/pages/demo/plugins/mock/ajax.vue'), meta },
+      { path: 'mock/dpd', name: `${pre}mock-dpd`, component: () => import('@/pages/demo/plugins/mock/dpd.vue'), meta },
+      { path: 'mock/dtd', name: `${pre}mock-dtd`, component: () => import('@/pages/demo/plugins/mock/dtd.vue'), meta }
+    ])('demo-plugins-')
+  },
+  {
     path: '/demo/components',
     name: 'demo-components',
     meta,
@@ -49,57 +102,18 @@ const routes = [
     ])('demo-components-')
   },
   {
-    path: '/demo/plugins',
-    name: 'demo-plugins',
+    path: '/demo/element',
+    name: 'demo-element',
     meta,
-    redirect: { name: 'demo-plugins-index' },
+    redirect: { name: 'demo-element-index' },
     component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
-      { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build/index.vue'), meta },
-      { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill/index.vue'), meta },
-      { path: 'day', name: `${pre}day`, component: () => import('@/pages/demo/plugins/day/index.vue'), meta },
-      { path: 'export/table', name: `${pre}export-table`, component: () => import('@/pages/demo/plugins/export/table.vue'), meta },
-      { path: 'export/txt', name: `${pre}export-txt`, component: () => import('@/pages/demo/plugins/export/txt.vue'), meta },
-      { path: 'i18n/demo1', name: `${pre}i18n-demo1`, component: () => import('@/pages/demo/plugins/i18n/demo1.vue'), meta },
-      { path: 'i18n/demo2', name: `${pre}i18n-demo2`, component: () => import('@/pages/demo/plugins/i18n/demo2.vue'), meta },
-      { path: 'import/csv', name: `${pre}import-csv`, component: () => import('@/pages/demo/plugins/import/csv.vue'), meta },
-      { path: 'import/xlsx', name: `${pre}import-xlsx`, component: () => import('@/pages/demo/plugins/import/xlsx.vue'), meta },
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/plugins/index/index.vue'), meta },
-      { path: 'js-cookie', name: `${pre}js-cookie`, component: () => import('@/pages/demo/plugins/js-cookie/index.vue'), meta },
-      { path: 'mock/ajax', name: `${pre}mock-ajax`, component: () => import('@/pages/demo/plugins/mock/ajax.vue'), meta },
-      { path: 'mock/dpd', name: `${pre}mock-dpd`, component: () => import('@/pages/demo/plugins/mock/dpd.vue'), meta },
-      { path: 'mock/dtd', name: `${pre}mock-dtd`, component: () => import('@/pages/demo/plugins/mock/dtd.vue'), meta }
-    ])('demo-plugins-')
-  },
-  {
-    path: '/demo/chart',
-    name: 'demo-chart',
-    meta,
-    redirect: { name: 'demo-chart-index' },
-    component: () => import('@/components/core/d2-layout-main/index.vue'),
-    children: (pre => [
-      { path: 'all', name: `${pre}all`, component: () => import('@/pages/demo/chart/all/index.vue'), meta },
-      { path: 'demo/areaBase', name: `${pre}demo-areaBase`, component: () => import('@/pages/demo/chart/demo/areaBase.vue'), meta },
-      { path: 'demo/barBase', name: `${pre}demo-barBase`, component: () => import('@/pages/demo/chart/demo/barBase.vue'), meta },
-      { path: 'demo/columnBase', name: `${pre}demo-columnBase`, component: () => import('@/pages/demo/chart/demo/columnBase.vue'), meta },
-      { path: 'demo/lineBase', name: `${pre}demo-lineBase`, component: () => import('@/pages/demo/chart/demo/lineBase.vue'), meta },
-      { path: 'demo/lineStep', name: `${pre}demo-lineStep`, component: () => import('@/pages/demo/chart/demo/lineStep.vue'), meta },
-      { path: 'demo/nightingaleRoseBase', name: `${pre}demo-nightingaleRoseBase`, component: () => import('@/pages/demo/chart/demo/nightingaleRoseBase.vue'), meta },
-      { path: 'demo/PieBase', name: `${pre}demo-PieBase`, component: () => import('@/pages/demo/chart/demo/PieBase.vue'), meta },
-      { path: 'demo/radarBase', name: `${pre}demo-radarBase`, component: () => import('@/pages/demo/chart/demo/radarBase.vue'), meta },
-      { path: 'dynamicSize', name: `${pre}dynamicSize`, component: () => import('@/pages/demo/chart/dynamicSize/index.vue'), meta },
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/chart/index/index.vue'), meta }
-    ])('demo-chart-')
-  },
-  {
-    path: '/demo/business',
-    name: 'demo-business',
-    meta,
-    redirect: { name: 'demo-business-index' },
-    component: () => import('@/components/core/d2-layout-main/index.vue'),
-    children: (pre => [
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/business/index/index.vue'), meta }
-    ])('demo-business-')
+      { path: 'basic-layout', name: `${pre}basic-layout`, component: () => import('@/pages/demo/element/basic-layout/index.vue'), meta },
+      { path: 'basic-container', name: `${pre}basic-container`, component: () => import('@/pages/demo/element/basic-container/index.vue'), meta },
+      { path: 'basic-color', name: `${pre}basic-color`, component: () => import('@/pages/demo/element/basic-color/index.vue'), meta },
+      { path: 'basic-button', name: `${pre}basic-button`, component: () => import('@/pages/demo/element/basic-button/index.vue'), meta },
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/element/index/index.vue'), meta }
+    ])('demo-element-')
   },
   // 登陆
   {
@@ -108,10 +122,6 @@ const routes = [
     component: () => import('@/pages/core/login/index.vue')
   }
 ]
-
-// routes[3].children.forEach(e => {
-//   console.log(`{ path: \`\${pre}${e.path}\`, title: 'title' }`)
-// })
 
 let router = new VueRouter({ routes })
 
