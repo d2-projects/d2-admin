@@ -5,7 +5,7 @@
       <el-row :gutter="20">
         <el-col :span="6">
           <div class="color color-primary">
-            <d2-demo-color-info/>
+            <d2-element-basic-color-info/>
           </div>
         </el-col>
       </el-row>
@@ -64,7 +64,7 @@
 <script>
 export default {
   components: {
-    'd2-demo-color-info': () => import('./components/color-info.vue')
+    'd2-element-basic-color-info': () => import('./components/info.vue')
   }
 }
 </script>
