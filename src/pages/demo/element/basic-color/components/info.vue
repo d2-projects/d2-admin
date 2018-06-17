@@ -40,14 +40,16 @@ export default {
     margin: 0px;
   }
   .name {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
   }
   .sass {
     font-size: 12px;
+    margin-top: 4px;
   }
   .color {
     font-size: 12px;
+    opacity: .7;
   }
   &.dark {
     color: #333;
