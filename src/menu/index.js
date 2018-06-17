@@ -122,10 +122,31 @@ const demoChart = {
   ])('/demo/chart/')
 }
 
+// 路由菜单 组件库
+const demoElement = {
+  path: '/demo/element',
+  title: '组件库',
+  icon: 'puzzle-piece',
+  children: (pre => [
+    { path: `${pre}index`, title: '组件库首页' },
+    {
+      path: `${pre}basic`,
+      title: '基础',
+      children: [
+        { path: `${pre}basic-layout`, title: '布局' },
+        { path: `${pre}basic-container`, title: '布局容器' },
+        { path: `${pre}basic-color`, title: '颜色' },
+        { path: `${pre}basic-button`, title: '按钮' }
+      ]
+    }
+  ])('/demo/element/')
+}
+
 // 菜单 侧边栏
 export const side = [
   demoPlugins,
   demoComponents,
+  demoElement,
   demoChart
 ]
 
@@ -137,10 +158,11 @@ export default [
   },
   {
     path: '/demo',
-    title: '功能',
+    title: '集成功能',
     children: [
       demoPlugins,
       demoComponents,
+      demoElement,
       demoChart
     ]
   },
