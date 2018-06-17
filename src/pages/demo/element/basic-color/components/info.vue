@@ -50,6 +50,7 @@ export default {
   .color {
     font-size: 12px;
     opacity: .7;
+    margin-top: 2px;
   }
   &.dark {
     color: #333;

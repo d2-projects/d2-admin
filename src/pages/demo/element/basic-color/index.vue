@@ -98,7 +98,7 @@ export default {
 @import '~@/assets/style/unit/_color.scss';
 .color {
   border-radius: 4px;
-  height: 100px;
+  height: 90px;
 }
 
 .color-primary {
