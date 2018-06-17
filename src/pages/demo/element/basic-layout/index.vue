@@ -1,5 +1,6 @@
 <template>
   <d2-container type="ghost">
+    
     <el-card shadow="never" class="d2-mb">
       <template slot="header">基础布局</template>
       <el-row>
@@ -29,6 +30,7 @@
         <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
       </el-row>
     </el-card>
+    
     <el-card shadow="never" class="d2-mb">
       <template slot="header">分栏间隔</template>
       <el-row :gutter="20">
@@ -38,6 +40,7 @@
         <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
       </el-row>
     </el-card>
+    
     <el-card shadow="never" class="d2-mb">
       <template slot="header">混合布局</template>
       <el-row :gutter="20">
@@ -56,6 +59,7 @@
         <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
       </el-row>
     </el-card>
+    
     <el-card shadow="never" class="d2-mb">
       <template slot="header">分栏偏移</template>
       <el-row :gutter="20">
@@ -70,6 +74,7 @@
         <el-col :span="12" :offset="6"><div class="grid-content bg-purple"></div></el-col>
       </el-row>
     </el-card>
+    
     <el-card shadow="never" class="d2-mb">
       <template slot="header">对齐方式</template>
       <el-row type="flex" class="row-bg">
@@ -98,6 +103,7 @@
         <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
       </el-row>
     </el-card>
+    
     <el-card shadow="never" class="d2-mb">
       <template slot="header">响应式布局</template>
       <el-row :gutter="10">
@@ -107,6 +113,7 @@
         <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></el-col>
       </el-row>
     </el-card>
+    
   </d2-container>
 </template>
 
