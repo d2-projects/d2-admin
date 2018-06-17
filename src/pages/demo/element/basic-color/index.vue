@@ -5,7 +5,7 @@
       <el-row :gutter="20">
         <el-col :span="6">
           <div class="color color-primary">
-            <d2-element-basic-color-info/>
+            <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
           </div>
         </el-col>
       </el-row>

@@ -1,8 +1,8 @@
 <template>
   <div class="info" :class="theme">
-    <p>颜色名称</p>
-    <p>scss名称</p>
-    <p>颜色值</p>
+    <p>{{name}}</p>
+    <p>{{sass}}</p>
+    <p>{{color}}</p>
   </div>
 </template>
 
@@ -13,6 +13,21 @@ export default {
       type: String,
       required: false,
       default: 'light' // dark
+    },
+    name: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    sass: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    color: {
+      type: String,
+      required: false,
+      default: ''
     }
   }
 }
