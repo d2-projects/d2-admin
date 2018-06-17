@@ -128,7 +128,15 @@ const demoElement = {
   title: '组件库',
   icon: 'puzzle-piece',
   children: (pre => [
-    { path: `${pre}index`, title: '组件库首页' }
+    { path: `${pre}index`, title: '组件库首页' },
+    {
+      path: `${pre}basic`,
+      title: '基础',
+      children: [
+        { path: `${pre}basic-layout`, title: '布局' },
+        { path: `${pre}basic-container`, title: '布局容器' }
+      ]
+    }
   ])('/demo/element/')
 }
 
@@ -136,6 +144,7 @@ const demoElement = {
 export const side = [
   demoPlugins,
   demoComponents,
+  demoElement,
   demoChart
 ]
 

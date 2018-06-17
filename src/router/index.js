@@ -108,6 +108,8 @@ const routes = [
     redirect: { name: 'demo-element-index' },
     component: () => import('@/components/core/d2-layout-main/index.vue'),
     children: (pre => [
+      { path: 'basic-layout', name: `${pre}basic-layout`, component: () => import('@/pages/demo/element/basic-layout/index.vue'), meta },
+      { path: 'basic-container', name: `${pre}basic-container`, component: () => import('@/pages/demo/element/basic-container/index.vue'), meta },
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/element/index/index.vue'), meta }
     ])('demo-element-')
   },
