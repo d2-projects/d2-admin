@@ -35,6 +35,9 @@ export default {
 
 <style lang="scss" scoped>
 .info {
+  &.dark {
+    color: #333;
+  }
   &.light {
     color: #FFF;
   }
