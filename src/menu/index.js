@@ -147,7 +147,10 @@ const demoElement = {
       children: [
         { path: `${pre}form-radio`, title: '单选框' },
         { path: `${pre}form-checkbox`, title: '多选框' },
-        { path: `${pre}form-input`, title: '输入框' }
+        { path: `${pre}form-input`, title: '输入框' },
+        { path: `${pre}form-input-number`, title: '计数器' },
+        { path: `${pre}form-select`, title: '选择器' },
+        { path: `${pre}form-cascader`, title: '级联选择器' }
       ]
     }
   ])('/demo/element/')
