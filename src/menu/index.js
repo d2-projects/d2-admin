@@ -140,6 +140,13 @@ const demoElement = {
         { path: `${pre}basic-icon`, title: '图标' },
         { path: `${pre}basic-button`, title: '按钮' }
       ]
+    },
+    {
+      path: `${pre}form`,
+      title: '表单',
+      children: [
+        { path: `${pre}form-radio`, title: '单选框' }
+      ]
     }
   ])('/demo/element/')
 }
