@@ -120,6 +120,16 @@ const routes = [
       { path: 'form-input-number', name: `${pre}form-input-number`, component: () => import('@/pages/demo/element/form-input-number/index.vue'), meta },
       { path: 'form-select', name: `${pre}form-select`, component: () => import('@/pages/demo/element/form-select/index.vue'), meta },
       { path: 'form-cascader', name: `${pre}form-cascader`, component: () => import('@/pages/demo/element/form-cascader/index.vue'), meta },
+      { path: 'form-switch', name: `${pre}form-switch`, component: () => import('@/pages/demo/element/form-switch/index.vue'), meta },
+      { path: 'form-slider', name: `${pre}form-slider`, component: () => import('@/pages/demo/element/form-slider/index.vue'), meta },
+      { path: 'form-time-picker', name: `${pre}form-time-picker`, component: () => import('@/pages/demo/element/form-time-picker/index.vue'), meta },
+      { path: 'form-date-picker', name: `${pre}form-date-picker`, component: () => import('@/pages/demo/element/form-date-picker/index.vue'), meta },
+      { path: 'form-datetime-picker', name: `${pre}form-datetime-picker`, component: () => import('@/pages/demo/element/form-datetime-picker/index.vue'), meta },
+      { path: 'form-upload', name: `${pre}form-upload`, component: () => import('@/pages/demo/element/form-upload/index.vue'), meta },
+      { path: 'form-rate', name: `${pre}form-rate`, component: () => import('@/pages/demo/element/form-rate/index.vue'), meta },
+      { path: 'form-color-picker', name: `${pre}form-color-picker`, component: () => import('@/pages/demo/element/form-color-picker/index.vue'), meta },
+      { path: 'form-transfer', name: `${pre}form-transfer`, component: () => import('@/pages/demo/element/form-transfer/index.vue'), meta },
+      { path: 'form-form', name: `${pre}form-form`, component: () => import('@/pages/demo/element/form-form/index.vue'), meta },
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/element/index/index.vue'), meta }
     ])('demo-element-')
   },
