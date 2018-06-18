@@ -117,6 +117,9 @@ const routes = [
       { path: 'form-radio', name: `${pre}form-radio`, component: () => import('@/pages/demo/element/form-radio/index.vue'), meta },
       { path: 'form-checkbox', name: `${pre}form-checkbox`, component: () => import('@/pages/demo/element/form-checkbox/index.vue'), meta },
       { path: 'form-input', name: `${pre}form-input`, component: () => import('@/pages/demo/element/form-input/index.vue'), meta },
+      { path: 'form-input-number', name: `${pre}form-input-number`, component: () => import('@/pages/demo/element/form-input-number/index.vue'), meta },
+      { path: 'form-select', name: `${pre}form-select`, component: () => import('@/pages/demo/element/form-select/index.vue'), meta },
+      { path: 'form-cascader', name: `${pre}form-cascader`, component: () => import('@/pages/demo/element/form-cascader/index.vue'), meta },
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/element/index/index.vue'), meta }
     ])('demo-element-')
   },
