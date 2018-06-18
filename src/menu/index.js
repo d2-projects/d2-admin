@@ -145,7 +145,8 @@ const demoElement = {
       path: `${pre}form`,
       title: '表单',
       children: [
-        { path: `${pre}form-radio`, title: '单选框' }
+        { path: `${pre}form-radio`, title: '单选框' },
+        { path: `${pre}form-checkbox`, title: '多选框' }
       ]
     }
   ])('/demo/element/')
