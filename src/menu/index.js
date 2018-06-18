@@ -150,7 +150,17 @@ const demoElement = {
         { path: `${pre}form-input`, title: '输入框' },
         { path: `${pre}form-input-number`, title: '计数器' },
         { path: `${pre}form-select`, title: '选择器' },
-        { path: `${pre}form-cascader`, title: '级联选择器' }
+        { path: `${pre}form-cascader`, title: '级联选择器' },
+        { path: `${pre}form-switch`, title: '开关' },
+        { path: `${pre}form-slider`, title: '滑块' },
+        { path: `${pre}form-time-picker`, title: '时间选择器' },
+        { path: `${pre}form-date-picker`, title: '日期选择器' },
+        { path: `${pre}form-datetime-picker`, title: '日期时间选择器' },
+        { path: `${pre}form-upload`, title: '上传' },
+        { path: `${pre}form-rate`, title: '评分' },
+        { path: `${pre}form-color-picker`, title: '颜色选择器' },
+        { path: `${pre}form-transfer`, title: '穿梭框' },
+        { path: `${pre}form-form`, title: '表单' }
       ]
     }
   ])('/demo/element/')
