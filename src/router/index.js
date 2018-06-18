@@ -112,6 +112,7 @@ const routes = [
       { path: 'basic-container', name: `${pre}basic-container`, component: () => import('@/pages/demo/element/basic-container/index.vue'), meta },
       { path: 'basic-color', name: `${pre}basic-color`, component: () => import('@/pages/demo/element/basic-color/index.vue'), meta },
       { path: 'basic-typography', name: `${pre}basic-typography`, component: () => import('@/pages/demo/element/basic-typography/index.vue'), meta },
+      { path: 'basic-icon', name: `${pre}basic-icon`, component: () => import('@/pages/demo/element/basic-icon/index.vue'), meta },
       { path: 'basic-button', name: `${pre}basic-button`, component: () => import('@/pages/demo/element/basic-button/index.vue'), meta },
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/element/index/index.vue'), meta }
     ])('demo-element-')
