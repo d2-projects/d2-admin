@@ -58,6 +58,7 @@ const routes = [
     redirect: { name: 'demo-plugins-index' },
     component: () => import('@/components/core/d2-layout-main'),
     children: (pre => [
+      { path: 'better-scroll', name: `${pre}better-scroll`, component: () => import('@/pages/demo/plugins/better-scroll'), meta },
       { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build'), meta },
       { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill'), meta },
       { path: 'day', name: `${pre}day`, component: () => import('@/pages/demo/plugins/day'), meta },
