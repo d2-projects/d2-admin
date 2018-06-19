@@ -9,12 +9,6 @@
 | type | 容器类型 | 非 | String | card ghost full | card |
 | responsive | 响应式宽度 | 非 | Boolean |  | false |
 
-## 事件
-
-| 事件名 | 介绍 | 回调参数 |
-| --- | --- | --- |
-| resized | type 为 full 时页面完成尺寸计算会触发此事件 | |
-
 ::: tip
 `responsive` 参数设置只在 `type` 等于 `card` 或 `ghost` 时生效
 :::
