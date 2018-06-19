@@ -1,9 +1,9 @@
 <template>
-  <d2-container type="full">
+  <d2-container type="full" @resized="handleResize">
     <template slot="header">滚动定位</template>
     <el-row :gutter="20">
       <el-col :span="8">
-        <div ref="wrapper" class="demo-bs-wrapper d2-mb">
+        <div ref="wrapper" class="demo-bs-wrapper">
           <div>
             <div v-for="n in 100" :key="n" class="demo-bs-item" :id="`demo-bs-item-${n}`">n : {{n}}</div>
           </div>
@@ -35,6 +35,9 @@
         </div>
       </el-col>
     </el-row>
+    <template slot="footer">
+      <d2-demo-link-btn title="相关文档" link="http://ustbhuangyi.github.io/better-scroll/doc/zh-hans/"/>
+    </template>
   </d2-container>
 </template>
 
@@ -54,8 +57,15 @@ export default {
         fade: true
       }
     })
+    const a = 'abc'
+    const b = 'abc'
+    console.log(a == b)
+    console.log(a === b)
   },
   methods: {
+    handleResize () {
+      this.BS.refresh()
+    },
     handleScrollTo (y) {
       this.BS.scrollTo(0, -y, this.time)
     },

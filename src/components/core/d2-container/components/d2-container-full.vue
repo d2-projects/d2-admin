@@ -47,6 +47,9 @@ export default {
   mounted () {
     this.headerHeight = this.$slots.header ? this.$refs.header.offsetHeight : 0
     this.footerHeight = this.$slots.footer ? this.$refs.footer.offsetHeight : 0
+    this.$nextTick(() => {
+      this.$emit('resized')
+    })
   },
   computed: {
     cardStyle () {
