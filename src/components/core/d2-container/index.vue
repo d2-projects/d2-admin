@@ -36,9 +36,6 @@ export default {
       default: false
     }
   },
-  mounted () {
-    this.$emit('mounted')
-  },
   components: {
     'd2-container-full': () => import('../d2-container-full/index.vue')
   }
