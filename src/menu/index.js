@@ -95,6 +95,15 @@ const demoComponents = {
         { path: `${pre}markdown/url`, title: '异步加载文件' }
       ]
     },
+    {
+      path: `${pre}contextmenu`,
+      title: '右键菜单',
+      children: [
+        { path: `${pre}contextmenu/simple`, title: '基础' },
+        { path: `${pre}contextmenu/divier`, title: '分割线' },
+        { path: `${pre}contextmenu/group`, title: '按钮组' }
+      ]
+    },
     { path: `${pre}bigdata-table`, title: '百万数量级表格' },
     { path: `${pre}scrollbar`, title: 'ElementUI 滚动条组件' },
     { path: `${pre}countup`, title: '数字动画' },
