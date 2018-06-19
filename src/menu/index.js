@@ -38,7 +38,13 @@ const demoPlugins = {
         { path: `${pre}i18n/demo2`, title: '示例2' }
       ]
     },
-    { path: `${pre}better-scroll`, title: '滚动扩展' },
+    {
+      path: `${pre}better-scroll`,
+      title: '滚动扩展',
+      children: [
+        { path: `${pre}better-scroll/base`, title: '基本用法' }
+      ]
+    },
     { path: `${pre}build`, title: '环境区分' },
     { path: `${pre}clipboard-polyfill`, title: '剪贴板访问' },
     { path: `${pre}day`, title: '日期计算' },
