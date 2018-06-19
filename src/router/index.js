@@ -58,6 +58,8 @@ const routes = [
     redirect: { name: 'demo-plugins-index' },
     component: () => import('@/components/core/d2-layout-main'),
     children: (pre => [
+      { path: 'better-scroll/base', name: `${pre}better-scroll-base`, component: () => import('@/pages/demo/plugins/better-scroll/base.vue'), meta },
+      { path: 'better-scroll/to', name: `${pre}better-scroll-to`, component: () => import('@/pages/demo/plugins/better-scroll/to.vue'), meta },
       { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build'), meta },
       { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill'), meta },
       { path: 'day', name: `${pre}day`, component: () => import('@/pages/demo/plugins/day'), meta },
@@ -160,6 +162,12 @@ const routes = [
     path: '/login',
     name: 'login',
     component: () => import('@/pages/core/login')
+  },
+  // 404
+  {
+    path: '*',
+    name: '404',
+    component: () => import('@/pages/core/404')
   }
 ]
 
