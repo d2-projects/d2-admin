@@ -95,7 +95,7 @@ const demoComponents = {
       ]
     },
     { path: `${pre}bigdata-table`, title: '百万数量级表格' },
-    { path: `${pre}scrollbar`, title: '滚动条' },
+    { path: `${pre}scrollbar`, title: 'ElementUI 滚动条组件' },
     { path: `${pre}countup`, title: '数字动画' },
     { path: `${pre}editor-quill`, title: '富文本编辑器' },
     { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器' },
