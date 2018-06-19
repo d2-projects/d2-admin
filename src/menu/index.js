@@ -42,7 +42,8 @@ const demoPlugins = {
       path: `${pre}better-scroll`,
       title: '滚动扩展',
       children: [
-        { path: `${pre}better-scroll/base`, title: '基本用法' }
+        { path: `${pre}better-scroll/base`, title: '基础用法' },
+        { path: `${pre}better-scroll/to`, title: '滚动定位' }
       ]
     },
     { path: `${pre}build`, title: '环境区分' },
