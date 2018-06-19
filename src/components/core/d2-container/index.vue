@@ -11,7 +11,7 @@
       <slot/>
     </div>
     <!-- [container-full] 撑满 -->
-    <d2-container-full v-if="type === 'full'" :right="20" :bottom="0" @resized="$emit('resized')">
+    <d2-container-full v-if="type === 'full'" :right="20" :bottom="0">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
