@@ -19,10 +19,7 @@ export default {
   },
   mounted () {
     this.BS = new BScroll(this.$refs.wrapper, {
-      mouseWheel: true,
-      scrollbar: {
-        fade: true
-      }
+      mouseWheel: true
     })
   }
 }
