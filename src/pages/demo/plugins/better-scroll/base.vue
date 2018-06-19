@@ -1,5 +1,6 @@
 <template>
   <d2-container>
+    <template slot="header">基础用法</template>
     <div ref="wrapper" class="demo-bs-wrapper">
       <div>
         <div v-for="n in 30" :key="n" class="demo-bs-item">n : {{n}}</div>
@@ -17,8 +18,7 @@ export default {
     }
   },
   mounted () {
-    let wrapper = this.$refs.wrapper
-    this.BS = new BScroll(wrapper, {
+    this.BS = new BScroll(this.$refs.wrapper, {
       mouseWheel: true,
       scrollbar: {
         fade: true

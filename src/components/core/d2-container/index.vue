@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import d2ContainerFull from './components/d2-container-full.vue'
 export default {
   name: 'd2-container',
   props: {
@@ -37,7 +38,7 @@ export default {
     }
   },
   components: {
-    'd2-container-full': () => import('../d2-container-full/index.vue')
+    'd2-container-full': d2ContainerFull
   }
 }
 </script>
