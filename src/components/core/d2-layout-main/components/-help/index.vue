@@ -14,7 +14,7 @@
             <img class="qr" src="/static/image/me/qq.jpg">
           </el-col>
           <el-col :span="12">
-            <el-alert :closable="false" type="info" title="我的微信 加好友拉进微信群" class="d2-mb"/>
+            <el-alert :closable="false" type="info" title="作者微信 加好友拉进微信群" class="d2-mb"/>
             <img class="qr" src="/static/image/me/we.jpg">
           </el-col>
         </el-row>
