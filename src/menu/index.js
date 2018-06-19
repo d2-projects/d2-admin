@@ -38,6 +38,14 @@ const demoPlugins = {
         { path: `${pre}i18n/demo2`, title: '示例2' }
       ]
     },
+    {
+      path: `${pre}better-scroll`,
+      title: '滚动扩展',
+      children: [
+        { path: `${pre}better-scroll/base`, title: '基础用法' },
+        { path: `${pre}better-scroll/to`, title: '滚动定位' }
+      ]
+    },
     { path: `${pre}build`, title: '环境区分' },
     { path: `${pre}clipboard-polyfill`, title: '剪贴板访问' },
     { path: `${pre}day`, title: '日期计算' },
@@ -88,7 +96,7 @@ const demoComponents = {
       ]
     },
     { path: `${pre}bigdata-table`, title: '百万数量级表格' },
-    { path: `${pre}scrollbar`, title: '滚动条' },
+    { path: `${pre}scrollbar`, title: 'ElementUI 滚动条组件' },
     { path: `${pre}countup`, title: '数字动画' },
     { path: `${pre}editor-quill`, title: '富文本编辑器' },
     { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器' },
