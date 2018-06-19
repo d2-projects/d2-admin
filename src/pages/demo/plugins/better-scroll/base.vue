@@ -1,9 +1,9 @@
 <template>
-  <d2-container @mounted="handleContainerMounted">
+  <d2-container>
     <div ref="wrapper" class="demo-bs-wrapper">
-      <ul class="content">
-        <li v-for="n in 30" :key="n">n</li>
-      </ul>
+      <div>
+        <div v-for="n in 30" :key="n" class="demo-bs-item">n : {{n}}</div>
+      </div>
     </div>
   </d2-container>
 </template>
@@ -16,25 +16,35 @@ export default {
       BS: null
     }
   },
-  methods: {
-    handleContainerMounted () {
-      console.log(this.$refs.wrapper)
-      let wrapper = this.$refs.wrapper
-      this.BS = new BScroll(wrapper, {
-        mouseWheel: true,
-        scrollbar: {
-          fade: true
-        }
-      })
-    }
+  mounted () {
+    let wrapper = this.$refs.wrapper
+    this.BS = new BScroll(wrapper, {
+      mouseWheel: true,
+      scrollbar: {
+        fade: true
+      }
+    })
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '~@/assets/style/public.scss';
 .demo-bs-wrapper {
   height: 200px;
+  width: 300px;
   position: relative;
+  overflow: hidden;
+  border: 1px solid $color-border-1;
+  border-radius: 4px;
+  .demo-bs-item {
+    line-height: 40px;
+    padding-left: 10px;
+    border-bottom: 1px solid $color-border-4;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }
 </style>
 

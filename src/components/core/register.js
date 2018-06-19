@@ -3,11 +3,14 @@ import Vue from 'vue'
 import { GridLayout, GridItem } from 'vue-grid-layout'
 import SplitPane from 'vue-splitpane'
 
+// 主容器
+import d2Container from '@/components/core/d2-container'
+
 Vue.component('d2-grid-layout', GridLayout)
 Vue.component('d2-grid-item', GridItem)
 Vue.component('SplitPane', SplitPane)
 
-Vue.component('d2-container', () => import('@/components/core/d2-container'))
+Vue.component('d2-container', d2Container)
 Vue.component('d2-count-up', () => import('@/components/core/d2-count-up'))
 Vue.component('d2-highlight', () => import('@/components/core/d2-highlight'))
 Vue.component('d2-icon', () => import('@/components/core/d2-icon'))
