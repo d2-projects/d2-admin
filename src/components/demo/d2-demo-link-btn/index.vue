@@ -1,6 +1,6 @@
 <template>
   <el-button-group>
-    <el-button v-if="title" size="mini">{{title}}</el-button>
+    <el-button v-if="title" size="mini" @click="$open(link)">{{title}}</el-button>
     <el-button size="mini" @click="$open(link)">
       <d2-icon :name="icon"/>
       {{link}}
