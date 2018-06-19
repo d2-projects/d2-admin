@@ -1,5 +1,5 @@
 <template>
   <d2-container>
-    better-scroll
+    base
   </d2-container>
 </template>
