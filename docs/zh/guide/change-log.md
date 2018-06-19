@@ -27,6 +27,8 @@
 * [ 修复 ] 主题设置失效bug
 * [ 修复 ] router守卫验证登陆部分代码修改
 * [ 修复 ] d2-container 组件改为同步注册（之前的异步注册会有 mounted 生命周期问题，即 slot 内的页面在 mounted 生命周期内拿不到 dom）
+* [ 修复 ] d2-container 组件重构 flex 布局
+* [ 新增 ] 404 page
 
 ## v1.0.0
 

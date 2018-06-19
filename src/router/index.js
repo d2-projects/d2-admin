@@ -162,6 +162,12 @@ const routes = [
     path: '/login',
     name: 'login',
     component: () => import('@/pages/core/login')
+  },
+  // 404
+  {
+    path: '*',
+    name: '404',
+    component: () => import('@/pages/core/404')
   }
 ]
 
