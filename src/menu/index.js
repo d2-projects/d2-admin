@@ -196,6 +196,18 @@ const demoElement = {
         { path: `${pre}navigation-dropdown`, title: '下拉菜单' },
         { path: `${pre}navigation-steps`, title: '步骤条' }
       ]
+    },
+    {
+      path: `${pre}others`,
+      title: '其它',
+      children: [
+        { path: `${pre}others-dialog`, title: '对话框' },
+        { path: `${pre}others-tooltip`, title: '文字提示' },
+        { path: `${pre}others-popover`, title: '弹出框' },
+        { path: `${pre}others-card`, title: '卡片' },
+        { path: `${pre}others-carousel`, title: '走马灯' },
+        { path: `${pre}others-collapse`, title: '折叠面板' }
+      ]
     }
   ])('/demo/element/')
 }
