@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container type="full">
     <template slot="header">滚动定位</template>
     <el-row :gutter="20">
       <el-col :span="8">
