@@ -162,6 +162,40 @@ const demoElement = {
         { path: `${pre}form-transfer`, title: '穿梭框' },
         { path: `${pre}form-form`, title: '表单' }
       ]
+    },
+    {
+      path: `${pre}data`,
+      title: '数据',
+      children: [
+        { path: `${pre}data-table`, title: '表格' },
+        { path: `${pre}data-tag`, title: '标签' },
+        { path: `${pre}data-progress`, title: '进度条' },
+        { path: `${pre}data-tree`, title: '树形控件' },
+        { path: `${pre}data-pagination`, title: '分页' },
+        { path: `${pre}data-badge`, title: '标记' }
+      ]
+    },
+    {
+      path: `${pre}notice`,
+      title: '消息',
+      children: [
+        { path: `${pre}notice-alert`, title: '警告' },
+        { path: `${pre}notice-loading`, title: '加载' },
+        { path: `${pre}notice-message`, title: '消息提示' },
+        { path: `${pre}notice-message-box`, title: '弹框' },
+        { path: `${pre}notice-notification`, title: '通知' }
+      ]
+    },
+    {
+      path: `${pre}navigation`,
+      title: '导航',
+      children: [
+        { path: `${pre}navigation-menu`, title: '导航菜单' },
+        { path: `${pre}navigation-tabs`, title: '标签页' },
+        { path: `${pre}navigation-breadcrumb`, title: '面包屑' },
+        { path: `${pre}navigation-dropdown`, title: '下拉菜单' },
+        { path: `${pre}navigation-steps`, title: '步骤条' }
+      ]
     }
   ])('/demo/element/')
 }
