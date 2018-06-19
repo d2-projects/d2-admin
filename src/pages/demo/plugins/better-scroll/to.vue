@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full" @resized="handleResize">
+  <d2-container>
     <template slot="header">滚动定位</template>
     <el-row :gutter="20">
       <el-col :span="8">
@@ -35,9 +35,6 @@
         </div>
       </el-col>
     </el-row>
-    <template slot="footer">
-      <d2-demo-link-btn title="相关文档" link="http://ustbhuangyi.github.io/better-scroll/doc/zh-hans/"/>
-    </template>
   </d2-container>
 </template>
 
@@ -59,9 +56,6 @@ export default {
     })
   },
   methods: {
-    handleResize () {
-      this.BS.refresh()
-    },
     handleScrollTo (y) {
       this.BS.scrollTo(0, -y, this.time)
     },
