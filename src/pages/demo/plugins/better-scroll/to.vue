@@ -57,10 +57,6 @@ export default {
         fade: true
       }
     })
-    const a = 'abc'
-    const b = 'abc'
-    console.log(a == b)
-    console.log(a === b)
   },
   methods: {
     handleResize () {
