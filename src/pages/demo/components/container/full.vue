@@ -5,7 +5,7 @@
     </template>
     <d2-markdown :source="doc"/>
     <template slot="footer">
-      我是插入到 footer 中的内容
+      <d2-demo-link-btn title="D2Admin" link="https://github.com/FairyEver/d2admin-vue-element"/>
     </template>
   </d2-container>
 </template>
