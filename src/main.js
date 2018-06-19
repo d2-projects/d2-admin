@@ -33,6 +33,10 @@ import '@/mock/register'
 // vuex
 import store from '@/store/index.js'
 
+// 右键菜单
+import contentmenu from 'v-contextmenu'
+import 'v-contextmenu/dist/index.css'
+
 // 插件 导出文件
 import pluginImport from '@/plugin/import'
 // 插件 导出文件
@@ -45,6 +49,7 @@ import pluginOpen from '@/plugin/open'
 import bigdataTable from '@/plugin/vue-bigdata-table'
 
 Vue.use(ElementUI)
+Vue.use(contentmenu)
 
 Vue.use(pluginImport)
 Vue.use(pluginExport)
