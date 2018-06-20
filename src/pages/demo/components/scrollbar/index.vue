@@ -12,9 +12,21 @@
         </el-scrollbar>
       </div>
     </el-card>
-    <d2-markdown :source="`#Hello`"/>
+    <d2-markdown :source="doc"/>
   </d2-container>
 </template>
+
+<script>
+import doc from './md/doc.md'
+export default {
+  data () {
+    return {
+      doc
+    }
+  }
+}
+</script>
+
 
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
