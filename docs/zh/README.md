@@ -16,8 +16,15 @@ footer: MIT Licensed | Copyright © 2018-present FairyEver
 ```
 // 安装依赖
 npm i
+
 // 运行
 npm run dev
+
 // 打包
 npm run build
+
+// 本地文档调试
+npm run doc:dev
 ```
+
+> 如果上述步骤出现错误，请将您的 node 版本升级 >8，如果有其它疑问请参考[常见问题](/zh/guide/q-a.html)
