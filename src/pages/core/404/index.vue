@@ -8,6 +8,7 @@
 </template>
 
 <style lang="scss" scoped>
+@import '~@/assets/style/public.scss';
 .page-404 {
   background-color: #555555;
   height: 100%;
@@ -17,7 +18,7 @@
   flex-direction: column;
   img {
     width: 196px;
-    user-select: none;
+    @extend %unable-select;
   }
 }
 </style>

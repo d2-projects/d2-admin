@@ -9,12 +9,12 @@
 </template>
 
 <style lang="scss">
+@import '~@/assets/style/public.scss';
 .icon-class-demo {
   transition: all .3s;
   font-size: 100px;
   color: #409EFF;
-  cursor: pointer;
-  user-select: none;
+  @extend %unable-select;
   &:hover{
     color: #F56C6C;
     transform: scale(1.2) rotate(30deg);
