@@ -1,5 +1,5 @@
 <template>
-  <div class="container-component" :class="{responsive}">z
+  <div class="container-component" :class="{responsive}">
     <!-- [card] 卡片容器 -->
     <el-card v-if="type === 'card'" shadow="never" class="d2-container-card d2-mr d2-mb">
       <slot v-if="$slots.header" name="header" slot="header"/>
