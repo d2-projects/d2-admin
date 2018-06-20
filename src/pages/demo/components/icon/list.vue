@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container type="full">
     <template slot="header">
       <el-radio-group v-model="showIndex" size="mini">
         <el-radio-button

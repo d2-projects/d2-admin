@@ -1,7 +1,7 @@
 <template>
   <d2-container>
-    <template slot="header">自定义滚动条</template>
-    <el-card shadow="never" class="demo-scrollbar-card">
+    <template slot="header">Element 滚动条组件</template>
+    <el-card shadow="never" class="demo-scrollbar-card d2-mb">
       <div class="demo-scrollbar-card-inner">
         <el-scrollbar>
           <div class="demo-scrollbar-group">
@@ -12,8 +12,21 @@
         </el-scrollbar>
       </div>
     </el-card>
+    <d2-markdown :source="doc"/>
   </d2-container>
 </template>
+
+<script>
+import doc from './md/doc.md'
+export default {
+  data () {
+    return {
+      doc
+    }
+  }
+}
+</script>
+
 
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';

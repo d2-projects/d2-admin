@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <template slot="header">分割线</template>
+    <template slot="header">按钮组</template>
     <v-contextmenu ref="contextmenu">
       <v-contextmenu-group>
         <v-contextmenu-item>菜单1</v-contextmenu-item>
