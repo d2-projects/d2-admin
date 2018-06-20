@@ -12,6 +12,7 @@
         </el-scrollbar>
       </div>
     </el-card>
+    <d2-markdown :source="`#Hello`"/>
   </d2-container>
 </template>
 
