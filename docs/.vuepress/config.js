@@ -57,7 +57,7 @@ function sideBarGuide (title) {
       collapsable: false,
       children: [
         '',
-        'q-a',
+        'question',
         'pr',
         'change-log'
       ]
