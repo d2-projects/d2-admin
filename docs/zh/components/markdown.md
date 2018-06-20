@@ -19,14 +19,46 @@
 
 加载资源
 
-``` vue
-const md = `# Header
+```vue
+<template>
+  <d2-markdown :source="doc"/>
+</template>
+
+<script>
+const doc = `
+# Header
 
 ## title
 
-text`
+text`.trim()
 
-<d2-markdown :source="md"/>
+export default {
+  data () {
+    return {
+      doc
+    }
+  }
+}
+</script>
+```
+
+D2Admin 已经帮你配置好 webpack，你可以使用以下方式加载 markdown 文件
+
+```vue
+<template>
+  <d2-markdown :source="doc"/>
+</template>
+
+<script>
+import doc from './md/doc.md'
+export default {
+  data () {
+    return {
+      doc
+    }
+  }
+}
+</script>
 ```
 
 ## 百度网盘分享链接优化
