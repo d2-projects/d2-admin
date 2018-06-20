@@ -29,6 +29,8 @@
 * [ 修复 ] d2-container 组件改为同步注册（之前的异步注册会有 mounted 生命周期问题，即 slot 内的页面在 mounted 生命周期内拿不到 dom）
 * [ 修复 ] d2-container 组件重构 flex 布局
 * [ 新增 ] 404 page
+* [ 新增 ] 顶栏联系方式
+* [ 新增 ] 右键菜单组件
 
 ## v1.0.0
 
