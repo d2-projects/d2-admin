@@ -27,4 +27,4 @@ npm run build
 npm run doc:dev
 ```
 
-> 如果上述步骤出现错误，请将您的 node 版本升级 >8，如果有其它疑问请参考[常见问题](/zh/guide/q-a.html)
+> 如果上述步骤出现错误，建议您升级 node 版本 >8，如果有其它疑问请参考[常见问题](/zh/guide/q-a.html)
