@@ -3,7 +3,7 @@ import Vue from 'vue'
 import { GridLayout, GridItem } from 'vue-grid-layout'
 import SplitPane from 'vue-splitpane'
 
-// 主容器
+// 主容器 这个必须要同步注册
 import d2Container from '@/components/core/d2-container'
 
 Vue.component('d2-grid-layout', GridLayout)
