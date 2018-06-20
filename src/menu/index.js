@@ -145,7 +145,7 @@ const demoChart = {
 // 路由菜单 组件库
 const demoElement = {
   path: '/demo/element',
-  title: '组件库',
+  title: 'Element 组件库',
   icon: 'puzzle-piece',
   children: (pre => [
     { path: `${pre}index`, title: '组件库首页' },
