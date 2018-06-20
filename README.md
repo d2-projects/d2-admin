@@ -21,21 +21,21 @@ Solution of management system front-end based on `vue.js` and `ElementUI`
 
 Welcome everyone to maintain
 
-[Documentation (English)](https://fairyever.github.io/d2admin-vue-element/) / [中文文档](https://fairyever.github.io/d2admin-vue-element/zh/)
+[Documentation (English)](https://fairyever.github.io/d2-admin/) / [中文文档](https://fairyever.github.io/d2-admin/zh/)
 
 [Online preview / 在线预览](http://d2admin.fairyever.com/)
 
 **Do not clone this repository, please download the officially released version.**
 
-不要克隆这个仓库，请下载已经正式发行的版本 [Download / 下载](https://github.com/FairyEver/d2admin-vue-element/releases)
+不要克隆这个仓库，请下载已经正式发行的版本 [Download / 下载](https://github.com/FairyEver/d2-admin/releases)
 
 **Do not clone this repository, please download the officially released version.**
 
-不要克隆这个仓库，请下载已经正式发行的版本 [Download / 下载](https://github.com/FairyEver/d2admin-vue-element/releases)
+不要克隆这个仓库，请下载已经正式发行的版本 [Download / 下载](https://github.com/FairyEver/d2-admin/releases)
 
 **Do not clone this repository, please download the officially released version.**
 
-不要克隆这个仓库，请下载已经正式发行的版本 [Download / 下载](https://github.com/FairyEver/d2admin-vue-element/releases)
+不要克隆这个仓库，请下载已经正式发行的版本 [Download / 下载](https://github.com/FairyEver/d2-admin/releases)
 
 > This project is suitable for use as a template. Because a lot of plug-ins and components are integrated now, the first load will take more time. Although the first screen loading animation has been done, it is suggested that you must delete the code that is not used when you release it. For example, the project does not use charts, so it is better to delete the integrated chart library and encapsulated chart components.
 

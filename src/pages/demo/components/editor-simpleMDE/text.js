@@ -7,4 +7,4 @@ export default `# 标题
 alert('Hello')
 \`\`\`
 
-[D2Admin in github](https://github.com/FairyEver/d2admin-vue-element)`
+[D2Admin in github](https://github.com/FairyEver/d2-admin)`

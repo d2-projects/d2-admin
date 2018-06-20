@@ -1,12 +1,12 @@
 # 介绍
 
-d2admin-vue-element（以下简称 d2admin）是一个开源的管理系统前端集成方案
+d2-admin（以下简称 d2admin）是一个开源的管理系统前端集成方案
 
-[Github仓库](https://github.com/FairyEver/d2admin-vue-element) - [预览地址](http://d2admin.fairyever.com/)
+[Github仓库](https://github.com/FairyEver/d2-admin) - [预览地址](http://d2admin.fairyever.com/)
 
 <div>
-  <iframe src="//ghbtns.com/github-btn.html?user=FairyEver&repo=d2admin-vue-element&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
-  <iframe src="//ghbtns.com/github-btn.html?user=FairyEver&repo=d2admin-vue-element&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+  <iframe src="//ghbtns.com/github-btn.html?user=FairyEver&repo=d2-admin&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+  <iframe src="//ghbtns.com/github-btn.html?user=FairyEver&repo=d2-admin&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
 </div>
 
 ::: tip
@@ -120,7 +120,7 @@ d2admin 仍然处于开发中，这里有一些计划：
 
 ## 使用
 
-首先下载模板 [d2admin-vue-element/releases](https://github.com/FairyEver/d2admin-vue-element/releases)
+首先下载模板 [d2-admin/releases](https://github.com/FairyEver/d2-admin/releases)
 
 ::: tip
 不要直接克隆本项目，请选择已经发行的版本，尤其不要使用 dev 分支
