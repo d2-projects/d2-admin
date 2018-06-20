@@ -1,6 +1,6 @@
 # 介绍
 
-d2admin-vue-element（以下简称 d2admin）是一个管理系统前端模板
+d2admin-vue-element（以下简称 d2admin）是一个开源的管理系统前端集成方案
 
 [Github仓库](https://github.com/FairyEver/d2admin-vue-element) - [预览地址](http://d2admin.fairyever.com/)
 
