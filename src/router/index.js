@@ -92,6 +92,7 @@ const routes = [
       { path: 'contextmenu/group', name: `${pre}contextmenu-group`, component: () => import('@/pages/demo/components/contextmenu/group.vue'), meta },
       { path: 'contextmenu/submenu', name: `${pre}contextmenu-submenu`, component: () => import('@/pages/demo/components/contextmenu/submenu.vue'), meta },
       { path: 'contextmenu/disabled', name: `${pre}contextmenu-disabled`, component: () => import('@/pages/demo/components/contextmenu/disabled.vue'), meta },
+      { path: 'contextmenu/custom-trigger', name: `${pre}contextmenu-custom-trigger`, component: () => import('@/pages/demo/components/contextmenu/custom-trigger.vue'), meta },
       { path: 'countup', name: `${pre}countup`, component: () => import('@/pages/demo/components/countup'), meta },
       { path: 'editor-quill', name: `${pre}editor-quill`, component: () => import('@/pages/demo/components/editor-quill'), meta },
       { path: 'editor-simpleMDE', name: `${pre}editor-simpleMDE`, component: () => import('@/pages/demo/components/editor-simpleMDE'), meta },
