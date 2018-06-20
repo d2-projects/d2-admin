@@ -34,6 +34,6 @@
 
 ## v1.0.0
 
-[https://github.com/FairyEver/d2admin-vue-element/releases/tag/v1.0.0](https://github.com/FairyEver/d2admin-vue-element/releases/tag/v1.0.0)
+[https://github.com/FairyEver/d2-admin/releases/tag/v1.0.0](https://github.com/FairyEver/d2-admin/releases/tag/v1.0.0)
 
 这是第一个版本，还有一点小问题，但是已经可用

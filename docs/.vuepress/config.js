@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/d2admin-vue-element/',
+  base: '/d2-admin/',
   locales: {
     '/': {
       lang: 'en-US',
@@ -14,7 +14,7 @@ module.exports = {
   },
   themeConfig: {
     // 项目仓库地址
-    repo: 'https://github.com/FairyEver/d2admin-vue-element',
+    repo: 'https://github.com/FairyEver/d2-admin',
     // 自定义仓库链接文字
     repoLabel: '查看源码',
     // 文档不是放在仓库的根目录下
@@ -38,7 +38,7 @@ module.exports = {
           { text: '指南', link: '/zh/guide/' },
           { text: '插件', link: '/zh/plugins/' },
           { text: '组件', link: '/zh/components/' },
-          { text: '下载', link: 'https://github.com/FairyEver/d2admin-vue-element/releases' }
+          { text: '下载', link: 'https://github.com/FairyEver/d2-admin/releases' }
         ],
         sidebar: {
           '/zh/guide/': sideBarGuide('指南'),

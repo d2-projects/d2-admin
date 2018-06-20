@@ -56,5 +56,5 @@ markdown 中引用部分的文本由于被识别为百度云的分享链接，�
 上面的块会嵌套在你的 markdown 渲染结果中
 
 ::: tip
-了解 D2Admin 是如何在 markdown 中匹配百度云链接的？ [查看源码](https://github.com/FairyEver/d2admin-vue-element/blob/master/src/components/core/Markdown/plugin/baidupan.js)
+了解 D2Admin 是如何在 markdown 中匹配百度云链接的？ [查看源码](https://github.com/FairyEver/d2-admin/blob/master/src/components/core/Markdown/plugin/baidupan.js)
 :::
