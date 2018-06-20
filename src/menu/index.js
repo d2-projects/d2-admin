@@ -101,7 +101,9 @@ const demoComponents = {
       children: [
         { path: `${pre}contextmenu/simple`, title: '基础' },
         { path: `${pre}contextmenu/divier`, title: '分割线' },
-        { path: `${pre}contextmenu/group`, title: '按钮组' }
+        { path: `${pre}contextmenu/group`, title: '按钮组' },
+        { path: `${pre}contextmenu/submenu`, title: '子菜单' },
+        { path: `${pre}contextmenu/disabled`, title: '禁用' }
       ]
     },
     { path: `${pre}bigdata-table`, title: '百万数量级表格' },
