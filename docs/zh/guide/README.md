@@ -80,49 +80,44 @@ D2Admin 仍然处于开发中，这里有一些计划：
 ## 目录结构
 
 ```
-├─ build // 打包设置
-├─ config // 发布设置
-├─ preview-image // github 介绍页面使用的插图 以后可能去掉
+├─ build
+├─ config
+├─ docs // 文档
 ├─ src
-│  ├─ assets
-│  │  ├─ icons // 存放 svg 图标
-│  │  ├─ image // 图片
-│  │  ├─ library // 库
-│  │  └─ style // 公用样式
-│  ├─ components
-│  │  ├─ charts // 封装图表组件
-│  │  ├─ core // 核心组件
-│  │  ├─ demo // 只会在示例页面中使用的组件
-│  ├─ i18n // 多国语言配置
-│  ├─ mock // mock 数据设置
-│  ├─ pages
-│  │  ├─ core // 系统页面
-│  │  └─ demo // 演示页面
-│  │     ├─ business // 业务页面示例
-│  │     ├─ chart // 图表
-│  │     ├─ components // 组件
-│  │     └─ plugins // 插件
+│  ├─ assets // 资源
+│  │  ├─ icons
+│  │  ├─ image
+│  │  ├─ library
+│  │  └─ style
+│  ├─ components // 组件
+│  │  ├─ charts
+│  │  ├─ core
+│  │  └─ demo
+│  ├─ i18n // 多国语
+│  ├─ menu // 菜单
+│  ├─ mock // 模拟数据
+│  ├─ pages // 页面
 │  ├─ plugin // 插件
 │  ├─ router // 路由
-│  │  ├─ invisible
-│  │  └─ menu
-│  ├─ store // 全局状态
-│  ├─ utils // 通用工具
+│  ├─ store // vuex
+│  ├─ utils
 │  ├─ App.vue
-│  └─ main.js // 入口文件
-├─ static
+│  └─ main.js
+├─ static // 静态资源
 ├─ .babelrc
 ├─ .editorconfig
 ├─ .eslintignore
 ├─ .eslintrc.js
+├─ .gitattributes
 ├─ .gitignore
 ├─ .postcssrc.js
 ├─ LICENSE
 ├─ README.md
-├─ design.sketch
+├─ deploy.sh
+├─ design.sketch // 设计文件
 ├─ index.html
-├─ package-lock.json
 └─ package.json
+
 ```
 
 ## 使用
@@ -133,37 +128,18 @@ D2Admin 仍然处于开发中，这里有一些计划：
 不要直接克隆本项目，请选择上面已经发行的版本，如果克隆仓库，你将会得到不完全的代码。尤其不要使用 dev 分支
 :::
 
-安装依赖
-
 ```
+// 安装依赖
 npm i
-```
 
-运行
-
-```
+// 运行
 npm run dev
+
+// 打包
+npm run build
+
+// 本地文档调试
+npm run doc:dev
 ```
 
-在以下环境测试可用
-
-```
-➜  ~ npm -v
-5.6.0
-➜  ~ node -v
-v8.11.1
-➜  ~ nrm -V
-1.0.2
-➜  ~ nrm ls
-  npm ---- https://registry.npmjs.org/
-  cnpm --- http://r.cnpmjs.org/
-* taobao - https://registry.npm.taobao.org/
-  nj ----- https://registry.nodejitsu.com/
-  rednpm - http://registry.mirror.cqupt.edu.cn/
-  npmMirror  https://skimdb.npmjs.com/registry/
-  edunpm - http://registry.enpmjs.org/
-```
-
-::: tip
-推荐使用 [nrm](https://github.com/Pana/nrm) 管理 npm 源，不建议使用 cnpm
-:::
+> 如果上述步骤出现错误，建议您升级 node 版本 >8，如果有其它疑问请参考[常见问题](/zh/guide/q-a.html)
