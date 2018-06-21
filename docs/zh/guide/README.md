@@ -15,9 +15,15 @@ D2Admin 是一个开源的管理系统前端集成方案
 
 D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https://github.com/FairyEver) 在工作之余完全由兴趣驱动完成，如果你也一样喜欢前端开发，欢迎加入我们的讨论/学习群，群内可以`提问答疑`，`分享学习资料`或者随便扯淡
 
-**QQ群号 806395827 | 作者微信 liyang1711467488**
+**QQ群 806395827**
 
-微信群需要先加群主才可以拉进群
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=48323a4ed7a059a5d75f4a81586161ee60e495ab31905f8daaee8939ecacb363"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="D2Admin | js | vue 交流" title="D2Admin | js | vue 交流"></a>
+
+**微信群**
+
+作者微信 liyang1711467488
+
+> 微信群需要先加群主才可以拉进群
 
 ::: tip Thanks
 D2Admin 创建于2018年1月14日零点51分，在2018年5月26日正式发布，中间断断续续做了四个多月，发布一个月内收获将近 700star，在此对支持我的朋友表示感谢，D2Admin 将会保持更新，如果你有想法、建议、或者问题欢迎加群讨论
