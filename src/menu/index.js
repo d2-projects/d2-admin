@@ -253,7 +253,15 @@ export default [
       demoPlugins,
       demoComponents,
       demoElement,
-      demoChart
+      demoChart,
+      {
+        title: '空菜单演示',
+        children: [
+          { title: '空菜单1' },
+          { title: '空菜单2' },
+          { title: '空菜单3' }
+        ]
+      }
     ]
   },
   {
