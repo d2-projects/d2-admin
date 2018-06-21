@@ -256,10 +256,17 @@ export default [
       demoChart,
       {
         title: '空菜单演示',
+        icon: 'folder-o',
         children: [
-          { title: '空菜单1' },
-          { title: '空菜单2' },
-          { title: '空菜单3' }
+          {
+            title: '正在开发 1',
+            children: [
+              { title: '正在开发 1-1' },
+              { title: '正在开发 1-2' }
+            ]
+          },
+          { title: '正在开发 2' },
+          { title: '正在开发 3' }
         ]
       }
     ]
