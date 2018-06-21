@@ -1,5 +1,5 @@
 <template>
-  <el-submenu :index="menu.path">
+  <el-submenu :index="menu.path || uniqueid">
     <template slot="title">
       <i v-if="menu.icon" :class="`fa fa-${menu.icon}`"></i>
       <span slot="title">{{menu.title}}</span>
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import _uniqueid from 'lodash.uniqueid'
 export default {
   name: 'd2-layout-main-menu-sub',
   props: {
@@ -19,6 +20,11 @@ export default {
       type: Object,
       required: false,
       default: () => {}
+    }
+  },
+  data () {
+    return {
+      uniqueid: _uniqueid('d2-menu-empty-')
     }
   },
   components: {
