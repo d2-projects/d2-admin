@@ -10,7 +10,7 @@ D2Admin 是一个开源的管理系统前端集成方案
 
 [Github仓库](https://github.com/FairyEver/d2-admin) - [预览地址](http://d2admin.fairyever.com/)
 
-因为现在集成了很多的插件和组件，首次加载会占用很多的时间，虽然已经做了首屏加载动画，但还是建议您在发布之前一定要删除没有用到的代码，比如项目没有用到图表、示例、插件组件。
+[中文文档](https://fairyever.github.io/d2-admin/zh/)
 
 D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https://github.com/FairyEver) 在工作之余完全由兴趣驱动完成，如果你也一样喜欢前端开发，欢迎加入我们的讨论/学习群，群内可以`提问答疑`，`分享学习资料`或者随便扯淡
 
@@ -122,9 +122,7 @@ D2Admin 仍然处于开发中，这里有一些计划：
 
 首先下载模板 [d2-admin/releases](https://github.com/FairyEver/d2-admin/releases)
 
-::: tip
-不要直接克隆本项目，请选择上面已经发行的版本，如果克隆仓库，你将会得到不完全的代码。尤其不要使用 dev 分支
-:::
+**不要直接克隆本项目，请选择上面已经发行的版本，如果克隆仓库，你将会得到不完全的代码。尤其不要使用 dev 分支**
 
 ```
 // 安装依赖
@@ -136,8 +134,6 @@ npm run dev
 // 打包
 npm run build
 ```
-
-> 如果上述步骤出现错误，建议您升级 node 版本 > 8，如果有其它疑问请参考[常见问题](/zh/guide/question.html)
 
 ## 书写文档
 
@@ -154,7 +150,3 @@ npm i -g vuepress
 ```
 npm run doc:dev
 ```
-
-::: tip
-你可能会发现项目目录中有一个 deploy.sh 文件，这个文件是为了方便发布文档用的，通常你并不需要使用它
-:::
