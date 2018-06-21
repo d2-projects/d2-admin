@@ -10,24 +10,11 @@ D2Admin 是一个开源的管理系统前端集成方案
 
 [Github仓库](https://github.com/FairyEver/d2-admin) - [预览地址](http://d2admin.fairyever.com/)
 
-<div>
-  <iframe src="//ghbtns.com/github-btn.html?user=FairyEver&repo=d2-admin&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
-  <iframe src="//ghbtns.com/github-btn.html?user=FairyEver&repo=d2-admin&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
-</div>
-
-::: tip
 因为现在集成了很多的插件和组件，首次加载会占用很多的时间，虽然已经做了首屏加载动画，但还是建议您在发布之前一定要删除没有用到的代码，比如项目没有用到图表、示例、插件组件。
-:::
 
 D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https://github.com/FairyEver) 在工作之余完全由兴趣驱动完成，如果你也一样喜欢前端开发，欢迎加入我们的讨论/学习群，群内可以`提问答疑`，`分享学习资料`或者随便扯淡
 
 **QQ群号 806395827 | 微信 liyang1711467488**
-
-::: tip Thanks
-D2Admin 创建于2018年1月14日零点51分，在2018年5月26日正式发布，中间断断续续做了四个多月，发布一个月内收获将近 700star，在此对支持我的朋友表示感谢，D2Admin 将会保持更新，如果你有想法、建议、或者问题欢迎加群讨论
-
-—— 2018年6月20日
-:::
 
 ## 功能
 
