@@ -2,7 +2,7 @@
   <el-table :data="themeList" v-bind="table">
     <el-table-column prop="name" align="center" width="160"/>
     <el-table-column label="预览" width="220">
-      <div slot-scope="scope" class="theme-preview" :style="{'backgroundImage': `url(${ scope.row.preview })`}"></div>
+      <div slot-scope="scope" class="theme-preview" :style="{'backgroundImage': `url(${$assetsPublicPath}${scope.row.preview})`}"></div>
     </el-table-column>
     <el-table-column prop="address" align="center">
       <template slot-scope="scope">

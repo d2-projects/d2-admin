@@ -1,12 +1,12 @@
 <template>
-  <div class="layout-main-group">
+  <div class="layout-main-group" :style="styleLayoutMainGroup">
     <div class="layout-main-mask"></div>
     <el-container class="layout-main">
       <!-- 顶栏 -->
       <el-header>
         <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="collapse" :src="`/static/image/theme/${themeName}/logo/icon-only.png`">
-          <img v-else :src="`/static/image/theme/${themeName}/logo/all.png`">
+          <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeName}/logo/icon-only.png`">
+          <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeName}/logo/all.png`">
         </div>
         <div class="toggle-aside-btn" @click="collapse = !collapse">
           <d2-icon name="bars"/>
@@ -60,8 +60,14 @@ export default {
   },
   computed: {
     ...mapState({
-      themeName: state => state.theme.name
-    })
+      themeName: state => state.theme.name,
+      themeBackGroundImage: state => state.theme.backGroundImage
+    }),
+    styleLayoutMainGroup () {
+      return {
+        ...this.themeBackGroundImage ? {backgroundImage: `url('${this.$assetsPublicPath}${this.themeBackGroundImage}')`} : {}
+      }
+    }
   },
   mounted () {
     // 加载主题

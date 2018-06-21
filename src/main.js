@@ -48,6 +48,8 @@ import pluginOpen from '@/plugin/open'
 // 插件 支持百万级数据的表格
 import bigdataTable from '@/plugin/vue-bigdata-table'
 
+import buildConfig from '../config/index'
+
 Vue.use(ElementUI)
 Vue.use(contentmenu)
 
@@ -60,6 +62,8 @@ Vue.use(bigdataTable)
 Vue.config.productionTip = false
 
 Vue.prototype.$env = process.env.NODE_ENV === 'development'
+
+Vue.prototype.$assetsPublicPath = process.env.NODE_ENV === 'development' ? buildConfig.dev.assetsPublicPath : buildConfig.build.assetsPublicPath
 
 /* eslint-disable no-new */
 new Vue({

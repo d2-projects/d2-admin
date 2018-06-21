@@ -8,7 +8,7 @@ Solution of management system front-end based on `vue.js` and `ElementUI`
 
 D2Admin 是一个开源的管理系统前端集成方案
 
-[Github仓库](https://github.com/FairyEver/d2-admin) - [预览地址](http://d2admin.fairyever.com/)
+[Github仓库](https://github.com/FairyEver/d2-admin) - [预览地址](https://fairyever.gitee.io/d2-admin-preview)
 
 [中文文档](https://fairyever.github.io/d2-admin/zh/)
 
@@ -56,6 +56,7 @@ D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https
 * 内置4种主题
 * 公用样式抽离，方便的主题定制
 * 支持百万级数据量的表格组件
+* 打包后随意目录部署（已经做好兼容设置）
 
 ## TODO
 

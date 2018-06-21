@@ -1,4 +1,4 @@
-export default (quote) => {
+export default (quote, assetsPublicPath) => {
   const _quote = quote.replace(/<[^<>]+>/g, '').trim()
   const bdPanUrl = /^https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+$/i
   const bdPanUrlPwd = /^链接: https:\/\/pan\.baidu\.com\/s\/[a-z0-9]+ 密码: [a-z0-9]{4}$/i
@@ -6,7 +6,7 @@ export default (quote) => {
     return `<div class="baidupan">
       <a href="${_quote}" class="container">
         <div class="icon">
-          <img src="/static/image/baidu-pan-logo.png">
+          <img src="${assetsPublicPath}static/image/baidu-pan-logo.png" style="background-color: transparent;">
         </div>
         <div class="url">${_quote}</div>
       </a>
@@ -18,7 +18,7 @@ export default (quote) => {
       <div class="container">
         <a href="${url[0]}">
           <div class="icon">
-            <img src="/static/image/baidu-pan-logo.png">
+            <img src="${assetsPublicPath}static/image/baidu-pan-logo.png" style="background-color: transparent;">
           </div>
           <div class="url">${url[0]}</div>
         </a>

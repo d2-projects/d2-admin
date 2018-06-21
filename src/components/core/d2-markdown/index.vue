@@ -69,7 +69,7 @@ export default {
       const renderer = new marked.Renderer()
       renderer.blockquote = (quote) => {
         // 百度网盘
-        return (this.baidupan && bandupan(quote)) || `<blockquote>${quote}</blockquote>`
+        return (this.baidupan && bandupan(quote, this.$assetsPublicPath)) || `<blockquote>${quote}</blockquote>`
       }
       return marked(data, {
         ...this.highlight ? {highlight: (code) => highlight.highlightAuto(code).value} : {},
