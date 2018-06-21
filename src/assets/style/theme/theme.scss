@@ -142,41 +142,6 @@
         overflow: hidden;
       }
     }
-    // [组件] d2-container-full
-    // .d2-container-full {
-    //   position: absolute;
-    //   border-top-left-radius: 4px;
-    //   border-top-right-radius: 4px;
-    //   overflow: hidden;
-    //   color: #303133;
-    //   &:hover {
-    //     box-shadow: none;
-    //   }
-    //   .d2-container-full__header {
-    //     position: absolute;
-    //     top: 0px;
-    //     left: 0px;
-    //     width: 100%;
-    //     padding: 18px 20px;
-    //     box-sizing: border-box;
-    //   }
-    //   .d2-container-full__body {
-    //     position: absolute;
-    //     padding: 20px;
-    //     left: 0px;
-    //     right: 0px;
-    //     bottom: 0px;
-    //     overflow: auto;
-    //   }
-    //   .d2-container-full__footer {
-    //     position: absolute;
-    //     bottom: 0px;
-    //     left: 0px;
-    //     width: 100%;
-    //     padding: 18px 20px;
-    //     box-sizing: border-box;
-    //   }
-    // }
   }
 }
 
@@ -187,7 +152,6 @@
   // 背景图片和遮罩
   .layout-main-group {
     background-color: $theme-bg-color;
-    background-image: $theme-bg-image;
     .layout-main-mask {
       background-color: $theme-bg-mask;
     }
