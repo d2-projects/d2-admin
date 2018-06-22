@@ -11,11 +11,11 @@
         <el-row :gutter="20">
           <el-col :span="12">
             <el-alert :closable="false" type="info" title="扫码进 QQ 群" class="d2-mb"/>
-            <img class="qr" :src="`${assetsPublicPath}/static/image/me/qq.jpg`">
+            <img class="qr" :src="`${$assetsPublicPath}/static/image/me/qq.jpg`">
           </el-col>
           <el-col :span="12">
             <el-alert :closable="false" type="info" title="作者微信 加好友拉进微信群" class="d2-mb"/>
-            <img class="qr" :src="`${assetsPublicPath}/static/image/me/we.jpg`">
+            <img class="qr" :src="`${$assetsPublicPath}/static/image/me/we.jpg`">
           </el-col>
         </el-row>
       </div>
