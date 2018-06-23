@@ -37,7 +37,7 @@ this.$export.csv({
 | --- | --- | --- | --- | --- | --- |
 | columns | 列 | 非 | Array |  | 空数组 |
 | data | 行数据 | 非 | Array |  | 空数组 |
-| table | 文件名 | 非 | String |  | table |
+| title | 文件名 | 非 | String |  | table |
 | noHeader | 不导出表头 | 非 | Boolean |  | false |
 | separator | 数据分隔符 | 非 | String |  | , |
 | quoted | 每项数据是否加引号 | 非 | Boolean |  | false |
@@ -93,7 +93,7 @@ this.$export.excel({
 | --- | --- | --- | --- | --- | --- |
 | columns | 列 | 非 | Array |  | 空数组 |
 | data | 行数据 | 非 | Array |  | 空数组 |
-| table | 文件名 | 非 | String |  | table |
+| title | 文件名 | 非 | String |  | table |
 
 示例
 
