@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/d2-admin/',
+  base: '/d2-admin-doc/',
   locales: {
     '/': {
       lang: 'en-US',
