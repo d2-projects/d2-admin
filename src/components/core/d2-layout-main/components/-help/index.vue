@@ -6,7 +6,7 @@
       </el-button>
     </el-tooltip>
     <el-dialog title="帮助" width="600px" :visible.sync="dialogVisible">
-      <div style="margin-top: -25px;">
+      <div style="margin-top: -25px; margin-bottom: -25px;">
         <h1 class="d2-mt-0">如果你有问题可以加入交流群或者联系作者</h1>
         <el-row :gutter="20">
           <el-col :span="12">
