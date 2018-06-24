@@ -38,12 +38,14 @@ module.exports = {
           { text: '指南', link: '/zh/guide/' },
           { text: '插件', link: '/zh/plugins/' },
           { text: '组件', link: '/zh/components/' },
+          { text: '其它', link: '/zh/others/' },
           { text: '下载', link: 'https://github.com/FairyEver/d2-admin/releases' }
         ],
         sidebar: {
           '/zh/guide/': sideBarGuide('指南'),
           '/zh/plugins/': sideBarPlugins('插件'),
-          '/zh/components/': sideBarComponents('组件')
+          '/zh/components/': sideBarComponents('组件'),
+          '/zh/others/': sideBarOthers('其它')
         }
       }
     }
@@ -88,6 +90,19 @@ function sideBarComponents (title) {
         'icon-svg',
         'icon',
         'markdown'
+      ]
+    }
+  ]
+}
+
+function sideBarOthers (title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'css'
       ]
     }
   ]
