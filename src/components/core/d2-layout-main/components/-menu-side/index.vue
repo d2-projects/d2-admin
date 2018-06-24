@@ -1,14 +1,18 @@
 <template>
-  <div>
-    <el-menu
-      :collapse="collapse"
-      :unique-opened="true"
-      @select="handleMenuSelect">
-      <template v-for="(menu, menuIndex) in menus">
-        <d2-layout-main-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
-        <d2-layout-main-menu-sub v-else :menu="menu" :key="menuIndex"/>
-      </template>
-    </el-menu>
+  <div style="height: 100%;">
+    <el-scrollbar>
+      <div :style="{ height: `${asideHeight}px` }">
+        <el-menu
+          :collapse="collapse"
+          :unique-opened="true"
+          @select="handleMenuSelect">
+          <template v-for="(menu, menuIndex) in menus">
+            <d2-layout-main-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
+            <d2-layout-main-menu-sub v-else :menu="menu" :key="menuIndex"/>
+          </template>
+        </el-menu>
+      </div>
+    </el-scrollbar>
     <div v-if="menus.length === 0 && !collapse" class="menu-empty">
       <d2-icon name="hdd-o"/>
       <span>当前目录没有菜单</span>
@@ -37,7 +41,8 @@ export default {
   },
   data () {
     return {
-      menus: []
+      menus: [],
+      asideHeight: 300
     }
   },
   watch: {
@@ -47,6 +52,14 @@ export default {
         this.menus = side.filter(menu => menu.path === path)
       },
       immediate: true
+    }
+  },
+  mounted () {
+    this.updateAsideHeight()
+  },
+  methods: {
+    updateAsideHeight () {
+      this.asideHeight = this.$el.offsetHeight
     }
   }
 }
