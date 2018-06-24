@@ -1,5 +1,7 @@
 # 常见问题
 
+本章总结收到的用户反馈问题，集中展示，方便后续用户自助解决问题
+
 ## 无法启动项目
 
 首先建议您升级 node 版本 > 8，在以下环境测试可用
@@ -24,3 +26,11 @@ v8.11.1
 ::: tip
 推荐使用 [nrm](https://github.com/Pana/nrm) 管理 npm 源，不建议使用 cnpm
 :::
+
+## 删除页面右上角 github 链接
+
+在 `src/components/demo/d2-demo-page-cover/index.vue` 中删除相关代码即可
+
+## el-scrollbar 组件
+
+el-scrollbar 组件是 ElementUI 自带的一个隐藏组件，没有写入文档，详见 [https://github.com/ElemeFE/element/issues/2238](https://github.com/ElemeFE/element/issues/2238)

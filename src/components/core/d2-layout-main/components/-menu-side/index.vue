@@ -1,6 +1,6 @@
 <template>
   <div style="height: 100%;">
-    <el-scrollbar>
+    <el-scrollbar v-if="menus.length > 0 && !collapse">
       <div :style="{ height: `${asideHeight}px` }">
         <el-menu
           :collapse="collapse"
@@ -56,10 +56,14 @@ export default {
   },
   mounted () {
     this.updateAsideHeight()
+    window.onresize = () => {
+      this.updateAsideHeight()
+    }
   },
   methods: {
     updateAsideHeight () {
       this.asideHeight = this.$el.offsetHeight
+      console.log(this.asideHeight)
     }
   }
 }
