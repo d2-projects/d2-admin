@@ -43,29 +43,29 @@
 $sizes: (0, 10, 15, 20);
 
 @for $index from 1 to 5 {
-  .#{$prefix}-m-#{nth($sizes, $index)} { margin: #{nth($sizes, $index)}px; }
-  .#{$prefix}-mt-#{nth($sizes, $index)} { margin-top: #{nth($sizes, $index)}px; }
-  .#{$prefix}-mr-#{nth($sizes, $index)} { margin-right: #{nth($sizes, $index)}px; }
-  .#{$prefix}-mb-#{nth($sizes, $index)} { margin-bottom: #{nth($sizes, $index)}px; }
-  .#{$prefix}-ml-#{nth($sizes, $index)} { margin-left: #{nth($sizes, $index)}px; }
+  .#{$prefix}-m-#{nth($sizes, $index)} { margin: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-mt-#{nth($sizes, $index)} { margin-top: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-mr-#{nth($sizes, $index)} { margin-right: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-mb-#{nth($sizes, $index)} { margin-bottom: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-ml-#{nth($sizes, $index)} { margin-left: #{nth($sizes, $index)}px !important; }
 
-  .#{$prefix}-p-#{nth($sizes, $index)} { padding: #{nth($sizes, $index)}px; }
-  .#{$prefix}-pt-#{nth($sizes, $index)} { padding-top: #{nth($sizes, $index)}px; }
-  .#{$prefix}-pr-#{nth($sizes, $index)} { padding-right: #{nth($sizes, $index)}px; }
-  .#{$prefix}-pb-#{nth($sizes, $index)} { padding-bottom: #{nth($sizes, $index)}px; }
-  .#{$prefix}-pl-#{nth($sizes, $index)} { padding-left: #{nth($sizes, $index)}px; }
+  .#{$prefix}-p-#{nth($sizes, $index)} { padding: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-pt-#{nth($sizes, $index)} { padding-top: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-pr-#{nth($sizes, $index)} { padding-right: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-pb-#{nth($sizes, $index)} { padding-bottom: #{nth($sizes, $index)}px !important; }
+  .#{$prefix}-pl-#{nth($sizes, $index)} { padding-left: #{nth($sizes, $index)}px !important; }
 }
 
 // 快速使用
 
-.#{$prefix}-m { margin: 20px; }
-.#{$prefix}-mt { margin-top: 20px; }
-.#{$prefix}-mr { margin-right: 20px; }
-.#{$prefix}-mb { margin-bottom: 20px; }
-.#{$prefix}-ml { margin-left: 20px; }
+.#{$prefix}-m { margin: 20px !important; }
+.#{$prefix}-mt { margin-top: 20px !important; }
+.#{$prefix}-mr { margin-right: 20px !important; }
+.#{$prefix}-mb { margin-bottom: 20px !important; }
+.#{$prefix}-ml { margin-left: 20px !important; }
 
-.#{$prefix}-p { padding: 20px; }
-.#{$prefix}-pt { padding-top: 20px; }
-.#{$prefix}-pr { padding-right: 20px; }
-.#{$prefix}-pb { padding-bottom: 20px; }
-.#{$prefix}-pl { padding-left: 20px; }
+.#{$prefix}-p { padding: 20px !important; }
+.#{$prefix}-pt { padding-top: 20px !important; }
+.#{$prefix}-pr { padding-right: 20px !important; }
+.#{$prefix}-pb { padding-bottom: 20px !important; }
+.#{$prefix}-pl { padding-left: 20px !important; }
