@@ -140,12 +140,6 @@ D2Admin 仍然处于开发中，这里有一些暂时的计划：
 
 ## 使用
 
-首先下载模板 [d2-admin/releases](https://github.com/FairyEver/d2-admin/releases)
-
-::: tip
-不要直接克隆本项目，请选择上面已经发行的版本，如果克隆仓库，你将会得到不完全的代码。尤其不要使用 dev 分支
-:::
-
 ```
 // 安装依赖
 npm i
