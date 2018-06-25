@@ -12,7 +12,7 @@
       <el-input
         v-model="searchText"
         :clearable="true"
-        placeholder="搜索"
+        placeholder="搜索 比如 'plus'"
         prefix-icon="el-icon-search">
       </el-input>
       <el-collapse v-if="!searchMode" class="group" v-model="collapseActive">
