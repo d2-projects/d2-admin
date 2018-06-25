@@ -24,7 +24,7 @@
               <el-input type="text" v-model="formLogin.code" placeholder="- - - -">
                 <template slot="prepend">验证码</template>
                 <template slot="append">
-                  <img class="login-code" src="static/image/login-code.png" alt="">
+                  <img class="login-code" src="/static/image/login-code.png" alt="">
                 </template>
               </el-input>
             </el-form-item>
