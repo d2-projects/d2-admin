@@ -28,7 +28,7 @@
                 </template>
               </el-input>
             </el-form-item>
-            <el-button @click="submit" type="primary" class="button-login">登陆</el-button>
+            <el-button @click="submit" type="primary" class="button-login">登录</el-button>
           </el-form>
         </el-card>
       </div>
