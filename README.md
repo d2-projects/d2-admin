@@ -124,7 +124,6 @@ D2Admin 仍然处于开发中，这里有一些计划：
 ├─ design.sketch // 设计文件
 ├─ index.html
 └─ package.json
-
 ```
 
 ## 使用
