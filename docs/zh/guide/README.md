@@ -108,9 +108,9 @@ D2Admin 仍然处于开发中，这里有一些暂时的计划：
 │  │  ├─ library
 │  │  └─ style
 │  ├─ components // 组件
-│  │  ├─ charts
-│  │  ├─ core
-│  │  └─ demo
+│  │  ├─ charts // 图表组件
+│  │  ├─ core // 核心组件
+│  │  └─ demo // 示例组件
 │  ├─ i18n // 多国语
 │  ├─ menu // 菜单
 │  ├─ mock // 模拟数据
