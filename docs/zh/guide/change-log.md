@@ -6,6 +6,12 @@
 这是正在开发的版本，还没有正式发布
 :::
 
+暂时没有最新的修改
+
+## v1.1.0
+
+[https://github.com/FairyEver/d2-admin/releases/tag/v1.1.0](https://github.com/FairyEver/d2-admin/releases/tag/v1.1.0)
+
 * [ 修改 ] 顶栏和侧边栏菜单新的结构生成方式，新的方案使用 数据 + 递归组件 实现无限制多级菜单
 * [ 修改 ] 路由注册回归最简单的写法
 * [ 修复 ] 首次加载 loading 样式类名和程序内类名冲突，新的加载类名使用 d2-app-loading 前缀
