@@ -118,7 +118,7 @@ D2Admin 仍然处于开发中，这里有一些暂时的计划：
 │  ├─ plugin // 插件
 │  ├─ router // 路由
 │  ├─ store // vuex
-│  ├─ utils
+│  ├─ utils // 通用函数
 │  ├─ App.vue
 │  └─ main.js
 ├─ static // 静态资源
