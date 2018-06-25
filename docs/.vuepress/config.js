@@ -27,7 +27,11 @@ module.exports = {
         selectText: 'Languages',
         label: 'English',
         editLinkText: 'Edit this page on GitHub',
-        lastUpdated: 'Last update'
+        lastUpdated: 'Last update',
+        nav: [
+          { text: 'preview', link: 'https://fairyever.gitee.io/d2-admin-preview/#/index' },
+          { text: 'download', link: 'https://github.com/FairyEver/d2-admin/releases' }
+        ]
       },
       '/zh/': {
         selectText: '选择语言',
@@ -39,6 +43,7 @@ module.exports = {
           { text: '插件', link: '/zh/plugins/' },
           { text: '组件', link: '/zh/components/' },
           { text: '其它', link: '/zh/others/' },
+          { text: '预览', link: 'https://fairyever.gitee.io/d2-admin-preview/#/index' },
           { text: '下载', link: 'https://github.com/FairyEver/d2-admin/releases' }
         ],
         sidebar: {
@@ -69,6 +74,7 @@ function sideBarGuide (title) {
 
 function sideBarPlugins () {
   return [
+    '',
     'data-export',
     'data-import',
     'i18n',
@@ -82,6 +88,7 @@ function sideBarComponents (title) {
       title,
       collapsable: false,
       children: [
+        '',
         'charts',
         'container',
         'count-up',
