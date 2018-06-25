@@ -8,7 +8,13 @@ import propsChart from './props/chart'
 import propsD2 from './props/d2'
 
 // 工具
-import sleep from '@/utils/sleep.js'
+const sleep = async (time = 0) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve()
+    }, time)
+  })
+}
 
 // 关闭 G2 的体验改进计划打点请求
 G2.track(false)

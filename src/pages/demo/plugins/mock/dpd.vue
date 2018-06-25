@@ -17,7 +17,7 @@
 
 <script>
 import Vue from 'vue'
-import clone from '@/utils/clone.js'
+import _clonedeep from 'lodash.clonedeep'
 import Mock from 'mockjs'
 import settingDPD from './data/settingDPD'
 import doc from './md/doc.md'
@@ -29,7 +29,7 @@ export default {
     return {
       mockResult: [],
       settingDPD,
-      settingDPDClone: clone(settingDPD),
+      settingDPDClone: _clonedeep(settingDPD),
       doc
     }
   },

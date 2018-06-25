@@ -29,7 +29,7 @@
 
 <script>
 import Vue from 'vue'
-import clone from '@/utils/clone.js'
+import _clonedeep from 'lodash.clonedeep'
 import Mock from 'mockjs'
 import settingDTD from './data/settingDTD'
 import regexp from './mixins/regexp'
@@ -47,7 +47,7 @@ export default {
     return {
       mockResult: [],
       settingDTD,
-      settingDTDClone: clone(settingDTD),
+      settingDTDClone: _clonedeep(settingDTD),
       doc
     }
   },
