@@ -60,6 +60,9 @@ export default {
       this.updateAsideHeight()
     }
   },
+  beforeDestroy () {
+    window.onresize = () => {}
+  },
   methods: {
     updateAsideHeight () {
       this.asideHeight = this.$el.offsetHeight
