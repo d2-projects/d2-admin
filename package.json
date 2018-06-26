@@ -13,8 +13,6 @@
     "doc:build": "vuepress build docs"
   },
   "dependencies": {
-    "@antv/data-set": "^0.8.5",
-    "@antv/g2": "^3.0.4",
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
     "better-scroll": "^1.12.1",
