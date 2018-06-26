@@ -9,6 +9,11 @@ export default {
         preview: 'static/image/theme/d2/preview@2x.png'
       },
       {
+        name: '紫罗兰',
+        value: 'violet',
+        preview: 'static/image/theme/violet/preview@2x.png'
+      },
+      {
         name: '简约线条',
         value: 'line',
         backgroundImage: 'static/image/bg/line-squashed.jpg',
