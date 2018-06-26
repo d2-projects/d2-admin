@@ -57,6 +57,20 @@ const routes = [
     ])('demo-plugins-')
   },
   {
+    path: '/demo/charts',
+    name: 'demo-charts',
+    meta,
+    redirect: { name: 'demo-charts-index' },
+    component: () => import('@/components/core/d2-layout-main'),
+    children: (pre => [
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/charts/index'), meta },
+      { path: 'list/line/demo1', name: `${pre}list-line-demo1`, component: () => import('@/pages/demo/charts/list/line/demo1/index.vue'), meta },
+      { path: 'list/line/demo2', name: `${pre}list-line-demo2`, component: () => import('@/pages/demo/charts/list/line/demo2/index.vue'), meta },
+      { path: 'list/line/demo3', name: `${pre}list-line-demo3`, component: () => import('@/pages/demo/charts/list/line/demo3/index.vue'), meta },
+      { path: 'list/line/demo4', name: `${pre}list-line-demo4`, component: () => import('@/pages/demo/charts/list/line/demo4/index.vue'), meta }
+    ])('demo-charts-')
+  },
+  {
     path: '/demo/components',
     name: 'demo-components',
     meta,
