@@ -61,7 +61,7 @@ export default {
     }
   },
   beforeDestroy () {
-    window.onresize = () => {}
+    window.onresize = function () {}
   },
   methods: {
     updateAsideHeight () {
