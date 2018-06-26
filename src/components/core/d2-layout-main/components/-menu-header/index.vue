@@ -10,14 +10,18 @@
 <script>
 import menus from '@/menu/index.js'
 import menuMixin from '../mixin/menu'
+// 组件
+import d2LayoutMainMenuItem from '../-menu-item/index.vue'
+import d2LayoutMainMenuSub from '../-menu-sub/index.vue'
+
 export default {
   name: 'd2-layout-main-menu-header',
   mixins: [
     menuMixin
   ],
   components: {
-    'd2-layout-main-menu-item': () => import('../-menu-item/index.vue'),
-    'd2-layout-main-menu-sub': () => import('../-menu-sub/index.vue')
+    'd2-layout-main-menu-item': d2LayoutMainMenuItem,
+    'd2-layout-main-menu-sub': d2LayoutMainMenuSub
   },
   data () {
     return {

@@ -13,8 +13,14 @@
 
 <script>
 import _uniqueid from 'lodash.uniqueid'
+// 组件
+import d2LayoutMainMenuItem from '../-menu-item/index.vue'
+
 export default {
   name: 'd2-layout-main-menu-sub',
+  components: {
+    'd2-layout-main-menu-item': d2LayoutMainMenuItem
+  },
   props: {
     menu: {
       type: Object,
@@ -26,9 +32,6 @@ export default {
     return {
       uniqueid: _uniqueid('d2-menu-empty-')
     }
-  },
-  components: {
-    'd2-layout-main-menu-item': () => import('../-menu-item/index.vue')
   }
 }
 </script>
