@@ -169,3 +169,12 @@ Mock.setup({
 ```
 
 * 删除 `src/pages/demo/chart` 目录
+
+4. 删除依赖
+
+打开终端 cd 到项目文件夹，执行
+
+```
+npm remove @antv/data-set -S
+npm remove @antv/g2 -S
+```
