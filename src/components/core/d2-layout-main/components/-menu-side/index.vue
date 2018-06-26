@@ -63,7 +63,6 @@ export default {
   methods: {
     updateAsideHeight () {
       this.asideHeight = this.$el.offsetHeight
-      console.log(this.asideHeight)
     }
   }
 }

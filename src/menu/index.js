@@ -116,32 +116,6 @@ const demoComponents = {
   ])('/demo/components/')
 }
 
-// 路由菜单 图表
-const demoChart = {
-  path: '/demo/chart',
-  title: '图表 G2',
-  icon: 'pie-chart',
-  children: (pre => [
-    { path: `${pre}index`, title: '图表首页' },
-    {
-      path: `${pre}demo`,
-      title: '单图示例',
-      children: [
-        { path: `${pre}demo/areaBase`, title: '区域折线图' },
-        { path: `${pre}demo/barBase`, title: '条形图' },
-        { path: `${pre}demo/columnBase`, title: '柱形图' },
-        { path: `${pre}demo/lineBase`, title: '折线图' },
-        { path: `${pre}demo/lineStep`, title: '阶梯折线图' },
-        { path: `${pre}demo/nightingaleRoseBase`, title: '南丁格尔玫瑰图' },
-        { path: `${pre}demo/PieBase`, title: '饼图' },
-        { path: `${pre}demo/radarBase`, title: '雷达图' }
-      ]
-    },
-    { path: `${pre}all`, title: '示例' },
-    { path: `${pre}dynamicSize`, title: '动态尺寸与可拖拽' }
-  ])('/demo/chart/')
-}
-
 // 路由菜单 组件库
 const demoElement = {
   path: '/demo/element',
@@ -236,8 +210,7 @@ const demoElement = {
 export const side = [
   demoPlugins,
   demoComponents,
-  demoElement,
-  demoChart
+  demoElement
 ]
 
 // 菜单 顶栏
@@ -253,7 +226,6 @@ export default [
       demoPlugins,
       demoComponents,
       demoElement,
-      demoChart,
       {
         title: '空菜单演示',
         icon: 'folder-o',
