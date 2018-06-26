@@ -32,26 +32,6 @@ const routes = [
     ])('demo-business-')
   },
   {
-    path: '/demo/chart',
-    name: 'demo-chart',
-    meta,
-    redirect: { name: 'demo-chart-index' },
-    component: () => import('@/components/core/d2-layout-main'),
-    children: (pre => [
-      { path: 'all', name: `${pre}all`, component: () => import('@/pages/demo/chart/all'), meta },
-      { path: 'demo/areaBase', name: `${pre}demo-areaBase`, component: () => import('@/pages/demo/chart/demo/areaBase.vue'), meta },
-      { path: 'demo/barBase', name: `${pre}demo-barBase`, component: () => import('@/pages/demo/chart/demo/barBase.vue'), meta },
-      { path: 'demo/columnBase', name: `${pre}demo-columnBase`, component: () => import('@/pages/demo/chart/demo/columnBase.vue'), meta },
-      { path: 'demo/lineBase', name: `${pre}demo-lineBase`, component: () => import('@/pages/demo/chart/demo/lineBase.vue'), meta },
-      { path: 'demo/lineStep', name: `${pre}demo-lineStep`, component: () => import('@/pages/demo/chart/demo/lineStep.vue'), meta },
-      { path: 'demo/nightingaleRoseBase', name: `${pre}demo-nightingaleRoseBase`, component: () => import('@/pages/demo/chart/demo/nightingaleRoseBase.vue'), meta },
-      { path: 'demo/PieBase', name: `${pre}demo-PieBase`, component: () => import('@/pages/demo/chart/demo/PieBase.vue'), meta },
-      { path: 'demo/radarBase', name: `${pre}demo-radarBase`, component: () => import('@/pages/demo/chart/demo/radarBase.vue'), meta },
-      { path: 'dynamicSize', name: `${pre}dynamicSize`, component: () => import('@/pages/demo/chart/dynamicSize'), meta },
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/chart/index'), meta }
-    ])('demo-chart-')
-  },
-  {
     path: '/demo/plugins',
     name: 'demo-plugins',
     meta,

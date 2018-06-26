@@ -65,7 +65,9 @@ export default {
     }),
     styleLayoutMainGroup () {
       return {
-        ...this.themeBackGroundImage ? {backgroundImage: `url('${this.$assetsPublicPath}${this.themeBackGroundImage}')`} : {}
+        ...this.themeBackGroundImage ? {
+          backgroundImage: `url('${this.$assetsPublicPath}${this.themeBackGroundImage}')`
+        } : {}
       }
     }
   },
