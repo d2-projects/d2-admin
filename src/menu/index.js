@@ -116,11 +116,37 @@ const demoComponents = {
   ])('/demo/components/')
 }
 
+// 路由菜单 组件
+const demoCharts = {
+  path: '/demo/charts',
+  title: '图表',
+  icon: 'line-chart',
+  children: (pre => [
+    { path: `${pre}index`, title: '图表首页' },
+    {
+      path: `${pre}list`,
+      title: '图表',
+      children: [
+        {
+          path: `${pre}list/line`,
+          title: '折线图',
+          children: [
+            { path: `${pre}list/line/demo1`, title: '示例' },
+            { path: `${pre}list/line/demo2`, title: '横坐标的倾斜' },
+            { path: `${pre}list/line/demo3`, title: '堆叠面积图' },
+            { path: `${pre}list/line/demo4`, title: '显示指标数值' }
+          ]
+        }
+      ]
+    }
+  ])('/demo/charts/')
+}
+
 // 路由菜单 组件库
 const demoElement = {
   path: '/demo/element',
   title: 'Element 组件库',
-  icon: 'puzzle-piece',
+  icon: 'cubes',
   children: (pre => [
     { path: `${pre}index`, title: '组件库首页' },
     {
@@ -210,6 +236,7 @@ const demoElement = {
 export const side = [
   demoPlugins,
   demoComponents,
+  demoCharts,
   demoElement
 ]
 
@@ -225,6 +252,7 @@ export default [
     children: [
       demoPlugins,
       demoComponents,
+      demoCharts,
       demoElement,
       {
         title: '空菜单演示',

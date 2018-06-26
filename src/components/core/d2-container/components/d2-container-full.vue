@@ -38,6 +38,7 @@ export default {
     flex-grow: 1;
     padding: 20px;
     overflow: auto;
+    position: relative;
   }
   .d2-container-full__footer {
     padding: 20px;

@@ -8,6 +8,9 @@ import i18n from './i18n'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+// v-charts
+import VCharts from 'v-charts'
+
 // font-awesome
 import '@/assets/library/font-awesome-4.7.0/css/font-awesome.min.css'
 
@@ -53,6 +56,7 @@ import bigdataTable from '@/plugin/vue-bigdata-table'
 import buildConfig from '../config/index'
 
 Vue.use(ElementUI)
+Vue.use(VCharts)
 Vue.use(contentmenu)
 
 Vue.use(pluginImport)
