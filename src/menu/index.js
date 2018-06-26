@@ -119,7 +119,7 @@ const demoComponents = {
 // 路由菜单 图表
 const demoChart = {
   path: '/demo/chart',
-  title: '图表',
+  title: '图表 G2',
   icon: 'pie-chart',
   children: (pre => [
     { path: `${pre}index`, title: '图表首页' },
