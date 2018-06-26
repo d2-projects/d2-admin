@@ -5,6 +5,7 @@
         <el-menu
           :collapse="collapse"
           :unique-opened="true"
+          :default-active="active"
           @select="handleMenuSelect">
           <template v-for="(menu, menuIndex) in menus">
             <d2-layout-main-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
@@ -23,11 +24,19 @@
 <script>
 import { side } from '@/menu/index.js'
 import menuMixin from '../mixin/menu'
+// 组件
+import d2LayoutMainMenuItem from '../-menu-item/index.vue'
+import d2LayoutMainMenuSub from '../-menu-sub/index.vue'
+
 export default {
   name: 'd2-layout-main-menu-side',
   mixins: [
     menuMixin
   ],
+  components: {
+    'd2-layout-main-menu-item': d2LayoutMainMenuItem,
+    'd2-layout-main-menu-sub': d2LayoutMainMenuSub
+  },
   props: {
     collapse: {
       type: Boolean,
@@ -35,13 +44,10 @@ export default {
       default: false
     }
   },
-  components: {
-    'd2-layout-main-menu-item': () => import('../-menu-item/index.vue'),
-    'd2-layout-main-menu-sub': () => import('../-menu-sub/index.vue')
-  },
   data () {
     return {
       menus: [],
+      active: '',
       asideHeight: 300
     }
   },
@@ -51,6 +57,7 @@ export default {
         const path = val[0].path
         const _side = side.filter(menu => menu.path === path)
         this.menus = _side.length > 0 ? _side[0].children : []
+        this.active = val[val.length - 1].path
       },
       immediate: true
     }
