@@ -49,7 +49,8 @@ export default {
     '$route.matched': {
       handler (val) {
         const path = val[0].path
-        this.menus = side.filter(menu => menu.path === path)
+        const _side = side.filter(menu => menu.path === path)
+        this.menus = _side.length > 0 ? _side[0].children : []
       },
       immediate: true
     }
