@@ -143,9 +143,9 @@ const demoCharts = {
           title: '折线图',
           children: [
             { path: `${pre}list/line/demo1`, title: '一般' },
-            { path: `${pre}list/line/demo2`, title: '横坐标的倾斜' },
+            { path: `${pre}list/line/demo2`, title: '横坐标倾斜' },
             { path: `${pre}list/line/demo3`, title: '堆叠面积图' },
-            { path: `${pre}list/line/demo4`, title: '显示指标数值' },
+            { path: `${pre}list/line/demo4`, title: '显示数值' },
             { path: `${pre}list/line/demo5`, title: '设置别名' }
           ]
         },
@@ -154,11 +154,11 @@ const demoCharts = {
           title: '柱状图',
           children: [
             { path: `${pre}list/histogram/demo1`, title: '一般' },
-            { path: `${pre}list/histogram/demo2`, title: '设置指标维度' },
-            { path: `${pre}list/histogram/demo3`, title: '柱状图+折线图' },
+            { path: `${pre}list/histogram/demo2`, title: '指标维度' },
+            { path: `${pre}list/histogram/demo3`, title: '混合图表' },
             { path: `${pre}list/histogram/demo4`, title: '堆叠柱状图' },
-            { path: `${pre}list/histogram/demo5`, title: '默认显示柱状图数据' },
-            { path: `${pre}list/histogram/demo6`, title: '横轴为连续的数值轴' }
+            { path: `${pre}list/histogram/demo5`, title: '显示数值' },
+            { path: `${pre}list/histogram/demo6`, title: '横轴连续' }
           ]
         },
         {
@@ -166,10 +166,10 @@ const demoCharts = {
           title: '条形图',
           children: [
             { path: `${pre}list/bar/demo1`, title: '一般' },
-            { path: `${pre}list/bar/demo2`, title: '设置指标维度' },
+            { path: `${pre}list/bar/demo2`, title: '指标维度' },
             { path: `${pre}list/bar/demo3`, title: '排序条形图' },
             { path: `${pre}list/bar/demo4`, title: '堆叠条形图' },
-            { path: `${pre}list/bar/demo5`, title: '纵轴为连续的数值轴' }
+            { path: `${pre}list/bar/demo5`, title: '纵轴连续' }
           ]
         },
         {
@@ -177,11 +177,11 @@ const demoCharts = {
           title: '饼图',
           children: [
             { path: `${pre}list/pie/demo1`, title: '一般' },
-            { path: `${pre}list/pie/demo2`, title: '设置指标维度' },
+            { path: `${pre}list/pie/demo2`, title: '指标维度' },
             { path: `${pre}list/pie/demo3`, title: '玫瑰图' },
-            { path: `${pre}list/pie/demo4`, title: '限制显示条数饼图' },
+            { path: `${pre}list/pie/demo4`, title: '限制条数' },
             { path: `${pre}list/pie/demo5`, title: '多圆饼图' },
-            { path: `${pre}list/pie/demo6`, title: '设置饼图半径边距' }
+            { path: `${pre}list/pie/demo6`, title: '设置半径' }
           ]
         },
         {
@@ -189,10 +189,10 @@ const demoCharts = {
           title: '环图',
           children: [
             { path: `${pre}list/ring/demo1`, title: '一般' },
-            { path: `${pre}list/ring/demo2`, title: '设置指标维度' },
+            { path: `${pre}list/ring/demo2`, title: '指标维度' },
             { path: `${pre}list/ring/demo3`, title: '玫瑰图' },
-            { path: `${pre}list/ring/demo4`, title: '限制显示条数环图' },
-            { path: `${pre}list/ring/demo5`, title: '设置环图半径' }
+            { path: `${pre}list/ring/demo4`, title: '限制显示条数' },
+            { path: `${pre}list/ring/demo5`, title: '设置半径' }
           ]
         }
       ]
