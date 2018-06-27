@@ -168,16 +168,18 @@
   // 菜单项目
   @mixin theme-menu-hover-style {
     color: $theme-menu-item-color-hover;
-    i {
+    i.fa {
       color: $theme-menu-item-color-hover;
     }
     background-color: $theme-menu-item-background-color-hover;
   }
   .el-submenu__title {
     @extend %unable-select;
+    i.fa { margin-right: 5px; }
   }
   .el-menu-item {
     @extend %unable-select;
+    i.fa { margin-right: 5px; }
   }
   .el-submenu__title:hover {
     @include theme-menu-hover-style;
