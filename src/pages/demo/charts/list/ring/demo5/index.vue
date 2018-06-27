@@ -1,8 +1,8 @@
 <template>
   <d2-container type="full">
-    <template slot="header">设置饼图半径边距</template>
+    <template slot="header">设置环图半径</template>
     <div class="inner">
-      <ve-pie :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-pie>
+      <ve-ring :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-ring>
     </div>
     <template slot="footer">
       <d2-demo-link-btn title="更多示例和文档" link="https://v-charts.js.org"/>
@@ -18,7 +18,7 @@ export default {
   ],
   data () {
     this.chartSettings = {
-      radius: 150,
+      radius: [30, 100],
       offsetY: 250
     }
     return {
