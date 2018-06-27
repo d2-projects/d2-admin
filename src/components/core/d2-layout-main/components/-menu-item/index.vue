@@ -1,6 +1,6 @@
 <template>
   <el-menu-item :index="menu.path || uniqueid">
-    <i v-if="menu.icon" :class="`fa fa-${menu.icon}`"></i>
+    <i :class="`fa fa-${menu.icon || 'file-o'}`"></i>
     <span slot="title">{{menu.title}}</span>
   </el-menu-item>
 </template>
