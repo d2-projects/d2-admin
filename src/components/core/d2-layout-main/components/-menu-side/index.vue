@@ -6,6 +6,7 @@
           :collapse="collapse"
           :unique-opened="true"
           :default-active="active"
+          ref="menu"
           @select="handleMenuSelect">
           <template v-for="(menu, menuIndex) in menus">
             <d2-layout-main-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
@@ -58,6 +59,9 @@ export default {
         const _side = side.filter(menu => menu.path === path)
         this.menus = _side.length > 0 ? _side[0].children : []
         this.active = val[val.length - 1].path
+        this.$nextTick(() => {
+          this.$refs.menu.activeIndex = this.active
+        })
       },
       immediate: true
     }
