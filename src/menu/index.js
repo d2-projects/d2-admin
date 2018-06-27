@@ -136,6 +136,7 @@ const demoCharts = {
     {
       path: `${pre}list`,
       title: '图表',
+      icon: 'cube',
       children: [
         {
           path: `${pre}list/line`,
@@ -209,6 +210,7 @@ const demoElement = {
     {
       path: `${pre}basic`,
       title: '基础',
+      icon: 'cube',
       children: [
         { path: `${pre}basic-layout`, title: '布局' },
         { path: `${pre}basic-container`, title: '布局容器' },
@@ -221,6 +223,7 @@ const demoElement = {
     {
       path: `${pre}form`,
       title: '表单',
+      icon: 'check-square-o',
       children: [
         { path: `${pre}form-radio`, title: '单选框' },
         { path: `${pre}form-checkbox`, title: '多选框' },
@@ -243,6 +246,7 @@ const demoElement = {
     {
       path: `${pre}data`,
       title: '数据',
+      icon: 'table',
       children: [
         { path: `${pre}data-table`, title: '表格' },
         { path: `${pre}data-tag`, title: '标签' },
@@ -255,6 +259,7 @@ const demoElement = {
     {
       path: `${pre}notice`,
       title: '消息',
+      icon: 'commenting',
       children: [
         { path: `${pre}notice-alert`, title: '警告' },
         { path: `${pre}notice-loading`, title: '加载' },
@@ -266,6 +271,7 @@ const demoElement = {
     {
       path: `${pre}navigation`,
       title: '导航',
+      icon: 'map',
       children: [
         { path: `${pre}navigation-menu`, title: '导航菜单' },
         { path: `${pre}navigation-tabs`, title: '标签页' },
@@ -277,6 +283,7 @@ const demoElement = {
     {
       path: `${pre}others`,
       title: '其它',
+      icon: 'cubes',
       children: [
         { path: `${pre}others-dialog`, title: '对话框' },
         { path: `${pre}others-tooltip`, title: '文字提示' },
