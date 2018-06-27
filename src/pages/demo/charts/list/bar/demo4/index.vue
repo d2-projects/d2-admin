@@ -1,8 +1,8 @@
 <template>
   <d2-container type="full">
-    <template slot="header">一般</template>
+    <template slot="header">堆叠条形图</template>
     <div class="inner">
-      <ve-line :data="chartData" v-bind="pubSetting"></ve-line>
+      <ve-bar :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-bar>
     </div>
     <template slot="footer">
       <d2-demo-link-btn title="更多示例和文档" link="https://v-charts.js.org"/>
@@ -16,7 +16,12 @@ export default {
   mixins: [
     list
   ],
-  data: function () {
+  data () {
+    this.chartSettings =  {
+      stack: {
+        'xxx': ['访问用户', '下单用户']
+      }
+    }
     return {
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],

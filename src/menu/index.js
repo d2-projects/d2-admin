@@ -149,6 +149,17 @@ const demoCharts = {
             { path: `${pre}list/histogram/demo5`, title: '默认显示柱状图数据' },
             { path: `${pre}list/histogram/demo6`, title: '横轴为连续的数值轴' }
           ]
+        },
+        {
+          path: `${pre}list/bar`,
+          title: '条形图',
+          children: [
+            { path: `${pre}list/bar/demo1`, title: '一般' },
+            { path: `${pre}list/bar/demo2`, title: '指定指标维度' },
+            { path: `${pre}list/bar/demo3`, title: '排序条形图' },
+            { path: `${pre}list/bar/demo4`, title: '堆叠条形图' },
+            { path: `${pre}list/bar/demo5`, title: '纵轴为连续的数值轴' }
+          ]
         }
       ]
     }
