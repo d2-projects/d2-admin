@@ -134,7 +134,20 @@ const demoCharts = {
             { path: `${pre}list/line/demo1`, title: '一般' },
             { path: `${pre}list/line/demo2`, title: '横坐标的倾斜' },
             { path: `${pre}list/line/demo3`, title: '堆叠面积图' },
-            { path: `${pre}list/line/demo4`, title: '显示指标数值' }
+            { path: `${pre}list/line/demo4`, title: '显示指标数值' },
+            { path: `${pre}list/line/demo5`, title: '设置别名' }
+          ]
+        },
+        {
+          path: `${pre}list/histogram`,
+          title: '柱状图',
+          children: [
+            { path: `${pre}list/histogram/demo1`, title: '一般' },
+            { path: `${pre}list/histogram/demo2`, title: '设置显示的指标维度' },
+            { path: `${pre}list/histogram/demo3`, title: '柱状图+折线图' },
+            { path: `${pre}list/histogram/demo4`, title: '堆叠柱状图' },
+            { path: `${pre}list/histogram/demo5`, title: '默认显示柱状图数据' },
+            { path: `${pre}list/histogram/demo6`, title: '横轴为连续的数值轴' }
           ]
         }
       ]
