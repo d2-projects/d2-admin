@@ -8,6 +8,7 @@ const demoPlugins = {
     {
       path: `${pre}mock`,
       title: '模拟数据',
+      icon: 'globe',
       children: [
         { path: `${pre}mock/ajax`, title: '拦截异步请求' },
         { path: `${pre}mock/dpd`, title: 'DPD 规则' },
@@ -17,6 +18,7 @@ const demoPlugins = {
     {
       path: `${pre}import`,
       title: '导入',
+      icon: 'download',
       children: [
         { path: `${pre}import/csv`, title: 'csv' },
         { path: `${pre}import/xlsx`, title: 'xlsx' }
@@ -25,6 +27,7 @@ const demoPlugins = {
     {
       path: `${pre}export`,
       title: '导出',
+      icon: 'upload',
       children: [
         { path: `${pre}export/table`, title: '表格' },
         { path: `${pre}export/txt`, title: '文本' }
@@ -33,6 +36,7 @@ const demoPlugins = {
     {
       path: `${pre}i18n`,
       title: '多国语',
+      icon: 'language',
       children: [
         { path: `${pre}i18n/demo1`, title: '示例1' },
         { path: `${pre}i18n/demo2`, title: '示例2' }
@@ -41,15 +45,16 @@ const demoPlugins = {
     {
       path: `${pre}better-scroll`,
       title: '滚动扩展',
+      icon: 'crosshairs',
       children: [
         { path: `${pre}better-scroll/base`, title: '基础用法' },
         { path: `${pre}better-scroll/to`, title: '滚动定位' }
       ]
     },
-    { path: `${pre}build`, title: '环境区分' },
-    { path: `${pre}clipboard-polyfill`, title: '剪贴板访问' },
-    { path: `${pre}day`, title: '日期计算' },
-    { path: `${pre}js-cookie`, title: 'Cookie 读写' }
+    { path: `${pre}build`, title: '环境区分', icon: 'database' },
+    { path: `${pre}clipboard-polyfill`, title: '剪贴板访问', icon: 'clipboard' },
+    { path: `${pre}day`, title: '日期计算', icon: 'clock-o' },
+    { path: `${pre}js-cookie`, title: 'Cookie 读写', icon: 'asterisk' }
   ])('/demo/plugins/')
 }
 
