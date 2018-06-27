@@ -85,7 +85,12 @@ const routes = [
       { path: 'list/pie/demo3', name: `${pre}list-pie-demo3`, component: () => import('@/pages/demo/charts/list/pie/demo3/index.vue'), meta },
       { path: 'list/pie/demo4', name: `${pre}list-pie-demo4`, component: () => import('@/pages/demo/charts/list/pie/demo4/index.vue'), meta },
       { path: 'list/pie/demo5', name: `${pre}list-pie-demo5`, component: () => import('@/pages/demo/charts/list/pie/demo5/index.vue'), meta },
-      { path: 'list/pie/demo6', name: `${pre}list-pie-demo6`, component: () => import('@/pages/demo/charts/list/pie/demo6/index.vue'), meta }
+      { path: 'list/pie/demo6', name: `${pre}list-pie-demo6`, component: () => import('@/pages/demo/charts/list/pie/demo6/index.vue'), meta },
+      { path: 'list/ring/demo1', name: `${pre}list-ring-demo1`, component: () => import('@/pages/demo/charts/list/ring/demo1/index.vue'), meta },
+      { path: 'list/ring/demo2', name: `${pre}list-ring-demo2`, component: () => import('@/pages/demo/charts/list/ring/demo2/index.vue'), meta },
+      { path: 'list/ring/demo3', name: `${pre}list-ring-demo3`, component: () => import('@/pages/demo/charts/list/ring/demo3/index.vue'), meta },
+      { path: 'list/ring/demo4', name: `${pre}list-ring-demo4`, component: () => import('@/pages/demo/charts/list/ring/demo4/index.vue'), meta },
+      { path: 'list/ring/demo5', name: `${pre}list-ring-demo5`, component: () => import('@/pages/demo/charts/list/ring/demo5/index.vue'), meta }
     ])('demo-charts-')
   },
   {

@@ -172,6 +172,17 @@ const demoCharts = {
             { path: `${pre}list/pie/demo5`, title: '多圆饼图' },
             { path: `${pre}list/pie/demo6`, title: '设置饼图半径边距' }
           ]
+        },
+        {
+          path: `${pre}list/ring`,
+          title: '环图',
+          children: [
+            { path: `${pre}list/ring/demo1`, title: '一般' },
+            { path: `${pre}list/ring/demo2`, title: '设置指标维度' },
+            { path: `${pre}list/ring/demo3`, title: '玫瑰图' },
+            { path: `${pre}list/ring/demo4`, title: '限制显示条数环图' },
+            { path: `${pre}list/ring/demo5`, title: '设置环图半径' }
+          ]
         }
       ]
     }
