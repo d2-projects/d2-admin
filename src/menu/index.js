@@ -131,7 +131,7 @@ const demoCharts = {
           path: `${pre}list/line`,
           title: '折线图',
           children: [
-            { path: `${pre}list/line/demo1`, title: '示例' },
+            { path: `${pre}list/line/demo1`, title: '一般' },
             { path: `${pre}list/line/demo2`, title: '横坐标的倾斜' },
             { path: `${pre}list/line/demo3`, title: '堆叠面积图' },
             { path: `${pre}list/line/demo4`, title: '显示指标数值' }
