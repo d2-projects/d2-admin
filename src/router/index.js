@@ -67,7 +67,14 @@ const routes = [
       { path: 'list/line/demo1', name: `${pre}list-line-demo1`, component: () => import('@/pages/demo/charts/list/line/demo1/index.vue'), meta },
       { path: 'list/line/demo2', name: `${pre}list-line-demo2`, component: () => import('@/pages/demo/charts/list/line/demo2/index.vue'), meta },
       { path: 'list/line/demo3', name: `${pre}list-line-demo3`, component: () => import('@/pages/demo/charts/list/line/demo3/index.vue'), meta },
-      { path: 'list/line/demo4', name: `${pre}list-line-demo4`, component: () => import('@/pages/demo/charts/list/line/demo4/index.vue'), meta }
+      { path: 'list/line/demo4', name: `${pre}list-line-demo4`, component: () => import('@/pages/demo/charts/list/line/demo4/index.vue'), meta },
+      { path: 'list/line/demo5', name: `${pre}list-line-demo5`, component: () => import('@/pages/demo/charts/list/line/demo5/index.vue'), meta },
+      { path: 'list/histogram/demo1', name: `${pre}list-histogram-demo1`, component: () => import('@/pages/demo/charts/list/histogram/demo1/index.vue'), meta },
+      { path: 'list/histogram/demo2', name: `${pre}list-histogram-demo2`, component: () => import('@/pages/demo/charts/list/histogram/demo2/index.vue'), meta },
+      { path: 'list/histogram/demo3', name: `${pre}list-histogram-demo3`, component: () => import('@/pages/demo/charts/list/histogram/demo3/index.vue'), meta },
+      { path: 'list/histogram/demo4', name: `${pre}list-histogram-demo4`, component: () => import('@/pages/demo/charts/list/histogram/demo4/index.vue'), meta },
+      { path: 'list/histogram/demo5', name: `${pre}list-histogram-demo5`, component: () => import('@/pages/demo/charts/list/histogram/demo5/index.vue'), meta },
+      { path: 'list/histogram/demo6', name: `${pre}list-histogram-demo6`, component: () => import('@/pages/demo/charts/list/histogram/demo6/index.vue'), meta }
     ])('demo-charts-')
   },
   {
