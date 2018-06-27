@@ -215,7 +215,7 @@
     .toggle-aside-btn {
       i {
         color: $theme-header-item-color;
-        background-color: $theme-header-item-background-color;
+        background: $theme-header-item-background-color;
         &:hover {
           color: $theme-header-item-color-hover;
         }
@@ -226,38 +226,38 @@
       .el-menu-item {
         transition: border-top-color 0s;
         color: $theme-header-item-color;
-        background-color: $theme-header-item-background-color;
+        background: $theme-header-item-background-color;
         &:hover {
           color: $theme-header-item-color-hover;
-          background-color: $theme-header-item-background-color-hover;
+          background: $theme-header-item-background-color-hover;
         }
         &:focus {
           color: $theme-header-item-color-focus;
-          background-color: $theme-header-item-background-color-focus;
+          background: $theme-header-item-background-color-focus;
         }
         &.is-active {
           color: $theme-header-item-color-active;
-          background-color: $theme-header-item-background-color-active;
+          background: $theme-header-item-background-color-active;
         }
       }
       .el-submenu {
         .el-submenu__title {
           transition: border-top-color 0s;
           color: $theme-header-item-color;
-          background-color: $theme-header-item-background-color;
+          background: $theme-header-item-background-color;
           .el-submenu__icon-arrow {
             color: $theme-header-item-color;
           }
           &:hover {
             color: $theme-header-item-color-hover;
-            background-color: $theme-header-item-background-color-hover;
+            background: $theme-header-item-background-color-hover;
             .el-submenu__icon-arrow {
               color: $theme-header-item-color-hover;
             }
           }
           &:focus {
             color: $theme-header-item-color-focus;
-            background-color: $theme-header-item-background-color-focus;
+            background: $theme-header-item-background-color-focus;
             .el-submenu__icon-arrow {
               color: $theme-header-item-color-focus;
             }
@@ -272,7 +272,7 @@
         &.can-hover {
           &:hover {
             color: $theme-header-item-color-hover;
-            background-color: $theme-header-item-background-color-hover;
+            background: $theme-header-item-background-color-hover;
           }
         }
       }
@@ -305,27 +305,27 @@
       .el-menu {
         .el-menu-item {
           color: $theme-aside-item-color;
-          background-color: $theme-aside-item-background-color;
+          background: $theme-aside-item-background-color;
           i {
             color: $theme-aside-item-color;
           }
           &:hover {
             color: $theme-aside-item-color-hover;
-            background-color: $theme-aside-item-background-color-hover;
+            background: $theme-aside-item-background-color-hover;
             i {
               color: $theme-aside-item-color-hover;
             }
           }
           &:focus {
             color: $theme-aside-item-color-focus;
-            background-color: $theme-aside-item-background-color-focus;
+            background: $theme-aside-item-background-color-focus;
             i {
               color: $theme-aside-item-color-focus;
             }
           }
           &.is-active {
             color: $theme-aside-item-color-active;
-            background-color: $theme-aside-item-background-color-active;
+            background: $theme-aside-item-background-color-active;
             i {
               color: $theme-aside-item-color-active;
             }
@@ -335,7 +335,7 @@
       .el-submenu {
         .el-submenu__title {
           color: $theme-aside-item-color;
-          background-color: $theme-aside-item-background-color;
+          background: $theme-aside-item-background-color;
           i {
             color: $theme-aside-item-color;
           }
@@ -344,7 +344,7 @@
           }
           &:hover {
             color: $theme-aside-item-color-hover;
-            background-color: $theme-aside-item-background-color-hover;
+            background: $theme-aside-item-background-color-hover;
             i {
               color: $theme-aside-item-color-hover;
             }
