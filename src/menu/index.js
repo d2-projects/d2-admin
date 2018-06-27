@@ -143,7 +143,7 @@ const demoCharts = {
           title: '柱状图',
           children: [
             { path: `${pre}list/histogram/demo1`, title: '一般' },
-            { path: `${pre}list/histogram/demo2`, title: '设置显示的指标维度' },
+            { path: `${pre}list/histogram/demo2`, title: '设置指标维度' },
             { path: `${pre}list/histogram/demo3`, title: '柱状图+折线图' },
             { path: `${pre}list/histogram/demo4`, title: '堆叠柱状图' },
             { path: `${pre}list/histogram/demo5`, title: '默认显示柱状图数据' },
@@ -155,10 +155,22 @@ const demoCharts = {
           title: '条形图',
           children: [
             { path: `${pre}list/bar/demo1`, title: '一般' },
-            { path: `${pre}list/bar/demo2`, title: '指定指标维度' },
+            { path: `${pre}list/bar/demo2`, title: '设置指标维度' },
             { path: `${pre}list/bar/demo3`, title: '排序条形图' },
             { path: `${pre}list/bar/demo4`, title: '堆叠条形图' },
             { path: `${pre}list/bar/demo5`, title: '纵轴为连续的数值轴' }
+          ]
+        },
+        {
+          path: `${pre}list/pie`,
+          title: '饼图',
+          children: [
+            { path: `${pre}list/pie/demo1`, title: '一般' },
+            { path: `${pre}list/pie/demo2`, title: '设置指标维度' },
+            { path: `${pre}list/pie/demo3`, title: '玫瑰图' },
+            { path: `${pre}list/pie/demo4`, title: '限制显示条数饼图' },
+            { path: `${pre}list/pie/demo5`, title: '多圆饼图' },
+            { path: `${pre}list/pie/demo6`, title: '设置饼图半径边距' }
           ]
         }
       ]
