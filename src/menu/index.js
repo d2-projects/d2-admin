@@ -4,7 +4,7 @@ const demoPlugins = {
   title: '插件',
   icon: 'plug',
   children: (pre => [
-    { path: `${pre}index`, title: '插件首页' },
+    { path: `${pre}index`, title: '插件首页', icon: 'home' },
     {
       path: `${pre}mock`,
       title: '模拟数据',
@@ -59,7 +59,7 @@ const demoComponents = {
   title: '组件',
   icon: 'puzzle-piece',
   children: (pre => [
-    { path: `${pre}index`, title: '组件首页' },
+    { path: `${pre}index`, title: '组件首页', icon: 'home' },
     {
       path: `${pre}container`,
       title: '布局容器',
@@ -122,7 +122,7 @@ const demoCharts = {
   title: '图表',
   icon: 'line-chart',
   children: (pre => [
-    { path: `${pre}index`, title: '图表首页' },
+    { path: `${pre}index`, title: '图表首页', icon: 'home' },
     {
       path: `${pre}list`,
       title: '图表',
@@ -195,7 +195,7 @@ const demoElement = {
   title: 'Element 组件库',
   icon: 'cubes',
   children: (pre => [
-    { path: `${pre}index`, title: '组件库首页' },
+    { path: `${pre}index`, title: '组件库首页', icon: 'home' },
     {
       path: `${pre}basic`,
       title: '基础',
@@ -291,11 +291,13 @@ export const side = [
 export default [
   {
     path: '/index',
-    title: '首页'
+    title: '首页',
+    icon: 'home'
   },
   {
     path: '/demo',
     title: '集成功能',
+    icon: 'puzzle-piece',
     children: [
       demoPlugins,
       demoComponents,
@@ -320,6 +322,7 @@ export default [
   },
   {
     path: '/demo/business',
-    title: '示例业务界面'
+    title: '示例业务界面',
+    icon: 'briefcase'
   }
 ]

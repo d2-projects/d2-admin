@@ -52,12 +52,19 @@
         float: left;
         border-bottom: none;
         background-color: transparent;
-        .el-menu-item {
+        %header-menu-item {
           @extend %unable-select;
+          i.fa {
+            font-size: 16px;
+            margin-right: 4px;
+          }
+        }
+        .el-menu-item {
+          @extend %header-menu-item;
           border-bottom: none;
         }
         .el-submenu {
-          @extend %unable-select;
+          @extend %header-menu-item;
           .el-submenu__title {
             border-bottom: none;
           }
@@ -227,17 +234,21 @@
         transition: border-top-color 0s;
         color: $theme-header-item-color;
         background: $theme-header-item-background-color;
+        i.fa { color: inherit; }
         &:hover {
           color: $theme-header-item-color-hover;
           background: $theme-header-item-background-color-hover;
+          i.fa { color: inherit; }
         }
         &:focus {
           color: $theme-header-item-color-focus;
           background: $theme-header-item-background-color-focus;
+          i.fa { color: inherit; }
         }
         &.is-active {
           color: $theme-header-item-color-active;
           background: $theme-header-item-background-color-active;
+          i.fa { color: inherit; }
         }
       }
       .el-submenu {
@@ -245,12 +256,14 @@
           transition: border-top-color 0s;
           color: $theme-header-item-color;
           background: $theme-header-item-background-color;
+          i.fa { color: inherit; }
           .el-submenu__icon-arrow {
             color: $theme-header-item-color;
           }
           &:hover {
             color: $theme-header-item-color-hover;
             background: $theme-header-item-background-color-hover;
+            i.fa { color: inherit; }
             .el-submenu__icon-arrow {
               color: $theme-header-item-color-hover;
             }
@@ -258,6 +271,7 @@
           &:focus {
             color: $theme-header-item-color-focus;
             background: $theme-header-item-background-color-focus;
+            i.fa { color: inherit; }
             .el-submenu__icon-arrow {
               color: $theme-header-item-color-focus;
             }

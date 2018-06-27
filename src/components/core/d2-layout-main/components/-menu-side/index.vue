@@ -1,6 +1,6 @@
 <template>
   <div style="height: 100%;">
-    <el-scrollbar v-if="menus.length > 0 && !collapse">
+    <el-scrollbar v-if="menus.length > 0">
       <div :style="{ height: `${asideHeight}px` }">
         <el-menu
           :collapse="collapse"
@@ -60,7 +60,9 @@ export default {
         this.menus = _side.length > 0 ? _side[0].children : []
         this.active = val[val.length - 1].path
         this.$nextTick(() => {
-          this.$refs.menu.activeIndex = this.active
+          if (this.menus.length > 0) {
+            this.$refs.menu.activeIndex = this.active
+          }
         })
       },
       immediate: true
