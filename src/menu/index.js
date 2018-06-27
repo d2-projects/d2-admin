@@ -68,6 +68,7 @@ const demoComponents = {
     {
       path: `${pre}container`,
       title: '布局容器',
+      icon: 'window-restore',
       children: [
         { path: `${pre}container/full`, title: '填满' },
         { path: `${pre}container/ghost`, title: '隐形' },
@@ -77,6 +78,7 @@ const demoComponents = {
     {
       path: `${pre}layout/grid`,
       title: '高级布局',
+      icon: 'tasks',
       children: [
         { path: `${pre}layout/grid`, title: '拖拽位置和大小' },
         { path: `${pre}layout/splitpane`, title: '区域划分' }
@@ -85,6 +87,7 @@ const demoComponents = {
     {
       path: `${pre}icon`,
       title: '图标',
+      icon: 'star',
       children: [
         { path: `${pre}icon/icon`, title: '图标组件' },
         { path: `${pre}icon/list`, title: 'FontAwesome' },
@@ -95,6 +98,7 @@ const demoComponents = {
     {
       path: `${pre}markdown`,
       title: 'markdown 解析',
+      icon: 'file-text-o',
       children: [
         { path: `${pre}markdown/source`, title: '指定资源' },
         { path: `${pre}markdown/url`, title: '异步加载文件' }
@@ -103,6 +107,7 @@ const demoComponents = {
     {
       path: `${pre}contextmenu`,
       title: '右键菜单',
+      icon: 'mouse-pointer',
       children: [
         { path: `${pre}contextmenu/simple`, title: '基础' },
         { path: `${pre}contextmenu/divier`, title: '分割线' },
@@ -112,12 +117,12 @@ const demoComponents = {
         { path: `${pre}contextmenu/custom-trigger`, title: '自定义事件' }
       ]
     },
-    { path: `${pre}bigdata-table`, title: '百万数量级表格' },
-    { path: `${pre}scrollbar`, title: 'Element 滚动条组件' },
-    { path: `${pre}countup`, title: '数字动画' },
-    { path: `${pre}editor-quill`, title: '富文本编辑器' },
-    { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器' },
-    { path: `${pre}highlight`, title: '代码高亮显示' }
+    { path: `${pre}bigdata-table`, title: '百万数量级表格', icon: 'table' },
+    { path: `${pre}scrollbar`, title: 'Element 滚动条组件', icon: 'crosshairs' },
+    { path: `${pre}countup`, title: '数字动画', icon: 'motorcycle' },
+    { path: `${pre}editor-quill`, title: '富文本编辑器', icon: 'pencil-square-o (edit, edit)' },
+    { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器', icon: 'font' },
+    { path: `${pre}highlight`, title: '代码高亮显示', icon: 'code' }
   ])('/demo/components/')
 }
 
