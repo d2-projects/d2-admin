@@ -74,7 +74,12 @@ const routes = [
       { path: 'list/histogram/demo3', name: `${pre}list-histogram-demo3`, component: () => import('@/pages/demo/charts/list/histogram/demo3/index.vue'), meta },
       { path: 'list/histogram/demo4', name: `${pre}list-histogram-demo4`, component: () => import('@/pages/demo/charts/list/histogram/demo4/index.vue'), meta },
       { path: 'list/histogram/demo5', name: `${pre}list-histogram-demo5`, component: () => import('@/pages/demo/charts/list/histogram/demo5/index.vue'), meta },
-      { path: 'list/histogram/demo6', name: `${pre}list-histogram-demo6`, component: () => import('@/pages/demo/charts/list/histogram/demo6/index.vue'), meta }
+      { path: 'list/histogram/demo6', name: `${pre}list-histogram-demo6`, component: () => import('@/pages/demo/charts/list/histogram/demo6/index.vue'), meta },
+      { path: 'list/bar/demo1', name: `${pre}list-bar-demo1`, component: () => import('@/pages/demo/charts/list/bar/demo1/index.vue'), meta },
+      { path: 'list/bar/demo2', name: `${pre}list-bar-demo2`, component: () => import('@/pages/demo/charts/list/bar/demo2/index.vue'), meta },
+      { path: 'list/bar/demo3', name: `${pre}list-bar-demo3`, component: () => import('@/pages/demo/charts/list/bar/demo3/index.vue'), meta },
+      { path: 'list/bar/demo4', name: `${pre}list-bar-demo4`, component: () => import('@/pages/demo/charts/list/bar/demo4/index.vue'), meta },
+      { path: 'list/bar/demo5', name: `${pre}list-bar-demo5`, component: () => import('@/pages/demo/charts/list/bar/demo5/index.vue'), meta }
     ])('demo-charts-')
   },
   {

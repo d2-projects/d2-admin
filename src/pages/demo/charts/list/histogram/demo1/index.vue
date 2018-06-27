@@ -1,6 +1,6 @@
 <template>
   <d2-container type="full">
-    <template slot="header">示例</template>
+    <template slot="header">一般</template>
     <div class="inner">
       <ve-histogram :data="chartData" v-bind="pubSetting"></ve-histogram>
     </div>
