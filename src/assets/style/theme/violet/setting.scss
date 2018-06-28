@@ -6,10 +6,11 @@ $theme-bg-color: #000;
 $theme-bg-mask: rgba(#000, 0);
 
 // container组件
-$theme-container-background-color: rgba(#FFF, 1);
-$theme-container-header-footer-background-color: rgba(#FFF, .6);
+$theme-container-background-color: #FFF;
+$theme-container-header-footer-background-color: rgba(#FFF, .94);
 $theme-container-border-inner: 1px solid $color-border-2;
 $theme-container-border-outer: none;
+$theme-multiple-page-control-border-color: red;
 
 // 顶栏和侧边栏中展开的菜单 hover 状态下
 $theme-menu-item-color-hover: #293849;

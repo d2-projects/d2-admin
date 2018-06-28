@@ -399,13 +399,13 @@
         // 多页面控制器
         .d2-multiple-page-control {
           .el-tabs__header.is-top {
-            border-bottom-color: red;
+            border-bottom-color: $theme-multiple-page-control-border-color;
           }
           .el-tabs__nav {
-            border-color: red;
+            border-color: $theme-multiple-page-control-border-color;
             .el-tabs__item {
-              background-color: red;
-              border-left-color: red;
+              background-color: $theme-multiple-page-control-border-color;
+              border-left-color: $theme-multiple-page-control-border-color;
               &:first-child {
                 border-left: none;
               }
@@ -425,10 +425,12 @@
             border: $theme-container-border-outer;
             border-top: none;
             border-bottom: none;
-            background: $theme-container-background-color;
             .d2-container-full__header {
               border-bottom: $theme-container-border-inner;
               background: $theme-container-header-footer-background-color;
+            }
+            .d2-container-full__main {
+              background: $theme-container-background-color;
             }
             .d2-container-full__footer {
               border-top: $theme-container-border-inner;
@@ -439,10 +441,13 @@
           .d2-container-card {
             border: $theme-container-border-outer;
             border-top: none;
-            background: $theme-container-background-color;
+            background: transparent;
             .el-card__header {
               border-bottom: $theme-container-border-inner;
               background: $theme-container-header-footer-background-color;
+            }
+            .el-card__body {
+              background: $theme-container-background-color;
             }
           }
         }
