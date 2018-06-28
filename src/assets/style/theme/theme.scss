@@ -404,12 +404,14 @@
           .el-tabs__nav {
             border-color: red;
             .el-tabs__item {
+              background-color: red;
               border-left-color: red;
               &:first-child {
                 border-left: none;
               }
             }
             .el-tabs__item.is-active {
+              background-color: #FFF;
             }
           }
         }
