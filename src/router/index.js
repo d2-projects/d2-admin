@@ -100,7 +100,8 @@ const routes = [
     redirect: { name: 'demo-components-index' },
     component: () => import('@/components/core/d2-layout-main'),
     children: (pre => [
-      { path: 'bigdata-table', name: `${pre}bigdata-table`, component: () => import('@/pages/demo/components/bigdata-table'), meta },
+      { path: 'bigdata-table/demo', name: `${pre}bigdata-table-demo`, component: () => import('@/pages/demo/components/bigdata-table/demo.vue'), meta },
+      { path: 'bigdata-table/select', name: `${pre}bigdata-table-select`, component: () => import('@/pages/demo/components/bigdata-table/select.vue'), meta },
       { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue'), meta },
       { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue'), meta },
       { path: 'container/card', name: `${pre}container-card`, component: () => import('@/pages/demo/components/container/card.vue'), meta },
