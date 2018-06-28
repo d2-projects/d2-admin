@@ -406,7 +406,7 @@
             border-color: $theme-container-border-outer;
             .el-tabs__item {
               background-color: rgba(#FFF, .5);
-              border-left-color: $theme-container-border-inner;
+              border-left: $theme-container-border-inner;
               border-bottom-color: $theme-container-border-outer;
             }
             .el-tabs__item.is-active {

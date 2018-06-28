@@ -8,8 +8,8 @@ $theme-bg-mask: rgba(#000, 0);
 // container组件
 $theme-container-background-color: rgba(#FFF, 1);
 $theme-container-header-footer-background-color: rgba(#FFF, .6);
-$theme-container-border-inner: #cfd7e5;
-$theme-container-border-outer: #cfd7e5;
+$theme-container-border-inner: 1px solid #cfd7e5;
+$theme-container-border-outer: 1px solid #cfd7e5;
 
 // 顶栏和侧边栏中展开的菜单 hover 状态下
 $theme-menu-item-color-hover: #293849;

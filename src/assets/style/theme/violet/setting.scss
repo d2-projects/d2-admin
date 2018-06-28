@@ -9,7 +9,7 @@ $theme-bg-mask: rgba(#000, 0);
 $theme-container-background-color: rgba(#FFF, 1);
 $theme-container-header-footer-background-color: rgba(#FFF, .6);
 $theme-container-border-inner: 1px solid $color-border-2;
-$theme-container-border-outer: transparent;
+$theme-container-border-outer: none;
 
 // 顶栏和侧边栏中展开的菜单 hover 状态下
 $theme-menu-item-color-hover: #293849;
