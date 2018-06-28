@@ -153,8 +153,10 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        // 主体部分分为多页面控制器 和主体
         .d2-layout-main-header {
           flex-grow: 0;
+          // 多页面控制器
           .d2-multiple-page-control {
             .el-tabs__header.is-top {
               margin: 0px;
@@ -171,14 +173,23 @@
             }
           }
         }
+        // 主体
         .d2-layout-main-body {
           flex-grow: 1;
           position: relative;
+          // 布局组件
           .container-component {
+            // 卡片布局组件
             .d2-container-card {
               border-top: none;
               border-top-left-radius: 0px;
               border-top-right-radius: 0px;
+            }
+            // 隐形布局组件
+            .d2-container-ghost {
+              margin-right: 20px;
+              margin-bottom: 20px;
+              padding-top: 20px;
             }
           }
         }
@@ -231,6 +242,7 @@
   // [组件] d2-container-full
   .d2-container-full {
     border: $theme-container-border-outer;
+    border-top: none;
     border-bottom: none;
     background-color: $theme-container-background-color;
     .d2-container-full__header {
