@@ -404,14 +404,17 @@
           .el-tabs__nav {
             border-color: $theme-multiple-page-control-border-color;
             .el-tabs__item {
-              background-color: $theme-multiple-page-control-border-color;
+              color: $theme-multiple-page-control-color;
+              background-color: $theme-multiple-page-control-background-color;
               border-left-color: $theme-multiple-page-control-border-color;
               &:first-child {
                 border-left: none;
               }
             }
             .el-tabs__item.is-active {
-              background-color: #FFF;
+              color: $theme-multiple-page-control-color-active;
+              background-color: $theme-multiple-page-control-background-color-active;
+              border-bottom-color: $theme-multiple-page-control-border-color-active;
             }
           }
         }
@@ -429,7 +432,7 @@
               border-bottom: $theme-container-border-inner;
               background: $theme-container-header-footer-background-color;
             }
-            .d2-container-full__main {
+            .d2-container-full__body {
               background: $theme-container-background-color;
             }
             .d2-container-full__footer {
