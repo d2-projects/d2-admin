@@ -206,9 +206,9 @@
 
   // 背景图片和遮罩
   .layout-main-group {
-    background-color: $theme-bg-color;
+    background: $theme-bg-color;
     .layout-main-mask {
-      background-color: $theme-bg-mask;
+      background: $theme-bg-mask;
     }
   }
 
@@ -218,7 +218,7 @@
     i.fa {
       color: $theme-menu-item-color-hover;
     }
-    background-color: $theme-menu-item-background-color-hover;
+    background: $theme-menu-item-background-color-hover;
   }
   .el-submenu__title {
     @extend %unable-select;
@@ -323,7 +323,7 @@
     .el-aside {
       // 菜单为空的时候显示的信息
       .menu-empty {
-        background-color: $theme-aside-menu-empty-background-color;
+        background: $theme-aside-menu-empty-background-color;
         i {
           color: $theme-aside-menu-empty-icon-color;
         }
@@ -331,7 +331,7 @@
           color: $theme-aside-menu-empty-text-color;
         }
         &:hover {
-          background-color: $theme-aside-menu-empty-background-color-hover;
+          background: $theme-aside-menu-empty-background-color-hover;
           i {
             color: $theme-aside-menu-empty-icon-color-hover;
           }
@@ -400,14 +400,17 @@
         // 多页面控制器
         .d2-multiple-page-control {
           .el-tabs__header.is-top {
-            border-color: $theme-container-border-outer;
+            // border: $theme-container-border-outer;
           }
           .el-tabs__nav {
-            border-color: $theme-container-border-outer;
+            border: $theme-container-border-outer;
             .el-tabs__item {
               background-color: rgba(#FFF, .5);
               border-left: $theme-container-border-inner;
-              border-bottom-color: $theme-container-border-outer;
+              border-bottom: $theme-container-border-outer;
+              &:first-child {
+                border-left: none;
+              }
             }
             .el-tabs__item.is-active {
               background-color: #FFF;
@@ -422,26 +425,26 @@
         .container-component {
           // [组件] d2-container-full
           .d2-container-full {
-            border: 1px solid $theme-container-border-outer;
+            border: $theme-container-border-outer;
             border-top: none;
             border-bottom: none;
-            background-color: $theme-container-background-color;
+            background: $theme-container-background-color;
             .d2-container-full__header {
               border-bottom: $theme-container-border-inner;
-              background-color: $theme-container-header-footer-background-color;
+              background: $theme-container-header-footer-background-color;
             }
             .d2-container-full__footer {
               border-top: $theme-container-border-inner;
-              background-color: $theme-container-header-footer-background-color;
+              background: $theme-container-header-footer-background-color;
             }
           }
           // [组件] d2-container-card
           .d2-container-card {
-            border: 1px solid $theme-container-border-outer;
-            background-color: $theme-container-background-color;
+            border: $theme-container-border-outer;
+            background: $theme-container-background-color;
             .el-card__header {
               border-bottom: $theme-container-border-inner;
-              background-color: $theme-container-header-footer-background-color;
+              background: $theme-container-header-footer-background-color;
             }
           }
         }
