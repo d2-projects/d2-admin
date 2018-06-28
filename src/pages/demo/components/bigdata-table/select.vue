@@ -10,7 +10,7 @@
 				fixed
 				stripe
 				:col-width="200"
-				:header-height="50"
+				:header-height="40"
 				:columns="columns"
 				:index-render="indexRender"
 				:fixed-col="1"
