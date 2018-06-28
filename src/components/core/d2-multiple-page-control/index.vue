@@ -4,10 +4,12 @@
     v-model="activeName"
     type="card"
     @tab-click="handleClick">
-    <el-tab-pane label="页面1" name="first"></el-tab-pane>
-    <el-tab-pane label="页面2" name="second"></el-tab-pane>
-    <el-tab-pane label="页面3" name="third"></el-tab-pane>
-    <el-tab-pane label="页面4" name="fourth"></el-tab-pane>
+    <el-tab-pane
+      v-for="n in 20"
+      :key="n"
+      :label="`页面 ${n}`"
+      :name="n">
+    </el-tab-pane>
   </el-tabs>
 </template>
 <script>
