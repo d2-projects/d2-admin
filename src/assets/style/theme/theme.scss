@@ -146,10 +146,42 @@
           }
         }
       }
+      // 右下 主体
       .el-main {
         padding: 0px;
         position: relative;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        .d2-layout-main-header {
+          flex-grow: 0;
+          .d2-multiple-page-control {
+            .el-tabs__header.is-top {
+              margin: 0px;
+              margin-right: 20px;
+            }
+            .el-tabs__nav {
+              overflow: hidden;
+              .el-tabs__item.is-top {
+                background-color: rgba(#FFF, .5);
+              }
+              .el-tabs__item.is-top.is-active {
+                background-color: #FFF;
+              }
+            }
+          }
+        }
+        .d2-layout-main-body {
+          flex-grow: 1;
+          position: relative;
+          .container-component {
+            .d2-container-card {
+              border-top: none;
+              border-top-left-radius: 0px;
+              border-top-right-radius: 0px;
+            }
+          }
+        }
       }
     }
   }

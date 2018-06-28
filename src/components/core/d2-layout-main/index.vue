@@ -28,9 +28,14 @@
         </el-aside>
         <!-- 主体 -->
         <el-main>
-          <transition name="fade-transverse">
-            <router-view/>
-          </transition>
+          <div class="d2-layout-main-header">
+            <d2-multiple-page-control></d2-multiple-page-control>
+          </div>
+          <div class="d2-layout-main-body">
+            <transition name="fade-transverse">
+              <router-view/>
+            </transition>
+          </div>
         </el-main>
       </el-container>
     </el-container>
