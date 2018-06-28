@@ -26,8 +26,6 @@ export default {
   right: 20px;
   bottom: 0px;
   left: 0px;
-  // border-top-left-radius: 4px;
-  // border-top-right-radius: 4px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
