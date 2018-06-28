@@ -37,11 +37,6 @@ export default {
       defaultSort: {1: 'down'}
     }
   },
-  watch: {
-    tableDataHandled (res) {
-      // res
-    }
-  },
   methods: {
     indexRender (h, index) {
       return h('input', {
@@ -70,9 +65,6 @@ export default {
       }
       this.tableDataHandled = dataArr
       this.tableDataSelected = dataArr.map(e => false)
-    },
-    changeDefaultSort () {
-      this.defaultSort = {2: 'up'}
     }
   },
   mounted () {
