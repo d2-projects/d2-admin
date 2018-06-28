@@ -175,7 +175,6 @@
           .container-component {
             // 卡片布局组件
             .d2-container-card {
-              border-top: none;
               border-top-left-radius: 0px;
               border-top-right-radius: 0px;
             }
@@ -400,21 +399,17 @@
         // 多页面控制器
         .d2-multiple-page-control {
           .el-tabs__header.is-top {
-            // border: $theme-container-border-outer;
+            border-bottom-color: red;
           }
           .el-tabs__nav {
-            border: $theme-container-border-outer;
+            border-color: red;
             .el-tabs__item {
-              background-color: rgba(#FFF, .5);
-              border-left: $theme-container-border-inner;
-              border-bottom: $theme-container-border-outer;
+              border-left-color: red;
               &:first-child {
                 border-left: none;
               }
             }
             .el-tabs__item.is-active {
-              background-color: #FFF;
-              border-bottom-color: transparent;
             }
           }
         }
@@ -441,6 +436,7 @@
           // [组件] d2-container-card
           .d2-container-card {
             border: $theme-container-border-outer;
+            border-top: none;
             background: $theme-container-background-color;
             .el-card__header {
               border-bottom: $theme-container-border-inner;
