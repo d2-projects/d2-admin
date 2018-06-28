@@ -3,7 +3,6 @@
     <template slot="header">勾选</template>
     <div class="wraper">
 			<bigdata-table
-				ref="table"
 				v-model="tableDataHandled"
 				:row-num="20"
 				:col-num="7"
