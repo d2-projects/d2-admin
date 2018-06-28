@@ -185,11 +185,10 @@
               border-top-left-radius: 0px;
               border-top-right-radius: 0px;
             }
-            // 隐形布局组件
+            // 隐形布局组件 这个组件不建议在有多页面导航的时候使用 不美观
             .d2-container-ghost {
               margin-right: 20px;
               margin-bottom: 20px;
-              padding-top: 20px;
             }
           }
         }
