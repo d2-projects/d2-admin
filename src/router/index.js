@@ -32,6 +32,17 @@ const routes = [
     ])('demo-business-')
   },
   {
+    path: '/demo/playground',
+    name: 'demo-playground',
+    meta,
+    redirect: { name: 'demo-playground-index' },
+    component: () => import('@/components/core/d2-layout-main'),
+    children: (pre => [
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/playground/index'), meta },
+      { path: 'theme', name: `${pre}theme`, component: () => import('@/pages/demo/playground/theme'), meta }
+    ])('demo-playground-')
+  },
+  {
     path: '/demo/plugins',
     name: 'demo-plugins',
     meta,

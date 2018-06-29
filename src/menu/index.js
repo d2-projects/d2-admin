@@ -304,12 +304,23 @@ const demoElement = {
   ])('/demo/element/')
 }
 
+// 路由菜单 试验台
+const demoPlayground = {
+  path: '/demo/playground',
+  title: '试验台',
+  icon: 'plug',
+  children: (pre => [
+    { path: `${pre}index`, title: '试验台首页', icon: 'home' }
+  ])('/demo/playground/')
+}
+
 // 菜单 侧边栏
 export const side = [
   demoPlugins,
   demoComponents,
   demoCharts,
-  demoElement
+  demoElement,
+  demoPlayground
 ]
 
 // 菜单 顶栏
@@ -328,6 +339,7 @@ export default [
       demoComponents,
       demoCharts,
       demoElement,
+      demoPlayground,
       {
         title: '空菜单演示',
         icon: 'folder-o',

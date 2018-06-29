@@ -31,7 +31,7 @@ export default {
      */
     d2adminThemeSet (state, themeActiveValue) {
       // 从列表里找到需要激活的主题的数据
-      const theme = state.themeList.find(e => e.value === themeActiveValue)
+      const theme = state.themeList.find(e => e.value === themeActiveValue) || state.themeList[0]
       // 设置 state
       state.themeActive = theme
       // 设置 dom
