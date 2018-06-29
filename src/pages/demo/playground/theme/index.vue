@@ -17,7 +17,9 @@
         </template>
       </el-table-column>
     </el-table>
-    <template slot="footer">hELLO</template>
+    <template slot="footer">
+      <el-button type="primary" size="small">当前激活主题 {{themeActive.name}}</el-button>
+    </template>
   </d2-container>
 </template>
 
@@ -52,8 +54,6 @@ export default {
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
 .page-demo-playground-theme {
-  // filter: grayscale(100%);
-  // filter: gray;
   .theme-preview {
     height: 50px;
     width: 100px;
