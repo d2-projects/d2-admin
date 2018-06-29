@@ -1,7 +1,7 @@
 <template>
   <el-table :data="themeList" v-bind="table">
     <el-table-column prop="name" align="center" width="160"/>
-    <el-table-column label="预览" width="220">
+    <el-table-column label="预览" width="120">
       <div
         slot-scope="scope"
         class="theme-preview"
@@ -49,8 +49,8 @@ export default {
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
 .theme-preview {
-  height: 100px;
-  width: 200px;
+  height: 50px;
+  width: 100px;
   border-radius: 4px;
   background-size: cover;
   border: 1px solid $color-border-1;
