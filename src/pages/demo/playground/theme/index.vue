@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container type="full">
     theme
   </d2-container>
 </template>
