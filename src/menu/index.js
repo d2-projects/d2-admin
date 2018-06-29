@@ -308,9 +308,10 @@ const demoElement = {
 const demoPlayground = {
   path: '/demo/playground',
   title: '试验台',
-  icon: 'plug',
+  icon: 'flask',
   children: (pre => [
-    { path: `${pre}index`, title: '试验台首页', icon: 'home' }
+    { path: `${pre}index`, title: '试验台首页', icon: 'home' },
+    { path: `${pre}theme`, title: '主题', icon: 'flask' }
   ])('/demo/playground/')
 }
 
