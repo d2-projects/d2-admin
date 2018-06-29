@@ -4,8 +4,6 @@ import themeList from '@/assets/style/theme/list.js'
 
 export default {
   state: {
-    // 系统
-    appName: 'D2Admin',
     // 全屏
     isFullScreen: false,
     // 主题
