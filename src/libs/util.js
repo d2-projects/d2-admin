@@ -1,18 +1,9 @@
 let util = {}
 
-util.closeFullScreen = function () {
-  if (document.exitFullscreen) {
-    document.exitFullscreen()
-  } else if (document.mozCancelFullScreen) {
-    document.mozCancelFullScreen()
-  } else if (document.webkitCancelFullScreen) {
-    document.webkitCancelFullScreen()
-  } else if (document.msExitFullscreen) {
-    document.msExitFullscreen()
-  }
-}
-
-util.fullScreen = function () {
+/**
+ * 打开全屏
+ */
+util.openFullScreen = function () {
   const body = document.body
   if (body.requestFullscreen) {
     body.requestFullscreen()
@@ -22,6 +13,21 @@ util.fullScreen = function () {
     body.webkitRequestFullScreen()
   } else if (body.msRequestFullscreen) {
     body.msRequestFullscreen()
+  }
+}
+
+/**
+ * 关闭全屏
+ */
+util.exitFullScreen = function () {
+  if (document.exitFullscreen) {
+    document.exitFullscreen()
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen()
+  } else if (document.webkitCancelFullScreen) {
+    document.webkitCancelFullScreen()
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen()
   }
 }
 
