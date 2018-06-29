@@ -311,7 +311,8 @@ const demoPlayground = {
   icon: 'flask',
   children: (pre => [
     { path: `${pre}index`, title: '试验台首页', icon: 'home' },
-    { path: `${pre}theme`, title: '主题', icon: 'flask' }
+    { path: `${pre}theme`, title: '主题', icon: 'flask' },
+    { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' }
   ])('/demo/playground/')
 }
 
