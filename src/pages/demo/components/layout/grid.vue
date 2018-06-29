@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="ghost" class="demo-layout-grid">
+  <d2-container type="ghost" class="demo-layout-grid d2-mt">
     <d2-grid-layout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">
