@@ -28,6 +28,7 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.get": "^4.4.2",
     "lodash.uniqueid": "^4.0.1",
+    "lowdb": "^1.0.0",
     "marked": "^0.3.9",
     "mockjs": "^1.0.1-beta3",
     "papaparse": "^4.3.6",

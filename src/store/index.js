@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 
 import d2admin from './modules/d2admin'
 
-import menu from './modules/menu'
 import theme from './modules/theme'
 
 Vue.use(Vuex)
@@ -11,7 +10,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   modules: {
     d2admin,
-    menu,
     theme
   }
 })

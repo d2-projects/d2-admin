@@ -6,7 +6,7 @@
     </el-table-column>
     <el-table-column prop="address" align="center">
       <template slot-scope="scope">
-        <el-button v-if="themeName === scope.row.value" type="success" icon="el-icon-check" round>已激活</el-button>
+        <el-button v-if="themeActive.value === scope.row.value" type="success" icon="el-icon-check" round>已激活</el-button>
         <el-button v-else round @click="handleSelectTheme(scope.row.value)">使用</el-button>
       </template>
     </el-table-column>
@@ -27,16 +27,16 @@ export default {
   },
   computed: {
     ...mapState({
-      themeList: state => state.theme.list,
-      themeName: state => state.theme.name
+      themeList: state => state.d2admin.themeList,
+      themeActive: state => state.d2admin.themeActive
     })
   },
   methods: {
     ...mapMutations([
       'setTheme'
     ]),
-    handleSelectTheme (themeName) {
-      this.setTheme(themeName)
+    handleSelectTheme (name) {
+      this.setTheme(name)
     }
   }
 }
