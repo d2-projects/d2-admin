@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import htmlFormat from '@/utils/htmlFormat.js'
+import htmlFormat from '@/libs/htmlFormat.js'
 import value from './value'
 export default {
   data () {
