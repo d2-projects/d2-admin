@@ -40,7 +40,8 @@ const routes = [
     children: (pre => [
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/playground/index'), meta },
       { path: 'theme', name: `${pre}theme`, component: () => import('@/pages/demo/playground/theme'), meta },
-      { path: 'fullscreen', name: `${pre}fullscreen`, component: () => import('@/pages/demo/playground/fullscreen'), meta }
+      { path: 'fullscreen', name: `${pre}fullscreen`, component: () => import('@/pages/demo/playground/fullscreen'), meta },
+      { path: 'gray', name: `${pre}gray`, component: () => import('@/pages/demo/playground/gray'), meta }
     ])('demo-playground-')
   },
   {

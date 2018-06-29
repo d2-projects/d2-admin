@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-main-group" :style="styleLayoutMainGroup">
+  <div class="layout-main-group" :style="styleLayoutMainGroup" :class="{grayMode: isGrayMode}">
     <div class="layout-main-mask"></div>
     <el-container class="layout-main">
       <!-- 顶栏 -->
@@ -65,7 +65,8 @@ export default {
   },
   computed: {
     ...mapState({
-      themeActive: state => state.d2admin.themeActive
+      themeActive: state => state.d2admin.themeActive,
+      isGrayMode: state => state.d2admin.isGrayMode
     }),
     styleLayoutMainGroup () {
       return {

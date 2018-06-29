@@ -1,12 +1,9 @@
 <template>
   <d2-container class="page-demo-playground-fullscreen">
     <template slot="header">全屏</template>
-    <el-switch
-      v-model="isFullScreen"
-      active-text="全屏"
-      inactive-text="正常"
-      @change="d2adminFullScreenToggle">
-    </el-switch>
+    <el-button type="primary" @click="d2adminFullScreenToggle">
+      d2adminFullScreenToggle 切换全屏
+    </el-button>
   </d2-container>
 </template>
 

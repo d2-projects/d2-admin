@@ -1,5 +1,13 @@
 // 主题公用
 .layout-main-group {
+  &.grayMode {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+  }
   height: 100%;
   width: 100%;
   background-size: cover;

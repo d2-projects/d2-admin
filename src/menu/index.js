@@ -312,7 +312,8 @@ const demoPlayground = {
   children: (pre => [
     { path: `${pre}index`, title: '试验台首页', icon: 'home' },
     { path: `${pre}theme`, title: '主题', icon: 'flask' },
-    { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' }
+    { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' },
+    { path: `${pre}gray`, title: '灰度模式', icon: 'eye' }
   ])('/demo/playground/')
 }
 
@@ -334,7 +335,7 @@ export default [
   },
   {
     path: '/demo',
-    title: '集成功能',
+    title: '功能',
     icon: 'puzzle-piece',
     children: [
       demoPlugins,
@@ -361,7 +362,7 @@ export default [
   },
   {
     path: '/demo/business',
-    title: '示例业务界面',
+    title: '演示页面',
     icon: 'briefcase'
   }
 ]

@@ -7,7 +7,7 @@ export default {
     // 全屏
     isFullScreen: false,
     // 灰度
-    isGrayView: false,
+    isGrayMode: false,
     // 主题
     themeList,
     themeActive: themeList[1]
@@ -30,8 +30,16 @@ export default {
      * 切换灰度状态
      * @param {state} state vuex state
      */
-    d2adminGrayViewToggle (state) {
-      state.isGray = !state.isGray
+    d2adminGrayModeToggle (state) {
+      state.isGrayMode = !state.isGrayMode
+    },
+    /**
+     * 设置灰度模式
+     * @param {state} state vuex state
+     * @param {boolean} value new value
+     */
+    d2adminGrayModeSet (state, value) {
+      state.isGrayMode = value
     },
     /**
      * 激活一个主题（应用到dom上）
