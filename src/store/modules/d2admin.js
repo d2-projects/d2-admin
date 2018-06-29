@@ -8,12 +8,16 @@ export default {
     isFullScreen: false
   },
   mutations: {
+    /**
+     * 切换全屏
+     * @param {state} state 
+     */
     toggleFullScreen (state) {
       if (state.isFullScreen) {
-        util.closeFullScreen()
+        util.exitFullScreen()
         state.isFullScreen = false
       } else {
-        util.fullScreen()
+        util.openFullScreen()
         state.isFullScreen = true
       }
     }
