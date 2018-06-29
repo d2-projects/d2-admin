@@ -8,7 +8,7 @@
       v-for="n in 20"
       :key="n"
       :label="`页面 ${n}`"
-      :name="n">
+      :name="`page${n}`">
     </el-tab-pane>
   </el-tabs>
 </template>
