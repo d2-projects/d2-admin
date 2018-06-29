@@ -55,6 +55,7 @@ export default {
      * @param {string} themeActiveValue 需要保存的主题名称
      */
     d2adminThemeSave (state, themeActiveValue) {
+      // 检查这个用户是否有主题设置
       const setting = db.get('themeActive').find({uuid: util.uuid()})
       if (setting.value()) {
         setting.assign({value: themeActiveValue}).write()
