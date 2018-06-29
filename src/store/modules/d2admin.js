@@ -1,3 +1,5 @@
+import util from '@/libs/util.js'
+
 export default {
   state: {
     // 系统
@@ -6,8 +8,14 @@ export default {
     isFullScreen: false
   },
   mutations: {
-    alertAppName (state) {
-      alert(state.appName)
+    toggleFullScreen (state) {
+      if (state.isFullScreen) {
+        util.closeFullScreen()
+        state.isFullScreen = false
+      } else {
+        util.fullScreen()
+        state.isFullScreen = true
+      }
     }
   }
 }
