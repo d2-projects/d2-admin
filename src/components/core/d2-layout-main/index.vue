@@ -77,11 +77,11 @@ export default {
   },
   mounted () {
     // 加载主题
-    this.d2adminThemeLoadFromLo()
+    this.d2adminThemeLoad()
   },
   methods: {
     ...mapMutations([
-      'd2adminThemeLoadFromLo'
+      'd2adminThemeLoad'
     ])
   }
 }
