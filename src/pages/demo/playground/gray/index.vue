@@ -1,8 +1,9 @@
 <template>
-  <d2-container type="full" class="page-demo-playground-gray">
-    <template slot="header">灰度模式</template>
-    <div class="colorful">{{isGrayMode ? 'GRAY' : 'COLORFUL'}}</div>
-    <el-button-group class="d2-mt">
+  <d2-container class="page-demo-playground-gray">
+    <template slot="header">
+      <div class="colorful">{{isGrayMode ? 'GRAY' : 'COLORFUL'}}</div>
+    </template>
+    <el-button-group>
       <el-button @click="d2adminGrayModeToggle">切换灰度模式</el-button>
       <el-button @click="d2adminGrayModeSet(true)">打开灰度模式</el-button>
       <el-button @click="d2adminGrayModeSet(false)">关闭灰度模式</el-button>
