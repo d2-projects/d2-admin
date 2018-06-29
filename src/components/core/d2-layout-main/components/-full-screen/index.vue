@@ -15,7 +15,7 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   computed: {
     ...mapState({
-      isFullScreen: state => state.fullScreen.isFullScreen
+      isFullScreen: state => state.d2admin.isFullScreen
     })
   },
   methods: {
