@@ -417,6 +417,17 @@
               border-bottom-color: $theme-multiple-page-control-border-color-active;
             }
           }
+          %el-tabs__nav {
+            font-size: 20px;
+          }
+          .el-tabs__nav-prev {
+            @extend %el-tabs__nav;
+            color: $theme-multiple-page-control-nav-prev-color;
+          }
+          .el-tabs__nav-next {
+            @extend %el-tabs__nav;
+            color: $theme-multiple-page-control-nav-next-color;
+          }
         }
       }
       // 主体
