@@ -8,7 +8,7 @@ $theme-bg-mask: rgba(#000, .3);
 // container组件
 $theme-container-background-color: rgba(#FFF, .9);
 $theme-container-header-footer-background-color: #FFF;
-$theme-container-border-inner: 1px solid #114450;
+$theme-container-border-inner: 1px solid $color-border-1;
 $theme-container-border-outer: 1px solid #114450;
 
 $theme-multiple-page-control-color: #FFF;
