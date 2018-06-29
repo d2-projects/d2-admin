@@ -5,8 +5,8 @@
       <!-- 顶栏 -->
       <el-header>
         <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeName}/logo/icon-only.png`">
-          <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeName}/logo/all.png`">
+          <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeActive.value}/logo/icon-only.png`">
+          <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeActive.value}/logo/all.png`">
         </div>
         <div class="toggle-aside-btn" @click="collapse = !collapse">
           <d2-icon name="bars"/>
@@ -65,24 +65,23 @@ export default {
   },
   computed: {
     ...mapState({
-      themeName: state => state.theme.name,
-      themeBackGroundImage: state => state.theme.backGroundImage
+      themeActive: state => state.d2admin.themeActive
     }),
     styleLayoutMainGroup () {
       return {
-        ...this.themeBackGroundImage ? {
-          backgroundImage: `url('${this.$assetsPublicPath}${this.themeBackGroundImage}')`
+        ...this.themeActive.backgroundImage ? {
+          backgroundImage: `url('${this.$assetsPublicPath}${this.themeActive.backgroundImage}')`
         } : {}
       }
     }
   },
   mounted () {
     // 加载主题
-    this.loadTheme()
+    this.d2adminThemeLoadFromLo()
   },
   methods: {
     ...mapMutations([
-      'loadTheme'
+      'd2adminThemeLoadFromLo'
     ])
   }
 }

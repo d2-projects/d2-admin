@@ -93,10 +93,7 @@ export default {
               const setting = {
                 expires: 1
               }
-              // 不要像下面这样写 请改写为你的保存用户逻辑
-              // 保存用户名密码 不等于真正保存到了本地
-              // Cookies.set('username', res.username, setting)
-              // Cookies.set('password', res.password, setting)
+              Cookies.set('uuid', res.uuid, setting)
               Cookies.set('token', res.token, setting)
               // 跳转路由
               this.$router.push({
