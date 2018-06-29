@@ -5,7 +5,7 @@
       v-model="isFullScreen"
       active-text="全屏"
       inactive-text="正常"
-      @change="toggleFullScreen">
+      @change="d2adminFullScreenToggle">
     </el-switch>
   </d2-container>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'toggleFullScreen'
+      'd2adminFullScreenToggle'
     ])
   }
 }

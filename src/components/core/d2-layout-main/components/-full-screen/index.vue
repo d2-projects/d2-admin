@@ -3,7 +3,7 @@
     effect="dark"
     :content="isFullScreen ? '退出全屏' : '全屏'"
     placement="bottom">
-    <el-button class="d2-mr btn-text can-hover" type="text" @click="toggleFullScreen">
+    <el-button class="d2-mr btn-text can-hover" type="text" @click="d2adminFullScreenToggle">
       <d2-icon v-if="isFullScreen" name="compress"/>
       <d2-icon v-else name="arrows-alt"/>
     </el-button>
@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'toggleFullScreen'
+      'd2adminFullScreenToggle'
     ])
   }
 }

@@ -6,6 +6,8 @@ export default {
   state: {
     // 全屏
     isFullScreen: false,
+    // 灰度
+    isGrayView: false,
     // 主题
     themeList,
     themeActive: themeList[1]
@@ -15,7 +17,7 @@ export default {
      * 切换全屏
      * @param {state} state vuex state
      */
-    toggleFullScreen (state) {
+    d2adminFullScreenToggle (state) {
       if (state.isFullScreen) {
         util.exitFullScreen()
         state.isFullScreen = false
@@ -23,6 +25,13 @@ export default {
         util.openFullScreen()
         state.isFullScreen = true
       }
+    },
+    /**
+     * 切换灰度状态
+     * @param {state} state vuex state
+     */
+    d2adminGrayViewToggle (state) {
+      state.isGray = !state.isGray
     },
     /**
      * 激活一个主题（应用到dom上）
