@@ -1,4 +1,13 @@
+import Cookies from 'js-cookie'
+
 let util = {}
+
+/**
+ * 得到现在的用户
+ */
+util.uuid = function () {
+  return Cookies.get('uuid')
+}
 
 /**
  * 打开全屏

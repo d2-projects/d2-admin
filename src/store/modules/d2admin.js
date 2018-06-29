@@ -1,15 +1,11 @@
 import util from '@/libs/util.js'
-
-import themeList from '@/assets/style/theme/list.js'
-
 import db from '@/libs/db.js'
+import themeList from '@/assets/style/theme/list.js'
 
 export default {
   state: {
     // 系统
     appName: 'D2Admin',
-    // 用户
-    userId: '',
     // 全屏
     isFullScreen: false,
     // 主题
@@ -31,19 +27,43 @@ export default {
       }
     },
     /**
-     * 激活新的主题
+     * 激活一个主题（应用到dom上）
      * @param {state} state vuex state
+     * @param {string} themeActiveValue 需要激活的主题名称
      */
     d2adminThemeSet (state, themeActiveValue) {
-      console.log('d2adminThemeSet', themeActiveValue)
+      // 从列表里找到需要激活的主题的数据
+      const theme = state.themeList.find(e => e.value === themeActiveValue)
+      // 设置 state
+      state.themeActive = theme
+      // 设置 dom
+      document.body.className = `theme-${state.themeActive.value}`
+      // 保存到数据库
+      this.commit('d2adminThemeSave', themeActiveValue)
     },
     /**
-     * 从本地加载主题设置
+     * 从数据库加载主题设置
      * @param {state} state vuex state
      */
-    d2adminThemeLoadFromLo (state) {
-      console.log(db.get('themeActive').find({name: 'hhh'}).value())
-      // db.get('themeActive').push({name: 'hhh'}).write()
+    d2adminThemeLoad (state) {
+      const themeActive = db.get('themeActive').find({uuid: util.uuid()}).value()
+      this.commit('d2adminThemeSet', themeActive ? themeActive.value : state.themeList[0].value)
+    },
+    /**
+     * 向数据保存一个主题
+     * @param {state} state vuex state
+     * @param {string} themeActiveValue 需要保存的主题名称
+     */
+    d2adminThemeSave (state, themeActiveValue) {
+      const setting = db.get('themeActive').find({uuid: util.uuid()})
+      if (setting.value()) {
+        setting.assign({value: themeActiveValue}).write()
+      } else {
+        db.get('themeActive').push({
+          uuid: util.uuid(),
+          value: themeActiveValue
+        }).write()
+      }
     }
   }
 }
