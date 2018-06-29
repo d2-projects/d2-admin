@@ -17,6 +17,13 @@
         </template>
       </el-table-column>
     </el-table>
+    <div>
+      <p>尝试激活一个不存在的主题（主题不存在 <d2-icon name="arrow-right"/> 默认主题）</p>
+      <el-button type="danger" @click="handleSelectTheme('err-theme')">
+        <d2-icon name="hand-o-right" class="d2-mr-10"/>
+        尝试激活主题 'err-theme'
+      </el-button>
+    </div>
     <template slot="footer">
       <el-button type="primary" size="small">当前激活主题 {{themeActive.name}}</el-button>
     </template>
