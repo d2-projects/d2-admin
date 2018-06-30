@@ -5,7 +5,7 @@
     type="card"
     @tab-click="handleClick">
     <el-tab-pane
-      v-for="(page, index) in pageList"
+      v-for="(page, index) in pageOpenedList"
       :key="index"
       :label="page.title"
       :name="page.name">
@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     ...mapState({
-      pageList: state => state.d2admin.pageList
+      pageOpenedList: state => state.d2admin.pageOpenedList
     })
   },
   methods: {

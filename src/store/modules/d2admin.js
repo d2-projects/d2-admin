@@ -12,7 +12,7 @@ export default {
     themeList,
     themeActive: themeList[1],
     // 多页
-    pageList: [
+    pageOpenedList: [
       {
         name: 'index',
         title: '首页'
@@ -20,6 +20,34 @@ export default {
     ]
   },
   mutations: {
+    /**
+     * 更新页面列表上的某一项
+     * @param {state} state vuex state
+     * @param {info} param1 new page info
+     */
+    d2adminpageOpenedListUpdateItem (state, { index, argu, query }) {
+      // dev
+      console.group('d2adminpageOpenedListUpdateItem')
+      console.log('index: ', index)
+      console.log('argu: ', argu)
+      console.log('query: ', query)
+      console.groupEnd()
+      // 更新页面列表某一项
+      let page = state.pageOpenedList[index]
+      page.argu = argu || page.argu
+      page.query = query || page.query
+      state.pageOpenedList.splice(index, 1, page)
+      // 更新设置到数据库
+      const setting = db.get('pageOpenedList').find({uuid: util.uuid()})
+      if (setting.value()) {
+        setting.assign({value: state.pageOpenedList}).write()
+      } else {
+        db.get('pageOpenedList').push({
+          uuid: util.uuid(),
+          value: state.pageOpenedList
+        }).write()
+      }
+    },
     /**
      * 切换全屏
      * @param {state} state vuex state
