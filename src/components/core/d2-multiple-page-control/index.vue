@@ -1,13 +1,13 @@
 <template>
   <el-tabs
     class="d2-multiple-page-control"
-    v-model="activeName"
+    :value="pageCurrent"
     type="card"
     @tab-click="handleClick">
     <el-tab-pane
       v-for="(page, index) in pageOpenedList"
       :key="index"
-      :label="page.title"
+      :label="page.name"
       :name="page.name">
     </el-tab-pane>
   </el-tabs>
@@ -23,12 +23,20 @@ export default {
   },
   computed: {
     ...mapState({
-      pageOpenedList: state => state.d2admin.pageOpenedList
+      pageOpenedList: state => state.d2admin.pageOpenedList,
+      pageCurrent: state => state.d2admin.pageCurrent
     })
   },
   methods: {
     handleClick (tab, event) {
-      // console.log(tab, event)
+      const page = this.pageOpenedList.find(page => page.name === tab.name)
+      if (page) {
+        this.$router.push({
+          name: page.name,
+          params: page.argu,
+          query: page.query
+        })
+      }
     }
   }
 }

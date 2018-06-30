@@ -39,13 +39,6 @@ router.afterEach(to => {
   // 需要的信息
   const app = router.app
   const { name, params, query } = to
-  // dev
-  console.group('router.afterEach')
-  console.log('app: ', app)
-  console.log('name: ', name)
-  console.log('params: ', params)
-  console.log('query: ', query)
-  console.groupEnd()
   // 多页控制 打开新的页面
   util.openNewPage(app, name, params, query)
 })
