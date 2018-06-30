@@ -19,20 +19,24 @@ export default {
     ],
     // 当前页面
     pageCurrent: '',
-    // 使用缓存的页面 (需要在页面中写 name)
-    pageCacheList: [],
-    // 不使用缓存的页面
-    pageDisableCacheList: [
-      'no-cache'
-    ]
+    // 使用缓存的页面
+    pageUseCacheList: []
   },
   mutations: {
+    /**
+     * 设置使用缓存的页面
+     * @param {state} state vuex state
+     * @param {array} name pageUseCacheList
+     */
+    d2adminPageUseCacheList (state, list) {
+      state.pageUseCacheList = list
+    },
     /**
      * 设置当前激活的页面 name
      * @param {state} state vuex state
      * @param {string} name new name
      */
-    d2adminPageSetCurrentName (state, name) {
+    d2adminPageCurrentSet (state, name) {
       state.pageCurrent = name
     },
     /**
@@ -75,21 +79,6 @@ export default {
       let newTag = tag
       newTag.argu = argu || newTag.argu
       newTag.query = query || newTag.query
-      // 检查这个页面是不是属于不使用缓存的页面
-      if (!util.isOneOf(newTag.name, state.pageDisableCacheList)) {
-        // 在缓存页面的列表加入这个页面的 name
-        state.pageCacheList.push(newTag.name)
-        // 更新设置到数据库
-        const setting = db.get('pageCacheList').find({uuid: util.uuid()})
-        if (setting.value()) {
-          setting.assign({value: state.pageCacheList}).write()
-        } else {
-          db.get('pageCacheList').push({
-            uuid: util.uuid(),
-            value: state.pageCacheList
-          }).write()
-        }
-      }
       // 添加进当前显示的页面数组
       state.pageOpenedList.push(newTag)
       // 更新设置到数据库

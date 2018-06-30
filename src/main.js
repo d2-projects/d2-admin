@@ -104,6 +104,7 @@ new Vue({
       }
       push(frameInRoutes)
       this.$store.commit('d2admintagPoolSet', tagPool)
+      // d2adminPageUseCacheList
     }
   }
 })

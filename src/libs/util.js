@@ -68,7 +68,7 @@ util.openNewPage = function (vm, name, argu, query) {
       vm.$store.commit('d2adminTagIncreate', { tag, argu, query })
     }
   }
-  vm.$store.commit('d2adminPageSetCurrentName', name)
+  vm.$store.commit('d2adminPageCurrentSet', name)
 }
 
 /**
