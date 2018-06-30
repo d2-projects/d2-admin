@@ -16,7 +16,7 @@
         <div class="toggle-aside-btn" @click="collapse = !collapse">
           <d2-icon name="bars"/>
         </div>
-        <d2-layout-main-menu-header class="d2-theme-header-menu"/>
+        <d2-layout-main-menu-header/>
         <!-- 顶栏右侧 -->
         <div class="d2-header-right">
           <d2-layout-main-header-github/>
