@@ -1,6 +1,6 @@
 const meta = { requiresAuth: true }
 
-const routes = [
+const frameIn = [
   // 首页
   {
     path: '/',
@@ -203,5 +203,5 @@ const routes = [
 ]
 
 export default [
-  ...routes
+  ...frameIn
 ]
