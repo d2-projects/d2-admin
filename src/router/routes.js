@@ -39,10 +39,7 @@ const frameIn = [
       { path: 'theme', name: `${pre}theme`, component: () => import('@/pages/demo/playground/theme'), meta },
       { path: 'fullscreen', name: `${pre}fullscreen`, component: () => import('@/pages/demo/playground/fullscreen'), meta },
       { path: 'gray', name: `${pre}gray`, component: () => import('@/pages/demo/playground/gray'), meta },
-      {
-        path: 'page-cache',
-        name: `${pre}page-cache`,
-        component: () => import('@/pages/demo/playground/page-cache'),
+      { path: 'page-cache', name: `${pre}page-cache`, component: () => import('@/pages/demo/playground/page-cache'),
         meta: {
           ...meta,
           alive: true

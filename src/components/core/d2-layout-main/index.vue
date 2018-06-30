@@ -34,7 +34,7 @@
           </div>
           <div class="d2-layout-main-body">
             <transition name="fade-transverse">
-              <keep-alive :include="pageUseCacheList">
+              <keep-alive>
                 <router-view/>
               </keep-alive>
             </transition>
@@ -70,8 +70,7 @@ export default {
   computed: {
     ...mapState({
       themeActive: state => state.d2admin.themeActive,
-      isGrayMode: state => state.d2admin.isGrayMode,
-      pageUseCacheList: state => state.d2admin.pageUseCacheList
+      isGrayMode: state => state.d2admin.isGrayMode
     }),
     styleLayoutMainGroup () {
       return {
