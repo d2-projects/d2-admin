@@ -48,7 +48,6 @@ util.exitFullScreen = function () {
  * @param {object} query query object
  */
 util.openNewPage = function (vm, name, argu, query) {
-  console.log('vm.$store', vm.$store)
   // 已经打开的页面
   let pageOpenedList = vm.$store.state.d2admin.pageOpenedList
   // 判断此页面是否已经打开 并且记录位置
@@ -59,22 +58,34 @@ util.openNewPage = function (vm, name, argu, query) {
     return same
   })
   if (pageOpend) {
-    // 页面以前打开过
-    console.group('page opend')
-    console.log('pageOpendIndex: ', pageOpendIndex)
-    console.groupEnd()
-    // 虽然页面以前打开过
-    // 但是新的页面可能 name 一样，参数不一样
+    // 页面以前打开过 但是新的页面可能 name 一样，参数不一样
     vm.$store.commit('d2adminpageOpenedListUpdateItem', {
       index: pageOpendIndex,
-      argu: argu,
-      query: query
+      argu,
+      query
     })
   } else {
     // 页面以前没有打开过
-    console.group('page not opend')
-    console.log('pageOpendIndex: ', pageOpendIndex)
-    console.groupEnd()
+    const tagPool = vm.$store.state.d2admin.tagPool
+    let tag = tagPool.find(t => t.name === name)
+    if (tag) {
+      vm.$store.commit('d2adminTagIncreate', {
+        tag, argu, query
+      })
+    }
+  }
+}
+
+/**
+ * 判断是否在其内
+ * @param {*} ele element
+ * @param {array} targetArr array
+ */
+util.oneOf = function (ele, targetArr) {
+  if (targetArr.indexOf(ele) >= 0) {
+    return true
+  } else {
+    return false
   }
 }
 

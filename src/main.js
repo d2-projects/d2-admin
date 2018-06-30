@@ -92,19 +92,18 @@ new Vue({
      * 处理路由 得到每一级的路由设置
      */
     getAllTagFromRoutes () {
-      console.log('routes', frameInRoutes)
-      const tags = []
+      const tagPool = []
       const push = function (routes) {
         routes.forEach(route => {
           if (route.children) {
             push(route.children)
           } else {
-            tags.push(route)
+            tagPool.push(route)
           }
         })
       }
       push(frameInRoutes)
-      console.log('tags', tags)
+      this.$store.commit('d2admintagPoolSet', tagPool)
     }
   }
 })
