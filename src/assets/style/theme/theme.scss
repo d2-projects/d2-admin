@@ -193,7 +193,7 @@
     }
     .el-main.d2-theme-container-main {
       // 主体部分分为多页面控制器 和主体
-      .d2-layout-main-header {
+      .d2-theme-container-main-header {
         // 多页面控制器
         .d2-multiple-page-control {
           .el-tabs__header.is-top {
@@ -230,7 +230,7 @@
         }
       }
       // 主体
-      .d2-layout-main-body {
+      .d2-theme-container-main-body {
         // 布局组件
         .container-component {
           // [组件] d2-container-full
