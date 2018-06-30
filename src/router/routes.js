@@ -188,23 +188,20 @@ const frameIn = [
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/element/index'), meta }
     ])('demo-element-')
   },
-  // 404
-  {
-    path: '*',
-    name: '404',
-    component: () => import('@/pages/core/404')
-  }
-]
-
-/**
- * 在主布局框架之外的
- */
-const frameOut = [
   // 登陆
   {
     path: '/login',
     name: 'login',
     component: () => import('@/pages/core/login')
+  }
+]
+
+const frameOut = [
+  // 404
+  {
+    path: '*',
+    name: '404',
+    component: () => import('@/pages/core/404')
   }
 ]
 

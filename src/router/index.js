@@ -3,13 +3,13 @@ import VueRouter from 'vue-router'
 import Cookies from 'js-cookie'
 
 // 路由数据
-import routers from './routers'
+import routes from './routes'
 
 import util from '@/libs/util.js'
 
 Vue.use(VueRouter)
 
-let router = new VueRouter({ routers })
+let router = new VueRouter({ routes })
 
 /**
  * 路由拦截
@@ -36,6 +36,7 @@ router.beforeEach((to, from, next) => {
 
 // TODO: 路由跳转后自动滚动到顶部
 router.afterEach(to => {
+  console.log('to', to)
   // 需要的信息
   const app = router.app
   const { name, params, query } = to
@@ -47,6 +48,7 @@ router.afterEach(to => {
   console.log('query: ', query)
   console.groupEnd()
   // 多页控制 打开新的页面
+  console.log('app', app)
   util.openNewPage(app, name, params, query)
 })
 
