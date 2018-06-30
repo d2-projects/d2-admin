@@ -2,8 +2,12 @@ import 'babel-polyfill'
 
 import Vue from 'vue'
 import App from './App'
-import router from './router'
 import i18n from './i18n'
+
+// vuex
+import store from '@/store/index.js'
+
+import router from './router'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -34,9 +38,6 @@ import '@/plugin/axios'
 
 // mock接口设置
 import '@/mock/register'
-
-// vuex
-import store from '@/store/index.js'
 
 // 右键菜单
 import contentmenu from 'v-contextmenu'
