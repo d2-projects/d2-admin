@@ -1,5 +1,8 @@
 const meta = { requiresAuth: true }
 
+/**
+ * 在主框架内显示
+ */
 const frameIn = [
   // 首页
   {
@@ -187,16 +190,13 @@ const frameIn = [
       { path: 'others-collapse', name: `${pre}others-collapse`, component: () => import('@/pages/demo/element/others-collapse'), meta },
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/element/index'), meta }
     ])('demo-element-')
-  },
-  // 登陆
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/pages/core/login')
   }
 ]
 
-const frameOut = [
+/**
+ * 错误页面
+ */
+const errorPage = [
   // 404
   {
     path: '*',
@@ -205,7 +205,24 @@ const frameOut = [
   }
 ]
 
+/**
+ * 在主框架之外显示
+ */
+const frameOut = [
+  // 登陆
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/pages/core/login')
+  }
+]
+
+// 导出需要显示菜单的
+export const frameInRoutes = frameIn
+
+// 重新组织后导出
 export default [
   ...frameIn,
-  ...frameOut
+  ...frameOut,
+  ...errorPage
 ]

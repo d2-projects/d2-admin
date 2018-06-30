@@ -7,7 +7,10 @@ import i18n from './i18n'
 // vuex
 import store from '@/store/index.js'
 
+// 路由
 import router from './router'
+// 框架内的路由
+import { frameInRoutes } from '@/router/routes'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -79,5 +82,29 @@ new Vue({
   i18n,
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  created () {
+    // 处理路由 得到每一级的路由设置
+    this.getAllTagFromRoutes()
+  },
+  methods: {
+    /**
+     * 处理路由 得到每一级的路由设置
+     */
+    getAllTagFromRoutes () {
+      console.log('routes', frameInRoutes)
+      const tags = []
+      const push = function (routes) {
+        routes.forEach(route => {
+          if (route.children) {
+            push(route.children)
+          } else {
+            tags.push(route)
+          }
+        })
+      }
+      push(frameInRoutes)
+      console.log('tags', tags)
+    }
+  }
 })
