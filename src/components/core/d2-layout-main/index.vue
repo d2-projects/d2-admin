@@ -30,13 +30,16 @@
         <!-- 主体 -->
         <el-main>
           <div class="d2-layout-main-header">
-            <d2-multiple-page-control></d2-multiple-page-control>
+            <d2-multiple-page-control/>
           </div>
           <div class="d2-layout-main-body">
             <transition name="fade-transverse">
               <keep-alive>
-                <router-view/>
+                <router-view v-if="alive"/>
               </keep-alive>
+            </transition>
+            <transition name="fade-transverse">
+              <router-view v-if="!alive"/>
             </transition>
           </div>
         </el-main>
@@ -78,6 +81,14 @@ export default {
           backgroundImage: `url('${this.$assetsPublicPath}${this.themeActive.backgroundImage}')`
         } : {}
       }
+    },
+    alive () {
+      if (this.$route.meta) {
+        if (this.$route.meta.alive) {
+          return true
+        }
+      }
+      return false
     }
   },
   mounted () {
