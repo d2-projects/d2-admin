@@ -21,6 +21,17 @@ const frameIn = [
     ]
   },
   {
+    path: '/core/setting',
+    name: 'core-setting',
+    meta,
+    redirect: { name: 'core-setting-index' },
+    component: () => import('@/components/core/d2-layout-main'),
+    children: (pre => [
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/core/setting/index'), meta },
+      { path: 'theme', name: `${pre}theme`, component: () => import('@/pages/core/setting/theme'), meta }
+    ])('core-setting-')
+  },
+  {
     path: '/demo/business',
     name: 'demo-business',
     meta,

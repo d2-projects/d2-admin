@@ -326,13 +326,24 @@ const demoPlayground = {
   ])('/demo/playground/')
 }
 
+const setting = {
+  path: '/core/setting',
+  title: '设置',
+  icon: 'cog',
+  children: (pre => [
+    { path: `${pre}index`, title: '设置首页', icon: 'home' },
+    { path: `${pre}theme`, title: '主题设置', icon: 'diamond' }
+  ])('/core/setting/')
+}
+
 // 菜单 侧边栏
 export const side = [
   demoPlugins,
   demoComponents,
   demoCharts,
   demoElement,
-  demoPlayground
+  demoPlayground,
+  setting
 ]
 
 // 菜单 顶栏
@@ -373,5 +384,6 @@ export default [
     path: '/demo/business',
     title: '演示页面',
     icon: 'briefcase'
-  }
+  },
+  setting
 ]

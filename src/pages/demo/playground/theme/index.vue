@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full" class="page-demo-playground-theme">
+  <d2-container type="full" class="page">
     <template slot="header">主题</template>
     <el-table :data="themeList" v-bind="table">
       <el-table-column prop="name" align="center" width="260"/>
@@ -60,7 +60,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
-.page-demo-playground-theme {
+.page {
   .theme-preview {
     height: 50px;
     width: 100px;
