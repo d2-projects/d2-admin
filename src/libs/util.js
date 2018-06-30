@@ -59,21 +59,16 @@ util.openNewPage = function (vm, name, argu, query) {
   })
   if (pageOpend) {
     // 页面以前打开过 但是新的页面可能 name 一样，参数不一样
-    vm.$store.commit('d2adminpageOpenedListUpdateItem', {
-      index: pageOpendIndex,
-      argu,
-      query
-    })
+    vm.$store.commit('d2adminpageOpenedListUpdateItem', { index: pageOpendIndex, argu, query })
   } else {
     // 页面以前没有打开过
     const tagPool = vm.$store.state.d2admin.tagPool
     let tag = tagPool.find(t => t.name === name)
     if (tag) {
-      vm.$store.commit('d2adminTagIncreate', {
-        tag, argu, query
-      })
+      vm.$store.commit('d2adminTagIncreate', { tag, argu, query })
     }
   }
+  vm.$store.commit('d2adminPageSetCurrentName', name)
 }
 
 /**
@@ -81,7 +76,7 @@ util.openNewPage = function (vm, name, argu, query) {
  * @param {*} ele element
  * @param {array} targetArr array
  */
-util.oneOf = function (ele, targetArr) {
+util.isOneOf = function (ele, targetArr) {
   if (targetArr.indexOf(ele) >= 0) {
     return true
   } else {

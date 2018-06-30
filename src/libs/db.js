@@ -6,7 +6,8 @@ const db = low(adapter)
 
 db.defaults({
   themeActive: [],
-  pageOpenedList: []
+  pageOpenedList: [],
+  pageCacheList: []
 })
   .write()
 

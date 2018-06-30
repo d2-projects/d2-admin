@@ -11,29 +11,36 @@ export default {
     // 主题
     themeList,
     themeActive: themeList[1],
+    // 可以在多页 tab 模式下显示的页面
+    tagPool: [],
     // 当前显示的多页面列表
     pageOpenedList: [
-      {
-        name: 'index',
-        title: '首页'
-      }
+      { name: 'index', title: '首页' }
     ],
-    // 可以在多页 tab 模式下显示的页面
-    tagPool: []
+    // 当前页面
+    pageCurrent: '',
+    // 使用缓存的页面 (需要在页面中写 name)
+    pageCacheList: [],
+    // 不使用缓存的页面
+    pageDisableCacheList: [
+      'no-cache'
+    ]
   },
   mutations: {
+    /**
+     * 设置当前激活的页面 name
+     * @param {state} state vuex state
+     * @param {string} name new name
+     */
+    d2adminPageSetCurrentName (state, name) {
+      state.pageCurrent = name
+    },
     /**
      * 更新页面列表上的某一项
      * @param {state} state vuex state
      * @param {info} param1 new page info
      */
     d2adminpageOpenedListUpdateItem (state, { index, argu, query }) {
-      // dev
-      console.group('d2adminpageOpenedListUpdateItem')
-      console.log('index: ', index)
-      console.log('argu: ', argu)
-      console.log('query: ', query)
-      console.groupEnd()
       // 更新页面列表某一项
       let page = state.pageOpenedList[index]
       page.argu = argu || page.argu
@@ -64,12 +71,37 @@ export default {
      * @param {object} param1 new tag info
      */
     d2adminTagIncreate (state, { tag, argu, query }) {
-      // if (!Util.oneOf(tagObj.name, state.dontCache)) {
-      //   state.cachePage.push(tagObj.name);
-      //   localStorage.cachePage = JSON.stringify(state.cachePage);
-      // }
-      // state.pageOpenedList.push(tagObj);
-      // localStorage.pageOpenedList = JSON.stringify(state.pageOpenedList);
+      // 设置新的 tag
+      let newTag = tag
+      newTag.argu = argu || newTag.argu
+      newTag.query = query || newTag.query
+      // 检查这个页面是不是属于不使用缓存的页面
+      if (!util.isOneOf(newTag.name, state.pageDisableCacheList)) {
+        // 在缓存页面的列表加入这个页面的 name
+        state.pageCacheList.push(newTag.name)
+        // 更新设置到数据库
+        const setting = db.get('pageCacheList').find({uuid: util.uuid()})
+        if (setting.value()) {
+          setting.assign({value: state.pageCacheList}).write()
+        } else {
+          db.get('pageCacheList').push({
+            uuid: util.uuid(),
+            value: state.pageCacheList
+          }).write()
+        }
+      }
+      // 添加进当前显示的页面数组
+      state.pageOpenedList.push(newTag)
+      // 更新设置到数据库
+      const setting = db.get('pageOpenedList').find({uuid: util.uuid()})
+      if (setting.value()) {
+        setting.assign({value: state.pageOpenedList}).write()
+      } else {
+        db.get('pageOpenedList').push({
+          uuid: util.uuid(),
+          value: state.pageOpenedList
+        }).write()
+      }
       console.log('d2adminTagIncreate')
     },
     /**
