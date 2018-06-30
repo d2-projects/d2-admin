@@ -3,6 +3,8 @@
     class="d2-multiple-page-control"
     :value="pageCurrent"
     type="card"
+    :closable="true"
+    :stretch="pageOpenedList.length > 1"
     @tab-click="handleClick">
     <el-tab-pane
       v-for="(page, index) in pageOpenedList"
