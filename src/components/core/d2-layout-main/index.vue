@@ -1,9 +1,14 @@
 <template>
-  <div class="layout-main-group" :style="styleLayoutMainGroup" :class="{grayMode: isGrayMode}">
-    <div class="layout-main-mask"></div>
-    <el-container class="layout-main">
+  <div
+    class="d2-layout-main-group"
+    :style="styleLayoutMainGroup"
+    :class="{grayMode: isGrayMode}">
+    <!-- 半透明遮罩 -->
+    <div class="d2-layout-main-mask"></div>
+    <!-- 主体内容 -->
+    <el-container class="d2-layout-main-content">
       <!-- 顶栏 -->
-      <el-header>
+      <el-header class="d2-theme-header">
         <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
           <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeActive.value}/logo/icon-only.png`">
           <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeActive.value}/logo/all.png`">
@@ -11,7 +16,7 @@
         <div class="toggle-aside-btn" @click="collapse = !collapse">
           <d2-icon name="bars"/>
         </div>
-        <d2-layout-main-menu-header/>
+        <d2-layout-main-menu-header class="d2-theme-header-menu"/>
         <!-- 顶栏右侧 -->
         <div class="d2-header-right">
           <d2-layout-main-header-github/>
@@ -22,13 +27,13 @@
         </div>
       </el-header>
       <!-- 下面 主体 -->
-      <el-container>
+      <el-container class="d2-theme-container">
         <!-- 主体 侧边栏 -->
-        <el-aside ref="aside" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
+        <el-aside ref="aside" class="d2-theme-container-aside" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
           <d2-layout-main-menu-side :collapse="collapse"/>
         </el-aside>
         <!-- 主体 -->
-        <el-main>
+        <el-main class="d2-theme-container-main">
           <div class="d2-layout-main-header">
             <d2-multiple-page-control/>
           </div>

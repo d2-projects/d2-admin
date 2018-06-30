@@ -1,5 +1,5 @@
 // 主题公用
-.layout-main-group {
+.d2-layout-main-group {
   &.grayMode {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -23,14 +23,14 @@
     left: 0px;
   }
   // 主体
-  .layout-main {
+  .el-container.d2-layout-main-content {
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
     // [布局] 顶栏
-    .el-header {
+    .el-header.d2-theme-header {
       padding: 0px;
       // logo区域
       .logo-group {
@@ -56,7 +56,7 @@
         }
       }
       // [菜单] 顶栏
-      .el-menu {
+      .el-menu.d2-theme-header-menu {
         float: left;
         border-bottom: none;
         background-color: transparent;
@@ -96,9 +96,9 @@
       }
     }
     // [布局] 顶栏下面
-    .el-container {
+    .el-container.d2-theme-container {
       // 侧边栏
-      .el-aside {
+      .el-aside.d2-theme-container-aside {
         transition: width .3s;
         overflow: auto;
         // [菜单] 正常状态
@@ -155,7 +155,7 @@
         }
       }
       // 右下 主体
-      .el-main {
+      .el-main.d2-theme-container-main {
         padding: 0px;
         position: relative;
         overflow: hidden;

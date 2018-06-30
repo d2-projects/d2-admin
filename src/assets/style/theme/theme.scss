@@ -2,9 +2,9 @@
 .theme-#{$theme-name} {
 
   // 背景图片和遮罩
-  .layout-main-group {
+  .d2-layout-main-group {
     background-color: $theme-bg-color;
-    .layout-main-mask {
+    .d2-layout-main-mask {
       background: $theme-bg-mask;
     }
   }
@@ -39,7 +39,7 @@
   }
   
   // 顶栏
-  .el-header {
+  .el-header.d2-theme-header {
     // 切换按钮
     .toggle-aside-btn {
       i {
@@ -51,7 +51,7 @@
       }
     }
     // 顶栏菜单
-    .el-menu {
+    .el-menu.d2-theme-header-menu {
       .el-menu-item {
         transition: border-top-color 0s;
         color: $theme-header-item-color;
@@ -115,9 +115,9 @@
     }
   }
   // [布局] 顶栏下面
-  .el-container {
+  .el-container.d2-theme-container {
     // 侧边栏
-    .el-aside {
+    .el-aside.d2-theme-container-aside {
       // 菜单为空的时候显示的信息
       .menu-empty {
         background: $theme-aside-menu-empty-background-color;
@@ -191,7 +191,7 @@
         }
       }
     }
-    .el-main {
+    .el-main.d2-theme-container-main {
       // 主体部分分为多页面控制器 和主体
       .d2-layout-main-header {
         // 多页面控制器
