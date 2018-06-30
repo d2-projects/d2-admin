@@ -57,6 +57,7 @@ import pluginOpen from '@/plugin/open'
 // 插件 支持百万级数据的表格
 import bigdataTable from '@/plugin/vue-bigdata-table'
 
+// 打包的设置 用户获取路径
 import buildConfig from '../config/index'
 
 Vue.use(ElementUI)
@@ -94,22 +95,17 @@ new Vue({
     getAllTagFromRoutes () {
       // 所有加载在主框架内的页面
       const tagPool = []
-      // 所有需要被缓存的页面组件 name
-      const pageUseCacheList = []
       const push = function (routes) {
         routes.forEach(route => {
           if (route.children) {
             push(route.children)
           } else {
-            console.log('alive', route.meta.alive)
             tagPool.push(route)
           }
         })
       }
       push(frameInRoutes)
-      console.log('tagPool', tagPool)
       this.$store.commit('d2adminTagPoolSet', tagPool)
-      this.$store.commit('d2adminPageUseCacheListSet', pageUseCacheList)
     }
   }
 })

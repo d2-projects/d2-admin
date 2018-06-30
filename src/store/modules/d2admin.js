@@ -18,19 +18,9 @@ export default {
       { name: 'index', title: '首页' }
     ],
     // 当前页面
-    pageCurrent: '',
-    // 使用缓存的页面
-    pageUseCacheList: []
+    pageCurrent: ''
   },
   mutations: {
-    /**
-     * 设置使用缓存的页面
-     * @param {state} state vuex state
-     * @param {array} name pageUseCacheList
-     */
-    d2adminPageUseCacheList (state, list) {
-      state.pageUseCacheList = list
-    },
     /**
      * 设置当前激活的页面 name
      * @param {state} state vuex state
