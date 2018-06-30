@@ -26,7 +26,7 @@ util.openFullScreen = function () {
 }
 
 /**
- * 关闭全屏 
+ * 关闭全屏
  */
 util.exitFullScreen = function () {
   if (document.exitFullscreen) {
