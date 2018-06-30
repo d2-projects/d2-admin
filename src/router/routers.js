@@ -202,6 +202,14 @@ const frameIn = [
   }
 ]
 
+/**
+ * 在主布局框架之外的
+ */
+const frameOut = [
+
+]
+
 export default [
-  ...frameIn
+  ...frameIn,
+  ...frameOut
 ]
