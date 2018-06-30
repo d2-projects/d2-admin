@@ -43,7 +43,7 @@ const routes = [
     name: 'demo-plugins',
     meta,
     redirect: { name: 'demo-plugins-index' },
-    component: () => import('@/components/core/d2-layout-main'), 
+    component: () => import('@/components/core/d2-layout-main'),
     children: (pre => [
       { path: 'better-scroll/base', name: `${pre}better-scroll-base`, component: () => import('@/pages/demo/plugins/better-scroll/base.vue'), meta },
       { path: 'better-scroll/to', name: `${pre}better-scroll-to`, component: () => import('@/pages/demo/plugins/better-scroll/to.vue'), meta },
