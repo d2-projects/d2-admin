@@ -66,7 +66,7 @@ export default {
      * @param {state} state vuex state
      * @param {Array} tagPool tags
      */
-    d2admintagPoolSet (state, tagPool) {
+    d2adminTagPoolSet (state, tagPool) {
       state.tagPool = tagPool
     },
     /**
@@ -91,7 +91,6 @@ export default {
           value: state.pageOpenedList
         }).write()
       }
-      console.log('d2adminTagIncreate')
     },
     /**
      * 切换全屏

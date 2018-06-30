@@ -313,7 +313,8 @@ const demoPlayground = {
     { path: `${pre}index`, title: '试验台首页', icon: 'home' },
     { path: `${pre}theme`, title: '主题', icon: 'flask' },
     { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' },
-    { path: `${pre}gray`, title: '灰度模式', icon: 'eye' }
+    { path: `${pre}gray`, title: '灰度模式', icon: 'eye' },
+    { path: `${pre}page-cache`, title: '页面缓存', icon: 'eye' }
   ])('/demo/playground/')
 }
 

@@ -92,19 +92,24 @@ new Vue({
      * 处理路由 得到每一级的路由设置
      */
     getAllTagFromRoutes () {
+      // 所有加载在主框架内的页面
       const tagPool = []
+      // 所有需要被缓存的页面组件 name
+      const pageUseCacheList = []
       const push = function (routes) {
         routes.forEach(route => {
           if (route.children) {
             push(route.children)
           } else {
+            console.log('alive', route.meta.alive)
             tagPool.push(route)
           }
         })
       }
       push(frameInRoutes)
-      this.$store.commit('d2admintagPoolSet', tagPool)
-      // d2adminPageUseCacheList
+      console.log('tagPool', tagPool)
+      this.$store.commit('d2adminTagPoolSet', tagPool)
+      this.$store.commit('d2adminPageUseCacheListSet', pageUseCacheList)
     }
   }
 })
