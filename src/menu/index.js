@@ -314,7 +314,15 @@ const demoPlayground = {
     { path: `${pre}theme`, title: '主题', icon: 'flask' },
     { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' },
     { path: `${pre}gray`, title: '灰度模式', icon: 'eye' },
-    { path: `${pre}page-cache`, title: '页面缓存', icon: 'eye' }
+    {
+      path: `${pre}page-cache`,
+      title: '页面缓存',
+      icon: 'eye',
+      children: [
+        { path: `${pre}page-cache/on`, title: '开启缓存' },
+        { path: `${pre}page-cache/off`, title: '关闭缓存' }
+      ]
+    }
   ])('/demo/playground/')
 }
 

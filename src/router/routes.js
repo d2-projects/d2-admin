@@ -1,5 +1,7 @@
 const meta = { requiresAuth: true }
 
+const alive = true
+
 /**
  * 在主框架内显示
  */
@@ -39,12 +41,8 @@ const frameIn = [
       { path: 'theme', name: `${pre}theme`, component: () => import('@/pages/demo/playground/theme'), meta },
       { path: 'fullscreen', name: `${pre}fullscreen`, component: () => import('@/pages/demo/playground/fullscreen'), meta },
       { path: 'gray', name: `${pre}gray`, component: () => import('@/pages/demo/playground/gray'), meta },
-      { path: 'page-cache', name: `${pre}page-cache`, component: () => import('@/pages/demo/playground/page-cache'),
-        meta: {
-          ...meta,
-          alive: true
-        }
-      }
+      { path: 'page-cache/on', name: `${pre}page-cache-on`, component: () => import('@/pages/demo/playground/page-cache/on.vue'), meta: { ...meta, alive } },
+      { path: 'page-cache/off', name: `${pre}page-cache-off`, component: () => import('@/pages/demo/playground/page-cache/off.vue'), meta }
     ])('demo-playground-')
   },
   {
