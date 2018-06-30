@@ -34,10 +34,10 @@
         </el-aside>
         <!-- 主体 -->
         <el-main class="d2-theme-container-main">
-          <div class="d2-layout-main-header">
+          <div class="d2-theme-container-main-header">
             <d2-multiple-page-control/>
           </div>
-          <div class="d2-layout-main-body">
+          <div class="d2-theme-container-main-body">
             <transition name="fade-transverse">
               <keep-alive>
                 <router-view v-if="alive"/>
