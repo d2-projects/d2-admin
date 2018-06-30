@@ -44,7 +44,7 @@ export default {
       } else {
         db.get('pageOpenedList').push({
           uuid: util.uuid(),
-          value: state.pageOpenedList
+          value: state.pageOpenedList 
         }).write()
       }
     },
