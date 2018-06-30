@@ -6,7 +6,7 @@ let util = {}
  * 得到现在的用户
  */
 util.uuid = function () {
-  return Cookies.get('uuid')
+  return Cookies.get('uuid') 
 }
 
 /**
