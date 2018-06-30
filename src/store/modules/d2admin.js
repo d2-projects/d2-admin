@@ -43,7 +43,7 @@ export default {
         setting.assign({value: state.pageOpenedList}).write()
       } else {
         db.get('pageOpenedList').push({
-          uuid: util.uuid(),
+          uuid: util.uuid(), 
           value: state.pageOpenedList
         }).write()
       }
