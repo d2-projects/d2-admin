@@ -1,3 +1,5 @@
+const meta = { requiresAuth: true }
+
 const routes = [
   // 首页
   {
