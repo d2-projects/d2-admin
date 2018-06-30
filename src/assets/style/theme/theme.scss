@@ -202,6 +202,7 @@
           .el-tabs__nav {
             border-color: $theme-multiple-page-control-border-color;
             .el-tabs__item {
+              @extend %unable-select;
               color: $theme-multiple-page-control-color;
               background-color: $theme-multiple-page-control-background-color;
               border-left-color: $theme-multiple-page-control-border-color;
