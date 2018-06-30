@@ -210,6 +210,10 @@ const routes = [
 
 let router = new VueRouter({ routes })
 
+/**
+ * 路由拦截
+ * 权限验证
+ */
 router.beforeEach((to, from, next) => {
   // 验证当前路由所有的匹配中是否需要有登陆验证的
   if (to.matched.some(r => r.meta.requiresAuth)) {
@@ -227,6 +231,18 @@ router.beforeEach((to, from, next) => {
     // 不需要身份校验 直接通过
     next()
   }
+})
+
+// TODO: 路由跳转后自动滚动到顶部
+router.afterEach(to => {
+  const app = router.app
+  const { name, params, query } = to
+  console.group('router.afterEach')
+  console.log('app: ', app)
+  console.log('name: ', name)
+  console.log('params: ', params)
+  console.log('query: ', query)
+  console.groupEnd()
 })
 
 export default router

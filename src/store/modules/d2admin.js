@@ -10,7 +10,14 @@ export default {
     isGrayMode: false,
     // 主题
     themeList,
-    themeActive: themeList[1]
+    themeActive: themeList[1],
+    // 多页
+    pageList: [
+      {
+        name: 'index',
+        title: '首页'
+      }
+    ]
   },
   mutations: {
     /**
