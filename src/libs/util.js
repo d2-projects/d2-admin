@@ -48,6 +48,7 @@ util.exitFullScreen = function () {
  * @param {object} query query object
  */
 util.openNewPage = function (vm, name, argu, query) {
+  console.log('vm.$store', vm.$store)
   // 已经打开的页面
   let pageOpenedList = vm.$store.state.d2admin.pageOpenedList
   // 判断此页面是否已经打开 并且记录位置
