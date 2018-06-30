@@ -11,13 +11,15 @@ export default {
     // 主题
     themeList,
     themeActive: themeList[1],
-    // 多页
+    // 当前显示的多页面列表
     pageOpenedList: [
       {
         name: 'index',
         title: '首页'
       }
-    ]
+    ],
+    // 可以在多页 tab 模式下显示的页面
+    tagPool: []
   },
   mutations: {
     /**
@@ -47,6 +49,28 @@ export default {
           value: state.pageOpenedList
         }).write()
       }
+    },
+    /**
+     * 保存 tagPool (候选池)
+     * @param {state} state vuex state
+     * @param {Array} tagPool tags
+     */
+    d2admintagPoolSet (state, tagPool) {
+      state.tagPool = tagPool
+    },
+    /**
+     * 新增一个 tag
+     * @param {state} state vuex state
+     * @param {object} param1 new tag info
+     */
+    d2adminTagIncreate (state, { tag, argu, query }) {
+      // if (!Util.oneOf(tagObj.name, state.dontCache)) {
+      //   state.cachePage.push(tagObj.name);
+      //   localStorage.cachePage = JSON.stringify(state.cachePage);
+      // }
+      // state.pageOpenedList.push(tagObj);
+      // localStorage.pageOpenedList = JSON.stringify(state.pageOpenedList);
+      console.log('d2adminTagIncreate')
     },
     /**
      * 切换全屏
