@@ -317,7 +317,7 @@ const demoPlayground = {
     {
       path: `${pre}page-cache`,
       title: '页面缓存',
-      icon: 'eye',
+      icon: 'hdd-o',
       children: [
         { path: `${pre}page-cache/on`, title: '开启缓存' },
         { path: `${pre}page-cache/off`, title: '关闭缓存' }
