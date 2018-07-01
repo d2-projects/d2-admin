@@ -67,9 +67,6 @@ export default {
       immediate: true
     }
   },
-  beforeDestroy () {
-    window.onresize = function () {}
-  },
   mounted () {
     this.BS = new BScroll(this.$el, {
       mouseWheel: true,
