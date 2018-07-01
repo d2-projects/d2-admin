@@ -15,7 +15,7 @@ const frameIn = [
       {
         path: 'index',
         name: 'index',
-        meta: { ...meta, title: '首页' },
+        meta,
         component: () => import('@/pages/core/index')
       }
     ]
