@@ -10,7 +10,7 @@ export default {
     isGrayMode: false,
     // 主题
     themeList,
-    themeActive: themeList[1],
+    themeActiveName: themeList[0].name, // 这应该是一个名字 不是对象
     // 可以在多页 tab 模式下显示的页面
     tagPool: [],
     // 当前显示的多页面列表
@@ -19,6 +19,15 @@ export default {
     ],
     // 当前页面
     pageCurrent: ''
+  },
+  getters: {
+    /**
+     * @description 返回当前的主题信息 不是一个名字 而是所有的主题数据
+     * @param {state} state vuex state
+     */
+    themeActiveSetting (state) {
+      return state.themeList.find(theme => theme.name === state.themeActiveName)
+    }
   },
   mutations: {
     /**
@@ -198,29 +207,34 @@ export default {
       state.isGrayMode = value
     },
     /**
-     * @class themeActive
+     * @class themeActiveName
      * @description 激活一个主题（应用到dom上）
      * @param {state} state vuex state
      * @param {string} themeValue 需要激活的主题名称
      */
-    d2adminThemeSet (state, themeValue) {
-      // 从列表里找到需要激活的主题的数据
-      const theme = state.themeList.find(e => e.value === themeValue) || state.themeList[0]
-      // 设置 state
-      state.themeActive = theme
+    d2adminThemeSet (state, themeName) {
+      // 检查这个主题在主题列表里是否存在
+      const theme = state.themeList.find(e => e.name === themeName)
+      if (theme) {
+        // 设置 state
+        state.themeActiveName = themeName
+      } else {
+        // 设置为列表第一个主题
+        state.themeActiveName = state.themeList[0].name
+      }
       // 设置 dom
-      document.body.className = `theme-${state.themeActive.value}`
+      document.body.className = `theme-${state.themeActiveName}`
       // 保存到数据库
-      this.commit('d2adminVuex2Db', 'themeActive')
+      this.commit('d2adminVuex2Db', 'themeActiveName')
     },
     /**
-     * @class themeActive
+     * @class themeActiveName
      * @description 从数据库加载主题设置
      * @param {state} state vuex state
      */
     d2adminThemeLoad (state) {
-      const themeActive = db.get('themeActive').find({uuid: util.uuid()}).value()
-      this.commit('d2adminThemeSet', themeActive ? themeActive.value : state.themeList[0].value)
+      const themeActiveName = db.get('themeActiveName').find({uuid: util.uuid()}).value()
+      this.commit('d2adminThemeSet', themeActiveName.value || state.themeList[0].name)
     }
   }
 }
