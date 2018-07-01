@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     /**
-     * 接收点击关闭控制上选项的事件
+     * @description 接收点击关闭控制上选项的事件
      */
     handleControlItemClick (command) {
       switch (command) {
@@ -82,14 +82,14 @@ export default {
       }
     },
     /**
-     * 接收点击关闭控制上按钮的事件
+     * @description 接收点击关闭控制上按钮的事件
      */
     handleControlBtnClick () {
       // 关闭所有
       this.closeAllTag()
     },
     /**
-     * 接收点击 tab 标签的事件
+     * @description 接收点击 tab 标签的事件
      */
     handleClick (tab, event) {
       const page = this.pageOpenedList.find(page => page.name === tab.name)
@@ -102,7 +102,7 @@ export default {
       }
     },
     /**
-     * 点击 tab 上的删除按钮后首先触发这里
+     * @description 点击 tab 上的删除按钮后首先触发这里
      */
     handleTabsEdit (tagName, action) {
       if (action === 'remove') {
@@ -111,25 +111,25 @@ export default {
       }
     },
     /**
-     * 关闭左侧的 tag
+     * @description 关闭左侧的 tag
      */
     closeAllTagLeft () {
-      //
+      this.$store.commit('d2adminTagCloseLeft')
     },
     /**
-     * 关闭右侧的 tag
+     * @description 关闭右侧的 tag
      */
     closeAllTagRight () {
-      //
+      this.$store.commit('d2adminTagCloseRight')
     },
     /**
-     * 关闭其它的 tag
+     * @description 关闭其它的 tag
      */
     closeAllTagOther () {
       this.$store.commit('d2adminTagCloseOther')
     },
     /**
-     * 关闭全部的 tag
+     * @description 关闭全部的 tag
      */
     closeAllTag () {
       this.$store.commit('d2adminTagCloseAll')
@@ -138,7 +138,7 @@ export default {
       })
     },
     /**
-     * 关闭一个指定的 tag
+     * @description 关闭一个指定的 tag
      */
     closeTag (tagName) {
       // 下个新的页面
@@ -166,11 +166,13 @@ export default {
         this.linkTo(newPage)
       }
     },
-    // TODO: 需要完善赋值
-    linkTo ({ name, argu, query }) {
+    /**
+     * @description 跳转到新的页面
+     */
+    linkTo ({ name = '', argu = {}, query = {} }) {
       let routerObj = {
         name,
-        params: argu || {},
+        params: argu,
         query
       }
       this.$router.push(routerObj)
