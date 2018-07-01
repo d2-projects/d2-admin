@@ -12,8 +12,8 @@
       </el-table-column>
       <el-table-column prop="address" align="center">
         <template slot-scope="scope">
-          <el-button v-if="themeActive.value === scope.row.value" type="success" icon="el-icon-check" round>已激活</el-button>
-          <el-button v-else round @click="handleSelectTheme(scope.row.value)">使用</el-button>
+          <el-button v-if="themeActiveName === scope.row.name" type="success" icon="el-icon-check" round>已激活</el-button>
+          <el-button v-else round @click="handleSelectTheme(scope.row.name)">使用</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -25,7 +25,7 @@
       </el-button>
     </div>
     <template slot="footer">
-      <el-button type="primary" size="small">当前激活主题 {{themeActive.name}}</el-button>
+      <el-button type="primary" size="small">当前激活主题 {{themeActiveName}}</el-button>
     </template>
   </d2-container>
 </template>
@@ -44,15 +44,15 @@ export default {
   computed: {
     ...mapState({
       themeList: state => state.d2admin.themeList,
-      themeActive: state => state.d2admin.themeActive
+      themeActiveName: state => state.d2admin.themeActiveName
     })
   },
   methods: {
     ...mapMutations([
       'd2adminThemeSet'
     ]),
-    handleSelectTheme (value) {
-      this.d2adminThemeSet(value)
+    handleSelectTheme (name) {
+      this.d2adminThemeSet(name)
     }
   }
 }
