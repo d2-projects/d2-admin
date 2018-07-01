@@ -117,15 +117,7 @@ const demoComponents = {
         { path: `${pre}contextmenu/custom-trigger`, title: '自定义事件' }
       ]
     },
-    {
-      path: `${pre}bigdata-table`,
-      title: '百万数量级表格',
-      icon: 'table',
-      children: [
-        { path: `${pre}bigdata-table/demo`, title: '示例' },
-        { path: `${pre}bigdata-table/select`, title: '勾选' }
-      ]
-    },
+    { path: `${pre}bigdata-table`, title: '百万数量级表格', icon: 'table' },
     { path: `${pre}scrollbar`, title: 'Element 滚动条组件', icon: 'crosshairs' },
     { path: `${pre}countup`, title: '数字动画', icon: 'motorcycle' },
     { path: `${pre}editor-quill`, title: '富文本编辑器', icon: 'pencil-square-o (edit, edit)' },
