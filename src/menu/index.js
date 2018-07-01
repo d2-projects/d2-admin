@@ -359,10 +359,10 @@ export default [
     title: '功能',
     icon: 'puzzle-piece',
     children: [
-      demoPlugins,
+      demoElement,
       demoComponents,
       demoCharts,
-      demoElement,
+      demoPlugins,
       demoPlayground,
       {
         title: '空菜单演示',
