@@ -331,7 +331,16 @@ const setting = {
   title: '设置',
   icon: 'cog',
   children: (pre => [
-    { path: `${pre}index`, title: '设置首页', icon: 'home' }
+    { path: `${pre}index`, title: '设置首页', icon: 'home' },
+    {
+      path: `${pre}theme`,
+      title: '主题设置',
+      icon: 'diamond',
+      children: [
+        { path: `${pre}theme/theme`, title: '选择主题' },
+        { path: `${pre}theme/custom`, title: '个性化' }
+      ]
+    }
   ])('/core/setting/')
 }
 

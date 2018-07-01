@@ -27,7 +27,9 @@ const frameIn = [
     redirect: { name: 'core-setting-index' },
     component: () => import('@/components/core/d2-layout-main'),
     children: (pre => [
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/core/setting/index'), meta }
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/core/setting/index'), meta },
+      { path: 'theme/theme', name: `${pre}theme-theme`, component: () => import('@/pages/core/setting/theme/theme.vue'), meta },
+      { path: 'theme/custom', name: `${pre}theme-custom`, component: () => import('@/pages/core/setting/theme/custom.vue'), meta }
     ])('core-setting-')
   },
   {
