@@ -60,9 +60,6 @@ D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https
 | --- | --- |
 | <img style="width: 200px;" src="https://raw.githubusercontent.com/FairyEver/d2-admin/dev/github/qq.jpg"/> | <img style="width: 200px;" src="https://raw.githubusercontent.com/FairyEver/d2-admin/dev/github/we.jpg"/> |
 
-
-<img style="width: 200px;" src="https://raw.githubusercontent.com/FairyEver/d2-admin/dev/github/qq.jpg"/>
-
 > 微信群需要先加群主才可以拉进群 PS 微信群交流不太方便，建议QQ群
 
 ## TODO
