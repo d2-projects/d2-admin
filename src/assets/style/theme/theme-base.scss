@@ -165,19 +165,46 @@
         .d2-theme-container-main-header {
           flex-grow: 0;
           // 多页面控制器
-          .d2-multiple-page-control {
-            .el-tabs__header.is-top {
-              margin: 0px;
-              margin-right: 20px;
+          .d2-multiple-page-control-group {
+            display: flex;
+            margin-right: 20px;
+            .d2-multiple-page-control-content {
+              flex-grow: 1;
+              position: relative;
+              .d2-multiple-page-control-content-inner {
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                .d2-multiple-page-control {
+                  .el-tabs__header.is-top {
+                    margin: 0px;
+                  }
+                  .el-tabs__nav {
+                    overflow: hidden;
+                  }
+                }
+              }
             }
-            .el-tabs__nav {
-              overflow: hidden;
+            .d2-multiple-page-control-btn {
+              position: relative;
+              bottom: -1px;
+              .el-dropdown {
+                .el-button-group {
+                  .el-button:first-child {
+                    border-bottom-left-radius: 0px;
+                  }
+                  .el-button:last-child {
+                    border-bottom-right-radius: 0px;
+                  }
+                }
+              }
             }
           }
         }
         // 主体
         .d2-theme-container-main-body {
           flex-grow: 1;
+          margin-top: 1px;
           position: relative;
           // 布局组件
           .container-component {
