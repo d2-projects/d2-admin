@@ -19,22 +19,22 @@
       </div>
     </div>
     <div class="d2-multiple-page-control-btn">
-      <el-dropdown split-button @click="handleControlBtnClick">
+      <el-dropdown split-button @click="handleControlBtnClick" @command="handleControlItemClick">
         <d2-icon name="times-circle"/>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>
+          <el-dropdown-item command="left">
             <d2-icon name="arrow-left" class="d2-mr-10"/>
             关闭左侧
           </el-dropdown-item>
-          <el-dropdown-item>
+          <el-dropdown-item command="right">
             <d2-icon name="arrow-right" class="d2-mr-10"/>
             关闭右侧
           </el-dropdown-item>
-          <el-dropdown-item>
+          <el-dropdown-item command="other">
             <d2-icon name="times" class="d2-mr-10"/>
             关闭其它
           </el-dropdown-item>
-          <el-dropdown-item>
+          <el-dropdown-item command="all">
             <d2-icon name="times-circle" class="d2-mr-10"/>
             全部关闭
           </el-dropdown-item>
@@ -59,6 +59,28 @@ export default {
     })
   },
   methods: {
+    /**
+     * 接收点击关闭控制上选项的事件
+     */
+    handleControlItemClick (command) {
+      switch (command) {
+        case 'left':
+          console.log('left')
+          break;
+        case 'right':
+          console.log('right')
+          break;
+        case 'other':
+          console.log('other')
+          break;
+        case 'all':
+          console.log('all')
+          break;
+        default:
+          console.log('无效指令')
+          break;
+      }
+    },
     /**
      * 接收点击关闭控制上按钮的事件
      */
@@ -87,6 +109,24 @@ export default {
         // 首页的删除按钮已经隐藏 因此这里不用判断是 index
         this.closeTag(tagName)
       }
+    },
+    /**
+     * 关闭左侧的 tag
+     */
+    closeAllTagLeft () {
+      //
+    },
+    /**
+     * 关闭右侧的 tag
+     */
+    closeAllTagRight () {
+      //
+    },
+    /**
+     * 关闭其它的 tag
+     */
+    closeAllTagOther () {
+      //
     },
     /**
      * 关闭全部的 tag
