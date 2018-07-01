@@ -103,6 +103,22 @@ export default {
     },
     /**
      * @class pageOpenedList
+     * @description 关闭当前标签左边的标签
+     * @param {state} state vuex state
+     */
+    d2adminTagCloseLeft (state) {
+
+    },
+    /**
+     * @class pageOpenedList
+     * @description 关闭当前标签右边的标签
+     * @param {state} state vuex state
+     */
+    d2adminTagCloseRight (state) {
+
+    },
+    /**
+     * @class pageOpenedList
      * @description 关闭当前激活之外的 tag
      * @param {state} state vuex state
      */
