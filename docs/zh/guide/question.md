@@ -55,6 +55,10 @@ npm run doc:dev
 
 el-scrollbar 组件是 ElementUI 自带的一个隐藏组件，没有写入文档，详见 [https://github.com/ElemeFE/element/issues/2238](https://github.com/ElemeFE/element/issues/2238)
 
+::: tip
+官方解释此组件在使用的时候需要注意较多问题，不推荐使用，如果你希望自定义滚动条或者实现滚动控制，可以使用 D2Admin 已经集成的 better-scroll
+:::
+
 ## 兼容性
 
 首先 vue.js 和 ElementUI 做不到兼容的，D2Admin 肯定也兼容不了，实测在 macOS 下 Chrome 和新版本的火狐浏览器以及 Safari 都正常使用，这类管理系统一般是内部使用，通常不必太纠结兼容低版本浏览器，如果你发现了显示的 bug，可以加 QQ 群反应，如果你可以修复这个 bug 使其在你的浏览器上显示正常，欢迎你的 pr。
@@ -198,3 +202,7 @@ Mock.setup({
 npm remove @antv/data-set -S
 npm remove @antv/g2 -S
 ```
+
+## 项目里有未完成的代码
+
+有些示例（比如 v-charts 和 ElementUI）是很方便就可以找到官网示例和文档的，这些插件和组件的示例在本项目中就可能处于未完成的状态，但是以后会完成
