@@ -1,12 +1,12 @@
-## 自适应填充页面容器
+## 自适应填充页面容器 + 滚动优化
 
-无论内容高度多少，都会自动撑满页面，并有可选的 `header` 和 `footer` 插槽
+无论内容高度多少，都会自动撑满页面，并有可选的 `header` 和 `footer` 插槽，**并且使用自定义滚动条代替原生滚动条**，是否启用此功能请自行取舍
 
 示例：
 
 ```
 <template>
-  <d2-container type="full">
+  <d2-container type="full" :scroll="true">
     <template slot="header">
       可选的 header 内容 ...
     </template>

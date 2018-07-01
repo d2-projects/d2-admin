@@ -10,17 +10,24 @@
       <slot name="header"/>
       <slot/>
     </div>
-    <!-- [container-full] 撑满 -->
-    <d2-container-full v-if="type === 'full'">
+    <!-- [container-full] 填充 -->
+    <d2-container-full v-if="type === 'full' && !scroll">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
     </d2-container-full>
+    <!-- [container-full-bs] 填充 滚动优化 -->
+    <d2-container-full-bs v-if="type === 'full' && scroll">
+      <slot v-if="$slots.header" name="header" slot="header"/>
+      <slot/>
+      <slot v-if="$slots.footer" name="footer" slot="footer"/>
+    </d2-container-full-bs>
   </div>
 </template>
 
 <script>
 import d2ContainerFull from './components/d2-container-full.vue'
+import d2ContainerFullBs from './components/d2-container-full-bs.vue'
 export default {
   name: 'd2-container',
   props: {
@@ -30,6 +37,12 @@ export default {
       required: false,
       default: 'card'
     },
+    // 滚动优化
+    scroll: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     // 是否开启响应式尺寸变化
     responsive: {
       type: Boolean,
@@ -38,7 +51,8 @@ export default {
     }
   },
   components: {
-    'd2-container-full': d2ContainerFull
+    'd2-container-full': d2ContainerFull,
+    'd2-container-full-bs': d2ContainerFullBs
   }
 }
 </script>
