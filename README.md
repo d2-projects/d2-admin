@@ -12,7 +12,7 @@ D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https
 
 **QQ群 806395827**
 
-![QQ](./github/qq/jpg)
+![QQ](d2-admin/github/qq.jpg)
 **微信群**
 
 作者微信 liyang1711467488
