@@ -107,7 +107,17 @@ export default {
      * @param {state} state vuex state
      */
     d2adminTagCloseLeft (state) {
-
+      let currentIndex = 0
+      state.pageOpenedList.forEach((page, index) => {
+        if (page.name === state.pageCurrent) {
+          currentIndex = index
+        }
+      })
+      if (currentIndex > 0) {
+        state.pageOpenedList.splice(1, currentIndex - 1)
+      }
+      // 更新设置到数据库
+      this.commit('d2adminVuex2Db', 'pageOpenedList')
     },
     /**
      * @class pageOpenedList
@@ -115,7 +125,15 @@ export default {
      * @param {state} state vuex state
      */
     d2adminTagCloseRight (state) {
-
+      let currentIndex = 0
+      state.pageOpenedList.forEach((page, index) => {
+        if (page.name === state.pageCurrent) {
+          currentIndex = index
+        }
+      })
+      state.pageOpenedList.splice(currentIndex + 1)
+      // 更新设置到数据库
+      this.commit('d2adminVuex2Db', 'pageOpenedList')
     },
     /**
      * @class pageOpenedList
