@@ -74,7 +74,7 @@ export default {
           this.closeAllTagOther()
           break
         case 'all':
-          this.closeAllTagAll()
+          this.closeAllTag()
           break
         default:
           console.log('无效指令')
