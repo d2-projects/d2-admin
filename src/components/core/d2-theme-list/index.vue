@@ -10,7 +10,7 @@
     </el-table-column>
     <el-table-column prop="address" align="center">
       <template slot-scope="scope">
-        <el-button v-if="themeActiveSetting.name === scope.row.name" type="success" icon="el-icon-check" round>已激活</el-button>
+        <el-button v-if="themeActiveName === scope.row.name" type="success" icon="el-icon-check" round>已激活</el-button>
         <el-button v-else round @click="handleSelectTheme(scope.row.name)">使用</el-button>
       </template>
     </el-table-column>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'd2-theme-list',
   data () {
@@ -31,11 +31,9 @@ export default {
   },
   computed: {
     ...mapState({
-      themeList: state => state.d2admin.themeList
-    }),
-    ...mapGetters([
-      'themeActiveSetting'
-    ])
+      themeList: state => state.d2admin.themeList,
+      themeActiveName: state => state.d2admin.themeActiveName
+    })
   },
   methods: {
     ...mapMutations([
