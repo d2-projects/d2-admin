@@ -19,8 +19,8 @@
       </div>
     </div>
     <div class="d2-multiple-page-control-btn">
-      <el-dropdown split-button @click="handleClick">
-        <d2-icon name="times"/>
+      <el-dropdown split-button @click="handleControlBtnClick">
+        <d2-icon name="times-circle"/>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>
             <d2-icon name="arrow-left" class="d2-mr-10"/>
@@ -32,6 +32,10 @@
           </el-dropdown-item>
           <el-dropdown-item>
             <d2-icon name="times" class="d2-mr-10"/>
+            关闭其它
+          </el-dropdown-item>
+          <el-dropdown-item>
+            <d2-icon name="times-circle" class="d2-mr-10"/>
             全部关闭
           </el-dropdown-item>
         </el-dropdown-menu>
@@ -56,6 +60,13 @@ export default {
   },
   methods: {
     /**
+     * 接收点击关闭控制上按钮的事件
+     */
+    handleControlBtnClick () {
+      // 关闭所有
+      this.closeAllTag()
+    },
+    /**
      * 接收点击 tab 标签的事件
      */
     handleClick (tab, event) {
@@ -76,6 +87,15 @@ export default {
         // 首页的删除按钮已经隐藏 因此这里不用判断是 index
         this.closeTag(tagName)
       }
+    },
+    /**
+     * 关闭全部的 tag
+     */
+    closeAllTag () {
+      this.$store.commit('d2adminTagCloseAll')
+      this.$router.push({
+        name: 'index'
+      })
     },
     /**
      * 关闭一个指定的 tag
