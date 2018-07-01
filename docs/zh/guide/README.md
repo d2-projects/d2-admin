@@ -2,7 +2,7 @@
 
 D2Admin 是一个开源的管理系统前端集成方案
 
-[Github仓库](https://github.com/FairyEver/d2-admin) - [预览地址](https://fairyever.gitee.io/d2-admin-preview)
+[Github仓库](https://github.com/FairyEver/d2-admin) - [码云仓库](https://gitee.com/fairyever/d2-admin) - [预览地址](https://fairyever.gitee.io/d2-admin-preview)
 
 <div>
   <iframe src="//ghbtns.com/github-btn.html?user=FairyEver&repo=d2-admin&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
@@ -169,23 +169,3 @@ npm run build
 ```
 
 > 如果上述步骤出现错误，建议您升级 node 版本 > 8，如果有其它疑问请参考[常见问题](/zh/guide/question.html)
-
-## 书写文档
-
-这里目前还有一个小遗憾，d2admin 使用的 webpack 版本不能符合 vuepress 的要求，所以如果你想在本地启动文档站点的服务，需要按下述步骤
-
-首先将 vuepress 安装到全局
-
-```
-npm i -g vuepress
-```
-
-启动服务
-
-```
-npm run doc:dev
-```
-
-::: tip
-你可能会发现项目目录中有一个 deploy 文件夹，这个文件是为了方便发布和提交代码用的，通常你并不需要使用它
-:::
