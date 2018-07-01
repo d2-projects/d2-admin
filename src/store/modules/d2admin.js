@@ -22,7 +22,8 @@ export default {
   },
   mutations: {
     /**
-     * 将 state 中某一项存储到数据库
+     * @class 通用工具
+     * @description 将 state 中某一项存储到数据库
      * @param {state} state vuex state
      */
     d2adminVuex2Db (state, key) {
@@ -37,7 +38,8 @@ export default {
       }
     },
     /**
-     * 设置当前激活的页面 name
+     * @class pageCurrent
+     * @description 设置当前激活的页面 name
      * @param {state} state vuex state
      * @param {string} name new name
      */
@@ -45,7 +47,17 @@ export default {
       state.pageCurrent = name
     },
     /**
-     * 更新页面列表上的某一项
+     * @class tagPool
+     * @description 保存 tagPool (候选池)
+     * @param {state} state vuex state
+     * @param {Array} tagPool tags
+     */
+    d2adminTagPoolSet (state, tagPool) {
+      state.tagPool = tagPool
+    },
+    /**
+     * @class pageOpenedList
+     * @description 更新页面列表上的某一项
      * @param {state} state vuex state
      * @param {info} param1 new page info
      */
@@ -59,20 +71,13 @@ export default {
       this.commit('d2adminVuex2Db', 'pageOpenedList')
     },
     /**
-     * 保存 tagPool (候选池)
-     * @param {state} state vuex state
-     * @param {Array} tagPool tags
-     */
-    d2adminTagPoolSet (state, tagPool) {
-      state.tagPool = tagPool
-    },
-    /**
-     * 新增一个 tag (打开一个页面)
+     * @class pageOpenedList
+     * @description 新增一个 tag (打开一个页面)
      * @param {state} state vuex state
      * @param {object} param1 new tag info
      */
     d2adminTagIncreate (state, { tag, argu, query }) {
-      // 设置新的 tag
+      // 设置新的 tag 在新打开一个以前没打开过的页面时使用
       let newTag = tag
       newTag.argu = argu || newTag.argu
       newTag.query = query || newTag.query
@@ -82,7 +87,8 @@ export default {
       this.commit('d2adminVuex2Db', 'pageOpenedList')
     },
     /**
-     * 关闭一个 tag (关闭一个页面)
+     * @class pageOpenedList
+     * @description 关闭一个 tag (关闭一个页面)
      * @param {state} state vuex state
      * @param {string} name close tag name
      */
@@ -92,16 +98,43 @@ export default {
       if (index >= 0) {
         state.pageOpenedList.splice(index, 1)
       }
+      // 更新设置到数据库
+      this.commit('d2adminVuex2Db', 'pageOpenedList')
     },
     /**
-     * 关闭所有 tag
+     * @class pageOpenedList
+     * @description 关闭当前激活之外的 tag
+     * @param {state} state vuex state
+     */
+    d2adminTagCloseOther (state) {
+      let currentIndex = 0
+      state.pageOpenedList.forEach((page, index) => {
+        if (page.name === state.pageCurrent) {
+          currentIndex = index
+        }
+      })
+      if (currentIndex === 0) {
+        state.pageOpenedList.splice(1)
+      } else {
+        state.pageOpenedList.splice(currentIndex + 1)
+        state.pageOpenedList.splice(1, currentIndex - 1)
+      }
+      // 更新设置到数据库
+      this.commit('d2adminVuex2Db', 'pageOpenedList')
+    },
+    /**
+     * @class pageOpenedList
+     * @description 关闭所有 tag
      * @param {state} state vuex state
      */
     d2adminTagCloseAll (state) {
       state.pageOpenedList.splice(1)
+      // 更新设置到数据库
+      this.commit('d2adminVuex2Db', 'pageOpenedList')
     },
     /**
-     * 切换全屏
+     * @class isFullScreen
+     * @description 切换全屏
      * @param {state} state vuex state
      */
     d2adminFullScreenToggle (state) {
@@ -114,14 +147,16 @@ export default {
       }
     },
     /**
-     * 切换灰度状态
+     * @class isGrayMode
+     * @description 切换灰度状态
      * @param {state} state vuex state
      */
     d2adminGrayModeToggle (state) {
       state.isGrayMode = !state.isGrayMode
     },
     /**
-     * 设置灰度模式
+     * @class isGrayMode
+     * @description 设置灰度模式
      * @param {state} state vuex state
      * @param {boolean} value new value
      */
@@ -129,7 +164,8 @@ export default {
       state.isGrayMode = value
     },
     /**
-     * 激活一个主题（应用到dom上）
+     * @class themeActive
+     * @description 激活一个主题（应用到dom上）
      * @param {state} state vuex state
      * @param {string} themeValue 需要激活的主题名称
      */
@@ -144,7 +180,8 @@ export default {
       this.commit('d2adminVuex2Db', 'themeActive')
     },
     /**
-     * 从数据库加载主题设置
+     * @class themeActive
+     * @description 从数据库加载主题设置
      * @param {state} state vuex state
      */
     d2adminThemeLoad (state) {

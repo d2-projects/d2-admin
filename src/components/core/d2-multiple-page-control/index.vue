@@ -65,20 +65,20 @@ export default {
     handleControlItemClick (command) {
       switch (command) {
         case 'left':
-          console.log('left')
-          break;
+          this.closeAllTagLeft()
+          break
         case 'right':
-          console.log('right')
-          break;
+          this.closeAllTagRight()
+          break
         case 'other':
-          console.log('other')
-          break;
+          this.closeAllTagOther()
+          break
         case 'all':
-          console.log('all')
-          break;
+          this.closeAllTagAll()
+          break
         default:
           console.log('无效指令')
-          break;
+          break
       }
     },
     /**
@@ -104,7 +104,7 @@ export default {
     /**
      * 点击 tab 上的删除按钮后首先触发这里
      */
-    handleTabsEdit(tagName, action) {
+    handleTabsEdit (tagName, action) {
       if (action === 'remove') {
         // 首页的删除按钮已经隐藏 因此这里不用判断是 index
         this.closeTag(tagName)
@@ -126,7 +126,7 @@ export default {
      * 关闭其它的 tag
      */
     closeAllTagOther () {
-      //
+      this.$store.commit('d2adminTagCloseOther')
     },
     /**
      * 关闭全部的 tag
