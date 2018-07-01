@@ -10,8 +10,8 @@
       <!-- 顶栏 -->
       <el-header class="d2-theme-header">
         <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeActiveSetting.value}/logo/icon-only.png`">
-          <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeActiveSetting.value}/logo/all.png`">
+          <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
+          <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeActiveSetting.name}/logo/all.png`">
         </div>
         <div class="toggle-aside-btn" @click="collapse = !collapse">
           <d2-icon name="bars"/>
