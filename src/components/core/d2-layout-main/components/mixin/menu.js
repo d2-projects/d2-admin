@@ -1,9 +1,6 @@
 export default {
   methods: {
     handleMenuSelect (index, indexPath) {
-      console.group('handleMenuSelect')
-      console.log('index: ', index)
-      console.groupEnd()
       if (/^d2-menu-empty-\d+$/.test(index)) {
         this.$message('功能正在开发')
       } else {
