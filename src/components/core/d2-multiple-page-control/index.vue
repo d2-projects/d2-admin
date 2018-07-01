@@ -42,7 +42,9 @@ export default {
     },
     handleTabsEdit(tagName, action) {
       if (action === 'remove') {
-        this.closeTag(tagName)
+        if (tagName !== 'index') {
+          this.closeTag(tagName)
+        }
       }
     },
     /**
