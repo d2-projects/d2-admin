@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%;">
+  <div style="height: 100%;" class="d2-layout-main-menu-side">
     <el-menu
       :collapse="collapse"
       :unique-opened="true"
@@ -24,6 +24,8 @@ import menuMixin from '../mixin/menu'
 // 组件
 import d2LayoutMainMenuItem from '../-menu-item/index.vue'
 import d2LayoutMainMenuSub from '../-menu-sub/index.vue'
+// 插件
+import BScroll from 'better-scroll'
 
 export default {
   name: 'd2-layout-main-menu-side',
@@ -45,7 +47,8 @@ export default {
     return {
       menus: [],
       active: '',
-      asideHeight: 300
+      asideHeight: 300,
+      BS: null
     }
   },
   watch: {
@@ -67,7 +70,20 @@ export default {
   beforeDestroy () {
     window.onresize = function () {}
   },
-  methods: {
+  mounted () {
+    this.BS = new BScroll(this.$el, {
+      mouseWheel: true,
+      scrollbar: {
+        fade: true,
+        interactive: false
+      }
+    })
   }
 }
 </script>
+
+<style lang="scss">
+.d2-layout-main-menu-side {
+  position: relative;
+}
+</style>
