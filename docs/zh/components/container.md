@@ -7,6 +7,7 @@
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
 | type | 容器类型 | 非 | String | card ghost full | card |
+| scroll | 滚动优化 | 非 | Boolean |  | false |
 | responsive | 响应式宽度 | 非 | Boolean |  | false |
 
 ::: tip
@@ -77,6 +78,10 @@ export default {
   </d2-container>
 </template>
 ```
+
+`v1.1.4` 新增
+
+你可以通过设置 `:scroll="true"` 来启用自定义滚动条，看起来更美观一些
 
 ## 隐形页面容器
 
