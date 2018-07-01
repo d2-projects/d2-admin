@@ -34,7 +34,6 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-// TODO: 路由跳转后自动滚动到顶部
 router.afterEach(to => {
   // 需要的信息
   const app = router.app
