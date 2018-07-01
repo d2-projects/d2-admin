@@ -1,18 +1,34 @@
 <template>
-  <el-tabs
-    class="d2-multiple-page-control"
-    :value="pageCurrent"
-    type="card"
-    :closable="true"
-    @tab-click="handleClick"
-    @edit="handleTabsEdit">
-    <el-tab-pane
-      v-for="(page, index) in pageOpenedList"
-      :key="index"
-      :label="page.name"
-      :name="page.name">
-    </el-tab-pane>
-  </el-tabs>
+  <div class="d2-multiple-page-control-group">
+    <div class="d2-multiple-page-control-content">
+      <div class="d2-multiple-page-control-content-inner">
+        <el-tabs
+          class="d2-multiple-page-control"
+          :value="pageCurrent"
+          type="card"
+          :closable="true"
+          @tab-click="handleClick"
+          @edit="handleTabsEdit">
+          <el-tab-pane
+            v-for="(page, index) in pageOpenedList"
+            :key="index"
+            :label="page.name"
+            :name="page.name">
+          </el-tab-pane>
+        </el-tabs>
+      </div>
+    </div>
+    <div class="d2-multiple-page-control-btn">
+      <el-dropdown split-button @click="handleClick">
+        <d2-icon name="trash"/>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>关闭左侧</el-dropdown-item>
+          <el-dropdown-item>关闭右侧</el-dropdown-item>
+          <el-dropdown-item>全部关闭</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
+  </div>
 </template>
 
 <script>

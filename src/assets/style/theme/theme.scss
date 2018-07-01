@@ -234,6 +234,16 @@
             color: $theme-multiple-page-control-nav-next-color;
           }
         }
+        // 多页控制器的关闭控制
+        .d2-multiple-page-control-btn {
+          .el-dropdown {
+            .el-button-group {
+              .el-button {
+                border-color: $theme-multiple-page-control-border-color;
+              }
+            }
+          }
+        }
       }
       // 主体
       .d2-theme-container-main-body {
