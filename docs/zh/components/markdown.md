@@ -79,14 +79,10 @@ export default {
 > 链接: https://pan.baidu.com/s/1ggFW21l 密码: 877y
 ```
 
-markdown 中引用部分的文本由于被识别为百度云的分享链接，所以不会被当做 `blockquote` 渲染（非百度云链接的引用行不会改变），会以一种特别的块来显示
+markdown 中引用部分的文本由于被识别为百度云的分享链接，所以不会被当做 `blockquote` 渲染（非百度云链接的引用行不会改变），会以一种特别的块来显示，效果见下
 
-就像这样
-
-> https://pan.baidu.com/s/1kW6uUwB
-
-上面的块会嵌套在你的 markdown 渲染结果中
+![效果](./image/baiduyun.png)
 
 ::: tip
-了解 D2Admin 是如何在 markdown 中匹配百度云链接的？ [查看源码](https://github.com/FairyEver/d2-admin/blob/master/src/components/core/Markdown/plugin/baidupan.js)
+了解 D2Admin 是如何在 markdown 中匹配百度云链接的？ [查看源码](https://github.com/FairyEver/d2-admin/blob/master/src/components/core/d2-markdown/index.vue)
 :::
