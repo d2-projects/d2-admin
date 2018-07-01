@@ -1,20 +1,16 @@
 <template>
   <div style="height: 100%;">
-    <el-scrollbar v-if="menus.length > 0">
-      <div :style="{ height: `${asideHeight}px` }">
-        <el-menu
-          :collapse="collapse"
-          :unique-opened="true"
-          :default-active="active"
-          ref="menu"
-          @select="handleMenuSelect">
-          <template v-for="(menu, menuIndex) in menus">
-            <d2-layout-main-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
-            <d2-layout-main-menu-sub v-else :menu="menu" :key="menuIndex"/>
-          </template>
-        </el-menu>
-      </div>
-    </el-scrollbar>
+    <el-menu
+      :collapse="collapse"
+      :unique-opened="true"
+      :default-active="active"
+      ref="menu"
+      @select="handleMenuSelect">
+      <template v-for="(menu, menuIndex) in menus">
+        <d2-layout-main-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
+        <d2-layout-main-menu-sub v-else :menu="menu" :key="menuIndex"/>
+      </template>
+    </el-menu>
     <div v-if="menus.length === 0 && !collapse" class="menu-empty">
       <d2-icon name="hdd-o"/>
       <span>当前目录没有菜单</span>
@@ -68,19 +64,10 @@ export default {
       immediate: true
     }
   },
-  mounted () {
-    this.updateAsideHeight()
-    window.onresize = () => {
-      this.updateAsideHeight()
-    }
-  },
   beforeDestroy () {
     window.onresize = function () {}
   },
   methods: {
-    updateAsideHeight () {
-      this.asideHeight = this.$el.offsetHeight
-    }
   }
 }
 </script>
