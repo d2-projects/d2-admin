@@ -4,7 +4,7 @@
 
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
-| name | 图标名称 | 非 | String | 放在 src/assets/icons/svg 中的 .svg 文件名 | 空 |
+| name | 图标名称 | 非 | String | src/assets/icons/svg 中 .svg 文件名 | 空 |
 
 ## 使用方法
 

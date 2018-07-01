@@ -10,4 +10,4 @@
 
 [v-charts 文档](https://v-charts.js.org/#/)
 
-D2Admin 已经安装并注册完毕 v-charts，你可以直接使用
+处于对用户使用方便的角度考虑，从 `1.1.3` 开始使用 v-charts。项目中已经安装并注册完毕 v-charts，你可以直接使用
