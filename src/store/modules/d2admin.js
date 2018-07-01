@@ -94,6 +94,13 @@ export default {
       }
     },
     /**
+     * 关闭所有 tag
+     * @param {state} state vuex state
+     */
+    d2adminTagCloseAll (state) {
+      state.pageOpenedList.splice(1)
+    },
+    /**
      * 切换全屏
      * @param {state} state vuex state
      */
