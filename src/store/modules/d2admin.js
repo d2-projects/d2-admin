@@ -60,7 +60,7 @@ export default {
       state.tagPool = tagPool
     },
     /**
-     * 新增一个 tag
+     * 新增一个 tag (打开一个页面)
      * @param {state} state vuex state
      * @param {object} param1 new tag info
      */
@@ -80,6 +80,18 @@ export default {
           uuid: util.uuid(),
           value: state.pageOpenedList
         }).write()
+      }
+    },
+    /**
+     * 关闭一个 tag (关闭一个页面)
+     * @param {state} state vuex state
+     * @param {string} name close tag name
+     */
+    d2adminTagClose (state, name) {
+      // 找到这个页面在已经打开的数据里是第几个
+      const index = state.pageOpenedList.findIndex(page => page.name === name)
+      if (index >= 0) {
+        state.pageOpenedList.splice(index, 1)
       }
     },
     /**

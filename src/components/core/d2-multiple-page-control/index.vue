@@ -4,7 +4,8 @@
     :value="pageCurrent"
     type="card"
     :closable="true"
-    @tab-click="handleClick">
+    @tab-click="handleClick"
+    @edit="handleTabsEdit">
     <el-tab-pane
       v-for="(page, index) in pageOpenedList"
       :key="index"
@@ -38,6 +39,49 @@ export default {
           query: page.query
         })
       }
+    },
+    handleTabsEdit(tagName, action) {
+      if (action === 'remove') {
+        this.closeTag(tagName)
+      }
+    },
+    /**
+     * 关闭一个指定的 tag
+     */
+    closeTag (tagName) {
+      // 下个新的页面
+      let newPage = this.pageOpenedList[0]
+      // 如果关闭的页面就是当前显示的页面
+      if (this.pageCurrent === tagName) {
+        // 去找一个新的页面
+        let len = this.pageOpenedList.length
+        for (let i = 1; i < len; i++) {
+          if (this.pageOpenedList[i].name === tagName) {
+            if (i < len - 1) {
+              newPage = this.pageOpenedList[i + 1]
+            } else {
+              newPage = this.pageOpenedList[i - 1]
+            }
+            break
+          }
+        }
+      } else {
+        // 关闭的页面不是当前的页面
+        // 这里暂时不需要做什么
+      }
+      this.$store.commit('d2adminTagClose', tagName)
+      if (this.pageCurrent === tagName) {
+        this.linkTo(newPage)
+      }
+    },
+    // TODO: 需要完善赋值
+    linkTo ({ name, argu, query }) {
+      let routerObj = {
+        name,
+        params: argu || {},
+        query
+      }
+      this.$router.push(routerObj)
     }
   }
 }
