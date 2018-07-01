@@ -1,6 +1,6 @@
 <template>
   <el-table :data="themeList" v-bind="table">
-    <el-table-column prop="name" align="center" width="160"/>
+    <el-table-column prop="title" align="center" width="160"/>
     <el-table-column label="预览" width="120">
       <div
         slot-scope="scope"
@@ -10,15 +10,15 @@
     </el-table-column>
     <el-table-column prop="address" align="center">
       <template slot-scope="scope">
-        <el-button v-if="themeActive.value === scope.row.value" type="success" icon="el-icon-check" round>已激活</el-button>
-        <el-button v-else round @click="handleSelectTheme(scope.row.value)">使用</el-button>
+        <el-button v-if="themeActiveSetting.name === scope.row.name" type="success" icon="el-icon-check" round>已激活</el-button>
+        <el-button v-else round @click="handleSelectTheme(scope.row.name)">使用</el-button>
       </template>
     </el-table-column>
   </el-table>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'd2-theme-list',
   data () {
@@ -31,16 +31,18 @@ export default {
   },
   computed: {
     ...mapState({
-      themeList: state => state.d2admin.themeList,
-      themeActive: state => state.d2admin.themeActive
-    })
+      themeList: state => state.d2admin.themeList
+    }),
+    ...mapGetters([
+      'themeActiveSetting'
+    ])
   },
   methods: {
     ...mapMutations([
       'd2adminThemeSet'
     ]),
-    handleSelectTheme (value) {
-      this.d2adminThemeSet(value)
+    handleSelectTheme (name) {
+      this.d2adminThemeSet(name)
     }
   }
 }

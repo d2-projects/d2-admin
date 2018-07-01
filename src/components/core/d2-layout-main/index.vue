@@ -10,8 +10,8 @@
       <!-- 顶栏 -->
       <el-header class="d2-theme-header">
         <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeActive.value}/logo/icon-only.png`">
-          <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeActive.value}/logo/all.png`">
+          <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeActiveSetting.value}/logo/icon-only.png`">
+          <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeActiveSetting.value}/logo/all.png`">
         </div>
         <div class="toggle-aside-btn" @click="collapse = !collapse">
           <d2-icon name="bars"/>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'd2-layout-main',
   components: {
@@ -77,13 +77,15 @@ export default {
   },
   computed: {
     ...mapState({
-      themeActive: state => state.d2admin.themeActive,
       isGrayMode: state => state.d2admin.isGrayMode
     }),
+    ...mapGetters([
+      'themeActiveSetting'
+    ]),
     styleLayoutMainGroup () {
       return {
-        ...this.themeActive.backgroundImage ? {
-          backgroundImage: `url('${this.$assetsPublicPath}${this.themeActive.backgroundImage}')`
+        ...this.themeActiveSetting.backgroundImage ? {
+          backgroundImage: `url('${this.$assetsPublicPath}${this.themeActiveSetting.backgroundImage}')`
         } : {}
       }
     },
