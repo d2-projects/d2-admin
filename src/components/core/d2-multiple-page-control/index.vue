@@ -12,7 +12,7 @@
           <el-tab-pane
             v-for="(page, index) in pageOpenedList"
             :key="index"
-            :label="page.name"
+            :label="page.meta.title || '未命名'"
             :name="page.name">
           </el-tab-pane>
         </el-tabs>

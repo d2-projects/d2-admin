@@ -15,7 +15,13 @@ export default {
     tagPool: [],
     // 当前显示的多页面列表
     pageOpenedList: [
-      { name: 'index', title: '首页' }
+      {
+        name: 'index',
+        meta: {
+          title: '首页',
+          requiresAuth: false
+        }
+      }
     ],
     // 当前页面
     pageCurrent: ''
@@ -87,11 +93,12 @@ export default {
      */
     d2adminTagIncreate (state, { tag, argu, query }) {
       // 设置新的 tag 在新打开一个以前没打开过的页面时使用
-      let newTag = tag
-      newTag.argu = argu || newTag.argu
-      newTag.query = query || newTag.query
+      let newPage = tag
+      newPage.argu = argu || newPage.argu
+      newPage.query = query || newPage.query
+      newPage.argu = argu || newPage.argu
       // 添加进当前显示的页面数组
-      state.pageOpenedList.push(newTag)
+      state.pageOpenedList.push(newPage)
       // 更新设置到数据库
       this.commit('d2adminVuex2Db', 'pageOpenedList')
     },

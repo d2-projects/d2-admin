@@ -27,9 +27,9 @@ const frameIn = [
     redirect: { name: 'core-setting-index' },
     component: () => import('@/components/core/d2-layout-main'),
     children: (pre => [
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/core/setting/index'), meta: { ...meta, title: '首页' } },
-      { path: 'theme/theme', name: `${pre}theme-theme`, component: () => import('@/pages/core/setting/theme/theme.vue'), meta: { ...meta, title: '首页' } },
-      { path: 'theme/custom', name: `${pre}theme-custom`, component: () => import('@/pages/core/setting/theme/custom.vue'), meta: { ...meta, title: '首页' } }
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/core/setting/index'), meta: { ...meta, title: '设置首页' } },
+      { path: 'theme/theme', name: `${pre}theme-theme`, component: () => import('@/pages/core/setting/theme/theme.vue'), meta: { ...meta, title: '选择主题' } },
+      { path: 'theme/custom', name: `${pre}theme-custom`, component: () => import('@/pages/core/setting/theme/custom.vue'), meta: { ...meta, title: '个性化' } }
     ])('core-setting-')
   },
   {
@@ -39,7 +39,7 @@ const frameIn = [
     redirect: { name: 'demo-business-index' },
     component: () => import('@/components/core/d2-layout-main'),
     children: (pre => [
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/business/index'), meta: { ...meta, title: '首页' } }
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/business/index'), meta: { ...meta, title: '示例业务页面首页' } }
     ])('demo-business-')
   },
   {
@@ -49,12 +49,12 @@ const frameIn = [
     redirect: { name: 'demo-playground-index' },
     component: () => import('@/components/core/d2-layout-main'),
     children: (pre => [
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/playground/index'), meta: { ...meta, title: '首页' } },
-      { path: 'theme', name: `${pre}theme`, component: () => import('@/pages/demo/playground/theme'), meta: { ...meta, title: '首页' } },
-      { path: 'fullscreen', name: `${pre}fullscreen`, component: () => import('@/pages/demo/playground/fullscreen'), meta: { ...meta, title: '首页' } },
-      { path: 'gray', name: `${pre}gray`, component: () => import('@/pages/demo/playground/gray'), meta: { ...meta, title: '首页' } },
-      { path: 'page-cache/on', name: `${pre}page-cache-on`, component: () => import('@/pages/demo/playground/page-cache/on.vue'), meta: { ...meta, alive, title: '首页' } },
-      { path: 'page-cache/off', name: `${pre}page-cache-off`, component: () => import('@/pages/demo/playground/page-cache/off.vue'), meta: { ...meta, title: '首页' } }
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/playground/index'), meta: { ...meta, title: '试验台首页' } },
+      { path: 'theme', name: `${pre}theme`, component: () => import('@/pages/demo/playground/theme'), meta: { ...meta, title: '主题' } },
+      { path: 'fullscreen', name: `${pre}fullscreen`, component: () => import('@/pages/demo/playground/fullscreen'), meta: { ...meta, title: '全屏' } },
+      { path: 'gray', name: `${pre}gray`, component: () => import('@/pages/demo/playground/gray'), meta: { ...meta, title: '灰度模式' } },
+      { path: 'page-cache/on', name: `${pre}page-cache-on`, component: () => import('@/pages/demo/playground/page-cache/on.vue'), meta: { ...meta, alive, title: '开启缓存' } },
+      { path: 'page-cache/off', name: `${pre}page-cache-off`, component: () => import('@/pages/demo/playground/page-cache/off.vue'), meta: { ...meta, title: '关闭缓存' } }
     ])('demo-playground-')
   },
   {
