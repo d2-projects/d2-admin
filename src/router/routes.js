@@ -128,6 +128,7 @@ const frameIn = [
     children: (pre => [
       { path: 'bigdata-table', name: `${pre}bigdata-table`, component: () => import('@/pages/demo/components/bigdata-table'), meta: { ...meta, title: '百万级数据表格' } },
       { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue'), meta: { ...meta, title: '布局组件 填充' } },
+      { path: 'container/full-bs', name: `${pre}container-full-bs`, component: () => import('@/pages/demo/components/container/full-bs.vue'), meta: { ...meta, title: '布局组件 填充 滚动优化' } },
       { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue'), meta: { ...meta, title: '布局组件 隐形' } },
       { path: 'container/card', name: `${pre}container-card`, component: () => import('@/pages/demo/components/container/card.vue'), meta: { ...meta, title: '布局组件 卡片' } },
       { path: 'contextmenu/simple', name: `${pre}contextmenu-simple`, component: () => import('@/pages/demo/components/contextmenu/simple.vue'), meta: { ...meta, title: '右键菜单 基础' } },
