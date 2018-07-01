@@ -20,11 +20,20 @@
     </div>
     <div class="d2-multiple-page-control-btn">
       <el-dropdown split-button @click="handleClick">
-        <d2-icon name="trash"/>
+        <d2-icon name="times"/>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>关闭左侧</el-dropdown-item>
-          <el-dropdown-item>关闭右侧</el-dropdown-item>
-          <el-dropdown-item>全部关闭</el-dropdown-item>
+          <el-dropdown-item>
+            <d2-icon name="arrow-left" class="d2-mr-10"/>
+            关闭左侧
+          </el-dropdown-item>
+          <el-dropdown-item>
+            <d2-icon name="arrow-right" class="d2-mr-10"/>
+            关闭右侧
+          </el-dropdown-item>
+          <el-dropdown-item>
+            <d2-icon name="times" class="d2-mr-10"/>
+            全部关闭
+          </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -46,6 +55,9 @@ export default {
     })
   },
   methods: {
+    /**
+     * 接收点击 tab 标签的事件
+     */
     handleClick (tab, event) {
       const page = this.pageOpenedList.find(page => page.name === tab.name)
       if (page) {
@@ -56,11 +68,13 @@ export default {
         })
       }
     },
+    /**
+     * 点击 tab 上的删除按钮后首先触发这里
+     */
     handleTabsEdit(tagName, action) {
       if (action === 'remove') {
-        if (tagName !== 'index') {
-          this.closeTag(tagName)
-        }
+        // 首页的删除按钮已经隐藏 因此这里不用判断是 index
+        this.closeTag(tagName)
       }
     },
     /**
