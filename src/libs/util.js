@@ -110,7 +110,7 @@ util.checkUpdate = function (vm) {
     .then(res => {
       let version = res.tag_name
       const update = semver.lt(packJson.version, version)
-      if (update) {
+      if (vm.$env === 'development' && update) {
         vm.$nextTick(() => {
           vm.$notify({
             title: `D2Admin 新版本 ${res.name}`,
@@ -119,6 +119,7 @@ util.checkUpdate = function (vm) {
             message: `
               <p>当前版本: ${packJson.version}</p>
               <p>${dayjs(res.created_at).format('YYYY年M月D日')}更新 版本号: ${res.tag_name}</p>
+              <p style="color: #CCC;">此信息只在开发环境提示</p>
               <p>
                 <a
                   href="${res.html_url}"
