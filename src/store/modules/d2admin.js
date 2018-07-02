@@ -241,7 +241,11 @@ export default {
      */
     d2adminThemeLoad (state) {
       const themeActiveName = db.get('themeActiveName').find({uuid: util.uuid()}).value()
-      this.commit('d2adminThemeSet', themeActiveName.value || state.themeList[0].name)
+      if (themeActiveName) {
+        this.commit('d2adminThemeSet', themeActiveName.value)
+      } else {
+        this.commit('d2adminThemeSet', state.themeList[0].name)
+      }
     }
   }
 }
