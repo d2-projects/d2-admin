@@ -322,7 +322,7 @@ const demoPlayground = {
       icon: 'assistive-listening-systems',
       children: [
         { path: `${pre}page-argu/send`, title: '发送' },
-        { path: `${pre}page-argu/get`, title: '接收' }
+        { path: `${pre}page-argu/get/username-from-menu?userid=userid-from-menu`, title: '接收' }
       ]
     }
   ])('/demo/playground/')

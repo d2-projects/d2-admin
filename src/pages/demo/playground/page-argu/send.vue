@@ -8,7 +8,7 @@
         <el-input v-model="sendForm.userid"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="handleSubmit('sendForm')">跳转</el-button>
+        <el-button type="primary" @click="handleSubmit('sendForm')">跳转到接收页面</el-button>
       </el-form-item>
     </el-form>
   </d2-container>
@@ -24,21 +24,27 @@ export default {
       },
       rules: {
         username: [
-          { required: true, message: '请输入活动名称', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          { required: true, message: '请输入要发送的用户名', trigger: 'blur' }
         ],
         userid: [
-          { required: true, message: '请输入活动名称', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          { required: true, message: '请输入要发送的用户ID', trigger: 'blur' }
         ]
       }
-    };
+    }
   },
   methods: {
     handleSubmit (formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert('submit!')
+          this.$router.push({
+            name: 'demo-playground-page-argu-get',
+            params: {
+              username: this.sendForm.username
+            },
+            query: {
+              userid: this.sendForm.userid
+            }
+          })
         } else {
           return false
         }
