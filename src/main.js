@@ -97,6 +97,7 @@ new Vue({
     this.getAllTagFromRoutes()
   },
   mounted () {
+    this.$store.commit('d2adminPageOpenedListLoad')
     // D2Admin 开发环境检查更新
     util.checkUpdate(this)
   },
