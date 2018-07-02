@@ -3,14 +3,23 @@ import Cookies from 'js-cookie'
 let util = {}
 
 /**
- * 得到现在的用户
+ * @description 得到现在的用户
  */
 util.uuid = function () {
   return Cookies.get('uuid')
 }
 
 /**
- * 打开全屏
+ * @description 更新标题
+ * @param {string} title 标题
+ */
+util.title = function (title) {
+  const prefix = 'D2Admin'
+  window.document.title = `${prefix}${title ? ` | ${title}` : ''}`
+}
+
+/**
+ * @description 打开全屏
  */
 util.openFullScreen = function () {
   const body = document.body
@@ -26,7 +35,7 @@ util.openFullScreen = function () {
 }
 
 /**
- * 关闭全屏
+ * @description 关闭全屏
  */
 util.exitFullScreen = function () {
   if (document.exitFullscreen) {
@@ -41,7 +50,7 @@ util.exitFullScreen = function () {
 }
 
 /**
- * 在每次打开新页面的时候调用 打开一个新的 tab
+ * @description 在每次打开新页面的时候调用 打开一个新的 tab
  * @param {object} vm vue
  * @param {string} name route name
  * @param {object} argu arguments
@@ -72,7 +81,7 @@ util.openNewPage = function (vm, name, argu, query) {
 }
 
 /**
- * 判断是否在其内
+ * @description 判断是否在其内
  * @param {*} ele element
  * @param {array} targetArr array
  */
