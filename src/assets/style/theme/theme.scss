@@ -281,6 +281,15 @@
               background: $theme-container-background-color;
             }
           }
+          // 隐形布局组件
+          .d2-container-ghost {
+            .d2-container-ghost-header {
+              border: $theme-container-border-outer;
+              &>.el-card__body {
+                background: $theme-container-header-footer-background-color;
+              }
+            }
+          }
         }
       }
     }
