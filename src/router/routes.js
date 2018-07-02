@@ -29,7 +29,8 @@ const frameIn = [
     children: (pre => [
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/core/setting/index'), meta: { ...meta, title: '设置首页' } },
       { path: 'theme/theme', name: `${pre}theme-theme`, component: () => import('@/pages/core/setting/theme/theme.vue'), meta: { ...meta, title: '选择主题' } },
-      { path: 'theme/custom', name: `${pre}theme-custom`, component: () => import('@/pages/core/setting/theme/custom.vue'), meta: { ...meta, title: '个性化' } }
+      { path: 'theme/custom', name: `${pre}theme-custom`, component: () => import('@/pages/core/setting/theme/custom.vue'), meta: { ...meta, title: '个性化' } },
+      { path: 'releases', name: `${pre}releases`, component: () => import('@/pages/core/setting/releases'), meta: { ...meta, title: '版本' } }
     ])('core-setting-')
   },
   {

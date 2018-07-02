@@ -333,7 +333,8 @@ const setting = {
         { path: `${pre}theme/theme`, title: '选择主题' },
         { path: `${pre}theme/custom`, title: '个性化' }
       ]
-    }
+    },
+    { path: `${pre}releases`, title: '版本', icon: 'info-circle' }
   ])('/core/setting/')
 }
 

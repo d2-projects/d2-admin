@@ -2,12 +2,19 @@ import util from '@/libs/util.js'
 import db from '@/libs/db.js'
 import themeList from '@/assets/style/theme/list.js'
 
+// 获取项目信息
+import packJson from '../../../package.json'
+
 export default {
   state: {
     // 拉取的最新版本信息
     releases: {},
+    // D2Admin 版本
+    version: packJson.version,
     // 有更新
     update: false,
+    // 更新提醒弹窗
+    updateNotify: true,
     // 全屏
     isFullScreen: false,
     // 灰度
@@ -73,6 +80,15 @@ export default {
      */
     d2adminUpdateSet (state, update) {
       state.update = update
+    },
+    /**
+     * @description 设置是否有更新的时候显示弹窗
+     * @class updateNotify
+     * @param {state} state vuex state
+     * @param {boolean} update updateNotify value
+     */
+    d2adminUpdateNotifySet (state, updateNotify) {
+      state.updateNotify = updateNotify
     },
     /**
      * @class pageCurrent
