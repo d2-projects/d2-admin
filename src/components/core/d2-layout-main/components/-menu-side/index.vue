@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%;" class="d2-layout-main-menu-side">
+  <div class="d2-layout-main-menu-side">
     <el-menu
       :collapse="collapse"
       :unique-opened="true"
@@ -82,5 +82,7 @@ export default {
 <style lang="scss">
 .d2-layout-main-menu-side {
   position: relative;
+  height: 100%;
+  overflow: hidden;
 }
 </style>
