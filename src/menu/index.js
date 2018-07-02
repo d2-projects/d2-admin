@@ -382,7 +382,7 @@ export default [
   },
   {
     path: '/demo/business',
-    title: '演示页面',
+    title: '示例',
     icon: 'briefcase'
   },
   setting
