@@ -110,7 +110,7 @@ util.checkUpdate = function (vm) {
     .then(res => {
       let version = res.tag_name
       const update = semver.lt(packJson.version, version)
-      if (vm.$env === 'development' && update) {
+      if (vm.$env === 'development' && update && vm.$store.state.d2admin.updateNotify) {
         vm.$nextTick(() => {
           vm.$notify({
             title: `D2Admin 新版本 ${res.name}`,

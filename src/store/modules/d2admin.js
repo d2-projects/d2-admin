@@ -14,7 +14,7 @@ export default {
     // 有更新
     update: false,
     // 更新提醒弹窗
-    updateNotify: true,
+    updateNotify: false,
     // 全屏
     isFullScreen: false,
     // 灰度
