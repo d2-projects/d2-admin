@@ -1,5 +1,5 @@
 <template>
-  <div class="container-component" :class="{responsive}">
+  <div class="container-component" :class="{responsive}" ref="container">
     <!-- [card] 卡片容器 -->
     <el-card v-if="type === 'card'" shadow="never" class="d2-container-card d2-mr d2-mb">
       <slot v-if="$slots.header" name="header" slot="header"/>
@@ -26,6 +26,9 @@
 </template>
 
 <script>
+// 插件
+import BScroll from 'better-scroll'
+// 组件
 import d2ContainerFull from './components/d2-container-full.vue'
 import d2ContainerFullBs from './components/d2-container-full-bs.vue'
 export default {
@@ -53,6 +56,20 @@ export default {
   components: {
     'd2-container-full': d2ContainerFull,
     'd2-container-full-bs': d2ContainerFullBs
+  },
+  data () {
+    return {
+      BS: null
+    }
+  },
+  mounted () {
+    this.BS = new BScroll(this.$refs.container, {
+      mouseWheel: true,
+      scrollbar: {
+        fade: true,
+        interactive: false
+      }
+    })
   }
 }
 </script>
@@ -65,7 +82,7 @@ export default {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  overflow: auto;
+  overflow: hidden;
 }
 @media (min-width: 576px) {
   // 根据你的需要在这里添加样式
