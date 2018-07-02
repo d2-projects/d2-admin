@@ -64,6 +64,8 @@ import pluginLog from '@/plugin/log'
 import pluginOpen from '@/plugin/open'
 // 插件 支持百万级数据的表格
 import bigdataTable from '@/plugin/vue-bigdata-table'
+// 插件 json 展示
+import vueJsonTreeView from 'vue-json-tree-view'
 
 // 打包的设置 用户获取路径
 import buildConfig from '../config/index'
@@ -77,6 +79,7 @@ Vue.use(pluginExport)
 Vue.use(pluginLog)
 Vue.use(pluginOpen)
 Vue.use(bigdataTable)
+Vue.use(vueJsonTreeView)
 
 Vue.config.productionTip = false
 
