@@ -18,7 +18,7 @@
         :type="updateNotify ? 'primary' : 'default'"
         size="mini"
         @click="d2adminUpdateNotifySet(!updateNotify)">
-        {{updateNotify ? '关闭更新提醒' : '打开更新提醒'}}
+        {{updateNotify ? '关闭更新提醒 (当前:打开)' : '打开更新提醒 (当前:关闭)'}}
       </el-button>
     </template>
   </d2-container>

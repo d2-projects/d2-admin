@@ -49,18 +49,34 @@ export default {
   mutations: {
     /**
      * @class 通用工具
-     * @description 将 state 中某一项存储到数据库
+     * @description 将 state 中某一项存储到数据库 需要 uuid
      * @param {state} state vuex state
+     * @param {string} key key name
      */
     d2adminVuex2DbByUuid (state, key) {
-      const setting = db.get(key).find({uuid: util.uuid()})
-      if (setting.value()) {
-        setting.assign({value: state[key]}).write()
+      const row = db.get(key).find({uuid: util.uuid()})
+      if (row.value()) {
+        row.assign({value: state[key]}).write()
       } else {
         db.get(key).push({
           uuid: util.uuid(),
           value: state[key]
         }).write()
+      }
+    },
+    /**
+     * @class 通用工具
+     * @description 将数据库中的某项数据拿到 vuex 需要 uuid
+     * @param {state} state vuex state
+     * @param {string} key key name
+     * @param {*} defaultValue default value
+     */
+    d2adminDb2VuexByUuid (state, key, defaultValue) {
+      const row = db.get(key).find({uuid: util.uuid()}).value()
+      if (row) {
+        state[key] = row.value
+      } else {
+        state[key] = defaultValue
       }
     },
     /**
@@ -267,10 +283,18 @@ export default {
         // 设置为列表第一个主题
         state.themeActiveName = state.themeList[0].name
       }
-      // 设置 dom
-      document.body.className = `theme-${state.themeActiveName}`
+      // 将 vuex 中的主题应用到 dom
+      this.commit('d2adminTheme2dom')
       // 保存到数据库
       this.commit('d2adminVuex2DbByUuid', 'themeActiveName')
+    },
+    /**
+     * @class themeActiveName
+     * @description 将 vuex 中的主题应用到 dom
+     * @param {state} state vuex state
+     */
+    d2adminTheme2dom (state) {
+      document.body.className = `theme-${state.themeActiveName}`
     },
     /**
      * @class themeActiveName
@@ -278,12 +302,8 @@ export default {
      * @param {state} state vuex state
      */
     d2adminThemeLoad (state) {
-      const themeActiveName = db.get('themeActiveName').find({uuid: util.uuid()}).value()
-      if (themeActiveName) {
-        this.commit('d2adminThemeSet', themeActiveName.value)
-      } else {
-        this.commit('d2adminThemeSet', state.themeList[0].name)
-      }
+      this.commit('d2adminDb2VuexByUuid', 'themeActiveName', state.themeList[0].name)
+      this.commit('d2adminTheme2dom')
     }
   }
 }
