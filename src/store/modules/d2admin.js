@@ -52,7 +52,7 @@ export default {
      * @description 将 state 中某一项存储到数据库
      * @param {state} state vuex state
      */
-    d2adminVuex2Db (state, key) {
+    d2adminVuex2DbByUuid (state, key) {
       const setting = db.get(key).find({uuid: util.uuid()})
       if (setting.value()) {
         setting.assign({value: state[key]}).write()
@@ -121,7 +121,7 @@ export default {
       page.query = query || page.query
       state.pageOpenedList.splice(index, 1, page)
       // 更新设置到数据库
-      this.commit('d2adminVuex2Db', 'pageOpenedList')
+      this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
     },
     /**
      * @class pageOpenedList
@@ -138,7 +138,7 @@ export default {
       // 添加进当前显示的页面数组
       state.pageOpenedList.push(newPage)
       // 更新设置到数据库
-      this.commit('d2adminVuex2Db', 'pageOpenedList')
+      this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
     },
     /**
      * @class pageOpenedList
@@ -153,7 +153,7 @@ export default {
         state.pageOpenedList.splice(index, 1)
       }
       // 更新设置到数据库
-      this.commit('d2adminVuex2Db', 'pageOpenedList')
+      this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
     },
     /**
      * @class pageOpenedList
@@ -171,7 +171,7 @@ export default {
         state.pageOpenedList.splice(1, currentIndex - 1)
       }
       // 更新设置到数据库
-      this.commit('d2adminVuex2Db', 'pageOpenedList')
+      this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
     },
     /**
      * @class pageOpenedList
@@ -187,7 +187,7 @@ export default {
       })
       state.pageOpenedList.splice(currentIndex + 1)
       // 更新设置到数据库
-      this.commit('d2adminVuex2Db', 'pageOpenedList')
+      this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
     },
     /**
      * @class pageOpenedList
@@ -208,7 +208,7 @@ export default {
         state.pageOpenedList.splice(1, currentIndex - 1)
       }
       // 更新设置到数据库
-      this.commit('d2adminVuex2Db', 'pageOpenedList')
+      this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
     },
     /**
      * @class pageOpenedList
@@ -218,7 +218,7 @@ export default {
     d2adminTagCloseAll (state) {
       state.pageOpenedList.splice(1)
       // 更新设置到数据库
-      this.commit('d2adminVuex2Db', 'pageOpenedList')
+      this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
     },
     /**
      * @class isFullScreen
@@ -270,7 +270,7 @@ export default {
       // 设置 dom
       document.body.className = `theme-${state.themeActiveName}`
       // 保存到数据库
-      this.commit('d2adminVuex2Db', 'themeActiveName')
+      this.commit('d2adminVuex2DbByUuid', 'themeActiveName')
     },
     /**
      * @class themeActiveName
