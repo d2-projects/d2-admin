@@ -80,6 +80,7 @@ export default {
 </script>
 
 <style lang="scss">
+// TODO: 兼容火狐浏览器需要改这里
 .d2-layout-main-menu-side {
   position: relative;
   height: 100%;
