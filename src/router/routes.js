@@ -150,6 +150,7 @@ const frameIn = [
       { path: 'icon/select', name: `${pre}icon-select`, component: () => import('@/pages/demo/components/icon/select.vue'), meta: { ...meta, title: '图表选择器组件' } },
       { path: 'icon/svg', name: `${pre}icon-svg`, component: () => import('@/pages/demo/components/icon/svg.vue'), meta: { ...meta, title: 'svg 图标' } },
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/components/index'), meta: { ...meta, title: '组件首页' } },
+      { path: 'json-tree', name: `${pre}json-tree`, component: () => import('@/pages/demo/components/json-tree'), meta: { ...meta, title: 'JSON 展示' } },
       { path: 'layout/grid', name: `${pre}layout-grid`, component: () => import('@/pages/demo/components/layout/grid.vue'), meta: { ...meta, title: '拖拽网格布局' } },
       { path: 'layout/splitpane', name: `${pre}layout-splitpane`, component: () => import('@/pages/demo/components/layout/splitpane.vue'), meta: { ...meta, title: '区域布局' } },
       { path: 'markdown/source', name: `${pre}markdown-source`, component: () => import('@/pages/demo/components/markdown/source.vue'), meta: { ...meta, title: 'markdown指定资源渲染' } },

@@ -123,7 +123,8 @@ const demoComponents = {
     { path: `${pre}countup`, title: '数字动画', icon: 'motorcycle' },
     { path: `${pre}editor-quill`, title: '富文本编辑器', icon: 'pencil-square-o (edit, edit)' },
     { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器', icon: 'font' },
-    { path: `${pre}highlight`, title: '代码高亮显示', icon: 'code' }
+    { path: `${pre}highlight`, title: '代码高亮显示', icon: 'code' },
+    { path: `${pre}json-tree`, title: 'JSON 展示', icon: 'sitemap' }
   ])('/demo/components/')
 }
 
