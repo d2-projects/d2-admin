@@ -14,7 +14,10 @@
       <d2-markdown key="noupdate" :source="up2date"/>
     </div>
     <template slot="footer">
-      <el-button type="primary" size="mini" @click="d2adminUpdateNotifySet(!updateNotify)">
+      <el-button
+        :type="updateNotify ? 'primary' : 'default'"
+        size="mini"
+        @click="d2adminUpdateNotifySet(!updateNotify)">
         {{updateNotify ? '关闭更新提醒' : '打开更新提醒'}}
       </el-button>
     </template>
