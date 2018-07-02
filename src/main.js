@@ -93,9 +93,7 @@ new Vue({
   },
   mounted () {
     // D2Admin 开发环境检查更新
-    if (this.$env === 'development') {
-      util.checkUpdate(this)
-    }
+    util.checkUpdate(this)
   },
   methods: {
     /**
