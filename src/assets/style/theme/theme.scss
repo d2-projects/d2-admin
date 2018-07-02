@@ -249,7 +249,8 @@
       .d2-theme-container-main-body {
         // 布局组件
         .container-component {
-          // [组件] d2-container-full
+          // [组件]
+          // d2-container-full 填充型
           .d2-container-full {
             border: $theme-container-border-outer;
             border-top: none;
@@ -266,16 +267,17 @@
               background: $theme-container-header-footer-background-color;
             }
           }
-          // [组件] d2-container-card
+          // [组件]
+          // d2-container-card 卡片型
           .d2-container-card {
             border: $theme-container-border-outer;
             border-top: none;
             background: transparent;
-            .el-card__header {
+            &>.el-card__header {
               border-bottom: $theme-container-border-inner;
               background: $theme-container-header-footer-background-color;
             }
-            .el-card__body {
+            &>.el-card__body {
               background: $theme-container-background-color;
             }
           }
