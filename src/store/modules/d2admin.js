@@ -130,7 +130,7 @@ export default {
      * @param {state} state vuex state
      * @param {info} param1 new page info
      */
-    d2adminpageOpenedListUpdateItem (state, { index, argu, query }) {
+    d2adminPageOpenedListUpdateItem (state, { index, argu, query }) {
       // 更新页面列表某一项
       let page = state.pageOpenedList[index]
       page.argu = argu || page.argu
@@ -138,6 +138,14 @@ export default {
       state.pageOpenedList.splice(index, 1, page)
       // 更新设置到数据库
       this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
+    },
+    /**
+     * @class pageOpenedList
+     * @description 从数据库载入分页列表
+     * @param {state} state vuex state
+     */
+    d2adminPageOpenedListLoad (state) {
+      this.commit('d2adminDb2VuexByUuid', 'pageOpenedList', state.pageOpenedList)
     },
     /**
      * @class pageOpenedList

@@ -75,7 +75,7 @@ util.openNewPage = function (vm, name, argu, query) {
   })
   if (pageOpend) {
     // 页面以前打开过 但是新的页面可能 name 一样，参数不一样
-    vm.$store.commit('d2adminpageOpenedListUpdateItem', { index: pageOpendIndex, argu, query })
+    vm.$store.commit('d2adminPageOpenedListUpdateItem', { index: pageOpendIndex, argu, query })
   } else {
     // 页面以前没有打开过
     const tagPool = vm.$store.state.d2admin.tagPool
