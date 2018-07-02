@@ -52,7 +52,7 @@ export default {
   .d2-container-full__body {
     flex-grow: 1;
     padding: 0px 20px;
-    overflow: auto;
+    overflow: hidden;
     position: relative;
   }
   .d2-container-full__footer {

@@ -8,6 +8,7 @@
       :title="item.title"
       :code="JSON.stringify(item.json, null, 2)"
       :mock="mockResult[index]"
+      style="margin-bottom: 0px !important;"
       @reload="doMock(index)">
     </d2-demo-mock-card>
   </d2-container>
