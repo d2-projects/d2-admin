@@ -1,7 +1,7 @@
 <template>
   <div class="container-component" :class="{responsive}" ref="container">
     <!-- [card] 卡片容器 -->
-    <el-card v-if="type === 'card'" shadow="never" class="d2-container-card d2-mr d2-mb">
+    <el-card v-if="type === 'card'" shadow="never" class="d2-container-card d2-mr">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
     </el-card>
