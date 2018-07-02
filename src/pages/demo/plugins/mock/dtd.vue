@@ -20,6 +20,7 @@
       :title="regexp.title"
       :code="regexp.code"
       :mock="regexp.mocked"
+      style="margin-bottom: 0px !important;"
       @reload="regexpMock()">
     </d2-demo-mock-card>
   </d2-container>

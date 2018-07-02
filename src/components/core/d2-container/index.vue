@@ -63,13 +63,15 @@ export default {
     }
   },
   mounted () {
-    this.BS = new BScroll(this.$refs.container, {
-      mouseWheel: true,
-      scrollbar: {
-        fade: true,
-        interactive: false
-      }
-    })
+    if (this.type !== 'full') {
+      this.BS = new BScroll(this.$refs.container, {
+        mouseWheel: true,
+        scrollbar: {
+          fade: true,
+          interactive: false
+        }
+      })
+    }
   }
 }
 </script>
