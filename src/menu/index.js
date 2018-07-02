@@ -315,6 +315,15 @@ const demoPlayground = {
         { path: `${pre}page-cache/on`, title: '开启缓存' },
         { path: `${pre}page-cache/off`, title: '关闭缓存' }
       ]
+    },
+    {
+      path: `${pre}page-argu`,
+      title: '参数传递和留存',
+      icon: 'assistive-listening-systems',
+      children: [
+        { path: `${pre}page-argu/send`, title: '发送' },
+        { path: `${pre}page-argu/get`, title: '接收' }
+      ]
     }
   ])('/demo/playground/')
 }
