@@ -75,6 +75,33 @@ export default {
       state[key] = row ? row.value : defaultValue
     },
     /**
+     * @class 通用工具
+     * @description 将 state 中某一项存储到数据库 不需要 uuid 所有用户共享
+     * @param {state} state vuex state
+     * @param {string} key key name
+     */
+    d2adminVuex2Db (state, key) {
+      const row = db.get(key).find({pub: 'pub'})
+      if (row.value()) {
+        row.assign({value: state[key]}).write()
+      } else {
+        db.get(key).push({
+          pub: 'pub',
+          value: state[key]
+        }).write()
+      }
+    },
+    /**
+     * @class 通用工具
+     * @description 从数据库取值到 vuex 不需要 uuid 所有用户共享
+     * @param {state} state vuex state
+     * @param {object} param1 key and default value
+     */
+    d2adminDb2Vuex (state, { key, defaultValue }) {
+      const row = db.get(key).find({pub: 'pub'}).value()
+      state[key] = row ? row.value : defaultValue
+    },
+    /**
      * @description 更新远端的版本信息
      * @class releases
      * @param {state} state vuex state
@@ -93,13 +120,26 @@ export default {
       state.update = update
     },
     /**
-     * @description 设置是否有更新的时候显示弹窗
+     * @description 是否有更新的时候显示弹窗
      * @class updateNotify
      * @param {state} state vuex state
      * @param {boolean} update updateNotify value
      */
     d2adminUpdateNotifySet (state, updateNotify) {
       state.updateNotify = updateNotify
+      this.commit('d2adminVuex2Db', 'updateNotify')
+    },
+    /**
+     * @description 是否有更新的时候显示弹窗 <- 从数据库更新这个设置
+     * @class updateNotify
+     * @param {state} state vuex state
+     * @param {boolean} update updateNotify value
+     */
+    d2adminUpdateNotifyLoad (state, updateNotify) {
+      this.commit('d2adminDb2Vuex', {
+        key: 'updateNotify',
+        defaultValue: true
+      })
     },
     /**
      * @class pageCurrent

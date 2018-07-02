@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 export default {
   name: 'd2-layout-main',
   components: {
@@ -97,15 +97,6 @@ export default {
       }
       return false
     }
-  },
-  mounted () {
-    // 加载主题
-    this.d2adminThemeLoad()
-  },
-  methods: {
-    ...mapMutations([
-      'd2adminThemeLoad'
-    ])
   }
 }
 </script>
