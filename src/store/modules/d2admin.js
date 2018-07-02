@@ -66,18 +66,13 @@ export default {
     },
     /**
      * @class 通用工具
-     * @description 将数据库中的某项数据拿到 vuex 需要 uuid
+     * @description 从数据库取值到 vuex 需要 uuid
      * @param {state} state vuex state
-     * @param {string} key key name
-     * @param {*} defaultValue default value
+     * @param {object} param1 key and default value
      */
-    d2adminDb2VuexByUuid (state, key, defaultValue) {
+    d2adminDb2VuexByUuid (state, { key, defaultValue }) {
       const row = db.get(key).find({uuid: util.uuid()}).value()
-      if (row) {
-        state[key] = row.value
-      } else {
-        state[key] = defaultValue
-      }
+      state[key] = row ? row.value : defaultValue
     },
     /**
      * @description 更新远端的版本信息
@@ -145,7 +140,10 @@ export default {
      * @param {state} state vuex state
      */
     d2adminPageOpenedListLoad (state) {
-      this.commit('d2adminDb2VuexByUuid', 'pageOpenedList', state.pageOpenedList)
+      this.commit('d2adminDb2VuexByUuid', {
+        key: 'pageOpenedList',
+        defaultValue: state.pageOpenedList
+      })
     },
     /**
      * @class pageOpenedList
@@ -310,7 +308,10 @@ export default {
      * @param {state} state vuex state
      */
     d2adminThemeLoad (state) {
-      this.commit('d2adminDb2VuexByUuid', 'themeActiveName', state.themeList[0].name)
+      this.commit('d2adminDb2VuexByUuid', {
+        key: 'themeActiveName',
+        defaultValue: state.themeList[0].name
+      })
       this.commit('d2adminTheme2dom')
     }
   }
