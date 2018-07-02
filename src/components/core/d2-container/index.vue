@@ -7,7 +7,9 @@
     </el-card>
     <!-- [ghost] 隐形的容器 -->
     <div v-if="type === 'ghost'" class="d2-container-ghost">
-      <slot name="header"/>
+      <el-card v-if="$slots.header">
+        <slot name="header"/>
+      </el-card>
       <slot/>
     </div>
     <!-- [container-full] 填充 -->
