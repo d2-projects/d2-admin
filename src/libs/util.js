@@ -104,6 +104,7 @@ util.isOneOf = function (ele, targetArr) {
  * @description 检查版本更新
  * @param {object} vm vue
  */
+// TODO: 添加 跳过此版本 选项
 util.checkUpdate = function (vm) {
   axios.get('https://api.github.com/repos/FairyEver/d2-admin/releases/latest')
     .then(res => {
