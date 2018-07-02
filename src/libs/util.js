@@ -117,7 +117,8 @@ util.checkUpdate = function (vm) {
             duration: 0,
             dangerouslyUseHTMLString: true,
             message: `
-              <p>${dayjs(res.created_at).format('YYYY年M月D日')}更新 版本号:${res.tag_name}</p>
+              <p>当前版本: ${packJson.version}</p>
+              <p>${dayjs(res.created_at).format('YYYY年M月D日')}更新 版本号: ${res.tag_name}</p>
               <p>
                 <a
                   href="${res.html_url}"
