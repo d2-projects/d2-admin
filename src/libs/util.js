@@ -2,6 +2,7 @@
 import Cookies from 'js-cookie'
 import axios from 'axios'
 import semver from 'semver'
+import dayjs from 'dayjs'
 
 // 获取项目信息
 import packJson from '../../package.json'
@@ -105,9 +106,26 @@ util.checkUpdate = function (vm) {
       let version = res.tag_name
       const update = semver.lt(packJson.version, version)
       if (update) {
-        console.log('update')
-      } else {
-        console.log('no update')
+        vm.$nextTick(() => {
+          vm.$notify({
+            title: `D2Admin 新版本 ${res.name}`,
+            duration: 0,
+            dangerouslyUseHTMLString: true,
+            message: `
+              <p>${dayjs(res.created_at).format('YYYY年M月D日')}更新 版本号:${res.tag_name}</p>
+              <p>
+                <a
+                  href="${res.html_url}"
+                  class="el-button el-button--primary el-button--mini"
+                  style="text-decoration: none; margin-top: 10px;"
+                  target="blank">
+                  <i class="fa fa-link" style="margin-right: 5px;"></i>
+                  详细信息
+                </a>
+              </p>
+            `.trim()
+          })
+        })
       }
       vm.$store.commit('d2adminUpdateSet', update)
       vm.$store.commit('d2adminReleasesSet', res)
