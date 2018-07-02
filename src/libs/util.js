@@ -1,4 +1,10 @@
+// 插件
 import Cookies from 'js-cookie'
+import axios from 'axios'
+import semver from 'semver'
+
+// 获取项目信息
+import packJson from '../../package.json'
 
 let util = {}
 
@@ -91,6 +97,21 @@ util.isOneOf = function (ele, targetArr) {
   } else {
     return false
   }
+}
+
+util.checkUpdate = function (vm) {
+  axios.get('https://api.github.com/repos/FairyEver/d2-admin/releases/latest').then(res => {
+    console.group('update check')
+    let version = res.tag_name
+    console.log('远程版本', semver.clean(version))
+    console.log('本地版本', semver.clean(packJson.version))
+    if (semver.lt(packJson.version, version)) {
+      console.log('D2Admin 有新版本')
+    } else {
+      console.log('D2Admin 已经是最新版本')
+    }
+    console.groupEnd()
+  })
 }
 
 export default util

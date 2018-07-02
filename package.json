@@ -1,6 +1,6 @@
 {
   "name": "d2-admin",
-  "version": "1.0.0",
+  "version": "1.1.4",
   "description": "A management system framework based on element",
   "author": "李杨 <1711467488@qq.com>",
   "private": true,
@@ -84,7 +84,7 @@
     "postcss-loader": "^2.0.8",
     "rimraf": "^2.6.0",
     "sass-loader": "^6.0.6",
-    "semver": "^5.3.0",
+    "semver": "^5.5.0",
     "shelljs": "^0.7.6",
     "svg-sprite-loader": "^3.6.2",
     "text-loader": "0.0.1",
