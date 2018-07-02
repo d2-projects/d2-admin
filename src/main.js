@@ -4,8 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import i18n from './i18n'
 
+// 工具
+import util from '@/libs/util'
+
 // vuex
-import store from '@/store/index.js'
+import store from '@/store/index'
 
 // 路由
 import router from './router'
@@ -25,7 +28,7 @@ import '@/assets/library/font-awesome-4.7.0/css/font-awesome.min.css'
 import 'simplemde/dist/simplemde.min.css'
 
 // svg图标
-import '@/assets/icons/index.js'
+import '@/assets/icons/index'
 
 // markdown主题
 import 'github-markdown-css'
@@ -87,6 +90,10 @@ new Vue({
   created () {
     // 处理路由 得到每一级的路由设置
     this.getAllTagFromRoutes()
+  },
+  mounted () {
+    // D2Admin 检查更新
+    util.checkUpdate(this)
   },
   methods: {
     /**
