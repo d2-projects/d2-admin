@@ -1,90 +1,84 @@
 <template>
-  <d2-container type="ghost">
+  <d2-container>
     
-    <el-card shadow="never" class="d2-mb">
-      <template slot="header">主色</template>
-      <el-row :gutter="20">
-        <el-col :span="6">
-          <div class="color color-primary">
-            <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-      </el-row>
-    </el-card>
-    
-    <el-card shadow="never" class="d2-mb">
-      <template slot="header">辅助色</template>
-      <el-row :gutter="20">
-        <el-col :span="6">
-          <div class="color color-info">
-            <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="color color-success">
-            <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="color color-warning">
-            <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="color color-danger">
-            <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-      </el-row>
-    </el-card>
-    
-    <el-card shadow="never">
-      <template slot="header">中性色</template>
-      <el-row :gutter="20" class="d2-mb">
-        <el-col :span="6">
-          <div class="color color-text-main">
-            <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="color color-text-normal">
-            <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="color color-text-sub">
-            <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="color color-text-placehoder">
-            <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-      </el-row>
-      <el-row :gutter="20">
-        <el-col :span="6">
-          <div class="color color-border-1">
-            <d2-element-basic-color-info theme="dark" name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="color color-border-2">
-            <d2-element-basic-color-info theme="dark" name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="color color-border-3">
-            <d2-element-basic-color-info theme="dark" name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="color color-border-4">
-            <d2-element-basic-color-info theme="dark" name="Blue" sass="$color-primary" color="#409EFF"/>
-          </div>
-        </el-col>
-      </el-row>
-    </el-card>
+    <h1 class="d2-mt-0">主色</h1>
+    <el-row :gutter="20">
+      <el-col :span="6">
+        <div class="color color-primary">
+          <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+    </el-row>
+
+    <h1>辅助色</h1>
+    <el-row :gutter="20">
+      <el-col :span="6">
+        <div class="color color-info">
+          <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="color color-success">
+          <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="color color-warning">
+          <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="color color-danger">
+          <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+    </el-row>
+  
+    <h1>中性色</h1>
+    <el-row :gutter="20" class="d2-mb">
+      <el-col :span="6">
+        <div class="color color-text-main">
+          <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="color color-text-normal">
+          <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="color color-text-sub">
+          <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="color color-text-placehoder">
+          <d2-element-basic-color-info name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+    </el-row>
+    <el-row :gutter="20">
+      <el-col :span="6">
+        <div class="color color-border-1">
+          <d2-element-basic-color-info theme="dark" name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="color color-border-2">
+          <d2-element-basic-color-info theme="dark" name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="color color-border-3">
+          <d2-element-basic-color-info theme="dark" name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="color color-border-4">
+          <d2-element-basic-color-info theme="dark" name="Blue" sass="$color-primary" color="#409EFF"/>
+        </div>
+      </el-col>
+    </el-row>
     
   </d2-container>
 </template>
