@@ -1,6 +1,6 @@
 # 介绍
 
-D2Admin 是一个开源的管理系统前端集成方案
+D2Admin 是一个开源的管理系统前端集成方案 
 
 [Github仓库](https://github.com/FairyEver/d2-admin) - [码云仓库](https://gitee.com/fairyever/d2-admin) - [预览地址](https://fairyever.gitee.io/d2-admin-preview)
 
