@@ -100,18 +100,21 @@ util.isOneOf = function (ele, targetArr) {
 }
 
 util.checkUpdate = function (vm) {
-  axios.get('https://api.github.com/repos/FairyEver/d2-admin/releases/latest').then(res => {
-    console.group('update check')
-    let version = res.tag_name
-    console.log('远程版本', semver.clean(version))
-    console.log('本地版本', semver.clean(packJson.version))
-    if (semver.lt(packJson.version, version)) {
-      console.log('D2Admin 有新版本')
-    } else {
-      console.log('D2Admin 已经是最新版本')
-    }
-    console.groupEnd()
-  })
+  axios.get('https://api.github.com/repos/FairyEver/d2-admin/releases/latest')
+    .then(res => {
+      let version = res.tag_name
+      const update = semver.lt(packJson.version, version)
+      if (update) {
+        console.log('update')
+      } else {
+        console.log('no update')
+      }
+      vm.$store.commit('d2adminUpdateSet', update)
+      vm.$store.commit('d2adminReleasesSet', res)
+    })
+    .catch(err => {
+      console.log('checkUpdate error', err)
+    })
 }
 
 export default util

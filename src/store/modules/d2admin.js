@@ -4,6 +4,10 @@ import themeList from '@/assets/style/theme/list.js'
 
 export default {
   state: {
+    // 拉取的最新版本信息
+    releases: {},
+    // 有更新
+    update: false,
     // 全屏
     isFullScreen: false,
     // 灰度
@@ -51,6 +55,24 @@ export default {
           value: state[key]
         }).write()
       }
+    },
+    /**
+     * @description 更新远端的版本信息
+     * @class releases
+     * @param {state} state vuex state
+     * @param {object} releases info
+     */
+    d2adminReleasesSet (state, releases) {
+      state.releases = releases
+    },
+    /**
+     * @description 设置是否有更新
+     * @class update
+     * @param {state} state vuex state
+     * @param {boolean} update update value
+     */
+    d2adminUpdateSet (state, update) {
+      state.update = update
     },
     /**
      * @class pageCurrent
