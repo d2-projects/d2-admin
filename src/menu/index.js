@@ -73,7 +73,8 @@ const demoComponents = {
         { path: `${pre}container/card`, title: '卡片' },
         { path: `${pre}container/full`, title: '填满' },
         { path: `${pre}container/full-bs`, title: '填满 滚动优化' },
-        { path: `${pre}container/ghost`, title: '隐形' }
+        { path: `${pre}container/ghost`, title: '隐形' },
+        { path: `${pre}container/ghost-header`, title: '隐形带头部' }
       ]
     },
     {
