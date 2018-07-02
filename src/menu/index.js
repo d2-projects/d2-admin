@@ -119,7 +119,6 @@ const demoComponents = {
       ]
     },
     { path: `${pre}bigdata-table`, title: '百万数量级表格', icon: 'table' },
-    { path: `${pre}scrollbar`, title: 'Element 滚动条组件', icon: 'crosshairs' },
     { path: `${pre}countup`, title: '数字动画', icon: 'motorcycle' },
     { path: `${pre}editor-quill`, title: '富文本编辑器', icon: 'pencil-square-o (edit, edit)' },
     { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器', icon: 'font' },

@@ -149,8 +149,7 @@ const frameIn = [
       { path: 'layout/grid', name: `${pre}layout-grid`, component: () => import('@/pages/demo/components/layout/grid.vue'), meta: { ...meta, title: '拖拽网格布局' } },
       { path: 'layout/splitpane', name: `${pre}layout-splitpane`, component: () => import('@/pages/demo/components/layout/splitpane.vue'), meta: { ...meta, title: '区域布局' } },
       { path: 'markdown/source', name: `${pre}markdown-source`, component: () => import('@/pages/demo/components/markdown/source.vue'), meta: { ...meta, title: 'markdown指定资源渲染' } },
-      { path: 'markdown/url', name: `${pre}markdown-url`, component: () => import('@/pages/demo/components/markdown/url.vue'), meta: { ...meta, title: 'markdown指定url渲染' } },
-      { path: 'scrollbar', name: `${pre}scrollbar`, component: () => import('@/pages/demo/components/scrollbar'), meta: { ...meta, title: 'Element 滚动条组件' } }
+      { path: 'markdown/url', name: `${pre}markdown-url`, component: () => import('@/pages/demo/components/markdown/url.vue'), meta: { ...meta, title: 'markdown指定url渲染' } }
     ])('demo-components-')
   },
   {
