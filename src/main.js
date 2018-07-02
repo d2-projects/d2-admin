@@ -1,7 +1,11 @@
+// polyfill
 import 'babel-polyfill'
 
+// Vue
 import Vue from 'vue'
 import App from './App'
+
+// 多国语
 import i18n from './i18n'
 
 // 工具
@@ -15,6 +19,7 @@ import router from './router'
 // 框架内的路由
 import { frameInRoutes } from '@/router/routes'
 
+// ElementUI
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
