@@ -75,7 +75,7 @@ Vue.use(bigdataTable)
 
 Vue.config.productionTip = false
 
-Vue.prototype.$env = process.env.NODE_ENV === 'development'
+Vue.prototype.$env = process.env.NODE_ENV
 
 Vue.prototype.$assetsPublicPath = process.env.NODE_ENV === 'development' ? buildConfig.dev.assetsPublicPath : buildConfig.build.assetsPublicPath
 
@@ -92,8 +92,10 @@ new Vue({
     this.getAllTagFromRoutes()
   },
   mounted () {
-    // D2Admin 检查更新
-    util.checkUpdate(this)
+    // D2Admin 开发环境检查更新
+    if (this.$env === 'development') {
+      util.checkUpdate(this)
+    }
   },
   methods: {
     /**
