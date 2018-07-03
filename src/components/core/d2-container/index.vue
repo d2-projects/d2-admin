@@ -65,7 +65,13 @@ export default {
     }
   },
   mounted () {
-    if (this.type !== 'full') {
+    this.scrollInit()
+  },
+  beforeDestroy () {
+    this.scrollDestroy()
+  },
+  methods: {
+    scrollInit () {
       this.BS = new BScroll(this.$refs.container, {
         mouseWheel: true,
         scrollbar: {
@@ -73,6 +79,11 @@ export default {
           interactive: false
         }
       })
+    },
+    scrollDestroy () {
+      if (this.BS) {
+        this.BS.destroy()
+      }
     }
   }
 }
