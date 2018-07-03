@@ -196,6 +196,83 @@ const demoCharts = {
             { path: `${pre}list/ring/demo4`, title: '限制显示条数' },
             { path: `${pre}list/ring/demo5`, title: '设置半径' }
           ]
+        },
+        {
+          path: `${pre}list/waterfall`,
+          title: '瀑布图',
+          children: [
+            { path: `${pre}list/waterfall/demo1`, title: '一般' }
+          ]
+        },
+        {
+          path: `${pre}list/funnel`,
+          title: '漏斗图',
+          children: [
+            { path: `${pre}list/funnel/demo1`, title: '一般' },
+            { path: `${pre}list/funnel/demo2`, title: '金字塔' }
+          ]
+        },
+        {
+          path: `${pre}list/radar`,
+          title: '雷达图',
+          children: [
+            { path: `${pre}list/radar/demo1`, title: '一般' }
+          ]
+        },
+        {
+          path: `${pre}list/map`,
+          title: '地图',
+          children: [
+            { path: `${pre}list/map/demo1`, title: '一般' },
+            { path: `${pre}list/map/demo2`, title: '设置城市' },
+            { path: `${pre}list/map/demo3`, title: '设置样式' }
+          ]
+        },
+        {
+          path: `${pre}list/sankey`,
+          title: '桑基图',
+          children: [
+            { path: `${pre}list/sankey/demo1`, title: '一般' }
+          ]
+        },
+        {
+          path: `${pre}list/heatmap`,
+          title: '热力图',
+          children: [
+            { path: `${pre}list/heatmap/demo1`, title: '一般' },
+            { path: `${pre}list/heatmap/demo2`, title: '地图热力图' }
+          ]
+        },
+        {
+          path: `${pre}list/scatter`,
+          title: '散点图',
+          children: [
+            { path: `${pre}list/scatter/demo1`, title: '单维度多指标' },
+            { path: `${pre}list/scatter/demo2`, title: '双维度多指标' }
+          ]
+        },
+        {
+          path: `${pre}list/candle`,
+          title: 'K线图',
+          children: [
+            { path: `${pre}list/candle/demo1`, title: '一般' },
+            { path: `${pre}list/candle/demo2`, title: 'MA VOL' },
+            { path: `${pre}list/candle/demo3`, title: '自定义' }
+          ]
+        },
+        {
+          path: `${pre}list/gauge`,
+          title: '仪表盘',
+          children: [
+            { path: `${pre}list/gauge/demo1`, title: '一般' }
+          ]
+        },
+        {
+          path: `${pre}list/tree`,
+          title: '树图',
+          children: [
+            { path: `${pre}list/tree/demo1`, title: '径向树图' }
+          ]
         }
       ]
     }

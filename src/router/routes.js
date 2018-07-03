@@ -119,7 +119,24 @@ const frameIn = [
       { path: 'list/ring/demo2', name: `${pre}list-ring-demo2`, component: () => import('@/pages/demo/charts/list/ring/demo2/index.vue'), meta: { ...meta, title: '环图示例2' } },
       { path: 'list/ring/demo3', name: `${pre}list-ring-demo3`, component: () => import('@/pages/demo/charts/list/ring/demo3/index.vue'), meta: { ...meta, title: '环图示例3' } },
       { path: 'list/ring/demo4', name: `${pre}list-ring-demo4`, component: () => import('@/pages/demo/charts/list/ring/demo4/index.vue'), meta: { ...meta, title: '环图示例4' } },
-      { path: 'list/ring/demo5', name: `${pre}list-ring-demo5`, component: () => import('@/pages/demo/charts/list/ring/demo5/index.vue'), meta: { ...meta, title: '环图示例5' } }
+      { path: 'list/ring/demo5', name: `${pre}list-ring-demo5`, component: () => import('@/pages/demo/charts/list/ring/demo5/index.vue'), meta: { ...meta, title: '环图示例5' } },
+      { path: 'list/waterfall/demo1', name: `${pre}list-waterfall-demo1`, component: () => import('@/pages/demo/charts/list/waterfall/demo1/index.vue'), meta: { ...meta, title: '瀑布图示例1' } },
+      { path: 'list/funnel/demo1', name: `${pre}list-funnel-demo1`, component: () => import('@/pages/demo/charts/list/funnel/demo1/index.vue'), meta: { ...meta, title: '漏斗图示例1' } },
+      { path: 'list/funnel/demo2', name: `${pre}list-funnel-demo2`, component: () => import('@/pages/demo/charts/list/funnel/demo2/index.vue'), meta: { ...meta, title: '漏斗图示例2' } },
+      { path: 'list/radar/demo1', name: `${pre}list-radar-demo1`, component: () => import('@/pages/demo/charts/list/radar/demo1/index.vue'), meta: { ...meta, title: '雷达图示例1' } },
+      { path: 'list/map/demo1', name: `${pre}list-map-demo1`, component: () => import('@/pages/demo/charts/list/map/demo1/index.vue'), meta: { ...meta, title: '地图示例1' } },
+      { path: 'list/map/demo2', name: `${pre}list-map-demo2`, component: () => import('@/pages/demo/charts/list/map/demo2/index.vue'), meta: { ...meta, title: '地图示例2' } },
+      { path: 'list/map/demo3', name: `${pre}list-map-demo3`, component: () => import('@/pages/demo/charts/list/map/demo3/index.vue'), meta: { ...meta, title: '地图示例3' } },
+      { path: 'list/sankey/demo1', name: `${pre}list-sankey-demo1`, component: () => import('@/pages/demo/charts/list/sankey/demo1/index.vue'), meta: { ...meta, title: '桑基图示例1' } },
+      { path: 'list/heatmap/demo1', name: `${pre}list-heatmap-demo1`, component: () => import('@/pages/demo/charts/list/heatmap/demo1/index.vue'), meta: { ...meta, title: '热力图示例1' } },
+      { path: 'list/heatmap/demo2', name: `${pre}list-heatmap-demo2`, component: () => import('@/pages/demo/charts/list/heatmap/demo2/index.vue'), meta: { ...meta, title: '热力图示例2' } },
+      { path: 'list/scatter/demo1', name: `${pre}list-scatter-demo1`, component: () => import('@/pages/demo/charts/list/scatter/demo1/index.vue'), meta: { ...meta, title: '散点图示例1' } },
+      { path: 'list/scatter/demo2', name: `${pre}list-scatter-demo2`, component: () => import('@/pages/demo/charts/list/scatter/demo2/index.vue'), meta: { ...meta, title: '散点图示例2' } },
+      { path: 'list/candle/demo1', name: `${pre}list-candle-demo1`, component: () => import('@/pages/demo/charts/list/candle/demo1/index.vue'), meta: { ...meta, title: 'K线图示例1' } },
+      { path: 'list/candle/demo2', name: `${pre}list-candle-demo2`, component: () => import('@/pages/demo/charts/list/candle/demo2/index.vue'), meta: { ...meta, title: 'K线图示例2' } },
+      { path: 'list/candle/demo3', name: `${pre}list-candle-demo3`, component: () => import('@/pages/demo/charts/list/candle/demo3/index.vue'), meta: { ...meta, title: 'K线图示例3' } },
+      { path: 'list/gauge/demo1', name: `${pre}list-gauge-demo1`, component: () => import('@/pages/demo/charts/list/gauge/demo1/index.vue'), meta: { ...meta, title: '仪表盘示例1' } },
+      { path: 'list/tree/demo1', name: `${pre}list-tree-demo1`, component: () => import('@/pages/demo/charts/list/tree/demo1/index.vue'), meta: { ...meta, title: '树图示例1' } }
     ])('demo-charts-')
   },
   {
