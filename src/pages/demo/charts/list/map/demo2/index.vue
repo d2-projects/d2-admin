@@ -1,9 +1,10 @@
 <template>
   <d2-container type="full">
     <template slot="header">设置城市</template>
-    <div class="inner">
+    <!-- <div class="inner">
       <ve-map :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-map>
-    </div>
+    </div> -->
+    大概由于 mock.js 和 v-charts 的网络请求冲突，本示例暂时无法展示
     <template slot="footer">
       <d2-demo-link-btn title="更多示例和文档" link="https://v-charts.js.org"/>
     </template>
