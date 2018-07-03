@@ -18,12 +18,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        /* background: #8e9eab;
-        background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
-        background: linear-gradient(to right, #eef2f3, #8e9eab); */
-        /* background: #4b6cb7;
-        background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
-        background: linear-gradient(to right, #182848, #4b6cb7); */
         background: #757F9A;
         background: -webkit-linear-gradient(to top, #D7DDE8, #757F9A);
         background: linear-gradient(to top, #D7DDE8, #757F9A);
@@ -46,6 +40,34 @@
         font-size: 10px;
         opacity: .8;
         margin-bottom: 4px;
+      }
+      .d2-app-loading-btn {
+        text-decoration: none;
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid #dcdfe6;
+        border-color: #dcdfe6;
+        color: #606266;
+        -webkit-appearance: none;
+        text-align: center;
+        box-sizing: border-box;
+        outline: none;
+        margin: 0;
+        transition: .1s;
+        font-weight: 500;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+        /* 圆角 */
+        padding: 7px 15px;
+        border-radius: 20px;
+        font-size: 12px;
       }
       .d2-app-loading-grid {
         width: 30px;
@@ -129,6 +151,10 @@
         <div class="d2-app-loading-title">加载中</div>
         <div class="d2-app-loading-sub-title">本示例项目加载了大量的组件，初次加载会比较慢，请耐心等待</div>
         <div class="d2-app-loading-sub-info">如果很久很久都没有加载成功，请清空缓存重新加载页面</div>
+        <div style="margin-top: 10px;">
+          <a class="d2-app-loading-btn" href="https://github.com/FairyEver/d2-admin" target="blank">Github仓库</a>
+          <a class="d2-app-loading-btn" href="https://fairyever.gitee.io/d2-admin-doc/zh/" target="blank">中文文档</a>
+        </div>
       </div>
     </div>
   </body>
