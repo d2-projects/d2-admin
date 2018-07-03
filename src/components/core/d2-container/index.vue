@@ -70,7 +70,9 @@ export default {
     }
   },
   beforeDestroy () {
-    this.scrollDestroy()
+    if (this.type === 'card' || this.type === 'ghost') {
+      this.scrollDestroy()
+    }
   },
   methods: {
     scrollInit () {
