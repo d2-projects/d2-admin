@@ -382,9 +382,6 @@ const demoPlayground = {
   icon: 'flask',
   children: (pre => [
     { path: `${pre}index`, title: '试验台首页', icon: 'home' },
-    { path: `${pre}theme`, title: '主题', icon: 'flask' },
-    { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' },
-    { path: `${pre}gray`, title: '灰度模式', icon: 'eye' },
     {
       path: `${pre}page-cache`,
       title: '页面缓存',
@@ -402,7 +399,11 @@ const demoPlayground = {
         { path: `${pre}page-argu/send`, title: '发送' },
         { path: `${pre}page-argu/get/username-from-menu?userid=userid-from-menu`, title: '接收' }
       ]
-    }
+    },
+    { path: `${pre}theme`, title: '主题', icon: 'flask' },
+    { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' },
+    { path: `${pre}gray`, title: '灰度模式', icon: 'eye' },
+    { path: `${pre}db`, title: '数据持久化', icon: 'database' }
   ])('/demo/playground/')
 }
 
