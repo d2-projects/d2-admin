@@ -95,14 +95,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
-.container-component {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  overflow: hidden;
-}
 @media (min-width: 576px) {
   // 根据你的需要在这里添加样式
 }
