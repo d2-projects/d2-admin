@@ -51,7 +51,7 @@ export default {
   mutations: {
     /**
      * @class 通用工具
-     * @description 将 state 中某一项存储到数据库 需要 uuid
+     * @description 将 state 中某一项存储到数据库 如果已经有的话就更新数据 需要 uuid
      * @param {state} state vuex state
      * @param {string} key key name
      */
@@ -78,7 +78,17 @@ export default {
     },
     /**
      * @class 通用工具
-     * @description 将 state 中某一项存储到数据库 不需要 uuid 所有用户共享
+     * @description 删除数据库中对应 vuex 的某一个字段 需要 uuid
+     * @param {state} state vuex state
+     * @param {object} param1 key & empty value
+     */
+    d2adminDbRemoveByUuid (state, { key, emptyValue }) {
+      db.get(key).remove({uuid: util.uuid()}).write()
+      state[key] = emptyValue
+    },
+    /**
+     * @class 通用工具
+     * @description 将 state 中某一项存储到数据库 如果已经有的话就更新数据 不需要 uuid 所有用户共享
      * @param {state} state vuex state
      * @param {string} key key name
      */
@@ -102,6 +112,16 @@ export default {
     d2adminDb2Vuex (state, { key, defaultValue }) {
       const row = db.get(key).find({pub: 'pub'}).value()
       state[key] = row ? row.value : defaultValue
+    },
+    /**
+     * @class 通用工具
+     * @description 删除数据库中对应 vuex 的某一个字段 不需要 uuid 所有用户共享
+     * @param {state} state vuex state
+     * @param {object} param1 key & empty value
+     */
+    d2adminDbRemove (state, { key, emptyValue }) {
+      db.get(key).remove({pub: 'pub'}).write()
+      state[key] = emptyValue
     },
     /**
      * @description 设置用户名
