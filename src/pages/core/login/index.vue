@@ -48,6 +48,8 @@ require('particles.js')
 // https://vincentgarreau.com/particles.js/#default
 import config from './config/default'
 import Cookies from 'js-cookie'
+import { mapMutations } from 'vuex'
+
 export default {
   data () {
     return {
@@ -74,6 +76,9 @@ export default {
     particlesJS('login', config)
   },
   methods: {
+    ...mapMutations([
+      'd2adminUsernameSet'
+    ]),
     // 提交登陆信息
     submit () {
       this.$refs.loginForm.validate((valid) => {
@@ -93,8 +98,11 @@ export default {
               const setting = {
                 expires: 1
               }
+              // 设置 cookie
               Cookies.set('uuid', res.uuid, setting)
               Cookies.set('token', res.token, setting)
+              // 设置 vuex
+              this.d2adminUsernameSet(res.name)
               // 跳转路由
               this.$router.push({
                 name: 'index'
