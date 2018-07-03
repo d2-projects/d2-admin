@@ -1,5 +1,6 @@
 <template>
   <d2-container type="ghost" class="demo-layout-grid">
+    <template slot="header">网格布局</template>
     <d2-grid-layout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">
