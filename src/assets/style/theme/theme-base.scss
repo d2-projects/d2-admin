@@ -1,3 +1,82 @@
+// 整体框架结构
+.d2-layout-main-group {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  // 背景上面的半透明遮罩
+  .d2-layout-main-mask {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+  // 内容层
+  .d2-layout-main-content {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    $d2-theme-header-height: 60px;
+    .d2-theme-header {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      height: $d2-theme-header-height;
+    }
+    .d2-theme-container {
+      position: absolute;
+      top: $d2-theme-header-height;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      display: flex;
+      flex-direction: row;
+      .d2-theme-container-aside {
+        transition: width .3s;
+        flex-grow: 0;
+        position: relative;
+        .d2-layout-main-menu-side {
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          left: 0px;
+          right: 0px;
+          overflow: hidden;
+        }
+      }
+      .d2-theme-container-main {
+        flex-grow: 1;
+        padding: 0px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        .d2-theme-container-main-header {
+          flex-grow: 0;
+        }
+        .d2-theme-container-main-body {
+          flex-grow: 1;
+          margin-top: 1px;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
 // 主题公用
 .d2-layout-main-group {
   &.grayMode {
@@ -8,30 +87,10 @@
     filter: grayscale(100%);
     filter: gray;
   }
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  position: relative;
-  // 背景上面的半透明遮罩
-  .layout-main-mask {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-  }
   // 主体
-  .el-container.d2-layout-main-content {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+  .d2-layout-main-content {
     // [布局] 顶栏
-    .el-header.d2-theme-header {
-      padding: 0px;
+    .d2-theme-header {
       // logo区域
       .logo-group {
         transition: width .3s;
@@ -96,11 +155,9 @@
       }
     }
     // [布局] 顶栏下面
-    .el-container.d2-theme-container {
+    .d2-theme-container {
       // 侧边栏
-      .el-aside.d2-theme-container-aside {
-        transition: width .3s;
-        overflow: auto;
+      .d2-theme-container-aside {
         // [菜单] 正常状态
         .el-menu {
           @extend %unable-select;
@@ -155,15 +212,9 @@
         }
       }
       // 右下 主体
-      .el-main.d2-theme-container-main {
-        padding: 0px;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
+      .d2-theme-container-main {
         // 主体部分分为多页面控制器 和主体
         .d2-theme-container-main-header {
-          flex-grow: 0;
           // 多页面控制器
           .d2-multiple-page-control-group {
             display: flex;
@@ -203,9 +254,6 @@
         }
         // 主体
         .d2-theme-container-main-body {
-          flex-grow: 1;
-          margin-top: 1px;
-          position: relative;
           // 布局组件
           .container-component {
             // 卡片布局组件
