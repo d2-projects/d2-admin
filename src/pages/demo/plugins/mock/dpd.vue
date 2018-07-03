@@ -1,15 +1,14 @@
 <template>
-  <d2-container type="ghost">
-    <el-card shadow="never" class="d2-mb">
-      <d2-demo-page-header slot="header" title="数据占位符"/>
-      <d2-markdown :source="doc"/>
-    </el-card>
+  <d2-container>
+    <d2-demo-page-header slot="header" title="数据占位符"/>
+    <d2-markdown :source="doc" class="d2-mb"/>
     <d2-demo-mock-card
       v-for="(item, index) in settingDPD"
       :key="index"
       :title="item.title"
       :code="JSON.stringify(item.json, null, 2)"
       :mock="mockResult[index]"
+      style="margin-bottom: 0px !important;"
       @reload="doMock(index)">
     </d2-demo-mock-card>
   </d2-container>

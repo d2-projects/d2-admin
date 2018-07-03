@@ -42,7 +42,9 @@
 </template>
 
 <script>
+// 插件
 import BScroll from 'better-scroll'
+
 export default {
   data () {
     return {
@@ -51,9 +53,10 @@ export default {
     }
   },
   mounted () {
-    this.BS = new BScroll(this.$refs.wrapper, {
-      mouseWheel: true
-    })
+    this.scrollInit()
+  },
+  beforeDestroy () {
+    this.scrollDestroy()
   },
   methods: {
     handleScrollTo (y) {
@@ -64,6 +67,20 @@ export default {
     },
     handleScrollToElement (n) {
       this.BS.scrollToElement(`#demo-bs-item-${n}`, this.time)
+    },
+    scrollInit () {
+      this.BS = new BScroll(this.$refs.wrapper, {
+        mouseWheel: true,
+        scrollbar: {
+          fade: true,
+          interactive: false
+        }
+      })
+    },
+    scrollDestroy () {
+      if (this.BS) {
+        this.BS.destroy()
+      }
     }
   }
 }

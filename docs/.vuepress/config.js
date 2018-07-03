@@ -90,6 +90,7 @@ function sideBarComponents (title) {
       children: [
         '',
         'charts',
+        'charts-new',
         'container',
         'count-up',
         'highlight',

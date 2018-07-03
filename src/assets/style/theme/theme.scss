@@ -2,9 +2,9 @@
 .theme-#{$theme-name} {
 
   // 背景图片和遮罩
-  .layout-main-group {
+  .d2-layout-main-group {
     background-color: $theme-bg-color;
-    .layout-main-mask {
+    .d2-layout-main-mask {
       background: $theme-bg-mask;
     }
   }
@@ -39,7 +39,7 @@
   }
   
   // 顶栏
-  .el-header {
+  .d2-theme-header {
     // 切换按钮
     .toggle-aside-btn {
       i {
@@ -115,9 +115,9 @@
     }
   }
   // [布局] 顶栏下面
-  .el-container {
+  .d2-theme-container {
     // 侧边栏
-    .el-aside {
+    .d2-theme-container-aside {
       // 菜单为空的时候显示的信息
       .menu-empty {
         background: $theme-aside-menu-empty-background-color;
@@ -191,9 +191,9 @@
         }
       }
     }
-    .el-main {
+    .d2-theme-container-main {
       // 主体部分分为多页面控制器 和主体
-      .d2-layout-main-header {
+      .d2-theme-container-main-header {
         // 多页面控制器
         .d2-multiple-page-control {
           .el-tabs__header.is-top {
@@ -202,11 +202,18 @@
           .el-tabs__nav {
             border-color: $theme-multiple-page-control-border-color;
             .el-tabs__item {
+              @extend %unable-select;
               color: $theme-multiple-page-control-color;
               background-color: $theme-multiple-page-control-background-color;
               border-left-color: $theme-multiple-page-control-border-color;
               &:first-child {
                 border-left: none;
+                &:hover {
+                  padding: 0px 20px;
+                }
+                .el-icon-close {
+                  display: none;
+                }
               }
             }
             .el-tabs__item.is-active {
@@ -227,12 +234,23 @@
             color: $theme-multiple-page-control-nav-next-color;
           }
         }
+        // 多页控制器的关闭控制
+        .d2-multiple-page-control-btn {
+          .el-dropdown {
+            .el-button-group {
+              .el-button {
+                border-color: $theme-multiple-page-control-border-color;
+              }
+            }
+          }
+        }
       }
       // 主体
-      .d2-layout-main-body {
+      .d2-theme-container-main-body {
         // 布局组件
         .container-component {
-          // [组件] d2-container-full
+          // [组件]
+          // d2-container-full 填充型
           .d2-container-full {
             border: $theme-container-border-outer;
             border-top: none;
@@ -249,17 +267,45 @@
               background: $theme-container-header-footer-background-color;
             }
           }
-          // [组件] d2-container-card
+          // [组件]
+          // d2-container-full-bs 填充型 滚动优化
+          .d2-container-full-bs {
+            border: $theme-container-border-outer;
+            border-top: none;
+            border-bottom: none;
+            .d2-container-full-bs__header {
+              border-bottom: $theme-container-border-inner;
+              background: $theme-container-header-footer-background-color;
+            }
+            .d2-container-full-bs__body {
+              background: $theme-container-background-color;
+            }
+            .d2-container-full-bs__footer {
+              border-top: $theme-container-border-inner;
+              background: $theme-container-header-footer-background-color;
+            }
+          }
+          // [组件]
+          // d2-container-card 卡片型
           .d2-container-card {
             border: $theme-container-border-outer;
             border-top: none;
             background: transparent;
-            .el-card__header {
+            &>.el-card__header {
               border-bottom: $theme-container-border-inner;
               background: $theme-container-header-footer-background-color;
             }
-            .el-card__body {
+            &>.el-card__body {
               background: $theme-container-background-color;
+            }
+          }
+          // 隐形布局组件
+          .d2-container-ghost {
+            .d2-container-ghost-header {
+              border: $theme-container-border-outer;
+              &>.el-card__body {
+                background: $theme-container-header-footer-background-color;
+              }
             }
           }
         }

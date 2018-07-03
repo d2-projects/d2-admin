@@ -4,7 +4,9 @@ export default {
       if (/^d2-menu-empty-\d+$/.test(index)) {
         this.$message('功能正在开发')
       } else {
-        this.$router.push(index)
+        this.$router.push({
+          path: index
+        })
       }
     }
   }

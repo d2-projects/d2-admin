@@ -1,30 +1,10 @@
-<p align="center">
-  <img width="550" src="http://fairyever.qiniudn.com/github-banner.png">
-</p>
-
-Solution of management system front-end based on `vue.js` and `ElementUI`
-
 # 介绍
 
 D2Admin 是一个开源的管理系统前端集成方案
 
-[Github仓库](https://github.com/FairyEver/d2-admin) - [预览地址](https://fairyever.gitee.io/d2-admin-preview)
+[中文文档](https://fairyever.gitee.io/d2-admin-doc/zh/) - [码云仓库](https://gitee.com/fairyever/d2-admin) - [预览地址](https://fairyever.gitee.io/d2-admin-preview)
 
-[中文文档](https://fairyever.gitee.io/d2-admin-doc/zh/)
-
-[下载地址(不要直接克隆仓库)](https://github.com/FairyEver/d2-admin/releases)
-
-D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https://github.com/FairyEver) 在工作之余完全由兴趣驱动完成，如果你也一样喜欢前端开发，欢迎加入我们的讨论/学习群，群内可以`提问答疑`，`分享学习资料`或者随便扯淡
-
-**QQ群**
-
-群号 806395827 欢迎大家
-
-**微信群**
-
-作者微信 liyang1711467488
-
-> 微信群需要先加群主才可以拉进群 PS 微信群不太活跃，建议进QQ群
+因为现在集成了很多的插件和组件，首次加载会占用很多的时间，虽然已经做了首屏加载动画，但还是建议您在发布之前一定要删除没有用到的代码，比如项目没有用到图表、示例、插件组件
 
 ## 功能
 
@@ -63,26 +43,46 @@ D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https
 * 为 markdown 扩展了百度云链接解析和优化显示
 * 右键菜单组件
 * 自定义滚动条和滚动控制
-* 内置4种主题
+* 内置5种主题
 * 公用样式抽离，方便的主题定制
 * 支持百万级数据量的表格组件
 * 打包后随意目录部署（已经做好兼容设置）
+* 支持临时菜单配置
+* 提供“试验台”功能 方便展示系统功能调用方法 `1.1.4 +`
+* 多标签页模式 `1.1.4 +`
+* 美化滚动条 `1.1.4 +`
+* 持久化存储 `1.1.4 +`
+
+## 加入小组
+
+D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https://github.com/FairyEver) 在工作之余完全由兴趣驱动完成，如果你也一样喜欢前端开发，欢迎加入我们的讨论/学习群，群内可以`提问答疑`，`分享学习资料`或者随便扯淡
+
+| QQ群 806395827 | 微信 liyang1711467488 |
+| --- | --- |
+| <img style="width: 200px;" src="https://raw.githubusercontent.com/FairyEver/d2-admin/dev/github/qq.jpg"/> | <img style="width: 200px;" src="https://raw.githubusercontent.com/FairyEver/d2-admin/dev/github/we.jpg"/> |
+
+> 微信群需要先加群主才可以拉进群 PS 微信群交流不太方便，建议QQ群
 
 ## TODO
 
-D2Admin 仍然处于开发中，这里有一些计划：
+D2Admin 仍然处于开发中，这里有一些暂时的计划：
 
 * 分离出简化版本
 * 推出基于 [ice](https://alibaba.github.io/ice) 平台的版本
 * 增加右上角通知中心
 * 增加一些实例页面以提供业务页面布局建议
-* 更换图表库
-* 多 tab 页结构
 * 面包屑导航
 * 树型表格组件
-* `1.1.0 完成` 抽离项目里的文档，集中存放在文档站点
-* `1.1.0 完成` 对主界面进行一次完善，调整整体布局和颜色
-* `1.1.0 完成` 切换主题功能
+* 更多类型的编辑器
+* socket 连接
+* 浏览器版本提示
+* 日志控制台
+* `1.1.4 已完成` 自定义滚动条
+* `1.1.4 已完成` 多 tab 页结构
+* `1.1.3 已完成` 更换图表库
+* `1.1.0 已完成` 抽离项目里的文档，集中存放在文档站点
+* `1.1.0 已完成` 对主界面进行一次完善，调整整体布局和颜色
+* `1.1.0 已完成` 切换主题功能
 
 欢迎你为 D2Admin 的开发作出贡献（代码编写/文档翻译）。
 
@@ -91,6 +91,8 @@ D2Admin 仍然处于开发中，这里有一些计划：
 ```
 ├─ build
 ├─ config
+├─ deploy
+├─ dist
 ├─ docs // 文档
 ├─ src
 │  ├─ assets // 资源
@@ -99,17 +101,17 @@ D2Admin 仍然处于开发中，这里有一些计划：
 │  │  ├─ library
 │  │  └─ style
 │  ├─ components // 组件
-│  │  ├─ charts
-│  │  ├─ core
-│  │  └─ demo
+│  │  ├─ charts // 图表组件
+│  │  ├─ core // 核心组件
+│  │  └─ demo // 示例组件
 │  ├─ i18n // 多国语
+│  ├─ libs // 通用库
 │  ├─ menu // 菜单
 │  ├─ mock // 模拟数据
 │  ├─ pages // 页面
 │  ├─ plugin // 插件
 │  ├─ router // 路由
 │  ├─ store // vuex
-│  ├─ utils
 │  ├─ App.vue
 │  └─ main.js
 ├─ static // 静态资源
@@ -128,6 +130,18 @@ D2Admin 仍然处于开发中，这里有一些计划：
 └─ package.json
 ```
 
+## 获取代码
+
+有两种方式可以获得 D2Admin 的代码
+
+* 在 [releases](https://github.com/FairyEver/d2-admin/releases) 页面下载最新的发行版。发行版一般是完成了某个大升级或者修复重要 bug 后发布的压缩包，你可以下载下来直接使用
+
+* Fork 仓库到你的 github 然后克隆到本地，然后使用 master 分支继续你的开发。这种方式得到的是最新的代码，但是会有未完成的新功能。**不建议使用这种方式**
+
+* 由于 github 访问较慢，推荐前往码云仓库下载 [gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin)，码云上的仓库**在每次发布版本才会更新**，所以如果你选择此方法，请直接 fork 仓库并克隆到本地
+
+> 码云的仓库由 github 同步，但是发行版和标签同步有一些问题，所以推荐直接 fork 仓库
+
 ## 使用
 
 ```
@@ -139,20 +153,4 @@ npm run dev
 
 // 打包
 npm run build
-```
-
-## 书写文档
-
-这里目前还有一个小遗憾，d2admin 使用的 webpack 版本不能符合 vuepress 的要求，所以如果你想在本地启动文档站点的服务，需要按下述步骤
-
-首先将 vuepress 安装到全局
-
-```
-npm i -g vuepress
-```
-
-启动服务
-
-```
-npm run doc:dev
 ```
