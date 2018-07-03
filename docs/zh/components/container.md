@@ -83,6 +83,22 @@ export default {
 
 你可以通过设置 `scroll` 来启用自定义滚动条，看起来更美观一些
 
+示例：
+
+``` vue
+<template>
+  <d2-container type="full" scroll>
+    <template slot="header">
+      可选的 header 内容 ...
+    </template>
+    主体内容 ...
+    <template slot="footer">
+      可选的 footer 内容 ...
+    </template>
+  </d2-container>
+</template>
+```
+
 ### 隐形页面容器
 
 不显示任何背景色和边框，通常这个模式只有在极少情况下会使用
