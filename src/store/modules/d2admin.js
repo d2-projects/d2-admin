@@ -111,6 +111,18 @@ export default {
      */
     d2adminUsernameSet (state, username) {
       state.username = username
+      this.commit('d2adminVuex2DbByUuid', 'username')
+    },
+    /**
+     * @description 从数据库取用户名
+     * @class username
+     * @param {state} state vuex state
+     */
+    d2adminUsernameLoad (state) {
+      this.commit('d2adminDb2VuexByUuid', {
+        key: 'username',
+        defaultValue: ''
+      })
     },
     /**
      * @description 更新远端的版本信息
