@@ -7,6 +7,8 @@ import packJson from '../../../package.json'
 
 export default {
   state: {
+    // 用户名
+    username: '',
     // 拉取的最新版本信息
     releases: {},
     // D2Admin 版本
@@ -100,6 +102,15 @@ export default {
     d2adminDb2Vuex (state, { key, defaultValue }) {
       const row = db.get(key).find({pub: 'pub'}).value()
       state[key] = row ? row.value : defaultValue
+    },
+    /**
+     * @description 设置用户名
+     * @class username
+     * @param {state} state vuex state
+     * @param {string} username username
+     */
+    d2adminUsernameSet (state, username) {
+      state.username = username
     },
     /**
      * @description 更新远端的版本信息
