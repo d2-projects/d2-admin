@@ -268,6 +268,24 @@
             }
           }
           // [组件]
+          // d2-container-full-bs 填充型 滚动优化
+          .d2-container-full-bs {
+            border: $theme-container-border-outer;
+            border-top: none;
+            border-bottom: none;
+            .d2-container-full-bs__header {
+              border-bottom: $theme-container-border-inner;
+              background: $theme-container-header-footer-background-color;
+            }
+            .d2-container-full-bs__body {
+              background: $theme-container-background-color;
+            }
+            .d2-container-full-bs__footer {
+              border-top: $theme-container-border-inner;
+              background: $theme-container-header-footer-background-color;
+            }
+          }
+          // [组件]
           // d2-container-card 卡片型
           .d2-container-card {
             border: $theme-container-border-outer;
