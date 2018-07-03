@@ -121,7 +121,8 @@ new Vue({
           if (route.children) {
             push(route.children)
           } else {
-            tagPool.push(route)
+            const { meta, name, path } = route
+            tagPool.push({ meta, name, path })
           }
         })
       }
