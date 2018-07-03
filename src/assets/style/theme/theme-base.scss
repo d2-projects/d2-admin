@@ -262,6 +262,7 @@
             left: 0px;
             right: 0px;
             overflow: hidden;
+            // 填充式布局组件
             .d2-container-full {
               position: absolute;
               top: 0px;
@@ -277,10 +278,33 @@
               .d2-container-full__body {
                 flex-grow: 1;
                 padding: 0px 20px;
-                overflow: hidden;
+                overflow: auto;
                 position: relative;
               }
               .d2-container-full__footer {
+                padding: 20px;
+              }
+            }
+            // 填充式布局组件 - 滚动优化
+            .d2-container-full-bs {
+              position: absolute;
+              top: 0px;
+              right: 20px;
+              bottom: 0px;
+              left: 0px;
+              display: flex;
+              flex-direction: column;
+              overflow: hidden;
+              .d2-container-full-bs__header {
+                padding: 20px;
+              }
+              .d2-container-full-bs__body {
+                flex-grow: 1;
+                padding: 0px 20px;
+                overflow: hidden;
+                position: relative;
+              }
+              .d2-container-full-bs__footer {
                 padding: 20px;
               }
             }
