@@ -23,6 +23,7 @@ export default {
     isGrayMode: false,
     // 主题
     themeList,
+    // 现在激活的主题
     themeActiveName: themeList[0].name, // 这应该是一个名字 不是对象
     // 可以在多页 tab 模式下显示的页面
     tagPool: [],
