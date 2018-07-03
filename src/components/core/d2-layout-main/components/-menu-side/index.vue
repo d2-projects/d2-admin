@@ -52,6 +52,13 @@ export default {
     }
   },
   watch: {
+    // 折叠和展开菜单的时候销毁 better scroll
+    collapse (val) {
+      this.scrollDestroy()
+      setTimeout(() => {
+        this.scrollInit()
+      }, 500)
+    },
     '$route.matched': {
       handler (val) {
         const path = val[0].path
@@ -68,13 +75,26 @@ export default {
     }
   },
   mounted () {
-    this.BS = new BScroll(this.$el, {
-      mouseWheel: true,
-      scrollbar: {
-        fade: true,
-        interactive: false
+    this.scrollInit()
+  },
+  beforeDestroy () {
+    this.scrollDestroy()
+  },
+  methods: {
+    scrollInit () {
+      this.BS = new BScroll(this.$el, {
+        mouseWheel: true,
+        scrollbar: {
+          fade: true,
+          interactive: false
+        }
+      })
+    },
+    scrollDestroy () {
+      if (this.BS) {
+        this.BS.destroy()
       }
-    })
+    }
   }
 }
 </script>
