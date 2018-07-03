@@ -11,7 +11,7 @@
 <script>
 // 插件
 import Cookies from 'js-cookie'
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   computed: {
@@ -20,12 +20,20 @@ export default {
     })
   },
   methods: {
+    ...mapMutations([
+      'd2adminDbRemoveByUuid'
+    ]),
     logOff () {
       this.$confirm('注销此账户吗?', '注销', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
+        // 删除用户名
+        this.d2adminDbRemoveByUuid({
+          key: 'username',
+          emptyValue: ''
+        })
         // 删除cookie
         Cookies.remove('token')
         Cookies.remove('uuid')
