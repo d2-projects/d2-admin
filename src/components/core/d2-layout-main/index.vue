@@ -6,9 +6,9 @@
     <!-- 半透明遮罩 -->
     <div class="d2-layout-main-mask"></div>
     <!-- 主体内容 -->
-    <el-container class="d2-layout-main-content">
+    <div class="d2-layout-main-content">
       <!-- 顶栏 -->
-      <el-header class="d2-theme-header">
+      <div class="d2-theme-header">
         <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
           <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
           <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeActiveSetting.name}/logo/all.png`">
@@ -25,15 +25,15 @@
           <d2-layout-main-header-theme/>
           <d2-layout-main-header-user/>
         </div>
-      </el-header>
+      </div>
       <!-- 下面 主体 -->
-      <el-container class="d2-theme-container">
+      <div class="d2-theme-container">
         <!-- 主体 侧边栏 -->
-        <el-aside ref="aside" class="d2-theme-container-aside" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
+        <div ref="aside" class="d2-theme-container-aside" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
           <d2-layout-main-menu-side :collapse="collapse"/>
-        </el-aside>
+        </div>
         <!-- 主体 -->
-        <el-main class="d2-theme-container-main">
+        <div class="d2-theme-container-main">
           <div class="d2-theme-container-main-header">
             <d2-multiple-page-control/>
           </div>
@@ -47,9 +47,9 @@
               <router-view v-if="!alive"/>
             </transition>
           </div>
-        </el-main>
-      </el-container>
-    </el-container>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
