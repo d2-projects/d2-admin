@@ -6,7 +6,7 @@
 
 ```
 <template>
-  <d2-container type="full" :scroll="true">
+  <d2-container type="full" scroll>
     <template slot="header">
       可选的 header 内容 ...
     </template>
