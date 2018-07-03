@@ -65,7 +65,9 @@ export default {
     }
   },
   mounted () {
-    this.scrollInit()
+    if (this.type === 'card' || this.type === 'ghost') {
+      this.scrollInit()
+    }
   },
   beforeDestroy () {
     this.scrollDestroy()
