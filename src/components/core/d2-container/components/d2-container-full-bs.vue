@@ -15,7 +15,9 @@
 </template>
 
 <script>
+// 插件
 import BScroll from 'better-scroll'
+
 export default {
   name: 'd2-container-full',
   data () {
@@ -24,13 +26,26 @@ export default {
     }
   },
   mounted () {
-    this.BS = new BScroll(this.$refs.wrapper, {
-      mouseWheel: true,
-      scrollbar: {
-        fade: true,
-        interactive: false
+    this.scrollInit()
+  },
+  beforeDestroy () {
+    this.scrollDestroy()
+  },
+  methods: {
+    scrollInit () {
+      this.BS = new BScroll(this.$refs.wrapper, {
+        mouseWheel: true,
+        scrollbar: {
+          fade: true,
+          interactive: false
+        }
+      })
+    },
+    scrollDestroy () {
+      if (this.BS) {
+        this.BS.destroy()
       }
-    })
+    }
   }
 }
 </script>
