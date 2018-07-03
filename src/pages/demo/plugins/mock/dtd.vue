@@ -1,9 +1,7 @@
 <template>
-  <d2-container type="ghost">
-    <el-card shadow="never" class="d2-mb">
-      <d2-demo-page-header slot="header" title="数据模板"/>
-      <d2-markdown :source="doc"/>
-    </el-card>
+  <d2-container>
+    <d2-demo-page-header slot="header" title="数据模板"/>
+    <d2-markdown :source="doc" class="d2-mb"/>
     <d2-demo-mock-card
       v-for="(item, index) in settingDTD"
       :key="index"
@@ -22,6 +20,7 @@
       :title="regexp.title"
       :code="regexp.code"
       :mock="regexp.mocked"
+      style="margin-bottom: 0px !important;"
       @reload="regexpMock()">
     </d2-demo-mock-card>
   </d2-container>

@@ -18,9 +18,26 @@ export default {
     }
   },
   mounted () {
-    this.BS = new BScroll(this.$refs.wrapper, {
-      mouseWheel: true
-    })
+    this.scrollInit()
+  },
+  beforeDestroy () {
+    this.scrollDestroy()
+  },
+  methods: {
+    scrollInit () {
+      this.BS = new BScroll(this.$refs.wrapper, {
+        mouseWheel: true,
+        scrollbar: {
+          fade: true,
+          interactive: false
+        }
+      })
+    },
+    scrollDestroy () {
+      if (this.BS) {
+        this.BS.destroy()
+      }
+    }
   }
 }
 </script>

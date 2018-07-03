@@ -1,12 +1,17 @@
 <template>
-  <div class="layout-main-group" :style="styleLayoutMainGroup" :class="{grayMode: isGrayMode}">
-    <div class="layout-main-mask"></div>
-    <el-container class="layout-main">
+  <div
+    class="d2-layout-main-group"
+    :style="styleLayoutMainGroup"
+    :class="{grayMode: isGrayMode}">
+    <!-- 半透明遮罩 -->
+    <div class="d2-layout-main-mask"></div>
+    <!-- 主体内容 -->
+    <div class="d2-layout-main-content">
       <!-- 顶栏 -->
-      <el-header>
+      <div class="d2-theme-header">
         <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeActive.value}/logo/icon-only.png`">
-          <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeActive.value}/logo/all.png`">
+          <img v-if="collapse" :src="`${$assetsPublicPath}static/image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
+          <img v-else :src="`${$assetsPublicPath}static/image/theme/${themeActiveSetting.name}/logo/all.png`">
         </div>
         <div class="toggle-aside-btn" @click="collapse = !collapse">
           <d2-icon name="bars"/>
@@ -20,31 +25,36 @@
           <d2-layout-main-header-theme/>
           <d2-layout-main-header-user/>
         </div>
-      </el-header>
+      </div>
       <!-- 下面 主体 -->
-      <el-container>
+      <div class="d2-theme-container">
         <!-- 主体 侧边栏 -->
-        <el-aside ref="aside" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
+        <div ref="aside" class="d2-theme-container-aside" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
           <d2-layout-main-menu-side :collapse="collapse"/>
-        </el-aside>
+        </div>
         <!-- 主体 -->
-        <el-main>
-          <div class="d2-layout-main-header">
-            <d2-multiple-page-control></d2-multiple-page-control>
+        <div class="d2-theme-container-main">
+          <div class="d2-theme-container-main-header">
+            <d2-multiple-page-control/>
           </div>
-          <div class="d2-layout-main-body">
+          <div class="d2-theme-container-main-body">
             <transition name="fade-transverse">
-              <router-view/>
+              <keep-alive>
+                <router-view v-if="alive"/>
+              </keep-alive>
+            </transition>
+            <transition name="fade-transverse">
+              <router-view v-if="!alive"/>
             </transition>
           </div>
-        </el-main>
-      </el-container>
-    </el-container>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 export default {
   name: 'd2-layout-main',
   components: {
@@ -67,25 +77,26 @@ export default {
   },
   computed: {
     ...mapState({
-      themeActive: state => state.d2admin.themeActive,
       isGrayMode: state => state.d2admin.isGrayMode
     }),
+    ...mapGetters([
+      'themeActiveSetting'
+    ]),
     styleLayoutMainGroup () {
       return {
-        ...this.themeActive.backgroundImage ? {
-          backgroundImage: `url('${this.$assetsPublicPath}${this.themeActive.backgroundImage}')`
+        ...this.themeActiveSetting.backgroundImage ? {
+          backgroundImage: `url('${this.$assetsPublicPath}${this.themeActiveSetting.backgroundImage}')`
         } : {}
       }
+    },
+    alive () {
+      if (this.$route.meta) {
+        if (this.$route.meta.alive) {
+          return true
+        }
+      }
+      return false
     }
-  },
-  mounted () {
-    // 加载主题
-    this.d2adminThemeLoad()
-  },
-  methods: {
-    ...mapMutations([
-      'd2adminThemeLoad'
-    ])
   }
 }
 </script>

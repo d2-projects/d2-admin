@@ -27,13 +27,29 @@ v8.11.1
 推荐使用 [nrm](https://github.com/Pana/nrm) 管理 npm 源，不建议使用 cnpm
 :::
 
+## 文档运行报错
+
+这里目前还有一个小遗憾，d2admin 使用的 webpack 版本不能符合 vuepress 的要求，所以如果你想在本地启动文档站点的服务，需要按下述步骤
+
+首先将 vuepress 安装到全局
+
+```
+npm i -g vuepress
+```
+
+启动服务
+
+```
+npm run doc:dev
+```
+
+::: tip
+你可能会发现项目目录中有一个 deploy 文件夹，这个文件是为了方便发布和提交代码用的，通常你并不需要使用它
+:::
+
 ## 删除页面右上角 github 链接
 
 在 `src/components/demo/d2-demo-page-cover/index.vue` 中删除相关代码即可
-
-## el-scrollbar 组件
-
-el-scrollbar 组件是 ElementUI 自带的一个隐藏组件，没有写入文档，详见 [https://github.com/ElemeFE/element/issues/2238](https://github.com/ElemeFE/element/issues/2238)
 
 ## 兼容性
 
@@ -178,3 +194,7 @@ Mock.setup({
 npm remove @antv/data-set -S
 npm remove @antv/g2 -S
 ```
+
+## 项目里有未完成的代码
+
+有些示例（比如 v-charts 和 ElementUI）是很方便就可以找到官网示例和文档的，这些插件和组件的示例在本项目中就可能处于未完成的状态，但是以后会完成

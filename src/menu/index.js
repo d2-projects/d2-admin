@@ -72,7 +72,9 @@ const demoComponents = {
       children: [
         { path: `${pre}container/card`, title: '卡片' },
         { path: `${pre}container/full`, title: '填满' },
-        { path: `${pre}container/ghost`, title: '隐形' }
+        { path: `${pre}container/full-bs`, title: '填满 滚动优化' },
+        { path: `${pre}container/ghost`, title: '隐形' },
+        { path: `${pre}container/ghost-header`, title: '隐形带头部' }
       ]
     },
     {
@@ -117,20 +119,12 @@ const demoComponents = {
         { path: `${pre}contextmenu/custom-trigger`, title: '自定义事件' }
       ]
     },
-    {
-      path: `${pre}bigdata-table`,
-      title: '百万数量级表格',
-      icon: 'table',
-      children: [
-        { path: `${pre}bigdata-table/demo`, title: '示例' },
-        { path: `${pre}bigdata-table/select`, title: '勾选' }
-      ]
-    },
-    { path: `${pre}scrollbar`, title: 'Element 滚动条组件', icon: 'crosshairs' },
+    { path: `${pre}bigdata-table`, title: '百万数量级表格', icon: 'table' },
     { path: `${pre}countup`, title: '数字动画', icon: 'motorcycle' },
     { path: `${pre}editor-quill`, title: '富文本编辑器', icon: 'pencil-square-o (edit, edit)' },
     { path: `${pre}editor-simpleMDE`, title: 'markdown编辑器', icon: 'font' },
-    { path: `${pre}highlight`, title: '代码高亮显示', icon: 'code' }
+    { path: `${pre}highlight`, title: '代码高亮显示', icon: 'code' },
+    { path: `${pre}json-tree`, title: 'JSON 展示', icon: 'sitemap' }
   ])('/demo/components/')
 }
 
@@ -201,6 +195,83 @@ const demoCharts = {
             { path: `${pre}list/ring/demo3`, title: '玫瑰图' },
             { path: `${pre}list/ring/demo4`, title: '限制显示条数' },
             { path: `${pre}list/ring/demo5`, title: '设置半径' }
+          ]
+        },
+        {
+          path: `${pre}list/waterfall`,
+          title: '瀑布图',
+          children: [
+            { path: `${pre}list/waterfall/demo1`, title: '一般' }
+          ]
+        },
+        {
+          path: `${pre}list/funnel`,
+          title: '漏斗图',
+          children: [
+            { path: `${pre}list/funnel/demo1`, title: '一般' },
+            { path: `${pre}list/funnel/demo2`, title: '金字塔' }
+          ]
+        },
+        {
+          path: `${pre}list/radar`,
+          title: '雷达图',
+          children: [
+            { path: `${pre}list/radar/demo1`, title: '一般' }
+          ]
+        },
+        {
+          path: `${pre}list/map`,
+          title: '地图',
+          children: [
+            { path: `${pre}list/map/demo1`, title: '一般' },
+            { path: `${pre}list/map/demo2`, title: '设置城市' },
+            { path: `${pre}list/map/demo3`, title: '设置样式' }
+          ]
+        },
+        {
+          path: `${pre}list/sankey`,
+          title: '桑基图',
+          children: [
+            { path: `${pre}list/sankey/demo1`, title: '一般' }
+          ]
+        },
+        {
+          path: `${pre}list/heatmap`,
+          title: '热力图',
+          children: [
+            { path: `${pre}list/heatmap/demo1`, title: '一般' },
+            { path: `${pre}list/heatmap/demo2`, title: '地图热力图' }
+          ]
+        },
+        {
+          path: `${pre}list/scatter`,
+          title: '散点图',
+          children: [
+            { path: `${pre}list/scatter/demo1`, title: '单维度多指标' },
+            { path: `${pre}list/scatter/demo2`, title: '双维度多指标' }
+          ]
+        },
+        {
+          path: `${pre}list/candle`,
+          title: 'K线图',
+          children: [
+            { path: `${pre}list/candle/demo1`, title: '一般' },
+            { path: `${pre}list/candle/demo2`, title: 'MA VOL' },
+            { path: `${pre}list/candle/demo3`, title: '自定义' }
+          ]
+        },
+        {
+          path: `${pre}list/gauge`,
+          title: '仪表盘',
+          children: [
+            { path: `${pre}list/gauge/demo1`, title: '一般' }
+          ]
+        },
+        {
+          path: `${pre}list/tree`,
+          title: '树图',
+          children: [
+            { path: `${pre}list/tree/demo1`, title: '径向树图' }
           ]
         }
       ]
@@ -311,10 +382,48 @@ const demoPlayground = {
   icon: 'flask',
   children: (pre => [
     { path: `${pre}index`, title: '试验台首页', icon: 'home' },
+    {
+      path: `${pre}page-cache`,
+      title: '页面缓存',
+      icon: 'hdd-o',
+      children: [
+        { path: `${pre}page-cache/on`, title: '开启缓存' },
+        { path: `${pre}page-cache/off`, title: '关闭缓存' }
+      ]
+    },
+    {
+      path: `${pre}page-argu`,
+      title: '参数传递和留存',
+      icon: 'assistive-listening-systems',
+      children: [
+        { path: `${pre}page-argu/send`, title: '发送' },
+        { path: `${pre}page-argu/get/username-from-menu?userid=userid-from-menu`, title: '接收' }
+      ]
+    },
     { path: `${pre}theme`, title: '主题', icon: 'flask' },
     { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' },
-    { path: `${pre}gray`, title: '灰度模式', icon: 'eye' }
+    { path: `${pre}gray`, title: '灰度模式', icon: 'eye' },
+    { path: `${pre}db`, title: '数据持久化', icon: 'database' }
   ])('/demo/playground/')
+}
+
+const setting = {
+  path: '/core/setting',
+  title: '设置',
+  icon: 'cog',
+  children: (pre => [
+    { path: `${pre}index`, title: '设置首页', icon: 'home' },
+    {
+      path: `${pre}theme`,
+      title: '主题设置',
+      icon: 'diamond',
+      children: [
+        { path: `${pre}theme/theme`, title: '选择主题' },
+        { path: `${pre}theme/custom`, title: '个性化' }
+      ]
+    },
+    { path: `${pre}releases`, title: '版本', icon: 'info-circle' }
+  ])('/core/setting/')
 }
 
 // 菜单 侧边栏
@@ -323,7 +432,8 @@ export const side = [
   demoComponents,
   demoCharts,
   demoElement,
-  demoPlayground
+  demoPlayground,
+  setting
 ]
 
 // 菜单 顶栏
@@ -338,10 +448,10 @@ export default [
     title: '功能',
     icon: 'puzzle-piece',
     children: [
-      demoPlugins,
+      demoElement,
       demoComponents,
       demoCharts,
-      demoElement,
+      demoPlugins,
       demoPlayground,
       {
         title: '空菜单演示',
@@ -362,7 +472,8 @@ export default [
   },
   {
     path: '/demo/business',
-    title: '演示页面',
+    title: '示例',
     icon: 'briefcase'
-  }
+  },
+  setting
 ]

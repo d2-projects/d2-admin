@@ -1,20 +1,16 @@
 <template>
-  <div style="height: 100%;">
-    <el-scrollbar v-if="menus.length > 0">
-      <div :style="{ height: `${asideHeight}px` }">
-        <el-menu
-          :collapse="collapse"
-          :unique-opened="true"
-          :default-active="active"
-          ref="menu"
-          @select="handleMenuSelect">
-          <template v-for="(menu, menuIndex) in menus">
-            <d2-layout-main-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
-            <d2-layout-main-menu-sub v-else :menu="menu" :key="menuIndex"/>
-          </template>
-        </el-menu>
-      </div>
-    </el-scrollbar>
+  <div class="d2-layout-main-menu-side">
+    <el-menu
+      :collapse="collapse"
+      :unique-opened="true"
+      :default-active="active"
+      ref="menu"
+      @select="handleMenuSelect">
+      <template v-for="(menu, menuIndex) in menus">
+        <d2-layout-main-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
+        <d2-layout-main-menu-sub v-else :menu="menu" :key="menuIndex"/>
+      </template>
+    </el-menu>
     <div v-if="menus.length === 0 && !collapse" class="menu-empty">
       <d2-icon name="hdd-o"/>
       <span>当前目录没有菜单</span>
@@ -28,6 +24,8 @@ import menuMixin from '../mixin/menu'
 // 组件
 import d2LayoutMainMenuItem from '../-menu-item/index.vue'
 import d2LayoutMainMenuSub from '../-menu-sub/index.vue'
+// 插件
+import BScroll from 'better-scroll'
 
 export default {
   name: 'd2-layout-main-menu-side',
@@ -49,10 +47,18 @@ export default {
     return {
       menus: [],
       active: '',
-      asideHeight: 300
+      asideHeight: 300,
+      BS: null
     }
   },
   watch: {
+    // 折叠和展开菜单的时候销毁 better scroll
+    collapse (val) {
+      this.scrollDestroy()
+      setTimeout(() => {
+        this.scrollInit()
+      }, 500)
+    },
     '$route.matched': {
       handler (val) {
         const path = val[0].path
@@ -69,17 +75,25 @@ export default {
     }
   },
   mounted () {
-    this.updateAsideHeight()
-    window.onresize = () => {
-      this.updateAsideHeight()
-    }
+    this.scrollInit()
   },
   beforeDestroy () {
-    window.onresize = function () {}
+    this.scrollDestroy()
   },
   methods: {
-    updateAsideHeight () {
-      this.asideHeight = this.$el.offsetHeight
+    scrollInit () {
+      this.BS = new BScroll(this.$el, {
+        mouseWheel: true,
+        scrollbar: {
+          fade: true,
+          interactive: false
+        }
+      })
+    },
+    scrollDestroy () {
+      if (this.BS) {
+        this.BS.destroy()
+      }
     }
   }
 }

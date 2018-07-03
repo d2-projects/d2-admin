@@ -5,8 +5,10 @@ const adapter = new LocalStorage('d2admin')
 const db = low(adapter)
 
 db.defaults({
-  themeActive: [],
-  pageOpenedList: []
+  themeActiveName: [],
+  pageOpenedList: [],
+  updateNotify: [],
+  username: []
 })
   .write()
 

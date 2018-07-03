@@ -1,26 +1,38 @@
 <template>
-  <div class="container-component" :class="{responsive}">
+  <div class="container-component" :class="{responsive}" ref="container">
     <!-- [card] 卡片容器 -->
-    <el-card v-if="type === 'card'" shadow="never" class="d2-container-card d2-mr d2-mb">
+    <el-card v-if="type === 'card'" shadow="never" class="d2-container-card d2-mr">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
     </el-card>
     <!-- [ghost] 隐形的容器 -->
     <div v-if="type === 'ghost'" class="d2-container-ghost">
-      <slot name="header"/>
+      <el-card v-if="$slots.header" shadow="never" class="d2-container-ghost-header">
+        <slot name="header"/>
+      </el-card>
       <slot/>
     </div>
-    <!-- [container-full] 撑满 -->
-    <d2-container-full v-if="type === 'full'">
+    <!-- [container-full] 填充 -->
+    <d2-container-full v-if="type === 'full' && !scroll">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
     </d2-container-full>
+    <!-- [container-full-bs] 填充 滚动优化 -->
+    <d2-container-full-bs v-if="type === 'full' && scroll">
+      <slot v-if="$slots.header" name="header" slot="header"/>
+      <slot/>
+      <slot v-if="$slots.footer" name="footer" slot="footer"/>
+    </d2-container-full-bs>
   </div>
 </template>
 
 <script>
+// 插件
+import BScroll from 'better-scroll'
+// 组件
 import d2ContainerFull from './components/d2-container-full.vue'
+import d2ContainerFullBs from './components/d2-container-full-bs.vue'
 export default {
   name: 'd2-container',
   props: {
@@ -30,6 +42,12 @@ export default {
       required: false,
       default: 'card'
     },
+    // 滚动优化
+    scroll: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     // 是否开启响应式尺寸变化
     responsive: {
       type: Boolean,
@@ -38,21 +56,45 @@ export default {
     }
   },
   components: {
-    'd2-container-full': d2ContainerFull
+    'd2-container-full': d2ContainerFull,
+    'd2-container-full-bs': d2ContainerFullBs
+  },
+  data () {
+    return {
+      BS: null
+    }
+  },
+  mounted () {
+    if (this.type === 'card' || this.type === 'ghost') {
+      this.scrollInit()
+    }
+  },
+  beforeDestroy () {
+    if (this.type === 'card' || this.type === 'ghost') {
+      this.scrollDestroy()
+    }
+  },
+  methods: {
+    scrollInit () {
+      this.BS = new BScroll(this.$refs.container, {
+        mouseWheel: true,
+        scrollbar: {
+          fade: true,
+          interactive: false
+        }
+      })
+    },
+    scrollDestroy () {
+      if (this.BS) {
+        this.BS.destroy()
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
-.container-component {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  overflow: auto;
-}
 @media (min-width: 576px) {
   // 根据你的需要在这里添加样式
 }
