@@ -1,8 +1,8 @@
-# 介绍
-
-D2Admin 是一个开源的管理系统前端集成方案
+D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者快速进行管理系统开发而设计
 
 ## 仓库和文档
+
+本项目仓库在 Github 和 Gitee 同步发布
 
 [Github 仓库](https://github.com/FairyEver/d2-admin)
 
@@ -67,9 +67,9 @@ D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https
 
 | QQ群 806395827 | 微信 liyang1711467488 |
 | --- | --- |
-| <img style="width: 200px;" src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/github/qq.jpg"/> | <img style="width: 200px;" src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/github/we.jpg"/> |
+| <img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/github/qq.jpg"/> | <img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/github/we.jpg"/> |
 
-> 微信群需要先加群主才可以拉进群 PS 微信群交流不太方便，建议QQ群
+> 微信群需要先加群主才可以拉进群 PS：QQ群活跃，建议加入QQ群
 
 ## TODO
 
@@ -149,6 +149,10 @@ D2Admin 仍然处于开发中，这里有一些暂时的计划：
 * 由于 github 访问较慢，推荐前往码云仓库下载 [gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin)，码云上的仓库**在每次发布版本才会更新**，所以如果你选择此方法，请直接 fork 仓库并克隆到本地
 
 > 码云的仓库由 github 同步，但是发行版和标签同步有一些问题，所以推荐直接 fork 仓库
+
+## 觉得不错 赏个咖啡 让作者打起精神继续开发~
+
+<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/github/reward.jpg"/>
 
 ## 使用
 
