@@ -1,0 +1,332 @@
+// 整体框架结构
+.d2-layout-main-group {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  // 背景上面的半透明遮罩
+  .d2-layout-main-mask {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+  // 内容层
+  .d2-layout-main-content {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    $d2-theme-header-height: 60px;
+    .d2-theme-header {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      height: $d2-theme-header-height;
+    }
+    .d2-theme-container {
+      position: absolute;
+      top: $d2-theme-header-height;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      display: flex;
+      flex-direction: row;
+      .d2-theme-container-aside {
+        transition: width .3s;
+        flex-grow: 0;
+        position: relative;
+        .d2-layout-main-menu-side {
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          left: 0px;
+          right: 0px;
+          overflow: hidden;
+        }
+      }
+      .d2-theme-container-main {
+        flex-grow: 1;
+        padding: 0px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        .d2-theme-container-main-header {
+          flex-grow: 0;
+        }
+        .d2-theme-container-main-body {
+          flex-grow: 1;
+          margin-top: 1px;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+// 主题公用
+.d2-layout-main-group {
+  &.grayMode {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+  }
+  // 主体
+  .d2-layout-main-content {
+    // [布局] 顶栏
+    .d2-theme-header {
+      // logo区域
+      .logo-group {
+        transition: width .3s;
+        float: left;
+        text-align: center;
+        img {
+          height: 60px;
+        }
+      }
+      // 折叠侧边栏切换按钮
+      .toggle-aside-btn {
+        float: left;
+        height: 60px;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @extend %unable-select;
+        i {
+          font-size: 20px;
+          margin-top: 4px;
+        }
+      }
+      // [菜单] 顶栏
+      .el-menu {
+        float: left;
+        border-bottom: none;
+        background-color: transparent;
+        %header-menu-item {
+          @extend %unable-select;
+          i.fa {
+            font-size: 16px;
+            margin-right: 4px;
+          }
+        }
+        .el-menu-item {
+          @extend %header-menu-item;
+          border-bottom: none;
+        }
+        .el-submenu {
+          @extend %header-menu-item;
+          .el-submenu__title {
+            border-bottom: none;
+          }
+        }
+      }
+      // 顶栏右侧的按钮
+      .d2-header-right {
+        float: right;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        .btn-text {
+          padding: 14px 12px;
+          border-radius: 4px;
+          margin: 0px !important;
+          margin-left: 10px !important;
+        }
+        .el-dropdown {
+          @extend %unable-select;
+        }
+      }
+    }
+    // [布局] 顶栏下面
+    .d2-theme-container {
+      // 侧边栏
+      .d2-theme-container-aside {
+        // [菜单] 正常状态
+        .el-menu {
+          @extend %unable-select;
+          background-color: transparent;
+          border-right: none;
+          .el-menu-item {
+            i {
+              margin-left: 4px;
+              margin-right: 5px;
+              font-size: 16px;
+            }
+          }
+        }
+        .el-submenu {
+          @extend %unable-select;
+          .el-submenu__title {
+            i {
+              margin-left: 4px;
+              margin-right: 5px;
+              font-size: 16px;
+            }
+            .el-submenu__icon-arrow {
+              margin-top: -10px;
+            }
+          }
+        }
+        // 菜单为空的时候显示的信息
+        .menu-empty {
+          height: 160px;
+          margin: 10px;
+          margin-top: 0px;
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          @extend %unable-select;
+          i {
+            font-size: 30px;
+            margin-bottom: 10px;
+          }
+          span {
+            font-size: 14px;
+          }
+        }
+        // [菜单] 折叠状态
+        .el-menu--collapse {
+          background-color: transparent;
+          .el-submenu__title {
+            text-align: center;
+          }
+        }
+      }
+      // 右下 主体
+      .d2-theme-container-main {
+        // 主体部分分为多页面控制器 和主体
+        .d2-theme-container-main-header {
+          // 多页面控制器
+          .d2-multiple-page-control-group {
+            display: flex;
+            margin-right: 20px;
+            .d2-multiple-page-control-content {
+              flex-grow: 1;
+              position: relative;
+              .d2-multiple-page-control-content-inner {
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                .d2-multiple-page-control {
+                  .el-tabs__header.is-top {
+                    margin: 0px;
+                  }
+                  .el-tabs__nav {
+                    overflow: hidden;
+                  }
+                }
+              }
+            }
+            .d2-multiple-page-control-btn {
+              position: relative;
+              bottom: -1px;
+              .el-dropdown {
+                .el-button-group {
+                  .el-button:first-child {
+                    border-bottom-left-radius: 0px;
+                  }
+                  .el-button:last-child {
+                    border-bottom-right-radius: 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        // 主体
+        .d2-theme-container-main-body {
+          // 布局组件
+          .container-component {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            overflow: hidden;
+            // 填充式布局组件
+            .d2-container-full {
+              position: absolute;
+              top: 0px;
+              right: 20px;
+              bottom: 0px;
+              left: 0px;
+              display: flex;
+              flex-direction: column;
+              overflow: hidden;
+              .d2-container-full__header {
+                padding: 20px;
+              }
+              .d2-container-full__body {
+                flex-grow: 1;
+                padding: 20px 20px;
+                overflow: auto;
+                position: relative;
+              }
+              .d2-container-full__footer {
+                padding: 20px;
+              }
+            }
+            // 填充式布局组件 - 滚动优化
+            .d2-container-full-bs {
+              position: absolute;
+              top: 0px;
+              right: 20px;
+              bottom: 0px;
+              left: 0px;
+              display: flex;
+              flex-direction: column;
+              overflow: hidden;
+              .d2-container-full-bs__header {
+                padding: 20px;
+              }
+              .d2-container-full-bs__body {
+                flex-grow: 1;
+                padding: 0px 20px;
+                overflow: hidden;
+                position: relative;
+              }
+              .d2-container-full-bs__footer {
+                padding: 20px;
+              }
+            }
+            // 卡片布局组件
+            .d2-container-card {
+              border-top-left-radius: 0px;
+              border-top-right-radius: 0px;
+            }
+            // 隐形布局组件
+            .d2-container-ghost {
+              margin-right: 20px;
+              margin-bottom: 20px;
+              .d2-container-ghost-header {
+                border-top: none;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                margin-bottom: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
