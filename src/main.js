@@ -62,6 +62,8 @@ new Vue({
     this.$store.commit('d2adminPageOpenedListLoad')
     // D2Admin 开发环境检查更新
     util.checkUpdate(this)
+    // 完整版
+    console.log('D2Admin 完整版项目地址：https://github.com/FairyEver/d2-admin')
   },
   methods: {
     /**
