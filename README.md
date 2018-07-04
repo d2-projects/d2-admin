@@ -152,7 +152,7 @@ D2Admin 仍然处于开发中，这里有一些暂时的计划：
 
 ## 觉得不错 赏个咖啡 让作者打起精神继续开发~
 
-<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/github/reward.png"/>
+<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/github/reward@2x.png"/>
 
 ## 使用
 
