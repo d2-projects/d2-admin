@@ -14,6 +14,8 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 
 因为现在集成了很多的插件和组件，首次加载会占用很多的时间，虽然已经做了首屏加载动画，但还是建议您在发布之前一定要删除没有用到的代码，比如项目没有用到图表、示例、插件组件
 
+<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/github/preview@2x.png"/>
+
 ## 功能
 
 * 首屏加载等待动画 避免首次加载白屏尴尬
