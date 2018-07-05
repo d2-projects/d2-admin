@@ -8,13 +8,13 @@ D2Admin 是一个开源的管理系统前端集成方案
 
 **完整版**
 
-[Github 仓库](https://github.com/FairyEver/d2-admin) | 
+[Github 仓库](https://github.com/d2-projects/d2-admin) | 
 [码云仓库](https://gitee.com/fairyever/d2-admin) | 
 [预览地址](https://fairyever.gitee.io/d2-admin-preview)
 
 **简化版模板**
 
-[Github 仓库](https://github.com/FairyEver/d2-admin-start-kit) | 
+[Github 仓库](https://github.com/d2-projects/d2-admin-start-kit) | 
 [码云仓库](https://gitee.com/fairyever/d2-admin-start-kit) | 
 [预览地址](https://fairyever.gitee.io/d2-admin-start-kit-preview/#/index)
 
@@ -163,7 +163,7 @@ D2Admin 仍然处于开发中，这里有一些暂时的计划：
 
 有两种方式可以获得 D2Admin 的代码
 
-* 在 [releases](https://github.com/FairyEver/d2-admin/releases) 页面下载最新的发行版。发行版一般是完成了某个大升级或者修复重要 bug 后发布的压缩包，你可以下载下来直接使用
+* 在 [releases](https://github.com/d2-projects/d2-admin/releases) 页面下载最新的发行版。发行版一般是完成了某个大升级或者修复重要 bug 后发布的压缩包，你可以下载下来直接使用
 
 * Fork 仓库到你的 github 然后克隆到本地，然后使用 master 分支继续你的开发。这种方式得到的是最新的代码，但是会有未完成的新功能。**不建议使用这种方式**
 
