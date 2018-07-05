@@ -2,7 +2,7 @@
 
 ## 如何贡献代码
 
-首先在[项目主页](https://github.com/FairyEver/d2-admin) fork 本仓库，然后进行你的开发，请确保你的开发是在 **dev** 分支进行。本地测试无误后方可 pull request，我在检查通过后会合并代码到原始仓库。
+首先在[项目主页](https://github.com/d2-projects/d2-admin) fork 本仓库，然后进行你的开发，请确保你的开发是在 **dev** 分支进行。本地测试无误后方可 pull request，我在检查通过后会合并代码到原始仓库。
 
 ## 要求
 

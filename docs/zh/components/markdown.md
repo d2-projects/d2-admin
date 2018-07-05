@@ -84,5 +84,5 @@ markdown 中引用部分的文本由于被识别为百度云的分享链接，�
 ![效果](./image/baiduyun.png)
 
 ::: tip
-了解 D2Admin 是如何在 markdown 中匹配百度云链接的？ [查看源码](https://github.com/FairyEver/d2-admin/blob/master/src/components/core/d2-markdown/index.vue)
+了解 D2Admin 是如何在 markdown 中匹配百度云链接的？ [查看源码](https://github.com/d2-projects/d2-admin/blob/master/src/components/core/d2-markdown/index.vue)
 :::

@@ -15,7 +15,7 @@
 export default {
   data () {
     return {
-      url: 'https://github.com/FairyEver/d2-admin'
+      url: 'https://github.com/d2-projects/d2-admin'
     }
   },
   methods: {

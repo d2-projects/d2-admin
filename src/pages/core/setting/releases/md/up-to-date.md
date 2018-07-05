@@ -1,6 +1,6 @@
 已经是最新版本
 
-[Github仓库](https://github.com/FairyEver/d2-admin)
+[Github仓库](https://github.com/d2-projects/d2-admin)
 
 [码云仓库](https://gitee.com/fairyever/d2-admin)
 

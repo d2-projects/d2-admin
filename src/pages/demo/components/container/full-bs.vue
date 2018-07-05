@@ -5,7 +5,7 @@
     </template>
     <d2-markdown :source="doc"/>
     <template slot="footer">
-      <d2-demo-link-btn title="D2Admin" link="https://github.com/FairyEver/d2-admin"/>
+      <d2-demo-link-btn title="D2Admin" link="https://github.com/d2-projects/d2-admin"/>
     </template>
   </d2-container>
 </template>
