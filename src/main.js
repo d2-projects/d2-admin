@@ -63,7 +63,7 @@ new Vue({
     // D2Admin 开发环境检查更新
     util.checkUpdate(this)
     // 完整版
-    console.log('D2Admin 完整版项目地址：https://github.com/FairyEver/d2-admin')
+    console.log('D2Admin 完整版项目地址：https://github.com/d2-projects/d2-admin')
   },
   methods: {
     /**

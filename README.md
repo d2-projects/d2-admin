@@ -11,13 +11,13 @@ D2Admin 简化版项目起始模板
 
 **完整版**
 
-[Github 仓库](https://github.com/FairyEver/d2-admin) | 
+[Github 仓库](https://github.com/d2-projects/d2-admin) | 
 [码云仓库](https://gitee.com/fairyever/d2-admin) | 
 [在线预览地址](https://fairyever.gitee.io/d2-admin-preview)
 
 **简化版模板 (本项目)**
 
-[Github 仓库](https://github.com/FairyEver/d2-admin-start-kit) | 
+[Github 仓库](https://github.com/d2-projects/d2-admin-start-kit) | 
 [码云仓库](https://gitee.com/fairyever/d2-admin-start-kit) | 
 [在线预览地址](https://fairyever.gitee.io/d2-admin-start-kit-preview/#/index)
 

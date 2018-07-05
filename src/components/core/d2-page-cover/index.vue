@@ -5,7 +5,7 @@
     </div>
     <p class="page-index-article-body__title">{{title}}</p>
     <p class="page-index-article-body__sub-title d2-mt-0">{{subTitle}}</p>
-    <a target="blank" href="https://github.com/FairyEver/d2-admin">
+    <a target="blank" href="https://github.com/d2-projects/d2-admin">
       <img
         style="position: absolute; top: 0; right: 0; border: 0; width: 130px;"
         :src="`${$assetsPublicPath}static/image/icon/github/forkme@2x.png`"

@@ -12,7 +12,7 @@
     <div v-else class="up2date">
       已经是最新版本
       <p class="d2-mb-0">
-        <a href="https://github.com/FairyEver/d2-admin" class="el-button el-button--primary" target="blank">
+        <a href="https://github.com/d2-projects/d2-admin" class="el-button el-button--primary" target="blank">
           <d2-icon name="github" class="d2-mr-5"/>
           D2Admin on Github
         </a>
