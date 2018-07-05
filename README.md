@@ -94,7 +94,7 @@ D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https
 <img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/github/reward-me@2x.png"/>
 <img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/github/qr@2x.png"/>
 
-更多介绍个使用方法见 [文档](https://fairyever.gitee.io/d2-admin-doc/zh/)
+更多介绍和使用方法见 [文档](https://fairyever.gitee.io/d2-admin-doc/zh/)
 
 ## 朋友的开源项目
 
