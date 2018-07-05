@@ -15,3 +15,4 @@ yarn-error.log*
 *.sln
 other
 package-lock.json
+design
