@@ -25,7 +25,7 @@ export default {
     link: {
       type: String,
       required: false,
-      default: 'https://github.com/FairyEver'
+      default: 'https://github.com/d2-projects'
     }
   }
 }
