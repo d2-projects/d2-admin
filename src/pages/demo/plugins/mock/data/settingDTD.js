@@ -60,7 +60,7 @@ export default [
         tel: '123-4567-8910',
         city: 'beijing',
         mail: '1711467488liyang@gmail.com',
-        github: 'https://github.com/FairyEver',
+        github: 'https://github.com/d2-projects',
         blog: 'http://www.fairyever.com/',
         creatDate: '2018-1-1',
         updateDate: '2018-1-2',
