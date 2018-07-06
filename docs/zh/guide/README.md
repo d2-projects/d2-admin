@@ -150,8 +150,6 @@ D2Admin 仍然处于开发中，这里有一些暂时的计划：
 ├─ .postcssrc.js
 ├─ LICENSE
 ├─ README.md
-├─ deploy.sh
-├─ design.sketch // 设计文件
 ├─ index.html
 └─ package.json
 ```
@@ -164,7 +162,7 @@ D2Admin 仍然处于开发中，这里有一些暂时的计划：
 
 * Fork 仓库到你的 github 然后克隆到本地，然后使用 master 分支继续你的开发。这种方式得到的是最新的代码，但是会有未完成的新功能。**不建议使用这种方式**
 
-* 由于 github 访问较慢，推荐前往码云仓库下载 [gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin)，码云上的仓库**在每次发布版本才会更新**，所以如果你选择此方法，请直接 fork 仓库并克隆到本地
+* 由于 github 访问较慢，推荐前往码云仓库下载 [gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin)，码云上的仓库**在每次发布版本或者修复 bug 才会更新**，所以如果你选择此方法，请直接 fork 仓库并克隆到本地
 
 > 码云的仓库由 github 同步，但是发行版和标签同步有一些问题，所以推荐直接 fork 仓库
 
