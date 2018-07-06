@@ -1,5 +1,4 @@
 module.exports = {
-  // base: '/d2-admin-doc/',
   locales: {
     '/': {
       lang: 'en-US',
@@ -12,6 +11,9 @@ module.exports = {
       description: '优雅的管理系统前端集成方案'
     }
   },
+  head: [
+    ['link', { rel: 'icon', href: `/logo@2x.png` }]
+  ],
   themeConfig: {
     // 项目仓库地址
     repo: 'https://github.com/d2-projects/d2-admin',
