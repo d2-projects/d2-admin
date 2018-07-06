@@ -12,7 +12,8 @@ module.exports = {
     }
   },
   head: [
-    ['link', { rel: 'icon', href: `/logo@2x.png` }]
+    ['link', { rel: 'icon', href: `/logo@2x.png` }],
+    ['script', {}, 'var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?be9d34853430c136b5d62c3081d556a5";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();']
   ],
   themeConfig: {
     // 项目仓库地址
