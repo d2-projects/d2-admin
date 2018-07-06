@@ -23,6 +23,8 @@ v8.11.1
   edunpm - http://registry.enpmjs.org/
 ```
 
+还有可能的原因是网络环境不好，node-sass 安装有可能会卡住，这时候需要科学上网办法解决这个问题
+
 ::: tip
 推荐使用 [nrm](https://github.com/Pana/nrm) 管理 npm 源，不建议使用 cnpm
 :::
