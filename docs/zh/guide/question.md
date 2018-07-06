@@ -6,7 +6,7 @@
 
 首先建议您升级 node 版本 > 8，在以下环境测试可用
 
-```{10}
+``` {10}
 ➜  ~ npm -v
 5.6.0
 ➜  ~ node -v
@@ -25,6 +25,54 @@ v8.11.1
 
 ::: tip
 推荐使用 [nrm](https://github.com/Pana/nrm) 管理 npm 源，不建议使用 cnpm
+:::
+
+## 无法跳转路由
+
+有可能你在 D2Admin 的基础上进行你的开发时，发现在登陆页面进行
+
+``` js
+this.$router.push({ name: 'index' })
+```
+
+跳转的时候页面并没有跳转，这是因为你很有可能没有进行下面的操作：
+
+``` js
+Cookies.set('token', res.token, setting)
+```
+
+原因根源是在 `src/router/index.js` 中有如下一段代码，根据 `token` 判断用户是否登陆
+
+``` js {3-9}
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(r => r.meta.requiresAuth)) {
+    if (Cookies.get('token')) {
+      next()
+    } else {
+      next({
+        name: 'login'
+      })
+    }
+  } else {
+    next()
+  }
+})
+```
+
+所以如果你没有存 token 字段在 cookie 中，路由鉴权机制将会重定向到登录页
+
+如果你想修改基于 token 验证用户登陆状态的机制，请在 `./src` 下搜索 `token` 关键字并修改他们，但是我**十分不建议你修改它们**
+
+最好的做法是在登陆后返回本次登陆的 token 并且存储在 cookie 中，然后在每次 ajax 请求时都携带这个 token 给后端做权限验证（必要的话你可以还可以增加 token 的更新机制）
+
+::: tip 同样需要注意的地方
+除了需要在 cookie 中保存 token，你还要保存 uuid 字段，意为“用户唯一标识”
+
+``` js
+Cookies.set('uuid', res.uuid, setting)
+```
+
+D2Admin 会在很多地方使用 cookie 中的此字段区分用户，比如不同用户选择的不同主题的数据持久化，还有不同用户打开的多标签页数据的持久化存储。
 :::
 
 ## 文档运行报错
