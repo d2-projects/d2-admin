@@ -98,7 +98,7 @@ export default {
               const setting = {
                 expires: 1
               }
-              // 设置 cookie
+              // 设置 cookie 一定要存 uuid 和 token 两个 cookie，整个系统依赖这两个数据进行校验和存储
               Cookies.set('uuid', res.uuid, setting)
               Cookies.set('token', res.token, setting)
               // 设置 vuex
