@@ -1,6 +1,5 @@
 <template>
-  <d2-container type="ghost" class="demo-layout-grid">
-    <template slot="header">网格布局</template>
+  <d2-container type="full" class="page">
     <d2-grid-layout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">
@@ -87,10 +86,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
-.demo-layout-grid {
+.page {
   .vue-grid-layout {
+    background-color: $color-bg;
+    border-radius: 4px;
     margin: -10px;
     .el-card {
       height: 100%;
