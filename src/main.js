@@ -38,6 +38,9 @@ import '@/assets/icons/index'
 // markdown主题
 import 'github-markdown-css'
 
+// 全屏控制
+import screenfull from 'screenfull'
+
 // 代码高亮主题
 import '@/assets/library/highlight/styles/atom-one-light.css'
 
@@ -110,6 +113,14 @@ new Vue({
     this.$store.commit('d2adminPageOpenedListLoad')
     // D2Admin 开发环境检查更新
     util.checkUpdate(this)
+    // 检测退出全屏
+    if (screenfull.enabled) {
+      screenfull.on('change', () => {
+        if (!screenfull.isFullscreen) {
+          this.$store.commit('d2adminFullScreenSet', false)
+        }
+      })
+    }
   },
   methods: {
     /**
