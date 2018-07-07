@@ -9,6 +9,31 @@ $prefix: d2;
   cursor: pointer;
 }
 
+// 填满父元素
+// 组要父元素 position: relative | absolute;
+%full {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+// flex 垂直水平居中
+%flex-center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+%flex-center-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+// 将元素模拟成卡片外观
 %card {
   border: 1px solid #dddee1;
   border-color: #e9eaec;
