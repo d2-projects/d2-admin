@@ -1,3 +1,4 @@
+import screenfull from 'screenfull'
 import util from '@/libs/util.js'
 import db from '@/libs/db.js'
 import themeList from '@/assets/style/theme/list.js'
@@ -331,14 +332,22 @@ export default {
      * @description 切换全屏
      * @param {state} state vuex state
      */
-    d2adminFullScreenToggle (state) {
-      if (state.isFullScreen) {
-        util.exitFullScreen()
-        state.isFullScreen = false
+    d2adminFullScreenToggle () {
+      if (screenfull.isFullscreen) {
+        screenfull.exit()
+        this.commit('d2adminFullScreenSet', false)
       } else {
-        util.openFullScreen()
-        state.isFullScreen = true
+        screenfull.request()
+        this.commit('d2adminFullScreenSet', true)
       }
+    },
+    /**
+     * @class isFullScreen
+     * @description 设置 store 里的全屏状态
+     * @param {state} state vuex state
+     */
+    d2adminFullScreenSet (state, isFullScreen) {
+      state.isFullScreen = isFullScreen
     },
     /**
      * @class isGrayMode

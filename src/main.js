@@ -23,6 +23,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 // font-awesome
 import '@/assets/library/font-awesome-4.7.0/css/font-awesome.min.css'
 
+// 全屏控制
+import screenfull from 'screenfull'
+
 // 全局注册的组件
 import '@/components'
 
@@ -62,6 +65,14 @@ new Vue({
     this.$store.commit('d2adminPageOpenedListLoad')
     // D2Admin 开发环境检查更新
     util.checkUpdate(this)
+    // 检测退出全屏
+    if (screenfull.enabled) {
+      screenfull.on('change', () => {
+        if (!screenfull.isFullscreen) {
+          this.$store.commit('d2adminFullScreenSet', false)
+        }
+      })
+    }
     // 完整版
     console.log('D2Admin 完整版项目地址：https://github.com/d2-projects/d2-admin')
   },

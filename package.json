@@ -20,6 +20,7 @@
     "lodash.uniqueid": "^4.0.1",
     "lowdb": "^1.0.0",
     "particles.js": "^2.0.0",
+    "screenfull": "^3.3.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
