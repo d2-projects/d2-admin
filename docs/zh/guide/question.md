@@ -4,7 +4,7 @@
 
 ## 无法启动项目
 
-首先建议您升级 node 版本 > 8，在以下环境测试可用
+如果在 `run dev` 或者 `npm i` 的过程中报错，首先建议您升级 node 版本 > 8，在以下环境测试可用
 
 ``` {10}
 ➜  ~ npm -v
@@ -23,11 +23,90 @@ v8.11.1
   edunpm - http://registry.enpmjs.org/
 ```
 
-还有可能的原因是网络环境不好，node-sass 安装有可能会卡住，这时候需要科学上网办法解决这个问题
-
 ::: tip
 推荐使用 [nrm](https://github.com/Pana/nrm) 管理 npm 源，不建议使用 cnpm
 :::
+
+在正在开发的 1.2.x 版本（也有可能在你看到这的时候版本已经比 1.2.x 更晚）中，我们不再使用 npm 作为推荐的包安装工具，取而代之的是使用 [yarn](https://yarnpkg.com/zh-Hans/)，使用方法如下
+
+```
+// 安装依赖
+yarn
+// 启动调试服务
+yarn run serve
+```
+
+## node-sass 安装失败
+
+由于某些不可描述的原因，利用 npm 进行安装模块的时候会发生包下载失败的情况，node-sass 尤其的频繁，或者说 node-sass 的二进制文件是接近百分百失败的，即使用 yarn 安装也依旧在这个点失败，给出以下建议
+
+**方法1**
+
+首先，需要提前下载 node-sass 的二进制文件，这个文件可以去 cnpm 仓库下载或者 node-sass 的 github 上去下载，在下载之前我们需要先查看电脑的系统的版本，来确定适合哪个版本的二进制文件，查看版本的指令如下：
+
+``` sh
+node -p "[process.platform, process.arch, process.versions.modules].join('-')"
+```
+
+输入这个指令后会弹出一个系统版本，然后在下面两个地址中选择一个去下载对应系统版本的后缀为 .node 的 node-sass 文件
+
+[cnpm https://npm.taobao.org/mirrors/node-sass/](https://npm.taobao.org/mirrors/node-sass/)
+
+[github https://github.com/sass/node-sass/releases](https://github.com/sass/node-sass/releases)
+
+下载完保存到任意位置，最好放置到 package.json 所在位置。然后我们需要手动指定 node-sass 二进制文件的下载源为下载的那个文件，以下是npm与yanr的指令：
+
+npm
+
+``` sh
+npm config set sass-binary-path 你存放刚才下载的二进制文件的目录
+// 例如 npm config set sass-binary-path e:/web/win32-x64-48_binding.node
+```
+
+yarn
+
+``` sh
+yarn config set sass-binary-path 你存放刚才下载的二进制文件的目录
+// 例如 yarn config set sass-binary-path e:/web/win32-x64-48_binding.node
+```
+
+然后我们即可用正常指令下载了
+
+::: tip 注意
+此方法会绑定为本地文件，即无法更新 node-sass 了。如果不希望这样，请使用第二种方法
+:::
+
+**方法2**
+
+此方案将把下载源指定为cnpm仓库
+
+全部的下载源指向cnpm的指令
+
+npm
+
+``` sh
+npm config set registry http://registry.npm.taobao.org
+```
+
+yarn
+
+``` sh
+yarn config set registry http://registry.npm.taobao.org
+```
+
+只指定node-sass的下载源
+
+npm
+
+``` sh
+npm config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
+```
+
+yarn
+
+``` sh
+yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
+```
 
 ## 无法跳转路由
 
@@ -83,13 +162,13 @@ D2Admin 会在很多地方使用 cookie 中的此字段区分用户，比如不�
 
 首先将 vuepress 安装到全局
 
-```
+``` sh
 npm i -g vuepress
 ```
 
 启动服务
 
-```
+``` sh
 npm run doc:dev
 ```
 
@@ -146,7 +225,7 @@ const demoChart = {
 }
 ```
 
-``` js{5,12}
+``` js {5,12}
 export const side = [
   demoPlugins,
   demoComponents,
@@ -162,7 +241,7 @@ export const side = [
 ]
 ```
 
-``` js{13,31}
+``` js {13,31}
 export default [
   {
     path: '/index',
@@ -206,7 +285,7 @@ export default [
 
 * 删除 `src/components/index.js` 中的相关内容（高亮部分）
 
-```js{5-6}
+```js {5-6}
 // 核心组件
 import './core/register'
 // 非核心组件 只是在很多演示页面中用到的组件
@@ -219,7 +298,7 @@ import './charts/register'
 
 * 删除 `src/mock/register.js` 中的相关内容（高亮部分）
 
-```js{7}
+```js {7}
 import Mock from 'mockjs'
 
 import '@/mock/ajax-demo'
@@ -240,7 +319,7 @@ Mock.setup({
 
 打开终端 cd 到项目文件夹，执行
 
-```
+``` sh
 npm remove @antv/data-set -S
 npm remove @antv/g2 -S
 ```
