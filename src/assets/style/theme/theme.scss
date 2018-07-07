@@ -17,13 +17,21 @@
     }
     background: $theme-menu-item-background-color-hover;
   }
+  %icon {
+    i.fa {
+      display: inline-block;
+      width: 15px;
+      text-align: center;
+      margin-right: 5px;
+    }
+  }
   .el-submenu__title {
     @extend %unable-select;
-    i.fa { margin-right: 5px; }
+    @extend %icon;
   }
   .el-menu-item {
     @extend %unable-select;
-    i.fa { margin-right: 5px; }
+    @extend %icon;
   }
   .el-submenu__title:hover {
     @include theme-menu-hover-style;
