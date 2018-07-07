@@ -34,6 +34,7 @@
     "particles.js": "^2.0.0",
     "path-posix": "^1.0.0",
     "quill": "^1.3.4",
+    "screenfull": "^3.3.2",
     "simplemde": "^1.11.2",
     "v-charts": "^1.17.6",
     "v-contextmenu": "^2.7.0",
