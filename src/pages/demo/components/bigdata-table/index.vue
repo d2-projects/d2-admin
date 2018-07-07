@@ -132,11 +132,6 @@ export default {
 <style lang="scss">
 .wraper{
   height: 400px;
-  // position: absolute;
-  // top: 0px;
-  // right: 0px;
-  // left: 0px;
-  // right: 0px;
   overflow: auto;
 }
 </style>

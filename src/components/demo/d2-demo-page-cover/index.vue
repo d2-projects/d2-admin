@@ -41,11 +41,7 @@ export default {
   }
 }
 .page-index-article-body {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
+  @extend %full;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
