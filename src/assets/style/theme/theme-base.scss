@@ -8,19 +8,11 @@
   position: relative;
   // 背景上面的半透明遮罩
   .d2-layout-main-mask {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    @extend %full;
   }
   // 内容层
   .d2-layout-main-content {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    @extend %full;
     $d2-theme-header-height: 60px;
     .d2-theme-header {
       position: absolute;
@@ -42,11 +34,7 @@
         flex-grow: 0;
         position: relative;
         .d2-layout-main-menu-side {
-          position: absolute;
-          top: 0px;
-          bottom: 0px;
-          left: 0px;
-          right: 0px;
+          @extend %full;
           overflow: hidden;
         }
       }
@@ -256,11 +244,7 @@
         .d2-theme-container-main-body {
           // 布局组件
           .container-component {
-            position: absolute;
-            top: 0px;
-            bottom: 0px;
-            left: 0px;
-            right: 0px;
+            @extend %full;
             overflow: hidden;
             // 填充式布局组件
             .d2-container-full {
