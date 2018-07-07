@@ -1,0 +1,53 @@
+{
+  "name": "d2-admin-start-kit-cli3",
+  "version": "1.1.4",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint --fix"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "better-scroll": "^1.12.4",
+    "dayjs": "^1.7.2",
+    "element-ui": "^2.4.3",
+    "js-cookie": "^2.2.0",
+    "lodash.uniqueid": "^4.0.1",
+    "lowdb": "^1.0.0",
+    "particles.js": "^2.0.0",
+    "semver": "^5.5.0",
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/eslint-config-airbnb": "^3.0.0-rc.3",
+    "lint-staged": "^6.0.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
