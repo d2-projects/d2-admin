@@ -19,7 +19,7 @@ router.beforeEach((to, from, next) => {
   // 验证当前路由所有的匹配中是否需要有登陆验证的
   if (to.matched.some(r => r.meta.requiresAuth)) {
     // 这里暂时将cookie里是否存有token作为验证是否登陆的条件
-    // 请根据自身业务需要修改
+    // 请根据自身功能需要修改
     if (Cookies.get('token')) {
       next();
     } else {

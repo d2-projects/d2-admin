@@ -4,7 +4,7 @@ const meta = { requiresAuth: true };
  * 在主框架内显示
  */
 const frameIn = [
-  // 首页
+  //
   {
     path: '/',
     redirect: { name: 'index' },
@@ -14,7 +14,7 @@ const frameIn = [
         path: 'index',
         name: 'index',
         meta,
-        component: () => import('@/pages/core/index'),
+        component: () => import('@/pages/d2admin/index'),
       },
     ],
   },
@@ -26,12 +26,54 @@ const frameIn = [
     component: () => import('@/components/core/d2-layout-main'),
     children: (pre => [
       {
-        path: 'index', name: `${pre}index`, component: () => import('@/pages/core/setting/index'), meta: { ...meta, title: '设置首页' },
+        path: 'index', name: `${pre}index`, component: () => import('@/pages/d2admin/setting/index'), meta: { ...meta, title: '设置首页' },
       },
       {
-        path: 'releases', name: `${pre}releases`, component: () => import('@/pages/core/setting/releases'), meta: { ...meta, title: '版本' },
+        path: 'releases', name: `${pre}releases`, component: () => import('@/pages/d2admin/setting/releases'), meta: { ...meta, title: '版本' },
       },
     ])('core-setting-'),
+  },
+  {
+    path: '/business/class1',
+    name: 'business-class1',
+    meta,
+    redirect: { name: 'business-class1-index' },
+    component: () => import('@/components/core/d2-layout-main'),
+    children: (pre => [
+      {
+        path: 'index', name: `${pre}index`, component: () => import('@/pages/business/class1/index'), meta: { ...meta, title: '功能 1' },
+      },
+      {
+        path: 'page1', name: `${pre}page1`, component: () => import('@/pages/business/class1/page1'), meta: { ...meta, title: '功能 1 页面 1' },
+      },
+      {
+        path: 'page2', name: `${pre}page2`, component: () => import('@/pages/business/class1/page2'), meta: { ...meta, title: '功能 1 页面 2' },
+      },
+    ])('business-class1-'),
+  },
+  {
+    path: '/business/class2',
+    name: 'business-class2',
+    meta,
+    redirect: { name: 'business-class2-index' },
+    component: () => import('@/components/core/d2-layout-main'),
+    children: (pre => [
+      {
+        path: 'index', name: `${pre}index`, component: () => import('@/pages/business/class2/index'), meta: { ...meta, title: '功能 2' },
+      },
+      {
+        path: 'class2-1/page1', name: `${pre}class2-1-page1`, component: () => import('@/pages/business/class2/class2-1/page1'), meta: { ...meta, title: '功能 2-1 页面 1' },
+      },
+      {
+        path: 'class2-1/page2', name: `${pre}class2-1-page2`, component: () => import('@/pages/business/class2/class2-1/page2'), meta: { ...meta, title: '功能 2-1 页面 2' },
+      },
+      {
+        path: 'page1', name: `${pre}page1`, component: () => import('@/pages/business/class2/page1'), meta: { ...meta, title: '功能 2 页面 1' },
+      },
+      {
+        path: 'page2', name: `${pre}page2`, component: () => import('@/pages/business/class2/page2'), meta: { ...meta, title: '功能 2 页面 2' },
+      },
+    ])('business-class2-'),
   },
 ];
 
@@ -43,7 +85,7 @@ const errorPage = [
   {
     path: '*',
     name: '404',
-    component: () => import('@/pages/core/404'),
+    component: () => import('@/pages/d2admin/404'),
   },
 ];
 
@@ -55,7 +97,7 @@ const frameOut = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/pages/core/login'),
+    component: () => import('@/pages/d2admin/login'),
   },
 ];
 
