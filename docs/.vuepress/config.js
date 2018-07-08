@@ -44,6 +44,7 @@ module.exports = {
           { text: '指南', link: '/zh/guide/' },
           { text: '插件', link: '/zh/plugins/' },
           { text: '组件', link: '/zh/components/' },
+          { text: '文章', link: '/zh/article/' },
           { text: '其它', link: '/zh/others/' },
           { text: '预览', link: 'https://fairyever.gitee.io/d2-admin-preview/#/index' }
         ],
@@ -51,6 +52,7 @@ module.exports = {
           '/zh/guide/': sideBarGuide('指南'),
           '/zh/plugins/': sideBarPlugins('插件'),
           '/zh/components/': sideBarComponents('组件'),
+          '/zh/article/': sideBarArticle('文章'),
           '/zh/others/': sideBarOthers('其它')
         }
       }
@@ -99,6 +101,20 @@ function sideBarComponents (title) {
         'icon-svg',
         'icon',
         'markdown'
+      ]
+    }
+  ]
+}
+
+function sideBarArticle (title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'update/1.1.4',
+        'update/0.0.0'
       ]
     }
   ]
