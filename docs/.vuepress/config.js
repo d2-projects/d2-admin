@@ -52,7 +52,7 @@ module.exports = {
           '/zh/guide/': sideBarGuide('指南'),
           '/zh/plugins/': sideBarPlugins('插件'),
           '/zh/components/': sideBarComponents('组件'),
-          '/zh/article/': sideBarArticle('文章'),
+          '/zh/article/': sideBarArticle('版本更新'),
           '/zh/others/': sideBarOthers('其它')
         }
       }
@@ -106,10 +106,10 @@ function sideBarComponents (title) {
   ]
 }
 
-function sideBarArticle (title) {
+function sideBarArticle (titleUpdate) {
   return [
     {
-      title,
+      title: titleUpdate,
       collapsable: false,
       children: [
         '',
