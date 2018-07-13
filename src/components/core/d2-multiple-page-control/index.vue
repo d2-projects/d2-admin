@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
     return {
@@ -62,33 +62,38 @@ export default {
     })
   },
   methods: {
+    ...mapMutations([
+      'd2adminTagCloseLeft',
+      'd2adminTagCloseRight',
+      'd2adminTagCloseOther',
+      'd2adminTagCloseAll'
+    ]),
     /**
      * @description 接收点击关闭控制上选项的事件
      */
     handleControlItemClick (command) {
       switch (command) {
         case 'left':
-          this.closeAllTagLeft()
+          this.handleCloseAllTagLeft()
           break
         case 'right':
-          this.closeAllTagRight()
+          this.handleCloseAllTagRight()
           break
         case 'other':
-          this.closeAllTagOther()
+          this.handleCloseAllTagOther()
           break
         case 'all':
-          this.closeAllTag()
+          this.handleCloseAllTag()
           break
         default:
-          console.log('无效指令')
+          this.$message.error('无效的操作')
           break
       }
     },
     /**
-     * @description 接收点击关闭控制上按钮的事件
+     * @description 接收点击关闭控制上按钮的事件 暂时这个按钮还只有关闭全部标签的功能
      */
     handleControlBtnClick () {
-      // 关闭所有
       this.closeAllTag()
     },
     /**
@@ -116,26 +121,26 @@ export default {
     /**
      * @description 关闭左侧的 tag
      */
-    closeAllTagLeft () {
-      this.$store.commit('d2adminTagCloseLeft')
+    handleCloseAllTagLeft () {
+      this.d2adminTagCloseLeft()
     },
     /**
      * @description 关闭右侧的 tag
      */
-    closeAllTagRight () {
-      this.$store.commit('d2adminTagCloseRight')
+    handleCloseAllTagRight () {
+      this.d2adminTagCloseRight()
     },
     /**
      * @description 关闭其它的 tag
      */
-    closeAllTagOther () {
-      this.$store.commit('d2adminTagCloseOther')
+    handleCloseAllTagOther () {
+      this.d2adminTagCloseOther()
     },
     /**
      * @description 关闭全部的 tag
      */
-    closeAllTag () {
-      this.$store.commit('d2adminTagCloseAll', this)
+    handleCloseAllTag () {
+      this.d2adminTagCloseAll(this)
     },
     /**
      * @description 关闭一个指定的 tag
@@ -157,25 +162,17 @@ export default {
             break
           }
         }
-      } else {
-        // 关闭的页面不是当前的页面
-        // 这里暂时不需要做什么
       }
       this.$store.commit('d2adminTagClose', tagName)
       if (this.pageCurrent === tagName) {
-        this.linkTo(newPage)
+        const { name = '', argu = {}, query = {} } = newPage
+        let routerObj = {
+          name,
+          params: argu,
+          query
+        }
+        this.$router.push(routerObj)
       }
-    },
-    /**
-     * @description 跳转到新的页面
-     */
-    linkTo ({ name = '', argu = {}, query = {} }) {
-      let routerObj = {
-        name,
-        params: argu,
-        query
-      }
-      this.$router.push(routerObj)
     }
   }
 }
