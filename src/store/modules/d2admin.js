@@ -321,11 +321,18 @@ export default {
      * @class pageOpenedList
      * @description 关闭所有 tag
      * @param {state} state vuex state
+     * @param {object} vm vue
      */
-    d2adminTagCloseAll (state) {
+    d2adminTagCloseAll (state, vm) {
       state.pageOpenedList.splice(1)
       // 更新设置到数据库
       this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
+      // 关闭所有的标签页后需要判断一次现在是不是在首页
+      if (vm.$route.name !== 'index') {
+        vm.$router.push({
+          name: 'index'
+        })
+      }
     },
     /**
      * @class isFullScreen
