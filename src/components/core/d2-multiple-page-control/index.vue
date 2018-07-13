@@ -19,7 +19,10 @@
       </div>
     </div>
     <div class="d2-multiple-page-control-btn">
-      <el-dropdown split-button @click="handleControlBtnClick" @command="handleControlItemClick">
+      <el-dropdown
+        split-button
+        @click="handleControlBtnClick"
+        @command="handleControlItemClick">
         <d2-icon name="times-circle"/>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="left">
@@ -132,10 +135,7 @@ export default {
      * @description 关闭全部的 tag
      */
     closeAllTag () {
-      this.$store.commit('d2adminTagCloseAll')
-      this.$router.push({
-        name: 'index'
-      })
+      this.$store.commit('d2adminTagCloseAll', this)
     },
     /**
      * @description 关闭一个指定的 tag
