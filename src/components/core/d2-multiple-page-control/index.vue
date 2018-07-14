@@ -74,16 +74,16 @@ export default {
     handleControlItemClick (command) {
       switch (command) {
         case 'left':
-          this.handleCloseAllTagLeft()
+          this.d2adminTagCloseLeft()
           break
         case 'right':
-          this.handleCloseAllTagRight()
+          this.d2adminTagCloseRight()
           break
         case 'other':
-          this.handleCloseAllTagOther()
+          this.d2adminTagCloseOther()
           break
         case 'all':
-          this.handleCloseAllTag()
+          this.d2adminTagCloseAll(this)
           break
         default:
           this.$message.error('无效的操作')
@@ -94,7 +94,7 @@ export default {
      * @description 接收点击关闭控制上按钮的事件 暂时这个按钮还只有关闭全部标签的功能
      */
     handleControlBtnClick () {
-      this.closeAllTag()
+      this.d2adminTagCloseAll(this)
     },
     /**
      * @description 接收点击 tab 标签的事件
@@ -110,68 +110,14 @@ export default {
       }
     },
     /**
-     * @description 点击 tab 上的删除按钮后首先触发这里
+     * @description 点击 tab 上的删除按钮后首先触发这里 首页的删除按钮已经隐藏 因此这里不用判断是 index
      */
     handleTabsEdit (tagName, action) {
       if (action === 'remove') {
-        // 首页的删除按钮已经隐藏 因此这里不用判断是 index
-        this.closeTag(tagName)
-      }
-    },
-    /**
-     * @description 关闭左侧的 tag
-     */
-    handleCloseAllTagLeft () {
-      this.d2adminTagCloseLeft()
-    },
-    /**
-     * @description 关闭右侧的 tag
-     */
-    handleCloseAllTagRight () {
-      this.d2adminTagCloseRight()
-    },
-    /**
-     * @description 关闭其它的 tag
-     */
-    handleCloseAllTagOther () {
-      this.d2adminTagCloseOther()
-    },
-    /**
-     * @description 关闭全部的 tag
-     */
-    handleCloseAllTag () {
-      this.d2adminTagCloseAll(this)
-    },
-    /**
-     * @description 关闭一个指定的 tag
-     */
-    closeTag (tagName) {
-      // 下个新的页面
-      let newPage = this.pageOpenedList[0]
-      // 如果关闭的页面就是当前显示的页面
-      if (this.pageCurrent === tagName) {
-        // 去找一个新的页面
-        let len = this.pageOpenedList.length
-        for (let i = 1; i < len; i++) {
-          if (this.pageOpenedList[i].name === tagName) {
-            if (i < len - 1) {
-              newPage = this.pageOpenedList[i + 1]
-            } else {
-              newPage = this.pageOpenedList[i - 1]
-            }
-            break
-          }
-        }
-      }
-      this.$store.commit('d2adminTagClose', tagName)
-      if (this.pageCurrent === tagName) {
-        const { name = '', argu = {}, query = {} } = newPage
-        let routerObj = {
-          name,
-          params: argu,
-          query
-        }
-        this.$router.push(routerObj)
+        this.$store.commit('d2adminTagClose', {
+          tagName,
+          vm: this
+        })
       }
     }
   }
