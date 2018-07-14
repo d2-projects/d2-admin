@@ -253,14 +253,42 @@ export default {
      * @param {state} state vuex state
      * @param {string} name close tag name
      */
-    d2adminTagClose (state, name) {
+    d2adminTagClose (state, { tagName, vm }) {
+      // 下个新的页面
+      let newPage = state.pageOpenedList[0]
+      const isCurrent = state.pageCurrent === tagName
+      // 如果关闭的页面就是当前显示的页面
+      if (isCurrent) {
+        // 去找一个新的页面
+        let len = state.pageOpenedList.length
+        for (let i = 1; i < len; i++) {
+          if (state.pageOpenedList[i].name === tagName) {
+            if (i < len - 1) {
+              newPage = state.pageOpenedList[i + 1]
+            } else {
+              newPage = state.pageOpenedList[i - 1]
+            }
+            break
+          }
+        }
+      }
       // 找到这个页面在已经打开的数据里是第几个
-      const index = state.pageOpenedList.findIndex(page => page.name === name)
+      const index = state.pageOpenedList.findIndex(page => page.name === tagName)
       if (index >= 0) {
         state.pageOpenedList.splice(index, 1)
       }
       // 更新设置到数据库
       this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
+      // 最后需要判断是否需要跳到首页
+      if (isCurrent) {
+        const { name = '', argu = {}, query = {} } = newPage
+        let routerObj = {
+          name,
+          params: argu,
+          query
+        }
+        vm.$router.push(routerObj)
+      }
     },
     /**
      * @class pageOpenedList
