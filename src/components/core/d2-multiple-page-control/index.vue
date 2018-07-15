@@ -50,11 +50,6 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 export default {
-  data () {
-    return {
-      activeName: 'first'
-    }
-  },
   computed: {
     ...mapState({
       pageOpenedList: state => state.d2admin.pageOpenedList,
@@ -91,7 +86,7 @@ export default {
       }
     },
     /**
-     * @description 接收点击关闭控制上按钮的事件 暂时这个按钮还只有关闭全部标签的功能
+     * @description 接收点击关闭控制上按钮的事件
      */
     handleControlBtnClick () {
       this.d2adminTagCloseAll(this)
@@ -100,6 +95,7 @@ export default {
      * @description 接收点击 tab 标签的事件
      */
     handleClick (tab, event) {
+      // 找到点击的页面在 tag 列表里是哪个
       const page = this.pageOpenedList.find(page => page.name === tab.name)
       if (page) {
         this.$router.push({
@@ -110,7 +106,7 @@ export default {
       }
     },
     /**
-     * @description 点击 tab 上的删除按钮后首先触发这里 首页的删除按钮已经隐藏 因此这里不用判断是 index
+     * @description 点击 tab 上的删除按钮触发这里 首页的删除按钮已经隐藏 因此这里不用判断是 index
      */
     handleTabsEdit (tagName, action) {
       if (action === 'remove') {

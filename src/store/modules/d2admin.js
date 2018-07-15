@@ -251,7 +251,7 @@ export default {
      * @class pageOpenedList
      * @description 关闭一个 tag (关闭一个页面)
      * @param {state} state vuex state
-     * @param {string} name close tag name
+     * @param {object} param1 { tagName: 要关闭的标签名字, vm: vue }
      */
     d2adminTagClose (state, { tagName, vm }) {
       // 下个新的页面
