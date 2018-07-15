@@ -100,7 +100,7 @@ export default {
       if (page) {
         this.$router.push({
           name: page.name,
-          params: page.argu,
+          params: page.params,
           query: page.query
         })
       }
