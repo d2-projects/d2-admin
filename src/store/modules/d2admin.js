@@ -187,15 +187,6 @@ export default {
       })
     },
     /**
-     * @class pageCurrent
-     * @description 设置当前激活的页面 name
-     * @param {state} state vuex state
-     * @param {string} name new name
-     */
-    d2adminPageCurrentSet (state, name) {
-      state.pageCurrent = name
-    },
-    /**
      * @class tagPool
      * @description 保存 tagPool (候选池)
      * @param {state} state vuex state
@@ -205,15 +196,53 @@ export default {
       state.tagPool = tagPool
     },
     /**
+     * @class pageCurrent
+     * @description 打开一个新的页面
+     * @param {state} state vuex state
+     * @param {object} param1 { name, params, query } 路由信息
+     */
+    d2adminPageOpenNew (state, { name, params, query }) {
+      // 已经打开的页面
+      let pageOpenedList = state.pageOpenedList
+      // 判断此页面是否已经打开 并且记录位置
+      let pageOpendIndex = 0
+      const pageOpend = pageOpenedList.find((page, index) => {
+        const same = page.name === name
+        pageOpendIndex = same ? index : pageOpendIndex
+        return same
+      })
+      if (pageOpend) {
+        // 页面以前打开过 但是新的页面可能 name 一样，参数不一样
+        this.commit('d2adminPageOpenedListUpdateItem', { index: pageOpendIndex, params, query })
+      } else {
+        // 页面以前没有打开过
+        const tagPool = state.tagPool
+        let tag = tagPool.find(t => t.name === name)
+        if (tag) {
+          this.commit('d2adminTagIncreate', { tag, params, query })
+        }
+      }
+      this.commit('d2adminPageCurrentSet', name)
+    },
+    /**
+     * @class pageCurrent
+     * @description 设置当前激活的页面 name
+     * @param {state} state vuex state
+     * @param {string} name new name
+     */
+    d2adminPageCurrentSet (state, name) {
+      state.pageCurrent = name
+    },
+    /**
      * @class pageOpenedList
      * @description 更新页面列表上的某一项
      * @param {state} state vuex state
-     * @param {info} param1 new page info
+     * @param {object} param1 { index, params, query } 路由信息
      */
-    d2adminPageOpenedListUpdateItem (state, { index, argu, query }) {
+    d2adminPageOpenedListUpdateItem (state, { index, params, query }) {
       // 更新页面列表某一项
       let page = state.pageOpenedList[index]
-      page.argu = argu || page.argu
+      page.params = params || page.params
       page.query = query || page.query
       state.pageOpenedList.splice(index, 1, page)
       // 更新设置到数据库
@@ -236,12 +265,11 @@ export default {
      * @param {state} state vuex state
      * @param {object} param1 new tag info
      */
-    d2adminTagIncreate (state, { tag, argu, query }) {
+    d2adminTagIncreate (state, { tag, params, query }) {
       // 设置新的 tag 在新打开一个以前没打开过的页面时使用
       let newPage = tag
-      newPage.argu = argu || newPage.argu
+      newPage.params = params || newPage.params
       newPage.query = query || newPage.query
-      newPage.argu = argu || newPage.argu
       // 添加进当前显示的页面数组
       state.pageOpenedList.push(newPage)
       // 更新设置到数据库
@@ -281,10 +309,10 @@ export default {
       this.commit('d2adminVuex2DbByUuid', 'pageOpenedList')
       // 最后需要判断是否需要跳到首页
       if (isCurrent) {
-        const { name = '', argu = {}, query = {} } = newPage
+        const { name = '', params = {}, query = {} } = newPage
         let routerObj = {
           name,
-          params: argu,
+          params,
           query
         }
         vm.$router.push(routerObj)
