@@ -128,19 +128,19 @@ new Vue({
      */
     getAllTagFromRoutes () {
       // 所有加载在主框架内的页面
-      const tagPool = []
+      const pool = []
       const push = function (routes) {
         routes.forEach(route => {
           if (route.children) {
             push(route.children)
           } else {
             const { meta, name, path } = route
-            tagPool.push({ meta, name, path })
+            pool.push({ meta, name, path })
           }
         })
       }
       push(frameInRoutes)
-      this.$store.commit('d2adminTagPoolSet', tagPool)
+      this.$store.commit('d2adminTagPoolSet', pool)
     }
   }
 })

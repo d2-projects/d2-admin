@@ -97,12 +97,9 @@ export default {
     handleClick (tab, event) {
       // 找到点击的页面在 tag 列表里是哪个
       const page = this.pageOpenedList.find(page => page.name === tab.name)
+      const { name, params, query } = page
       if (page) {
-        this.$router.push({
-          name: page.name,
-          params: page.params,
-          query: page.query
-        })
+        this.$router.push({ name, params, query })
       }
     },
     /**
