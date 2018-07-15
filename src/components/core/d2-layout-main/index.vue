@@ -39,12 +39,9 @@
           </div>
           <div class="d2-theme-container-main-body">
             <transition name="fade-transverse">
-              <keep-alive>
-                <router-view v-if="alive"/>
+              <keep-alive :include="keepAliveList">
+                <router-view/>
               </keep-alive>
-            </transition>
-            <transition name="fade-transverse">
-              <router-view v-if="!alive"/>
             </transition>
           </div>
         </div>
@@ -77,25 +74,27 @@ export default {
   },
   computed: {
     ...mapState({
-      isGrayMode: state => state.d2admin.isGrayMode
+      isGrayMode: state => state.d2admin.isGrayMode,
+      pageOpenedList: state => state.d2admin.pageOpenedList
     }),
     ...mapGetters([
       'themeActiveSetting'
     ]),
+    /**
+     * @description 返回现在需要缓存的页面 name
+     */
+    keepAliveList () {
+      return this.pageOpenedList.filter(item => !(item.meta && item.meta.notCache)).map(e => e.name)
+    },
+    /**
+     * @description 最外层容器的背景图片样式
+     */
     styleLayoutMainGroup () {
       return {
         ...this.themeActiveSetting.backgroundImage ? {
           backgroundImage: `url('${this.$assetsPublicPath}${this.themeActiveSetting.backgroundImage}')`
         } : {}
       }
-    },
-    alive () {
-      if (this.$route.meta) {
-        if (this.$route.meta.alive) {
-          return true
-        }
-      }
-      return false
     }
   }
 }

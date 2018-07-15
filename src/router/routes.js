@@ -1,7 +1,5 @@
 const meta = { requiresAuth: true }
 
-const alive = true
-
 /**
  * 在主框架内显示
  */
@@ -54,8 +52,8 @@ const frameIn = [
       { path: 'theme', name: `${pre}theme`, component: () => import('@/pages/demo/playground/theme'), meta: { ...meta, title: '主题' } },
       { path: 'fullscreen', name: `${pre}fullscreen`, component: () => import('@/pages/demo/playground/fullscreen'), meta: { ...meta, title: '全屏' } },
       { path: 'gray', name: `${pre}gray`, component: () => import('@/pages/demo/playground/gray'), meta: { ...meta, title: '灰度模式' } },
-      { path: 'page-cache/on', name: `${pre}page-cache-on`, component: () => import('@/pages/demo/playground/page-cache/on.vue'), meta: { ...meta, alive, title: '开启缓存' } },
-      { path: 'page-cache/off', name: `${pre}page-cache-off`, component: () => import('@/pages/demo/playground/page-cache/off.vue'), meta: { ...meta, title: '关闭缓存' } },
+      { path: 'page-cache/on', name: `${pre}page-cache-on`, component: () => import('@/pages/demo/playground/page-cache/on.vue'), meta: { ...meta, title: '开启缓存' } },
+      { path: 'page-cache/off', name: `${pre}page-cache-off`, component: () => import('@/pages/demo/playground/page-cache/off.vue'), meta: { ...meta, notCache: true, title: '关闭缓存' } },
       { path: 'page-argu/send', name: `${pre}page-argu-send`, component: () => import('@/pages/demo/playground/page-argu/send.vue'), meta: { ...meta, title: '参数传递 发送' } },
       { path: 'page-argu/get/:username', name: `${pre}page-argu-get`, component: () => import('@/pages/demo/playground/page-argu/get.vue'), meta: { ...meta, title: '参数传递 接收' } },
       { path: 'db', name: `${pre}db`, component: () => import('@/pages/demo/playground/db'), meta: { ...meta, title: '数据持久化' } }

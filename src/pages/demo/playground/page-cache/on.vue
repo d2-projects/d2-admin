@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'demo-playground-page-cache-on',
   data () {
     return {
       value: ''
