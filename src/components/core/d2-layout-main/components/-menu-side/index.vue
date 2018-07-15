@@ -11,7 +11,7 @@
         <d2-layout-main-menu-sub v-else :menu="menu" :key="menuIndex"/>
       </template>
     </el-menu>
-    <div v-if="menus.length === 0 && !collapse" class="menu-empty">
+    <div v-if="menus.length === 0 && !collapse" class="d2-layout-main-menu-empty">
       <d2-icon name="hdd-o"/>
       <span>当前目录没有菜单</span>
     </div>

@@ -61,10 +61,10 @@ const demoPlugins = {
 // 路由菜单 组件
 const demoComponents = {
   path: '/demo/components',
-  title: '组件',
+  title: '扩展组件',
   icon: 'puzzle-piece',
   children: (pre => [
-    { path: `${pre}index`, title: '组件首页', icon: 'home' },
+    { path: `${pre}index`, title: '扩展组件首页', icon: 'home' },
     {
       path: `${pre}container`,
       title: '布局容器',
@@ -282,10 +282,10 @@ const demoCharts = {
 // 路由菜单 组件库
 const demoElement = {
   path: '/demo/element',
-  title: 'Element 组件库',
+  title: '基础组件库',
   icon: 'cubes',
   children: (pre => [
-    { path: `${pre}index`, title: '组件库首页', icon: 'home' },
+    { path: `${pre}index`, title: '基础组件库首页', icon: 'home' },
     {
       path: `${pre}basic`,
       title: '基础',
