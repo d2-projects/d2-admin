@@ -32,7 +32,7 @@ module.exports = {
     svgRule.uses.clear()
     svgRule
       .include
-      .add(resolve('src/assets/icons/svg'))
+      .add(resolve('src/assets/svg-icons/icons'))
       .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
@@ -45,7 +45,7 @@ module.exports = {
     imagesRule
       .test(/\.(png|jpe?g|gif|webp|svg)(\?.*)?$/)
       .exclude
-      .add(resolve('src/assets/icons/svg'))
+      .add(resolve('src/assets/svg-icons/icons'))
       .end()
   }
 }

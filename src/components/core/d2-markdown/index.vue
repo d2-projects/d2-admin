@@ -9,6 +9,7 @@
 
 <script>
 import marked from 'marked'
+import axios from 'axios'
 import highlight from 'highlight.js'
 import bandupan from './plugin/baidupan'
 export default {
@@ -61,8 +62,8 @@ export default {
       this.markedHTML = await this.getReadme(this.url)
     },
     // 从 url 加载原始数据
-    async getReadme (name) {
-      const data = await this.$axios.get(name)
+    async getReadme (url) {
+      const { data } = await axios.get(url)
       return this.marked(data)
     },
     marked (data) {
