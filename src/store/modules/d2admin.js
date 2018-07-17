@@ -14,6 +14,10 @@ export default {
     version: packJson.version,
     // 有更新
     update: false,
+    // 顶栏菜单
+    menusHeader: [],
+    // 侧栏菜单
+    menusAside: [],
     // 全屏
     isFullScreen: false,
     // 灰度
@@ -120,6 +124,24 @@ export default {
     d2adminUtilDbRemove (state, { key, emptyValue }) {
       db.get(key).remove({pub: 'pub'}).write()
       state[key] = emptyValue
+    },
+    /**
+     * @class menusHeader
+     * @description 设置顶栏菜单
+     * @param {state} state vuex state
+     * @param {Array} menus menus setting
+     */
+    d2adminMenusHeaderSet (state, menus) {
+      state.menusHeader = menus
+    },
+    /**
+     * @class menusAside
+     * @description 设置侧边栏菜单
+     * @param {state} state vuex state
+     * @param {Array} menus menus setting
+     */
+    d2adminMenusAsideSet (state, menus) {
+      state.menusAside = menus
     },
     /**
      * @description 设置用户名
