@@ -1,3 +1,3 @@
-import page from './error-page-404'
+import page from './page'
 
 export default page

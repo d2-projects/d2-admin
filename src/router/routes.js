@@ -214,9 +214,15 @@ const frameIn = [
 const errorPage = [
   // 404
   {
+    path: '/is-mobile',
+    name: 'is-mobile',
+    component: () => import('@/pages/error-page-is-mobile')
+  },
+  // 404
+  {
     path: '*',
     name: '404',
-    component: () => import('@/pages/error-page-404/index.js')
+    component: () => import('@/pages/error-page-404')
   }
 ]
 

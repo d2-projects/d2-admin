@@ -39,7 +39,9 @@ export default {
       }
     ],
     // 当前页面
-    pageCurrent: ''
+    pageCurrent: '',
+    // 用户 UA
+    ua: {}
   },
   getters: {
     /**
@@ -126,10 +128,19 @@ export default {
       state[key] = emptyValue
     },
     /**
+     * @class UA
+     * @description 记录 UA
+     * @param {state} state vuex state
+     * @param {object} ua ua info
+     */
+    d2adminUaSet (state, ua) {
+      state.ua = ua
+    },
+    /**
      * @class menusHeader
      * @description 设置顶栏菜单
      * @param {state} state vuex state
-     * @param {Array} menus menus setting
+     * @param {array} menus menus setting
      */
     d2adminMenusHeaderSet (state, menus) {
       state.menusHeader = menus
@@ -138,7 +149,7 @@ export default {
      * @class menusAside
      * @description 设置侧边栏菜单
      * @param {state} state vuex state
-     * @param {Array} menus menus setting
+     * @param {array} menus menus setting
      */
     d2adminMenusAsideSet (state, menus) {
       state.menusAside = menus
