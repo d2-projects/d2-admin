@@ -8,24 +8,17 @@
       @selection-change="selectionChangeHandler"
       @editor-change="editorChangeHandler"/>
     <el-card shadow="never" class="d2-mt">
-      <d2-highlight :code="formated"/>
+      <d2-highlight :code="value" format/>
     </el-card>
   </d2-container>
 </template>
 
 <script>
-import htmlFormat from '@/libs/htmlFormat.js'
 import value from './value'
 export default {
   data () {
     return {
-      htmlFormat,
       value
-    }
-  },
-  computed: {
-    formated () {
-      return htmlFormat(this.value)
     }
   },
   methods: {

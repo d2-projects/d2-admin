@@ -5,6 +5,7 @@
 <script>
 // https://highlightjs.org/usage/
 // http://highlightjs.readthedocs.io/en/latest/api.html#configure-options
+import htmlFormat from './libs/htmlFormat'
 import highlight from 'highlight.js'
 export default {
   name: 'd2-highlight',
@@ -13,6 +14,11 @@ export default {
       type: String,
       required: false,
       default: `console.log('you lost code prop')`
+    },
+    format: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   data () {
@@ -30,7 +36,8 @@ export default {
   },
   methods: {
     highlight () {
-      this.highlightHTML = highlight.highlightAuto(this.code).value
+      const code = this.format ? htmlFormat(this.code) : this.code
+      this.highlightHTML = highlight.highlightAuto(code).value
     }
   }
 }
