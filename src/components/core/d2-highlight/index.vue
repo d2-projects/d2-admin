@@ -15,7 +15,7 @@ export default {
       required: false,
       default: `console.log('you lost code prop')`
     },
-    format: {
+    formatHtml: {
       type: Boolean,
       required: false,
       default: false
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     highlight () {
-      const code = this.format ? htmlFormat(this.code) : this.code
+      const code = this.formatHtml ? htmlFormat(this.code) : this.code
       this.highlightHTML = highlight.highlightAuto(code).value
     }
   }
