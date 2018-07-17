@@ -19,29 +19,6 @@ const frameIn = [
     ]
   },
   {
-    path: '/core/setting',
-    name: 'core-setting',
-    meta,
-    redirect: { name: 'core-setting-index' },
-    component: () => import('@/components/core/d2-layout-main'),
-    children: (pre => [
-      { path: 'index', name: `${pre}index`, component: () => import('@/views/core/setting/index'), meta: { ...meta, title: '设置首页' } },
-      { path: 'theme/theme', name: `${pre}theme-theme`, component: () => import('@/views/core/setting/theme/theme.vue'), meta: { ...meta, title: '选择主题' } },
-      { path: 'theme/custom', name: `${pre}theme-custom`, component: () => import('@/views/core/setting/theme/custom.vue'), meta: { ...meta, title: '个性化' } },
-      { path: 'releases', name: `${pre}releases`, component: () => import('@/views/core/setting/releases'), meta: { ...meta, title: '版本' } }
-    ])('core-setting-')
-  },
-  {
-    path: '/demo/business',
-    name: 'demo-business',
-    meta,
-    redirect: { name: 'demo-business-index' },
-    component: () => import('@/components/core/d2-layout-main'),
-    children: (pre => [
-      { path: 'index', name: `${pre}index`, component: () => import('@/views/demo/business/index'), meta: { ...meta, title: '示例业务页面首页' } }
-    ])('demo-business-')
-  },
-  {
     path: '/demo/playground',
     name: 'demo-playground',
     meta,

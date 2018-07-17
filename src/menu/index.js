@@ -406,33 +406,13 @@ const demoPlayground = {
   ])('/demo/playground/')
 }
 
-const setting = {
-  path: '/core/setting',
-  title: '设置',
-  icon: 'cog',
-  children: (pre => [
-    { path: `${pre}index`, title: '设置首页', icon: 'home' },
-    {
-      path: `${pre}theme`,
-      title: '主题设置',
-      icon: 'diamond',
-      children: [
-        { path: `${pre}theme/theme`, title: '选择主题' },
-        { path: `${pre}theme/custom`, title: '个性化' }
-      ]
-    },
-    { path: `${pre}releases`, title: '版本', icon: 'info-circle' }
-  ])('/core/setting/')
-}
-
 // 菜单 侧边栏
 export const side = [
   demoPlugins,
   demoComponents,
   demoCharts,
   demoElement,
-  demoPlayground,
-  setting
+  demoPlayground
 ]
 
 // 菜单 顶栏
@@ -468,11 +448,5 @@ export default [
         ]
       }
     ]
-  },
-  {
-    path: '/demo/business',
-    title: '示例',
-    icon: 'briefcase'
-  },
-  setting
+  }
 ]
