@@ -1,6 +1,6 @@
 <template>
   <div class="page-404">
-    <img :src="`${$baseUrl}image/page/404/cover@2x.png`">
+    <img src="./image/cover@2x.png">
     <el-button class="d2-mt" @click="$router.replace({ path: '/' })">
       返回首页
     </el-button>
