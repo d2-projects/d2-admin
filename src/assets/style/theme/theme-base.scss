@@ -1,5 +1,5 @@
 // 整体框架结构
-.d2-layout-main-group {
+.d2-layout-header-aside-group {
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -7,11 +7,11 @@
   overflow: hidden;
   position: relative;
   // 背景上面的半透明遮罩
-  .d2-layout-main-mask {
+  .d2-layout-header-aside-mask {
     @extend %full;
   }
   // 内容层
-  .d2-layout-main-content {
+  .d2-layout-header-aside-content {
     @extend %full;
     $d2-theme-header-height: 60px;
     .d2-theme-header {
@@ -33,7 +33,7 @@
         transition: width .3s;
         flex-grow: 0;
         position: relative;
-        .d2-layout-main-menu-side {
+        .d2-layout-header-aside-menu-side {
           @extend %full;
           overflow: hidden;
         }
@@ -66,7 +66,7 @@
 
 
 // 主题公用
-.d2-layout-main-group {
+.d2-layout-header-aside-group {
   &.grayMode {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -76,7 +76,7 @@
     filter: gray;
   }
   // 主体
-  .d2-layout-main-content {
+  .d2-layout-header-aside-content {
     // [布局] 顶栏
     .d2-theme-header {
       // logo区域
@@ -174,7 +174,7 @@
           }
         }
         // 菜单为空的时候显示的信息
-        .d2-layout-main-menu-empty {
+        .d2-layout-header-aside-menu-empty {
           height: 160px;
           margin: 10px;
           margin-top: 0px;

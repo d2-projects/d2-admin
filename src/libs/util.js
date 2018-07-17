@@ -64,8 +64,7 @@ util.checkUpdate = function (vm) {
         util.logCapsule('D2Admin', `New version ${res.name}`)
         console.log(`${dayjs(res.created_at).format('YYYY年M月D日')}更新 版本号: ${res.tag_name} | 详情${res.html_url}`)
       }
-      vm.$store.commit('d2adminUpdateSet', update)
-      vm.$store.commit('d2adminReleasesSet', res)
+      vm.$store.commit('d2adminUpdateSet', res)
     })
     .catch(err => {
       console.log('checkUpdate error', err)

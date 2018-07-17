@@ -2,9 +2,9 @@
 .theme-#{$theme-name} {
 
   // 背景图片和遮罩
-  .d2-layout-main-group {
+  .d2-layout-header-aside-group {
     background-color: $theme-bg-color;
-    .d2-layout-main-mask {
+    .d2-layout-header-aside-mask {
       background: $theme-bg-mask;
     }
   }
@@ -127,7 +127,7 @@
     // 侧边栏
     .d2-theme-container-aside {
       // 菜单为空的时候显示的信息
-      .d2-layout-main-menu-empty {
+      .d2-layout-header-aside-menu-empty {
         background: $theme-aside-menu-empty-background-color;
         i {
           color: $theme-aside-menu-empty-icon-color;
