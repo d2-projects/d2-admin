@@ -6,7 +6,6 @@ html, body {
   font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
   #app {
     @extend %full;
-    overflow: hidden;
     a {
       text-decoration: none;
     }
