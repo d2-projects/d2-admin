@@ -9,6 +9,7 @@
 * [ 修改 ] bug fixed [#41](https://github.com/d2-projects/d2-admin/issues/41)
 * [ 修改 ] 侧边栏和顶栏菜单数据控制转移到 vuex 集中管理
 * [ 修改 ] 页面最小宽度设置
+* [ 新增 ] d2-highlight 组件新增 format-html 参数
 
 ## v1.1.4
 
