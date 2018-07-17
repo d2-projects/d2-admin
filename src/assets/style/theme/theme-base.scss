@@ -146,6 +146,11 @@
     .d2-theme-container {
       // 侧边栏
       .d2-theme-container-aside {
+        %d2-theme-container-aside-menu-icon {
+          width: 20px;
+          text-align: center;
+          font-size: 16px;
+        }
         // [菜单] 正常状态
         .el-menu {
           @extend %unable-select;
@@ -153,9 +158,7 @@
           border-right: none;
           .el-menu-item {
             i {
-              margin-left: 4px;
-              margin-right: 5px;
-              font-size: 16px;
+              @extend %d2-theme-container-aside-menu-icon;
             }
           }
         }
@@ -163,9 +166,7 @@
           @extend %unable-select;
           .el-submenu__title {
             i {
-              margin-left: 4px;
-              margin-right: 5px;
-              font-size: 16px;
+              @extend %d2-theme-container-aside-menu-icon;
             }
             .el-submenu__icon-arrow {
               margin-top: -10px;

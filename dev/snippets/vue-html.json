@@ -1,0 +1,59 @@
+{
+	// 一个新的页面
+	"d2-new-page": {
+		"prefix": "dd-new-page",
+		"body": [
+			"<template>",
+			"  <d2-container type=\"${1:full}\" class=\"page\">",
+			"    ${2:page-name}",
+			"  </d2-container>",
+			"</template>",
+			"",
+			"<script>",
+			"export default {",
+      "  data () {",
+      "    return {}",
+			"  },",
+			"  computed: {",
+      "  },",
+			"  methods: {",
+      "  }",
+      "}",
+			"</script>",
+			"",
+			"<style lang=\"scss\" scoped>",
+			"@import '~@/assets/style/public.scss';",
+			".page {",
+			"  // Your page style here",
+			"  // Do not use empty rulesets",
+			"  // If empty, delete it",
+			"}",
+			"</style>"
+		],
+		"description": "new page"
+	},
+	// d2-container 组件 header 插槽
+	"d2-container-header": {
+		"prefix": "dd-container-header",
+		"body": [
+			"<template slot=\"header\">${1:header}</template>"
+		],
+		"description": "d2-container component header slot"
+	},
+	// d2-container 组件 footer 插槽
+	"d2-container-footer": {
+		"prefix": "dd-container-footer",
+		"body": [
+			"<template slot=\"footer\">${1:footer}</template>"
+		],
+		"description": "d2-container component footer slot"
+	},
+	// 图标组件
+	"d2-icon": {
+		"prefix": "dd-icon",
+		"body": [
+			"<d2-icon name=\"${1:github}\"/>"
+		],
+		"description": "d2-icon component"
+	}
+}

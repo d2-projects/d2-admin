@@ -31,7 +31,7 @@
       <el-tag type="info">
         <i :class="'fa fa-' + icon"></i>
       </el-tag>
-      <span style="font-size: 10px;">{{icon}}</span>
+      <span style="font-size: 10px; margin-left: 5px;">{{icon}}</span>
     </span>
   </div>
 </template>
