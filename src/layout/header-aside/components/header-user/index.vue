@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'd2adminDbRemoveByUuid'
+      'd2adminUtilDbRemoveByUuid'
     ]),
     logOff () {
       this.$confirm('注销此账户吗?', '注销', {
@@ -30,7 +30,7 @@ export default {
         type: 'warning'
       }).then(() => {
         // 删除用户名
-        this.d2adminDbRemoveByUuid({
+        this.d2adminUtilDbRemoveByUuid({
           key: 'username',
           emptyValue: ''
         })
