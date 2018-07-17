@@ -10,14 +10,10 @@ export default {
   state: {
     // 用户名
     username: '',
-    // 拉取的最新版本信息
-    releases: {},
     // D2Admin 版本
     version: packJson.version,
     // 有更新
     update: false,
-    // 更新提醒弹窗
-    updateNotify: false,
     // 全屏
     isFullScreen: false,
     // 灰度
@@ -147,15 +143,6 @@ export default {
       })
     },
     /**
-     * @description 更新远端的版本信息
-     * @class releases
-     * @param {state} state vuex state
-     * @param {object} releases info
-     */
-    d2adminReleasesSet (state, releases) {
-      state.releases = releases
-    },
-    /**
      * @description 设置是否有更新
      * @class update
      * @param {state} state vuex state
@@ -163,28 +150,6 @@ export default {
      */
     d2adminUpdateSet (state, update) {
       state.update = update
-    },
-    /**
-     * @description 是否有更新的时候显示弹窗
-     * @class updateNotify
-     * @param {state} state vuex state
-     * @param {boolean} update updateNotify value
-     */
-    d2adminUpdateNotifySet (state, updateNotify) {
-      state.updateNotify = updateNotify
-      this.commit('d2adminVuex2Db', 'updateNotify')
-    },
-    /**
-     * @description 是否有更新的时候显示弹窗 <- 从数据库更新这个设置
-     * @class updateNotify
-     * @param {state} state vuex state
-     * @param {boolean} update updateNotify value
-     */
-    d2adminUpdateNotifyLoad (state, updateNotify) {
-      this.commit('d2adminDb2Vuex', {
-        key: 'updateNotify',
-        defaultValue: true
-      })
     },
     /**
      * @class tagPool

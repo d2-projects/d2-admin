@@ -51,8 +51,6 @@ new Vue({
     util.showInfo()
     // DB -> store 加载用户名
     this.$store.commit('d2adminUsernameLoad')
-    // DB -> store 加载版本更新弹窗的设置
-    this.$store.commit('d2adminUpdateNotifyLoad')
     // DB -> store 加载主题
     this.$store.commit('d2adminThemeLoad')
     // DB -> store 数据库加载上次退出时的多页列表
