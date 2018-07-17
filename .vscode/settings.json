@@ -1,4 +1,7 @@
 {
-  "files.exclude": {},
+  "files.exclude": {
+    "dist": true,
+    "node_modules": true
+  },
   "todo-tree.expanded": true
 }
