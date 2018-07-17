@@ -7,8 +7,8 @@
     <p class="page-index-article-body__sub-title d2-mt-0">{{subTitle}}</p>
     <a target="blank" href="https://github.com/d2-projects/d2-admin">
       <img
-        style="position: absolute; top: 0; right: 0; border: 0; width: 130px;"
-        src="./image/forkme@2x.png"
+        style="position: absolute; top: 0; right: 0; border: 0; width: 150px;"
+        src="./image/darkblue@2x.png"
         alt="Fork me on GitHub">
     </a>
   </div>
