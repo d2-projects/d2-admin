@@ -51,6 +51,11 @@ new Vue({
     this.$store.commit('d2adminMenusHeaderSet', menusHeader)
   },
   mounted () {
+    // D2Admin 开发环境检查更新
+    util.checkUpdate(this)
+    // 获取并记录用户 UA 同时对危险环境做出判断
+    util.uaGet(this)
+    // 展示系统信息
     util.showInfo()
     // DB -> store 加载用户名
     this.$store.commit('d2adminUsernameLoad')
@@ -58,8 +63,6 @@ new Vue({
     this.$store.commit('d2adminThemeLoad')
     // DB -> store 数据库加载上次退出时的多页列表
     this.$store.commit('d2adminPageOpenedListLoad')
-    // D2Admin 开发环境检查更新
-    util.checkUpdate(this)
     // 初始化全屏监听
     this.fullscreenListenerInit()
   },

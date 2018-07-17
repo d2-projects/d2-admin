@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import axios from 'axios'
 import semver from 'semver'
 import dayjs from 'dayjs'
+import UaParser from 'ua-parser-js'
 
 // 获取项目信息
 import packJson from '../../package.json'
@@ -10,7 +11,7 @@ import packJson from '../../package.json'
 let util = {}
 
 /**
- * @description 得到现在的用户
+ * @description 得到现在的用户 uuid
  */
 util.uuid = function () {
   return Cookies.get('uuid')
@@ -20,8 +21,37 @@ util.uuid = function () {
  * @description 更新标题
  * @param {string} title 标题
  */
-util.title = function title (titleText) {
+util.title = function (titleText) {
   window.document.title = `${process.env.VUE_APP_TITLE}${titleText ? ` | ${titleText}` : ''}`
+}
+
+/**
+ * @description [ 私有 ] 获取所有的 UA 信息
+ */
+function getUa () {
+  return new UaParser().getResult()
+}
+
+/**
+ * @description 返回当前设备是否是手机
+ */
+util.isMobile = function (ua) {
+  return (ua || getUa()).device.type === 'mobile'
+}
+
+/**
+ * @description 获取并存储用户 UA 同时对危险环境做检查
+ * @param {object} vm vue
+ */
+util.uaGet = function (vm) {
+  // 获取 UA
+  const ua = getUa()
+  // 存储
+  vm.$store.commit('d2adminUaSet', ua)
+  // 判断
+  if (util.isMobile(ua)) {
+    vm.$router.replace({ name: 'is-mobile' })
+  }
 }
 
 /**
