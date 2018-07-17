@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import icon from '@/assets/library/font-awesome-4.7.0-icon/icon.js'
+import icon from './data/index'
 export default {
   components: {
     'd2-icon-cell': () => import('./components/d2-icon-cell')
