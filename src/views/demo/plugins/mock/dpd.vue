@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <d2-demo-page-header slot="header" title="数据占位符"/>
+    <template slot="header">数据占位符</template>
     <d2-markdown :source="doc" class="d2-mb"/>
     <d2-demo-mock-card
       v-for="(item, index) in settingDPD"

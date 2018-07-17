@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <d2-demo-page-header slot="header" title="基本示例"/>
+    <template slot="header">基本示例</template>
     <d2-quill
       style="min-height: 200px;"
       v-model="value"
