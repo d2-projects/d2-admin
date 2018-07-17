@@ -1,6 +1,6 @@
 <template>
   <el-menu mode="horizontal" @select="handleMenuSelect">
-    <template v-for="(menu, menuIndex) in menus">
+    <template v-for="(menu, menuIndex) in menusHeader">
       <d2-layout-header-aside-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
       <d2-layout-header-aside-menu-sub v-else :menu="menu" :key="menuIndex"/>
     </template>
@@ -8,12 +8,10 @@
 </template>
 
 <script>
-import menus from '@/menu/index.js'
+import { mapState } from 'vuex'
 import menuMixin from '../mixin/menu'
-// 组件
 import d2LayoutMainMenuItem from '../components/menu-item/index.vue'
 import d2LayoutMainMenuSub from '../components/menu-sub/index.vue'
-
 export default {
   name: 'd2-layout-header-aside-menu-header',
   mixins: [
@@ -23,10 +21,10 @@ export default {
     'd2-layout-header-aside-menu-item': d2LayoutMainMenuItem,
     'd2-layout-header-aside-menu-sub': d2LayoutMainMenuSub
   },
-  data () {
-    return {
-      menus
-    }
+  computed: {
+    ...mapState({
+      menusHeader: state => state.d2admin.menusHeader
+    })
   }
 }
 </script>

@@ -6,12 +6,12 @@
       :default-active="active"
       ref="menu"
       @select="handleMenuSelect">
-      <template v-for="(menu, menuIndex) in menus">
+      <template v-for="(menu, menuIndex) in menusAside">
         <d2-layout-header-aside-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
         <d2-layout-header-aside-menu-sub v-else :menu="menu" :key="menuIndex"/>
       </template>
     </el-menu>
-    <div v-if="menus.length === 0 && !collapse" class="d2-layout-header-aside-menu-empty">
+    <div v-if="menusAside.length === 0 && !collapse" class="d2-layout-header-aside-menu-empty">
       <d2-icon name="hdd-o"/>
       <span>当前目录没有菜单</span>
     </div>
@@ -19,14 +19,11 @@
 </template>
 
 <script>
-import { side } from '@/menu/index.js'
+import { mapState } from 'vuex'
 import menuMixin from '../mixin/menu'
-// 组件
 import d2LayoutMainMenuItem from '../components/menu-item/index.vue'
 import d2LayoutMainMenuSub from '../components/menu-sub/index.vue'
-// 插件
 import BScroll from 'better-scroll'
-
 export default {
   name: 'd2-layout-header-aside-menu-side',
   mixins: [
@@ -45,11 +42,15 @@ export default {
   },
   data () {
     return {
-      menus: [],
       active: '',
       asideHeight: 300,
       BS: null
     }
+  },
+  computed: {
+    ...mapState({
+      menusAside: state => state.d2admin.menusAside
+    })
   },
   watch: {
     // 折叠和展开菜单的时候销毁 better scroll
@@ -59,14 +60,12 @@ export default {
         this.scrollInit()
       }, 500)
     },
+    // 监听路由 控制侧边栏激活状态
     '$route.matched': {
       handler (val) {
-        const path = val[0].path
-        const _side = side.filter(menu => menu.path === path)
-        this.menus = _side.length > 0 ? _side[0].children : []
         this.active = val[val.length - 1].path
         this.$nextTick(() => {
-          if (this.menus.length > 0) {
+          if (this.menusAside.length > 0) {
             this.$refs.menu.activeIndex = this.active
           }
         })
