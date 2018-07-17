@@ -22,7 +22,6 @@ import '@/plugin/axios'
 import '@/mock/register'
 import pluginImport from '@/plugin/import'
 import pluginExport from '@/plugin/export'
-import pluginLog from '@/plugin/log'
 import pluginOpen from '@/plugin/open'
 import router from './router'
 
@@ -31,7 +30,6 @@ Vue.use(VCharts)
 Vue.use(contentmenu)
 Vue.use(pluginImport)
 Vue.use(pluginExport)
-Vue.use(pluginLog)
 Vue.use(pluginOpen)
 Vue.use(vueJsonTreeView)
 

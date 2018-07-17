@@ -4,7 +4,7 @@
     <div class="layer flex-center">
       <!-- logo部分 -->
       <div class="logo-group">
-        <img src="@/assets/image/logo/w500.png" alt="logo">
+        <img src="./image/logo.png" alt="logo">
       </div>
       <!-- 表单部分 -->
       <div class="form-group">
@@ -93,7 +93,9 @@ export default {
             }
           })
             .then(res => {
-              this.$log('登录结果', res)
+              console.group('登陆结果')
+              console.log('res: ', res)
+              console.groupEnd()
               // cookie 一天的有效期
               const setting = {
                 expires: 1
@@ -109,7 +111,9 @@ export default {
               })
             })
             .catch(err => {
-              this.$log('错误信息', err)
+              console.group('登陆结果')
+              console.log('err: ', err)
+              console.groupEnd()
             })
         } else {
           return false
