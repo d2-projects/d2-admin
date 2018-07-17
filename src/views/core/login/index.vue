@@ -4,7 +4,7 @@
     <div class="layer flex-center">
       <!-- logo部分 -->
       <div class="logo-group">
-        <img src="./image/login-code.png" alt="logo">
+        <img src="@/assets/image/logo/w500.png" alt="logo">
       </div>
       <!-- 表单部分 -->
       <div class="form-group">
@@ -24,7 +24,7 @@
               <el-input type="text" v-model="formLogin.code" placeholder="- - - -">
                 <template slot="prepend">验证码</template>
                 <template slot="append">
-                  <img class="login-code" :src="`${$baseUrl}image/login-code.png`">
+                  <img class="login-code" src="./image/login-code.png">
                 </template>
               </el-input>
             </el-form-item>
