@@ -4,7 +4,7 @@
     <div class="layer flex-center">
       <!-- logo部分 -->
       <div class="logo-group">
-        <img src="@/assets/image/logo/w500.png" alt="logo">
+        <img src="./image/login-code.png" alt="logo">
       </div>
       <!-- 表单部分 -->
       <div class="form-group">
