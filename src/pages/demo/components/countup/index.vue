@@ -1,5 +1,5 @@
 <template>
-  <d2-container class="page">
+  <d2-container type="card" class="page">
     <template slot="header">数字动画组件</template>
     <el-row :gutter="20">
       <el-col :span="6">

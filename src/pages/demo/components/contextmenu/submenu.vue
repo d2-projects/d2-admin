@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container type="card">
     <template slot="header">子菜单</template>
     <v-contextmenu ref="contextmenu">
       <v-contextmenu-item @click="handleClick">菜单 1</v-contextmenu-item>

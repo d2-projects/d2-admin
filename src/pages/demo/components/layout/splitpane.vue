@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container type="card">
     <template slot="header">区域划分</template>
     <div style="height: 400px; margin: -16px;">
       <SplitPane :min-percent='20' :default-percent='30' split="vertical">
