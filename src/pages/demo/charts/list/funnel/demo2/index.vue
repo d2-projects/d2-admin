@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">金字塔</template>
     <div class="inner">
       <ve-funnel :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-funnel>

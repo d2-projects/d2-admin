@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">修改指标名和图例文字</template>
     <div class="inner">
       <ve-candle :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-candle>

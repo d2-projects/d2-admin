@@ -6,7 +6,7 @@
 
 ```
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">
       可选的 header 内容 ...
     </template>

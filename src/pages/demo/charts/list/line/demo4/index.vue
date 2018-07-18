@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">显示指标数值</template>
     <div class="inner">
       <ve-line :data="chartData" :extend="extend" v-bind="pubSetting"></ve-line>

@@ -6,13 +6,8 @@
 
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
-| type | 容器类型 | 非 | String | card ghost full | card |
+| type | 容器类型 | 非 | String | card ghost full | full |
 | scroll | 滚动优化 | 非 | Boolean |  | false |
-| responsive | 响应式宽度 | 非 | Boolean |  | false |
-
-::: tip
-`responsive` 参数设置只在 `type` 等于 `card` 或 `ghost` 时生效
-:::
 
 ## 使用方法
 
@@ -38,25 +33,6 @@ export default {
 // 需要的话引入
 @import '~@/assets/style/public.scss';
 </style>
-```
-
-### 基础页面容器
-
-高度根据内容适应
-
-``` vue
-<d2-container>
-  主体内容
-</d2-container>
-```
-
-使用 `slot`
-
-``` vue
-<d2-container>
-  <template slot="header">我是插入到 header 中的内容</template>
-  主体内容
-</d2-container>
 ```
 
 ### 自适应填充页面容器
@@ -101,12 +77,44 @@ export default {
 </template>
 ```
 
+### 卡片型页面容器
+
+高度根据内容适应
+
+``` vue
+<d2-container type="card">
+  主体内容
+</d2-container>
+```
+
+使用 `slot`
+
+> 卡片型容器只有 header 插槽
+
+``` vue
+<d2-container type="card">
+  <template slot="header">我是插入到 header 中的内容</template>
+  主体内容
+</d2-container>
+```
+
 ### 隐形页面容器
 
 不显示任何背景色和边框，通常这个模式只有在极少情况下会使用
 
 ``` vue
 <d2-container type="ghost">
+  主体内容
+</d2-container>
+```
+
+使用 `slot`
+
+> 隐形页面容器只有 header 插槽
+
+``` vue
+<d2-container type="ghost">
+  <template slot="header">我是插入到 header 中的内容</template>
   主体内容
 </d2-container>
 ```

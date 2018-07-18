@@ -8,7 +8,7 @@
 
 ```
 <template>
-  <d2-container type="full" scroll>
+  <d2-container scroll>
     <template slot="header">
       可选的 header 内容 ...
     </template>

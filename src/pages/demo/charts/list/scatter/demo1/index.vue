@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">单维度多指标</template>
     <div class="inner">
       <ve-scatter :data="chartData" v-bind="pubSetting"></ve-scatter>

@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">一般</template>
     <div class="inner">
       <ve-bar :data="chartData" v-bind="pubSetting"></ve-bar>

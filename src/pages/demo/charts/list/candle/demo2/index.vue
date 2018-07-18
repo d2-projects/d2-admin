@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">显示 MA VOL</template>
     <div class="inner">
       <ve-candle :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-candle>

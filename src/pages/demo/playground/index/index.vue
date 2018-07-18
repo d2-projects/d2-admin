@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <d2-demo-page-cover
       title="试验台"
       sub-title="在这里可以测试一些 D2Admin 的系统功能">

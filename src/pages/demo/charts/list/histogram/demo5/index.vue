@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">默认显示柱状图数据</template>
     <div class="inner">
       <ve-histogram :data="chartData" :extend="extend" v-bind="pubSetting"></ve-histogram>

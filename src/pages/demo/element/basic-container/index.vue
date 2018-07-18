@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
 
     <el-container class="d2-mb">
       <el-header>顶栏</el-header>
