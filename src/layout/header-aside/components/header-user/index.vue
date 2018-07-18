@@ -1,6 +1,6 @@
 <template>
   <el-dropdown class="d2-mr">
-    <span class="btn-text">你好 {{username}}</span>
+    <span class="btn-text">你好 {{userInfo.name}}</span>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item @click.native="logOff"><d2-icon name="power-off"/> 注销</el-dropdown-item>
       <el-dropdown-item><d2-icon name="user-circle-o"/> 个人中心</el-dropdown-item>
@@ -12,11 +12,10 @@
 // 插件
 import Cookies from 'js-cookie'
 import { mapState, mapMutations } from 'vuex'
-
 export default {
   computed: {
     ...mapState({
-      username: state => state.d2admin.username
+      userInfo: state => state.d2admin.userInfo
     })
   },
   methods: {
@@ -29,9 +28,9 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
-        // 删除用户名
+        // 删除用户信息
         this.d2adminUtilDbRemoveByUuid({
-          key: 'username',
+          key: 'userInfo',
           emptyValue: ''
         })
         // 删除cookie

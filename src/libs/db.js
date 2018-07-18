@@ -7,7 +7,7 @@ const db = low(adapter)
 db.defaults({
   themeActiveName: [],
   pageOpenedList: [],
-  username: []
+  userInfo: []
 })
   .write()
 

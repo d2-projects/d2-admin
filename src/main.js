@@ -57,12 +57,8 @@ new Vue({
     util.uaGet(this)
     // 展示系统信息
     util.showInfo()
-    // DB -> store 加载用户名
-    this.$store.commit('d2adminUsernameLoad')
-    // DB -> store 加载主题
-    this.$store.commit('d2adminThemeLoad')
-    // DB -> store 数据库加载上次退出时的多页列表
-    this.$store.commit('d2adminPageOpenedListLoad')
+    // 用户登陆后从数据库加载一系列的设置
+    this.$store.commit('d2adminLoginSuccessLoad')
     // 初始化全屏监听
     this.fullscreenListenerInit()
   },
