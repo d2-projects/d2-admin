@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container type="card">
     <template slot="header">按钮组</template>
     <v-contextmenu ref="contextmenu">
       <v-contextmenu-group>
