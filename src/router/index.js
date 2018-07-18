@@ -21,7 +21,7 @@ router.beforeEach((to, from, next) => {
     next({ name: 'is-mobile' })
     return
   }
-  // 如果是电脑访问 is-mobile 页面的话 跳转到首页
+  // 如果是电脑访问 is-mobile 页面的话 -> 跳转到首页
   if (to.name === 'is-mobile' && !util.isMobile()) {
     next({ name: 'index' })
     return

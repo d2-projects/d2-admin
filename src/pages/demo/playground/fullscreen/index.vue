@@ -1,5 +1,5 @@
 <template>
-  <d2-container class="page-demo-playground-fullscreen">
+  <d2-container type="card" class="page-demo-playground-fullscreen">
     <template slot="header">全屏</template>
     <el-button type="primary" @click="d2adminFullScreenToggle">
       d2adminFullScreenToggle 切换全屏

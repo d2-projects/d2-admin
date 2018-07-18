@@ -1,5 +1,5 @@
 <template>
-  <d2-container class="page-demo-playground-gray">
+  <d2-container type="card" class="page-demo-playground-gray">
     <template slot="header">
       <div class="colorful">{{isGrayMode ? 'GRAY' : 'COLORFUL'}}</div>
     </template>
