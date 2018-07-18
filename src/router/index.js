@@ -21,6 +21,11 @@ router.beforeEach((to, from, next) => {
     next({ name: 'is-mobile' })
     return
   }
+  // 如果是电脑访问 is-mobile 页面的话 跳转到首页
+  if (to.name === 'is-mobile' && !util.isMobile()) {
+    next({ name: 'index' })
+    return
+  }
   // 验证当前路由所有的匹配中是否需要有登陆验证的
   if (to.matched.some(r => r.meta.requiresAuth)) {
     // 这里暂时将cookie里是否存有token作为验证是否登陆的条件
