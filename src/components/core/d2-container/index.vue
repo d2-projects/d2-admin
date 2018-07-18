@@ -1,5 +1,5 @@
 <template>
-  <div class="container-component" :class="{responsive}" ref="container">
+  <div class="container-component" ref="container">
     <!-- [card] 卡片容器 -->
     <el-card v-if="type === 'card'" shadow="never" class="d2-container-card d2-mr">
       <slot v-if="$slots.header" name="header" slot="header"/>
@@ -40,16 +40,10 @@ export default {
     type: {
       type: String,
       required: false,
-      default: 'card'
+      default: 'full'
     },
     // 滚动优化
     scroll: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    // 是否开启响应式尺寸变化
-    responsive: {
       type: Boolean,
       required: false,
       default: false
@@ -92,24 +86,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
-@media (min-width: 576px) {
-  // 根据你的需要在这里添加样式
-}
-@media (min-width: 768px) {
-  // 根据你的需要在这里添加样式
-}
-@media (min-width: 992px) {
-  // 根据你的需要在这里添加样式
-}
-// 在大于1920分辨率的时候
-@media (min-width: 1921px) {
-  .container-component.responsive {
-    margin: 0px auto;
-    margin-bottom: 20px;
-    max-width: 1920px - 200px;
-  }
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container type="card">
     <template slot="header">我是插入到 header 中的内容</template>
     <d2-markdown :source="doc"/>
   </d2-container>

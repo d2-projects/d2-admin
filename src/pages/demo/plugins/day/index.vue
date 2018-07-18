@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">日期计算</template>
     <h1 class="d2-mt-0">解析</h1>
     <el-row :gutter="20" class="d2-mt">

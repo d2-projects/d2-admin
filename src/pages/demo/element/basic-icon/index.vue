@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">图标</template>
     <h1 class="d2-mt-0">
       d2admin 已经集成 FontAwesome 图表库，提供约 1,000 个图标；并且准备好了图标组件

@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">堆叠条形图</template>
     <div class="inner">
       <ve-bar :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-bar>

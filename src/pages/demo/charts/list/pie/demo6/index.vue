@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">设置饼图半径边距</template>
     <div class="inner">
       <ve-pie :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-pie>

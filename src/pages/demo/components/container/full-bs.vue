@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full" scroll>
+  <d2-container scroll>
     <template slot="header">
       我是插入到 header 中的内容
     </template>

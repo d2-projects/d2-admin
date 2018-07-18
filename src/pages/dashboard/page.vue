@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <d2-demo-page-cover
       title="I AM D2ADMIN"
       sub-title="追求简约美感 & 上手即用的后台管理系统模板">

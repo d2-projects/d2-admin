@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <d2-demo-page-cover
       title="图表"
       sub-title="集成图表组件">

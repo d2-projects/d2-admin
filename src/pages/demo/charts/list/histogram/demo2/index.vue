@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">设置显示的指标维度</template>
     <div class="inner">
       <ve-histogram :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-histogram>

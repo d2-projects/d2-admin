@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full">
+  <d2-container>
     <template slot="header">横轴为连续的数值轴</template>
     <div class="inner">
       <ve-histogram :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-histogram>
