@@ -63,4 +63,28 @@
     width: 300px;
     margin-top: 20px;
   }
+  .user-btn {
+    @extend %flex-center-col;
+    @extend %unable-select;
+    padding: 10px 0px;
+    border-radius: 4px;
+    &:hover {
+      background-color: $color-bg;
+      i {
+        color: $color-text-normal;
+      }
+      span {
+        color: $color-text-normal;
+      }
+    }
+    i {
+      font-size: 36px;
+      color: $color-text-sub;
+    }
+    span {
+      font-size: 12px;
+      margin-top: 10px;
+      color: $color-text-sub;
+    }
+  }
 }

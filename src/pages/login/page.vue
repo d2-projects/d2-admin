@@ -32,12 +32,24 @@
           </el-form>
         </el-card>
       </div>
-      <!-- 帮助按钮 -->
-      <el-button type="info" class="button-help">
-        需要帮助
-        <i class="fa fa-question-circle"></i>
+      <!-- 快速登陆按钮 -->
+      <el-button type="info" class="button-help" @click="dialogVisible = true">
+        快速选择用户（测试功能）
       </el-button>
     </div>
+    <el-dialog
+      title="快速选择用户"
+      :visible.sync="dialogVisible"
+      width="400px">
+      <el-row :gutter="10" style="margin: -20px 0px -10px 0px;">
+        <el-col v-for="(user, index) in users" :key="index" :span="8">
+          <div class="user-btn" @click="handleUserBtnClick(user)">
+            <d2-icon name="user-circle-o"/>
+            <span>{{user.name}}</span>
+          </div>
+        </el-col>
+      </el-row>
+    </el-dialog>
   </div>
 </template>
 
@@ -53,11 +65,32 @@ import { mapMutations } from 'vuex'
 export default {
   data () {
     return {
+      // 快速选择用户
+      dialogVisible: false,
+      users: [
+        {
+          name: '管理员',
+          username: 'admin',
+          password: 'admin'
+        },
+        {
+          name: '编辑',
+          username: 'editor',
+          password: 'editor'
+        },
+        {
+          name: '用户',
+          username: 'user',
+          password: 'user'
+        }
+      ],
+      // 表单
       formLogin: {
         username: 'admin',
         password: 'admin',
         code: 'v9am'
       },
+      // 校验
       rules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' }
@@ -77,8 +110,21 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'd2adminUsernameSet'
+      'd2adminUserInfoSet',
+      'd2adminLoginSuccessLoad'
     ]),
+    /**
+     * @description 接收选择一个用户快速登陆的事件
+     * @param {object} user 用户信息
+     */
+    handleUserBtnClick (user) {
+      this.formLogin.username = user.username
+      this.formLogin.password = user.password
+      this.submit()
+    },
+    /**
+     * @description 提交表单
+     */
     // 提交登陆信息
     submit () {
       this.$refs.loginForm.validate((valid) => {
@@ -93,18 +139,19 @@ export default {
             }
           })
             .then(res => {
-              console.group('登陆结果')
-              console.log('res: ', res)
-              console.groupEnd()
               // cookie 一天的有效期
               const setting = {
                 expires: 1
               }
               // 设置 cookie 一定要存 uuid 和 token 两个 cookie，整个系统依赖这两个数据进行校验和存储
-              Cookies.set('uuid', res.uuid, setting)
-              Cookies.set('token', res.token, setting)
-              // 设置 vuex
-              this.d2adminUsernameSet(res.name)
+              Cookies.set('uuid', res.data.uuid, setting)
+              Cookies.set('token', res.data.token, setting)
+              // 设置 vuex 用户信息
+              this.d2adminUserInfoSet({
+                name: res.data.name
+              })
+              // 用户登陆后从数据库加载一系列的设置
+              this.d2adminLoginSuccessLoad()
               // 跳转路由
               this.$router.push({
                 name: 'index'
@@ -127,4 +174,3 @@ export default {
 <style lang="scss">
 @import './style.scss';
 </style>
-

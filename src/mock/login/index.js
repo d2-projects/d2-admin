@@ -6,6 +6,18 @@ const userDB = [
     password: 'admin',
     uuid: 'test-user-uuid',
     name: '管理员'
+  },
+  {
+    username: 'editor',
+    password: 'editor',
+    uuid: 'editor-uuid',
+    name: '编辑'
+  },
+  {
+    username: 'user',
+    password: 'user',
+    uuid: 'user-uuid',
+    name: '一般用户'
   }
 ]
 

@@ -8,8 +8,10 @@ import packJson from '../../../package.json'
 
 export default {
   state: {
-    // 用户名
-    username: '',
+    // 用户信息
+    userInfo: {
+      name: ''
+    },
     // D2Admin 版本
     version: packJson.version,
     // 有更新
@@ -155,24 +157,37 @@ export default {
       state.menusAside = menus
     },
     /**
-     * @description 设置用户名
-     * @class username
+     * @class ...
+     * @description 用户登陆后从数据库加载一系列的设置
      * @param {state} state vuex state
-     * @param {string} username username
      */
-    d2adminUsernameSet (state, username) {
-      state.username = username
-      this.commit('d2adminUtilVuex2DbByUuid', 'username')
+    d2adminLoginSuccessLoad (state) {
+      // DB -> store 加载用户名
+      this.commit('d2adminUserInfoLoad')
+      // DB -> store 加载主题
+      this.commit('d2adminThemeLoad')
+      // DB -> store 数据库加载上次退出时的多页列表
+      this.commit('d2adminPageOpenedListLoad')
+    },
+    /**
+     * @description 设置用户名
+     * @class userInfo
+     * @param {state} state vuex state
+     * @param {string} userInfo userInfo
+     */
+    d2adminUserInfoSet (state, userInfo) {
+      state.userInfo = userInfo
+      this.commit('d2adminUtilVuex2DbByUuid', 'userInfo')
     },
     /**
      * @description 从数据库取用户名
-     * @class username
+     * @class userInfo
      * @param {state} state vuex state
      */
-    d2adminUsernameLoad (state) {
+    d2adminUserInfoLoad (state) {
       this.commit('d2adminUtilDb2VuexByUuid', {
-        key: 'username',
-        defaultValue: ''
+        key: 'userInfo',
+        defaultValue: '获取用户名失败'
       })
     },
     /**
