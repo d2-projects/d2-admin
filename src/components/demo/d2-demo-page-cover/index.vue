@@ -1,10 +1,10 @@
 <template>
-  <div class="page-index-article-body">
-    <div class="page-index-article-body__logo">
+  <div class="page-cover">
+    <div class="page-cover__logo">
       <slot/>
     </div>
-    <p class="page-index-article-body__title">{{title}}</p>
-    <p class="page-index-article-body__sub-title d2-mt-0">{{subTitle}}</p>
+    <p class="page-cover__title">{{title}}</p>
+    <p class="page-cover__sub-title d2-mt-0">{{subTitle}}</p>
     <a target="blank" href="https://github.com/d2-projects/d2-admin">
       <img
         style="position: absolute; top: 0; right: 0; border: 0; width: 150px;"
@@ -40,21 +40,22 @@ export default {
     padding: 12px 20px;
   }
 }
-.page-index-article-body {
+.page-cover {
   @extend %full;
+  @extend %unable-select;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  .page-index-article-body__logo {
+  .page-cover__logo {
     img {
       width: 200px;
     }
   }
-  .page-index-article-body__title {
+  .page-cover__title {
     color: $color-text-main;
   }
-  .page-index-article-body__sub-title {
+  .page-cover__sub-title {
     color: $color-text-sub;
   }
 }
