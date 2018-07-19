@@ -12,6 +12,7 @@ module.exports = {
     publicPath: '/d2-admin-preview/' // 和 baseUrl 保持一致
   },
   // webpack 设置
+  // 默认设置: https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js
   chainWebpack: config => {
     // markdown
     config.module
@@ -48,8 +49,12 @@ module.exports = {
       .add(resolve('src/assets/svg-icons/icons'))
       .end()
     // 重新设置 alias
-    config.resolve
-      .alias
+    config.resolve.alias
       .set('@', resolve('src'))
+    // babel-polyfill 加入 entry
+    const entry = config.entry('app')
+    entry
+      .add('babel-polyfill')
+      .end()
   }
 }

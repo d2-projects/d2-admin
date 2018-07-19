@@ -2,6 +2,7 @@ import screenfull from 'screenfull'
 import util from '@/libs/util.js'
 import db from '@/libs/db.js'
 import themeList from '@/assets/style/theme/list.js'
+import Cookies from 'js-cookie'
 
 // 获取项目信息
 import packJson from '../../../package.json'
@@ -52,6 +53,46 @@ export default {
      */
     themeActiveSetting (state) {
       return state.themeList.find(theme => theme.name === state.themeActiveName)
+    }
+  },
+  actions: {
+    /**
+     * 注销用户并返回登陆页面
+     * @param {object} param0 context
+     * @param {boolean} confirm need confirm ?
+     */
+    d2adminLogout ({ state, commit, rootState }, { vm, confirm }) {
+      /**
+       * @description 注销
+       */
+      function logout () {
+        // 删除用户信息
+        commit('d2adminUtilDbRemoveByUuid', {
+          key: 'userInfo',
+          emptyValue: ''
+        })
+        // 删除cookie
+        Cookies.remove('token')
+        Cookies.remove('uuid')
+        // 跳转路由
+        vm.$router.push({
+          name: 'login'
+        })
+      }
+      // 判断是否需要确认
+      if (confirm) {
+        vm.$confirm(`注销 ${state.userInfo.name} 吗?`, '确认操作', {
+          confirmButtonText: '确定注销',
+          cancelButtonText: '放弃',
+          type: 'warning'
+        })
+          .then(logout)
+          .catch(() => {
+            vm.$message('放弃注销用户')
+          })
+      } else {
+        logout()
+      }
     }
   },
   mutations: {
