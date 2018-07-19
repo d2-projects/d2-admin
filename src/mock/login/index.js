@@ -14,10 +14,10 @@ const userDB = [
     name: '编辑'
   },
   {
-    username: 'user',
-    password: 'user',
-    uuid: 'user-uuid',
-    name: '一般用户'
+    username: 'user1',
+    password: 'user1',
+    uuid: 'user1-uuid',
+    name: '用户1'
   }
 ]
 

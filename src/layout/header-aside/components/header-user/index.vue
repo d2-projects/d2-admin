@@ -9,9 +9,7 @@
 </template>
 
 <script>
-// 插件
-import Cookies from 'js-cookie'
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   computed: {
     ...mapState({
@@ -19,29 +17,16 @@ export default {
     })
   },
   methods: {
-    ...mapMutations([
-      'd2adminUtilDbRemoveByUuid'
+    ...mapActions([
+      'd2adminLogout'
     ]),
+    /**
+     * @description 登出
+     */
     logOff () {
-      this.$confirm('注销此账户吗?', '注销', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      }).then(() => {
-        // 删除用户信息
-        this.d2adminUtilDbRemoveByUuid({
-          key: 'userInfo',
-          emptyValue: ''
-        })
-        // 删除cookie
-        Cookies.remove('token')
-        Cookies.remove('uuid')
-        // 跳转路由
-        this.$router.push({
-          name: 'login'
-        })
-      }).catch(() => {
-        // 取消了注销
+      this.d2adminLogout({
+        vm: this,
+        confirm: true
       })
     }
   }

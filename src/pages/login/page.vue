@@ -79,9 +79,9 @@ export default {
           password: 'editor'
         },
         {
-          name: '用户',
-          username: 'user',
-          password: 'user'
+          name: '用户1',
+          username: 'user1',
+          password: 'user1'
         }
       ],
       // 表单
