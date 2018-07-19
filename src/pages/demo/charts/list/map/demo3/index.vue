@@ -6,7 +6,7 @@
     </div> -->
     <!-- 大概由于 mock.js 和 v-charts 的网络请求冲突，本示例暂时无法展示 -->
     <template slot="footer">
-      <d2-demo-link-btn title="更多示例和文档" link="https://v-charts.js.org"/>
+      <d2-link-btn title="更多示例和文档" link="https://v-charts.js.org"/>
     </template>
   </d2-container>
 </template>

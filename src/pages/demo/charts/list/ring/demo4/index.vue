@@ -5,7 +5,7 @@
       <ve-ring :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-ring>
     </div>
     <template slot="footer">
-      <d2-demo-link-btn title="更多示例和文档" link="https://v-charts.js.org"/>
+      <d2-link-btn title="更多示例和文档" link="https://v-charts.js.org"/>
     </template>
   </d2-container>
 </template>
