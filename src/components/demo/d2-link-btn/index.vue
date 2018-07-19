@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'd2-demo-link-btn',
+  name: 'd2-link-btn',
   props: {
     title: {
       type: String,

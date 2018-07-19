@@ -57,7 +57,7 @@
       <el-col :span="12"><el-card shadow="never"><d2-highlight slot="header" :code="`// 是否之后\ndayjs().isAfter(dayjs().add(1, 'day'))`"/>{{dayjs().isAfter(dayjs().add(1, 'day'))}}</el-card></el-col>
       <el-col :span="12"><el-card shadow="never"><d2-highlight slot="header" :code="`// 是否之后\ndayjs().isAfter(dayjs().subtract(1, 'day'))`"/>{{dayjs().isAfter(dayjs().subtract(1, 'day'))}}</el-card></el-col>
     </el-row>
-    <d2-demo-link-btn slot="footer" title="依赖" link="https://github.com/iamkun/dayjs"/>
+    <d2-link-btn slot="footer" title="依赖" link="https://github.com/iamkun/dayjs"/>
   </d2-container>
 </template>
 
