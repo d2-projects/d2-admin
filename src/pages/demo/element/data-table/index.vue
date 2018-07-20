@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    
+
     <h1 class="d2-mt-0">基础用法</h1>
     <el-table
       :data="tableData"

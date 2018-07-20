@@ -57,9 +57,49 @@ export default {
   },
   actions: {
     /**
+     * 登陆
+     * @param {object} param0 context
+     * @param {object} param1 { vue, username, password }
+     */
+    d2adminLogin ({ state, commit, rootState }, { vm, username, password }) {
+      // 开始请求登录接口
+      vm.$axios({
+        method: 'post',
+        url: '/login',
+        data: {
+          username,
+          password
+        }
+      })
+        .then(res => {
+          // cookie 一天的有效期
+          const cookiesSetting = {
+            expires: 1
+          }
+          // 设置 cookie 一定要存 uuid 和 token 两个 cookie，整个系统依赖这两个数据进行校验和存储
+          Cookies.set('uuid', res.data.uuid, cookiesSetting)
+          Cookies.set('token', res.data.token, cookiesSetting)
+          // 设置 vuex 用户信息
+          commit('d2adminUserInfoSet', {
+            name: res.data.name
+          })
+          // 用户登陆后从数据库加载一系列的设置
+          commit('d2adminLoginSuccessLoad')
+          // 跳转路由
+          vm.$router.push({
+            name: 'index'
+          })
+        })
+        .catch(err => {
+          console.group('登陆结果')
+          console.log('err: ', err)
+          console.groupEnd()
+        })
+    },
+    /**
      * 注销用户并返回登陆页面
      * @param {object} param0 context
-     * @param {boolean} confirm need confirm ?
+     * @param {object} confirm need confirm ?
      */
     d2adminLogout ({ state, commit, rootState }, { vm, confirm }) {
       /**
