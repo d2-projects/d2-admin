@@ -7,7 +7,24 @@
     </el-tooltip>
     <el-dialog title="帮助" width="600px" :visible.sync="dialogVisible">
       <div style="margin-top: -25px; margin-bottom: -25px;">
-        <h1 class="d2-mt-0">如果你有问题可以加入交流群或者联系作者</h1>
+        <el-button-group class="d2-mb">
+          <el-button @click="$open('https://github.com/d2-projects/d2-admin')">
+            <d2-icon name="github" class="d2-mr-5"/>
+            主页
+          </el-button>
+          <el-button @click="$open('http://d2admin.fairyever.com/zh/')">
+            <d2-icon name="book" class="d2-mr-5"/>
+            中文文档
+          </el-button>
+          <el-button @click="$open('https://github.com/d2-projects/d2-admin/issues')">
+            <d2-icon name="question" class="d2-mr-5"/>
+            issues
+          </el-button>
+          <el-button @click="$open('https://github.com/d2-projects/d2-admin/issues/new')">
+            <d2-icon name="plus" class="d2-mr-5"/>
+            new issues
+          </el-button>
+        </el-button-group>
         <el-row :gutter="20">
           <el-col :span="12">
             <el-alert :closable="false" type="info" title="扫码进 QQ 群" class="d2-mb"/>
