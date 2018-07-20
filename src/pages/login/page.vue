@@ -135,7 +135,7 @@ export default {
             password: this.formLogin.password
           })
         } else {
-          return false
+          this.$message.error('表单校验失败')
         }
       })
     }
