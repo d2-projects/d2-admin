@@ -1,6 +1,10 @@
 <template>
   <d2-container type="full" class="page">
-    <template slot="header">本地数据</template>
+    <template slot="header">
+      <el-button type="primary" @click="load">
+        重新获取本地数据
+      </el-button>
+    </template>
     <d2-highlight :code="dbData"/>
   </d2-container>
 </template>
