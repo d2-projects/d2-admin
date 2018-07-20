@@ -81,13 +81,18 @@ export default {
       }
       // 判断是否需要确认
       if (confirm) {
-        vm.$confirm(`注销 ${state.userInfo.name} 吗?`, '确认操作', {
+        commit('d2adminGrayModeSet', true)
+        vm.$confirm(`注销 ${state.userInfo.name} 吗?  打开的标签页和用户设置将会被保存。`, '确认操作', {
           confirmButtonText: '确定注销',
           cancelButtonText: '放弃',
           type: 'warning'
         })
-          .then(logout)
+          .then(() => {
+            commit('d2adminGrayModeSet', false)
+            logout()
+          })
           .catch(() => {
+            commit('d2adminGrayModeSet', false)
             vm.$message('放弃注销用户')
           })
       } else {
