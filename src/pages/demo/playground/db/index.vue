@@ -10,7 +10,7 @@ import db from '@/libs/db.js'
 export default {
   data () {
     return {
-      dbData: {}
+      dbData: ''
     }
   },
   mounted () {
