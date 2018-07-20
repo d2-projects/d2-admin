@@ -90,11 +90,10 @@ D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https
 ## 觉得不错 赏个咖啡 让作者打起精神 ~
 
 <img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/reward-me@2x.png"/>
-<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/qr@2x.png"/>
 
 更多介绍和使用方法见 [文档](http://d2admin.fairyever.com/zh/)
 
-## 朋友的开源项目
+## 友情链接
 
 * [avue](https://github.com/nmxiaowei/avue)
 

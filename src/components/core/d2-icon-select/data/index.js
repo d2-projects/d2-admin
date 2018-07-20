@@ -123,7 +123,7 @@ export default [
       'cube',
       'cubes',
       'cutlery',
-      'dashboard',
+      'index',
       'database',
       'deaf',
       'deafness',

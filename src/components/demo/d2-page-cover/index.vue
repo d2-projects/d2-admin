@@ -5,6 +5,7 @@
     </div>
     <p class="page-cover__title">{{title}}</p>
     <p class="page-cover__sub-title d2-mt-0">{{subTitle}}</p>
+    <slot name="footer"/>
     <a target="blank" href="https://github.com/d2-projects/d2-admin">
       <img
         style="position: absolute; top: 0; right: 0; border: 0; width: 150px;"

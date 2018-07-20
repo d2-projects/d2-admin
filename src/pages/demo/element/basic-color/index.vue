@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/unit/_color.scss';
+@import '~@/assets/style/unit/color.scss';
 .color {
   border-radius: 4px;
   height: 90px;

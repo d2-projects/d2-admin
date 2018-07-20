@@ -17,7 +17,7 @@ const frameIn = [
         path: 'index',
         name: 'index',
         meta,
-        component: () => import('@/pages/dashboard')
+        component: () => import('@/pages/index')
       }
     ]
   },
