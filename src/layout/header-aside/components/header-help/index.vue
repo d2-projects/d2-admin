@@ -28,11 +28,11 @@
         <el-row :gutter="20">
           <el-col :span="12">
             <el-alert :closable="false" type="info" title="扫码进 QQ 群" class="d2-mb"/>
-            <img class="qr" src="./image/qq.jpg">
+            <img src="./image/qq.jpg" style="width: 100%;">
           </el-col>
           <el-col :span="12">
             <el-alert :closable="false" type="info" title="作者微信 加好友拉进微信群" class="d2-mb"/>
-            <img class="qr" src="./image/we.jpg">
+            <img src="./image/we.jpg" style="width: 100%;">
           </el-col>
         </el-row>
       </div>
@@ -49,11 +49,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-img {
-  &.qr {
-    width: 100%;
-  }
-}
-</style>
