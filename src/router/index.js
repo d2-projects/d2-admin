@@ -16,13 +16,14 @@ let router = new VueRouter({ routes })
  * 权限验证
  */
 router.beforeEach((to, from, next) => {
+  const isMobile = util.isMobile()
   // 禁止手机访问
-  if (to.name !== 'is-mobile' && util.isMobile()) {
+  if (to.name !== 'is-mobile' && isMobile) {
     next({ name: 'is-mobile' })
     return
   }
-  // 如果是电脑访问 is-mobile 页面的话 -> 跳转到首页
-  if (to.name === 'is-mobile' && !util.isMobile()) {
+  // 如果是电脑访问手机提示页面的话 -> 跳转到首页
+  if (to.name === 'is-mobile' && !isMobile) {
     next({ name: 'index' })
     return
   }

@@ -34,7 +34,7 @@
         <!-- 主体 -->
         <div class="d2-theme-container-main">
           <div class="d2-theme-container-main-header">
-            <d2-multiple-page-control/>
+            <d2-tabs/>
           </div>
           <div class="d2-theme-container-main-body">
             <transition name="fade-transverse">
@@ -54,7 +54,7 @@ import { mapState, mapGetters } from 'vuex'
 
 import menuSide from './components/menu-side'
 import menuHeader from './components/menu-header'
-import multiplePageControl from './components/multiple-page-control'
+import tabs from './components/tabs'
 import headerFullscreen from './components/header-fullscreen'
 import headerTheme from './components/header-theme'
 import headerUser from './components/header-user'
@@ -65,7 +65,7 @@ export default {
   components: {
     'd2-menu-side': menuSide,
     'd2-menu-header': menuHeader,
-    'd2-multiple-page-control': multiplePageControl,
+    'd2-tabs': tabs,
     'd2-header-fullscreen': headerFullscreen,
     'd2-header-theme': headerTheme,
     'd2-header-user': headerUser,
@@ -89,7 +89,7 @@ export default {
       'themeActiveSetting'
     ]),
     /**
-     * @description 返回现在需要缓存的页面 name
+     * @description 返回现在需要缓存的页面 name 数组
      */
     keepAliveList () {
       return this.pageOpenedList.filter(item => !(item.meta && item.meta.notCache)).map(e => e.name)
