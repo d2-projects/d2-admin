@@ -1,4 +1,4 @@
-// 暂时没有单元测试代码 此文件为自动生成
+// 暂时 D2 没有单元测试代码 此文件为自动生成
 
 import { shallowMount } from '@vue/test-utils'
 import HelloWorld from '@/components/HelloWorld.vue'
