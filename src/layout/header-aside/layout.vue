@@ -19,7 +19,6 @@
         <d2-menu-header/>
         <!-- 顶栏右侧 -->
         <div class="d2-header-right">
-          <d2-header-github/>
           <d2-header-help/>
           <d2-header-fullscreen/>
           <d2-header-theme/>
@@ -60,7 +59,6 @@ import headerFullscreen from './components/header-fullscreen'
 import headerTheme from './components/header-theme'
 import headerUser from './components/header-user'
 import headerHelp from './components/header-help'
-import headerGithub from './components/header-github'
 
 export default {
   name: 'd2-layout-header-aside',
@@ -71,8 +69,7 @@ export default {
     'd2-header-fullscreen': headerFullscreen,
     'd2-header-theme': headerTheme,
     'd2-header-user': headerUser,
-    'd2-header-help': headerHelp,
-    'd2-header-github': headerGithub
+    'd2-header-help': headerHelp
   },
   data () {
     return {
