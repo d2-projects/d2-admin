@@ -56,12 +56,9 @@
 <script>
 /* eslint-disable */
 require('particles.js')
-// 配置地址
-// https://vincentgarreau.com/particles.js/#default
 import config from './config/default'
 import Cookies from 'js-cookie'
-import { mapMutations } from 'vuex'
-
+import { mapMutations, mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -113,6 +110,9 @@ export default {
       'd2adminUserInfoSet',
       'd2adminLoginSuccessLoad'
     ]),
+    ...mapActions([
+      'd2adminLogin'
+    ]),
     /**
      * @description 接收选择一个用户快速登陆的事件
      * @param {object} user 用户信息
@@ -129,39 +129,11 @@ export default {
     submit () {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
-          // 开始请求登录接口
-          this.$axios({
-            method: 'post',
-            url: '/login',
-            data: {
-              username: this.formLogin.username,
-              password: this.formLogin.password
-            }
+          this.d2adminLogin({
+            vm: this,
+            username: this.formLogin.username,
+            password: this.formLogin.password
           })
-            .then(res => {
-              // cookie 一天的有效期
-              const setting = {
-                expires: 1
-              }
-              // 设置 cookie 一定要存 uuid 和 token 两个 cookie，整个系统依赖这两个数据进行校验和存储
-              Cookies.set('uuid', res.data.uuid, setting)
-              Cookies.set('token', res.data.token, setting)
-              // 设置 vuex 用户信息
-              this.d2adminUserInfoSet({
-                name: res.data.name
-              })
-              // 用户登陆后从数据库加载一系列的设置
-              this.d2adminLoginSuccessLoad()
-              // 跳转路由
-              this.$router.push({
-                name: 'index'
-              })
-            })
-            .catch(err => {
-              console.group('登陆结果')
-              console.log('err: ', err)
-              console.groupEnd()
-            })
         } else {
           return false
         }

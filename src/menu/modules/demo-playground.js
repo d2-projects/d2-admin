@@ -25,6 +25,7 @@ export default {
     { path: `${pre}theme`, title: '主题', icon: 'flask' },
     { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' },
     { path: `${pre}gray`, title: '灰度模式', icon: 'eye' },
-    { path: `${pre}db`, title: '数据持久化', icon: 'database' }
+    { path: `${pre}db`, title: '数据持久化', icon: 'database' },
+    { path: `${pre}ua`, title: '浏览器信息', icon: 'info-circle' }
   ])('/demo/playground/')
 }
