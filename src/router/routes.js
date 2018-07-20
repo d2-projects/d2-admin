@@ -219,12 +219,6 @@ const errorPage = [
     name: 'is-mobile',
     component: () => import('@/pages/error-page-is-mobile')
   },
-  // IE版本低提示
-  {
-    path: '/is-low-ie',
-    name: 'is-low-ie',
-    component: () => import('@/pages/error-page-is-low-ie')
-  },
   // 404
   {
     path: '*',
