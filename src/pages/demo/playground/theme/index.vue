@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full" class="page">
+  <d2-container type="card" class="page">
     <template slot="header">主题</template>
     <el-table :data="themeList" v-bind="table">
       <el-table-column prop="name" align="center" width="260"/>

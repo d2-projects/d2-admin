@@ -60,8 +60,15 @@ export default {
      * @description 从当前所有打开的多标签页里返回需要缓存的页面 name
      * @param {*} state vuex state
      */
-    d2adminKeepAliveList (state) {
-      return state.pageOpenedList.filter(item => !(item.meta && item.meta.notCache)).map(e => e.name)
+    d2adminKeepAliveInclude (state) {
+      return state.pageOpenedList.filter(item => {
+        if (item.meta) {
+          if (item.meta.notCache) {
+            return false
+          }
+        }
+        return true
+      }).map(e => e.name)
     }
   },
   actions: {

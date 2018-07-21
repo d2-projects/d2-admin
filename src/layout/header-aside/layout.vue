@@ -38,7 +38,7 @@
           </div>
           <div class="d2-theme-container-main-body">
             <transition name="fade-transverse">
-              <keep-alive :include="d2adminKeepAliveList">
+              <keep-alive :include="d2adminKeepAliveInclude">
                 <router-view/>
               </keep-alive>
             </transition>
@@ -87,7 +87,7 @@ export default {
     }),
     ...mapGetters([
       'themeActiveSetting',
-      'd2adminKeepAliveList'
+      'd2adminKeepAliveInclude'
     ]),
     /**
      * @description 最外层容器的背景图片样式
