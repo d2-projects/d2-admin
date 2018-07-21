@@ -45,6 +45,17 @@
   .el-menu--horizontal .el-menu .el-submenu__title:hover {
     @include theme-menu-hover-style;
   }
+
+  .el-menu--popup {
+    .el-menu-item {
+      height: 36px;
+      line-height: 36px;
+    }
+    .el-submenu__title {
+      height: 36px;
+      line-height: 36px;
+    }
+  }
   
   // 顶栏
   .d2-theme-header {

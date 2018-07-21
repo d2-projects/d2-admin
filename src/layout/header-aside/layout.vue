@@ -28,7 +28,10 @@
       <!-- 下面 主体 -->
       <div class="d2-theme-container">
         <!-- 主体 侧边栏 -->
-        <div ref="aside" class="d2-theme-container-aside" :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
+        <div
+          ref="aside"
+          class="d2-theme-container-aside"
+          :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
           <d2-menu-side/>
         </div>
         <!-- 主体 -->
@@ -51,7 +54,6 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-
 import menuSide from './components/menu-side'
 import menuHeader from './components/menu-header'
 import tabs from './components/tabs'
@@ -59,7 +61,6 @@ import headerFullscreen from './components/header-fullscreen'
 import headerTheme from './components/header-theme'
 import headerUser from './components/header-user'
 import headerHelp from './components/header-help'
-
 export default {
   name: 'd2-layout-header-aside',
   components: {
