@@ -1,7 +1,9 @@
 <template>
   <d2-container type="ghost">
     <div class="d2-pt d2-pb">
-      <d2-demo-article/>
+      <el-card shadow="never">
+        <d2-demo-article/>
+      </el-card>
     </div>
   </d2-container>
 </template>
