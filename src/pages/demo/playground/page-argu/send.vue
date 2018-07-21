@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="card">
+  <d2-container>
     <el-form :model="sendForm" :rules="rules" label-position="top" ref="sendForm">
       <el-form-item label="username 通过动态路由匹配发送" prop="username">
         <el-input v-model="sendForm.username"></el-input>

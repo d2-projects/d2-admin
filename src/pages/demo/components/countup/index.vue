@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="card" class="page">
+  <d2-container type="card" class="page-demo-components-countup">
     <template slot="header">数字动画组件</template>
     <el-row :gutter="20">
       <el-col :span="6">
@@ -76,7 +76,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
-.page {
+.page-demo-components-countup {
   .el-card {
     @extend %unable-select;
     .group {
