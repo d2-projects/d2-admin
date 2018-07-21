@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import doc from './md/doc-full-bs.md'
+import doc from './md/doc.md'
 export default {
   data () {
     return {

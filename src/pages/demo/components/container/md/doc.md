@@ -1,23 +1,3 @@
-## 自适应填充页面容器
-
-无论内容高度多少，都会自动撑满页面，并有可选的 `header` 和 `footer` 插槽
-
-示例：
-
-```
-<template>
-  <d2-container>
-    <template slot="header">
-      可选的 header 内容 ...
-    </template>
-    主体内容 ...
-    <template slot="footer">
-      可选的 footer 内容 ...
-    </template>
-  </d2-container>
-</template>
-```
-
 下面是一个较长的演示文章，仅仅是为了演示一些文字的显示效果
 
 ## vue.js
