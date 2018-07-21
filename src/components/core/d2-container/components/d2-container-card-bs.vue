@@ -1,0 +1,51 @@
+<template>
+  <div class="d2-container-card-bs">
+    <div v-if="$slots.header" class="d2-container-card-bs__header" ref="header">
+      <slot name="header"/>
+    </div>
+    <div class="d2-container-card-bs__body" ref="wrapper">
+      <div class="d2-container-card-bs__body-wrapper-inner">
+        <div class="d2-container-card-bs__body-card">
+          <slot/>
+        </div>
+      </div>
+    </div>
+    <div v-if="$slots.footer" class="d2-container-card-bs__footer" ref="footer">
+      <slot name="footer"/>
+    </div>
+  </div>
+</template>
+
+<script>
+import BScroll from 'better-scroll'
+export default {
+  name: 'd2-container-card-bs',
+  data () {
+    return {
+      BS: null
+    }
+  },
+  mounted () {
+    this.scrollInit()
+  },
+  beforeDestroy () {
+    this.scrollDestroy()
+  },
+  methods: {
+    scrollInit () {
+      this.BS = new BScroll(this.$refs.wrapper, {
+        mouseWheel: true,
+        scrollbar: {
+          fade: true,
+          interactive: false
+        }
+      })
+    },
+    scrollDestroy () {
+      if (this.BS) {
+        this.BS.destroy()
+      }
+    }
+  }
+}
+</script>

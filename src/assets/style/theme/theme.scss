@@ -335,7 +335,7 @@
               background: $theme-container-header-footer-background-color;
             }
             .d2-container-card__body {
-              .d2-container-card__body-inner {
+              .d2-container-card__body-card {
                 background: $theme-container-background-color;
                 border-left: $theme-container-border-outer;
                 border-right: $theme-container-border-outer;
@@ -343,6 +343,30 @@
               }
             }
             .d2-container-card__footer {
+              border-top: $theme-container-border-inner;
+              border-left: $theme-container-border-outer;
+              border-right: $theme-container-border-outer;
+              background: $theme-container-header-footer-background-color;
+            }
+          }
+          // [组件]
+          // d2-container-card-bs 卡片型 滚动优化
+          .d2-container-card-bs {
+            .d2-container-card-bs__header {
+              border-bottom: $theme-container-border-inner;
+              border-left: $theme-container-border-outer;
+              border-right: $theme-container-border-outer;
+              background: $theme-container-header-footer-background-color;
+            }
+            .d2-container-card-bs__body {
+              .d2-container-card-bs__body-card {
+                background: $theme-container-background-color;
+                border-left: $theme-container-border-outer;
+                border-right: $theme-container-border-outer;
+                border-bottom: $theme-container-border-inner;
+              }
+            }
+            .d2-container-card-bs__footer {
               border-top: $theme-container-border-inner;
               border-left: $theme-container-border-outer;
               border-right: $theme-container-border-outer;
