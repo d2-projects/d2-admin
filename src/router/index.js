@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Cookies from 'js-cookie'
 
 import util from '@/libs/util.js'
 
@@ -20,7 +19,7 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(r => r.meta.requiresAuth)) {
     // 这里暂时将cookie里是否存有token作为验证是否登陆的条件
     // 请根据自身业务需要修改
-    const token = Cookies.get('token')
+    const token = util.tokenGet()
     if (token && token !== 'undefined') {
       next()
     } else {

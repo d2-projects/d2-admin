@@ -2,10 +2,7 @@ import screenfull from 'screenfull'
 import util from '@/libs/util.js'
 import db from '@/libs/db.js'
 import themeList from '@/assets/style/theme/list.js'
-import Cookies from 'js-cookie'
-
-// 获取项目信息
-import packJson from '../../../package.json'
+import { version } from '../../../package'
 
 export default {
   state: {
@@ -14,7 +11,7 @@ export default {
       name: ''
     },
     // D2Admin 版本
-    version: packJson.version,
+    version,
     // 有更新
     update: false,
     // 顶栏菜单
@@ -88,13 +85,12 @@ export default {
         }
       })
         .then(res => {
-          // cookie 一天的有效期
-          const cookiesSetting = {
-            expires: 1
-          }
-          // 设置 cookie 一定要存 uuid 和 token 两个 cookie，整个系统依赖这两个数据进行校验和存储
-          Cookies.set('uuid', res.data.uuid, cookiesSetting)
-          Cookies.set('token', res.data.token, cookiesSetting)
+          // 设置 cookie 一定要存 uuid 和 token 两个 cookie
+          // 整个系统依赖这两个数据进行校验和存储
+          // uuid 是用户身份唯一标识 用户注册的时候确定 并且不可改变 不可重复
+          // token 代表用户当前登录状态 建议在网络请求中携带 token，如有必要 token 需要定时更新，默认保存一天
+          util.uuidSet(res.data.uuid)
+          util.tokenSet(res.data.token)
           // 设置 vuex 用户信息
           commit('d2adminUserInfoSet', {
             name: res.data.name
@@ -128,8 +124,8 @@ export default {
           emptyValue: ''
         })
         // 删除cookie
-        Cookies.remove('token')
-        Cookies.remove('uuid')
+        util.tokenRemove()
+        util.uuidRemove()
         // 跳转路由
         vm.$router.push({
           name: 'login'
@@ -164,12 +160,12 @@ export default {
      * @param {string} key key name
      */
     d2adminUtilVuex2DbByUuid (state, key) {
-      const row = db.get(key).find({uuid: util.uuid()})
+      const row = db.get(key).find({uuid: util.uuidGet()})
       if (row.value()) {
         row.assign({value: state[key]}).write()
       } else {
         db.get(key).push({
-          uuid: util.uuid(),
+          uuid: util.uuidGet(),
           value: state[key]
         }).write()
       }
@@ -181,7 +177,7 @@ export default {
      * @param {object} param1 key and default value
      */
     d2adminUtilDb2VuexByUuid (state, { key, defaultValue }) {
-      const row = db.get(key).find({uuid: util.uuid()}).value()
+      const row = db.get(key).find({uuid: util.uuidGet()}).value()
       state[key] = row ? row.value : defaultValue
     },
     /**
@@ -191,7 +187,7 @@ export default {
      * @param {object} param1 key & empty value
      */
     d2adminUtilDbRemoveByUuid (state, { key, emptyValue }) {
-      db.get(key).remove({uuid: util.uuid()}).write()
+      db.get(key).remove({uuid: util.uuidGet()}).write()
       state[key] = emptyValue
     },
     /**

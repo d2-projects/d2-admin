@@ -1,8 +1,8 @@
 import low from 'lowdb'
 import LocalStorage from 'lowdb/adapters/LocalStorage'
-import packJson from '../../package'
+import { version } from '../../package'
 
-const adapter = new LocalStorage(`d2admin${packJson.version}`)
+const adapter = new LocalStorage(`d2admin-${version}`)
 const db = low(adapter)
 
 db.defaults({
