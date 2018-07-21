@@ -9,11 +9,11 @@
     <div class="d2-layout-header-aside-content">
       <!-- 顶栏 -->
       <div class="d2-theme-header">
-        <div class="logo-group" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="collapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
+        <div class="logo-group" :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
+          <img v-if="isMenuAsideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
           <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/all.png`">
         </div>
-        <div class="toggle-aside-btn" @click="collapse = !collapse">
+        <div class="toggle-aside-btn" @click="handleToggleAside">
           <d2-icon name="bars"/>
         </div>
         <d2-menu-header/>
@@ -28,8 +28,8 @@
       <!-- 下面 主体 -->
       <div class="d2-theme-container">
         <!-- 主体 侧边栏 -->
-        <div ref="aside" class="d2-theme-container-aside" :style="{width: collapse ? asideWidthCollapse : asideWidth}">
-          <d2-menu-side :collapse="collapse"/>
+        <div ref="aside" class="d2-theme-container-aside" :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
+          <d2-menu-side/>
         </div>
         <!-- 主体 -->
         <div class="d2-theme-container-main">
@@ -38,7 +38,7 @@
           </div>
           <div class="d2-theme-container-main-body">
             <transition name="fade-transverse">
-              <keep-alive :include="keepAliveList">
+              <keep-alive :include="d2adminKeepAliveList">
                 <router-view/>
               </keep-alive>
             </transition>
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 
 import menuSide from './components/menu-side'
 import menuHeader from './components/menu-header'
@@ -73,7 +73,6 @@ export default {
   },
   data () {
     return {
-      collapse: false,
       // [侧边栏宽度] 正常状态
       asideWidth: '200px',
       // [侧边栏宽度] 折叠状态
@@ -83,17 +82,13 @@ export default {
   computed: {
     ...mapState({
       isGrayMode: state => state.d2admin.isGrayMode,
-      pageOpenedList: state => state.d2admin.pageOpenedList
+      pageOpenedList: state => state.d2admin.pageOpenedList,
+      isMenuAsideCollapse: state => state.d2admin.isMenuAsideCollapse
     }),
     ...mapGetters([
-      'themeActiveSetting'
+      'themeActiveSetting',
+      'd2adminKeepAliveList'
     ]),
-    /**
-     * @description 返回现在需要缓存的页面 name 数组
-     */
-    keepAliveList () {
-      return this.pageOpenedList.filter(item => !(item.meta && item.meta.notCache)).map(e => e.name)
-    },
     /**
      * @description 最外层容器的背景图片样式
      */
@@ -103,6 +98,17 @@ export default {
           backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')`
         } : {}
       }
+    }
+  },
+  methods: {
+    ...mapMutations([
+      'd2adminMenuAsideCollapseToggle'
+    ]),
+    /**
+     * 接收点击切换侧边栏的按钮
+     */
+    handleToggleAside () {
+      this.d2adminMenuAsideCollapseToggle()
     }
   }
 }

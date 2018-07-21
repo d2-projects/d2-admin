@@ -1,7 +1,7 @@
 <template>
   <div class="d2-layout-header-aside-menu-side">
     <el-menu
-      :collapse="collapse"
+      :collapse="isMenuAsideCollapse"
       :unique-opened="true"
       :default-active="active"
       ref="menu"
@@ -11,7 +11,7 @@
         <d2-layout-header-aside-menu-sub v-else :menu="menu" :key="menuIndex"/>
       </template>
     </el-menu>
-    <div v-if="menusAside.length === 0 && !collapse" class="d2-layout-header-aside-menu-empty">
+    <div v-if="menusAside.length === 0 && !isMenuAsideCollapse" class="d2-layout-header-aside-menu-empty">
       <d2-icon name="hdd-o"/>
       <span>当前目录没有菜单</span>
     </div>
@@ -33,13 +33,6 @@ export default {
     'd2-layout-header-aside-menu-item': d2LayoutMainMenuItem,
     'd2-layout-header-aside-menu-sub': d2LayoutMainMenuSub
   },
-  props: {
-    collapse: {
-      type: Boolean,
-      required: false,
-      default: false
-    }
-  },
   data () {
     return {
       active: '',
@@ -49,12 +42,13 @@ export default {
   },
   computed: {
     ...mapState({
-      menusAside: state => state.d2admin.menusAside
+      menusAside: state => state.d2admin.menusAside,
+      isMenuAsideCollapse: state => state.d2admin.isMenuAsideCollapse
     })
   },
   watch: {
     // 折叠和展开菜单的时候销毁 better scroll
-    collapse (val) {
+    isMenuAsideCollapse (val) {
       this.scrollDestroy()
       setTimeout(() => {
         this.scrollInit()
