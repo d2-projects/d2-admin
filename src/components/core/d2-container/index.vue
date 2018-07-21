@@ -6,12 +6,11 @@
       <slot/>
     </el-card>
     <!-- [ghost] 隐形的容器 -->
-    <div v-if="type === 'ghost'" class="d2-container-ghost">
-      <el-card v-if="$slots.header" shadow="never" class="d2-container-ghost-header">
-        <slot name="header"/>
-      </el-card>
+    <d2-container-ghost v-if="type === 'ghost'">
+      <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
-    </div>
+      <slot v-if="$slots.footer" name="footer" slot="footer"/>
+    </d2-container-ghost>
     <!-- [container-full] 填充 -->
     <d2-container-full v-if="type === 'full' && !scroll">
       <slot v-if="$slots.header" name="header" slot="header"/>
@@ -33,6 +32,7 @@ import BScroll from 'better-scroll'
 // 组件
 import d2ContainerFull from './components/d2-container-full.vue'
 import d2ContainerFullBs from './components/d2-container-full-bs.vue'
+import d2ContainerGhost from './components/d2-container-ghost.vue'
 export default {
   name: 'd2-container',
   props: {
@@ -51,7 +51,8 @@ export default {
   },
   components: {
     'd2-container-full': d2ContainerFull,
-    'd2-container-full-bs': d2ContainerFullBs
+    'd2-container-full-bs': d2ContainerFullBs,
+    'd2-container-ghost': d2ContainerGhost
   },
   data () {
     return {
@@ -59,12 +60,12 @@ export default {
     }
   },
   mounted () {
-    if (this.type === 'card' || this.type === 'ghost') {
+    if (this.type === 'card') {
       this.scrollInit()
     }
   },
   beforeDestroy () {
-    if (this.type === 'card' || this.type === 'ghost') {
+    if (this.type === 'card') {
       this.scrollDestroy()
     }
   },

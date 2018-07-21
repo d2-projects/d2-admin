@@ -301,13 +301,24 @@
             }
             // 隐形布局组件
             .d2-container-ghost {
-              margin-right: 20px;
-              margin-bottom: 20px;
-              .d2-container-ghost-header {
-                border-top: none;
-                border-top-left-radius: 0px;
-                border-top-right-radius: 0px;
-                margin-bottom: 20px;
+              position: absolute;
+              top: 0px;
+              right: 20px;
+              bottom: 0px;
+              left: 0px;
+              display: flex;
+              flex-direction: column;
+              overflow: hidden;
+              .d2-container-ghost__header {
+                padding: 20px;
+              }
+              .d2-container-ghost__body {
+                flex-grow: 1;
+                overflow: auto;
+                position: relative;
+              }
+              .d2-container-ghost__footer {
+                padding: 20px;
               }
             }
           }

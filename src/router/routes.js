@@ -127,9 +127,10 @@ const frameIn = [
     component: layoutHeaderAside,
     children: (pre => [
       { path: 'container/full', name: `${pre}container-full`, component: () => import('@/pages/demo/components/container/full.vue'), meta: { ...meta, title: '布局组件 填充' } },
+      { path: 'container/full-slot', name: `${pre}container-full-slot`, component: () => import('@/pages/demo/components/container/full-slot.vue'), meta: { ...meta, title: '布局组件 填充 插槽' } },
       { path: 'container/full-bs', name: `${pre}container-full-bs`, component: () => import('@/pages/demo/components/container/full-bs.vue'), meta: { ...meta, title: '布局组件 填充 滚动优化' } },
       { path: 'container/ghost', name: `${pre}container-ghost`, component: () => import('@/pages/demo/components/container/ghost.vue'), meta: { ...meta, title: '布局组件 隐形' } },
-      { path: 'container/ghost-header', name: `${pre}container-ghost-header`, component: () => import('@/pages/demo/components/container/ghost-header.vue'), meta: { ...meta, title: '布局组件 隐形带头部' } },
+      { path: 'container/ghost-slot', name: `${pre}container-ghost-slot`, component: () => import('@/pages/demo/components/container/ghost-slot.vue'), meta: { ...meta, title: '布局组件 隐形带头部' } },
       { path: 'container/card', name: `${pre}container-card`, component: () => import('@/pages/demo/components/container/card.vue'), meta: { ...meta, title: '布局组件 卡片' } },
       { path: 'contextmenu/simple', name: `${pre}contextmenu-simple`, component: () => import('@/pages/demo/components/contextmenu/simple.vue'), meta: { ...meta, title: '右键菜单 基础' } },
       { path: 'contextmenu/divier', name: `${pre}contextmenu-divier`, component: () => import('@/pages/demo/components/contextmenu/divier.vue'), meta: { ...meta, title: '右键菜单 分割线' } },
