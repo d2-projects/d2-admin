@@ -4,7 +4,7 @@
       <slot name="header"/>
     </div>
     <div class="d2-container-full-bs__body" ref="wrapper">
-      <div style="padding: 20px 0px;">
+      <div class="d2-container-full-bs__body-wrapper-inner">
         <slot/>
       </div>
     </div>

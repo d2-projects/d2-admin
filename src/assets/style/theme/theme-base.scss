@@ -286,9 +286,11 @@
               }
               .d2-container-full-bs__body {
                 flex-grow: 1;
-                padding: 0px 20px;
                 overflow: hidden;
                 position: relative;
+                .d2-container-full-bs__body-wrapper-inner {
+                  padding: 20px;
+                }
               }
               .d2-container-full-bs__footer {
                 padding: 20px;
