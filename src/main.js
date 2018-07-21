@@ -53,8 +53,8 @@ new Vue({
   mounted () {
     // D2Admin 开发环境检查更新
     util.checkUpdate(this)
-    // 获取并记录用户 UA 同时对危险环境做出判断
-    util.uaGet(this)
+    // 获取并记录用户 UA
+    this.$store.commit('d2adminUaGet')
     // 展示系统信息
     util.showInfo()
     // 用户登陆后从数据库加载一系列的设置

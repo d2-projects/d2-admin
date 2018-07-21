@@ -219,10 +219,9 @@ export default {
      * @class UA
      * @description 记录 UA
      * @param {state} state vuex state
-     * @param {object} ua ua info
      */
-    d2adminUaSet (state, ua) {
-      state.ua = ua
+    d2adminUaGet (state) {
+      state.ua = util.ua()
     },
     /**
      * @class menusHeader

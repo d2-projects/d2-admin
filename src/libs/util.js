@@ -26,32 +26,10 @@ util.title = function (titleText) {
 }
 
 /**
- * @description [ 私有 ] 获取所有的 UA 信息
+ * @description 获取所有的 UA 信息
  */
-function getUa () {
+util.ua = function () {
   return new UaParser().getResult()
-}
-
-/**
- * @description 返回当前设备是否是手机
- */
-util.isMobile = function (ua) {
-  return (ua || getUa()).device.type === 'mobile'
-}
-
-/**
- * @description 获取并存储用户 UA 同时对危险环境做检查
- * @param {object} vm vue
- */
-util.uaGet = function (vm) {
-  // 获取 UA
-  const ua = getUa()
-  // 存储
-  vm.$store.commit('d2adminUaSet', ua)
-  // 判断
-  if (util.isMobile(ua)) {
-    vm.$router.replace({ name: 'is-mobile' })
-  }
 }
 
 /**

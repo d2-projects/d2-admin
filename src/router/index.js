@@ -16,17 +16,6 @@ let router = new VueRouter({ routes })
  * 权限验证
  */
 router.beforeEach((to, from, next) => {
-  const isMobile = util.isMobile()
-  // 禁止手机访问
-  if (to.name !== 'is-mobile' && isMobile) {
-    next({ name: 'is-mobile' })
-    return
-  }
-  // 如果是电脑访问手机提示页面的话 -> 跳转到首页
-  if (to.name === 'is-mobile' && !isMobile) {
-    next({ name: 'index' })
-    return
-  }
   // 验证当前路由所有的匹配中是否需要有登陆验证的
   if (to.matched.some(r => r.meta.requiresAuth)) {
     // 这里暂时将cookie里是否存有token作为验证是否登陆的条件
