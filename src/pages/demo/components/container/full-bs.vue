@@ -1,18 +1,16 @@
 <template>
   <d2-container scroll>
     <template slot="header">header</template>
-    <d2-markdown :source="long"/>
+    <d2-demo-article/>
     <template slot="footer">header</template>
   </d2-container>
 </template>
 
 <script>
-import long from './md/long.md'
+import d2DemoArticle from './components/d2-demo-article'
 export default {
-  data () {
-    return {
-      long
-    }
+  components: {
+    'd2-demo-article': d2DemoArticle
   }
 }
 </script>
