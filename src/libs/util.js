@@ -1,20 +1,64 @@
-// 插件
 import Cookies from 'js-cookie'
 import axios from 'axios'
 import semver from 'semver'
 import dayjs from 'dayjs'
 import UaParser from 'ua-parser-js'
-
-// 获取项目信息
-import packJson from '../../package.json'
+import { version } from '../../package.json'
 
 let util = {}
 
 /**
+ * @description 存储 uuid 到 cookie
+ * @param {string} value uuid value
+ * @param {object} setting cookie setting
+ */
+util.uuidSet = function (value = '', setting = {}) {
+  let cookieSetting = {
+    expires: 1
+  }
+  Object.assign(cookieSetting, setting)
+  Cookies.set(`d2admin-${version}-uuid`, value, cookieSetting)
+}
+
+/**
  * @description 得到现在的用户 uuid
  */
-util.uuid = function () {
-  return Cookies.get('uuid')
+util.uuidGet = function () {
+  return Cookies.get(`d2admin-${version}-uuid`)
+}
+
+/**
+ * @description 删除用户 uuid
+ */
+util.uuidRemove = function () {
+  return Cookies.remove(`d2admin-${version}-uuid`)
+}
+
+/**
+ * @description 存储 token 到 cookie
+ * @param {string} value token value
+ * @param {object} setting cookie setting
+ */
+util.tokenSet = function (value = '', setting = {}) {
+  let cookieSetting = {
+    expires: 1
+  }
+  Object.assign(cookieSetting, setting)
+  Cookies.set(`d2admin-${version}-token`, value, cookieSetting)
+}
+
+/**
+ * @description 得到现在的用户 token
+ */
+util.tokenGet = function () {
+  return Cookies.get(`d2admin-${version}-token`)
+}
+
+/**
+ * @description 删除用户 token
+ */
+util.tokenRemove = function () {
+  return Cookies.remove(`d2admin-${version}-token`)
 }
 
 /**
@@ -66,8 +110,8 @@ util.logCapsule = function (title, info) {
 util.checkUpdate = function (vm) {
   axios.get('https://api.github.com/repos/FairyEver/d2-admin/releases/latest')
     .then(res => {
-      let version = res.tag_name
-      const update = semver.lt(packJson.version, version)
+      let versionGet = res.tag_name
+      const update = semver.lt(version, versionGet)
       if (update) {
         util.logCapsule('D2Admin', `New version ${res.name}`)
         console.log(`${dayjs(res.created_at).format('YYYY年M月D日')}更新 版本号: ${res.tag_name} | 详情${res.html_url}`)
@@ -83,7 +127,7 @@ util.checkUpdate = function (vm) {
  * @description 显示版本信息
  */
 util.showInfo = function showInfo () {
-  util.logCapsule('D2Admin', `v${packJson.version}`)
+  util.logCapsule('D2Admin', `v${version}`)
   console.log('Github https://github.com/d2-projects/d2-admin')
   console.log('Doc    http://d2admin.fairyever.com/zh/')
 }
