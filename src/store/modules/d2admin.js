@@ -25,6 +25,8 @@ export default {
     isFullScreen: false,
     // 灰度
     isGrayMode: false,
+    // 侧边栏收缩
+    isMenuAsideCollapse: false,
     // 主题
     themeList,
     // 现在激活的主题
@@ -53,6 +55,13 @@ export default {
      */
     themeActiveSetting (state) {
       return state.themeList.find(theme => theme.name === state.themeActiveName)
+    },
+    /**
+     * @description 从当前所有打开的多标签页里返回需要缓存的页面 name
+     * @param {*} state vuex state
+     */
+    d2adminKeepAliveList (state) {
+      return state.pageOpenedList.filter(item => !(item.meta && item.meta.notCache)).map(e => e.name)
     }
   },
   actions: {
@@ -486,6 +495,23 @@ export default {
           name: 'index'
         })
       }
+    },
+    /**
+     * 设置侧边栏展开或者收缩
+     * @class isMenuAsideCollapse
+     * @param {state} state vuex state
+     * @param {boolean} collapse is collapse
+     */
+    d2adminMenuAsideCollapseSet (state, collapse) {
+      state.isMenuAsideCollapse = collapse
+    },
+    /**
+     * 切换侧边栏展开和收缩
+     * @class isMenuAsideCollapse
+     * @param {state} state vuex state
+     */
+    d2adminMenuAsideCollapseToggle (state) {
+      state.isMenuAsideCollapse = !state.isMenuAsideCollapse
     },
     /**
      * @class isFullScreen
