@@ -288,7 +288,9 @@ export default {
     d2adminUserInfoLoad (state) {
       this.commit('d2adminUtilDb2VuexByUuid', {
         key: 'userInfo',
-        defaultValue: '获取用户名失败'
+        defaultValue: {
+          name: '请重新登陆'
+        }
       })
     },
     /**
