@@ -17,7 +17,7 @@
     }
     background: $theme-menu-item-background-color-hover;
   }
-  %icon {
+  %el-menu-icon {
     i.fa {
       display: inline-block;
       width: 15px;
@@ -27,11 +27,11 @@
   }
   .el-submenu__title {
     @extend %unable-select;
-    @extend %icon;
+    @extend %el-menu-icon;
   }
   .el-menu-item {
     @extend %unable-select;
-    @extend %icon;
+    @extend %el-menu-icon;
   }
   .el-submenu__title:hover {
     @include theme-menu-hover-style;
@@ -44,17 +44,6 @@
   }
   .el-menu--horizontal .el-menu .el-submenu__title:hover {
     @include theme-menu-hover-style;
-  }
-
-  .el-menu--popup {
-    .el-menu-item {
-      height: 36px;
-      line-height: 36px;
-    }
-    .el-submenu__title {
-      height: 36px;
-      line-height: 36px;
-    }
   }
   
   // 顶栏

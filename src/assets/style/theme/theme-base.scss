@@ -1,3 +1,15 @@
+// 减小弹出菜单的项目高度
+.el-menu--popup {
+  .el-menu-item {
+    height: 36px;
+    line-height: 36px;
+  }
+  .el-submenu__title {
+    height: 36px;
+    line-height: 36px;
+  }
+}
+
 // 整体框架结构
 .d2-layout-header-aside-group {
   height: 100%;
