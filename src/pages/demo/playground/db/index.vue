@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full" class="page">
+  <d2-container class="page">
     <template slot="header">
       <el-button type="primary" @click="load">
         重新获取本地数据

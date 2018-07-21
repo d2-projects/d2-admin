@@ -339,7 +339,7 @@
                 background: $theme-container-background-color;
                 border-left: $theme-container-border-outer;
                 border-right: $theme-container-border-outer;
-                border-bottom: $theme-container-border-inner;
+                border-bottom: $theme-container-border-outer;
               }
             }
             .d2-container-card__footer {
@@ -363,7 +363,7 @@
                 background: $theme-container-background-color;
                 border-left: $theme-container-border-outer;
                 border-right: $theme-container-border-outer;
-                border-bottom: $theme-container-border-inner;
+                border-bottom: $theme-container-border-outer;
               }
             }
             .d2-container-card-bs__footer {
