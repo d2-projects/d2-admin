@@ -1,12 +1,12 @@
 <template>
   <d2-container type="ghost" scroll>
-    <template slot="header">header</template>
+    <template slot="header">Header</template>
     <div class="d2-pt d2-pb">
       <el-card shadow="never">
         <d2-demo-article/>
       </el-card>
     </div>
-    <template slot="footer">footer</template>
+    <template slot="footer">Footer</template>
   </d2-container>
 </template>
 

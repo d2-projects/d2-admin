@@ -3,5 +3,5 @@
     "dist": true,
     "node_modules": true
   },
-  "todo-tree.expanded": true
+  "todo-tree.expanded": false
 }
