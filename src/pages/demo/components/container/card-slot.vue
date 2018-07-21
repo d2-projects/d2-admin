@@ -1,8 +1,8 @@
 <template>
-  <d2-container scroll>
+  <d2-container type="card">
     <template slot="header">header</template>
     <d2-markdown :source="long"/>
-    <template slot="footer">header</template>
+    <template slot="footer">footer</template>
   </d2-container>
 </template>
 
