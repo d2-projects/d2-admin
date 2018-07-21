@@ -294,11 +294,6 @@
                 padding: 20px;
               }
             }
-            // 卡片布局组件
-            .d2-container-card {
-              border-top-left-radius: 0px;
-              border-top-right-radius: 0px;
-            }
             // 隐形布局组件
             .d2-container-ghost {
               position: absolute;
@@ -311,6 +306,8 @@
               overflow: hidden;
               .d2-container-ghost__header {
                 padding: 20px;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
               }
               .d2-container-ghost__body {
                 flex-grow: 1;
@@ -319,6 +316,8 @@
               }
               .d2-container-ghost__footer {
                 padding: 20px;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
               }
             }
             // 隐形布局组件 - 滚动优化
@@ -333,6 +332,8 @@
               overflow: hidden;
               .d2-container-ghost-bs__header {
                 padding: 20px;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
               }
               .d2-container-ghost-bs__body {
                 flex-grow: 1;
@@ -341,6 +342,37 @@
               }
               .d2-container-ghost-bs__footer {
                 padding: 20px;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+              }
+            }
+            // 卡片式布局组件
+            .d2-container-card {
+              position: absolute;
+              top: 0px;
+              right: 20px;
+              bottom: 0px;
+              left: 0px;
+              display: flex;
+              flex-direction: column;
+              overflow: hidden;
+              .d2-container-card__header {
+                padding: 20px;
+              }
+              .d2-container-card__body {
+                flex-grow: 1;
+                overflow: auto;
+                .d2-container-card__body-inner {
+                  margin-bottom: 20px;
+                  padding: 20px;
+                  border-bottom-left-radius: 4px;
+                  border-bottom-right-radius: 4px;
+                }
+              }
+              .d2-container-card__footer {
+                padding: 20px;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
               }
             }
           }
