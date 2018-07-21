@@ -1,14 +1,12 @@
 <template>
-  <div class="d2-container-full-bs">
-    <div v-if="$slots.header" class="d2-container-full-bs__header" ref="header">
+  <div class="d2-container-ghost-bs">
+    <div v-if="$slots.header" class="d2-container-ghost-bs__header" ref="header">
       <slot name="header"/>
     </div>
-    <div class="d2-container-full-bs__body" ref="wrapper">
-      <div style="padding: 20px 0px;">
-        <slot/>
-      </div>
+    <div class="d2-container-ghost-bs__body" ref="wrapper">
+      <slot/>
     </div>
-    <div v-if="$slots.footer" class="d2-container-full-bs__footer" ref="footer">
+    <div v-if="$slots.footer" class="d2-container-ghost-bs__footer" ref="footer">
       <slot name="footer"/>
     </div>
   </div>
@@ -17,7 +15,7 @@
 <script>
 import BScroll from 'better-scroll'
 export default {
-  name: 'd2-container-full-bs',
+  name: 'd2-container-ghost-bs',
   data () {
     return {
       BS: null

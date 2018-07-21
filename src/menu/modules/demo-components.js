@@ -14,6 +14,7 @@ export default {
         { path: `${pre}container/full-bs`, title: '填充 滚动优化' },
         { path: `${pre}container/ghost`, title: '隐形' },
         { path: `${pre}container/ghost-slot`, title: '隐形 插槽' },
+        { path: `${pre}container/ghost-bs`, title: '隐形 滚动优化' },
         { path: `${pre}container/card`, title: '卡片' }
       ]
     },

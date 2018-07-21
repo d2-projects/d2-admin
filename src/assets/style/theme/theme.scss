@@ -307,7 +307,8 @@
               background: $theme-container-background-color;
             }
           }
-          // 隐形布局组件
+          // [组件]
+          // d2-container-ghost 隐形布局组件
           .d2-container-ghost {
             .d2-container-ghost__header {
               border-bottom: $theme-container-border-outer;
@@ -318,6 +319,26 @@
               border-bottom-right-radius: 4px;
             }
             .d2-container-ghost__footer {
+              border-top: $theme-container-border-outer;
+              border-left: $theme-container-border-outer;
+              border-right: $theme-container-border-outer;
+              background: $theme-container-header-footer-background-color;
+              border-top-left-radius: 4px;
+              border-top-right-radius: 4px;
+            }
+          }
+          // [组件]
+          // d2-container-ghost-bs 隐形布局组件 滚动优化
+          .d2-container-ghost-bs {
+            .d2-container-ghost-bs__header {
+              border-bottom: $theme-container-border-outer;
+              border-left: $theme-container-border-outer;
+              border-right: $theme-container-border-outer;
+              background: $theme-container-header-footer-background-color;
+              border-bottom-left-radius: 4px;
+              border-bottom-right-radius: 4px;
+            }
+            .d2-container-ghost-bs__footer {
               border-top: $theme-container-border-outer;
               border-left: $theme-container-border-outer;
               border-right: $theme-container-border-outer;

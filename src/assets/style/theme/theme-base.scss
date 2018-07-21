@@ -321,6 +321,28 @@
                 padding: 20px;
               }
             }
+            // 隐形布局组件 - 滚动优化
+            .d2-container-ghost-bs {
+              position: absolute;
+              top: 0px;
+              right: 20px;
+              bottom: 0px;
+              left: 0px;
+              display: flex;
+              flex-direction: column;
+              overflow: hidden;
+              .d2-container-ghost-bs__header {
+                padding: 20px;
+              }
+              .d2-container-ghost-bs__body {
+                flex-grow: 1;
+                overflow: hidden;
+                position: relative;
+              }
+              .d2-container-ghost-bs__footer {
+                padding: 20px;
+              }
+            }
           }
         }
       }
