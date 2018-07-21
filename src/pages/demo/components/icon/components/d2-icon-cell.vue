@@ -28,10 +28,10 @@
       </el-row>
     </el-popover>
     <span v-popover:pop>
-      <el-tag type="info">
+      <el-tag type="info" class="icon-tag">
         <i :class="'fa fa-' + icon"></i>
       </el-tag>
-      <span style="font-size: 10px; margin-left: 5px;">{{icon}}</span>
+      <span style="font-size: 10px;">{{icon}}</span>
     </span>
   </div>
 </template>
@@ -73,5 +73,10 @@ export default {
 .icon-group {
   text-align: center;
   font-size: 200px;
+}
+.icon-tag {
+  width: 32px;
+  text-align: center;
+  margin-right: 5px;
 }
 </style>
