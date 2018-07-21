@@ -2,21 +2,17 @@
   <d2-container type="ghost" scroll>
     <template slot="header">header</template>
     <div class="d2-pt d2-pb">
-      <el-card shadow="never" style="width: 600px;">
-        <d2-markdown :source="long"/>
-      </el-card>
+      <d2-demo-article/>
     </div>
     <template slot="footer">footer</template>
   </d2-container>
 </template>
 
 <script>
-import long from './md/long.md'
+import d2DemoArticle from './components/d2-demo-article'
 export default {
-  data () {
-    return {
-      long
-    }
+  components: {
+    'd2-demo-article': d2DemoArticle
   }
 }
 </script>
