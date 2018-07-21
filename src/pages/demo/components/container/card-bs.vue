@@ -1,8 +1,8 @@
 <template>
   <d2-container type="card" scroll>
-    <template slot="header">header</template>
+    <template slot="header">Header</template>
     <d2-demo-article/>
-    <template slot="footer">footer</template>
+    <template slot="footer">Footer</template>
   </d2-container>
 </template>
 
