@@ -2,7 +2,9 @@
   <d2-container type="ghost" scroll>
     <template slot="header">header</template>
     <div class="d2-pt d2-pb">
-      <d2-demo-article/>
+      <el-card shadow="never">
+        <d2-demo-article/>
+      </el-card>
     </div>
     <template slot="footer">footer</template>
   </d2-container>
