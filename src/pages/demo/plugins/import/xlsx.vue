@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container type="card">
     <template slot="header">导入 xlsx</template>
     <div class="d2-mb">
       <el-button @click="download">

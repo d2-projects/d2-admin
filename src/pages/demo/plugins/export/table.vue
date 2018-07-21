@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container type="card">
     <template slot="header">导出表格</template>
     <div class="d2-mb">
       <el-button type="primary" @click="exportCsv">

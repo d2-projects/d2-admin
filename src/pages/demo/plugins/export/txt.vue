@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container type="card">
     <template slot="header">导出文本</template>
     <el-input
       type="textarea"
