@@ -13,7 +13,7 @@
     </el-menu>
     <div v-if="menusAside.length === 0 && !isMenuAsideCollapse" class="d2-layout-header-aside-menu-empty">
       <d2-icon name="hdd-o"/>
-      <span>当前目录没有菜单</span>
+      <span>没有侧栏菜单</span>
     </div>
   </div>
 </template>
