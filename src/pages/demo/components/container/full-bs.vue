@@ -1,12 +1,8 @@
 <template>
   <d2-container scroll>
-    <template slot="header">
-      我是插入到 header 中的内容
-    </template>
+    <template slot="header">header</template>
     <d2-markdown :source="doc"/>
-    <template slot="footer">
-      <d2-link-btn title="D2Admin" link="https://github.com/d2-projects/d2-admin"/>
-    </template>
+    <template slot="footer">header</template>
   </d2-container>
 </template>
 
