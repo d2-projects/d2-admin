@@ -6,6 +6,12 @@
       <slot/>
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
     </d2-container-card>
+    <!-- [card] 卡片容器 滚动优化 -->
+    <d2-container-card-bs v-if="type === 'card' && scroll">
+      <slot v-if="$slots.header" name="header" slot="header"/>
+      <slot/>
+      <slot v-if="$slots.footer" name="footer" slot="footer"/>
+    </d2-container-card-bs>
     <!-- [ghost] 隐形容器 -->
     <d2-container-ghost v-if="type === 'ghost' && !scroll">
       <slot v-if="$slots.header" name="header" slot="header"/>
@@ -40,6 +46,7 @@ import d2ContainerFullBs from './components/d2-container-full-bs.vue'
 import d2ContainerGhost from './components/d2-container-ghost.vue'
 import d2ContainerGhostBs from './components/d2-container-ghost-bs.vue'
 import d2ContainerCard from './components/d2-container-card.vue'
+import d2ContainerCardBs from './components/d2-container-card-bs.vue'
 export default {
   name: 'd2-container',
   props: {
@@ -61,7 +68,8 @@ export default {
     'd2-container-full-bs': d2ContainerFullBs,
     'd2-container-ghost': d2ContainerGhost,
     'd2-container-ghost-bs': d2ContainerGhostBs,
-    'd2-container-card': d2ContainerCard
+    'd2-container-card': d2ContainerCard,
+    'd2-container-card-bs': d2ContainerCardBs
   }
 }
 </script>

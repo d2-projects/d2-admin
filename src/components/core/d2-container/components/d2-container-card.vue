@@ -4,7 +4,7 @@
       <slot name="header"/>
     </div>
     <div class="d2-container-card__body">
-      <div class="d2-container-card__body-inner">
+      <div class="d2-container-card__body-card">
         <slot/>
       </div>
     </div>
