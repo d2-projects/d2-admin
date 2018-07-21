@@ -2,7 +2,7 @@
   <d2-container type="card" scroll>
     <template slot="header">header</template>
     <d2-demo-article/>
-    <template slot="footer">header</template>
+    <template slot="footer">footer</template>
   </d2-container>
 </template>
 
