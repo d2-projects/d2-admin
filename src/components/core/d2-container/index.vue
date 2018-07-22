@@ -7,7 +7,7 @@
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
     </d2-container-card>
     <!-- [card] 卡片容器 滚动优化 -->
-    <d2-container-card-bs v-if="type === 'card' && scroll">
+    <d2-container-card-bs v-bind="$attrs" v-if="type === 'card' && scroll">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
@@ -19,7 +19,7 @@
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
     </d2-container-ghost>
     <!-- [ghost] 隐形容器 滚动优化 -->
-    <d2-container-ghost-bs v-if="type === 'ghost' && scroll">
+    <d2-container-ghost-bs v-bind="$attrs" v-if="type === 'ghost' && scroll">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
@@ -31,7 +31,7 @@
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
     </d2-container-full>
     <!-- [container-full-bs] 填充 滚动优化 -->
-    <d2-container-full-bs v-if="type === 'full' && scroll">
+    <d2-container-full-bs v-bind="$attrs" v-if="type === 'full' && scroll">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
