@@ -27,7 +27,9 @@
 
 下面的介绍中 **主区域** 范围见下
 
-![](http://fairyever.qiniudn.com/2018-07-22-autorename-1-2018-07-22-12-06-18-space-main@2x.png)
+![](http://fairyever.qiniudn.com/20180722205825.png)
+
+为了美观，每种模式的布局都会自动在右侧保留 20px 的外边距
 
 ## full
 
