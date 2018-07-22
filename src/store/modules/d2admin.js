@@ -4,6 +4,14 @@ import db from '@/libs/db.js'
 import themeList from '@/assets/style/theme/list.js'
 import { version } from '../../../package'
 
+const pageOpenedDefult = {
+  name: 'index',
+  meta: {
+    title: '首页',
+    requiresAuth: false
+  }
+}
+
 export default {
   state: {
     // 用户信息
@@ -32,13 +40,7 @@ export default {
     tagPool: [],
     // 当前显示的多页面列表
     pageOpenedList: [
-      {
-        name: 'index',
-        meta: {
-          title: '首页',
-          requiresAuth: false
-        }
-      }
+      pageOpenedDefult
     ],
     // 当前页面
     pageCurrent: '',
@@ -367,7 +369,9 @@ export default {
     d2adminPageOpenedListLoad (state) {
       this.commit('d2adminUtilDb2VuexByUuid', {
         key: 'pageOpenedList',
-        defaultValue: state.pageOpenedList
+        defaultValue: [
+          pageOpenedDefult
+        ]
       })
     },
     /**
