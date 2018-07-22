@@ -40,6 +40,7 @@
 <script>
 export default {
   title: '固定列和表头',
+  index: 7,
   data () {
     return {
       tableData3: [{

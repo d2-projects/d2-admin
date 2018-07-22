@@ -53,6 +53,7 @@
 <script>
 export default {
   title: '流体高度',
+  index: 8,
   methods: {
     deleteRow (index, rows) {
       rows.splice(index, 1)

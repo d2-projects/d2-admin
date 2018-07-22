@@ -40,6 +40,7 @@
 <script>
 export default {
   title: '自定义列模板',
+  index: 14,
   data () {
     return {
       tableData: [{

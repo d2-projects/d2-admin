@@ -26,6 +26,7 @@
 <script>
 export default {
   title: '自定义索引',
+  index: 18,
   data () {
     return {
       tableData: [{

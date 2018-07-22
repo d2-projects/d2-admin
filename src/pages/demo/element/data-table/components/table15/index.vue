@@ -47,6 +47,7 @@
 <script>
 export default {
   title: '展开行',
+  index: 15,
   data () {
     return {
       tableData5: [{

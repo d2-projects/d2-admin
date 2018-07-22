@@ -22,6 +22,7 @@
 <script>
 export default {
   title: '基础表格',
+  index: 1,
   data () {
     return {
       tableData: [

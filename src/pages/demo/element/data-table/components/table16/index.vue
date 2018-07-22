@@ -65,6 +65,7 @@
 <script>
 export default {
   title: '表尾合计行',
+  index: 16,
   data () {
     return {
       tableData6: [{

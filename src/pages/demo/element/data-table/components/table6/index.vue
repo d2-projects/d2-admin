@@ -49,6 +49,7 @@
 <script>
 export default {
   title: '固定列',
+  index: 6,
   methods: {
     handleClick (row) {
       console.log(row)

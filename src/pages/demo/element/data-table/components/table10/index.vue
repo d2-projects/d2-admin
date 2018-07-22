@@ -35,6 +35,7 @@
 <script>
 export default {
   title: '单选',
+  index: 10,
   data () {
     return {
       tableData: [{

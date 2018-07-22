@@ -36,6 +36,7 @@
 <script>
 export default {
   title: '多选',
+  index: 11,
   data () {
     return {
       tableData3: [{
