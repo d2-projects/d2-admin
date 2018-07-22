@@ -1,11 +1,29 @@
 # 页面容器
 
+::: tip 提示
+`<d2-container>` 是 D2Admin 构建页面最重要的组件，请仔细阅读本文档
+:::
+
 ## 参数
 
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
-| type | 容器模式 | 非 | string | full card ghost | full |
-| scroll | 使用自定义滚动条 | 非 | boolean |  | false |
+| type | 容器模式 | 非 | String | full card ghost | full |
+| scroll | 使用自定义滚动条 | 非 | Boolean |  | false |
+| scroll-options | 自定义滚动条配置 | 非 | Object | [better-scroll](https://ustbhuangyi.github.io/better-scroll/doc/zh-hans/options.html) | 见下 |
+
+::: tip scroll-options 默认值
+```
+{
+	mouseWheel: true,
+	scrollbar: {
+	  fade: true,
+		interactive: false
+	}
+}
+```
+设置的参数值会和默认值使用 Object.assign 合并，最后在初始化 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 时传入
+:::
 
 下面的介绍中 **主区域** 范围见下
 
@@ -274,6 +292,19 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 ```
 
 ![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_bs_long-slot@2x.png)
+
+## 如何选择
+
+如果不是纯展示型页面，通常建议不要开启 scroll 属性，除非你可以通过设置 scroll-options 解决你遇到的问题
+
+::: tip 开启 scroll 属性可能会带来的问题
+* 页面文字无法选中
+* 表单控件失灵
+* 拖拽相关操作失灵
+* ...
+
+上述问题理论上都可以通过配置 scroll-options 解决，scroll-options 参数设置的对象在和默认值合并后会作为 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 配置参数传入。D2Admin 暂时只对 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 做了简单设置，如果你遇到了相关问题请 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 相关设置文档
+:::
 
 ## 注
 

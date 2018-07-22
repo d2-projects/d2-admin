@@ -17,35 +17,11 @@
 </template>
 
 <script>
-import BScroll from 'better-scroll'
+import bs from './mixins/bs'
 export default {
   name: 'd2-container-card-bs',
-  data () {
-    return {
-      BS: null
-    }
-  },
-  mounted () {
-    this.scrollInit()
-  },
-  beforeDestroy () {
-    this.scrollDestroy()
-  },
-  methods: {
-    scrollInit () {
-      this.BS = new BScroll(this.$refs.wrapper, {
-        mouseWheel: true,
-        scrollbar: {
-          fade: true,
-          interactive: false
-        }
-      })
-    },
-    scrollDestroy () {
-      if (this.BS) {
-        this.BS.destroy()
-      }
-    }
-  }
+  mixins: [
+    bs
+  ]
 }
 </script>
