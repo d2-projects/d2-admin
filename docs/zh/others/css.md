@@ -9,7 +9,11 @@
 `.d2-card` 示例
 
 ``` vue
-<el-card shadow="never" class="d2-card"></el-card>
+<el-card shadow="never" class="d2-card">
+  <template slot="header">header</template>
+  body
+</el-card>
+<!-- 快看 我的边框和 header 边框会随着主题切换样式！ -->
 ```
 
 ## 文字
