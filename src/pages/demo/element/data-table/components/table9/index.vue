@@ -42,6 +42,7 @@
 <script>
 export default {
   title: '多级表头',
+  index: 9,
   data () {
     return {
       tableData3: [{

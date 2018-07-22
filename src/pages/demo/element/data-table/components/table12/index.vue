@@ -27,6 +27,7 @@
 <script>
 export default {
   title: '排序',
+  index: 12,
   data () {
     return {
       tableData: [{

@@ -24,6 +24,7 @@
 <script>
 export default {
   title: '固定表头',
+  index: 5,
   data () {
     return {
       tableData3: [{

@@ -23,6 +23,7 @@
 <script>
 export default {
   title: '带边框表格',
+  index: 3,
   data () {
     return {
       tableData: [{

@@ -23,6 +23,7 @@
 <script>
 export default {
   title: '带斑马纹表格',
+  index: 2,
   data () {
     return {
       tableData: [{

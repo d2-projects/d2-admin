@@ -64,6 +64,7 @@
 <script>
 export default {
   title: '合并行或列',
+  index: 17,
   data () {
     return {
       tableData6: [{
