@@ -50,7 +50,6 @@ export default {
         { path: `${pre}better-scroll/to`, title: '滚动定位' }
       ]
     },
-    { path: `${pre}build`, title: '环境区分', icon: 'database' },
     { path: `${pre}clipboard-polyfill`, title: '剪贴板访问', icon: 'clipboard' },
     { path: `${pre}day`, title: '日期计算', icon: 'clock-o' },
     { path: `${pre}js-cookie`, title: 'Cookie 读写', icon: 'asterisk' }

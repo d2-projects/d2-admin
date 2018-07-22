@@ -11,7 +11,7 @@
         @move="moveHandler"
         @resized="resizedHandler"
         @moved="movedHandler">
-        <el-card shadow="never">
+        <el-card shadow="never" class="d2-card">
           <el-tag size="mini" type="info" slot="header">Card {{item.i}}</el-tag>
           <template v-if="item.i === '0'">
             <div class="d2-mb">拖拽卡片调整位置</div>

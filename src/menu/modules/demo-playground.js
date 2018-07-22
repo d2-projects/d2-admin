@@ -26,6 +26,7 @@ export default {
     { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' },
     { path: `${pre}gray`, title: '灰度模式', icon: 'eye' },
     { path: `${pre}db`, title: '数据持久化', icon: 'database' },
+    { path: `${pre}env`, title: '环境信息', icon: 'microchip' },
     { path: `${pre}ua`, title: '浏览器信息', icon: 'info-circle' }
   ])('/demo/playground/')
 }

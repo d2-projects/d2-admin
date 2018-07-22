@@ -1,5 +1,5 @@
 <template>
-  <el-card shadow="never" class="d2-mb">
+  <el-card shadow="never" class="d2-card d2-mb">
     <div slot="header" class="d2-clearfix">
       <el-button type="text" size="mini">{{title}}</el-button>
       <el-tooltip content="重新 mock 数据" placement="top-end">

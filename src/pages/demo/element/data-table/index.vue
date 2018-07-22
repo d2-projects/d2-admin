@@ -1,26 +1,31 @@
 <template>
-  <d2-container>
+  <d2-container type="ghost">
+    <template slot="header">表格组件</template>
+    <div class="d2-mt d2-mr">
 
-    <h1 class="d2-mt-0">基础用法</h1>
-    <el-table
-      :data="tableData"
-      style="width: 100%">
-      <el-table-column
-        prop="date"
-        label="日期"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="name"
-        label="姓名"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="address"
-        label="地址">
-      </el-table-column>
-    </el-table>
+      <el-card shadow="never" class="d2-card">
+        <template slot="header">基础用法</template>
+        <el-table
+          :data="tableData"
+          style="width: 100%">
+          <el-table-column
+            prop="date"
+            label="日期"
+            width="180">
+          </el-table-column>
+          <el-table-column
+            prop="name"
+            label="姓名"
+            width="180">
+          </el-table-column>
+          <el-table-column
+            prop="address"
+            label="地址">
+          </el-table-column>
+        </el-table>
+      </el-card>
 
+    </div>
   </d2-container>
 </template>
 

@@ -2,7 +2,7 @@
   <d2-container type="ghost">
     <template slot="header">Header</template>
     <div class="d2-pt d2-pb">
-      <el-card shadow="never" style="width: 400px;">
+      <el-card shadow="never" class="d2-card" style="width: 400px;">
         <d2-demo-article/>
       </el-card>
     </div>
