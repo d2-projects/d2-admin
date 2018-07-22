@@ -9,8 +9,8 @@ let util = {}
 
 /**
  * @description 存储 uuid 到 cookie
- * @param {string} value uuid value
- * @param {object} setting cookie setting
+ * @param {String} value uuid value
+ * @param {Object} setting cookie setting
  */
 util.uuidSet = function (value = '', setting = {}) {
   let cookieSetting = {
@@ -36,8 +36,8 @@ util.uuidRemove = function () {
 
 /**
  * @description 存储 token 到 cookie
- * @param {string} value token value
- * @param {object} setting cookie setting
+ * @param {String} value token value
+ * @param {Object} setting cookie setting
  */
 util.tokenSet = function (value = '', setting = {}) {
   let cookieSetting = {
@@ -63,7 +63,7 @@ util.tokenRemove = function () {
 
 /**
  * @description 更新标题
- * @param {string} title 标题
+ * @param {String} title 标题
  */
 util.title = function (titleText) {
   window.document.title = `${process.env.VUE_APP_TITLE}${titleText ? ` | ${titleText}` : ''}`
@@ -79,7 +79,7 @@ util.ua = function () {
 /**
  * @description 判断是否在其内
  * @param {*} ele element
- * @param {array} targetArr array
+ * @param {Array} targetArr array
  */
 util.isOneOf = function (ele, targetArr) {
   if (targetArr.indexOf(ele) >= 0) {
@@ -91,8 +91,8 @@ util.isOneOf = function (ele, targetArr) {
 
 /**
  * @description 打印一个 “胶囊” 样式的信息
- * @param {string} title title text
- * @param {string} info info text
+ * @param {String} title title text
+ * @param {String} info info text
  */
 util.logCapsule = function (title, info) {
   console.log(
@@ -105,7 +105,7 @@ util.logCapsule = function (title, info) {
 
 /**
  * @description 检查版本更新
- * @param {object} vm vue
+ * @param {Object} vm vue
  */
 util.checkUpdate = function (vm) {
   axios.get('https://api.github.com/repos/FairyEver/d2-admin/releases/latest')
