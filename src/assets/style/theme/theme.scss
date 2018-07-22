@@ -4,6 +4,9 @@
   .el-card {
     &.d2-card {
       border: $theme-container-border-outer;
+      .el-card__header {
+        border-bottom: $theme-container-border-outer;
+      }
     }
   }
 
