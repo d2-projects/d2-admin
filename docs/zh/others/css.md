@@ -1,5 +1,17 @@
 # CSS 工具类
 
+## 样式
+
+| 类名 | 效果 |
+| --- | --- |
+| `.d2-card` | 将该 class 添加至 el-card 组件上使其有跟随主题变化的样式 |
+
+`.d2-card` 示例
+
+``` vue
+<el-card shadow="never" class="d2-card"></el-card>
+```
+
 ## 文字
 
 | 类名 | 效果 |

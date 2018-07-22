@@ -3,7 +3,7 @@
     <template slot="header">数字动画组件</template>
     <el-row :gutter="20">
       <el-col :span="6">
-        <el-card shadow="never" class="d2-mb">
+        <el-card shadow="never" class="d2-card d2-mb">
           <p slot="title">只设置目标数字</p>
           <div class="group">
             <d2-count-up :end="100"/>
@@ -11,7 +11,7 @@
         </el-card>
       </el-col>
       <el-col :span="6">
-        <el-card shadow="never" class="d2-mb">
+        <el-card shadow="never" class="d2-card d2-mb">
           <p slot="title">设置起止数值</p>
           <div class="group">
             <d2-count-up :start="14" :end="100"/>
@@ -19,7 +19,7 @@
         </el-card>
       </el-col>
       <el-col :span="6">
-        <el-card shadow="never" class="d2-mb">
+        <el-card shadow="never" class="d2-card d2-mb">
           <p slot="title">小数位数</p>
           <div class="group">
             <d2-count-up :end="100" :decimals="2"/>
@@ -27,7 +27,7 @@
         </el-card>
       </el-col>
       <el-col :span="6">
-        <el-card shadow="never" class="d2-mb">
+        <el-card shadow="never" class="d2-card d2-mb">
           <p slot="title">动画时长</p>
           <div class="group">
             <d2-count-up :end="100" :duration="6"/>
@@ -35,7 +35,7 @@
         </el-card>
       </el-col>
       <el-col :span="6">
-        <el-card shadow="never">
+        <el-card shadow="never" class="d2-card">
           <p slot="title">回调函数</p>
           <div class="group">
             <d2-count-up :end="100" :callback="() => {className = 'end'}" :class="className"/>
@@ -43,7 +43,7 @@
         </el-card>
       </el-col>
       <el-col :span="6">
-        <el-card shadow="never" class="d2-mb-0">
+        <el-card shadow="never" class="d2-card d2-mb-0">
           <p slot="title">结束一秒后更新数值</p>
           <div class="group">
             <d2-count-up :end="end" :callback="update"/>

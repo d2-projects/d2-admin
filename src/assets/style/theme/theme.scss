@@ -1,6 +1,12 @@
 // 每个主题特有的设置
 .theme-#{$theme-name} {
 
+  .el-card {
+    &.d2-card {
+      border: $theme-container-border-outer;
+    }
+  }
+
   // 背景图片和遮罩
   .d2-layout-header-aside-group {
     background-color: $theme-bg-color;

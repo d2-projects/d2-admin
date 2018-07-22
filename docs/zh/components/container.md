@@ -277,7 +277,7 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 
 ## 注
 
-本文插图为 [@FairyEver](https://github.com/FairyEver) 为此文档设计，未经授权不得转载或者修改使用
+本文插图为 [@FairyEver](https://github.com/FairyEver) 专为此文档设计，未经授权不得转载或者修改使用
 
 ![](http://fairyever.qiniudn.com/2018-07-22-Snip20180722_2.png)
 

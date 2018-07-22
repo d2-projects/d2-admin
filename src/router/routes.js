@@ -37,6 +37,7 @@ const frameIn = [
       { path: 'page-argu/send', name: `${pre}page-argu-send`, component: () => import('@/pages/demo/playground/page-argu/send.vue'), meta: { ...meta, title: '参数传递 发送' } },
       { path: 'page-argu/get/:username', name: `${pre}page-argu-get`, component: () => import('@/pages/demo/playground/page-argu/get.vue'), meta: { ...meta, title: '参数传递 接收' } },
       { path: 'db', name: `${pre}db`, component: () => import('@/pages/demo/playground/db'), meta: { ...meta, title: '数据持久化' } },
+      { path: 'env', name: `${pre}env`, component: () => import('@/pages/demo/playground/env'), meta: { ...meta, title: '环境信息' } },
       { path: 'ua', name: `${pre}ua`, component: () => import('@/pages/demo/playground/ua'), meta: { ...meta, title: '浏览器信息' } }
     ])('demo-playground-')
   },
@@ -49,7 +50,6 @@ const frameIn = [
     children: (pre => [
       { path: 'better-scroll/base', name: `${pre}better-scroll-base`, component: () => import('@/pages/demo/plugins/better-scroll/base.vue'), meta: { ...meta, title: '滚动插件基础' } },
       { path: 'better-scroll/to', name: `${pre}better-scroll-to`, component: () => import('@/pages/demo/plugins/better-scroll/to.vue'), meta: { ...meta, title: '滚动定位' } },
-      { path: 'build', name: `${pre}build`, component: () => import('@/pages/demo/plugins/build'), meta: { ...meta, title: '环境区分' } },
       { path: 'clipboard-polyfill', name: `${pre}clipboard-polyfill`, component: () => import('@/pages/demo/plugins/clipboard-polyfill'), meta: { ...meta, title: '剪贴板访问' } },
       { path: 'day', name: `${pre}day`, component: () => import('@/pages/demo/plugins/day'), meta: { ...meta, title: '日期计算' } },
       { path: 'export/table', name: `${pre}export-table`, component: () => import('@/pages/demo/plugins/export/table.vue'), meta: { ...meta, title: '导出表格' } },
