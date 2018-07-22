@@ -1,126 +1,130 @@
 # 页面容器
 
-页面容器组件是每个页面的基础，为了在整个项目中统一效果，它必须是 `<template>` 组件的直接子组件
-
 ## 参数
 
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
-| type | 容器类型 | 非 | String | card ghost full | full |
-| scroll | 滚动优化 | 非 | Boolean |  | false |
+| type | 容器模式 | 非 | string | full card ghost | full |
+| scroll | 使用自定义滚动条 | 非 | boolean |  | false |
 
-## 使用方法
+下面的介绍中 **主区域** 范围见下
 
-一个基础单文件页面组件的示例
+![](http://fairyever.qiniudn.com/2018-07-22-autorename-1-2018-07-22-12-06-18-space-main@2x.png)
 
-::: tip 注意
-为了统一效果，`<template>` 的直接子组件必须是 `<d2-container>`
-:::
+## full
 
-``` vue
-<template>
-  <d2-container>
-    <template slot="header">
-      可选的 header 内容 ...
-    </template>
-    主体内容 ...
-  </d2-container>
-</template>
+full 模式会生成一个无论内容多少，都会填满主区域的页面容器。
 
-<script>
-export default {
-  name: 'your-component-name'
-}
-</script>
+页面内容较少时，container 也会填满主区域：
 
-<style lang="scss">
-// 需要的话引入
-@import '~@/assets/style/public.scss';
-</style>
-```
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_normal_short@2x.png)
 
-### 自适应填充页面容器
+页面有较多内容时会在侧面产生滚动条
 
-无论内容高度多少，都会自动撑满页面，并有可选的 `header` 和 `footer` 插槽
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_normal_long@2x.png)
 
-示例：
+支持 header 和 footer 插槽，两个区域分别会固定在主体区域的顶部和底部，内容压缩至中间
 
-``` vue
-<template>
-  <d2-container type="full">
-    <template slot="header">
-      可选的 header 内容 ...
-    </template>
-    主体内容 ...
-    <template slot="footer">
-      可选的 footer 内容 ...
-    </template>
-  </d2-container>
-</template>
-```
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_slot_short@2x.png)
 
-`v1.1.4` 新增
+如果使用插槽后内容超出一屏，滚动条会出现在 header 和 footer 之间
 
-你可以通过设置 `scroll` 来启用自定义滚动条，看起来更美观一些
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_slot_long@2x.png)
 
-> 有些情况下使用滚动优化模式会有意外影响，例如页面内含有可拖拽的元素，这时候最好不要使用此模式
+设置 scroll 属性可以启用自定义滚动条，自定义滚动条在内容不满一屏时不会显示
 
-示例：
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_bs_short@2x.png)
 
-``` vue
-<template>
-  <d2-container type="full" scroll>
-    <template slot="header">
-      可选的 header 内容 ...
-    </template>
-    主体内容 ...
-    <template slot="footer">
-      可选的 footer 内容 ...
-    </template>
-  </d2-container>
-</template>
-```
+超出一屏后在滚动时显示自定义滚动条
 
-### 卡片型页面容器
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_bs_long@2x.png)
 
-高度根据内容适应
+如果使用插槽后内容超出一屏，发生滚动时自定义滚动条会出现在 header 和 footer 之间
 
-``` vue
-<d2-container type="card">
-  主体内容
-</d2-container>
-```
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_bs_long-slot@2x.png)
 
-使用 `slot`
+## card
 
-> 卡片型容器只有 header 插槽
+卡片模式适用于简单的小页面，可以方便地实现下面的布局效果：
 
-``` vue
-<d2-container type="card">
-  <template slot="header">我是插入到 header 中的内容</template>
-  主体内容
-</d2-container>
-```
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_normal_short@2x.png)
 
-### 隐形页面容器
+如果内容超出一屏长度，会在右侧显示滚动条
 
-不显示任何背景色和边框，通常这个模式只有在极少情况下会使用
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_normal_long@2x.png)
 
-``` vue
-<d2-container type="ghost">
-  主体内容
-</d2-container>
-```
+如果内容超出一屏，滚动条滚动到底部后主体区域会距离底部 20px 距离
 
-使用 `slot`
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_normal_long-scroll-end@2x.png)
 
-> 隐形页面容器只有 header 插槽
+支持 header 和 footer 插槽，header 区域会固定在顶部，footer 区域会固定在底部
 
-``` vue
-<d2-container type="ghost">
-  <template slot="header">我是插入到 header 中的内容</template>
-  主体内容
-</d2-container>
-```
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_slot_short@2x.png)
 
-如果你不希望内容紧贴上边，可以在内容外层容器设置 `class="d2-mt"`
+如果使用插槽后内容超出一屏，滚动条会在 header 和 footer 之间显示
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_slot_long@2x.png)
+
+如果使用插槽后内容超出一屏，滚动条滚动到底部后主体区域依然会距离底部 20px 距离
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_slot_long-end@2x.png)
+
+设置 scroll 属性可以启用自定义滚动条，滚动条在内容不满一屏时不会显示
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_bs_short@2x.png)
+
+超出一屏后在滚动时显示自定义滚动条
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_bs_long@2x.png)
+
+如果使用插槽后内容超出一屏，发生滚动时自定义滚动条会在 header 和 footer 之间显示
+
+![](http://fairyever.qiniudn.com/2018-07-22-autorename-1-2018-07-22-12-03-45-long-slot@2x.png)
+
+如果使用插槽后内容超出一屏，自定义滚动条滚动到底部后主体区域依然会距离底部 20px 距离
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_bs_long-slot-end@2x.png)
+
+## ghost
+
+ghost 模式适合对页面有定制需求的用户，此模式生成一个没有背景颜色的页面区域
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_normal_short@2x.png)
+
+如果内容超出一屏长度，会在右侧显示滚动条
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_normal_long@2x.png)
+
+支持 header 和 footer 插槽，header 区域会固定在顶部，footer 区域会固定在底部
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_slot_short@2x.png)
+
+如果使用插槽后内容超出一屏，滚动条会出现在 header 和 footer 之间
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_slot_long@2x.png)
+
+设置 scroll 属性可以启用自定义滚动条，自定义滚动条在内容不满一屏时不会显示
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_bs_short@2x.png)
+
+超出一屏后在滚动时显示自定义滚动条
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_bs_long@2x.png)
+
+如果使用插槽后内容超出一屏，发生滚动时自定义滚动条会在 header 和 footer 之间显示
+
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_bs_long-slot@2x.png)
+
+## 注
+
+本文插图为 [@FairyEver](https://github.com/FairyEver) 为此文档设计，未经授权不得转载或者修改使用
+
+![](http://fairyever.qiniudn.com/2018-07-22-Snip20180722_2.png)
+
+![](http://fairyever.qiniudn.com/2018-07-22-Snip20180722_6.png)
+
+
+
+
+
+
