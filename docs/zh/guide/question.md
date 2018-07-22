@@ -2,6 +2,12 @@
 
 本章总结收到的用户反馈问题，集中展示，方便后续用户自助解决问题
 
+## 无法下载 release
+
+建议使用 [Free Download Manager](http://www.freedownloadmanager.org/download.htm) 下载，速度会有显著提升
+
+![](http://fairyever.qiniudn.com/20180722210734.png)
+
 ## 无法启动项目
 
 如果在 `run dev` 或者 `npm i` 的过程中报错，首先建议您升级 node 版本 > 8，在以下环境测试可用
