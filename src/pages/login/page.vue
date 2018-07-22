@@ -110,7 +110,7 @@ export default {
     ]),
     /**
      * @description 接收选择一个用户快速登陆的事件
-     * @param {object} user 用户信息
+     * @param {Object} user 用户信息
      */
     handleUserBtnClick (user) {
       this.formLogin.username = user.username
