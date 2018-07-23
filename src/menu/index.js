@@ -10,7 +10,7 @@ import demoElement from './modules/demo-element'
 import demoPlayground from './modules/demo-playground'
 
 // 菜单 侧边栏
-export const menusAside = [
+export const menuAside = [
   demoPlugins,
   demoComponents,
   demoCharts,
@@ -19,7 +19,7 @@ export const menusAside = [
 ]
 
 // 菜单 顶栏
-export const menusHeader = [
+export const menuHeader = [
   {
     path: '/index',
     title: '首页',

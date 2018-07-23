@@ -14,7 +14,7 @@ import i18n from './i18n'
 import util from '@/libs/util'
 import store from '@/store/index'
 import { frameInRoutes } from '@/router/routes'
-import { menusAside, menusHeader } from '@/menu'
+import { menuAside, menuHeader } from '@/menu'
 import '@/assets/library/font-awesome-4.7.0/css/font-awesome.min.css'
 import '@/assets/library/highlight/styles/atom-one-light.css'
 import '@/assets/svg-icons'
@@ -48,7 +48,7 @@ new Vue({
     // 处理路由 得到每一级的路由设置
     this.getAllTagFromRoutes()
     // 设置顶栏菜单
-    this.$store.commit('d2adminMenusHeaderSet', menusHeader)
+    this.$store.commit('d2adminMenuHeaderSet', menuHeader)
   },
   mounted () {
     // D2Admin 开发环境检查更新
@@ -65,8 +65,8 @@ new Vue({
   watch: {
     // 监听路由 控制侧边栏显示
     '$route.matched' (val) {
-      const _side = menusAside.filter(menu => menu.path === val[0].path)
-      this.$store.commit('d2adminMenusAsideSet', _side.length > 0 ? _side[0].children : [])
+      const _side = menuAside.filter(menu => menu.path === val[0].path)
+      this.$store.commit('d2adminMenuAsideSet', _side.length > 0 ? _side[0].children : [])
     }
   },
   methods: {

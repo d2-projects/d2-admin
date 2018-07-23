@@ -6,12 +6,12 @@
       :default-active="active"
       ref="menu"
       @select="handleMenuSelect">
-      <template v-for="(menu, menuIndex) in menusAside">
+      <template v-for="(menu, menuIndex) in menuAside">
         <d2-layout-header-aside-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
         <d2-layout-header-aside-menu-sub v-else :menu="menu" :key="menuIndex"/>
       </template>
     </el-menu>
-    <div v-if="menusAside.length === 0 && !isMenuAsideCollapse" class="d2-layout-header-aside-menu-empty">
+    <div v-if="menuAside.length === 0 && !isMenuAsideCollapse" class="d2-layout-header-aside-menu-empty">
       <d2-icon name="inbox"/>
       <span>没有侧栏菜单</span>
     </div>
@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     ...mapState({
-      menusAside: state => state.d2admin.menusAside,
+      menuAside: state => state.d2admin.menuAside,
       isMenuAsideCollapse: state => state.d2admin.isMenuAsideCollapse
     })
   },
@@ -59,7 +59,7 @@ export default {
       handler (val) {
         this.active = val[val.length - 1].path
         this.$nextTick(() => {
-          if (this.menusAside.length > 0) {
+          if (this.menuAside.length > 0) {
             this.$refs.menu.activeIndex = this.active
           }
         })

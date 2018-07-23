@@ -1,6 +1,6 @@
 <template>
   <el-menu mode="horizontal" @select="handleMenuSelect">
-    <template v-for="(menu, menuIndex) in menusHeader">
+    <template v-for="(menu, menuIndex) in menuHeader">
       <d2-layout-header-aside-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
       <d2-layout-header-aside-menu-sub v-else :menu="menu" :key="menuIndex"/>
     </template>
@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     ...mapState({
-      menusHeader: state => state.d2admin.menusHeader
+      menuHeader: state => state.d2admin.menuHeader
     })
   }
 }
