@@ -1,6 +1,6 @@
 <template>
   <d2-container type="ghost">
-    <template slot="header">version {{version}}</template>
+    <template slot="header">version {{version}} [ {{releasesUpdate ? '有新版本' : '已经是最新版本'}} ]</template>
     <div class="d2-mt d2-mr">
       <el-row :gutter="20">
         <el-col :span="12">
