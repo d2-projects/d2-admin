@@ -86,7 +86,6 @@ new Vue({
      * 处理路由 得到每一级的路由设置
      */
     getAllTagFromRoutes () {
-      // 所有加载在主框架内的页面
       const pool = []
       const push = function (routes) {
         routes.forEach(route => {
@@ -99,7 +98,7 @@ new Vue({
         })
       }
       push(frameInRoutes)
-      this.$store.commit('d2adminTagPoolSet', pool)
+      this.$store.commit('d2adminpagePoolSet', pool)
     }
   }
 }).$mount('#app')
