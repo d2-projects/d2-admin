@@ -36,6 +36,7 @@ const frameIn = [
       { path: 'page-cache/off', name: `${pre}page-cache-off`, component: () => import('@/pages/demo/playground/page-cache/off.vue'), meta: { ...meta, notCache: true, title: '关闭缓存' } },
       { path: 'page-argu/send', name: `${pre}page-argu-send`, component: () => import('@/pages/demo/playground/page-argu/send.vue'), meta: { ...meta, title: '参数传递 发送' } },
       { path: 'page-argu/get/:username', name: `${pre}page-argu-get`, component: () => import('@/pages/demo/playground/page-argu/get.vue'), meta: { ...meta, title: '参数传递 接收' } },
+      { path: 'store/sys', name: `${pre}store-sys`, component: () => import('@/pages/demo/playground/store/sys'), meta: { ...meta, title: '系统状态' } },
       { path: 'db', name: `${pre}db`, component: () => import('@/pages/demo/playground/db'), meta: { ...meta, title: '数据持久化' } },
       { path: 'env', name: `${pre}env`, component: () => import('@/pages/demo/playground/env'), meta: { ...meta, title: '环境信息' } },
       { path: 'ua', name: `${pre}ua`, component: () => import('@/pages/demo/playground/ua'), meta: { ...meta, title: '浏览器信息' } }

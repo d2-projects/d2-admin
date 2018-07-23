@@ -20,8 +20,10 @@ export default {
     },
     // D2Admin 版本
     version,
-    // 有更新
-    update: false,
+    // 最新版本的信息
+    releasesLatest: {},
+    // 有新版本
+    releasesUpdate: false,
     // 顶栏菜单
     menusHeader: [],
     // 侧栏菜单
@@ -292,13 +294,22 @@ export default {
       })
     },
     /**
-     * @description 设置是否有更新
-     * @class update
+     * @description 设置是否有新的 D2Admin 版本
+     * @class releasesUpdate
      * @param {vuex state} state vuex state
-     * @param {Boolean} update update value
+     * @param {Boolean} releasesUpdate can update
      */
-    d2adminUpdateSet (state, update) {
-      state.update = update
+    d2adminReleasesUpdateSet (state, releasesUpdate) {
+      state.releasesUpdate = releasesUpdate
+    },
+    /**
+     * @description 设置最新版本的信息
+     * @class releasesLatest
+     * @param {vuex state} state vuex state
+     * @param {Object}} releases releases value
+     */
+    d2adminReleasesLatestSet (state, releases) {
+      state.releasesLatest = releases
     },
     /**
      * @class tagPool
