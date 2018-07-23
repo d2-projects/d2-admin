@@ -12,8 +12,9 @@
 | scroll | 使用自定义滚动条 | 非 | Boolean |  | false |
 | scroll-options | 自定义滚动条配置 | 非 | Object | [better-scroll](https://ustbhuangyi.github.io/better-scroll/doc/zh-hans/options.html) | 见下 |
 
-::: tip scroll-options 默认值
-```
+* scroll-options 默认值
+
+``` js
 {
 	mouseWheel: true,
 	scrollbar: {
@@ -22,20 +23,25 @@
 	}
 }
 ```
-设置的参数值会和默认值使用 Object.assign 合并，最后在初始化 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 时传入
-:::
+设置的参数值会和默认值使用 `Object.assign` 合并，最后在初始化 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 时传入
 
 下面的介绍中 **主区域** 范围见下
 
-![](http://fairyever.qiniudn.com/20180722205825.png)
+![](http://fairyever.qiniudn.com/20180723081251.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
-为了美观，每种模式的布局都会自动在右侧保留 20px 的外边距
+原生滚动条和自定义滚动条的区别
+
+![](http://fairyever.qiniudn.com/20180723082800.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+::: tip
+为了美观，每种模式的布局都会自动在右侧保留 20px 的外边距，见上图蓝色边框右侧区域
+:::
 
 ## full
 
 full 模式会生成一个无论内容多少，都会填满主区域的页面容器。
 
-页面内容较少时，container 也会填满主区域：
+页面内容较少时，d2-container 也会填满主区域：
 
 ``` vue
 <template>
@@ -45,11 +51,11 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_normal_short@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_normal_short@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 页面有较多内容时会在侧面产生滚动条
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_normal_long@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_normal_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 支持 header 和 footer 插槽，两个区域分别会固定在主体区域的顶部和底部，内容压缩至中间
 
@@ -63,11 +69,11 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_slot_short@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_slot_short@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果使用插槽后内容超出一屏，滚动条会出现在 header 和 footer 之间
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_slot_long@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_slot_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 设置 scroll 属性可以启用自定义滚动条，自定义滚动条在内容不满一屏时不会显示
 
@@ -79,11 +85,11 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_bs_short@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_bs_short@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 超出一屏后在滚动时显示自定义滚动条
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_bs_long@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_bs_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果使用插槽后内容超出一屏，发生滚动时自定义滚动条会出现在 header 和 footer 之间
 
@@ -97,7 +103,7 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_bs_long-slot@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_bs_long-slot@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 ## card
 
@@ -111,15 +117,15 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_normal_short@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_normal_short@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果内容超出一屏长度，会在右侧显示滚动条
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_normal_long@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_normal_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果内容超出一屏，滚动条滚动到底部后主体区域会距离底部 20px 距离
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_normal_long-scroll-end@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_normal_long-scroll-end@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 支持 header 和 footer 插槽，header 区域会固定在顶部，footer 区域会固定在底部
 
@@ -133,15 +139,15 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_slot_short@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_slot_short@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果使用插槽后内容超出一屏，滚动条会在 header 和 footer 之间显示
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_slot_long@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_slot_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果使用插槽后内容超出一屏，滚动条滚动到底部后主体区域依然会距离底部 20px 距离
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_slot_long-end@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_slot_long-end@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 设置 scroll 属性可以启用自定义滚动条，滚动条在内容不满一屏时不会显示
 
@@ -153,11 +159,11 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_bs_short@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_bs_short@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 超出一屏后在滚动时显示自定义滚动条
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_bs_long@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_bs_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果使用插槽后内容超出一屏，发生滚动时自定义滚动条会在 header 和 footer 之间显示
 
@@ -171,11 +177,11 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/2018-07-22-autorename-1-2018-07-22-12-03-45-long-slot@2x.png)
+![](http://fairyever.qiniudn.com/2018-07-22-autorename-1-2018-07-22-12-03-45-long-slot@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果使用插槽后内容超出一屏，自定义滚动条滚动到底部后主体区域依然会距离底部 20px 距离
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_bs_long-slot-end@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_bs_long-slot-end@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 ## ghost
 
@@ -201,11 +207,11 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_normal_short@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_normal_short@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果内容超出一屏长度，会在右侧显示滚动条
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_normal_long@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_normal_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 支持 header 和 footer 插槽，header 区域会固定在顶部，footer 区域会固定在底部
 
@@ -233,11 +239,11 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_slot_short@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_slot_short@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果使用插槽后内容超出一屏，滚动条会出现在 header 和 footer 之间
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_slot_long@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_slot_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 设置 scroll 属性可以启用自定义滚动条，自定义滚动条在内容不满一屏时不会显示
 
@@ -261,11 +267,11 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_bs_short@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_bs_short@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 超出一屏后在滚动时显示自定义滚动条
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_bs_long@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_bs_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 如果使用插槽后内容超出一屏，发生滚动时自定义滚动条会在 header 和 footer 之间显示
 
@@ -293,7 +299,7 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 </template>
 ```
 
-![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_bs_long-slot@2x.png)
+![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_bs_long-slot@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 ## 如何选择
 
@@ -312,9 +318,9 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 
 本文插图为 [@FairyEver](https://github.com/FairyEver) 专为此文档设计，未经授权不得转载或者修改使用
 
-![](http://fairyever.qiniudn.com/2018-07-22-Snip20180722_2.png)
+![](http://fairyever.qiniudn.com/20180723083604.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
-![](http://fairyever.qiniudn.com/2018-07-22-Snip20180722_6.png)
+![](http://fairyever.qiniudn.com/20180723084030.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 
 

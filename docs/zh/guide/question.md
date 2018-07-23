@@ -6,7 +6,7 @@
 
 建议使用 [Free Download Manager](http://www.freedownloadmanager.org/download.htm) 下载，速度会有显著提升
 
-![](http://fairyever.qiniudn.com/20180722210734.png)
+![](http://fairyever.qiniudn.com/20180722210734.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 ## 无法启动项目
 
