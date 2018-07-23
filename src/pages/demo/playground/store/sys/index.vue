@@ -7,7 +7,7 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">顶栏菜单数据</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="menusHeader" :options="{ rootObjectKey: 'menusHeader', maxDepth: 2 }"/>
+              <tree-view class="tree-view-small" :data="menuHeader" :options="{ rootObjectKey: 'menuHeader', maxDepth: 2 }"/>
             </div>
           </el-card>
         </el-col>
@@ -15,7 +15,7 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">侧边栏菜单数据</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="menusAside" :options="{ rootObjectKey: 'menusAside', maxDepth: 1 }"/>
+              <tree-view class="tree-view-small" :data="menuAside" :options="{ rootObjectKey: 'menuAside', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -113,8 +113,8 @@ export default {
       version: state => state.d2admin.version,
       releasesLatest: state => state.d2admin.releasesLatest,
       releasesUpdate: state => state.d2admin.releasesUpdate,
-      menusHeader: state => state.d2admin.menusHeader,
-      menusAside: state => state.d2admin.menusAside,
+      menuHeader: state => state.d2admin.menuHeader,
+      menuAside: state => state.d2admin.menuAside,
       isFullScreen: state => state.d2admin.isFullScreen,
       isGrayMode: state => state.d2admin.isGrayMode,
       isMenuAsideCollapse: state => state.d2admin.isMenuAsideCollapse,

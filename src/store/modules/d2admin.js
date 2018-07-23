@@ -25,9 +25,9 @@ export default {
     // 有新版本
     releasesUpdate: false,
     // 顶栏菜单
-    menusHeader: [],
+    menuHeader: [],
     // 侧栏菜单
-    menusAside: [],
+    menuAside: [],
     // 全屏
     isFullScreen: false,
     // 灰度
@@ -240,22 +240,22 @@ export default {
       state.ua = util.ua()
     },
     /**
-     * @class menusHeader
+     * @class menuHeader
      * @description 设置顶栏菜单
      * @param {vuex state} state vuex state
-     * @param {Array} menus menus setting
+     * @param {Array} menu menu setting
      */
-    d2adminMenusHeaderSet (state, menus) {
-      state.menusHeader = menus
+    d2adminMenuHeaderSet (state, menu) {
+      state.menuHeader = menu
     },
     /**
-     * @class menusAside
+     * @class menuAside
      * @description 设置侧边栏菜单
      * @param {vuex state} state vuex state
-     * @param {Array} menus menus setting
+     * @param {Array} menu menu setting
      */
-    d2adminMenusAsideSet (state, menus) {
-      state.menusAside = menus
+    d2adminMenuAsideSet (state, menu) {
+      state.menuAside = menu
     },
     /**
      * @class ...
