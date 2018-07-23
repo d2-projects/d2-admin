@@ -22,6 +22,14 @@ export default {
         { path: `${pre}page-argu/get/username-from-menu?userid=userid-from-menu`, title: '接收' }
       ]
     },
+    {
+      path: `${pre}store`,
+      title: '全局状态管理',
+      icon: 'bolt',
+      children: [
+        { path: `${pre}store/sys`, title: '系统状态' }
+      ]
+    },
     { path: `${pre}theme`, title: '主题', icon: 'flask' },
     { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' },
     { path: `${pre}gray`, title: '灰度模式', icon: 'eye' },
