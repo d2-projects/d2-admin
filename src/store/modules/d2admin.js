@@ -39,7 +39,7 @@ export default {
     // 现在激活的主题
     themeActiveName: themeList[0].name, // 这应该是一个名字 不是对象
     // 可以在多页 tab 模式下显示的页面
-    tagPool: [],
+    pagePool: [],
     // 当前显示的多页面列表
     pageOpenedList: [
       pageOpenedDefult
@@ -312,13 +312,13 @@ export default {
       state.releasesLatest = releases
     },
     /**
-     * @class tagPool
-     * @description 保存 tagPool (候选池)
+     * @class pagePool
+     * @description 保存 pagePool (候选池)
      * @param {vuex state} state vuex state
-     * @param {Array} tagPool tags
+     * @param {Array} pagePool tags
      */
-    d2adminTagPoolSet (state, tagPool) {
-      state.tagPool = tagPool
+    d2adminpagePoolSet (state, pagePool) {
+      state.pagePool = pagePool
     },
     /**
      * @class pageCurrent
@@ -341,7 +341,7 @@ export default {
         this.commit('d2adminPageOpenedListUpdateItem', { index: pageOpendIndex, params, query })
       } else {
         // 页面以前没有打开过
-        let tag = state.tagPool.find(t => t.name === name)
+        let tag = state.pagePool.find(t => t.name === name)
         if (tag) {
           this.commit('d2adminTagIncreate', { tag, params, query })
         }

@@ -4,7 +4,7 @@ const userDB = [
   {
     username: 'admin',
     password: 'admin',
-    uuid: 'test-user-uuid',
+    uuid: 'admin-uuid',
     name: '管理员'
   },
   {

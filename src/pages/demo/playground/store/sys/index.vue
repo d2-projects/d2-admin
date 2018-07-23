@@ -7,7 +7,7 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">顶栏菜单数据</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view :data="menusHeader" :options="{ rootObjectKey: 'menusHeader', maxDepth: 2 }"/>
+              <tree-view class="tree-view-small" :data="menusHeader" :options="{ rootObjectKey: 'menusHeader', maxDepth: 2 }"/>
             </div>
           </el-card>
         </el-col>
@@ -15,7 +15,7 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">侧边栏菜单数据</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view :data="menusAside" :options="{ rootObjectKey: 'menusAside', maxDepth: 1 }"/>
+              <tree-view class="tree-view-small" :data="menusAside" :options="{ rootObjectKey: 'menusAside', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -44,26 +44,38 @@
         <el-col :span="8">
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">当前主题</template>
-            <div style="height: 150px; overflow: auto;">
+            <div style="height: 300px; overflow: auto;">
               {{themeActiveName}}
             </div>
           </el-card>
         </el-col>
-        <el-col :span="16">
+        <el-col :span="8">
+          <el-card shadow="never" class="d2-card d2-mb">
+            <template slot="header">已经注册的主题</template>
+            <div style="height: 300px; overflow: auto;">
+              <tree-view class="tree-view-small" :data="themeList" :options="{ rootObjectKey: 'themeList', maxDepth: 1 }"/>
+            </div>
+          </el-card>
+        </el-col>
+        <el-col :span="8">
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">当前主题信息</template>
-            <div style="height: 150px; overflow: auto;">
-              <tree-view :data="themeActiveSetting" :options="{ rootObjectKey: 'themeActiveSetting', maxDepth: 1 }"/>
+            <div style="height: 300px; overflow: auto;">
+              <tree-view class="tree-view-small" :data="themeActiveSetting" :options="{ rootObjectKey: 'themeActiveSetting', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
       </el-row>
+      <el-card shadow="never" class="d2-card d2-mb">
+        <template slot="header">当前页面</template>
+        {{pageCurrent}}
+      </el-card>
       <el-row :gutter="20">
         <el-col :span="8">
           <el-card shadow="never" class="d2-card d2-mb">
-            <template slot="header">当前页面</template>
+            <template slot="header">支持多页显示的页面列表</template>
             <div style="height: 300px; overflow: auto;">
-              {{pageCurrent}}
+              <tree-view class="tree-view-small" :data="pagePool" :options="{ rootObjectKey: 'pagePool', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -71,7 +83,7 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">打开的标签页</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view :data="pageOpenedList" :options="{ rootObjectKey: 'pageOpenedList', maxDepth: 1 }"/>
+              <tree-view class="tree-view-small" :data="pageOpenedList" :options="{ rootObjectKey: 'pageOpenedList', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -79,14 +91,14 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">缓存页面</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view :data="d2adminKeepAliveInclude" :options="{ rootObjectKey: 'd2adminKeepAliveInclude', maxDepth: 1 }"/>
+              <tree-view class="tree-view-small" :data="d2adminKeepAliveInclude" :options="{ rootObjectKey: 'd2adminKeepAliveInclude', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
       </el-row>
       <el-card shadow="never" class="d2-card d2-mb">
         <template slot="header">最新版本数据 [ {{releasesUpdate ? '有新版本' : '已经是最新版本'}} ]</template>
-        <tree-view :data="releasesLatest" :options="{ rootObjectKey: 'releasesLatest', maxDepth: 1 }"/>
+        <tree-view class="tree-view-small" :data="releasesLatest" :options="{ rootObjectKey: 'releasesLatest', maxDepth: 1 }"/>
       </el-card>
     </div>
   </d2-container>
@@ -97,6 +109,7 @@ import { mapState, mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapState({
+      userInfo: state => state.d2admin.userInfo,
       version: state => state.d2admin.version,
       releasesLatest: state => state.d2admin.releasesLatest,
       releasesUpdate: state => state.d2admin.releasesUpdate,
@@ -105,9 +118,12 @@ export default {
       isFullScreen: state => state.d2admin.isFullScreen,
       isGrayMode: state => state.d2admin.isGrayMode,
       isMenuAsideCollapse: state => state.d2admin.isMenuAsideCollapse,
+      themeList: state => state.d2admin.themeList,
       themeActiveName: state => state.d2admin.themeActiveName,
+      pagePool: state => state.d2admin.pagePool,
       pageOpenedList: state => state.d2admin.pageOpenedList,
-      pageCurrent: state => state.d2admin.pageCurrent
+      pageCurrent: state => state.d2admin.pageCurrent,
+      ua: state => state.d2admin.ua
     }),
     ...mapGetters([
       'themeActiveSetting',
