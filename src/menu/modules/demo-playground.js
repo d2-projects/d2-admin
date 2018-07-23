@@ -29,11 +29,11 @@ export default {
       children: [
         { path: `${pre}store/sys`, title: '系统状态', icon: 'microchip' },
         { path: `${pre}store/ua`, title: '浏览器信息', icon: 'info-circle' },
-        { path: `${pre}store/gray`, title: '灰度模式', icon: 'eye' }
+        { path: `${pre}store/gray`, title: '灰度模式', icon: 'eye' },
+        { path: `${pre}store/fullscreen`, title: '全屏', icon: 'arrows-alt' },
+        { path: `${pre}store/theme`, title: '主题', icon: 'diamond' }
       ]
     },
-    { path: `${pre}theme`, title: '主题', icon: 'flask' },
-    { path: `${pre}fullscreen`, title: '全屏', icon: 'arrows-alt' },
     { path: `${pre}db`, title: '数据持久化', icon: 'database' },
     { path: `${pre}env`, title: '环境信息', icon: 'exclamation-circle' }
   ])('/demo/playground/')

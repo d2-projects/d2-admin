@@ -29,8 +29,6 @@ const frameIn = [
     component: layoutHeaderAside,
     children: (pre => [
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/playground/index'), meta: { ...meta, title: '试验台首页' } },
-      { path: 'theme', name: `${pre}theme`, component: () => import('@/pages/demo/playground/theme'), meta: { ...meta, title: '主题' } },
-      { path: 'fullscreen', name: `${pre}fullscreen`, component: () => import('@/pages/demo/playground/fullscreen'), meta: { ...meta, title: '全屏' } },
       { path: 'page-cache/on', name: `${pre}page-cache-on`, component: () => import('@/pages/demo/playground/page-cache/on.vue'), meta: { ...meta, title: '开启缓存' } },
       { path: 'page-cache/off', name: `${pre}page-cache-off`, component: () => import('@/pages/demo/playground/page-cache/off.vue'), meta: { ...meta, notCache: true, title: '关闭缓存' } },
       { path: 'page-argu/send', name: `${pre}page-argu-send`, component: () => import('@/pages/demo/playground/page-argu/send.vue'), meta: { ...meta, title: '参数传递 发送' } },
@@ -38,6 +36,8 @@ const frameIn = [
       { path: 'store/sys', name: `${pre}store-sys`, component: () => import('@/pages/demo/playground/store/sys'), meta: { ...meta, title: '系统状态' } },
       { path: 'store/ua', name: `${pre}store-ua`, component: () => import('@/pages/demo/playground/store/ua'), meta: { ...meta, title: '浏览器信息' } },
       { path: 'store/gray', name: `${pre}store-gray`, component: () => import('@/pages/demo/playground/store/gray'), meta: { ...meta, title: '灰度模式' } },
+      { path: 'store/fullscreen', name: `${pre}store-fullscreen`, component: () => import('@/pages/demo/playground/store/fullscreen'), meta: { ...meta, title: '全屏' } },
+      { path: 'store/theme', name: `${pre}store-theme`, component: () => import('@/pages/demo/playground/store/theme'), meta: { ...meta, title: '主题' } },
       { path: 'db', name: `${pre}db`, component: () => import('@/pages/demo/playground/db'), meta: { ...meta, title: '数据持久化' } },
       { path: 'env', name: `${pre}env`, component: () => import('@/pages/demo/playground/env'), meta: { ...meta, title: '环境信息' } }
     ])('demo-playground-')
