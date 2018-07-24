@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import _uniqueid from 'lodash.uniqueid'
+import uniqueid from 'lodash.uniqueid'
 // 组件
 import d2LayoutMainMenuItem from '../menu-item'
 
@@ -30,7 +30,7 @@ export default {
   },
   data () {
     return {
-      uniqueid: _uniqueid('d2-menu-empty-')
+      uniqueid: uniqueid('d2-menu-empty-')
     }
   }
 }

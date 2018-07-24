@@ -35,7 +35,15 @@ export default {
         { path: `${pre}store/theme`, title: '主题', icon: 'diamond' }
       ]
     },
-    { path: `${pre}db`, title: '数据持久化', icon: 'database' },
+    {
+      path: `${pre}db`,
+      title: '数据持久化',
+      icon: 'database',
+      children: [
+        { path: `${pre}db/all`, title: '全部数据' },
+        { path: `${pre}db/user`, title: '用户数据' }
+      ]
+    },
     { path: `${pre}env`, title: '环境信息', icon: 'exclamation-circle' }
   ])('/demo/playground/')
 }
