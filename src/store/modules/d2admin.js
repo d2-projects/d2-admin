@@ -212,7 +212,7 @@ export default {
      * @param {vuex state} state vuex state
      * @param {Function} fn function
      */
-    d2adminUtilUserDatabase (state, fn) {
+    d2adminUtilDatabaseUser (state, fn) {
       const uuid = util.cookies.get('uuid')
       const database = db.get('database').find({ uuid })
       if (database.value() === undefined) {
@@ -231,12 +231,32 @@ export default {
     },
     /**
      * @class 通用工具
-     * @description 访问本地数据库 清空用户单独空间 只负责删除 d2adminUtilUserDatabase 会初始化
+     * @description 访问本地数据库 清空用户单独空间 只负责删除 d2adminUtilDatabaseUser 会初始化
      * @param {vuex state} state vuex state
      */
-    d2adminUtilUserDatabaseClear (state) {
+    d2adminUtilDatabaseUserClear (state) {
       db.get('database')
         .remove({ uuid: util.cookies.get('uuid') })
+        .write()
+    },
+    /**
+     * @class 通用工具
+     * @description 访问本地数据库 这份数据是每个用户都可以访问的
+     * @param {vuex state} state vuex state
+     * @param {Function} fn function
+     */
+    d2adminUtilDatabase (state, fn) {
+      if (fn) {
+        fn(db.get('databasePublic'))
+      }
+    },
+    /**
+     * @class 通用工具
+     * @description 访问本地数据库 清空公用空间
+     * @param {vuex state} state vuex state
+     */
+    d2adminUtilDatabaseClear (state) {
+      db.set('databasePublic', {})
         .write()
     },
     /**

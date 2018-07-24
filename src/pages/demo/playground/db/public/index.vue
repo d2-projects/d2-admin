@@ -1,6 +1,6 @@
 <template>
   <d2-container class="page">
-    <template slot="header">持久化存储用户数据（用户区分存储）</template>
+    <template slot="header">持久化存储公用数据（所有用户共享）</template>
     <el-row>
       <el-col :span="12">
         <p class="d2-mt-0">增加不重复字段</p>
@@ -55,14 +55,14 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'd2adminUtilDatabaseUser',
-      'd2adminUtilDatabaseUserClear'
+      'd2adminUtilDatabase',
+      'd2adminUtilDatabaseClear'
     ]),
     /**
      * 加载本地数据
      */
     load () {
-      this.d2adminUtilDatabaseUser(database => {
+      this.d2adminUtilDatabase(database => {
         this.dataDisplay = JSON.stringify(database.value(), null, 2)
         this.keyNameList = Object.keys(database.value()).map(k => ({
           value: k,
@@ -74,7 +74,7 @@ export default {
      * 删除一个字段
      */
     handleDelete (name) {
-      this.d2adminUtilDatabaseUser(database => {
+      this.d2adminUtilDatabase(database => {
         database
           .unset(name)
           .write()
@@ -86,7 +86,7 @@ export default {
      * 清空当前用户的数据
      */
     handleClear () {
-      this.d2adminUtilDatabaseUserClear()
+      this.d2adminUtilDatabaseClear()
       this.load()
     },
     /**
@@ -97,7 +97,7 @@ export default {
         this.$message.error('字段名不能为空')
         return
       }
-      this.d2adminUtilDatabaseUser(database => {
+      this.d2adminUtilDatabase(database => {
         database
           .set(this.keyNameToSet, this.valueToSet)
           .write()
@@ -108,7 +108,7 @@ export default {
      * 添加一个随机数据
      */
     handleSetRandom () {
-      this.d2adminUtilDatabaseUser(database => {
+      this.d2adminUtilDatabase(database => {
         const id = day().valueOf()
         database
           .set(id, Math.round(id * Math.random()))
