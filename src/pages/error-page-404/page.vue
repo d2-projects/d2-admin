@@ -1,6 +1,6 @@
 <template>
   <div class="page-404">
-    <img src="./image/cover@2x.png">
+    <p class="page-404_title">page not found</p>
     <el-button class="d2-mt" @click="$router.replace({ path: '/' })">
       返回首页
     </el-button>
@@ -10,15 +10,16 @@
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
 .page-404 {
-  background-color: #555555;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+  background-blend-mode: multiply,multiply;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  img {
-    width: 196px;
-    @extend %unable-select;
+  .page-404_title {
+    font-size: 20px;
+    color: #FFF;
   }
 }
 </style>
