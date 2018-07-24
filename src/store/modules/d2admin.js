@@ -54,7 +54,7 @@ export default {
      * @description 返回当前的主题信息 不是一个名字 而是所有的主题数据
      * @param {vuex state} state vuex state
      */
-    themeActiveSetting (state) {
+    d2adminThemeActiveSetting (state) {
       return state.themeList.find(theme => theme.name === state.themeActiveName)
     },
     /**
@@ -93,8 +93,8 @@ export default {
           // 整个系统依赖这两个数据进行校验和存储
           // uuid 是用户身份唯一标识 用户注册的时候确定 并且不可改变 不可重复
           // token 代表用户当前登录状态 建议在网络请求中携带 token，如有必要 token 需要定时更新，默认保存一天
-          util.cookieSet('uuid', res.data.uuid)
-          util.cookieSet('token', res.data.token)
+          util.cookies.set('uuid', res.data.uuid)
+          util.cookies.set('token', res.data.token)
           // 设置 vuex 用户信息
           commit('d2adminUserInfoSet', {
             name: res.data.name
@@ -159,12 +159,12 @@ export default {
      * @param {String} key key name
      */
     d2adminUtilVuex2DbByUuid (state, key) {
-      const row = db.get(key).find({uuid: util.cookieGet('uuid')})
+      const row = db.get(key).find({uuid: util.cookies.get('uuid')})
       if (row.value()) {
         row.assign({value: state[key]}).write()
       } else {
         db.get(key).push({
-          uuid: util.cookieGet('uuid'),
+          uuid: util.cookies.get('uuid'),
           value: state[key]
         }).write()
       }
@@ -176,7 +176,7 @@ export default {
      * @param {Object} param1 key and default value
      */
     d2adminUtilDb2VuexByUuid (state, { key, defaultValue }) {
-      const row = db.get(key).find({uuid: util.cookieGet('uuid')}).value()
+      const row = db.get(key).find({uuid: util.cookies.get('uuid')}).value()
       state[key] = row ? row.value : defaultValue
     },
     /**

@@ -5,7 +5,9 @@ import dayjs from 'dayjs'
 import UaParser from 'ua-parser-js'
 import { version } from '../../package.json'
 
-let util = {}
+let util = {
+  cookies: {}
+}
 
 /**
  * @description 存储 cookie 值
@@ -13,7 +15,7 @@ let util = {}
  * @param {String} value cookie value
  * @param {Object} setting cookie setting
  */
-util.cookieSet = function (name = 'default', value = '', setting = {}) {
+util.cookies.set = function (name = 'default', value = '', setting = {}) {
   let cookieSetting = {
     expires: 1
   }
@@ -25,15 +27,22 @@ util.cookieSet = function (name = 'default', value = '', setting = {}) {
  * @description 拿到 cookie 值
  * @param {String} name cookie name
  */
-util.cookieGet = function (name = 'default') {
+util.cookies.get = function (name = 'default') {
   return Cookies.get(`d2admin-${version}-${name}`)
+}
+
+/**
+ * @description 拿到 cookie 全部的值
+ */
+util.cookies.getAll = function () {
+  return Cookies.get()
 }
 
 /**
  * @description 删除 cookie
  * @param {String} name cookie name
  */
-util.cookieRemove = function (name = 'default') {
+util.cookies.remove = function (name = 'default') {
   return Cookies.remove(`d2admin-${version}-${name}`)
 }
 
