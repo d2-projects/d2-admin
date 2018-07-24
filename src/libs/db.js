@@ -11,7 +11,8 @@ db.defaults({
   pageOpenedList: [],
   userInfo: [],
   isMenuAsideCollapse: [],
-  database: []
+  database: [],
+  databasePublic: {}
 }).write()
 
 export default db

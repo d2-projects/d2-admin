@@ -41,7 +41,8 @@ export default {
       icon: 'database',
       children: [
         { path: `${pre}db/all`, title: '全部数据' },
-        { path: `${pre}db/user`, title: '用户数据' }
+        { path: `${pre}db/user`, title: '用户数据' },
+        { path: `${pre}db/public`, title: '公用数据' }
       ]
     },
     { path: `${pre}env`, title: '环境信息', icon: 'exclamation-circle' }
