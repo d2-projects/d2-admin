@@ -117,7 +117,6 @@ export default {
      * @param {Object} param0 context
      * @param {Object} confirm need confirm ?
      */
-    // TODO: 询问是否删除本地存储数据
     d2adminLogout ({ state, commit, rootState }, { vm, confirm }) {
       /**
        * @description 注销
