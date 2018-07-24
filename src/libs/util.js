@@ -8,57 +8,33 @@ import { version } from '../../package.json'
 let util = {}
 
 /**
- * @description 存储 uuid 到 cookie
- * @param {String} value uuid value
+ * @description 存储 cookie 值
+ * @param {String} name cookie name
+ * @param {String} value cookie value
  * @param {Object} setting cookie setting
  */
-util.uuidSet = function (value = '', setting = {}) {
+util.cookieSet = function (name = 'default', value = '', setting = {}) {
   let cookieSetting = {
     expires: 1
   }
   Object.assign(cookieSetting, setting)
-  Cookies.set(`d2admin-${version}-uuid`, value, cookieSetting)
+  Cookies.set(`d2admin-${version}-${name}`, value, cookieSetting)
 }
 
 /**
- * @description 得到现在的用户 uuid
+ * @description 拿到 cookie 值
+ * @param {String} name cookie name
  */
-util.uuidGet = function () {
-  return Cookies.get(`d2admin-${version}-uuid`)
+util.cookieGet = function (name = 'default') {
+  return Cookies.get(`d2admin-${version}-${name}`)
 }
 
 /**
- * @description 删除用户 uuid
+ * @description 删除 cookie
+ * @param {String} name cookie name
  */
-util.uuidRemove = function () {
-  return Cookies.remove(`d2admin-${version}-uuid`)
-}
-
-/**
- * @description 存储 token 到 cookie
- * @param {String} value token value
- * @param {Object} setting cookie setting
- */
-util.tokenSet = function (value = '', setting = {}) {
-  let cookieSetting = {
-    expires: 1
-  }
-  Object.assign(cookieSetting, setting)
-  Cookies.set(`d2admin-${version}-token`, value, cookieSetting)
-}
-
-/**
- * @description 得到现在的用户 token
- */
-util.tokenGet = function () {
-  return Cookies.get(`d2admin-${version}-token`)
-}
-
-/**
- * @description 删除用户 token
- */
-util.tokenRemove = function () {
-  return Cookies.remove(`d2admin-${version}-token`)
+util.cookieRemove = function (name = 'default') {
+  return Cookies.remove(`d2admin-${version}-${name}`)
 }
 
 /**
