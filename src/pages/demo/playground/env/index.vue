@@ -1,16 +1,9 @@
 <template>
   <d2-container type="card">
-    <template slot="header">环境信息</template>
-    <el-alert
-      :title="`this.$env = ${$env}`"
-      type="info"
-      class="d2-mb">
-    </el-alert>
-    <el-card shadow="never">
-      <p class="d2-mt-0">process.env.NODE_ENV = {{env}}</p>
-      <p>process.env.BASE_URL = {{baseUrl}}</p>
-      <p class="d2-mb-0">process.env.VUE_APP_TITLE = {{title}}</p>
-    </el-card>
+    <template slot="header">process.env</template>
+    <p class="d2-mt-0">NODE_ENV = {{env}}</p>
+    <p>BASE_URL = {{baseUrl}}</p>
+    <p class="d2-mb-0">VUE_APP_TITLE = {{title}}</p>
   </d2-container>
 </template>
 
