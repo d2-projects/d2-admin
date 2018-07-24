@@ -15,7 +15,9 @@ console.groupEnd()
 db.defaults({
   themeActiveName: [],
   pageOpenedList: [],
-  userInfo: []
+  userInfo: [],
+  isMenuAsideCollapse: [],
+  database: []
 }).write()
 
 export default db

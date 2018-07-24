@@ -51,7 +51,7 @@ export default {
   },
   getters: {
     /**
-     * @description 返回当前的主题信息 不是一个名字 而是所有的主题数据
+     * @description 返回当前的主题信息 不是一个名字 而是当前激活主题的所有数据
      * @param {vuex state} state vuex state
      */
     d2adminThemeActiveSetting (state) {
@@ -117,14 +117,15 @@ export default {
      * @param {Object} param0 context
      * @param {Object} confirm need confirm ?
      */
+    // TODO: 询问是否删除本地存储数据
     d2adminLogout ({ state, commit, rootState }, { vm, confirm }) {
       /**
        * @description 注销
        */
       function logout () {
         // 删除cookie
-        util.cookieRemove('token')
-        util.cookieRemove('uuid')
+        util.cookies.remove('token')
+        util.cookies.remove('uuid')
         // 跳转路由
         vm.$router.push({
           name: 'login'
@@ -133,7 +134,7 @@ export default {
       // 判断是否需要确认
       if (confirm) {
         commit('d2adminGrayModeSet', true)
-        vm.$confirm(`注销当前账户吗?  打开的标签页和用户设置将会被保存。`, '确认操作', {
+        vm.$confirm('注销当前账户吗?  打开的标签页和用户设置将会被保存。', '确认操作', {
           confirmButtonText: '确定注销',
           cancelButtonText: '放弃',
           type: 'warning'
@@ -207,6 +208,39 @@ export default {
       state[key] = row ? row.value : defaultValue
     },
     /**
+     * @class 通用工具
+     * @description 访问本地数据库 用户单独空间 没有初始化会自动初始化
+     * @param {vuex state} state vuex state
+     * @param {Function} fn function
+     */
+    d2adminUtilUserDatabase (state, fn) {
+      const uuid = util.cookies.get('uuid')
+      const database = db.get('database').find({ uuid })
+      if (database.value() === undefined) {
+        db.get('database').push({
+          uuid,
+          value: {}
+        }).write()
+        if (fn) {
+          fn(db.get('database').find({ uuid }).get('value'))
+        }
+      } else {
+        if (fn) {
+          fn(database.get('value'))
+        }
+      }
+    },
+    /**
+     * @class 通用工具
+     * @description 访问本地数据库 清空用户单独空间 只负责删除 d2adminUtilUserDatabase 会初始化
+     * @param {vuex state} state vuex state
+     */
+    d2adminUtilUserDatabaseClear (state) {
+      db.get('database')
+        .remove({ uuid: util.cookies.get('uuid') })
+        .write()
+    },
+    /**
      * @class UA
      * @description 记录 UA
      * @param {vuex state} state vuex state
@@ -244,6 +278,8 @@ export default {
       this.commit('d2adminThemeLoad')
       // DB -> store 数据库加载上次退出时的多页列表
       this.commit('d2adminPageOpenedListLoad')
+      // DB -> store 数据库加载这个用户之前设置的侧边栏折叠状态
+      this.commit('d2adminMenuAsideCollapseLoad')
     },
     /**
      * @description 设置用户名
@@ -499,6 +535,7 @@ export default {
      */
     d2adminMenuAsideCollapseSet (state, collapse) {
       state.isMenuAsideCollapse = collapse
+      this.commit('d2adminUtilVuex2DbByUuid', 'isMenuAsideCollapse')
     },
     /**
      * 切换侧边栏展开和收缩
@@ -507,6 +544,18 @@ export default {
      */
     d2adminMenuAsideCollapseToggle (state) {
       state.isMenuAsideCollapse = !state.isMenuAsideCollapse
+      this.commit('d2adminUtilVuex2DbByUuid', 'isMenuAsideCollapse')
+    },
+    /**
+     * 从数据库读取侧边栏展开或者收缩
+     * @class isMenuAsideCollapse
+     * @param {vuex state} state vuex state
+     */
+    d2adminMenuAsideCollapseLoad (state) {
+      this.commit('d2adminUtilDb2VuexByUuid', {
+        key: 'isMenuAsideCollapse',
+        defaultValue: false
+      })
     },
     /**
      * @class isFullScreen
