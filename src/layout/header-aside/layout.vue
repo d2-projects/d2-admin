@@ -10,8 +10,8 @@
       <!-- 顶栏 -->
       <div class="d2-theme-header">
         <div class="logo-group" :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="isMenuAsideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
-          <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/all.png`">
+          <img v-if="isMenuAsideCollapse" :src="`${$baseUrl}image/theme/${d2adminThemeActiveSetting.name}/logo/icon-only.png`">
+          <img v-else :src="`${$baseUrl}image/theme/${d2adminThemeActiveSetting.name}/logo/all.png`">
         </div>
         <div class="toggle-aside-btn" @click="handleToggleAside">
           <d2-icon name="bars"/>
@@ -87,7 +87,7 @@ export default {
       isMenuAsideCollapse: state => state.d2admin.isMenuAsideCollapse
     }),
     ...mapGetters([
-      'themeActiveSetting',
+      'd2adminThemeActiveSetting',
       'd2adminKeepAliveInclude'
     ]),
     /**
@@ -95,8 +95,8 @@ export default {
      */
     styleLayoutMainGroup () {
       return {
-        ...this.themeActiveSetting.backgroundImage ? {
-          backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')`
+        ...this.d2adminThemeActiveSetting.backgroundImage ? {
+          backgroundImage: `url('${this.$baseUrl}${this.d2adminThemeActiveSetting.backgroundImage}')`
         } : {}
       }
     }

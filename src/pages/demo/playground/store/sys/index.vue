@@ -61,7 +61,7 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">当前主题信息</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="themeActiveSetting" :options="{ rootObjectKey: 'themeActiveSetting', maxDepth: 1 }"/>
+              <tree-view class="tree-view-small" :data="d2adminThemeActiveSetting" :options="{ rootObjectKey: 'd2adminThemeActiveSetting', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -126,7 +126,7 @@ export default {
       ua: state => state.d2admin.ua
     }),
     ...mapGetters([
-      'themeActiveSetting',
+      'd2adminThemeActiveSetting',
       'd2adminKeepAliveInclude'
     ])
   }
