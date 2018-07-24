@@ -5,7 +5,7 @@
       <el-col :span="12">
         <div class="d2-mb">
           <el-input v-model="text" style="width: 200px;"></el-input>
-          <el-button @click="copyText()">将左侧输入框内的文字复制进剪贴板</el-button>
+          <el-button class="d2-ml" @click="copyText()">将左侧输入框内的文字复制进剪贴板</el-button>
         </div>
         <el-button @click="copyHtml()">将 <span v-html="html"></span> 连带样式一起复制进剪贴板，然后去 Word 文档内粘贴</el-button>
       </el-col>
