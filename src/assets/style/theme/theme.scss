@@ -352,7 +352,7 @@
               }
             }
             .d2-container-card__footer {
-              border-top: $theme-container-border-inner;
+              border-top: $theme-container-border-outer;
               border-left: $theme-container-border-outer;
               border-right: $theme-container-border-outer;
               background: $theme-container-header-footer-background-color;
@@ -376,7 +376,7 @@
               }
             }
             .d2-container-card-bs__footer {
-              border-top: $theme-container-border-inner;
+              border-top: $theme-container-border-outer;
               border-left: $theme-container-border-outer;
               border-right: $theme-container-border-outer;
               background: $theme-container-header-footer-background-color;

@@ -1,6 +1,6 @@
 <template>
   <d2-container type="ghost">
-    <el-row :gutter="20" class="d2-mt d2-mr-10 d2-mb">
+    <el-row :gutter="20" class="d2-mt d2-mb">
       <el-col :span="12">
         <el-card shadow="never">
           <template slot="header">顶栏菜单</template>
