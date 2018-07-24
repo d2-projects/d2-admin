@@ -9,13 +9,14 @@
             <el-button @click="menuHeaderReset">恢复</el-button>
           </el-button-group>
           <div style="height: 400px; overflow: auto;">
-            <tree-view
+            <d2-highlight :code="JSON.stringify(menuHeader, null, 2)"/>
+            <!-- <tree-view
               class="tree-view-small"
               :data="menuHeader"
               :options="{
                 rootObjectKey: 'menuHeader',
                 maxDepth: 1
-              }"/>
+              }"/> -->
           </div>
         </el-card>
       </el-col>
@@ -27,13 +28,14 @@
             <el-button @click="menuAsideReset">恢复</el-button>
           </el-button-group>
           <div style="height: 400px; overflow: auto;">
-            <tree-view
+            <d2-highlight :code="JSON.stringify(menuAside, null, 2)"/>
+            <!-- <tree-view
               class="tree-view-small"
               :data="menuAside"
               :options="{
                 rootObjectKey: 'menuAside',
                 maxDepth: 1
-              }"/>
+              }"/> -->
           </div>
         </el-card>
       </el-col>
@@ -82,8 +84,8 @@ export default {
   },
   beforeDestroy () {
     if (this.menuHeaderChanged && this.menuAsideChanged) {
-      this.menuHeaderReset()
-      this.menuAsideReset()
+      this.d2adminMenuHeaderSet(this.menuHeaderBak)
+      this.d2adminMenuAsideSet(this.menuAsideBak)
       this.$notify({
         title: '菜单恢复',
         message: '对侧边栏和顶栏菜单的修改已经复原',
@@ -92,7 +94,7 @@ export default {
       return
     }
     if (this.menuHeaderChanged) {
-      this.menuHeaderReset()
+      this.d2adminMenuHeaderSet(this.menuHeaderBak)
       this.$notify({
         title: '菜单恢复',
         message: '对顶栏菜单的修改已经复原',
@@ -101,7 +103,7 @@ export default {
       return
     }
     if (this.menuAsideChanged) {
-      this.menuAsideReset()
+      this.d2adminMenuAsideSet(this.menuAsideBak)
       this.$notify({
         title: '菜单恢复',
         message: '对侧边栏菜单的修改已经复原',
@@ -120,6 +122,11 @@ export default {
     handleMenuHeaderSet () {
       this.menuHeaderChanged = true
       this.d2adminMenuHeaderSet(this.menuEmpty)
+      this.$notify({
+        title: '菜单修改',
+        message: '对顶栏菜单的修改已经生效',
+        type: 'success'
+      })
     },
     /**
      * 修改侧边栏菜单
@@ -127,18 +134,33 @@ export default {
     handleMenuAsideSet () {
       this.menuAsideChanged = true
       this.d2adminMenuAsideSet(this.menuEmpty)
+      this.$notify({
+        title: '菜单修改',
+        message: '对侧边栏菜单的修改已经生效',
+        type: 'success'
+      })
     },
     /**
      * 恢复顶栏菜单
      */
     menuHeaderReset () {
       this.d2adminMenuHeaderSet(this.menuHeaderBak)
+      this.$notify({
+        title: '菜单恢复',
+        message: '对顶栏菜单的修改已经复原',
+        type: 'success'
+      })
     },
     /**
      * 恢复侧边栏菜单
      */
     menuAsideReset () {
       this.d2adminMenuAsideSet(this.menuAsideBak)
+      this.$notify({
+        title: '菜单恢复',
+        message: '对侧边栏菜单的修改已经复原',
+        type: 'success'
+      })
     }
   }
 }
