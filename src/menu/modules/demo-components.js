@@ -1,6 +1,6 @@
 export default {
   path: '/demo/components',
-  title: '扩展组件',
+  title: '内置组件',
   icon: 'puzzle-piece',
   children: (pre => [
     { path: `${pre}index`, title: '扩展组件首页', icon: 'home' },
