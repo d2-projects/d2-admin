@@ -1,7 +1,7 @@
 import BScroll from 'better-scroll'
 export default {
   props: {
-    scrollOptions: {
+    betterScrollOptions: {
       type: Object,
       required: false,
       default: () => ({})
@@ -26,7 +26,7 @@ export default {
           fade: true,
           interactive: false
         }
-      }, this.scrollOptions))
+      }, this.betterScrollOptions))
     },
     scrollDestroy () {
       if (this.BS) {

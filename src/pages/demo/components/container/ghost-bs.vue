@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="ghost" scroll>
+  <d2-container type="ghost" better-scroll>
     <template slot="header">Header</template>
     <div class="d2-pt d2-pb">
       <el-card shadow="never" class="d2-card" style="width: 400px;">

@@ -9,10 +9,10 @@
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
 | type | 容器模式 | 非 | String | full card ghost | full |
-| scroll | 使用自定义滚动条 | 非 | Boolean |  | false |
-| scroll-options | 自定义滚动条配置 | 非 | Object | [better-scroll](https://ustbhuangyi.github.io/better-scroll/doc/zh-hans/options.html) | 见下 |
+| better-scroll | 使用自定义滚动条 | 非 | Boolean |  | false |
+| better-scroll-options | 自定义滚动条配置 | 非 | Object | [better-scroll](https://ustbhuangyi.github.io/better-scroll/doc/zh-hans/options.html) | 见下 |
 
-* scroll-options 默认值
+* better-scroll-options 默认值
 
 ``` js
 {
@@ -75,11 +75,11 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 
 ![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_full_slot_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
-设置 scroll 属性可以启用自定义滚动条，自定义滚动条在内容不满一屏时不会显示
+设置 better-scroll 属性可以启用自定义滚动条，自定义滚动条在内容不满一屏时不会显示
 
 ``` vue
 <template>
-  <d2-container scroll>
+  <d2-container better-scroll>
     内容
   </d2-container>
 </template>
@@ -95,7 +95,7 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 
 ``` vue
 <template>
-  <d2-container scroll>
+  <d2-container better-scroll>
     <template slot="header">Header</template>
     内容
     <template slot="footer">Header</template>
@@ -149,11 +149,11 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 
 ![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_card_slot_long-end@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
-设置 scroll 属性可以启用自定义滚动条，滚动条在内容不满一屏时不会显示
+设置 better-scroll 属性可以启用自定义滚动条，滚动条在内容不满一屏时不会显示
 
 ``` vue
 <template>
-  <d2-container type="card" scroll>
+  <d2-container type="card" better-scroll>
     内容
   </d2-container>
 </template>
@@ -169,7 +169,7 @@ full 模式会生成一个无论内容多少，都会填满主区域的页面容
 
 ``` vue
 <template>
-  <d2-container type="card" scroll>
+  <d2-container type="card" better-scroll>
     <template slot="header">Header</template>
     内容
     <template slot="footer">Footer</template>
@@ -245,11 +245,11 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 
 ![](http://fairyever.qiniudn.com/d2-container-guide-201807221232AM_ghost_slot_long@2x.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
-设置 scroll 属性可以启用自定义滚动条，自定义滚动条在内容不满一屏时不会显示
+设置 better-scroll 属性可以启用自定义滚动条，自定义滚动条在内容不满一屏时不会显示
 
 ``` vue
 <template>
-  <d2-container type="ghost" scroll>
+  <d2-container type="ghost" better-scroll>
     内容
   </d2-container>
 </template>
@@ -259,7 +259,7 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 
 ``` vue
 <template>
-  <d2-container type="ghost" scroll>
+  <d2-container type="ghost" better-scroll>
     <div class="d2-pt d2-pb">
       内容
     </div>
@@ -277,7 +277,7 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 
 ``` vue
 <template>
-  <d2-container type="ghost" scroll>
+  <d2-container type="ghost" better-scroll>
     <template slot="header">Header</template>
     内容
     <template slot="footer">Footer</template>
@@ -289,7 +289,7 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 
 ``` vue
 <template>
-  <d2-container type="ghost" scroll>
+  <d2-container type="ghost" better-scroll>
     <template slot="header">Header</template>
     <div class="d2-pt d2-pb">
       内容
@@ -303,15 +303,15 @@ ghost 模式适合对页面有定制需求的用户，此模式生成一个没�
 
 ## 如何选择
 
-如果不是纯展示型页面，通常建议不要开启 scroll 属性，除非你可以通过设置 scroll-options 解决你遇到的问题
+如果不是纯展示型页面，通常建议不要开启 better-scroll 属性，除非你可以通过设置 better-scroll-options 解决你遇到的问题
 
-::: tip 开启 scroll 属性可能会带来的问题
+::: tip 开启 better-scroll 属性可能会带来的问题
 * 页面文字无法选中
 * 表单控件失灵
 * 拖拽相关操作失灵
 * ...
 
-上述问题理论上都可以通过配置 scroll-options 解决，scroll-options 参数设置的对象在和默认值合并后会作为 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 配置参数传入。D2Admin 暂时只对 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 做了简单设置，如果你遇到了相关问题请 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 相关设置文档
+上述问题理论上都可以通过配置 better-scroll-options 解决，better-scroll-options 参数设置的对象在和默认值合并后会作为 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 配置参数传入。D2Admin 暂时只对 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 做了简单设置，如果你遇到了相关问题请 [better-scroll](https://github.com/ustbhuangyi/better-scroll) 相关设置文档
 :::
 
 ## 注
