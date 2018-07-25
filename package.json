@@ -23,12 +23,10 @@
     "screenfull": "^3.3.2",
     "ua-parser-js": "^0.7.18",
     "vue": "^2.5.16",
-    "vue-i18n": "^7.4.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "@kazupon/vue-i18n-loader": "^0.3.0",
     "@vue/cli-plugin-babel": "^3.0.0-rc.4",
     "@vue/cli-plugin-eslint": "^3.0.0-rc.4",
     "@vue/cli-plugin-unit-jest": "^3.0.0-rc.4",

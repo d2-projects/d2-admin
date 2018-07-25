@@ -4,7 +4,6 @@ import App from './App'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import screenfull from 'screenfull'
-import i18n from './i18n'
 import '@/assets/svg-icons'
 import '@/components'
 import '@/plugin/axios'
@@ -28,7 +27,6 @@ Vue.prototype.$baseUrl = process.env.BASE_URL
 new Vue({
   router,
   store,
-  i18n,
   render: h => h(App),
   created () {
     // 处理路由 得到每一级的路由设置
