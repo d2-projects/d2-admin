@@ -77,7 +77,7 @@ export default {
   methods: {
     scrollInit () {
       this.BS = new BScroll(this.$refs.container, {
-        mouseWheel: true,
+        wheel: true,
         scrollbar: {
           fade: true,
           interactive: false
