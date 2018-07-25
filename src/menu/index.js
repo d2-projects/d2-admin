@@ -11,8 +11,8 @@ import demoPlayground from './modules/demo-playground'
 
 // 菜单 侧边栏
 export const menuAside = [
-  demoPlugins,
   demoComponents,
+  demoPlugins,
   demoCharts,
   demoElement,
   demoPlayground
@@ -30,8 +30,8 @@ export const menuHeader = [
     title: '功能',
     icon: 'puzzle-piece',
     children: [
-      demoElement,
       demoComponents,
+      demoElement,
       demoCharts,
       demoPlugins,
       demoPlayground,

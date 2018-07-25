@@ -44,7 +44,7 @@ module.exports = {
         symbolId: 'd2-[name]'
       })
       .end()
-    // image
+    // image exclude
     const imagesRule = config.module.rule('images')
     imagesRule
       .test(/\.(png|jpe?g|gif|webp|svg)(\?.*)?$/)
