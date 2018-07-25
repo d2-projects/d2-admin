@@ -99,7 +99,7 @@ util.checkUpdate = function (vm) {
       const update = semver.lt(version, versionGet)
       if (update) {
         util.logCapsule('D2Admin', `New version ${res.name}`)
-        console.log(`${dayjs(res.created_at).format('YYYY年M月D日')}更新 版本号: ${res.tag_name} | 详情${res.html_url}`)
+        console.log(`版本号: ${res.tag_name} | 详情${res.html_url}`)
         vm.$store.commit('d2adminReleasesUpdateSet', true)
       }
       vm.$store.commit('d2adminReleasesLatestSet', res)
