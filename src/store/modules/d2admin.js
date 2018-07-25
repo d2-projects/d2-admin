@@ -347,7 +347,7 @@ export default {
      * @param {vuex state} state vuex state
      * @param {Array} pagePool tags
      */
-    d2adminpagePoolSet (state, pagePool) {
+    d2adminPagePoolSet (state, pagePool) {
       state.pagePool = pagePool
     },
     /**

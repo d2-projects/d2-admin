@@ -218,24 +218,6 @@ const frameIn = [
 ]
 
 /**
- * 错误页面
- */
-const errorPage = [
-  // 手机访问提示
-  {
-    path: '/is-mobile',
-    name: 'is-mobile',
-    component: () => import('@/pages/error-page-is-mobile')
-  },
-  // 404
-  {
-    path: '*',
-    name: '404',
-    component: () => import('@/pages/error-page-404')
-  }
-]
-
-/**
  * 在主框架之外显示
  */
 const frameOut = [
@@ -244,6 +226,18 @@ const frameOut = [
     path: '/login',
     name: 'login',
     component: () => import('@/pages/login')
+  }
+]
+
+/**
+ * 错误页面
+ */
+const errorPage = [
+  // 404
+  {
+    path: '*',
+    name: '404',
+    component: () => import('@/pages/error-page-404')
   }
 ]
 

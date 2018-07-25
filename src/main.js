@@ -42,7 +42,7 @@ new Vue({
   render: h => h(App),
   created () {
     // 处理路由 得到每一级的路由设置
-    this.getAllTagFromRoutes()
+    this.getAllPageFromRoutes()
     // 设置顶栏菜单
     this.$store.commit('d2adminMenuHeaderSet', menuHeader)
   },
@@ -79,9 +79,9 @@ new Vue({
       }
     },
     /**
-     * 处理路由 得到每一级的路由设置
+     * 处理路由 得到所有的页面
      */
-    getAllTagFromRoutes () {
+    getAllPageFromRoutes () {
       const pool = []
       const push = function (routes) {
         routes.forEach(route => {
@@ -94,7 +94,7 @@ new Vue({
         })
       }
       push(frameInRoutes)
-      this.$store.commit('d2adminpagePoolSet', pool)
+      this.$store.commit('d2adminPagePoolSet', pool)
     }
   }
 }).$mount('#app')
