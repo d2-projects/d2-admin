@@ -11,6 +11,7 @@
 import marked from 'marked'
 import highlight from 'highlight.js'
 import bandupan from './plugin/baidupan'
+import 'github-markdown-css'
 export default {
   name: 'd2-markdown',
   props: {
