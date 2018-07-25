@@ -8,7 +8,10 @@ import routes from './routes'
 
 Vue.use(VueRouter)
 
-let router = new VueRouter({ routes })
+// 导出路由 在 main.js 里使用
+const router = new VueRouter({
+  routes
+})
 
 /**
  * 路由拦截

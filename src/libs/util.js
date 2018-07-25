@@ -1,7 +1,6 @@
 import Cookies from 'js-cookie'
 import axios from 'axios'
 import semver from 'semver'
-import dayjs from 'dayjs'
 import UaParser from 'ua-parser-js'
 import { version } from '../../package.json'
 
