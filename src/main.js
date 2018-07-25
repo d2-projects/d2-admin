@@ -11,8 +11,6 @@ import vueJsonTreeView from 'vue-json-tree-view'
 import i18n from './i18n'
 import util from '@/libs/util.js'
 import store from '@/store/index'
-import { frameInRoutes } from '@/router/routes'
-import { menuAside, menuHeader } from '@/menu'
 import '@/assets/svg-icons'
 import '@/components'
 import '@/plugin/axios'
@@ -20,7 +18,11 @@ import '@/mock/register'
 import pluginImport from '@/plugin/import'
 import pluginExport from '@/plugin/export'
 import pluginOpen from '@/plugin/open'
+
+// 菜单和路由设置
 import router from './router'
+import { menuHeader, menuAside } from '@/menu'
+import { frameInRoutes } from '@/router/routes'
 
 Vue.use(ElementUI)
 Vue.use(VCharts)
