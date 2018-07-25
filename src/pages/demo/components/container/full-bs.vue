@@ -1,5 +1,5 @@
 <template>
-  <d2-container scroll>
+  <d2-container better-scroll>
     <template slot="header">Header</template>
     <d2-demo-article/>
     <template slot="footer">Header</template>
