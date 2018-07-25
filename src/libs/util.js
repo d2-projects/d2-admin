@@ -92,7 +92,10 @@ util.logCapsule = function (title, info) {
  * @param {Object} vm vue
  */
 util.checkUpdate = function (vm) {
-  axios.get('https://api.github.com/repos/FairyEver/d2-admin/releases/latest')
+  if (!process.env.VUE_APP_RELEASES_API) {
+    return
+  }
+  axios.get(process.env.VUE_APP_RELEASES_API)
     .then(res => {
       let versionGet = res.tag_name
       const update = semver.lt(version, versionGet)
