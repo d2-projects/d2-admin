@@ -10,11 +10,13 @@ import '@/plugin/axios'
 import '@/mock/register'
 import util from '@/libs/util.js'
 import store from '@/store/index'
+import pluginOpen from '@/plugin/open'
+
+// 菜单和路由设置
+import router from './router'
 import menuHeader from '@/menu/header'
 import menuAside from '@/menu/aside'
-import pluginOpen from '@/plugin/open'
 import { frameInRoutes } from '@/router/routes'
-import router from './router'
 
 Vue.use(ElementUI)
 Vue.use(pluginOpen)
