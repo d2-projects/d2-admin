@@ -67,8 +67,10 @@ function sideBarGuide (title) {
       collapsable: false,
       children: [
         '',
+        'getting-started',
         'question',
         'pr',
+        'plagiarize',
         'change-log'
       ]
     }
@@ -82,7 +84,8 @@ function sideBarPlugins () {
     'data-import',
     'i18n',
     'mock',
-    'vuex'
+    'vuex',
+    'util'
   ]
 }
 
