@@ -333,3 +333,25 @@ npm remove @antv/g2 -S
 ## 项目里有未完成的代码
 
 有些示例（比如 v-charts 和 ElementUI）是很方便就可以找到官网示例和文档的，这些插件和组件的示例在本项目中就可能处于未完成的状态，但是以后会完成
+
+## unexpected end of file
+
+报错代码
+
+``` sh
+E:\VS\TFS_FREE_Z\BaseProjects\VUE\d2-admin-z>npm i
+npm WARN tar zlib error: unexpected end of file
+npm ERR! cb() never called!
+npm ERR! This is an error with npm itself. Please report this error at:
+npm ERR!     <https://github.com/npm/npm/issues>
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\ZHZ\AppData\Roaming\npm-cache\_logs\2018-07-27T13_13_56_693Z-debug.log
+```
+
+解决方法
+
+目前只有一位朋友遇到这个问题，最后使用 cnpm 绕过了这个错误
+
+``` sh
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
