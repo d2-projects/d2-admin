@@ -217,6 +217,7 @@
       .d2-theme-container-main {
         // 主体部分分为多页面控制器 和主体
         .d2-theme-container-main-header {
+          overflow: hidden;
           // 多页面控制器
           .d2-multiple-page-control-group {
             display: flex;
