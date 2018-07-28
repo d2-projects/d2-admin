@@ -2,7 +2,7 @@
 
 本章总结收到的用户反馈问题，集中展示，方便后续用户自助解决问题
 
-## 无法下载 release
+## 代码下载慢
 
 建议使用 [Free Download Manager](http://www.freedownloadmanager.org/download.htm) 下载，速度会有显著提升
 
