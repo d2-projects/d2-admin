@@ -1,8 +1,15 @@
 # 快速上手
 
-## 开始
+使用 D2Admin 首先组要有以下前置技术知识：
 
-> 使用教程正在补充
+* 首先需要熟悉 web 开发基础三样：[HTML CSS JavaScript](http://www.w3school.com.cn/)
+* 需要有 [ES6](http://es6.ruanyifeng.com/) 语法知识
+* 会使用 [vue.js](https://cn.vuejs.org/)
+
+如果你了解以下技术，在使用本项目进行你的开发时会更加得心应手
+
+* [sass](https://www.sass.hk/guide/)
+* [webpack](http://webpack.github.io/)
 
 在上手之前，建议您先大致浏览以下章节，对整个系统有大致了解
 
@@ -11,6 +18,23 @@
 * 一些你会用到的公用方法：[Util 实用工具](../plugins/util.md)
 
 如果你想了解更多 D2Admin 相关的教程和更新文章，可以参阅 [文章](../article/)
+
+## 下载项目
+
+完整版仓库
+
+[Github](https://github.com/d2-projects/d2-admin) | [码云](https://gitee.com/fairyever/d2-admin)
+
+简化版起始模板
+
+[Github](https://github.com/d2-projects/d2-admin-start-kit) | [码云](https://gitee.com/fairyever/d2-admin-start-kit)
+
+挑选一个你喜欢的网站 Fork D2Admin 代码到你的仓库，然后下载或克隆
+
+::: tip
+如果你使用 Github 下载过慢，请参考 [常见问题](question.md)
+:::
+
 
 ## 资源
 
