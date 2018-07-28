@@ -1,8 +1,9 @@
 <template>
   <d2-container type="ghost">
+    <template slot="header">菜单控制试验台</template>
     <el-row :gutter="20" class="d2-mt d2-mb">
       <el-col :span="12">
-        <el-card shadow="never">
+        <el-card shadow="never" class="d2-card">
           <template slot="header">顶栏菜单</template>
           <el-button-group class="d2-mb">
             <el-button @click="handleMenuHeaderSet">设置空菜单</el-button>
@@ -21,7 +22,7 @@
         </el-card>
       </el-col>
       <el-col :span="12">
-        <el-card shadow="never">
+        <el-card shadow="never" class="d2-card">
           <template slot="header">侧栏菜单</template>
           <el-button-group class="d2-mb">
             <el-button @click="handleMenuAsideSet">设置空菜单</el-button>
