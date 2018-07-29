@@ -7,7 +7,6 @@ const meta = { requiresAuth: true }
  * 在主框架内显示
  */
 const frameIn = [
-  // 首页
   {
     path: '/',
     redirect: { name: 'index' },
