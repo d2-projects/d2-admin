@@ -69,7 +69,6 @@ function sideBarGuide (title) {
         '',
         'getting-started',
         'question',
-        'pr',
         'plagiarize',
         'change-log'
       ]
@@ -117,6 +116,7 @@ function sideBarArticle (titleUpdate) {
       collapsable: false,
       children: [
         '',
+        'update/1.1.5',
         'update/1.1.4',
         'update/0.0.0'
       ]
