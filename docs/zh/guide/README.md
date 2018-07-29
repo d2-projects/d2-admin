@@ -43,6 +43,7 @@ D2Admin 创建于2018年1月14日零点51分，四个月后在2018年5月26日�
 
 ## 功能
 
+* 使用 vue-cli3 构建
 * 首屏加载等待动画 避免首次加载白屏尴尬
 * 简约主题
 * 每个插件和组件都配有介绍文档
@@ -62,7 +63,6 @@ D2Admin 创建于2018年1月14日零点51分，四个月后在2018年5月26日�
 * 集成蚂蚁金服出品的 G2 图表
 * 图表自适应可拖拽大小的卡片容器（示例）
 * 简化剪贴板操作
-* 简化Cookie操作
 * 时间日期计算工具
 * 导入 Excel （ xlsx 格式 + csv 格式 ）
 * 数据导出 Excel （ xlsx 格式 + csv 格式 ）
@@ -87,71 +87,45 @@ D2Admin 创建于2018年1月14日零点51分，四个月后在2018年5月26日�
 * 多标签页模式 `1.1.4 +`
 * 美化滚动条 `1.1.4 +`
 * json view `1.1.4 +`
-
-## TODO
-
-D2Admin 仍然处于开发中，这里有一些暂时的计划：
-
-* 分离出简化版本
-* 推出基于 [ice](https://alibaba.github.io/ice) 平台的版本
-* 增加右上角通知中心
-* 增加一些实例页面以提供业务页面布局建议
-* 面包屑导航
-* 树型表格组件
-* 更多类型的编辑器
-* socket 连接
-* 浏览器版本提示
-* 日志控制台
-* d2-container 组件 ghost 模式和 full 模式合并
-* `1.1.4 已完成` 自定义滚动条
-* `1.1.4 已完成` 多 tab 页结构
-* `1.1.3 已完成` 更换图表库
-* `1.1.0 已完成` 抽离项目里的文档，集中存放在文档站点
-* `1.1.0 已完成` 对主界面进行一次完善，调整整体布局和颜色
-* `1.1.0 已完成` 切换主题功能
-
-欢迎你为 D2Admin 的开发作出贡献（代码编写/文档翻译）。
+* cookie 封装 `1.1.5 +`
+* 本地持久化存储封装，可根据用户区分存储 `1.1.5 +`
+* 多标签页全局控制 API `1.1.5 +`
+* 菜单全局控制 API `1.1.5 +`
 
 ## 目录结构
 
 ```
-├─ build
-├─ config
-├─ deploy
-├─ dist
-├─ docs // 文档
+├─ dev
+│  └─ snippets 帮助开发的代码片段
+├─ docs 文档
+├─ public 静态资源
 ├─ src
-│  ├─ assets // 资源
-│  │  ├─ icons
-│  │  ├─ image
-│  │  ├─ library
-│  │  └─ style
-│  ├─ components // 组件
-│  │  ├─ charts // 图表组件
-│  │  ├─ core // 核心组件
-│  │  └─ demo // 示例组件
-│  ├─ i18n // 多国语
-│  ├─ libs // 通用库
-│  ├─ menu // 菜单
-│  ├─ mock // 模拟数据
-│  ├─ pages // 页面
-│  ├─ plugin // 插件
-│  ├─ router // 路由
-│  ├─ store // vuex
+│  ├─ assets 资源
+│  ├─ components 组件
+│  ├─ i18n 多国语
+│  ├─ layout 布局
+│  ├─ libs 通用库
+│  ├─ menu 菜单
+│  ├─ mock 模拟数据
+│  ├─ pages 页面
+│  ├─ plugin 插件
+│  ├─ router 路由
+│  ├─ store 全局状态
 │  ├─ App.vue
 │  └─ main.js
-├─ static // 静态资源
-├─ .babelrc
-├─ .editorconfig
+├─ tests 单元测试
+├─ .env 环境变量
+├─ .env.development 环境变量 开发环境
 ├─ .eslintignore
 ├─ .eslintrc.js
-├─ .gitattributes
 ├─ .gitignore
 ├─ .postcssrc.js
 ├─ LICENSE
 ├─ README.md
-├─ index.html
-└─ package.json
+├─ babel.config.js
+├─ jest.config.js
+├─ package.json
+└─ vue.config.js 配置文件
 ```
 
 ## 获取代码
