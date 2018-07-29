@@ -1,45 +1,42 @@
+// layout
+import layoutHeaderAside from '@/layout/header-aside'
+
 const meta = { requiresAuth: true }
 
 /**
  * 在主框架内显示
  */
 const frameIn = [
-  // 首页
   {
     path: '/',
     redirect: { name: 'index' },
-    component: () => import('@/components/core/d2-layout-main'),
+    component: layoutHeaderAside,
     children: [
       {
         path: 'index',
         name: 'index',
         meta,
-        component: () => import('@/pages/core/index')
+        component: () => import('@/pages/index')
+      },
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('@/pages/page1'),
+        meta: { meta, title: '页面 1' }
+      },
+      {
+        path: '/page2',
+        name: 'page2',
+        component: () => import('@/pages/page2'),
+        meta: { meta, title: '页面 2' }
+      },
+      {
+        path: '/page3',
+        name: 'page3',
+        component: () => import('@/pages/page3'),
+        meta: { meta, title: '页面 3' }
       }
     ]
-  },
-  {
-    path: '/core/setting',
-    name: 'core-setting',
-    meta,
-    redirect: { name: 'core-setting-index' },
-    component: () => import('@/components/core/d2-layout-main'),
-    children: (pre => [
-      { path: 'index', name: `${pre}index`, component: () => import('@/pages/core/setting/index'), meta: { ...meta, title: '设置首页' } },
-      { path: 'releases', name: `${pre}releases`, component: () => import('@/pages/core/setting/releases'), meta: { ...meta, title: '版本' } }
-    ])('core-setting-')
-  }
-]
-
-/**
- * 错误页面
- */
-const errorPage = [
-  // 404
-  {
-    path: '*',
-    name: '404',
-    component: () => import('@/pages/core/404')
   }
 ]
 
@@ -51,7 +48,19 @@ const frameOut = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/pages/core/login')
+    component: () => import('@/pages/login')
+  }
+]
+
+/**
+ * 错误页面
+ */
+const errorPage = [
+  // 404
+  {
+    path: '*',
+    name: '404',
+    component: () => import('@/pages/error-page-404')
   }
 ]
 

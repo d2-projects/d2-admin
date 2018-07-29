@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Cookies from 'js-cookie'
 
 import util from '@/libs/util.js'
 
@@ -9,7 +8,10 @@ import routes from './routes'
 
 Vue.use(VueRouter)
 
-let router = new VueRouter({ routes })
+// 导出路由 在 main.js 里使用
+const router = new VueRouter({
+  routes
+})
 
 /**
  * 路由拦截
@@ -20,7 +22,8 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(r => r.meta.requiresAuth)) {
     // 这里暂时将cookie里是否存有token作为验证是否登陆的条件
     // 请根据自身业务需要修改
-    if (Cookies.get('token')) {
+    const token = util.cookies.get('token')
+    if (token && token !== 'undefined') {
       next()
     } else {
       // 没有登陆的时候跳转到登陆界面
@@ -39,7 +42,7 @@ router.afterEach(to => {
   const app = router.app
   const { name, params, query } = to
   // 多页控制 打开新的页面
-  util.openNewPage(app, name, params, query)
+  app.$store.commit('d2adminPageOpenNew', { name, params, query })
   // 更改标题
   util.title(to.meta.title)
 })
