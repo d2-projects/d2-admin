@@ -91,6 +91,21 @@ D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https
 
 > 码云的仓库由 github 同步，但是发行版和标签同步有一些问题，所以推荐直接 fork 仓库
 
+## 使用
+
+详细用法见 [快速上手](http://d2admin.fairyever.com/zh/guide/getting-started.html)
+
+```
+// 安装依赖
+npm i
+
+// 运行
+npm run dev
+
+// 打包
+npm run build
+```
+
 ## 觉得不错 赏个咖啡 让作者打起精神 ~
 
 <img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/reward-me@2x.png"/>
