@@ -44,6 +44,8 @@
         position: relative;
         overflow: hidden;
         .d2-theme-container-main-body {
+          flex-grow: 1;
+          margin-top: 1px;
           position: relative;
         }
       }
@@ -194,13 +196,15 @@
         // 主体部分分为多页面控制器 和主体
         .d2-theme-container-main-header {
           // 多页面控制器
-          overflow: hidden;
           .d2-multiple-page-control-group {
             padding-right: 20px;
             .d2-multiple-page-control-content {
               overflow: auto;
               position: relative;
               .d2-multiple-page-control-content-inner {
+                position: absolute;
+                left: 0px;
+                right: 0px;
                 .d2-multiple-page-control {
                   .el-tabs__header.is-top {
                     margin: 0px;
