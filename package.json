@@ -46,7 +46,8 @@
     "vue-router": "^3.0.1",
     "vue-splitpane": "^1.0.2",
     "vuex": "^3.0.1",
-    "xlsx": "^0.12.0"
+    "xlsx": "^0.12.0",
+    "flex.css": "^1.1.7"
   },
   "devDependencies": {
     "@kazupon/vue-i18n-loader": "^0.3.0",
