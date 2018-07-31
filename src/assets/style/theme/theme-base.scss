@@ -45,7 +45,6 @@
         overflow: hidden;
         .d2-theme-container-main-body {
           flex-grow: 1;
-          margin-top: 1px;
           position: relative;
         }
       }
@@ -202,9 +201,6 @@
               overflow: auto;
               position: relative;
               .d2-multiple-page-control-content-inner {
-                position: absolute;
-                left: 0px;
-                right: 0px;
                 .d2-multiple-page-control {
                   .el-tabs__header.is-top {
                     margin: 0px;
