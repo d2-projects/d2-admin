@@ -1,6 +1,6 @@
 <template>
-  <div class="d2-multiple-page-control-group">
-    <div class="d2-multiple-page-control-content">
+  <div class="d2-multiple-page-control-group" flex>
+    <div class="d2-multiple-page-control-content" flex-box="1">
       <div class="d2-multiple-page-control-content-inner">
         <el-tabs
           class="d2-multiple-page-control"
@@ -18,7 +18,7 @@
         </el-tabs>
       </div>
     </div>
-    <div class="d2-multiple-page-control-btn">
+    <div class="d2-multiple-page-control-btn" flex-box="0">
       <el-dropdown
         split-button
         @click="handleControlBtnClick"
