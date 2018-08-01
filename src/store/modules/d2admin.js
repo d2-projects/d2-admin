@@ -480,8 +480,8 @@ export default {
      * @param {vuex state} state vuex state
      * @param {Object} param1 { pageSelect: 当前选中的tagName, vm: vue }
      */
-    d2adminTagCloseLeft (state, { pageSelect, vm} = {}) {
-      const pageAim = pageSelect ? pageSelect : state.pageCurrent
+    d2adminTagCloseLeft (state, { pageSelect, vm } = {}) {
+      const pageAim = pageSelect || state.pageCurrent
       let currentIndex = 0
       state.pageOpenedList.forEach((page, index) => {
         if (page.name === pageAim) {
@@ -506,8 +506,8 @@ export default {
      * @param {vuex state} state vuex state
      * @param {Object} param1 { pageSelect: 当前选中的tagName, vm: vue }
      */
-    d2adminTagCloseRight (state, { pageSelect, vm} = {}) {
-      const pageAim = pageSelect ? pageSelect : state.pageCurrent
+    d2adminTagCloseRight (state, { pageSelect, vm } = {}) {
+      const pageAim = pageSelect || state.pageCurrent
       let currentIndex = 0
       state.pageOpenedList.forEach((page, index) => {
         if (page.name === pageAim) {
@@ -530,8 +530,8 @@ export default {
      * @param {vuex state} state vuex state
      * @param {Object} param1 { pageSelect: 当前选中的tagName, vm: vue }
      */
-    d2adminTagCloseOther (state, { pageSelect, vm} = {}) {
-      const pageAim = pageSelect ? pageSelect : state.pageCurrent
+    d2adminTagCloseOther (state, { pageSelect, vm } = {}) {
+      const pageAim = pageSelect || state.pageCurrent
       let currentIndex = 0
       state.pageOpenedList.forEach((page, index) => {
         if (page.name === pageAim) {
