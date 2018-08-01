@@ -7,7 +7,7 @@
           :x="contentmenuX"
           :y="contentmenuY">
           <d2-contextmenu-list
-            :menulist="contextmenuList"
+            :menulist="tagName === 'index' ? contextmenuListIndex : contextmenuList"
             @rowClick="contextmenuClick"/>
         </d2-contextmenu>
         <el-tabs
@@ -27,7 +27,9 @@
         </el-tabs>
       </div>
     </div>
-    <div class="d2-multiple-page-control-btn" flex-box="0">
+    <div
+      class="d2-multiple-page-control-btn"
+      flex-box="0">
       <el-dropdown
         split-button
         @click="handleControlBtnClick"
@@ -58,39 +60,24 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import D2Contextmenu from '../contextmenu'
-import D2ContextmenuList from '../contextmenu/components/contentmenuList'
 export default {
   components: {
-    D2Contextmenu,
-    D2ContextmenuList
+    D2Contextmenu: () => import('../contextmenu'),
+    D2ContextmenuList: () => import('../contextmenu/components/contentmenuList')
   },
   data () {
     return {
       contextmenuFlag: false,
       contentmenuX: 0,
       contentmenuY: 0,
+      contextmenuListIndex: [
+        { icon: 'times-circle', title: '关闭全部', value: 'all' }
+      ],
       contextmenuList: [
-        {
-          icon: 'arrow-left',
-          title: '关闭左侧',
-          value: 'left'
-        },
-        {
-          icon: 'arrow-right',
-          title: '关闭右侧',
-          value: 'right'
-        },
-        {
-          icon: 'times',
-          title: '关闭其它',
-          value: 'other'
-        },
-        {
-          icon: 'times-circle',
-          title: '关闭全部',
-          value: 'all'
-        }
+        { icon: 'arrow-left', title: '关闭左侧', value: 'left' },
+        { icon: 'arrow-right', title: '关闭右侧', value: 'right' },
+        { icon: 'times', title: '关闭其它', value: 'other' },
+        { icon: 'times-circle', title: '关闭全部', value: 'all' }
       ],
       tagName: 'index'
     }
@@ -132,7 +119,9 @@ export default {
      * @description 接收点击关闭控制上选项的事件
      */
     handleControlItemClick (command, tagName = null) {
-      if (tagName) this.contextmenuFlag = false
+      if (tagName) {
+        this.contextmenuFlag = false
+      }
       const params = {
         pageSelect: tagName,
         vm: this
