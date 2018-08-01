@@ -1,6 +1,9 @@
 <template>
-  <div class="d2-contextmenu" v-show="flag" :style="style">
-    <slot />
+  <div
+    class="d2-contextmenu"
+    v-show="flag"
+    :style="style">
+    <slot/>
   </div>
 </template>
 
@@ -38,7 +41,7 @@ export default {
       return {
         left: this.x + 'px',
         top: this.y + 'px',
-        display: this.visible === true ? 'block' : 'none '
+        display: this.visible ? 'block' : 'none '
       }
     }
   },
