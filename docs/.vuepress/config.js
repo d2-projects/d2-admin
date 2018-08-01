@@ -52,7 +52,7 @@ module.exports = {
           '/zh/guide/': sideBarGuide('指南'),
           '/zh/plugins/': sideBarPlugins('插件'),
           '/zh/components/': sideBarComponents('组件'),
-          '/zh/article/': sideBarArticle('版本更新'),
+          '/zh/article/': sideBarArticle('Cookbook', '版本更新'),
           '/zh/others/': sideBarOthers('其它')
         }
       }
@@ -109,13 +109,20 @@ function sideBarComponents (title) {
   ]
 }
 
-function sideBarArticle (titleUpdate) {
+function sideBarArticle (titleCookBook, titleUpdate) {
   return [
+    {
+      title: titleCookBook,
+      collapsable: false,
+      children: [
+        'cookbook/what-is-cookbook',
+        'cookbook/combinable-questionnaire',
+      ]
+    },
     {
       title: titleUpdate,
       collapsable: false,
       children: [
-        '',
         'update/1.1.5',
         'update/1.1.4',
         'update/0.0.0'
