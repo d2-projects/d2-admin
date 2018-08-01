@@ -6,24 +6,7 @@
     </div>
   </div>
 </template>
-<style lang="scss">
-  .d2-contentmenu-list {
-    .d2-contentmenu-item {
-      padding: 8px 20px;
-      margin: 0;
-      font-size: 14px;
-      color: #606266;
-      cursor: pointer;
-      &:hover {
-        background: #ecf5ff;
-        color: #66b1ff;
-      }
-      .d2-contentmenu-item-title {
-        margin-left: 10px;
-      }
-    }
-  }
-</style>
+
 <script>
   export default {
     props: {
@@ -43,3 +26,22 @@
     }
   }
 </script>
+
+<style lang="scss">
+.d2-contentmenu-list {
+  .d2-contentmenu-item {
+    padding: 8px 20px 8px 15px;
+    margin: 0;
+    font-size: 14px;
+    color: #606266;
+    cursor: pointer;
+    &:hover {
+      background: #ecf5ff;
+      color: #66b1ff;
+    }
+    .d2-contentmenu-item-title {
+      margin-left: 10px;
+    }
+  }
+}
+</style>

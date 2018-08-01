@@ -3,17 +3,7 @@
     <slot />
   </div>
 </template>
-<style>
-  .d2-contextmenu {
-    position: absolute;
-    padding: 5px 0;
-    z-index: 2018;
-    background: white;
-    border: 1px solid #ebeef5;
-    border-radius: 4px;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-  }
-</style>
+
 <script>
 export default {
   name: 'd2-contextmenu',
@@ -34,9 +24,8 @@ export default {
   computed: {
     flag: {
       get () {
-        console.log('change flag')
         if (this.visible) {
-          // 注册全局监听事件[目前只考虑鼠标解除触发]
+          // 注册全局监听事件 [ 目前只考虑鼠标解除触发 ]
           window.addEventListener('mousedown', this.watchContextmenu)
         }
         return this.visible
@@ -65,3 +54,15 @@ export default {
   }
 }
 </script>
+
+<style>
+.d2-contextmenu {
+  position: absolute;
+  padding: 5px 0;
+  z-index: 2018;
+  background: #FFF;
+  border: 1px solid #cfd7e5;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+</style>

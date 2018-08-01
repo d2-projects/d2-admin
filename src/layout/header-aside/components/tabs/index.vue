@@ -2,8 +2,13 @@
   <div class="d2-multiple-page-control-group" flex>
     <div class="d2-multiple-page-control-content" flex-box="1">
       <div class="d2-multiple-page-control-content-inner">
-        <d2-contextmenu :visible.sync="contextmenuFlag" :x="contentmenuX" :y="contentmenuY">
-          <d2-contextmenu-list :menulist="contextmenuList" @rowClick="contextmenuClick"></d2-contextmenu-list>
+        <d2-contextmenu
+          :visible.sync="contextmenuFlag"
+          :x="contentmenuX"
+          :y="contentmenuY">
+          <d2-contextmenu-list
+            :menulist="contextmenuList"
+            @rowClick="contextmenuClick"/>
         </d2-contextmenu>
         <el-tabs
           class="d2-multiple-page-control"
@@ -18,9 +23,7 @@
             v-for="(page, index) in pageOpenedList"
             :key="index"
             :label="page.meta.title || '未命名'"
-            :name="page.name"
-            >
-          </el-tab-pane>
+            :name="page.name"/>
         </el-tabs>
       </div>
     </div>
