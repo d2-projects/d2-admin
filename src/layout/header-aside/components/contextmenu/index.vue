@@ -6,12 +6,12 @@
 <style>
   .d2-contextmenu {
     position: absolute;
-    padding: 5px;
+    padding: 5px 0;
     z-index: 2018;
     background: white;
-    border: 1px solid #cfd7e5;
-    border-radius: 3px;
-    box-shadow: 0px 0px 5px #ccc;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
   }
 </style>
 <script>
@@ -54,8 +54,8 @@ export default {
     }
   },
   methods: {
-    watchContextmenu () {
-      this.flag = false
+    watchContextmenu (event) {
+      if (!this.$el.contains(event.target)) this.flag = false
       window.removeEventListener('mousedown', this.watchContextmenu)
     }
   },

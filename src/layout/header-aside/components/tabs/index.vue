@@ -3,7 +3,7 @@
     <div class="d2-multiple-page-control-content" flex-box="1">
       <div class="d2-multiple-page-control-content-inner">
         <d2-contextmenu :visible.sync="contextmenuFlag" :x="contentmenuX" :y="contentmenuY">
-          test
+          <d2-contextmenu-list :menulist="contextmenuList" @rowClick="contextmenuClick"></d2-contextmenu-list>
         </d2-contextmenu>
         <el-tabs
           class="d2-multiple-page-control"
@@ -56,15 +56,40 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 import D2Contextmenu from '../contextmenu'
+import D2ContextmenuList from '../contextmenu/components/contentmenuList'
 export default {
   components: {
-    D2Contextmenu
+    D2Contextmenu,
+    D2ContextmenuList
   },
   data () {
     return {
       contextmenuFlag: false,
       contentmenuX: 0,
-      contentmenuY: 0
+      contentmenuY: 0,
+      contextmenuList: [
+        {
+          icon: 'arrow-left',
+          title: '关闭左侧',
+          value: 'left'
+        },
+        {
+          icon: 'arrow-right',
+          title: '关闭右侧',
+          value: 'right'
+        },
+        {
+          icon: 'times',
+          title: '关闭其它',
+          value: 'other'
+        },
+        {
+          icon: 'times-circle',
+          title: '关闭全部',
+          value: 'all'
+        }
+      ],
+      tagName: 'index'
     }
   },
   computed: {
@@ -88,25 +113,36 @@ export default {
       if (target.className.indexOf('el-tabs__item') > -1 || target.parentNode.className.indexOf('el-tabs__item') > -1) {
         event.preventDefault()
         event.stopPropagation()
-        this.contextmenuFlag = true
         this.contentmenuX = event.clientX
         this.contentmenuY = event.clientY
-        console.log(event)
+        this.tagName = target.getAttribute('aria-controls').slice(5)
+        this.contextmenuFlag = true
       }
+    },
+    /**
+     * @description 右键菜单的row-click事件
+     */
+    contextmenuClick (command) {
+      this.handleControlItemClick(command, this.tagName)
     },
     /**
      * @description 接收点击关闭控制上选项的事件
      */
-    handleControlItemClick (command) {
+    handleControlItemClick (command, tagName = null) {
+      if (tagName) this.contextmenuFlag = false
+      const params = {
+        pageSelect: tagName,
+        vm: this
+      }
       switch (command) {
         case 'left':
-          this.d2adminTagCloseLeft()
+          this.d2adminTagCloseLeft(params)
           break
         case 'right':
-          this.d2adminTagCloseRight()
+          this.d2adminTagCloseRight(params)
           break
         case 'other':
-          this.d2adminTagCloseOther()
+          this.d2adminTagCloseOther(params)
           break
         case 'all':
           this.d2adminTagCloseAll(this)
