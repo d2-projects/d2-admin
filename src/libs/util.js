@@ -5,7 +5,8 @@ import UaParser from 'ua-parser-js'
 import { version } from '../../package.json'
 
 let util = {
-  cookies: {}
+  cookies: {},
+  log: {}
 }
 
 /**
@@ -74,17 +75,52 @@ util.isOneOf = function (ele, targetArr) {
 }
 
 /**
+ * @description 返回这个样式的颜色值
+ * @param {String} type 样式名称 [ primary | success | warning | danger | text ]
+ */
+util.typeColor = function (type = 'default') {
+  let color = ''
+  switch (type) {
+    case 'default': color = '35495E'; break
+    case 'primary': color = '#3488ff'; break
+    case 'success': color = '#43B883'; break
+    case 'warning': color = '#e6a23c'; break
+    case 'danger': color = '#f56c6c'; break
+    default:; break
+  }
+  return color
+}
+
+/**
  * @description 打印一个 “胶囊” 样式的信息
  * @param {String} title title text
  * @param {String} info info text
+ * @param {String} type style
  */
-util.logCapsule = function (title, info) {
+util.log.capsule = function (title, info, type = 'primary') {
   console.log(
     `%c ${title} %c ${info} %c`,
-    'background:#29384b; padding: 1px; border-radius: 3px 0 0 3px; color: #fff',
-    'background:#3488ff; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:#35495E; padding: 1px; border-radius: 3px 0 0 3px; color: #fff;',
+    `background:${util.typeColor(type)}; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff;`,
     'background:transparent'
   )
+}
+
+/**
+ * @description 打印彩色文字
+ */
+util.log.colorful = function (textArr) {
+  console.log(
+    `%c ${textArr.map(t => t.text).join(' %c ')}`,
+    ...textArr.map(t => `color: ${util.typeColor(t.type)};`)
+  )
+}
+
+/**
+ * @description 打印 danger 样式的文字
+ */
+util.log.error = function (text) {
+  util.log.colorful([{ text, type: 'danger' }])
 }
 
 /**
@@ -100,7 +136,7 @@ util.checkUpdate = function (vm) {
       let versionGet = res.tag_name
       const update = semver.lt(version, versionGet)
       if (update) {
-        util.logCapsule('D2Admin', `New version ${res.name}`)
+        util.log.capsule('D2Admin', `New version ${res.name}`)
         console.log(`版本号: ${res.tag_name} | 详情${res.html_url}`)
         vm.$store.commit('d2adminReleasesUpdateSet', true)
       }
@@ -115,7 +151,7 @@ util.checkUpdate = function (vm) {
  * @description 显示版本信息
  */
 util.showInfo = function showInfo () {
-  util.logCapsule('D2Admin', `v${version}`)
+  util.log.capsule('D2Admin', `v${version}`)
   console.log('Github https://github.com/d2-projects/d2-admin')
   console.log('Doc    http://d2admin.fairyever.com/zh/')
 }

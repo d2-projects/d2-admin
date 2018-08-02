@@ -47,7 +47,9 @@ export default {
     // 当前页面
     pageCurrent: '',
     // 用户 UA
-    ua: {}
+    ua: {},
+    // 错误日志
+    log: []
   },
   getters: {
     /**
@@ -638,6 +640,15 @@ export default {
      */
     d2adminGrayModeSet (state, value) {
       state.isGrayMode = value
+    },
+    /**
+     * @class log
+     * @description 添加一个 log
+     * @param {vuex state} state vuex state
+     * @param {Object} param1 { }
+     */
+    d2adminLogAdd (state, { err, vm, info }) {
+      state.log.push({ err, vm, info })
     },
     /**
      * @class themeActiveName

@@ -41,6 +41,7 @@ const frameIn = [
       { path: 'db/all', name: `${pre}db-all`, component: () => import('@/pages/demo/playground/db/all'), meta: { ...meta, title: '全部数据' } },
       { path: 'db/user', name: `${pre}db-user`, component: () => import('@/pages/demo/playground/db/user'), meta: { ...meta, title: '用户数据' } },
       { path: 'db/public', name: `${pre}db-public`, component: () => import('@/pages/demo/playground/db/public'), meta: { ...meta, title: '公用数据' } },
+      { path: 'log/error', name: `${pre}log-error`, component: () => import('@/pages/demo/playground/log/error'), meta: { ...meta, title: '错误捕捉' } },
       { path: 'env', name: `${pre}env`, component: () => import('@/pages/demo/playground/env'), meta: { ...meta, title: '环境信息' } }
     ])('demo-playground-')
   },
