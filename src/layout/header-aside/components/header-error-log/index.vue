@@ -1,14 +1,14 @@
 <template>
   <div>
     <el-tooltip effect="dark" :content="tooltipContent" placement="bottom">
-      <el-button class="d2-ml-0 d2-mr btn-text can-hover" type="text" @click="dialogVisible = true">
+      <el-button class="d2-ml-0 d2-mr btn-text can-hover" type="text" @click="handleClick">
         <el-badge
           v-if="d2adminLogLength > 0"
           :value="d2adminLogErrorLength"
           :is-dot="d2adminLogErrorLength === 0">
-          <d2-icon name="bug" style="font-size: 20px"/>
+          <d2-icon :name="d2adminLogErrorLength === 0 ? 'dot-circle-o' : 'bug'" style="font-size: 20px"/>
         </el-badge>
-        <d2-icon v-else name="bug" style="font-size: 20px"/>
+        <d2-icon v-else name="dot-circle-o" style="font-size: 20px"/>
       </el-button>
     </el-tooltip>
     <el-dialog
@@ -40,6 +40,13 @@ export default {
         `${this.d2adminLogLength} 条日志${this.d2adminLogErrorLength > 0 ?
           ` | 包含 ${this.d2adminLogErrorLength} 个异常` :
           ''}`
+    }
+  },
+  methods: {
+    handleClick () {
+      if (this.d2adminLogLength > 0) {
+        this.dialogVisible = true
+      }
     }
   }
 }
