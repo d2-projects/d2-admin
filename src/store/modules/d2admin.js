@@ -647,8 +647,13 @@ export default {
      * @param {vuex state} state vuex state
      * @param {Object} param1 { }
      */
-    d2adminLogAdd (state, { err, vm, info }) {
-      state.log.push({ err, vm, info })
+    d2adminLogAdd (state, { type, err, vm, info }) {
+      state.log.push(Object.assign({
+        type: 'log',
+        err: '',
+        vm: '',
+        info: '没有定义具体信息'
+      }, { type, err, vm, info }))
     },
     /**
      * @class themeActiveName
