@@ -24,7 +24,8 @@
     "ua-parser-js": "^0.7.18",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "flex.css": "^1.1.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.4",
