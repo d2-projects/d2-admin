@@ -1,4 +1,5 @@
 import screenfull from 'screenfull'
+import dayjs from 'dayjs'
 import util from '@/libs/util.js'
 import db from '@/libs/db.js'
 import themeList from '@/assets/style/theme/list.js'
@@ -72,6 +73,20 @@ export default {
         }
         return true
       }).map(e => e.name)
+    },
+    /**
+     * @description 返回现存 log (all) 的条数
+     * @param {*} state vuex state
+     */
+    d2adminLogLength (state) {
+      return state.log.length
+    },
+    /**
+     * @description 返回现存 log (error) 的条数
+     * @param {*} state vuex state
+     */
+    d2adminLogErrorLength (state) {
+      return state.log.filter(l => l.type === 'error').length
     }
   },
   actions: {
@@ -652,7 +667,8 @@ export default {
         type: 'log',
         err: '',
         vm: '',
-        info: '没有定义具体信息'
+        info: '没有定义具体信息',
+        time: dayjs().format('YYYY-M-D HH:mm:ss')
       }, { type, err, vm, info }))
     },
     /**
