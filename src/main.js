@@ -17,6 +17,7 @@ import '@/assets/svg-icons'
 import '@/components'
 import '@/mock/register'
 import '@/plugin/axios'
+import pluginLog from '@/plugin/log'
 import pluginError from '@/plugin/error'
 import pluginImport from '@/plugin/import'
 import pluginExport from '@/plugin/export'
@@ -30,6 +31,7 @@ import { frameInRoutes } from '@/router/routes'
 Vue.use(ElementUI)
 Vue.use(VCharts)
 Vue.use(contentmenu)
+Vue.use(pluginLog)
 Vue.use(pluginError)
 Vue.use(pluginImport)
 Vue.use(pluginExport)
