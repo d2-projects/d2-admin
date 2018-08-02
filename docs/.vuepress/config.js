@@ -123,6 +123,7 @@ function sideBarArticle (titleCookBook, titleUpdate) {
       title: titleUpdate,
       collapsable: false,
       children: [
+        'update/ice-1.1.2',
         'update/1.1.5',
         'update/1.1.4',
         'update/0.0.0'
