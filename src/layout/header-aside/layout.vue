@@ -6,7 +6,7 @@
     <!-- 半透明遮罩 -->
     <div class="d2-layout-header-aside-mask"></div>
     <!-- 主体内容 -->
-    <div class="d2-layout-header-aside-content">
+    <div class="d2-layout-header-aside-content" flex="dir:top">
       <!-- 顶栏 -->
       <div class="d2-theme-header">
         <div class="logo-group" :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
@@ -26,7 +26,7 @@
         </div>
       </div>
       <!-- 下面 主体 -->
-      <div class="d2-theme-container">
+      <div class="d2-theme-container"  flex-box="1" flex>
         <!-- 主体 侧边栏 -->
         <div
           ref="aside"
@@ -35,11 +35,11 @@
           <d2-menu-side/>
         </div>
         <!-- 主体 -->
-        <div class="d2-theme-container-main">
-          <div class="d2-theme-container-main-header">
+        <div class="d2-theme-container-main"  flex-box="1" flex="dir:top">
+          <div class="d2-theme-container-main-header" flex-box="0">
             <d2-tabs/>
           </div>
-          <div class="d2-theme-container-main-body">
+          <div class="d2-theme-container-main-body" flex-box="1">
             <transition name="fade-transverse">
               <keep-alive :include="d2adminKeepAliveInclude">
                 <router-view/>

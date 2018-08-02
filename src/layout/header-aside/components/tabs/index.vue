@@ -1,24 +1,35 @@
 <template>
-  <div class="d2-multiple-page-control-group">
-    <div class="d2-multiple-page-control-content">
+  <div class="d2-multiple-page-control-group" flex>
+    <div class="d2-multiple-page-control-content" flex-box="1">
       <div class="d2-multiple-page-control-content-inner">
+        <d2-contextmenu
+          :visible.sync="contextmenuFlag"
+          :x="contentmenuX"
+          :y="contentmenuY">
+          <d2-contextmenu-list
+            :menulist="tagName === 'index' ? contextmenuListIndex : contextmenuList"
+            @rowClick="contextmenuClick"/>
+        </d2-contextmenu>
         <el-tabs
           class="d2-multiple-page-control"
           :value="pageCurrent"
           type="card"
           :closable="true"
           @tab-click="handleClick"
-          @edit="handleTabsEdit">
+          @edit="handleTabsEdit"
+          @contextmenu.native="handleContextmenu">
           <el-tab-pane
+            class="hello"
             v-for="(page, index) in pageOpenedList"
             :key="index"
             :label="page.meta.title || '未命名'"
-            :name="page.name">
-          </el-tab-pane>
+            :name="page.name"/>
         </el-tabs>
       </div>
     </div>
-    <div class="d2-multiple-page-control-btn">
+    <div
+      class="d2-multiple-page-control-btn"
+      flex-box="0">
       <el-dropdown
         split-button
         @click="handleControlBtnClick"
@@ -50,6 +61,27 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 export default {
+  components: {
+    D2Contextmenu: () => import('../contextmenu'),
+    D2ContextmenuList: () => import('../contextmenu/components/contentmenuList')
+  },
+  data () {
+    return {
+      contextmenuFlag: false,
+      contentmenuX: 0,
+      contentmenuY: 0,
+      contextmenuListIndex: [
+        { icon: 'times-circle', title: '关闭全部', value: 'all' }
+      ],
+      contextmenuList: [
+        { icon: 'arrow-left', title: '关闭左侧', value: 'left' },
+        { icon: 'arrow-right', title: '关闭右侧', value: 'right' },
+        { icon: 'times', title: '关闭其它', value: 'other' },
+        { icon: 'times-circle', title: '关闭全部', value: 'all' }
+      ],
+      tagName: 'index'
+    }
+  },
   computed: {
     ...mapState({
       pageOpenedList: state => state.d2admin.pageOpenedList,
@@ -64,18 +96,45 @@ export default {
       'd2adminTagCloseAll'
     ]),
     /**
+     * @description 右键菜单功能点击
+     */
+    handleContextmenu (event) {
+      let target = event.target
+      if (target.className.indexOf('el-tabs__item') > -1 || target.parentNode.className.indexOf('el-tabs__item') > -1) {
+        event.preventDefault()
+        event.stopPropagation()
+        this.contentmenuX = event.clientX
+        this.contentmenuY = event.clientY
+        this.tagName = target.getAttribute('aria-controls').slice(5)
+        this.contextmenuFlag = true
+      }
+    },
+    /**
+     * @description 右键菜单的row-click事件
+     */
+    contextmenuClick (command) {
+      this.handleControlItemClick(command, this.tagName)
+    },
+    /**
      * @description 接收点击关闭控制上选项的事件
      */
-    handleControlItemClick (command) {
+    handleControlItemClick (command, tagName = null) {
+      if (tagName) {
+        this.contextmenuFlag = false
+      }
+      const params = {
+        pageSelect: tagName,
+        vm: this
+      }
       switch (command) {
         case 'left':
-          this.d2adminTagCloseLeft()
+          this.d2adminTagCloseLeft(params)
           break
         case 'right':
-          this.d2adminTagCloseRight()
+          this.d2adminTagCloseRight(params)
           break
         case 'other':
-          this.d2adminTagCloseOther()
+          this.d2adminTagCloseOther(params)
           break
         case 'all':
           this.d2adminTagCloseAll(this)
