@@ -6,14 +6,16 @@ export default {
     Vue.config.errorHandler = function (err, vm, info) {
       Vue.nextTick(() => {
         store.commit('d2adminLogAdd', {
-          err, vm, info
+          err,
+          vm,
+          info
         })
         util.log.capsule('D2Admin', 'ErrorHandler', 'danger')
-        util.log.error('>>>>> err')
+        util.log.danger('>>>>>> 错误对象 >>>>>>')
         console.log(err)
-        util.log.error('>>>>> vm')
+        util.log.danger('>>>>>> 报错 Vue 实例 >>>>>>')
         console.log(vm)
-        util.log.error('>>>>> info')
+        util.log.danger('>>>>>> 错误信息 >>>>>>')
         console.log(info)
       })
     }
