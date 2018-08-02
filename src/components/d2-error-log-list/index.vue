@@ -1,65 +1,64 @@
 <template>
   <el-table
-    :data="tableData5"
+    :data="log"
     style="width: 100%">
-    <el-table-column type="expand">
+    <!-- <el-table-column type="expand">
       <template slot-scope="props">
-        {{props.row}}
+      </template>
+    </el-table-column> -->
+    <el-table-column
+      prop="type"
+      label="类型"
+      width="80px"
+      align="center"
+      :filters="[
+        { text: '日志', value: 'log' },
+        { text: '异常', value: 'error' }
+      ]"
+      :filter-multiple="false"
+      :filter-method="filterType"
+      filter-placement="bottom">
+      <template slot-scope="scope">
+        <el-tag
+          v-if="scope.row.type === 'error'"
+          size="mini"
+          type="danger">
+          <d2-icon name="bug"/> Bug
+        </el-tag>
+        <el-tag
+          v-else
+          size="mini"
+          type="info">
+          <d2-icon name="dot-circle-o"/> Log
+        </el-tag>
       </template>
     </el-table-column>
     <el-table-column
-      label="商品 ID"
-      prop="id">
+      label="info"
+      prop="info">
     </el-table-column>
-    <el-table-column
-      label="商品名称"
-      prop="name">
-    </el-table-column>
-    <el-table-column
-      label="描述"
-      prop="desc">
+    <el-table-column label="err">
+      <template slot-scope="scope">
+        {{scope.row.vm ? scope.row.vm.$vnode.tag : ''}}
+        {{scope.row.err}}
+      </template>
     </el-table-column>
   </el-table>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'd2-error-log-list',
-  data () {
-    return {
-      tableData5: [{
-        id: '12987122',
-        name: '好滋好味鸡蛋仔',
-        category: '江浙小吃、小吃零食',
-        desc: '荷兰优质淡奶，奶香浓而不腻',
-        address: '上海市普陀区真北路',
-        shop: '王小虎夫妻店',
-        shopId: '10333'
-      }, {
-        id: '12987123',
-        name: '好滋好味鸡蛋仔',
-        category: '江浙小吃、小吃零食',
-        desc: '荷兰优质淡奶，奶香浓而不腻',
-        address: '上海市普陀区真北路',
-        shop: '王小虎夫妻店',
-        shopId: '10333'
-      }, {
-        id: '12987125',
-        name: '好滋好味鸡蛋仔',
-        category: '江浙小吃、小吃零食',
-        desc: '荷兰优质淡奶，奶香浓而不腻',
-        address: '上海市普陀区真北路',
-        shop: '王小虎夫妻店',
-        shopId: '10333'
-      }, {
-        id: '12987126',
-        name: '好滋好味鸡蛋仔',
-        category: '江浙小吃、小吃零食',
-        desc: '荷兰优质淡奶，奶香浓而不腻',
-        address: '上海市普陀区真北路',
-        shop: '王小虎夫妻店',
-        shopId: '10333'
-      }]
+  computed: {
+    ...mapState({
+      log: state => state.d2admin.log
+    })
+  },
+  methods: {
+    filterType (value, row) {
+      console.log('value', value)
+      return row.type === value
     }
   }
 }

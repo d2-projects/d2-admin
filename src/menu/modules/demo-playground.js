@@ -50,7 +50,7 @@ export default {
       title: '日志',
       icon: 'bullseye',
       children: [
-        { path: `${pre}log/log`, title: '日志记录', icon: 'sticky-note-o' },
+        { path: `${pre}log/log`, title: '日志记录', icon: 'dot-circle-o' },
         { path: `${pre}log/error`, title: '错误捕捉', icon: 'bug' }
       ]
     },
