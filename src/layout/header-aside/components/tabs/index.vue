@@ -19,7 +19,6 @@
           @edit="handleTabsEdit"
           @contextmenu.native="handleContextmenu">
           <el-tab-pane
-            class="hello"
             v-for="(page, index) in pageOpenedList"
             :key="index"
             :label="page.meta.title || '未命名'"
