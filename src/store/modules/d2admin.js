@@ -664,7 +664,7 @@ export default {
      */
     d2adminLogAdd (state, { type, err, vm, info }) {
       state.log.push(Object.assign({
-        type: 'log',
+        type: 'log', // error
         err: '',
         vm: '',
         info: '没有定义具体信息',

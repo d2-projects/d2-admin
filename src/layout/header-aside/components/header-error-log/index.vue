@@ -24,7 +24,7 @@
       </el-button>
     </el-tooltip>
     <el-dialog
-      title="异常日志"
+      :title="tooltipContent"
       :fullscreen="true"
       :visible.sync="dialogVisible"
       :append-to-body="true">
