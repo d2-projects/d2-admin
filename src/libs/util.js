@@ -117,9 +117,30 @@ util.log.colorful = function (textArr) {
 }
 
 /**
+ * @description 打印 primary 样式的文字
+ */
+util.log.primary = function (text) {
+  util.log.colorful([{ text, type: 'primary' }])
+}
+
+/**
+ * @description 打印 success 样式的文字
+ */
+util.log.success = function (text) {
+  util.log.colorful([{ text, type: 'success' }])
+}
+
+/**
+ * @description 打印 warning 样式的文字
+ */
+util.log.warning = function (text) {
+  util.log.colorful([{ text, type: 'warning' }])
+}
+
+/**
  * @description 打印 danger 样式的文字
  */
-util.log.error = function (text) {
+util.log.danger = function (text) {
   util.log.colorful([{ text, type: 'danger' }])
 }
 
