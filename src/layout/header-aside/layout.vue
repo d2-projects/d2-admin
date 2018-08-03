@@ -8,7 +8,7 @@
     <!-- 主体内容 -->
     <div class="d2-layout-header-aside-content" flex="dir:top">
       <!-- 顶栏 -->
-      <div class="d2-theme-header">
+      <div class="d2-theme-header" flex-box="0">
         <div class="logo-group" :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
           <img v-if="isMenuAsideCollapse" :src="`${$baseUrl}image/theme/${d2adminThemeActiveSetting.name}/logo/icon-only.png`">
           <img v-else :src="`${$baseUrl}image/theme/${d2adminThemeActiveSetting.name}/logo/all.png`">
@@ -26,16 +26,17 @@
         </div>
       </div>
       <!-- 下面 主体 -->
-      <div class="d2-theme-container"  flex-box="1" flex>
+      <div class="d2-theme-container" flex-box="1" flex>
         <!-- 主体 侧边栏 -->
         <div
+          flex-box="0"
           ref="aside"
           class="d2-theme-container-aside"
           :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
           <d2-menu-side/>
         </div>
         <!-- 主体 -->
-        <div class="d2-theme-container-main"  flex-box="1" flex="dir:top">
+        <div class="d2-theme-container-main" flex-box="1" flex="dir:top">
           <div class="d2-theme-container-main-header" flex-box="0">
             <d2-tabs/>
           </div>
