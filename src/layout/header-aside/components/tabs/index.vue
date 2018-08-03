@@ -99,6 +99,11 @@ export default {
      */
     handleContextmenu (event) {
       let target = event.target
+      // 解决 https://github.com/d2-projects/d2-admin/issues/54
+      const attribute = target.getAttribute('aria-controls')
+      if (attribute === null) {
+        return
+      }
       if (target.className.indexOf('el-tabs__item') > -1 || target.parentNode.className.indexOf('el-tabs__item') > -1) {
         event.preventDefault()
         event.stopPropagation()
