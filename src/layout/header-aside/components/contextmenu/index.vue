@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     watchContextmenu (event) {
-      if (!this.$el.contains(event.target)) this.flag = false
+      if (!this.$el.contains(event.target) || event.button !== 0) this.flag = false
       window.removeEventListener('mousedown', this.watchContextmenu)
     }
   },
