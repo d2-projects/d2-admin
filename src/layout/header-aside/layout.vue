@@ -19,6 +19,7 @@
         <d2-menu-header/>
         <!-- 顶栏右侧 -->
         <div class="d2-header-right">
+          <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
           <d2-header-error-log/>
           <d2-header-help/>
           <d2-header-fullscreen/>
