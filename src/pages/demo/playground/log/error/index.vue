@@ -10,7 +10,7 @@
 export default {
   methods: {
     handleNewError () {
-      console.log(a)
+      console.log(a) // eslint-disable-line
     }
   }
 }

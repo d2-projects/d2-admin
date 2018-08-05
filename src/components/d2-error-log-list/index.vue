@@ -1,11 +1,19 @@
 <template>
   <el-table
     :data="log"
-    style="width: 100%">
-    <!-- <el-table-column type="expand">
+    border
+    stripe
+    style="width: 100%"
+    size="mini">
+
+    <el-table-column type="expand">
       <template slot-scope="props">
+        <div style="overflow: auto;">
+          <pre>{{stackBeautify(props.row.err)}}</pre>
+        </div>
       </template>
-    </el-table-column> -->
+    </el-table-column>
+
     <el-table-column
       prop="type"
       label="类型"
@@ -33,16 +41,56 @@
         </el-tag>
       </template>
     </el-table-column>
+
     <el-table-column
-      label="info"
-      prop="info">
+      label="地址"
+      prop="url"
+      width="140px"
+      :show-overflow-tooltip="true">
     </el-table-column>
-    <el-table-column label="err">
-      <template slot-scope="scope">
+
+    <el-table-column
+      label="组件"
+      width="140px"
+      :show-overflow-tooltip="true">
+      <template
+        slot-scope="scope">
         {{scope.row.vm ? scope.row.vm.$vnode.tag : ''}}
-        {{scope.row.err}}
       </template>
     </el-table-column>
+
+    <el-table-column
+      label="信息"
+      prop="info"
+      width="200px"
+      :show-overflow-tooltip="true">
+    </el-table-column>
+
+    <el-table-column
+      label="错误类型"
+      width="140px"
+      :show-overflow-tooltip="true">
+      <template
+        slot-scope="scope">
+        {{scope.row.err ? scope.row.err.name : ''}}
+      </template>
+    </el-table-column>
+
+    <el-table-column
+      label="错误信息">
+      <template
+        slot-scope="scope">
+        {{scope.row.err ? scope.row.err.message : ''}}
+      </template>
+    </el-table-column>
+
+    <el-table-column
+      label="time"
+      prop="time"
+      width="150px"
+      :show-overflow-tooltip="true">
+    </el-table-column>
+    
   </el-table>
 </template>
 
@@ -59,6 +107,12 @@ export default {
     filterType (value, row) {
       console.log('value', value)
       return row.type === value
+    },
+    stackBeautify (err) {
+      if (!err) {
+        return ''
+      }
+      return err.stack
     }
   }
 }
