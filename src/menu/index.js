@@ -8,6 +8,8 @@ import demoCharts from './modules/demo-charts'
 import demoElement from './modules/demo-element'
 // 试验台
 import demoPlayground from './modules/demo-playground'
+// 示例
+import demoBusiness from './modules/demo-business'
 
 // 菜单 侧边栏
 export const menuAside = [
@@ -15,7 +17,8 @@ export const menuAside = [
   demoPlugins,
   demoCharts,
   demoElement,
-  demoPlayground
+  demoPlayground,
+  demoBusiness
 ]
 
 // 菜单 顶栏
@@ -26,7 +29,6 @@ export const menuHeader = [
     icon: 'home'
   },
   {
-    path: '/demo',
     title: '功能',
     icon: 'puzzle-piece',
     children: [
@@ -51,5 +53,6 @@ export const menuHeader = [
         ]
       }
     ]
-  }
+  },
+  demoBusiness
 ]
