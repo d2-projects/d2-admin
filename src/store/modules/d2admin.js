@@ -665,11 +665,23 @@ export default {
      */
     d2adminLogAdd (state, { type, err, vm, info }) {
       state.log.push(Object.assign({
+        // 记录类型
         type: 'log', // error
+        // 错误对象
         err: '',
+        // vue 实例
         vm: '',
+        // 信息
         info: '',
+        // 当前用户信息
+        user: state.userInfo,
+        // 当前用户的 uuid
+        uuid: '',
+        // 当前的 token
+        token: '',
+        // 当前地址
         url: get(window, 'location.href', ''),
+        // 当前时间
         time: dayjs().format('YYYY-M-D HH:mm:ss')
       }, { type, err, vm, info }))
     },
