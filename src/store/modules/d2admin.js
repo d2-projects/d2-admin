@@ -1,5 +1,6 @@
 import screenfull from 'screenfull'
 import dayjs from 'dayjs'
+import get from 'lodash.get'
 import util from '@/libs/util.js'
 import db from '@/libs/db.js'
 import themeList from '@/assets/style/theme/list.js'
@@ -667,7 +668,8 @@ export default {
         type: 'log', // error
         err: '',
         vm: '',
-        info: '没有定义具体信息',
+        info: '',
+        url: get(window, 'location.href', ''),
         time: dayjs().format('YYYY-M-D HH:mm:ss')
       }, { type, err, vm, info }))
     },

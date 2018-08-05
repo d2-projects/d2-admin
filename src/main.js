@@ -65,10 +65,6 @@ new Vue({
     this.$store.commit('d2adminLoginSuccessLoad')
     // 初始化全屏监听
     this.fullscreenListenerInit()
-    window.onerror = function (message, url, line, column, error) {
-      console.log('onerror')
-      console.log(message, url, line, column, error)
-    }
   },
   watch: {
     // 监听路由 控制侧边栏显示
