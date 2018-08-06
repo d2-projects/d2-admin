@@ -21,7 +21,7 @@
       </template>
     </el-table-column>
 
-    <el-table-column label="状态" width="260" align="center">
+    <el-table-column label="状态" width="60" align="center">
       <template slot-scope="scope">
         <el-popover
           placement="left"
