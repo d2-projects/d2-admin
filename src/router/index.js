@@ -20,9 +20,8 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // 验证当前路由所有的匹配中是否需要有登陆验证的
   if (to.matched.some(r => r.meta.requiresAuth)) {
-    // 这里暂时将cookie里是否存有token作为验证是否登陆的条件
-    // 请根据自身业务需要修改
-    const token = util.cookies.get('token')
+    // cookie里是否存有sessionid作为验证是否登陆的条件
+    const token = util.cookies.get('sessionid', false);
     if (token && token !== 'undefined') {
       next()
     } else {
@@ -39,10 +38,10 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(to => {
   // 需要的信息
-  const app = router.app
-  const { name, params, query } = to
+  const app = router.app;
+  const { name, params, query } = to;
   // 多页控制 打开新的页面
-  app.$store.commit('d2adminPageOpenNew', { name, params, query })
+  app.$store.commit('d2adminPageOpenNew', { name, params, query });
   // 更改标题
   util.title(to.meta.title)
 })
