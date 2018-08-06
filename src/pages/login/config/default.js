@@ -3,7 +3,7 @@
 export default {
   "particles": {
     "number": {
-      "value": 80,
+      "value": 95,
       "density": {
         "enable": true,
         "value_area": 800
