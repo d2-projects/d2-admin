@@ -8,7 +8,7 @@ export default {
       title: '表格',
       icon: 'table',
       children: [
-        { path: `${pre}table/1`, title: '1' }
+        { path: `${pre}table/1`, title: '表格 1' }
       ]
     }
   ])('/demo/business/')
