@@ -1,6 +1,6 @@
 import Mock from 'mockjs'
 
-Mock.mock('/api/ajax-demo', {
+Mock.mock('/api/demo/plugins/mock/ajax', {
   'list|4-10': [{
     'id|+1': 1,
     'name': '@CNAME',
