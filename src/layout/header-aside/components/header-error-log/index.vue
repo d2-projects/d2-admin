@@ -28,13 +28,20 @@
       :fullscreen="true"
       :visible.sync="dialogVisible"
       :append-to-body="true">
+      <div class="d2-mb-10">
+        <el-button type="danger" size="mini" @click="handleLogClean">
+          <d2-icon name="trash-o"/>
+          清空
+        </el-button>
+      </div>
+      
       <d2-error-log-list/>
     </el-dialog>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   data () {
     return {
@@ -55,10 +62,17 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'd2adminLogClean'
+    ]),
     handleClick () {
       if (this.d2adminLogLength > 0) {
         this.dialogVisible = true
       }
+    },
+    handleLogClean () {
+      this.dialogVisible = false
+      this.d2adminLogClean()
     }
   }
 }
