@@ -15,8 +15,10 @@ import util from '@/libs/util.js'
 import store from '@/store/index'
 import '@/assets/svg-icons'
 import '@/components'
-import '@/plugin/axios'
 import '@/mock/register'
+import '@/plugin/axios'
+import pluginLog from '@/plugin/log'
+import pluginError from '@/plugin/error'
 import pluginImport from '@/plugin/import'
 import pluginExport from '@/plugin/export'
 import pluginOpen from '@/plugin/open'
@@ -29,6 +31,8 @@ import { frameInRoutes } from '@/router/routes'
 Vue.use(ElementUI)
 Vue.use(VCharts)
 Vue.use(contentmenu)
+Vue.use(pluginLog)
+Vue.use(pluginError)
 Vue.use(pluginImport)
 Vue.use(pluginExport)
 Vue.use(pluginOpen)
