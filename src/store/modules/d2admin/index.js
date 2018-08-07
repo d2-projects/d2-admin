@@ -4,7 +4,7 @@ import get from 'lodash.get'
 import util from '@/libs/util.js'
 import db from '@/libs/db.js'
 import themeList from '@/assets/style/theme/list.js'
-import { version } from '../../../package'
+import { version } from '../../../../package'
 
 const pageOpenedDefult = {
   name: 'index',
