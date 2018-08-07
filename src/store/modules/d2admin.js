@@ -191,11 +191,12 @@ export default {
      * @class 通用工具
      * @description 从数据库取值到 vuex 需要 uuid
      * @param {vuex state} state vuex state
-     * @param {Object} param1 key and default value
+     * @param {Object} param1 key 键名, defaultValue 取值失败时的默认值, handleFunction 处理函数
      */
-    d2adminUtilDb2VuexByUuid (state, { key, defaultValue }) {
+    d2adminUtilDb2VuexByUuid (state, { key, defaultValue, handleFunction }) {
       const row = db.get(key).find({uuid: util.cookies.get('uuid')}).value()
-      state[key] = row ? row.value : defaultValue
+      const handle = handleFunction || (res => res)
+      state[key] = row ? handle(row.value) : defaultValue
     },
     /**
      * @class 通用工具
@@ -218,11 +219,12 @@ export default {
      * @class 通用工具
      * @description 从数据库取值到 vuex 不需要 uuid 所有用户共享
      * @param {vuex state} state vuex state
-     * @param {Object} param1 key and default value
+     * @param {Object} param1 key 键名, defaultValue 取值失败时的默认值, handleFunction 处理函数
      */
-    d2adminUtilDb2Vuex (state, { key, defaultValue }) {
+    d2adminUtilDb2Vuex (state, { key, defaultValue, handleFunction }) {
       const row = db.get(key).find({pub: 'pub'}).value()
-      state[key] = row ? row.value : defaultValue
+      const handle = handleFunction || (res => res)
+      state[key] = row ? handle(row.value) : defaultValue
     },
     /**
      * @class 通用工具
@@ -430,7 +432,28 @@ export default {
         key: 'pageOpenedList',
         defaultValue: [
           pageOpenedDefult
-        ]
+        ],
+        handleFunction (res) {
+          // 在处理函数中进行数据优化 过滤掉现在已经失效的页签或者已经改变了信息的页签
+          // 以 name 字段为准
+          // 如果页面过多的话可能需要优化算法
+          // 有效列表 1, 1, 0, 1 => 有效, 有效, 失效, 有效
+          const valid = []
+          // 处理数据
+          return res.map(opened => {
+            // 忽略首页
+            if (opened.name === 'index') {
+              valid.push(1)
+              return opened
+            }
+            // 尝试在所有的支持多标签页的页面里找到 name 匹配的页面
+            const find = state.pagePool.find(item => item.name === opened.name)
+            // 记录有效或无效信息
+            valid.push(find ? 1 : 0)
+            // 返回合并后的数据 新的覆盖旧的 但是新的数据中一般不会携带 params 和 query, 所以旧的参数会留存
+            return Object.assign({}, opened, find)
+          }).filter((opened, index) => valid[index] === 1)
+        }
       })
     },
     /**

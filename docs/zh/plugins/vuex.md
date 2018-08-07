@@ -202,6 +202,7 @@ this.commit('d2adminUtilVuex2DbByUuid', 'userInfo')
 | --- | --- | --- | --- | --- | --- |
 | key | vuex state 名称 | 必选 | String |  |  |
 | defaultValue | 没有取到值时的默认值 | 必选 |  |  |  |
+| handleFunction | 处理函数 | 非 |  |  | `res => res` |
 
 **使用示例：**
 
@@ -244,6 +245,7 @@ this.commit('d2adminUtilVuex2Db', 'allUserPublicData')
 | --- | --- | --- | --- | --- | --- |
 | key | vuex state 名称 | 必选 | String |  |  |
 | defaultValue | 没有取到值时的默认值 | 必选 |  |  |  |
+| handleFunction | 处理函数 | 非 |  |  | `res => res` |
 
 **使用示例：**
 
