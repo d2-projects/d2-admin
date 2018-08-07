@@ -5,7 +5,11 @@
         <d2-icon name="question-circle" style="font-size: 20px"/>
       </el-button>
     </el-tooltip>
-    <el-dialog title="帮助" width="600px" :visible.sync="dialogVisible">
+    <el-dialog
+      title="帮助"
+      width="600px"
+      :visible.sync="dialogVisible"
+      :append-to-body="true">
       <div style="margin-top: -25px; margin-bottom: -25px;">
         <el-button-group class="d2-mb">
           <el-button @click="$open('https://github.com/d2-projects/d2-admin')">

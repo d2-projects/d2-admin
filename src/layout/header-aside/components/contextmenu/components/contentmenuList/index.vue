@@ -32,17 +32,10 @@ export default {
   methods: {
     rowClick (event) {
       let target = event.target
-      try {
-        let count = 0
-        while (!target.dataset.value && count < 6) {
-          target = target.parentNode
-          count++
-        }
-        this.$emit('rowClick', target.dataset.value)
-      } catch (error) {
-        // 不做任何处理
-        console.log(error)
+      while (!target.dataset.value) {
+        target = target.parentNode
       }
+      this.$emit('rowClick', target.dataset.value)
     }
   }
 }
