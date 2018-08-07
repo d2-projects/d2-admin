@@ -686,6 +686,14 @@ export default {
       }, { type, err, vm, info }))
     },
     /**
+     * @class log
+     * @description 清空日志
+     * @param {vuex state} state vuex state
+     */
+    d2adminLogClean (state) {
+      state.log = []
+    },
+    /**
      * @class themeActiveName
      * @description 激活一个主题（应用到dom上）
      * @param {vuex state} state vuex state
