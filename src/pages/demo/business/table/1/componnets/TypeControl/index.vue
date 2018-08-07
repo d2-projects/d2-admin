@@ -10,7 +10,7 @@
       :inactive-color="inactiveColor"
       :active-text="activeText"
       :inactive-text="inactiveText"
-      :disabled="switchDisabled"
+      :disabled="disabled"
       @change="handleChange">
     </el-switch>
     <span slot="reference">
@@ -51,7 +51,7 @@ export default {
   data () {
     return {
       currentValue: false,
-      switchDisabled: false
+      disabled: false
     }
   },
   watch: {
@@ -64,14 +64,14 @@ export default {
   },
   methods: {
     handleChange (val) {
-      this.switchDisabled = true
+      this.disabled = true
       this.$message({
         message: '正在发送请求',
         type: 'info'
       })
       // 请将 setTimeout 修改为您的异步请求
       setTimeout(() => {
-        this.switchDisabled = false
+        this.disabled = false
         this.$message({
           message: '修改成功',
           type: 'success'

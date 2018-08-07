@@ -21,7 +21,7 @@
       </template>
     </el-table-column>
 
-    <el-table-column label="状态" width="60" align="center">
+    <el-table-column label="状态" width="50" align="center">
       <template slot-scope="scope">
         <type-control
           :value="scope.row.type"
@@ -37,6 +37,25 @@
             style="font-size: 20px; line-height: 32px; color: #F56C6C;"
             slot="inactive"/>
         </type-control>
+      </template>
+    </el-table-column>
+
+    <el-table-column label="状态" width="50" align="center">
+      <template slot-scope="scope">
+        <type-control-mini
+          :value="scope.row.type"
+          @change="(val) => {
+            handleSwitchChange(val, scope.$index)
+          }">
+          <d2-icon
+            name="check-circle"
+            style="font-size: 20px; line-height: 32px; color: #67C23A;"
+            slot="active"/>
+          <d2-icon
+            name="times-circle"
+            style="font-size: 20px; line-height: 32px; color: #F56C6C;"
+            slot="inactive"/>
+        </type-control-mini>
       </template>
     </el-table-column>
 
@@ -79,9 +98,11 @@
 
 <script>
 import TypeControl from '../TypeControl'
+import TypeControlMini from '../TypeControlMini'
 export default {
   components: {
-    TypeControl
+    TypeControl,
+    TypeControlMini
   },
   props: {
     tableData: {
@@ -108,6 +129,7 @@ export default {
         ...oldValue,
         type: val
       })
+      // 注意 这里并没有把修改后的数据传递出去 如果需要的话请自行修改
     }
   }
 }
