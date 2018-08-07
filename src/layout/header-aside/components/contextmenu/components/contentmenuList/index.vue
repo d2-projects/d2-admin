@@ -21,24 +21,24 @@
 </template>
 
 <script>
-  export default {
-    name: 'd2-contextmenu-list',
-    props: {
-      menulist: {
-        type: Array,
-        default: () => []
+export default {
+  name: 'd2-contextmenu-list',
+  props: {
+    menulist: {
+      type: Array,
+      default: () => []
+    }
+  },
+  methods: {
+    rowClick (event) {
+      let target = event.target
+      while (!target.dataset.value) {
+        target = target.parentNode
       }
-    },
-    methods: {
-      rowClick (event) {
-        let target = event.target
-        while(!target.dataset.value) {
-          target = target.parentNode
-        }
-        this.$emit('rowClick', target.dataset.value)
-      }
+      this.$emit('rowClick', target.dataset.value)
     }
   }
+}
 </script>
 
 <style lang="scss">
