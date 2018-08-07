@@ -6,17 +6,17 @@
     ref="form"
     size="mini"
     style="margin-bottom: -18px;">
-    
+
     <el-form-item label="状态" prop="type">
       <el-select
         v-model="form.type"
         placeholder="状态选择"
         style="width: 100px;">
-        <el-option label="状态 1" value="1"></el-option>
-        <el-option label="状态 2" value="2"></el-option>
-        <el-option label="状态 3" value="3"></el-option>
-        <el-option label="状态 4" value="4"></el-option>
-        <el-option label="状态 5" value="5"></el-option>
+        <el-option label="状态 1" value="1"/>
+        <el-option label="状态 2" value="2"/>
+        <el-option label="状态 3" value="3"/>
+        <el-option label="状态 4" value="4"/>
+        <el-option label="状态 5" value="5"/>
       </el-select>
     </el-form-item>
 
@@ -24,7 +24,7 @@
       <el-input
         v-model="form.user"
         placeholder="用户"
-        style="width: 80px;"/>
+        style="width: 100px;"/>
     </el-form-item>
 
     <el-form-item label="卡密" prop="key">
@@ -44,7 +44,7 @@
     <el-form-item>
       <el-button
         type="primary"
-        @click="submitForm">
+        @click="handleFormSubmit">
         <d2-icon name="search"/>
         查询
       </el-button>
@@ -52,7 +52,7 @@
 
     <el-form-item>
       <el-button
-        @click="resetForm">
+        @click="handleFormReset">
         <d2-icon name="refresh"/>
         重置
       </el-button>
@@ -78,7 +78,7 @@ export default {
     }
   },
   methods: {
-    submitForm () {
+    handleFormSubmit () {
       this.$refs.form.validate((valid) => {
         if (valid) {
           this.$emit('submit', this.form)
@@ -91,7 +91,7 @@ export default {
         }
       })
     },
-    resetForm () {
+    handleFormReset () {
       this.$refs.form.resetFields()
     }
   }
