@@ -15,7 +15,7 @@
       <template slot-scope="scope">
         <el-tag
           size="mini"
-          type="info">
+          type="success">
           {{scope.row.value}}
         </el-tag>
       </template>
@@ -23,25 +23,20 @@
 
     <el-table-column label="状态" width="60" align="center">
       <template slot-scope="scope">
-        <el-popover
-          placement="left"
-          title="切换状态"
-          width="200"
-          trigger="hover">
-          <el-switch
-            v-model="currentTableData[scope.$index].type"
-            active-color="#67C23A"
-            inactive-color="#F56C6C"
-            active-text="正常"
-            inactive-text="禁用"
-            @change="(val) => {
-              handleSwitchChange(val, scope.$index)
-            }">
-          </el-switch>
-          <el-tag slot="reference" size="mini">
-            {{scope.row.type}}
-          </el-tag>
-        </el-popover>
+        <type-control
+          :value="scope.row.type"
+          @change="(val) => {
+            handleSwitchChange(val, scope.$index)
+          }">
+          <d2-icon
+            name="check-circle"
+            style="font-size: 20px; line-height: 32px; color: #67C23A;"
+            slot="active"/>
+          <d2-icon
+            name="times-circle"
+            style="font-size: 20px; line-height: 32px; color: #F56C6C;"
+            slot="inactive"/>
+        </type-control>
       </template>
     </el-table-column>
 
@@ -65,8 +60,11 @@
 
     <el-table-column label="使用状态" width="100" align="center">
       <template slot-scope="scope">
-        <el-tag v-if="scope.row.used" type="mini">已经使用</el-tag>
-        <el-tag v-else type="mini">未使用</el-tag>
+        <el-tag
+          size="mini"
+          :type="scope.row.used ? 'info' : ''">
+          {{scope.row.used ? '已使用' : '未使用'}}
+        </el-tag>
       </template>
     </el-table-column>
 
@@ -80,7 +78,11 @@
 </template>
 
 <script>
+import TypeControl from '../TypeControl'
 export default {
+  components: {
+    TypeControl
+  },
   props: {
     tableData: {
       default: () => []
@@ -101,8 +103,11 @@ export default {
   },
   methods: {
     handleSwitchChange (val, index) {
-      console.log('val', val)
-      console.log('index', index)
+      const oldValue = this.currentTableData[index]
+      this.$set(this.currentTableData, index, {
+        ...oldValue,
+        type: val
+      })
     }
   }
 }
