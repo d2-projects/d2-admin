@@ -16,7 +16,13 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 
 [Github 仓库](https://github.com/d2-projects/d2-admin-start-kit) | 
 [码云仓库](https://gitee.com/fairyever/d2-admin-start-kit) | 
-[预览地址](https://fairyever.gitee.io/d2-admin-start-kit-preview/#/index)
+[预览地址](https://fairyever.gitee.io/d2-admin-start-kit-preview)
+
+**飞冰物料**
+
+[D2Admin ICE](https://alibaba.github.io/ice/scaffold?type=vue) | 
+[介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) | 
+[预览地址](https://fairyever.gitee.io/d2-admin-ice-preview)
 
 因为现在集成了很多的插件和组件，首次加载会占用很多的时间，虽然已经做了首屏加载动画，但还是建议您在发布之前一定要删除没有用到的代码，比如项目没有用到图表、示例、插件组件
 
