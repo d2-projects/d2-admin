@@ -47,11 +47,11 @@ export default {
       'd2adminLogErrorLength'
     ]),
     tooltipContent () {
-      return this.d2adminLogLength === 0 ?
-        '没有日志或异常' :
-        `${this.d2adminLogLength} 条日志${this.d2adminLogErrorLength > 0 ?
-          ` | 包含 ${this.d2adminLogErrorLength} 个异常` :
-          ''}`
+      return this.d2adminLogLength === 0
+        ? '没有日志或异常'
+        : `${this.d2adminLogLength} 条日志${this.d2adminLogErrorLength > 0
+          ? ` | 包含 ${this.d2adminLogErrorLength} 个异常`
+          : ''}`
     }
   },
   methods: {
