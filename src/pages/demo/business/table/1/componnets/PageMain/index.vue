@@ -23,7 +23,7 @@
 
     <el-table-column label="状态" width="50" align="center">
       <template slot-scope="scope">
-        <type-control
+        <boolean-control
           :value="scope.row.type"
           @change="(val) => {
             handleSwitchChange(val, scope.$index)
@@ -36,13 +36,13 @@
             name="times-circle"
             style="font-size: 20px; line-height: 32px; color: #F56C6C;"
             slot="inactive"/>
-        </type-control>
+        </boolean-control>
       </template>
     </el-table-column>
 
     <el-table-column label="状态" width="50" align="center">
       <template slot-scope="scope">
-        <type-control-mini
+        <boolean-control-mini
           :value="scope.row.type"
           @change="(val) => {
             handleSwitchChange(val, scope.$index)
@@ -55,7 +55,7 @@
             name="times-circle"
             style="font-size: 20px; line-height: 32px; color: #F56C6C;"
             slot="inactive"/>
-        </type-control-mini>
+        </boolean-control-mini>
       </template>
     </el-table-column>
 
@@ -97,12 +97,12 @@
 </template>
 
 <script>
-import TypeControl from '../TypeControl'
-import TypeControlMini from '../TypeControlMini'
+import BooleanControl from '../BooleanControl'
+import BooleanControlMini from '../BooleanControlMini'
 export default {
   components: {
-    TypeControl,
-    TypeControlMini
+    BooleanControl,
+    BooleanControlMini
   },
   props: {
     tableData: {

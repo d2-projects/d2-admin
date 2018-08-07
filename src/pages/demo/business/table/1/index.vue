@@ -1,8 +1,13 @@
 <template>
   <d2-container>
-    <demo-page-header slot="header" @submit="handleSubmit"/>
-    <demo-page-main :table-data="table"/>
-    <demo-page-footer slot="footer"/>
+    <demo-page-header
+      slot="header"
+      @submit="handleSubmit"/>
+    <demo-page-main
+      :table-data="table"/>
+    <demo-page-footer
+      slot="footer"
+      @change="handlePaginationChange"/>
   </d2-container>
 </template>
 
@@ -21,23 +26,29 @@ export default {
     }
   },
   methods: {
+    handlePaginationChange (val) {
+      this.$notify({
+        title: '分页变化',
+        message: `当前第${val.current}页 共${val.total}条 每页${val.size}条`
+      })
+      this.$nextTick(() => {
+        this.handleSubmit({})
+      })
+    },
     handleSubmit (form) {
-      this.$message({
-        message: '开始请求表格数据',
-        type: 'info'
+      this.$notify({
+        title: '开始请求表格数据'
       })
       this.$axios.post('/api/demo/business/table/1', form)
         .then(res => {
-          this.$message({
-            message: '表格数据请求完毕',
-            type: 'success'
+          this.$notify({
+            title: '表格数据请求完毕'
           })
           this.table = res.list
         })
         .catch(err => {
-          this.$message({
-            message: '表格数据请求异常',
-            type: 'error'
+          this.$notify({
+            title: '表格数据请求异常'
           })
           console.log('err', err)
         })
