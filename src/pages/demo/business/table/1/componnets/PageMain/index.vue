@@ -165,7 +165,17 @@ export default {
   data () {
     return {
       currentTableData: [],
-      multipleSelection: []
+      multipleSelection: [],
+      downloadColumns: [
+        { label: '卡密', prop: 'key' },
+        { label: '面值', prop: 'value' },
+        { label: '状态', prop: 'type' },
+        { label: '管理员', prop: 'admin' },
+        { label: '管理员备注', prop: 'adminNote' },
+        { label: '创建时间', prop: 'dateTimeCreat' },
+        { label: '使用状态', prop: 'used' },
+        { label: '使用时间', prop: 'dateTimeUse' }
+      ]
     }
   },
   watch: {
@@ -188,25 +198,28 @@ export default {
     handleSelectionChange (val) {
       this.multipleSelection = val
     },
+    downloadDataTranslate (data) {
+      return data.map(row => ({
+        ...row,
+        type: row.type ? '禁用' : '正常',
+        used: row.used ? '已使用' : '未使用'
+      }))
+    },
     handleDownloadXlsx (data) {
-      const columns = [
-        { label: '卡密', prop: 'key' }
-      ]
       this.$export.excel({
-        columns,
-        data
+        title: 'D2Admin 表格示例',
+        columns: this.downloadColumns,
+        data: this.downloadDataTranslate(data)
       })
         .then(() => {
           this.$message('导出表格成功')
         })
     },
     handleDownloadCsv (data) {
-      const columns = [
-        { label: '卡密', prop: 'key' }
-      ]
       this.$export.csv({
-        columns,
-        data
+        title: 'D2Admin 表格示例',
+        columns: this.downloadColumns,
+        data: this.downloadDataTranslate(data)
       })
         .then(() => {
           this.$message('导出CSV成功')
