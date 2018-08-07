@@ -8,7 +8,7 @@ Mock.mock('/api/demo/business/table/1', ({ body }) => {
   return Mock.mock(
     {
       page,
-      'list|30': [{
+      'list|20': [{
         'key': '@guid',
         'value|1': [10, 100, 200, 500],
         'type': '@boolean',
