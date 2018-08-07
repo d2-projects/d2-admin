@@ -2,11 +2,15 @@
   <d2-container>
     <demo-page-header
       slot="header"
-      @submit="handleSubmit"/>
+      @submit="handleSubmit"
+      ref="header"/>
     <demo-page-main
       :table-data="table"/>
     <demo-page-footer
       slot="footer"
+      :current="page.current"
+      :size="page.size"
+      :total="page.total"
       @change="handlePaginationChange"/>
   </d2-container>
 </template>
@@ -22,7 +26,12 @@ export default {
   },
   data () {
     return {
-      table: []
+      table: [],
+      page: {
+        current: 1,
+        size: 100,
+        total: 0
+      }
     }
   },
   methods: {
@@ -31,20 +40,26 @@ export default {
         title: '分页变化',
         message: `当前第${val.current}页 共${val.total}条 每页${val.size}条`
       })
+      this.page = val
       this.$nextTick(() => {
-        this.handleSubmit({})
+        this.$refs.header.submitForm()
       })
     },
     handleSubmit (form) {
       this.$notify({
         title: '开始请求表格数据'
       })
-      this.$axios.post('/api/demo/business/table/1', form)
+      this.$axios.post('/api/demo/business/table/1', {
+        ...form,
+        page: this.page
+      })
         .then(res => {
+          console.log('res', res)
           this.$notify({
             title: '表格数据请求完毕'
           })
           this.table = res.list
+          this.page = res.page
         })
         .catch(err => {
           this.$notify({
