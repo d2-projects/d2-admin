@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     ajax () {
-      this.$axios.get('/api/ajax-demo')
+      this.$axios.get('/api/demo/plugins/mock/ajax')
         .then(res => {
           this.table.columns = Object.keys(res.list[0]).map(e => ({
             label: e,
