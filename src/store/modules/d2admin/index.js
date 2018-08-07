@@ -94,7 +94,7 @@ export default {
     /**
      * 登陆
      * @param {Object} param0 context
-     * @param {Object} param1 { vue, username, password }
+     * @param {Object} param { vue, username, password }
      */
     d2adminLogin ({ state, commit, rootState }, { vm, username, password }) {
       // 开始请求登录接口
@@ -191,7 +191,7 @@ export default {
      * @class 通用工具
      * @description 从数据库取值到 vuex 需要 uuid
      * @param {vuex state} state vuex state
-     * @param {Object} param1 key 键名, defaultValue 取值失败时的默认值, handleFunction 处理函数
+     * @param {Object} param key 键名, defaultValue 取值失败时的默认值, handleFunction 处理函数
      */
     d2adminUtilDb2VuexByUuid (state, { key, defaultValue, handleFunction }) {
       const row = db.get(key).find({uuid: util.cookies.get('uuid')}).value()
@@ -219,7 +219,7 @@ export default {
      * @class 通用工具
      * @description 从数据库取值到 vuex 不需要 uuid 所有用户共享
      * @param {vuex state} state vuex state
-     * @param {Object} param1 key 键名, defaultValue 取值失败时的默认值, handleFunction 处理函数
+     * @param {Object} param key 键名, defaultValue 取值失败时的默认值, handleFunction 处理函数
      */
     d2adminUtilDb2Vuex (state, { key, defaultValue, handleFunction }) {
       const row = db.get(key).find({pub: 'pub'}).value()
@@ -374,7 +374,7 @@ export default {
      * @class pageCurrent
      * @description 打开一个新的页面
      * @param {vuex state} state vuex state
-     * @param {Object} param1 { name, params, query } 路由信息
+     * @param {Object} param { name, params, query } 路由信息
      */
     d2adminPageOpenNew (state, { name, params, query }) {
       // 已经打开的页面
@@ -411,7 +411,7 @@ export default {
      * @class pageOpenedList
      * @description 更新页面列表上的某一项
      * @param {vuex state} state vuex state
-     * @param {Object} param1 { index, params, query } 路由信息
+     * @param {Object} param { index, params, query } 路由信息
      */
     d2adminPageOpenedListUpdateItem (state, { index, params, query }) {
       // 更新页面列表某一项
@@ -460,7 +460,7 @@ export default {
      * @class pageOpenedList
      * @description 新增一个 tag (打开一个页面)
      * @param {vuex state} state vuex state
-     * @param {Object} param1 new tag info
+     * @param {Object} param new tag info
      */
     d2adminTagIncreate (state, { tag, params, query }) {
       // 设置新的 tag 在新打开一个以前没打开过的页面时使用
@@ -476,7 +476,7 @@ export default {
      * @class pageOpenedList
      * @description 关闭一个 tag (关闭一个页面)
      * @param {vuex state} state vuex state
-     * @param {Object} param1 { tagName: 要关闭的标签名字, vm: vue }
+     * @param {Object} param { tagName: 要关闭的标签名字, vm: vue }
      */
     d2adminTagClose (state, { tagName, vm }) {
       // 下个新的页面
@@ -519,7 +519,7 @@ export default {
      * @class pageOpenedList
      * @description 关闭当前标签左边的标签
      * @param {vuex state} state vuex state
-     * @param {Object} param1 { pageSelect: 当前选中的tagName, vm: vue }
+     * @param {Object} param { pageSelect: 当前选中的tagName, vm: vue }
      */
     d2adminTagCloseLeft (state, { pageSelect, vm } = {}) {
       const pageAim = pageSelect || state.pageCurrent
@@ -545,7 +545,7 @@ export default {
      * @class pageOpenedList
      * @description 关闭当前标签右边的标签
      * @param {vuex state} state vuex state
-     * @param {Object} param1 { pageSelect: 当前选中的tagName, vm: vue }
+     * @param {Object} param { pageSelect: 当前选中的tagName, vm: vue }
      */
     d2adminTagCloseRight (state, { pageSelect, vm } = {}) {
       const pageAim = pageSelect || state.pageCurrent
@@ -569,7 +569,7 @@ export default {
      * @class pageOpenedList
      * @description 关闭当前激活之外的 tag
      * @param {vuex state} state vuex state
-     * @param {Object} param1 { pageSelect: 当前选中的tagName, vm: vue }
+     * @param {Object} param { pageSelect: 当前选中的tagName, vm: vue }
      */
     d2adminTagCloseOther (state, { pageSelect, vm } = {}) {
       const pageAim = pageSelect || state.pageCurrent
@@ -684,7 +684,7 @@ export default {
      * @class log
      * @description 添加一个 log
      * @param {vuex state} state vuex state
-     * @param {Object} param1 { }
+     * @param {Object} param { }
      */
     d2adminLogAdd (state, { type, err, vm, info }) {
       state.log.push(Object.assign({
