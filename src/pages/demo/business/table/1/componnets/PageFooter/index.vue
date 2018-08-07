@@ -1,8 +1,8 @@
 <template>
   <el-pagination
-    :current-page="page.current"
-    :page-size="page.size"
-    :total="page.total"
+    :current-page="current"
+    :page-size="size"
+    :total="total"
     :page-sizes="[100, 200, 300, 400]"
     layout="total, sizes, prev, pager, next, jumper"
     style="margin: -10px;"
@@ -15,30 +15,29 @@
 export default {
   props: {
     current: {
-      default: 1
+      default: 0
     },
     size: {
-      default: 100
+      default: 0
     },
     total: {
-      default: 400
-    }
-  },
-  data () {
-    return {
-      page: {
-        current: 1,
-        size: 100,
-        total: 400
-      }
+      default: 0
     }
   },
   methods: {
-    handleSizeChange(val) {
-      this.$emit('change', this.page)
+    handleSizeChange (val) {
+      this.$emit('change', {
+        current: this.current,
+        size: val,
+        total: this.total
+      })
     },
-    handleCurrentChange(val) {
-      this.$emit('change', this.page)
+    handleCurrentChange (val) {
+      this.$emit('change', {
+        current: val,
+        size: this.size,
+        total: this.total
+      })
     }
   }
 }

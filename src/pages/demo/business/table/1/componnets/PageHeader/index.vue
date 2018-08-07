@@ -44,7 +44,7 @@
     <el-form-item>
       <el-button
         type="primary"
-        @click="submitForm('form')">
+        @click="submitForm">
         <d2-icon name="search"/>
         查询
       </el-button>
@@ -52,7 +52,7 @@
 
     <el-form-item>
       <el-button
-        @click="resetForm('form')">
+        @click="resetForm">
         <d2-icon name="refresh"/>
         重置
       </el-button>
@@ -78,17 +78,21 @@ export default {
     }
   },
   methods: {
-    submitForm (formName) {
-      this.$refs[formName].validate((valid) => {
+    submitForm () {
+      this.$refs.form.validate((valid) => {
         if (valid) {
           this.$emit('submit', this.form)
         } else {
+          this.$notify.error({
+            title: '错误',
+            message: '表单校验失败'
+          })
           return false
         }
       })
     },
-    resetForm (formName) {
-      this.$refs[formName].resetFields()
+    resetForm () {
+      this.$refs.form.resetFields()
     }
   }
 }
