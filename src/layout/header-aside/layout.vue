@@ -10,8 +10,8 @@
       <!-- 顶栏 -->
       <div class="d2-theme-header" flex-box="0">
         <div class="logo-group" :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="isMenuAsideCollapse" :src="`${$baseUrl}image/theme/${d2adminThemeActiveSetting.name}/logo/icon-only.png`">
-          <img v-else :src="`${$baseUrl}image/theme/${d2adminThemeActiveSetting.name}/logo/all.png`">
+          <img v-if="isMenuAsideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
+          <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/all.png`">
         </div>
         <div class="toggle-aside-btn" @click="handleToggleAside">
           <d2-icon name="bars"/>
@@ -44,7 +44,7 @@
           </div>
           <div class="d2-theme-container-main-body" flex-box="1">
             <transition name="fade-transverse">
-              <keep-alive :include="d2adminKeepAliveInclude">
+              <keep-alive :include="keepAliveInclude">
                 <router-view/>
               </keep-alive>
             </transition>
@@ -78,35 +78,35 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      isGrayMode: state => state.d2admin.isGrayMode,
-      pageOpenedList: state => state.d2admin.pageOpenedList,
-      isMenuAsideCollapse: state => state.d2admin.isMenuAsideCollapse
-    }),
-    ...mapGetters([
-      'd2adminThemeActiveSetting',
-      'd2adminKeepAliveInclude'
+    ...mapState('d2admin', [
+      'isGrayMode',
+      'pageOpenedList',
+      'isMenuAsideCollapse'
+    ]),
+    ...mapGetters('d2admin', [
+      'themeActiveSetting',
+      'keepAliveInclude'
     ]),
     /**
      * @description 最外层容器的背景图片样式
      */
     styleLayoutMainGroup () {
       return {
-        ...this.d2adminThemeActiveSetting.backgroundImage ? {
-          backgroundImage: `url('${this.$baseUrl}${this.d2adminThemeActiveSetting.backgroundImage}')`
+        ...this.themeActiveSetting.backgroundImage ? {
+          backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')`
         } : {}
       }
     }
   },
   methods: {
-    ...mapMutations([
-      'd2adminMenuAsideCollapseToggle'
+    ...mapMutations('d2admin', [
+      'menuAsideCollapseToggle'
     ]),
     /**
      * 接收点击切换侧边栏的按钮
      */
     handleToggleAside () {
-      this.d2adminMenuAsideCollapseToggle()
+      this.menuAsideCollapseToggle()
     }
   }
 }

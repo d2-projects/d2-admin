@@ -4,9 +4,9 @@
       <div class="colorful">{{isGrayMode ? 'GRAY' : 'COLORFUL'}}</div>
     </template>
     <el-button-group>
-      <el-button @click="d2adminGrayModeToggle">切换灰度模式</el-button>
-      <el-button @click="d2adminGrayModeSet(true)">打开灰度模式</el-button>
-      <el-button @click="d2adminGrayModeSet(false)">关闭灰度模式</el-button>
+      <el-button @click="grayModeToggle">切换灰度模式</el-button>
+      <el-button @click="grayModeSet(true)">打开灰度模式</el-button>
+      <el-button @click="grayModeSet(false)">关闭灰度模式</el-button>
       <el-button @click="dialogVisible = true">模拟报错提示框</el-button>
     </el-button-group>
     <el-dialog
@@ -47,20 +47,20 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      isGrayMode: state => state.d2admin.isGrayMode
-    })
+    ...mapState('d2admin', [
+      'isGrayMode'
+    ])
   },
   methods: {
-    ...mapMutations([
-      'd2adminGrayModeToggle',
-      'd2adminGrayModeSet'
+    ...mapMutations('d2admin', [
+      'grayModeToggle',
+      'grayModeSet'
     ]),
     handleDialogOpen () {
-      this.d2adminGrayModeSet(true)
+      this.grayModeSet(true)
     },
     handleDialogClosed () {
-      this.d2adminGrayModeSet(false)
+      this.grayModeSet(false)
     }
   }
 }

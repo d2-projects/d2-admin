@@ -54,15 +54,15 @@ export default {
     this.load()
   },
   methods: {
-    ...mapMutations([
-      'd2adminUtilDatabaseUser',
-      'd2adminUtilDatabaseUserClear'
+    ...mapMutations('d2admin', [
+      'utilDatabaseUser',
+      'utilDatabaseUserClear'
     ]),
     /**
      * 加载本地数据
      */
     load () {
-      this.d2adminUtilDatabaseUser(database => {
+      this.utilDatabaseUser(database => {
         this.dataDisplay = JSON.stringify(database.value(), null, 2)
         this.keyNameList = Object.keys(database.value()).map(k => ({
           value: k,
@@ -74,7 +74,7 @@ export default {
      * 删除一个字段
      */
     handleDelete (name) {
-      this.d2adminUtilDatabaseUser(database => {
+      this.utilDatabaseUser(database => {
         database
           .unset(name)
           .write()
@@ -86,7 +86,7 @@ export default {
      * 清空当前用户的数据
      */
     handleClear () {
-      this.d2adminUtilDatabaseUserClear()
+      this.utilDatabaseUserClear()
       this.load()
     },
     /**
@@ -97,7 +97,7 @@ export default {
         this.$message.error('字段名不能为空')
         return
       }
-      this.d2adminUtilDatabaseUser(database => {
+      this.utilDatabaseUser(database => {
         database
           .set(this.keyNameToSet, this.valueToSet)
           .write()
@@ -108,7 +108,7 @@ export default {
      * 添加一个随机数据
      */
     handleSetRandom () {
-      this.d2adminUtilDatabaseUser(database => {
+      this.utilDatabaseUser(database => {
         const id = day().valueOf()
         database
           .set(id, Math.round(id * Math.random()))

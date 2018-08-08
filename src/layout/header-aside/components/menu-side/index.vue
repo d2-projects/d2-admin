@@ -41,10 +41,10 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      menuAside: state => state.d2admin.menuAside,
-      isMenuAsideCollapse: state => state.d2admin.isMenuAsideCollapse
-    })
+    ...mapState('d2admin', [
+      'menuAside',
+      'isMenuAsideCollapse'
+    ])
   },
   watch: {
     // 折叠和展开菜单的时候销毁 better scroll

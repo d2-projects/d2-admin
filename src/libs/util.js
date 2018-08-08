@@ -159,9 +159,9 @@ util.checkUpdate = function (vm) {
       if (update) {
         util.log.capsule('D2Admin', `New version ${res.name}`)
         console.log(`版本号: ${res.tag_name} | 详情${res.html_url}`)
-        vm.$store.commit('d2adminReleasesUpdateSet', true)
+        vm.$store.commit('d2admin/releasesUpdateSet', true)
       }
-      vm.$store.commit('d2adminReleasesLatestSet', res)
+      vm.$store.commit('d2admin/releasesLatestSet', res)
     })
     .catch(err => {
       console.log('checkUpdate error', err)
