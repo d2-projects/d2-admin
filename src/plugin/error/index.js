@@ -5,7 +5,7 @@ export default {
   install (Vue, options) {
     Vue.config.errorHandler = function (err, vm, info) {
       Vue.nextTick(() => {
-        store.commit('d2adminLogAdd', {
+        store.commit('d2admin/logAdd', {
           type: 'error',
           err,
           vm,

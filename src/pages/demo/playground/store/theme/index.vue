@@ -42,17 +42,17 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      themeList: state => state.d2admin.themeList,
-      themeActiveName: state => state.d2admin.themeActiveName
-    })
+    ...mapState('d2admin', [
+      'themeList',
+      'themeActiveName'
+    ])
   },
   methods: {
-    ...mapMutations([
-      'd2adminThemeSet'
+    ...mapMutations('d2admin', [
+      'themeSet'
     ]),
     handleSelectTheme (name) {
-      this.d2adminThemeSet(name)
+      this.themeSet(name)
     }
   }
 }

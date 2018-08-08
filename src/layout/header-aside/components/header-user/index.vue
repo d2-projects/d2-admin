@@ -14,19 +14,19 @@
 import { mapState, mapActions } from 'vuex'
 export default {
   computed: {
-    ...mapState({
-      userInfo: state => state.d2admin.userInfo
-    })
+    ...mapState('d2admin', [
+      'userInfo'
+    ])
   },
   methods: {
-    ...mapActions([
-      'd2adminLogout'
+    ...mapActions('d2admin', [
+      'logout'
     ]),
     /**
      * @description 登出
      */
     logOff () {
-      this.d2adminLogout({
+      this.logout({
         vm: this,
         confirm: true
       })

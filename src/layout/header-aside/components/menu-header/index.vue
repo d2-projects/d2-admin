@@ -22,9 +22,9 @@ export default {
     'd2-layout-header-aside-menu-sub': d2LayoutMainMenuSub
   },
   computed: {
-    ...mapState({
-      menuHeader: state => state.d2admin.menuHeader
-    })
+    ...mapState('d2admin', [
+      'menuHeader'
+    ])
   }
 }
 </script>

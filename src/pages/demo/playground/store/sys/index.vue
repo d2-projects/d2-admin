@@ -61,7 +61,7 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">当前主题信息</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="d2adminThemeActiveSetting" :options="{ rootObjectKey: 'd2adminThemeActiveSetting', maxDepth: 1 }"/>
+              <tree-view class="tree-view-small" :data="themeActiveSetting" :options="{ rootObjectKey: 'themeActiveSetting', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -91,7 +91,7 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">缓存页面</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="d2adminKeepAliveInclude" :options="{ rootObjectKey: 'd2adminKeepAliveInclude', maxDepth: 1 }"/>
+              <tree-view class="tree-view-small" :data="keepAliveInclude" :options="{ rootObjectKey: 'keepAliveInclude', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -108,26 +108,26 @@
 import { mapState, mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapState({
-      userInfo: state => state.d2admin.userInfo,
-      version: state => state.d2admin.version,
-      releasesLatest: state => state.d2admin.releasesLatest,
-      releasesUpdate: state => state.d2admin.releasesUpdate,
-      menuHeader: state => state.d2admin.menuHeader,
-      menuAside: state => state.d2admin.menuAside,
-      isFullScreen: state => state.d2admin.isFullScreen,
-      isGrayMode: state => state.d2admin.isGrayMode,
-      isMenuAsideCollapse: state => state.d2admin.isMenuAsideCollapse,
-      themeList: state => state.d2admin.themeList,
-      themeActiveName: state => state.d2admin.themeActiveName,
-      pagePool: state => state.d2admin.pagePool,
-      pageOpenedList: state => state.d2admin.pageOpenedList,
-      pageCurrent: state => state.d2admin.pageCurrent,
-      ua: state => state.d2admin.ua
-    }),
-    ...mapGetters([
-      'd2adminThemeActiveSetting',
-      'd2adminKeepAliveInclude'
+    ...mapState('d2admin', [
+      'userInfo',
+      'version',
+      'releasesLatest',
+      'releasesUpdate',
+      'menuHeader',
+      'menuAside',
+      'isFullScreen',
+      'isGrayMode',
+      'isMenuAsideCollapse',
+      'themeList',
+      'themeActiveName',
+      'pagePool',
+      'pageOpenedList',
+      'pageCurrent',
+      'ua'
+    ]),
+    ...mapGetters('d2admin', [
+      'themeActiveSetting',
+      'keepAliveInclude'
     ])
   }
 }

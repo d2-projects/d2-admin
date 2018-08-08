@@ -82,17 +82,17 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      pageOpenedList: state => state.d2admin.pageOpenedList,
-      pageCurrent: state => state.d2admin.pageCurrent
-    })
+    ...mapState('d2admin', [
+      'pageOpenedList',
+      'pageCurrent'
+    ])
   },
   methods: {
-    ...mapMutations([
-      'd2adminTagCloseLeft',
-      'd2adminTagCloseRight',
-      'd2adminTagCloseOther',
-      'd2adminTagCloseAll'
+    ...mapMutations('d2admin', [
+      'tagCloseLeft',
+      'tagCloseRight',
+      'tagCloseOther',
+      'tagCloseAll'
     ]),
     /**
      * @description 右键菜单功能点击
@@ -136,16 +136,16 @@ export default {
       }
       switch (command) {
         case 'left':
-          this.d2adminTagCloseLeft(params)
+          this.tagCloseLeft(params)
           break
         case 'right':
-          this.d2adminTagCloseRight(params)
+          this.tagCloseRight(params)
           break
         case 'other':
-          this.d2adminTagCloseOther(params)
+          this.tagCloseOther(params)
           break
         case 'all':
-          this.d2adminTagCloseAll(this)
+          this.tagCloseAll(this)
           break
         default:
           this.$message.error('无效的操作')
@@ -156,7 +156,7 @@ export default {
      * @description 接收点击关闭控制上按钮的事件
      */
     handleControlBtnClick () {
-      this.d2adminTagCloseAll(this)
+      this.tagCloseAll(this)
     },
     /**
      * @description 接收点击 tab 标签的事件
@@ -174,7 +174,7 @@ export default {
      */
     handleTabsEdit (tagName, action) {
       if (action === 'remove') {
-        this.$store.commit('d2adminTagClose', {
+        this.$store.commit('d2admin/tagClose', {
           tagName,
           vm: this
         })

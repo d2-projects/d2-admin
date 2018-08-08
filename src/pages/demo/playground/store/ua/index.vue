@@ -11,9 +11,9 @@
 import { mapState } from 'vuex'
 export default {
   computed: {
-    ...mapState({
-      ua: state => state.d2admin.ua
-    }),
+    ...mapState('d2admin', [
+      'ua'
+    ]),
     uaStr () {
       const { browser, engine, os, device, cpu } = this.ua
       return JSON.stringify({ browser, engine, os, device, cpu }, null, 2)

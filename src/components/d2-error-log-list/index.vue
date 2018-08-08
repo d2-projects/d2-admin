@@ -136,9 +136,9 @@ export default {
     ExpandItem
   },
   computed: {
-    ...mapState({
-      log: state => state.d2admin.log
-    }),
+    ...mapState('d2admin', [
+      'log'
+    ]),
     logReverse () {
       // 直接 reverse 的话有点问题
       const res = []
