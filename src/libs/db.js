@@ -7,6 +7,9 @@ const db = low(adapter)
 
 // 初始化数据库
 db.defaults({
+  // 新
+  sys: {},
+  // 旧
   themeActiveName: [],
   pageOpenedList: [],
   userInfo: [],

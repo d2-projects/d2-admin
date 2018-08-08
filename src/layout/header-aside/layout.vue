@@ -9,8 +9,8 @@
     <div class="d2-layout-header-aside-content" flex="dir:top">
       <!-- 顶栏 -->
       <div class="d2-theme-header" flex-box="0">
-        <div class="logo-group" :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="isMenuAsideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
+        <div class="logo-group" :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}">
+          <img v-if="asideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
           <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/all.png`">
         </div>
         <div class="toggle-aside-btn" @click="handleToggleAside">
@@ -34,7 +34,7 @@
           flex-box="0"
           ref="aside"
           class="d2-theme-container-aside"
-          :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
+          :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}">
           <d2-menu-side/>
         </div>
         <!-- 主体 -->
@@ -80,8 +80,10 @@ export default {
   computed: {
     ...mapState('d2admin', [
       'isGrayMode',
-      'pageOpenedList',
-      'isMenuAsideCollapse'
+      'pageOpenedList'
+    ]),
+    ...mapState('d2admin/menu', [
+      'asideCollapse'
     ]),
     ...mapGetters('d2admin', [
       'themeActiveSetting',
@@ -99,14 +101,14 @@ export default {
     }
   },
   methods: {
-    ...mapMutations('d2admin', [
-      'menuAsideCollapseToggle'
+    ...mapMutations('d2admin/menu', [
+      'asideCollapseToggle'
     ]),
     /**
      * 接收点击切换侧边栏的按钮
      */
     handleToggleAside () {
-      this.menuAsideCollapseToggle()
+      this.asideCollapseToggle()
     }
   }
 }

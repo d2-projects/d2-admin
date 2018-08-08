@@ -1,10 +1,17 @@
 import screenfull from 'screenfull'
 import dayjs from 'dayjs'
 import get from 'lodash.get'
-import util from '@/libs/util.js'
+import set from 'lodash.set'
+import utilLib from '@/libs/util.js'
 import db from '@/libs/db.js'
 import themeList from '@/assets/style/theme/list.js'
-import { version } from '../../../../package'
+
+// 模块
+
+import util from './modules/util'
+import releases from './modules/releases'
+import user from './modules/user'
+import menu from './modules/menu'
 
 const pageOpenedDefult = {
   name: 'index',
@@ -16,27 +23,17 @@ const pageOpenedDefult = {
 
 export default {
   namespaced: true,
+  modules: {
+    util,
+    releases,
+    user,
+    menu
+  },
   state: {
-    // 用户信息
-    userInfo: {
-      name: ''
-    },
-    // D2Admin 版本
-    version,
-    // 最新版本的信息
-    releasesLatest: {},
-    // 有新版本
-    releasesUpdate: false,
-    // 顶栏菜单
-    menuHeader: [],
-    // 侧栏菜单
-    menuAside: [],
     // 全屏
     isFullScreen: false,
     // 灰度
     isGrayMode: false,
-    // 侧边栏收缩
-    isMenuAsideCollapse: false,
     // 主题
     themeList,
     // 现在激活的主题
@@ -57,7 +54,7 @@ export default {
   getters: {
     /**
      * @description 返回当前的主题信息 不是一个名字 而是当前激活主题的所有数据
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     themeActiveSetting (state) {
       return state.themeList.find(theme => theme.name === state.themeActiveName)
@@ -111,9 +108,10 @@ export default {
           // 设置 cookie 一定要存 uuid 和 token 两个 cookie
           // 整个系统依赖这两个数据进行校验和存储
           // uuid 是用户身份唯一标识 用户注册的时候确定 并且不可改变 不可重复
-          // token 代表用户当前登录状态 建议在网络请求中携带 token，如有必要 token 需要定时更新，默认保存一天
-          util.cookies.set('uuid', res.data.uuid)
-          util.cookies.set('token', res.data.token)
+          // token 代表用户当前登录状态 建议在网络请求中携带 token
+          // 如有必要 token 需要定时更新，默认保存一天
+          utilLib.cookies.set('uuid', res.data.uuid)
+          utilLib.cookies.set('token', res.data.token)
           // 设置 vuex 用户信息
           commit('userInfoSet', {
             name: res.data.name
@@ -142,8 +140,8 @@ export default {
        */
       function logout () {
         // 删除cookie
-        util.cookies.remove('token')
-        util.cookies.remove('uuid')
+        utilLib.cookies.remove('token')
+        utilLib.cookies.remove('uuid')
         // 跳转路由
         vm.$router.push({
           name: 'login'
@@ -174,67 +172,73 @@ export default {
     /**
      * @class 通用工具
      * @description 将 state 中某一项存储到数据库 如果已经有的话就更新数据 需要 uuid
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {String} key key name
      */
     utilVuex2DbByUuid (state, key) {
-      const row = db.get(key).find({uuid: util.cookies.get('uuid')})
+      const dbKey = key.split('.')[key.split('.').length - 1]
+      const row = db.get(dbKey).find({uuid: utilLib.cookies.get('uuid')})
+      const value = get(state, key, '')
       if (row.value()) {
-        row.assign({value: state[key]}).write()
+        row.assign({ value }).write()
       } else {
-        db.get(key).push({
-          uuid: util.cookies.get('uuid'),
-          value: state[key]
+        db.get(dbKey).push({
+          uuid: utilLib.cookies.get('uuid'),
+          value
         }).write()
       }
     },
     /**
      * @class 通用工具
      * @description 从数据库取值到 vuex 需要 uuid
-     * @param {vuex state} state vuex state
-     * @param {Object} param key 键名, defaultValue 取值失败时的默认值, handleFunction 处理函数
+     * @param {Object} state vuex state
+     * @param {Object} param key 键名, defaultValue 取值失败默认值, handleFunction 处理函数
      */
     utilDb2VuexByUuid (state, { key, defaultValue, handleFunction }) {
-      const row = db.get(key).find({uuid: util.cookies.get('uuid')}).value()
+      const dbKey = key.split('.')[key.split('.').length - 1]
+      const row = db.get(dbKey).find({uuid: utilLib.cookies.get('uuid')}).value()
       const handle = handleFunction || (res => res)
-      state[key] = row ? handle(row.value) : defaultValue
+      set(state, key, row ? handle(row.value) : defaultValue)
     },
     /**
      * @class 通用工具
      * @description 将 state 中某一项存储到数据库 如果已经有的话就更新数据 不需要 uuid 所有用户共享
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {String} key key name
      */
     utilVuex2Db (state, key) {
-      const row = db.get(key).find({pub: 'pub'})
+      const dbKey = key.split('.')[key.split('.').length - 1]
+      const row = db.get(dbKey).find({pub: 'pub'})
+      const value = get(state, key, '')
       if (row.value()) {
-        row.assign({value: state[key]}).write()
+        row.assign({ value }).write()
       } else {
-        db.get(key).push({
+        db.get(dbKey).push({
           pub: 'pub',
-          value: state[key]
+          value
         }).write()
       }
     },
     /**
      * @class 通用工具
      * @description 从数据库取值到 vuex 不需要 uuid 所有用户共享
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Object} param key 键名, defaultValue 取值失败时的默认值, handleFunction 处理函数
      */
     utilDb2Vuex (state, { key, defaultValue, handleFunction }) {
-      const row = db.get(key).find({pub: 'pub'}).value()
+      const dbKey = key.split('.')[key.split('.').length - 1]
+      const row = db.get(dbKey).find({pub: 'pub'}).value()
       const handle = handleFunction || (res => res)
-      state[key] = row ? handle(row.value) : defaultValue
+      set(state, key, row ? handle(row.value) : defaultValue)
     },
     /**
      * @class 通用工具
      * @description 访问本地数据库 用户单独空间 没有初始化会自动初始化
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Function} fn function
      */
     utilDatabaseUser (state, fn) {
-      const uuid = util.cookies.get('uuid')
+      const uuid = utilLib.cookies.get('uuid')
       const database = db.get('database').find({ uuid })
       if (database.value() === undefined) {
         db.get('database').push({
@@ -253,17 +257,17 @@ export default {
     /**
      * @class 通用工具
      * @description 访问本地数据库 清空用户单独空间 只负责删除 utilDatabaseUser 会初始化
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     utilDatabaseUserClear (state) {
       db.get('database')
-        .remove({ uuid: util.cookies.get('uuid') })
+        .remove({ uuid: utilLib.cookies.get('uuid') })
         .write()
     },
     /**
      * @class 通用工具
      * @description 访问本地数据库 这份数据是每个用户都可以访问的
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Function} fn function
      */
     utilDatabase (state, fn) {
@@ -274,7 +278,7 @@ export default {
     /**
      * @class 通用工具
      * @description 访问本地数据库 清空公用空间
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     utilDatabaseClear (state) {
       db.set('databasePublic', {})
@@ -283,33 +287,15 @@ export default {
     /**
      * @class UA
      * @description 记录 UA
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     uaGet (state) {
-      state.ua = util.ua()
-    },
-    /**
-     * @class menuHeader
-     * @description 设置顶栏菜单
-     * @param {vuex state} state vuex state
-     * @param {Array} menu menu setting
-     */
-    menuHeaderSet (state, menu) {
-      state.menuHeader = menu
-    },
-    /**
-     * @class menuAside
-     * @description 设置侧边栏菜单
-     * @param {vuex state} state vuex state
-     * @param {Array} menu menu setting
-     */
-    menuAsideSet (state, menu) {
-      state.menuAside = menu
+      state.ua = utilLib.ua()
     },
     /**
      * @class ...
      * @description 用户登陆后从数据库加载一系列的设置
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     loginSuccessLoad (state) {
       // DB -> store 加载用户名
@@ -319,53 +305,12 @@ export default {
       // DB -> store 数据库加载上次退出时的多页列表
       this.commit('d2admin/pageOpenedListLoad')
       // DB -> store 数据库加载这个用户之前设置的侧边栏折叠状态
-      this.commit('d2admin/menuAsideCollapseLoad')
-    },
-    /**
-     * @description 设置用户名
-     * @class userInfo
-     * @param {vuex state} state vuex state
-     * @param {String} userInfo userInfo
-     */
-    userInfoSet (state, userInfo) {
-      state.userInfo = userInfo
-      this.commit('d2admin/utilVuex2DbByUuid', 'userInfo')
-    },
-    /**
-     * @description 从数据库取用户名
-     * @class userInfo
-     * @param {vuex state} state vuex state
-     */
-    userInfoLoad (state) {
-      this.commit('d2admin/utilDb2VuexByUuid', {
-        key: 'userInfo',
-        defaultValue: {
-          name: '请重新登陆'
-        }
-      })
-    },
-    /**
-     * @description 设置是否有新的 D2Admin 版本
-     * @class releasesUpdate
-     * @param {vuex state} state vuex state
-     * @param {Boolean} releasesUpdate can update
-     */
-    releasesUpdateSet (state, releasesUpdate) {
-      state.releasesUpdate = releasesUpdate
-    },
-    /**
-     * @description 设置最新版本的信息
-     * @class releasesLatest
-     * @param {vuex state} state vuex state
-     * @param {Object}} releases releases value
-     */
-    releasesLatestSet (state, releases) {
-      state.releasesLatest = releases
+      this.commit('d2admin/menu/asideCollapseLoad')
     },
     /**
      * @class pagePool
      * @description 保存 pagePool (候选池)
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Array} pagePool tags
      */
     pagePoolSet (state, pagePool) {
@@ -374,7 +319,7 @@ export default {
     /**
      * @class pageCurrent
      * @description 打开一个新的页面
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Object} param { name, params, query } 路由信息
      */
     pageOpenNew (state, { name, params, query }) {
@@ -389,7 +334,11 @@ export default {
       })
       if (pageOpend) {
         // 页面以前打开过 但是新的页面可能 name 一样，参数不一样
-        this.commit('d2admin/pageOpenedListUpdateItem', { index: pageOpendIndex, params, query })
+        this.commit('d2admin/pageOpenedListUpdateItem', {
+          index: pageOpendIndex,
+          params,
+          query
+        })
       } else {
         // 页面以前没有打开过
         let tag = state.pagePool.find(t => t.name === name)
@@ -402,7 +351,7 @@ export default {
     /**
      * @class pageCurrent
      * @description 设置当前激活的页面 name
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {String} name new name
      */
     pageCurrentSet (state, name) {
@@ -411,7 +360,7 @@ export default {
     /**
      * @class pageOpenedList
      * @description 更新页面列表上的某一项
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Object} param { index, params, query } 路由信息
      */
     pageOpenedListUpdateItem (state, { index, params, query }) {
@@ -426,7 +375,7 @@ export default {
     /**
      * @class pageOpenedList
      * @description 从数据库载入分页列表
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     pageOpenedListLoad (state) {
       this.commit('d2admin/utilDb2VuexByUuid', {
@@ -451,7 +400,8 @@ export default {
             const find = state.pagePool.find(item => item.name === opened.name)
             // 记录有效或无效信息
             valid.push(find ? 1 : 0)
-            // 返回合并后的数据 新的覆盖旧的 但是新的数据中一般不会携带 params 和 query, 所以旧的参数会留存
+            // 返回合并后的数据 新的覆盖旧的
+            // 新的数据中一般不会携带 params 和 query, 所以旧的参数会留存
             return Object.assign({}, opened, find)
           }).filter((opened, index) => valid[index] === 1)
         }
@@ -460,7 +410,7 @@ export default {
     /**
      * @class pageOpenedList
      * @description 新增一个 tag (打开一个页面)
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Object} param new tag info
      */
     tagIncreate (state, { tag, params, query }) {
@@ -476,7 +426,7 @@ export default {
     /**
      * @class pageOpenedList
      * @description 关闭一个 tag (关闭一个页面)
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Object} param { tagName: 要关闭的标签名字, vm: vue }
      */
     tagClose (state, { tagName, vm }) {
@@ -519,7 +469,7 @@ export default {
     /**
      * @class pageOpenedList
      * @description 关闭当前标签左边的标签
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Object} param { pageSelect: 当前选中的tagName, vm: vue }
      */
     tagCloseLeft (state, { pageSelect, vm } = {}) {
@@ -545,7 +495,7 @@ export default {
     /**
      * @class pageOpenedList
      * @description 关闭当前标签右边的标签
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Object} param { pageSelect: 当前选中的tagName, vm: vue }
      */
     tagCloseRight (state, { pageSelect, vm } = {}) {
@@ -569,7 +519,7 @@ export default {
     /**
      * @class pageOpenedList
      * @description 关闭当前激活之外的 tag
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Object} param { pageSelect: 当前选中的tagName, vm: vue }
      */
     tagCloseOther (state, { pageSelect, vm } = {}) {
@@ -598,7 +548,7 @@ export default {
     /**
      * @class pageOpenedList
      * @description 关闭所有 tag
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Object} vm vue
      */
     tagCloseAll (state, vm) {
@@ -613,39 +563,9 @@ export default {
       }
     },
     /**
-     * 设置侧边栏展开或者收缩
-     * @class isMenuAsideCollapse
-     * @param {vuex state} state vuex state
-     * @param {Boolean} collapse is collapse
-     */
-    menuAsideCollapseSet (state, collapse) {
-      state.isMenuAsideCollapse = collapse
-      this.commit('d2admin/utilVuex2DbByUuid', 'isMenuAsideCollapse')
-    },
-    /**
-     * 切换侧边栏展开和收缩
-     * @class isMenuAsideCollapse
-     * @param {vuex state} state vuex state
-     */
-    menuAsideCollapseToggle (state) {
-      state.isMenuAsideCollapse = !state.isMenuAsideCollapse
-      this.commit('d2admin/utilVuex2DbByUuid', 'isMenuAsideCollapse')
-    },
-    /**
-     * 从数据库读取侧边栏展开或者收缩
-     * @class isMenuAsideCollapse
-     * @param {vuex state} state vuex state
-     */
-    menuAsideCollapseLoad (state) {
-      this.commit('d2admin/utilDb2VuexByUuid', {
-        key: 'isMenuAsideCollapse',
-        defaultValue: false
-      })
-    },
-    /**
      * @class isFullScreen
      * @description 切换全屏
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     fullScreenToggle () {
       if (screenfull.isFullscreen) {
@@ -659,7 +579,7 @@ export default {
     /**
      * @class isFullScreen
      * @description 设置 store 里的全屏状态
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     fullScreenSet (state, isFullScreen) {
       state.isFullScreen = isFullScreen
@@ -667,7 +587,7 @@ export default {
     /**
      * @class isGrayMode
      * @description 切换灰度状态
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     grayModeToggle (state) {
       state.isGrayMode = !state.isGrayMode
@@ -675,7 +595,7 @@ export default {
     /**
      * @class isGrayMode
      * @description 设置灰度模式
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Boolean} value new value
      */
     grayModeSet (state, value) {
@@ -684,7 +604,7 @@ export default {
     /**
      * @class log
      * @description 添加一个 log
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {Object} param { }
      */
     logAdd (state, { type, err, vm, info }) {
@@ -698,11 +618,11 @@ export default {
         // vue 实例
         vm: '',
         // 当前用户信息
-        user: state.userInfo,
+        user: state.user.userInfo,
         // 当前用户的 uuid
-        uuid: util.cookies.get('uuid'),
+        uuid: utilLib.cookies.get('uuid'),
         // 当前的 token
-        token: util.cookies.get('token'),
+        token: utilLib.cookies.get('token'),
         // 当前地址
         url: get(window, 'location.href', ''),
         // 当前时间
@@ -712,7 +632,7 @@ export default {
     /**
      * @class log
      * @description 清空日志
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     logClean (state) {
       state.log = []
@@ -720,7 +640,7 @@ export default {
     /**
      * @class themeActiveName
      * @description 激活一个主题（应用到dom上）
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      * @param {String} themeValue 需要激活的主题名称
      */
     themeSet (state, themeName) {
@@ -741,7 +661,7 @@ export default {
     /**
      * @class themeActiveName
      * @description 从数据库加载主题设置
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     themeLoad (state) {
       this.commit('d2admin/utilDb2VuexByUuid', {
@@ -753,7 +673,7 @@ export default {
     /**
      * @class themeActiveName
      * @description 将 vuex 中的主题应用到 dom
-     * @param {vuex state} state vuex state
+     * @param {Object} state vuex state
      */
     theme2dom (state) {
       document.body.className = `theme-${state.themeActiveName}`

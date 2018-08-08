@@ -14,9 +14,9 @@
 import { mapState, mapActions } from 'vuex'
 export default {
   computed: {
-    ...mapState('d2admin', [
-      'userInfo'
-    ])
+    ...mapState('d2admin', {
+      userInfo: state => state.user.userInfo
+    })
   },
   methods: {
     ...mapActions('d2admin', [

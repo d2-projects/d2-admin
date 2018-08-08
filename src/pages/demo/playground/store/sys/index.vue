@@ -1,6 +1,6 @@
 <template>
   <d2-container type="ghost">
-    <template slot="header">version {{version}} [ {{releasesUpdate ? '有新版本' : '已经是最新版本'}} ]</template>
+    <template slot="header">version {{releasesVersion}} [ {{releasesUpdate ? '有新版本' : '已经是最新版本'}} ]</template>
     <div class="d2-mt d2-mr">
       <el-row :gutter="20">
         <el-col :span="12">
@@ -36,7 +36,7 @@
         <el-col :span="8">
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">侧边栏折叠</template>
-            <el-switch v-model="isMenuAsideCollapse" active-text="收缩" inactive-text="展开" disabled/>
+            <el-switch v-model="menuAsideCollapse" active-text="收缩" inactive-text="展开" disabled/>
           </el-card>
         </el-col>
       </el-row>
@@ -108,16 +108,21 @@
 import { mapState, mapGetters } from 'vuex'
 export default {
   computed: {
+    ...mapState('d2admin', {
+      // 用户信息
+      userInfo: state => state.user.userInfo,
+      // 版本
+      releasesVersion: state => state.releases.version,
+      releasesLatest: state => state.releases.latest,
+      releasesUpdate: state => state.releases.update,
+      // 菜单
+      menuHeader: state => state.menu.header,
+      menuAside: state => state.menu.aside,
+      menuAsideCollapse: state => state.menu.asideCollapse
+    }),
     ...mapState('d2admin', [
-      'userInfo',
-      'version',
-      'releasesLatest',
-      'releasesUpdate',
-      'menuHeader',
-      'menuAside',
       'isFullScreen',
       'isGrayMode',
-      'isMenuAsideCollapse',
       'themeList',
       'themeActiveName',
       'pagePool',
