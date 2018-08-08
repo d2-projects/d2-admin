@@ -1,5 +1,6 @@
 import dayjs from 'dayjs'
 import get from 'lodash.get'
+import toString from 'lodash.tostring'
 import util from '@/libs/util.js'
 
 export default {
@@ -68,7 +69,7 @@ export default {
         type,
         err,
         vm,
-        info
+        info: toString(info)
       }))
     }
   }
