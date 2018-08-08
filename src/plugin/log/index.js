@@ -7,7 +7,7 @@ export default {
     Vue.prototype.$log = util.log
     // 快速记录日志
     Vue.prototype.$logAdd = function (info) {
-      store.commit('d2admin/logAdd', {
+      store.dispatch('d2admin/log/add', {
         type: 'log',
         info
       })

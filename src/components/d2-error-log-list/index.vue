@@ -136,15 +136,15 @@ export default {
     ExpandItem
   },
   computed: {
-    ...mapState('d2admin', [
-      'log'
-    ]),
+    ...mapState('d2admin', {
+      logList: state => state.log.list
+    }),
     logReverse () {
       // 直接 reverse 的话有点问题
       const res = []
-      const loglength = this.log.length
-      this.log.forEach((log, index) => {
-        res.push(this.log[loglength - 1 - index])
+      const loglength = this.logList.length
+      this.logList.forEach((log, index) => {
+        res.push(this.logList[loglength - 1 - index])
       })
       return res
     }

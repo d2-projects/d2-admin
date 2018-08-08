@@ -1,5 +1,4 @@
 import screenfull from 'screenfull'
-import dayjs from 'dayjs'
 import get from 'lodash.get'
 import set from 'lodash.set'
 import utilLib from '@/libs/util.js'
@@ -12,6 +11,7 @@ import releases from './modules/releases'
 import user from './modules/user'
 import menu from './modules/menu'
 import theme from './modules/theme'
+import log from './modules/log'
 
 const pageOpenedDefult = {
   name: 'index',
@@ -28,7 +28,8 @@ export default {
     releases,
     user,
     menu,
-    theme
+    theme,
+    log
   },
   state: {
     // 全屏
@@ -44,9 +45,7 @@ export default {
     // 当前页面
     pageCurrent: '',
     // 用户 UA
-    ua: {},
-    // 错误日志
-    log: []
+    ua: {}
   },
   getters: {
     /**
@@ -62,20 +61,6 @@ export default {
         }
         return true
       }).map(e => e.name)
-    },
-    /**
-     * @description 返回现存 log (all) 的条数
-     * @param {*} state vuex state
-     */
-    logLength (state) {
-      return state.log.length
-    },
-    /**
-     * @description 返回现存 log (error) 的条数
-     * @param {*} state vuex state
-     */
-    logErrorLength (state) {
-      return state.log.filter(l => l.type === 'error').length
     }
   },
   actions: {
@@ -590,42 +575,6 @@ export default {
      */
     grayModeSet (state, value) {
       state.isGrayMode = value
-    },
-    /**
-     * @class log
-     * @description 添加一个 log
-     * @param {Object} state vuex state
-     * @param {Object} param { }
-     */
-    logAdd (state, { type, err, vm, info }) {
-      state.log.push(Object.assign({
-        // 记录类型
-        type: 'log', // error
-        // 信息
-        info: '',
-        // 错误对象
-        err: '',
-        // vue 实例
-        vm: '',
-        // 当前用户信息
-        user: state.user.info,
-        // 当前用户的 uuid
-        uuid: utilLib.cookies.get('uuid'),
-        // 当前的 token
-        token: utilLib.cookies.get('token'),
-        // 当前地址
-        url: get(window, 'location.href', ''),
-        // 当前时间
-        time: dayjs().format('YYYY-M-D HH:mm:ss')
-      }, { type, err, vm, info }))
-    },
-    /**
-     * @class log
-     * @description 清空日志
-     * @param {Object} state vuex state
-     */
-    logClean (state) {
-      state.log = []
     }
   }
 }

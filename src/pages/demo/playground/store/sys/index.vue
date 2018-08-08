@@ -155,11 +155,9 @@ export default {
       'pageCurrent',
       'ua'
     ]),
-    ...mapGetters('d2admin', [
-      'keepAliveInclude'
-    ]),
-    ...mapGetters('d2admin/theme', {
-      themeActiveSetting: 'activeSetting'
+    ...mapGetters('d2admin', {
+      keepAliveInclude: 'keepAliveInclude',
+      themeActiveSetting: 'theme/activeSetting'
     })
   }
 }
