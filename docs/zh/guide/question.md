@@ -114,6 +114,44 @@ yarn
 yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
 ```
 
+## 如何关闭 ESLint
+
+由于使用者技术水平参差不齐，有些朋友希望在开发时关闭 ESLint，虽然我不建议这样做，在这里也给出以下方法，或者你也可以在下面的链接里找到答案
+
+* [ESLint 中文](http://eslint.cn/)
+* [ESLint 英文](https://eslint.org/)
+
+### 方法 1
+
+在根目录的 `.eslintignore` 中添加 `*.vue`，就会忽略所有 vue 文件后缀的检查，js 文件同理。修改后重启本地服务。
+
+### 方法 2
+
+在根目录中的 `.eslintrc.js` 找到 `'@vue/standard'` 并注释掉，修改后重启本地服务。
+
+## 如何修改 ESLint 规则
+
+在根目录中的 `.eslintrc.js` 配置规则
+
+**语法**
+
+``` js
+rules: {
+  "规则名": [规则值, 规则配置]
+}
+```
+
+**规则值**
+
+``` js
+"off" 或者 0 //关闭规则关闭
+"warn" 或者 1 //在打开的规则作为警告（不影响退出代码）
+"error" 或者 2 //把规则作为一个错误（退出代码触发时为1）
+```
+
+* [规则列表 中文](http://eslint.cn/docs/rules/)
+* [规则列表 英文](https://eslint.org/docs/rules/)
+
 ## 无法跳转路由
 
 有可能你在 D2Admin 的基础上进行你的开发时，发现在登陆页面进行
