@@ -7,7 +7,10 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">顶栏菜单数据</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="menuHeader" :options="{ rootObjectKey: 'menuHeader', maxDepth: 2 }"/>
+              <tree-view
+                class="tree-view-small"
+                :data="menuHeader"
+                :options="{ rootObjectKey: 'menuHeader', maxDepth: 2 }"/>
             </div>
           </el-card>
         </el-col>
@@ -15,7 +18,10 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">侧边栏菜单数据</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="menuAside" :options="{ rootObjectKey: 'menuAside', maxDepth: 1 }"/>
+              <tree-view
+                class="tree-view-small"
+                :data="menuAside"
+                :options="{ rootObjectKey: 'menuAside', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -53,7 +59,10 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">已经注册的主题</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="themeList" :options="{ rootObjectKey: 'themeList', maxDepth: 1 }"/>
+              <tree-view
+                class="tree-view-small"
+                :data="themeList"
+                :options="{ rootObjectKey: 'themeList', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -61,7 +70,10 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">当前主题信息</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="themeActiveSetting" :options="{ rootObjectKey: 'themeActiveSetting', maxDepth: 1 }"/>
+              <tree-view
+                class="tree-view-small"
+                :data="themeActiveSetting"
+                :options="{ rootObjectKey: 'themeActiveSetting', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -75,7 +87,10 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">支持多页显示的页面列表</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="pagePool" :options="{ rootObjectKey: 'pagePool', maxDepth: 1 }"/>
+              <tree-view
+                class="tree-view-small"
+                :data="pagePool"
+                :options="{ rootObjectKey: 'pagePool', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -83,7 +98,10 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">打开的标签页</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="pageOpenedList" :options="{ rootObjectKey: 'pageOpenedList', maxDepth: 1 }"/>
+              <tree-view
+                class="tree-view-small"
+                :data="pageOpenedList"
+                :options="{ rootObjectKey: 'pageOpenedList', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -91,14 +109,20 @@
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">缓存页面</template>
             <div style="height: 300px; overflow: auto;">
-              <tree-view class="tree-view-small" :data="keepAliveInclude" :options="{ rootObjectKey: 'keepAliveInclude', maxDepth: 1 }"/>
+              <tree-view
+                class="tree-view-small"
+                :data="keepAliveInclude"
+                :options="{ rootObjectKey: 'keepAliveInclude', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
       </el-row>
       <el-card shadow="never" class="d2-card d2-mb">
         <template slot="header">最新版本数据 [ {{releasesUpdate ? '有新版本' : '已经是最新版本'}} ]</template>
-        <tree-view class="tree-view-small" :data="releasesLatest" :options="{ rootObjectKey: 'releasesLatest', maxDepth: 1 }"/>
+        <tree-view
+          class="tree-view-small"
+          :data="releasesLatest"
+          :options="{ rootObjectKey: 'releasesLatest', maxDepth: 1 }"/>
       </el-card>
     </div>
   </d2-container>
@@ -118,22 +142,25 @@ export default {
       // 菜单
       menuHeader: state => state.menu.header,
       menuAside: state => state.menu.aside,
-      menuAsideCollapse: state => state.menu.asideCollapse
+      menuAsideCollapse: state => state.menu.asideCollapse,
+      // 主题
+      themeList: state => state.theme.list,
+      themeActiveName: state => state.theme.activeName
     }),
     ...mapState('d2admin', [
       'isFullScreen',
       'isGrayMode',
-      'themeList',
-      'themeActiveName',
       'pagePool',
       'pageOpenedList',
       'pageCurrent',
       'ua'
     ]),
     ...mapGetters('d2admin', [
-      'themeActiveSetting',
       'keepAliveInclude'
-    ])
+    ]),
+    ...mapGetters('d2admin/theme', {
+      themeActiveSetting: 'activeSetting'
+    })
   }
 }
 </script>
