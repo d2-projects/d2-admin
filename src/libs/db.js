@@ -12,7 +12,6 @@ db.defaults({
   // 旧
   themeActiveName: [],
   pageOpenedList: [],
-  userInfo: [],
   isMenuAsideCollapse: [],
   database: [],
   databasePublic: {}

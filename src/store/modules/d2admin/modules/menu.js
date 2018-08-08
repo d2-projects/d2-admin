@@ -14,6 +14,7 @@ export default {
      * @param {Array} menu menu setting
      */
     headerSet (state, menu) {
+      // store 赋值
       state.header = menu
     },
     /**
@@ -21,6 +22,7 @@ export default {
      * @param {Array} menu menu setting
      */
     asideSet (state, menu) {
+      // store 赋值
       state.aside = menu
     },
     /**
@@ -43,6 +45,7 @@ export default {
      * @param {Object} state vuex state
      */
     asideCollapseToggle (state) {
+      // store 赋值
       state.asideCollapse = !state.asideCollapse
       // 持久化
       this.commit('d2admin/util/dbValueSetByUser', {
