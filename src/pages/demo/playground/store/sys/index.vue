@@ -110,7 +110,7 @@ export default {
   computed: {
     ...mapState('d2admin', {
       // 用户信息
-      userInfo: state => state.user.userInfo,
+      userInfo: state => state.user.info,
       // 版本
       releasesVersion: state => state.releases.version,
       releasesLatest: state => state.releases.latest,

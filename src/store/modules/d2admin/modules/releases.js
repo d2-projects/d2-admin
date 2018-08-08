@@ -17,6 +17,7 @@ export default {
      * @param {Boolean} update can update
      */
     updateSet (state, update) {
+      // store 赋值
       state.update = update
     },
     /**
@@ -25,6 +26,7 @@ export default {
      * @param {Object}} latest releases value
      */
     latestSet (state, latest) {
+      // store 赋值
       state.latest = latest
     }
   }

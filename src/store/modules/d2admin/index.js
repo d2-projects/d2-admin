@@ -113,7 +113,7 @@ export default {
           utilLib.cookies.set('uuid', res.data.uuid)
           utilLib.cookies.set('token', res.data.token)
           // 设置 vuex 用户信息
-          commit('userInfoSet', {
+          commit('user/infoSet', {
             name: res.data.name
           })
           // 用户登陆后从数据库加载一系列的设置
@@ -299,7 +299,7 @@ export default {
      */
     loginSuccessLoad (state) {
       // DB -> store 加载用户名
-      this.commit('d2admin/userInfoLoad')
+      this.commit('d2admin/user/infoLoad')
       // DB -> store 加载主题
       this.commit('d2admin/themeLoad')
       // DB -> store 数据库加载上次退出时的多页列表
@@ -618,7 +618,7 @@ export default {
         // vue 实例
         vm: '',
         // 当前用户信息
-        user: state.user.userInfo,
+        user: state.user.info,
         // 当前用户的 uuid
         uuid: utilLib.cookies.get('uuid'),
         // 当前的 token

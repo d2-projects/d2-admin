@@ -1,6 +1,8 @@
 export default {
+  namespaced: true,
   state: {
-    userInfo: {
+    // 用户信息
+    info: {
       name: ''
     }
   },
@@ -8,27 +10,27 @@ export default {
     /**
      * @description 设置用户数据
      * @param {Object} state vuex state
-     * @param {*} userInfo userInfo
+     * @param {*} info info
      */
-    userInfoSet (state, userInfo) {
+    infoSet (state, info) {
       // store 赋值
-      state.userInfo = userInfo
+      state.info = info
       // 持久化
       this.commit('d2admin/util/dbValueSetByUser', {
         dbName: 'sys',
-        path: 'user.userInfo',
-        value: userInfo
+        path: 'user.info',
+        value: info
       })
     },
     /**
      * @description 从数据库取用户数据
      * @param {Object} state vuex state
      */
-    async userInfoLoad (state) {
+    async infoLoad (state) {
       // store 赋值
-      state.userInfo = await this.dispatch('d2admin/util/dbValueGetByUser', {
+      state.info = await this.dispatch('d2admin/util/dbValueGetByUser', {
         dbName: 'sys',
-        path: 'user.userInfo',
+        path: 'user.info',
         defaultValue: '请重新登陆'
       })
     }
