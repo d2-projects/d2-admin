@@ -85,11 +85,9 @@ export default {
     ...mapState('d2admin/menu', [
       'asideCollapse'
     ]),
-    ...mapGetters('d2admin', [
-      'keepAliveInclude'
-    ]),
-    ...mapGetters('d2admin/theme', {
-      themeActiveSetting: 'activeSetting'
+    ...mapGetters('d2admin', {
+      keepAliveInclude: 'keepAliveInclude',
+      themeActiveSetting: 'theme/activeSetting'
     }),
     /**
      * @description 最外层容器的背景图片样式
