@@ -12,7 +12,7 @@ export default {
      * @param {Object} state vuex state
      * @param {*} info info
      */
-    infoSet (state, info) {
+    set (state, info) {
       // store 赋值
       state.info = info
       // 持久化
@@ -26,7 +26,7 @@ export default {
      * @description 从数据库取用户数据
      * @param {Object} state vuex state
      */
-    async infoLoad (state) {
+    async load (state) {
       // store 赋值
       state.info = await this.dispatch('d2admin/util/dbValueGetByUser', {
         dbName: 'sys',

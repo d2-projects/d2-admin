@@ -37,7 +37,7 @@ export default {
       this.commit('d2admin/util/dbValueSetByUser', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
-        value: collapse
+        value: state.asideCollapse
       })
     },
     /**

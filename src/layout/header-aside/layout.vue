@@ -86,9 +86,11 @@ export default {
       'asideCollapse'
     ]),
     ...mapGetters('d2admin', [
-      'themeActiveSetting',
       'keepAliveInclude'
     ]),
+    ...mapGetters('d2admin/theme', {
+      themeActiveSetting: 'activeSetting'
+    }),
     /**
      * @description 最外层容器的背景图片样式
      */

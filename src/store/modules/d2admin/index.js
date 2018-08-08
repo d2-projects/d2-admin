@@ -4,7 +4,6 @@ import get from 'lodash.get'
 import set from 'lodash.set'
 import utilLib from '@/libs/util.js'
 import db from '@/libs/db.js'
-import themeList from '@/assets/style/theme/list.js'
 
 // 模块
 
@@ -12,6 +11,7 @@ import util from './modules/util'
 import releases from './modules/releases'
 import user from './modules/user'
 import menu from './modules/menu'
+import theme from './modules/theme'
 
 const pageOpenedDefult = {
   name: 'index',
@@ -27,17 +27,14 @@ export default {
     util,
     releases,
     user,
-    menu
+    menu,
+    theme
   },
   state: {
     // 全屏
     isFullScreen: false,
     // 灰度
     isGrayMode: false,
-    // 主题
-    themeList,
-    // 现在激活的主题
-    themeActiveName: themeList[0].name, // 这应该是一个名字 不是对象
     // 可以在多页 tab 模式下显示的页面
     pagePool: [],
     // 当前显示的多页面列表
@@ -52,13 +49,6 @@ export default {
     log: []
   },
   getters: {
-    /**
-     * @description 返回当前的主题信息 不是一个名字 而是当前激活主题的所有数据
-     * @param {Object} state vuex state
-     */
-    themeActiveSetting (state) {
-      return state.themeList.find(theme => theme.name === state.themeActiveName)
-    },
     /**
      * @description 从当前所有打开的多标签页里返回需要缓存的页面 name
      * @param {*} state vuex state
@@ -113,7 +103,7 @@ export default {
           utilLib.cookies.set('uuid', res.data.uuid)
           utilLib.cookies.set('token', res.data.token)
           // 设置 vuex 用户信息
-          commit('user/infoSet', {
+          commit('user/set', {
             name: res.data.name
           })
           // 用户登陆后从数据库加载一系列的设置
@@ -299,9 +289,9 @@ export default {
      */
     loginSuccessLoad (state) {
       // DB -> store 加载用户名
-      this.commit('d2admin/user/infoLoad')
+      this.commit('d2admin/user/load')
       // DB -> store 加载主题
-      this.commit('d2admin/themeLoad')
+      this.commit('d2admin/theme/load')
       // DB -> store 数据库加载上次退出时的多页列表
       this.commit('d2admin/pageOpenedListLoad')
       // DB -> store 数据库加载这个用户之前设置的侧边栏折叠状态
@@ -636,47 +626,6 @@ export default {
      */
     logClean (state) {
       state.log = []
-    },
-    /**
-     * @class themeActiveName
-     * @description 激活一个主题（应用到dom上）
-     * @param {Object} state vuex state
-     * @param {String} themeValue 需要激活的主题名称
-     */
-    themeSet (state, themeName) {
-      // 检查这个主题在主题列表里是否存在
-      const theme = state.themeList.find(e => e.name === themeName)
-      if (theme) {
-        // 设置 state
-        state.themeActiveName = themeName
-      } else {
-        // 设置为列表第一个主题
-        state.themeActiveName = state.themeList[0].name
-      }
-      // 将 vuex 中的主题应用到 dom
-      this.commit('d2admin/theme2dom')
-      // 保存到数据库
-      this.commit('d2admin/utilVuex2DbByUuid', 'themeActiveName')
-    },
-    /**
-     * @class themeActiveName
-     * @description 从数据库加载主题设置
-     * @param {Object} state vuex state
-     */
-    themeLoad (state) {
-      this.commit('d2admin/utilDb2VuexByUuid', {
-        key: 'themeActiveName',
-        defaultValue: state.themeList[0].name
-      })
-      this.commit('d2admin/theme2dom')
-    },
-    /**
-     * @class themeActiveName
-     * @description 将 vuex 中的主题应用到 dom
-     * @param {Object} state vuex state
-     */
-    theme2dom (state) {
-      document.body.className = `theme-${state.themeActiveName}`
     }
   }
 }
