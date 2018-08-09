@@ -80,7 +80,6 @@ export default {
   computed: {
     ...mapState('d2admin', {
       grayActive: state => state.gray.active,
-      pageOpenedList: 'pageOpenedList',
       asideCollapse: state => state.menu.asideCollapse
     }),
     ...mapGetters('d2admin', {
