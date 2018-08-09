@@ -19,7 +19,7 @@ export default {
     ])
   },
   methods: {
-    ...mapActions('d2admin', [
+    ...mapActions('d2admin/account', [
       'logout'
     ]),
     /**
