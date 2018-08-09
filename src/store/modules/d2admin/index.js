@@ -1,4 +1,3 @@
-import screenfull from 'screenfull'
 import get from 'lodash.get'
 import set from 'lodash.set'
 import utilLib from '@/libs/util.js'
@@ -13,6 +12,7 @@ import menu from './modules/menu'
 import theme from './modules/theme'
 import log from './modules/log'
 import account from './modules/account'
+import fullscreen from './modules/fullscreen'
 
 const pageOpenedDefult = {
   name: 'index',
@@ -31,11 +31,10 @@ export default {
     menu,
     theme,
     log,
-    account
+    account,
+    fullscreen
   },
   state: {
-    // 全屏
-    isFullScreen: false,
     // 灰度
     isGrayMode: false,
     // 可以在多页 tab 模式下显示的页面
@@ -443,28 +442,6 @@ export default {
           name: 'index'
         })
       }
-    },
-    /**
-     * @class isFullScreen
-     * @description 切换全屏
-     * @param {Object} state vuex state
-     */
-    fullScreenToggle () {
-      if (screenfull.isFullscreen) {
-        screenfull.exit()
-        this.commit('d2admin/fullScreenSet', false)
-      } else {
-        screenfull.request()
-        this.commit('d2admin/fullScreenSet', true)
-      }
-    },
-    /**
-     * @class isFullScreen
-     * @description 设置 store 里的全屏状态
-     * @param {Object} state vuex state
-     */
-    fullScreenSet (state, isFullScreen) {
-      state.isFullScreen = isFullScreen
     },
     /**
      * @class isGrayMode

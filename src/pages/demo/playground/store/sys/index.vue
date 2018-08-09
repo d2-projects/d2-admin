@@ -30,7 +30,7 @@
         <el-col :span="8">
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">全屏模式</template>
-            <el-switch v-model="isFullScreen" active-text="打开" inactive-text="关闭" disabled/>
+            <el-switch v-model="fullscreenActive" active-text="打开" inactive-text="关闭" disabled/>
           </el-card>
         </el-col>
         <el-col :span="8">
@@ -145,10 +145,11 @@ export default {
       menuAsideCollapse: state => state.menu.asideCollapse,
       // 主题
       themeList: state => state.theme.list,
-      themeActiveName: state => state.theme.activeName
+      themeActiveName: state => state.theme.activeName,
+      // 全屏
+      fullscreenActive: state => state.fullscreen.active
     }),
     ...mapState('d2admin', [
-      'isFullScreen',
       'isGrayMode',
       'pagePool',
       'pageOpenedList',
