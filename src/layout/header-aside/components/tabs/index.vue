@@ -32,7 +32,7 @@
       <el-dropdown
         split-button
         @click="handleControlBtnClick"
-        @command="handleControlItemClick">
+        @command="command => handleControlItemClick(command)">
         <d2-icon name="times-circle"/>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="left">
@@ -127,21 +127,13 @@ export default {
      * @description 接收点击关闭控制上选项的事件
      */
     handleControlItemClick (command, tagName = null) {
-      // 关闭右键菜单
-      this.contextmenuFlag = false
-      // 判断触发方式
-      let pageSelect = tagName
-      if (pageSelect) {
-        if (pageSelect._isVue) {
-          pageSelect = null
-        }
+      if (tagName) {
+        this.contextmenuFlag = false
       }
-      // 设置传递参数
       const params = {
-        pageSelect,
+        pageSelect: tagName,
         vm: this
       }
-      // 根据不同的类型触发不同的关闭事件
       switch (command) {
         case 'left':
           this.d2adminTagCloseLeft(params)
