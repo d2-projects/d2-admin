@@ -9,6 +9,7 @@ const db = low(adapter)
 db.defaults({
   // 新
   sys: {},
+  db: {},
   // 旧
   pageOpenedList: [],
   database: [],

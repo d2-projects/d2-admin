@@ -1,11 +1,11 @@
 import get from 'lodash.get'
 import set from 'lodash.set'
 import utilLib from '@/libs/util.js'
-import db from '@/libs/db.js'
+import dbLib from '@/libs/db.js'
 
 // 模块
 
-import util from './modules/util'
+import db from './modules/db'
 import releases from './modules/releases'
 import user from './modules/user'
 import menu from './modules/menu'
@@ -27,7 +27,7 @@ const pageOpenedDefult = {
 export default {
   namespaced: true,
   modules: {
-    util,
+    db,
     releases,
     user,
     menu,
@@ -73,12 +73,12 @@ export default {
      */
     utilVuex2DbByUuid (state, key) {
       const dbKey = key.split('.')[key.split('.').length - 1]
-      const row = db.get(dbKey).find({uuid: utilLib.cookies.get('uuid')})
+      const row = dbLib.get(dbKey).find({uuid: utilLib.cookies.get('uuid')})
       const value = get(state, key, '')
       if (row.value()) {
         row.assign({ value }).write()
       } else {
-        db.get(dbKey).push({
+        dbLib.get(dbKey).push({
           uuid: utilLib.cookies.get('uuid'),
           value
         }).write()
@@ -92,7 +92,7 @@ export default {
      */
     utilDb2VuexByUuid (state, { key, defaultValue, handleFunction }) {
       const dbKey = key.split('.')[key.split('.').length - 1]
-      const row = db.get(dbKey).find({uuid: utilLib.cookies.get('uuid')}).value()
+      const row = dbLib.get(dbKey).find({uuid: utilLib.cookies.get('uuid')}).value()
       const handle = handleFunction || (res => res)
       set(state, key, row ? handle(row.value) : defaultValue)
     },
@@ -104,12 +104,12 @@ export default {
      */
     utilVuex2Db (state, key) {
       const dbKey = key.split('.')[key.split('.').length - 1]
-      const row = db.get(dbKey).find({pub: 'pub'})
+      const row = dbLib.get(dbKey).find({pub: 'pub'})
       const value = get(state, key, '')
       if (row.value()) {
         row.assign({ value }).write()
       } else {
-        db.get(dbKey).push({
+        dbLib.get(dbKey).push({
           pub: 'pub',
           value
         }).write()
@@ -123,7 +123,7 @@ export default {
      */
     utilDb2Vuex (state, { key, defaultValue, handleFunction }) {
       const dbKey = key.split('.')[key.split('.').length - 1]
-      const row = db.get(dbKey).find({pub: 'pub'}).value()
+      const row = dbLib.get(dbKey).find({pub: 'pub'}).value()
       const handle = handleFunction || (res => res)
       set(state, key, row ? handle(row.value) : defaultValue)
     },
@@ -135,14 +135,14 @@ export default {
      */
     utilDatabaseUser (state, fn) {
       const uuid = utilLib.cookies.get('uuid')
-      const database = db.get('database').find({ uuid })
+      const database = dbLib.get('database').find({ uuid })
       if (database.value() === undefined) {
-        db.get('database').push({
+        dbLib.get('database').push({
           uuid,
           value: {}
         }).write()
         if (fn) {
-          fn(db.get('database').find({ uuid }).get('value'))
+          fn(dbLib.get('database').find({ uuid }).get('value'))
         }
       } else {
         if (fn) {
@@ -156,7 +156,7 @@ export default {
      * @param {Object} state vuex state
      */
     utilDatabaseUserClear (state) {
-      db.get('database')
+      dbLib.get('database')
         .remove({ uuid: utilLib.cookies.get('uuid') })
         .write()
     },
@@ -168,7 +168,7 @@ export default {
      */
     utilDatabase (state, fn) {
       if (fn) {
-        fn(db.get('databasePublic'))
+        fn(dbLib.get('databasePublic'))
       }
     },
     /**
@@ -177,7 +177,7 @@ export default {
      * @param {Object} state vuex state
      */
     utilDatabaseClear (state) {
-      db.set('databasePublic', {})
+      dbLib.set('databasePublic', {})
         .write()
     },
     /**
