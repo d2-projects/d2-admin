@@ -5,15 +5,18 @@ import util from '@/libs/util.js'
  * @description 检查路径是否存在 不存在的话初始化
  * @param {Object} param dbName {String} 数据库名称
  * @param {Object} param path {String} 路径
+ * @param {Object} param validator {Function} 数据校验钩子 返回 true 表示验证通过
  * @param {Object} param defaultValue {*} 初始化默认值
  */
 function pathInit ({
   dbName = 'db',
   path = '',
+  validator = () => true,
   defaultValue = ''
 }) {
   const sys = db.get(dbName)
-  if (!sys.get(path).value()) {
+  const value = sys.get(path).value()
+  if (!(value && validator(value))) {
     sys
       .set(path, defaultValue)
       .write()
@@ -49,24 +52,40 @@ export default {
   namespaced: true,
   mutations: {
     /**
-     * @description 将数据存储到指定位置 [不区分用户]
+     * @description 将数据存储到指定位置 | 路径不存在会自动初始化 [不区分用户]
+     * @description 效果类似于 dbName.path = value
      * @param {Object} state vuex state
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param value {*} 需要存储的值
      */
-    set (state, {
-      dbName = 'db',
-      path = '',
-      value = ''
-    }) {
+    set (state, { dbName = 'db', path = '', value = '' }) {
       db
         .get(dbName)
         .set(path, value)
         .write()
     },
     /**
-     * @description 将数据存储到指定位置 [区分用户]
+     * @description 将数据 push 到指定位置 | 路径不存在会自动初始化 [不区分用户]
+     * @description 效果类似于 dbName.path.push(value)
+     * @param {Object} state vuex state
+     * @param {Object} param dbName {String} 数据库名称
+     * @param {Object} param path {String} 存储路径
+     * @param {Object} param value {*} 需要存储的值
+     */
+    push (state, { dbName = 'db', path = '', value = '' }) {
+      pathInit({
+        dbName,
+        path,
+        validator: value => Array.isArray(value),
+        defaultValue: []
+      })
+        .push(value)
+        .write()
+    },
+    /**
+     * @description 将数据存储到指定位置 | 路径不存在会自动初始化 [区分用户]
+     * @description 效果类似于 dbName.path[user] = value
      * @param {Object} state vuex state
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
@@ -97,6 +116,7 @@ export default {
   actions: {
     /**
      * @description 获取数据 [区分用户]
+     * @description 效果类似于 dbName.path[user] || defaultValue
      * @param {Object} state vuex state
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
