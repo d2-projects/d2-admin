@@ -10,9 +10,7 @@ db.defaults({
   // 新
   sys: {},
   // 旧
-  themeActiveName: [],
   pageOpenedList: [],
-  isMenuAsideCollapse: [],
   database: [],
   databasePublic: {}
 }).write()
