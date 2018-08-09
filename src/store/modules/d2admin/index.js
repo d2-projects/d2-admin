@@ -216,7 +216,7 @@ export default {
         // 页面以前没有打开过
         let tag = state.pagePool.find(t => t.name === name)
         if (tag) {
-          this.commit('d2admin/tagIncreate', { tag, params, query })
+          this.commit('d2admin/tagAdd', { tag, params, query })
         }
       }
       this.commit('d2admin/pageCurrentSet', name)
@@ -286,7 +286,7 @@ export default {
      * @param {Object} state vuex state
      * @param {Object} param new tag info
      */
-    tagIncreate (state, { tag, params, query }) {
+    tagAdd (state, { tag, params, query }) {
       // 设置新的 tag 在新打开一个以前没打开过的页面时使用
       let newPage = tag
       newPage.params = params || newPage.params

@@ -55,6 +55,7 @@ export default {
      * @param {Object} param path {String} 存储路径
      * @param {Object} param value {*} 需要存储的值
      */
+    // TODO: 抽象
     dbValueSetByUser (state, {
       dbName = 'sys',
       path = '',
