@@ -37,9 +37,16 @@ log.capsule = function (title, info, type = 'primary') {
  */
 log.colorful = function (textArr) {
   console.log(
-    `%c ${textArr.map(t => t.text).join(' %c ')}`,
+    `%c ${textArr.map(t => t.text || '').join(' %c ')}`,
     ...textArr.map(t => `color: ${typeColor(t.type)};`)
   )
+}
+
+/**
+ * @description 打印 default 样式的文字
+ */
+log.default = function (text) {
+  log.colorful([{ text }])
 }
 
 /**
