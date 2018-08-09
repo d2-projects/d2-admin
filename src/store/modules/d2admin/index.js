@@ -14,6 +14,7 @@ import log from './modules/log'
 import account from './modules/account'
 import fullscreen from './modules/fullscreen'
 import ua from './modules/ua'
+import gray from './modules/gray'
 
 const pageOpenedDefult = {
   name: 'index',
@@ -34,11 +35,10 @@ export default {
     log,
     account,
     fullscreen,
-    ua
+    ua,
+    gray
   },
   state: {
-    // 灰度
-    isGrayMode: false,
     // 可以在多页 tab 模式下显示的页面
     pagePool: [],
     // 当前显示的多页面列表
@@ -434,23 +434,6 @@ export default {
           name: 'index'
         })
       }
-    },
-    /**
-     * @class isGrayMode
-     * @description 切换灰度状态
-     * @param {Object} state vuex state
-     */
-    grayModeToggle (state) {
-      state.isGrayMode = !state.isGrayMode
-    },
-    /**
-     * @class isGrayMode
-     * @description 设置灰度模式
-     * @param {Object} state vuex state
-     * @param {Boolean} value new value
-     */
-    grayModeSet (state, value) {
-      state.isGrayMode = value
     }
   }
 }
