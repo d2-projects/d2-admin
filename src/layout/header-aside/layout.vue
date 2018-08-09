@@ -2,7 +2,7 @@
   <div
     class="d2-layout-header-aside-group"
     :style="styleLayoutMainGroup"
-    :class="{grayMode: isGrayMode}">
+    :class="{grayMode: grayActive}">
     <!-- 半透明遮罩 -->
     <div class="d2-layout-header-aside-mask"></div>
     <!-- 主体内容 -->
@@ -78,13 +78,11 @@ export default {
     }
   },
   computed: {
-    ...mapState('d2admin', [
-      'isGrayMode',
-      'pageOpenedList'
-    ]),
-    ...mapState('d2admin/menu', [
-      'asideCollapse'
-    ]),
+    ...mapState('d2admin', {
+      grayActive: state => state.gray.active,
+      pageOpenedList: 'pageOpenedList',
+      asideCollapse: state => state.menu.asideCollapse
+    }),
     ...mapGetters('d2admin', {
       keepAliveInclude: 'keepAliveInclude',
       themeActiveSetting: 'theme/activeSetting'

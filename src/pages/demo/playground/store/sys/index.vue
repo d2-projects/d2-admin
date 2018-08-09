@@ -36,7 +36,7 @@
         <el-col :span="8">
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">灰度模式</template>
-            <el-switch v-model="isGrayMode" active-text="打开" inactive-text="关闭" disabled/>
+            <el-switch v-model="grayActive" active-text="打开" inactive-text="关闭" disabled/>
           </el-card>
         </el-col>
         <el-col :span="8">
@@ -147,10 +147,11 @@ export default {
       themeList: state => state.theme.list,
       themeActiveName: state => state.theme.activeName,
       // 全屏
-      fullscreenActive: state => state.fullscreen.active
+      fullscreenActive: state => state.fullscreen.active,
+      // 灰度模式
+      grayActive: state => state.gray.active
     }),
     ...mapState('d2admin', [
-      'isGrayMode',
       'pagePool',
       'pageOpenedList',
       'pageCurrent'
