@@ -34,7 +34,7 @@ export default {
       // store 赋值
       state.asideCollapse = collapse
       // 持久化
-      this.commit('d2admin/util/dbValueSetByUser', {
+      this.commit('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
         value: state.asideCollapse
@@ -48,7 +48,7 @@ export default {
       // store 赋值
       state.asideCollapse = !state.asideCollapse
       // 持久化
-      this.commit('d2admin/util/dbValueSetByUser', {
+      this.commit('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
         value: state.asideCollapse
@@ -60,7 +60,7 @@ export default {
      */
     async asideCollapseLoad (state) {
       // store 赋值
-      state.asideCollapse = await this.dispatch('d2admin/util/dbValueGetByUser', {
+      state.asideCollapse = await this.dispatch('d2admin/db/getByUser', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
         defaultValue: false

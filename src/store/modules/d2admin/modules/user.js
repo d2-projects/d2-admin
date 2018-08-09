@@ -16,7 +16,7 @@ export default {
       // store 赋值
       state.info = info
       // 持久化
-      this.commit('d2admin/util/dbValueSetByUser', {
+      this.commit('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'user.info',
         value: info
@@ -28,7 +28,7 @@ export default {
      */
     async load (state) {
       // store 赋值
-      state.info = await this.dispatch('d2admin/util/dbValueGetByUser', {
+      state.info = await this.dispatch('d2admin/db/getByUser', {
         dbName: 'sys',
         path: 'user.info',
         defaultValue: '请重新登陆'

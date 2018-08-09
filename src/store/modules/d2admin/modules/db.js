@@ -8,9 +8,9 @@ import util from '@/libs/util.js'
  * @param {Object} param defaultValue {*} 初始化默认值
  */
 function pathInit ({
-  dbName = 'sys',
+  dbName = 'db',
   path = '',
-  defaultValue = []
+  defaultValue = ''
 }) {
   const sys = db.get(dbName)
   if (!sys.get(path).value()) {
@@ -49,15 +49,31 @@ export default {
   namespaced: true,
   mutations: {
     /**
-     * @description 将数据存储到指定位置 [用户存储区域]
+     * @description 将数据存储到指定位置 [不区分用户]
      * @param {Object} state vuex state
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param value {*} 需要存储的值
      */
-    // TODO: 抽象
-    dbValueSetByUser (state, {
-      dbName = 'sys',
+    set (state, {
+      dbName = 'db',
+      path = '',
+      value = ''
+    }) {
+      db
+        .get(dbName)
+        .set(path, value)
+        .write()
+    },
+    /**
+     * @description 将数据存储到指定位置 [区分用户]
+     * @param {Object} state vuex state
+     * @param {Object} param dbName {String} 数据库名称
+     * @param {Object} param path {String} 存储路径
+     * @param {Object} param value {*} 需要存储的值
+     */
+    setByUser (state, {
+      dbName = 'db',
       path = '',
       value = ''
     }) {
@@ -80,14 +96,14 @@ export default {
   },
   actions: {
     /**
-     * @description 从系统存储中获取数据 [用户存储区域]
+     * @description 获取数据 [区分用户]
      * @param {Object} state vuex state
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param defaultValue {*} 取值失败的默认值
      */
-    dbValueGetByUser (context, {
-      dbName = 'sys',
+    getByUser (context, {
+      dbName = 'db',
       path = '',
       defaultValue = ''
     }) {

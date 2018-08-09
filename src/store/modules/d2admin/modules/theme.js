@@ -29,7 +29,7 @@ export default {
       // 将 vuex 中的主题应用到 dom
       this.commit('d2admin/theme/dom')
       // 持久化
-      this.commit('d2admin/util/dbValueSetByUser', {
+      this.commit('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'theme.activeName',
         value: state.activeName
@@ -41,7 +41,7 @@ export default {
      */
     async load (state) {
       // store 赋值
-      state.activeName = await this.dispatch('d2admin/util/dbValueGetByUser', {
+      state.activeName = await this.dispatch('d2admin/db/getByUser', {
         dbName: 'sys',
         path: 'theme.activeName',
         defaultValue: state.list[0].name
