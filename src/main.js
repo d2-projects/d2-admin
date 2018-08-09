@@ -62,7 +62,7 @@ new Vue({
     // 展示系统信息
     util.showInfo()
     // 用户登陆后从数据库加载一系列的设置
-    this.$store.commit('d2admin/loginSuccessLoad')
+    this.$store.commit('d2admin/account/load')
     // 初始化全屏监听
     this.fullscreenListenerInit()
   },

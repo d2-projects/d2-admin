@@ -3,9 +3,9 @@ import util from '@/libs/util.js'
 
 /**
  * @description 检查路径是否存在 不存在的话初始化
- * @param {Object} param dbName {String}: 数据库名称
- * @param {Object} param path {String}: 路径
- * @param {Object} param defaultValue {*}: 初始化默认值
+ * @param {Object} param dbName {String} 数据库名称
+ * @param {Object} param path {String} 路径
+ * @param {Object} param defaultValue {*} 初始化默认值
  */
 function pathInit ({
   dbName = 'sys',
@@ -23,8 +23,8 @@ function pathInit ({
 
 /**
  * @description 检查路径下是否有当前用户的档案
- * @param {Object} param dbName {String}: 数据库名称
- * @param {Object} param path {String}: 路径
+ * @param {Object} param dbName {String} 数据库名称
+ * @param {Object} param path {String} 路径
  */
 function isRowExistByUser ({
   dbName = 'sys',
@@ -51,9 +51,9 @@ export default {
     /**
      * @description 将数据存储到指定位置 [用户存储区域]
      * @param {Object} state vuex state
-     * @param {Object} param dbName {String}: 数据库名称
-     * @param {Object} param path {String}: 存储路径
-     * @param {Object} param value {*}: 需要存储的值
+     * @param {Object} param dbName {String} 数据库名称
+     * @param {Object} param path {String} 存储路径
+     * @param {Object} param value {*} 需要存储的值
      */
     dbValueSetByUser (state, {
       dbName = 'sys',
@@ -81,9 +81,9 @@ export default {
     /**
      * @description 从系统存储中获取数据 [用户存储区域]
      * @param {Object} state vuex state
-     * @param {Object} param dbName {String}: 数据库名称
-     * @param {Object} param path {String}: 存储路径
-     * @param {Object} param defaultValue {*}: 取值失败的默认值
+     * @param {Object} param dbName {String} 数据库名称
+     * @param {Object} param path {String} 存储路径
+     * @param {Object} param defaultValue {*} 取值失败的默认值
      */
     dbValueGetByUser (context, {
       dbName = 'sys',

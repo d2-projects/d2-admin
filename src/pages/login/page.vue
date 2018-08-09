@@ -105,7 +105,7 @@ export default {
     particlesJS('login', config)
   },
   methods: {
-    ...mapActions('d2admin', [
+    ...mapActions('d2admin/account', [
       'login'
     ]),
     /**
