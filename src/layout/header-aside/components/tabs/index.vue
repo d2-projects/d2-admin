@@ -127,13 +127,21 @@ export default {
      * @description 接收点击关闭控制上选项的事件
      */
     handleControlItemClick (command, tagName = null) {
-      if (tagName) {
-        this.contextmenuFlag = false
+      // 关闭右键菜单
+      this.contextmenuFlag = false
+      // 判断触发方式
+      let pageSelect = tagName
+      if (pageSelect) {
+        if (pageSelect._isVue) {
+          pageSelect = null
+        }
       }
+      // 设置传递参数
       const params = {
-        pageSelect: tagName,
+        pageSelect,
         vm: this
       }
+      // 根据不同的类型触发不同的关闭事件
       switch (command) {
         case 'left':
           this.d2adminTagCloseLeft(params)
