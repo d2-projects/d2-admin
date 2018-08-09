@@ -81,7 +81,7 @@ new Vue({
       if (screenfull.enabled) {
         screenfull.on('change', () => {
           if (!screenfull.isFullscreen) {
-            this.$store.commit('d2admin/fullScreenSet', false)
+            this.$store.commit('d2admin/fullscreen/set', false)
           }
         })
       }
