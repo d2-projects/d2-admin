@@ -58,7 +58,7 @@ new Vue({
     // D2Admin 开发环境检查更新
     util.checkUpdate(this)
     // 获取并记录用户 UA
-    this.$store.commit('d2admin/uaGet')
+    this.$store.commit('d2admin/ua/get')
     // 展示系统信息
     util.showInfo()
     // 用户登陆后从数据库加载一系列的设置

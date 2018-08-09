@@ -13,6 +13,7 @@ import theme from './modules/theme'
 import log from './modules/log'
 import account from './modules/account'
 import fullscreen from './modules/fullscreen'
+import ua from './modules/ua'
 
 const pageOpenedDefult = {
   name: 'index',
@@ -32,7 +33,8 @@ export default {
     theme,
     log,
     account,
-    fullscreen
+    fullscreen,
+    ua
   },
   state: {
     // 灰度
@@ -44,9 +46,7 @@ export default {
       pageOpenedDefult
     ],
     // 当前页面
-    pageCurrent: '',
-    // 用户 UA
-    ua: {}
+    pageCurrent: ''
   },
   getters: {
     /**
@@ -179,14 +179,6 @@ export default {
     utilDatabaseClear (state) {
       db.set('databasePublic', {})
         .write()
-    },
-    /**
-     * @class UA
-     * @description 记录 UA
-     * @param {Object} state vuex state
-     */
-    uaGet (state) {
-      state.ua = utilLib.ua()
     },
     /**
      * @class pagePool
