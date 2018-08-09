@@ -14,7 +14,7 @@ export default {
       })
       // 显示在控制台
       if (show && process.env.NODE_ENV === 'development') {
-        console.log(info)
+        util.log.default(info)
       }
     }
   }
