@@ -153,8 +153,7 @@ export default {
       'isGrayMode',
       'pagePool',
       'pageOpenedList',
-      'pageCurrent',
-      'ua'
+      'pageCurrent'
     ]),
     ...mapGetters('d2admin', {
       keepAliveInclude: 'keepAliveInclude',

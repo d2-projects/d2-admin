@@ -1,6 +1,5 @@
 import axios from 'axios'
 import semver from 'semver'
-import UaParser from 'ua-parser-js'
 import { version } from '../../package.json'
 import log from './util.log.js'
 import cookies from './util.cookies.js'
@@ -16,13 +15,6 @@ let util = {
  */
 util.title = function (titleText) {
   window.document.title = `${process.env.VUE_APP_TITLE}${titleText ? ` | ${titleText}` : ''}`
-}
-
-/**
- * @description 获取所有的 UA 信息
- */
-util.ua = function () {
-  return new UaParser().getResult()
 }
 
 /**
