@@ -102,7 +102,7 @@ new Vue({
         })
       }
       push(frameInRoutes)
-      this.$store.commit('d2admin/pagePoolSet', pool)
+      this.$store.commit('d2admin/page/poolSet', pool)
     }
   }
 }).$mount('#app')
