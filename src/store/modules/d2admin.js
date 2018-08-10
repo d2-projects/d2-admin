@@ -516,6 +516,14 @@ export default {
       }
     },
     /**
+     * @description 关闭当前 tag (关闭当前页面)
+     * @param {vuex state} state vuex state
+     * @param {Object} param1 { vm: vue }
+     */
+    d2adminTagCloseCurrent(state, {vm}) {
+      this.commit('d2adminTagClose',{tagName:state.pageCurrent,vm})
+    },
+    /**
      * @class pageOpenedList
      * @description 关闭当前标签左边的标签
      * @param {vuex state} state vuex state
