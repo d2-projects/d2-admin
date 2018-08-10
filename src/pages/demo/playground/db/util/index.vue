@@ -33,9 +33,9 @@
         <br>
         <el-button @click="handleSetByUser">保存 {{key}} = "{{value}}" 当前用户</el-button>
         <p>取值</p>
-        <el-button @click="handleGet" class="d2-mb-10">取值 {{key}}</el-button>
+        <el-button @click="handleGet" class="d2-mb-10">取值 key = "{{key}}"</el-button>
         <br>
-        <el-button @click="handleGetByUser">取值 {{key}} 当前用户</el-button>
+        <el-button @click="handleGetByUser">取值 key = "{{key}}" 当前用户</el-button>
       </el-col>
       <el-col :span="12">
         <el-card shadow="never">
@@ -56,7 +56,7 @@ export default {
     return {
       dbName: 'db',
       path: 'sandbox.demo-playground-db-util',
-      key: 'demo',
+      key: 'demoKey',
       value: 'demo text',
       dbData: ''
     }
@@ -66,7 +66,7 @@ export default {
   },
   computed: {
     alertTitle () {
-      return `数据将会在 "${this.dbName}" 数据库下的 "${this.path}.${this.key}" 路径下更新，请在右侧数据中查看`
+      return `依据当前设置，数据将会在 "${this.dbName}" 数据库下的 "${this.path}.${this.key}" 路径下更新，请在右侧数据中查看`
     }
   },
   methods: {
