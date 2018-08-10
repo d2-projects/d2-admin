@@ -1,4 +1,4 @@
-const pageOpenedDefult = {
+const openedDefult = {
   name: 'index',
   meta: {
     title: '首页',
@@ -13,7 +13,7 @@ export default {
     pool: [],
     // 当前显示的多页面列表
     opened: [
-      pageOpenedDefult
+      openedDefult
     ],
     // 当前页面
     current: ''
@@ -88,43 +88,45 @@ export default {
       page.params = params || page.params
       page.query = query || page.query
       state.opened.splice(index, 1, page)
-      // 更新设置到数据库
-      this.commit('d2admin/utilVuex2DbByUuid', 'opened')
+      // 持久化
+      this.commit('d2admin/db/setByUser', {
+        dbName: 'sys',
+        path: 'page.opened',
+        value: state.opened
+      })
     },
     /**
      * @class opened
      * @description 从数据库载入分页列表
      * @param {Object} state vuex state
      */
-    openedLoad (state) {
-      this.commit('d2admin/utilDb2VuexByUuid', {
-        key: 'opened',
-        defaultValue: [
-          pageOpenedDefult
-        ],
-        handleFunction (res) {
-          // 在处理函数中进行数据优化 过滤掉现在已经失效的页签或者已经改变了信息的页签
-          // 以 name 字段为准
-          // 如果页面过多的话可能需要优化算法
-          // 有效列表 1, 1, 0, 1 => 有效, 有效, 失效, 有效
-          const valid = []
-          // 处理数据
-          return res.map(opened => {
-            // 忽略首页
-            if (opened.name === 'index') {
-              valid.push(1)
-              return opened
-            }
-            // 尝试在所有的支持多标签页的页面里找到 name 匹配的页面
-            const find = state.page.pool.find(item => item.name === opened.name)
-            // 记录有效或无效信息
-            valid.push(find ? 1 : 0)
-            // 返回合并后的数据 新的覆盖旧的
-            // 新的数据中一般不会携带 params 和 query, 所以旧的参数会留存
-            return Object.assign({}, opened, find)
-          }).filter((opened, index) => valid[index] === 1)
-        }
+    async openedLoad (state) {
+      // store 赋值
+      const value = await this.dispatch('d2admin/db/getByUser', {
+        dbName: 'sys',
+        path: 'page.opened',
+        defaultValue: []
       })
+      // 在处理函数中进行数据优化 过滤掉现在已经失效的页签或者已经改变了信息的页签
+      // 以 name 字段为准
+      // 如果页面过多的话可能需要优化算法
+      // 有效列表 1, 1, 0, 1 => 有效, 有效, 失效, 有效
+      const valid = []
+      // 处理数据
+      state.opened = value.map(opened => {
+        // 忽略首页
+        if (opened.name === 'index') {
+          valid.push(1)
+          return opened
+        }
+        // 尝试在所有的支持多标签页的页面里找到 name 匹配的页面
+        const find = state.pool.find(item => item.name === opened.name)
+        // 记录有效或无效信息
+        valid.push(find ? 1 : 0)
+        // 返回合并后的数据 新的覆盖旧的
+        // 新的数据中一般不会携带 params 和 query, 所以旧的参数会留存
+        return Object.assign({}, opened, find)
+      }).filter((opened, index) => valid[index] === 1)
     },
     /**
      * @class opened
@@ -139,8 +141,12 @@ export default {
       newTag.query = query || newTag.query
       // 添加进当前显示的页面数组
       state.opened.push(newTag)
-      // 更新设置到数据库
-      this.commit('d2admin/utilVuex2DbByUuid', 'opened')
+      // 持久化
+      this.commit('d2admin/db/setByUser', {
+        dbName: 'sys',
+        path: 'page.opened',
+        value: state.opened
+      })
     },
     /**
      * @class opened
@@ -172,8 +178,12 @@ export default {
       if (index >= 0) {
         state.opened.splice(index, 1)
       }
-      // 更新设置到数据库
-      this.commit('d2admin/utilVuex2DbByUuid', 'opened')
+      // 持久化
+      this.commit('d2admin/db/setByUser', {
+        dbName: 'sys',
+        path: 'page.opened',
+        value: state.opened
+      })
       // 最后需要判断是否需要跳到首页
       if (isCurrent) {
         const { name = '', params = {}, query = {} } = newPage
@@ -208,8 +218,12 @@ export default {
           name: pageAim
         })
       }
-      // 更新设置到数据库
-      this.commit('d2admin/utilVuex2DbByUuid', 'opened')
+      // 持久化
+      this.commit('d2admin/db/setByUser', {
+        dbName: 'sys',
+        path: 'page.opened',
+        value: state.opened
+      })
     },
     /**
      * @class opened
@@ -232,8 +246,12 @@ export default {
           name: pageAim
         })
       }
-      // 更新设置到数据库
-      this.commit('d2admin/utilVuex2DbByUuid', 'opened')
+      // 持久化
+      this.commit('d2admin/db/setByUser', {
+        dbName: 'sys',
+        path: 'page.opened',
+        value: state.opened
+      })
     },
     /**
      * @class opened
@@ -261,8 +279,12 @@ export default {
           name: pageAim
         })
       }
-      // 更新设置到数据库
-      this.commit('d2admin/utilVuex2DbByUuid', 'opened')
+      // 持久化
+      this.commit('d2admin/db/setByUser', {
+        dbName: 'sys',
+        path: 'page.opened',
+        value: state.opened
+      })
     },
     /**
      * @class opened
@@ -272,8 +294,12 @@ export default {
      */
     closeAll (state, vm) {
       state.opened.splice(1)
-      // 更新设置到数据库
-      this.commit('d2admin/utilVuex2DbByUuid', 'opened')
+      // 持久化
+      this.commit('d2admin/db/setByUser', {
+        dbName: 'sys',
+        path: 'page.opened',
+        value: state.opened
+      })
       // 关闭所有的标签页后需要判断一次现在是不是在首页
       if (vm.$route.name !== 'index') {
         vm.$router.push({
