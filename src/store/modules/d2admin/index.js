@@ -128,59 +128,6 @@ export default {
       set(state, key, row ? handle(row.value) : defaultValue)
     },
     /**
-     * @class 通用工具
-     * @description 访问本地数据库 用户单独空间 没有初始化会自动初始化
-     * @param {Object} state vuex state
-     * @param {Function} fn function
-     */
-    utilDatabaseUser (state, fn) {
-      const uuid = utilLib.cookies.get('uuid')
-      const database = dbLib.get('database').find({ uuid })
-      if (database.value() === undefined) {
-        dbLib.get('database').push({
-          uuid,
-          value: {}
-        }).write()
-        if (fn) {
-          fn(dbLib.get('database').find({ uuid }).get('value'))
-        }
-      } else {
-        if (fn) {
-          fn(database.get('value'))
-        }
-      }
-    },
-    /**
-     * @class 通用工具
-     * @description 访问本地数据库 清空用户单独空间 只负责删除 utilDatabaseUser 会初始化
-     * @param {Object} state vuex state
-     */
-    utilDatabaseUserClear (state) {
-      dbLib.get('database')
-        .remove({ uuid: utilLib.cookies.get('uuid') })
-        .write()
-    },
-    /**
-     * @class 通用工具
-     * @description 访问本地数据库 这份数据是每个用户都可以访问的
-     * @param {Object} state vuex state
-     * @param {Function} fn function
-     */
-    utilDatabase (state, fn) {
-      if (fn) {
-        fn(dbLib.get('databasePublic'))
-      }
-    },
-    /**
-     * @class 通用工具
-     * @description 访问本地数据库 清空公用空间
-     * @param {Object} state vuex state
-     */
-    utilDatabaseClear (state) {
-      dbLib.set('databasePublic', {})
-        .write()
-    },
-    /**
      * @class pagePool
      * @description 保存 pagePool (候选池)
      * @param {Object} state vuex state

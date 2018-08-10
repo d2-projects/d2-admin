@@ -34,17 +34,6 @@ export default {
           }, { root: true })
           // 用户登陆后从数据库加载一系列的设置
           commit('d2admin/account/load', null, { root: true })
-          // 测试
-          // commit('d2admin/db/set', {
-          //   dbName: 'db',
-          //   path: 'log.login',
-          //   value: res.data.name
-          // }, { root: true })
-          commit('d2admin/db/push', {
-            dbName: 'db',
-            path: 'log.login',
-            value: res.data.name
-          }, { root: true })
           // 跳转路由
           vm.$router.push({
             name: 'index'

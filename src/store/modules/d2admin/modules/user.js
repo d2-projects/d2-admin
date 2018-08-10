@@ -31,7 +31,9 @@ export default {
       state.info = await this.dispatch('d2admin/db/getByUser', {
         dbName: 'sys',
         path: 'user.info',
-        defaultValue: '请重新登陆'
+        defaultValue: {
+          name: 'Ghost'
+        }
       })
     }
   }
