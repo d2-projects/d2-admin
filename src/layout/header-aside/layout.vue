@@ -83,7 +83,7 @@ export default {
       asideCollapse: state => state.menu.asideCollapse
     }),
     ...mapGetters('d2admin', {
-      keepAliveInclude: 'keepAliveInclude',
+      keepAliveInclude: 'page/keepAliveInclude',
       themeActiveSetting: 'theme/activeSetting'
     }),
     /**

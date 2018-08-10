@@ -11,7 +11,7 @@ db.defaults({
   sys: {},
   db: {},
   // 旧
-  pageOpenedList: [],
+  opened: [],
   database: [],
   databasePublic: {}
 }).write()

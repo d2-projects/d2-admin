@@ -100,8 +100,8 @@
             <div style="height: 300px; overflow: auto;">
               <tree-view
                 class="tree-view-small"
-                :data="pageOpenedList"
-                :options="{ rootObjectKey: 'pageOpenedList', maxDepth: 1 }"/>
+                :data="pageopened"
+                :options="{ rootObjectKey: 'pageopened', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -149,15 +149,14 @@ export default {
       // 全屏
       fullscreenActive: state => state.fullscreen.active,
       // 灰度模式
-      grayActive: state => state.gray.active
+      grayActive: state => state.gray.active,
+      // tag 池
+      pagePool: state => state.page.pool,
+      pageCurrent: state => state.page.current,
+      pageopened: state => state.page.opened
     }),
-    ...mapState('d2admin', [
-      'pagePool',
-      'pageOpenedList',
-      'pageCurrent'
-    ]),
     ...mapGetters('d2admin', {
-      keepAliveInclude: 'keepAliveInclude',
+      keepAliveInclude: 'page/keepAliveInclude',
       themeActiveSetting: 'theme/activeSetting'
     })
   }

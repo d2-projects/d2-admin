@@ -97,7 +97,7 @@ export default {
       // DB -> store 加载主题
       this.commit('d2admin/theme/load')
       // DB -> store 数据库加载上次退出时的多页列表
-      this.commit('d2admin/pageOpenedListLoad')
+      this.commit('d2admin/page/openedLoad')
       // DB -> store 数据库加载这个用户之前设置的侧边栏折叠状态
       this.commit('d2admin/menu/asideCollapseLoad')
     }
