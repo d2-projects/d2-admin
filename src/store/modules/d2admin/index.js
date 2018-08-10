@@ -1,4 +1,3 @@
-// 模块
 import db from './modules/db'
 import releases from './modules/releases'
 import user from './modules/user'
