@@ -77,6 +77,7 @@ export default {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
+          path: '',
           user: false,
           defaultValue: {}
         })))
@@ -89,6 +90,7 @@ export default {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
+          path: '',
           user: false,
           validator: () => false,
           defaultValue: {}
@@ -102,6 +104,7 @@ export default {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
+          path: '',
           user: true,
           defaultValue: {}
         })))
@@ -114,6 +117,7 @@ export default {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
+          path: '',
           user: true,
           validator: () => false,
           defaultValue: {}
