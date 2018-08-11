@@ -17,16 +17,15 @@ function pathInit ({
   validator = () => true,
   defaultValue = ''
 }) {
-  const sys = db.get(dbName)
   const uuid = util.cookies.get('uuid') || 'ghost-uuid'
-  const currentPath = `${user ? `user.${uuid}` : 'public'}.${path}`
-  const value = sys.get(currentPath).value()
+  const currentPath = `${dbName}.${user ? `user.${uuid}` : 'public'}${path ? `.${path}` : ''}`
+  const value = db.get(currentPath).value()
   if (!(value && validator(value))) {
-    sys
+    db
       .set(currentPath, defaultValue)
       .write()
   }
-  return `${dbName}.${currentPath}`
+  return currentPath
 }
 
 export default {
@@ -72,6 +71,56 @@ export default {
   },
   actions: {
     /**
+     * @description 获取存储数据库对象
+     */
+    database () {
+      return new Promise(resolve => {
+        resolve(db.get(pathInit({
+          dbName: 'database',
+          user: false,
+          defaultValue: {}
+        })))
+      })
+    },
+    /**
+     * @description 清空存储数据库对象
+     */
+    databaseClear () {
+      return new Promise(resolve => {
+        resolve(db.get(pathInit({
+          dbName: 'database',
+          user: false,
+          validator: () => false,
+          defaultValue: {}
+        })))
+      })
+    },
+    /**
+     * @description 获取存储数据库对象 [区分用户]
+     */
+    databaseByUser () {
+      return new Promise(resolve => {
+        resolve(db.get(pathInit({
+          dbName: 'database',
+          user: true,
+          defaultValue: {}
+        })))
+      })
+    },
+    /**
+     * @description 清空存储数据库对象 [区分用户]
+     */
+    databaseByUserClear () {
+      return new Promise(resolve => {
+        resolve(db.get(pathInit({
+          dbName: 'database',
+          user: true,
+          validator: () => false,
+          defaultValue: {}
+        })))
+      })
+    },
+    /**
      * @description 获取数据
      * @description 效果类似于 dbName.path || defaultValue
      * @param {Object} state vuex state
@@ -84,7 +133,7 @@ export default {
       path = '',
       defaultValue = ''
     }) {
-      return new Promise((resolve, reject) => {
+      return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName,
           path,

@@ -40,7 +40,9 @@ export default {
       title: '数据持久化',
       icon: 'database',
       children: [
-        { path: `${pre}db/util`, title: 'db.util', icon: 'cube' }
+        { path: `${pre}db/all`, title: '全部数据', icon: 'table' },
+        { path: `${pre}db/user`, title: '用户数据', icon: 'user' },
+        { path: `${pre}db/public`, title: '公用数据', icon: 'users' }
       ]
     },
     {
