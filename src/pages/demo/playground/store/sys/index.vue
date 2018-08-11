@@ -111,8 +111,8 @@
             <div style="height: 300px; overflow: auto;">
               <tree-view
                 class="tree-view-small"
-                :data="keepAliveInclude"
-                :options="{ rootObjectKey: 'keepAliveInclude', maxDepth: 1 }"/>
+                :data="keepAlive"
+                :options="{ rootObjectKey: 'keepAlive', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
@@ -156,7 +156,7 @@ export default {
       pageopened: state => state.page.opened
     }),
     ...mapGetters('d2admin', {
-      keepAliveInclude: 'page/keepAliveInclude',
+      keepAlive: 'page/keepAlive',
       themeActiveSetting: 'theme/activeSetting'
     })
   }
