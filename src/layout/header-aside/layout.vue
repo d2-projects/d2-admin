@@ -44,7 +44,7 @@
           </div>
           <div class="d2-theme-container-main-body" flex-box="1">
             <transition name="fade-transverse">
-              <keep-alive :include="keepAliveInclude">
+              <keep-alive :include="keepAlive">
                 <router-view/>
               </keep-alive>
             </transition>
@@ -83,7 +83,7 @@ export default {
       asideCollapse: state => state.menu.asideCollapse
     }),
     ...mapGetters('d2admin', {
-      keepAliveInclude: 'page/keepAliveInclude',
+      keepAlive: 'page/keepAlive',
       themeActiveSetting: 'theme/activeSetting'
     }),
     /**

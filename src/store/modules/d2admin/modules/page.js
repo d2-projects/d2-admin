@@ -23,7 +23,7 @@ export default {
      * @description 从当前所有打开的多标签页里返回需要缓存的页面 name
      * @param {*} state vuex state
      */
-    keepAliveInclude (state) {
+    keepAlive (state) {
       return state.opened.filter(item => {
         if (item.meta) {
           if (item.meta.notCache) {
@@ -53,7 +53,7 @@ export default {
       })
       if (pageOpend) {
         // 页面以前打开过 但是新的页面可能 name 一样，参数不一样
-        this.commit('d2admin/page/openedUpdateItem', {
+        this.commit('d2admin/page/openedUpdate', {
           index: pageOpendIndex,
           params,
           query
@@ -62,7 +62,11 @@ export default {
         // 页面以前没有打开过
         let page = state.pool.find(t => t.name === name)
         if (page) {
-          this.commit('d2admin/page/add', { tag: page, params, query })
+          this.commit('d2admin/page/add', {
+            tag: page,
+            params,
+            query
+          })
         }
       }
       this.commit('d2admin/page/currentSet', name)
@@ -82,7 +86,7 @@ export default {
      * @param {Object} state vuex state
      * @param {Object} param { index, params, query } 路由信息
      */
-    openedUpdateItem (state, { index, params, query }) {
+    openedUpdate (state, { index, params, query }) {
       // 更新页面列表某一项
       let page = state.opened[index]
       page.params = params || page.params
