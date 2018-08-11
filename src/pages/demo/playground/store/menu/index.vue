@@ -1,46 +1,21 @@
 <template>
-  <d2-container type="ghost">
-    <template slot="header">菜单控制试验台</template>
-    <el-row :gutter="20" class="d2-mt d2-mb">
-      <el-col :span="12">
-        <el-card shadow="never" class="d2-card">
-          <template slot="header">顶栏菜单</template>
-          <el-button-group class="d2-mb">
-            <el-button @click="handleMenuHeaderSet">设置空菜单</el-button>
-            <el-button @click="menuHeaderReset">恢复</el-button>
-          </el-button-group>
-          <div style="height: 400px; overflow: auto;">
-            <d2-highlight :code="JSON.stringify(menuHeader, null, 2)"/>
-            <!-- <tree-view
-              class="tree-view-small"
-              :data="menuHeader"
-              :options="{
-                rootObjectKey: 'menuHeader',
-                maxDepth: 1
-              }"/> -->
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="12">
-        <el-card shadow="never" class="d2-card">
-          <template slot="header">侧栏菜单</template>
-          <el-button-group class="d2-mb">
-            <el-button @click="handleMenuAsideSet">设置空菜单</el-button>
-            <el-button @click="menuAsideReset">恢复</el-button>
-          </el-button-group>
-          <div style="height: 400px; overflow: auto;">
-            <d2-highlight :code="JSON.stringify(menuAside, null, 2)"/>
-            <!-- <tree-view
-              class="tree-view-small"
-              :data="menuAside"
-              :options="{
-                rootObjectKey: 'menuAside',
-                maxDepth: 1
-              }"/> -->
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
+  <d2-container>
+    <el-tabs>
+      <el-tab-pane label="顶栏菜单">
+        <el-button-group class="d2-mb">
+          <el-button @click="handleMenuHeaderSet">设置顶栏空菜单</el-button>
+          <el-button @click="menuHeaderReset">恢复顶栏菜单</el-button>
+        </el-button-group>
+        <d2-highlight :code="JSON.stringify(menuHeader, null, 2)"/>
+      </el-tab-pane>
+      <el-tab-pane label="侧栏菜单">
+        <el-button-group class="d2-mb">
+          <el-button @click="handleMenuAsideSet">设置侧栏空菜单</el-button>
+          <el-button @click="menuAsideReset">恢复侧栏菜单</el-button>
+        </el-button-group>
+        <d2-highlight :code="JSON.stringify(menuAside, null, 2)"/>
+      </el-tab-pane>
+    </el-tabs>
   </d2-container>
 </template>
 
