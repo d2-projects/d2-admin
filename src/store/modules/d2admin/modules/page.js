@@ -123,7 +123,7 @@ export default {
       // 在处理函数中进行数据优化 过滤掉现在已经失效的页签或者已经改变了信息的页签
       // 以 name 字段为准
       // 如果页面过多的话可能需要优化算法
-      // 有效列表 1, 1, 0, 1 => 有效, 有效, 失效, 有效
+      // valid 有效列表 1, 1, 0, 1 => 有效, 有效, 失效, 有效
       const valid = []
       // 处理数据
       state.opened = value.map(opened => {
@@ -140,7 +140,6 @@ export default {
         // 新的数据中一般不会携带 params 和 query, 所以旧的参数会留存
         return Object.assign({}, opened, find)
       }).filter((opened, index) => valid[index] === 1)
-      console.log('state.opened', state.opened)
     },
     /**
      * @class opened
