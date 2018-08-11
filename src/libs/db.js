@@ -9,11 +9,7 @@ const db = low(adapter)
 db.defaults({
   // 新
   sys: {},
-  db: {},
-  // 旧
-  opened: [],
-  database: [],
-  databasePublic: {}
+  db: {}
 }).write()
 
 export default db

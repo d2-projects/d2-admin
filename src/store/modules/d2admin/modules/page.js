@@ -93,6 +93,13 @@ export default {
       page.query = query || page.query
       state.opened.splice(index, 1, page)
       // 持久化
+      this.commit('d2admin/page/opend2db')
+    },
+    /**
+     * 将 opened 属性赋值并持久化 在这之前请先确保已经更新了 state.opened
+     * @param {Object} state vuex state
+     */
+    opend2db (state) {
       this.commit('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'page.opened',
@@ -109,7 +116,9 @@ export default {
       const value = await this.dispatch('d2admin/db/getByUser', {
         dbName: 'sys',
         path: 'page.opened',
-        defaultValue: []
+        defaultValue: [
+          openedDefult
+        ]
       })
       // 在处理函数中进行数据优化 过滤掉现在已经失效的页签或者已经改变了信息的页签
       // 以 name 字段为准
@@ -131,6 +140,7 @@ export default {
         // 新的数据中一般不会携带 params 和 query, 所以旧的参数会留存
         return Object.assign({}, opened, find)
       }).filter((opened, index) => valid[index] === 1)
+      console.log('state.opened', state.opened)
     },
     /**
      * @class opened
@@ -146,11 +156,7 @@ export default {
       // 添加进当前显示的页面数组
       state.opened.push(newTag)
       // 持久化
-      this.commit('d2admin/db/setByUser', {
-        dbName: 'sys',
-        path: 'page.opened',
-        value: state.opened
-      })
+      this.commit('d2admin/page/opend2db')
     },
     /**
      * @class opened
@@ -183,11 +189,7 @@ export default {
         state.opened.splice(index, 1)
       }
       // 持久化
-      this.commit('d2admin/db/setByUser', {
-        dbName: 'sys',
-        path: 'page.opened',
-        value: state.opened
-      })
+      this.commit('d2admin/page/opend2db')
       // 最后需要判断是否需要跳到首页
       if (isCurrent) {
         const { name = '', params = {}, query = {} } = newPage
@@ -223,11 +225,7 @@ export default {
         })
       }
       // 持久化
-      this.commit('d2admin/db/setByUser', {
-        dbName: 'sys',
-        path: 'page.opened',
-        value: state.opened
-      })
+      this.commit('d2admin/page/opend2db')
     },
     /**
      * @class opened
@@ -251,11 +249,7 @@ export default {
         })
       }
       // 持久化
-      this.commit('d2admin/db/setByUser', {
-        dbName: 'sys',
-        path: 'page.opened',
-        value: state.opened
-      })
+      this.commit('d2admin/page/opend2db')
     },
     /**
      * @class opened
@@ -284,11 +278,7 @@ export default {
         })
       }
       // 持久化
-      this.commit('d2admin/db/setByUser', {
-        dbName: 'sys',
-        path: 'page.opened',
-        value: state.opened
-      })
+      this.commit('d2admin/page/opend2db')
     },
     /**
      * @class opened
@@ -299,11 +289,7 @@ export default {
     closeAll (state, vm) {
       state.opened.splice(1)
       // 持久化
-      this.commit('d2admin/db/setByUser', {
-        dbName: 'sys',
-        path: 'page.opened',
-        value: state.opened
-      })
+      this.commit('d2admin/page/opend2db')
       // 关闭所有的标签页后需要判断一次现在是不是在首页
       if (vm.$route.name !== 'index') {
         vm.$router.push({

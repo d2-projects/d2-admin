@@ -55,7 +55,7 @@ export default {
   data () {
     return {
       dbName: 'db',
-      path: 'sandbox.demo-playground-db-util',
+      path: 'demo-playground-db-util',
       key: 'demoKey',
       value: 'demo text',
       dbData: ''
