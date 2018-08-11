@@ -8,6 +8,7 @@ import util from '@/libs/util.js'
  * @param {Object} param user {Boolean} 区分用户
  * @param {Object} param validator {Function} 数据校验钩子 返回 true 表示验证通过
  * @param {Object} param defaultValue {*} 初始化默认值
+ * @returns {String} 可以直接使用的路径
  */
 function pathInit ({
   dbName = 'db',
