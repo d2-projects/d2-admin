@@ -7,8 +7,11 @@ const db = low(adapter)
 
 // 初始化数据库
 db.defaults({
-  // 新
+  // 系统
   sys: {},
+  // 存储
+  database: {},
+  // 暂时的
   db: {}
 }).write()
 
