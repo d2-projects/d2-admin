@@ -128,7 +128,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import get from 'lodash.get'
+import { get } from 'lodash'
 import ExpandItem from './components/ExpandItem'
 export default {
   name: 'd2-error-log-list',
