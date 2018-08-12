@@ -43,6 +43,7 @@ const frameIn = [
       { path: 'db/public', name: `${pre}db-public`, component: () => import('@/pages/demo/playground/db/public'), meta: { ...meta, title: '公用数据' } },
       { path: 'log/log', name: `${pre}log-log`, component: () => import('@/pages/demo/playground/log/log'), meta: { ...meta, title: '日志记录' } },
       { path: 'log/error', name: `${pre}log-error`, component: () => import('@/pages/demo/playground/log/error'), meta: { ...meta, title: '错误捕捉' } },
+      { path: 'log/console', name: `${pre}log-console`, component: () => import('@/pages/demo/playground/log/console'), meta: { ...meta, title: '控制台日志' } },
       { path: 'env', name: `${pre}env`, component: () => import('@/pages/demo/playground/env'), meta: { ...meta, title: '环境信息' } }
     ])('demo-playground-')
   },

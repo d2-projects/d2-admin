@@ -51,7 +51,8 @@ export default {
       icon: 'bullseye',
       children: [
         { path: `${pre}log/log`, title: '日志记录', icon: 'dot-circle-o' },
-        { path: `${pre}log/error`, title: '错误捕捉', icon: 'bug' }
+        { path: `${pre}log/error`, title: '错误捕捉', icon: 'bug' },
+        { path: `${pre}log/console`, title: '控制台日志', icon: 'lightbulb-o' }
       ]
     },
     { path: `${pre}env`, title: '环境信息', icon: 'exclamation-circle' }

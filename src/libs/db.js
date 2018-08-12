@@ -10,9 +10,7 @@ db.defaults({
   // 系统
   sys: {},
   // 存储
-  database: {},
-  // 暂时的
-  db: {}
+  database: {}
 }).write()
 
 export default db
