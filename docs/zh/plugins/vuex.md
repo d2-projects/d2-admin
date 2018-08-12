@@ -416,7 +416,7 @@ this.$store.commit('d2adminMenuHeaderSet', menuHeader)
 
 | 字段名 | 介绍 | 必选 | 值类型 | 默认值 |
 | --- | --- | --- | --- | --- |
-| path | 路由 path | 非 | String | `lodash.uniqueid('d2-menu-empty-')` |
+| path | 路由 path | 非 | String | `lodash.uniqueId('d2-menu-empty-')` |
 | title | 菜单名称 | 必选 | String | 未命名菜单 |
 | icon | 菜单图标 | 非 | String | file-o |
 | children | 子菜单数据 | 非 | Array |  |

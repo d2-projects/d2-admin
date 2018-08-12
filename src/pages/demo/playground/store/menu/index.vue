@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import clonedeep from 'lodash.clonedeep'
+import { cloneDeep } from 'lodash'
 import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
@@ -55,8 +55,8 @@ export default {
     ])
   },
   created () {
-    this.headerBak = clonedeep(this.header)
-    this.asideBak = clonedeep(this.aside)
+    this.headerBak = cloneDeep(this.header)
+    this.asideBak = cloneDeep(this.aside)
   },
   beforeDestroy () {
     if (this.headerChanged && this.asideChanged) {

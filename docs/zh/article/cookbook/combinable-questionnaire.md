@@ -218,12 +218,12 @@ export default {
 
 ``` vue
 <script>
-import sortby from 'lodash.sortby'
+import { sortBy } from 'lodash'
 const req = context => context.keys().map(context)
 const forms = req(require.context('./components/Form/', false, /\.vue$/))
 const components = {}
 const formList = []
-sortby(forms.map(e => {
+sortBy(forms.map(e => {
   const component = e.default
   const { index, title, name } = component
   return { component, title, index, name }
@@ -271,7 +271,7 @@ const forms = req(require.context('./components/Form/', false, /\.vue$/))
 然后通过
 
 ``` js
-sortby(forms.map(e => {
+sortBy(forms.map(e => {
   const component = e.default
   const { index, title, name } = component
   return { component, title, index, name }
@@ -398,12 +398,12 @@ export default {
 </template>
 
 <script>
-import sortby from 'lodash.sortby'
+import { sortBy } from 'lodash'
 const req = context => context.keys().map(context)
 const forms = req(require.context('./components/Form/', false, /\.vue$/))
 const components = {}
 const formList = []
-sortby(forms.map(e => {
+sortBy(forms.map(e => {
   const component = e.default
   const { index, title, name } = component
   return { component, title, index, name }

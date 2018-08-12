@@ -297,6 +297,7 @@ export default [
 
 | 名称 | 介绍 |
 | --- | --- |
+| [lodash](https://lodash.com/docs/4.17.10) | 一致性、模块化、高性能的 JavaScript 实用工具库 |
 | [axios](https://github.com/axios/axios) | 最流行的网络请求库 |
 | [better-scroll](https://github.com/ustbhuangyi/better-scroll) | [d2-container](../components/container.md) 的自定义滚动条依赖 |
 | [dayjs](https://github.com/iamkun/dayjs) | 日期处理库 |

@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import sortby from 'lodash.sortby'
+import { sortBy } from 'lodash'
 const req = context => context.keys().map(context)
 const tables = req(require.context('./components', true, /\.vue$/))
 const components = {}
 const tableList = []
-sortby(tables.map(e => ({
+sortBy(tables.map(e => ({
   component: e.default,
   index: e.default.index
 })), ['index']).forEach((table, index) => {

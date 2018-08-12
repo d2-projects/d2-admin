@@ -1,5 +1,5 @@
 <template>
-  <el-submenu :index="menu.path || uniqueid">
+  <el-submenu :index="menu.path || uniqueId">
     <template slot="title">
       <i :class="`fa fa-${menu.icon || 'folder-o'}`"></i>
       <span slot="title">{{menu.title}}</span>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import uniqueid from 'lodash.uniqueid'
+import { uniqueId } from 'lodash'
 // 组件
 import d2LayoutMainMenuItem from '../menu-item'
 
@@ -30,7 +30,7 @@ export default {
   },
   data () {
     return {
-      uniqueid: uniqueid('d2-menu-empty-')
+      uniqueId: uniqueId('d2-menu-empty-')
     }
   }
 }

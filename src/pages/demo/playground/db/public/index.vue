@@ -84,8 +84,7 @@ export default {
      * 清空当前用户的数据
      */
     async handleClear () {
-      const db = await this.databaseClear()
-      // db 是已经清空了的数据库对象 没有后续操作的话可以不接收这个值
+      await this.databaseClear()
       this.load()
     },
     /**
