@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container class="page">
     <p class="d2-mt-0">$log.capsule</p>
     <el-button size="small" type="primary" @click="$log.capsule('title', 'primary')">
       $log.capsule('title', 'primary')
@@ -33,6 +33,10 @@
     <el-button size="small" type="danger" @click="$log.danger('danger style')">
       $log.danger('danger style')
     </el-button>
+    <p>效果 ( Chrome )</p>
+    <img
+      class="page__image-demo"
+      src="./image/demo.png">
   </d2-container>
 </template>
 
@@ -52,3 +56,13 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+@import '~@/assets/style/public.scss';
+.page {
+  .page__image-demo {
+    border-radius: 4px;
+    width: 260px;
+    border: 1px solid $color-border-1;
+  }
+}
+</style>
