@@ -29,8 +29,12 @@ export default {
       }, this.betterScrollOptions))
     },
     scrollDestroy () {
-      if (this.BS) {
+      // https://github.com/d2-projects/d2-admin/issues/75
+      try {
         this.BS.destroy()
+      } catch (e) {
+        delete this.BS
+        this.BS = null
       }
     }
   }
