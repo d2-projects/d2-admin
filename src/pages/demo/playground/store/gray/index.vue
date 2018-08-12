@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="card" class="page-demo-playground-gray">
+  <d2-container type="card" class="page">
     <template slot="header">
       <div class="colorful">{{grayActive ? 'GRAY' : 'COLORFUL'}}</div>
     </template>
@@ -68,7 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
-.page-demo-playground-gray {
+.page {
   .colorful {
     @extend %unable-select;
     line-height: 300px;
