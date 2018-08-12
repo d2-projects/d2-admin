@@ -18,6 +18,20 @@ util.title = function (titleText) {
 }
 
 /**
+ * @description 打开新页面
+ * @param {String} url 地址
+ */
+util.open = function (url) {
+  var a = document.createElement('a')
+  a.setAttribute('href', url)
+  a.setAttribute('target', '_blank')
+  a.setAttribute('id', 'd2admin-menu-link')
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(document.getElementById('d2admin-menu-link'))
+}
+
+/**
  * @description 判断是否在其内
  * @param {*} ele element
  * @param {Array} targetArr array
