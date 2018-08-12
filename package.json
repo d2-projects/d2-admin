@@ -38,7 +38,7 @@
     "ua-parser-js": "^0.7.18",
     "v-charts": "^1.17.6",
     "v-contextmenu": "^2.7.0",
-    "vue": "^2.5.16",
+    "vue": "^2.5.17",
     "vue-grid-layout": "^2.1.11",
     "vue-i18n": "^7.4.2",
     "vue-json-tree-view": "^2.1.4",
@@ -49,23 +49,32 @@
   },
   "devDependencies": {
     "@kazupon/vue-i18n-loader": "^0.3.0",
-    "@vue/cli-plugin-babel": "^3.0.0-rc.4",
-    "@vue/cli-plugin-eslint": "^3.0.0-rc.4",
-    "@vue/cli-plugin-unit-jest": "^3.0.0-rc.4",
-    "@vue/cli-service": "^3.0.0-rc.4",
-    "@vue/eslint-config-standard": "^3.0.0-rc.4",
+    "@vue/cli-plugin-babel": "^3.0.0",
+    "@vue/cli-plugin-eslint": "^3.0.0",
+    "@vue/cli-plugin-unit-jest": "^3.0.0",
+    "@vue/cli-service": "^3.0.0",
+    "@vue/eslint-config-standard": "^3.0.0",
     "@vue/test-utils": "^1.0.0-beta.20",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
+    "lint-staged": "^7.2.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "svg-sprite-loader": "^3.8.0",
     "text-loader": "0.0.1",
-    "vue-template-compiler": "^2.5.16"
+    "vue-template-compiler": "^2.5.17"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
 }
