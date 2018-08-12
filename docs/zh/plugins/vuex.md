@@ -2,6 +2,10 @@
 sidebarDepth: 3
 ---
 
+::: tip
+此文档已经不对应最新版本的代码，文档会在稍后完善
+:::
+
 # VUEX 实用工具
 
 D2Admin 的 vuex 模块位置：`d2-admin/src/store/modules/d2admin.js`
