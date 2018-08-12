@@ -38,6 +38,18 @@ export const menuHeader = [
       demoPlugins,
       demoPlayground,
       {
+        title: '跳转外部链接',
+        icon: 'link',
+        children: [
+          { path: 'https://github.com/d2-projects/d2-admin', title: 'D2Admin Github', icon: 'github' },
+          { path: 'https://juejin.im/user/57a48b632e958a006691b946/posts', title: '掘金', icon: 'globe' },
+          { path: 'https://my.oschina.net/u/3871516', title: '开源中国', icon: 'globe' },
+          { path: 'https://www.zhihu.com/people/fairy-ever/activities', title: '知乎', icon: 'globe' },
+          { path: 'https://segmentfault.com/blog/liyang-note-book', title: 'segmentfault 专栏', icon: 'globe' },
+          { path: 'http://www.fairyever.com/', title: 'www.fairyever.com', icon: 'globe' }
+        ]
+      },
+      {
         title: '空菜单演示',
         icon: 'folder-o',
         children: [

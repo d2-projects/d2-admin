@@ -20,7 +20,6 @@ import pluginLog from '@/plugin/log'
 import pluginError from '@/plugin/error'
 import pluginImport from '@/plugin/import'
 import pluginExport from '@/plugin/export'
-import pluginOpen from '@/plugin/open'
 
 // 菜单和路由设置
 import router from './router'
@@ -34,13 +33,14 @@ Vue.use(pluginLog)
 Vue.use(pluginError)
 Vue.use(pluginImport)
 Vue.use(pluginExport)
-Vue.use(pluginOpen)
 Vue.use(vueJsonTreeView)
 
 Vue.config.productionTip = false
 
 Vue.prototype.$env = process.env.NODE_ENV
 Vue.prototype.$baseUrl = process.env.BASE_URL
+
+Vue.prototype.$open = util.open
 
 new Vue({
   router,
