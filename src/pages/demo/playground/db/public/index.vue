@@ -32,7 +32,7 @@
 
 <script>
 import day from 'dayjs'
-import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -54,66 +54,63 @@ export default {
     this.load()
   },
   methods: {
-    ...mapMutations([
-      'd2adminUtilDatabase',
-      'd2adminUtilDatabaseClear'
+    ...mapActions('d2admin/db', [
+      'database',
+      'databaseClear'
     ]),
     /**
      * 加载本地数据
      */
-    load () {
-      this.d2adminUtilDatabase(database => {
-        this.dataDisplay = JSON.stringify(database.value(), null, 2)
-        this.keyNameList = Object.keys(database.value()).map(k => ({
-          value: k,
-          label: k
-        }))
-      })
+    async load () {
+      const db = await this.database()
+      this.dataDisplay = JSON.stringify(db.value(), null, 2)
+      this.keyNameList = Object.keys(db.value()).map(k => ({
+        value: k,
+        label: k
+      }))
     },
     /**
      * 删除一个字段
      */
-    handleDelete (name) {
-      this.d2adminUtilDatabase(database => {
-        database
-          .unset(name)
-          .write()
-      })
+    async handleDelete (name) {
+      const db = await this.database()
+      db
+        .unset(name)
+        .write()
       this.load()
       this.keyNameToDelete = ''
     },
     /**
      * 清空当前用户的数据
      */
-    handleClear () {
-      this.d2adminUtilDatabaseClear()
+    async handleClear () {
+      const db = await this.databaseClear()
+      // db 是已经清空了的数据库对象 没有后续操作的话可以不接收这个值
       this.load()
     },
     /**
      * 添加一个数据
      */
-    handleSet () {
+    async handleSet () {
       if (this.keyNameToSet === '') {
         this.$message.error('字段名不能为空')
         return
       }
-      this.d2adminUtilDatabase(database => {
-        database
-          .set(this.keyNameToSet, this.valueToSet)
-          .write()
-      })
+      const db = await this.database()
+      db
+        .set(this.keyNameToSet, this.valueToSet)
+        .write()
       this.load()
     },
     /**
      * 添加一个随机数据
      */
-    handleSetRandom () {
-      this.d2adminUtilDatabase(database => {
-        const id = day().valueOf()
-        database
-          .set(id, Math.round(id * Math.random()))
-          .write()
-      })
+    async handleSetRandom () {
+      const id = day().valueOf()
+      const db = await this.database()
+      db
+        .set(id, Math.round(id * Math.random()))
+        .write()
       this.load()
     }
   }

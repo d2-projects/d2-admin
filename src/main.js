@@ -51,17 +51,17 @@ new Vue({
     // 处理路由 得到每一级的路由设置
     this.getAllPageFromRoutes()
     // 设置顶栏菜单
-    this.$store.commit('d2adminMenuHeaderSet', menuHeader)
+    this.$store.commit('d2admin/menu/headerSet', menuHeader)
   },
   mounted () {
     // D2Admin 开发环境检查更新
     util.checkUpdate(this)
     // 获取并记录用户 UA
-    this.$store.commit('d2adminUaGet')
+    this.$store.commit('d2admin/ua/get')
     // 展示系统信息
     util.showInfo()
     // 用户登陆后从数据库加载一系列的设置
-    this.$store.commit('d2adminLoginSuccessLoad')
+    this.$store.commit('d2admin/account/load')
     // 初始化全屏监听
     this.fullscreenListenerInit()
   },
@@ -69,7 +69,7 @@ new Vue({
     // 监听路由 控制侧边栏显示
     '$route.matched' (val) {
       const _side = menuAside.filter(menu => menu.path === val[0].path)
-      this.$store.commit('d2adminMenuAsideSet', _side.length > 0 ? _side[0].children : [])
+      this.$store.commit('d2admin/menu/asideSet', _side.length > 0 ? _side[0].children : [])
     }
   },
   methods: {
@@ -80,7 +80,7 @@ new Vue({
       if (screenfull.enabled) {
         screenfull.on('change', () => {
           if (!screenfull.isFullscreen) {
-            this.$store.commit('d2adminFullScreenSet', false)
+            this.$store.commit('d2admin/fullscreen/set', false)
           }
         })
       }
@@ -101,7 +101,7 @@ new Vue({
         })
       }
       push(frameInRoutes)
-      this.$store.commit('d2adminPagePoolSet', pool)
+      this.$store.commit('d2admin/page/poolSet', pool)
     }
   }
 }).$mount('#app')

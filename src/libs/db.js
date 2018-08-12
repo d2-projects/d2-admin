@@ -7,12 +7,12 @@ const db = low(adapter)
 
 // 初始化数据库
 db.defaults({
-  themeActiveName: [],
-  pageOpenedList: [],
-  userInfo: [],
-  isMenuAsideCollapse: [],
-  database: [],
-  databasePublic: {}
+  // 系统
+  sys: {},
+  // 存储
+  database: {},
+  // 暂时的
+  db: {}
 }).write()
 
 export default db
