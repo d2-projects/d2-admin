@@ -15,5 +15,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
-package-lock.json
+
+# d2admin
 dev/design
