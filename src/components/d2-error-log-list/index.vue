@@ -116,7 +116,7 @@
 
     <el-table-column
       label="错误信息"
-      width="140px">
+      width="300px">
       <template
         slot-scope="scope">
         {{get(scope.row.err, 'message', '')}}
