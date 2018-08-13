@@ -43,7 +43,7 @@
             <d2-tabs/>
           </div>
           <div class="d2-theme-container-main-body" flex-box="1">
-            <transition name="fade-transverse">
+            <transition :name="transitionActive ? 'fade-transverse' : ''">
               <keep-alive :include="keepAlive">
                 <router-view/>
               </keep-alive>
@@ -80,6 +80,7 @@ export default {
   computed: {
     ...mapState('d2admin', {
       grayActive: state => state.gray.active,
+      transitionActive: state => state.transition.active,
       asideCollapse: state => state.menu.asideCollapse
     }),
     ...mapGetters('d2admin', {

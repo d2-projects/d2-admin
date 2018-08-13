@@ -38,6 +38,7 @@ const frameIn = [
       { path: 'store/gray', name: `${pre}store-gray`, component: () => import('@/pages/demo/playground/store/gray'), meta: { ...meta, title: '灰度模式' } },
       { path: 'store/fullscreen', name: `${pre}store-fullscreen`, component: () => import('@/pages/demo/playground/store/fullscreen'), meta: { ...meta, title: '全屏' } },
       { path: 'store/theme', name: `${pre}store-theme`, component: () => import('@/pages/demo/playground/store/theme'), meta: { ...meta, title: '主题' } },
+      { path: 'store/transition', name: `${pre}store-transition`, component: () => import('@/pages/demo/playground/store/transition'), meta: { ...meta, title: '页面过渡开关' } },
       { path: 'db/all', name: `${pre}db-all`, component: () => import('@/pages/demo/playground/db/all'), meta: { ...meta, title: '全部数据' } },
       { path: 'db/user', name: `${pre}db-user`, component: () => import('@/pages/demo/playground/db/user'), meta: { ...meta, title: '用户数据' } },
       { path: 'db/public', name: `${pre}db-public`, component: () => import('@/pages/demo/playground/db/public'), meta: { ...meta, title: '公用数据' } },
