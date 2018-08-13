@@ -32,7 +32,8 @@ export default {
         { path: `${pre}store/ua`, title: '浏览器信息', icon: 'info-circle' },
         { path: `${pre}store/gray`, title: '灰度模式', icon: 'eye' },
         { path: `${pre}store/fullscreen`, title: '全屏', icon: 'arrows-alt' },
-        { path: `${pre}store/theme`, title: '主题', icon: 'diamond' }
+        { path: `${pre}store/theme`, title: '主题', icon: 'diamond' },
+        { path: `${pre}store/transition`, title: '页面过渡开关', icon: 'toggle-on' }
       ]
     },
     {

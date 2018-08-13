@@ -20,7 +20,7 @@ function pathInit ({
   const uuid = util.cookies.get('uuid') || 'ghost-uuid'
   const currentPath = `${dbName}.${user ? `user.${uuid}` : 'public'}${path ? `.${path}` : ''}`
   const value = db.get(currentPath).value()
-  if (!(value && validator(value))) {
+  if (!(value !== undefined && validator(value))) {
     db
       .set(currentPath, defaultValue)
       .write()
