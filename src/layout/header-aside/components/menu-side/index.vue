@@ -11,7 +11,7 @@
         <d2-layout-header-aside-menu-sub v-else :menu="menu" :key="menuIndex"/>
       </template>
     </el-menu>
-    <div v-if="menuAside.length === 0 && !isMenuAsideCollapse" class="d2-layout-header-aside-menu-empty">
+    <div v-if="menuAside.length === 0 && !isMenuAsideCollapse" class="d2-layout-header-aside-menu-empty" flex="dir:top main:center cross:center">
       <d2-icon name="inbox"/>
       <span>没有侧栏菜单</span>
     </div>
