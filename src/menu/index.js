@@ -36,7 +36,6 @@ export const menuHeader = [
       demoElement,
       demoCharts,
       demoPlugins,
-      demoPlayground,
       {
         title: '跳转外部链接',
         icon: 'link',
@@ -66,5 +65,6 @@ export const menuHeader = [
       }
     ]
   },
+  demoPlayground,
   demoBusiness
 ]
