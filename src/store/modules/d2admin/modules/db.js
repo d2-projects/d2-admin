@@ -51,7 +51,7 @@ export default {
       }), value).write()
     },
     /**
-     * @description 将数据存储到指定位置 | 路径不存在会自动初始化 [区分用户]
+     * @description 将数据存储到指定位置 | 路径不存在会自动初始化 [ 区分用户 ]
      * @description 效果类似于 dbName.path[user] = value
      * @param {Object} state vuex state
      * @param {Object} param dbName {String} 数据库名称
@@ -72,53 +72,142 @@ export default {
   actions: {
     /**
      * @description 获取存储数据库对象
+     * @param {Object} context context
+     * @param {Object} param user {Boolean} 是否区分用户
      */
-    database () {
+    database (context, {
+      user = false
+    } = {}) {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
           path: '',
-          user: false,
+          user,
           defaultValue: {}
         })))
       })
     },
     /**
      * @description 清空存储数据库对象
+     * @param {Object} context context
+     * @param {Object} param user {Boolean} 是否区分用户
      */
-    databaseClear () {
+    databaseClear (context, {
+      user = false
+    } = {}) {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
           path: '',
-          user: false,
+          user,
           validator: () => false,
           defaultValue: {}
         })))
       })
     },
     /**
-     * @description 获取存储数据库对象 [区分用户]
+     * @description 获取存储数据库对象 [ 区分页面 ]
+     * @param {Object} context context
+     * @param {Object} param vm {Object} vue
+     * @param {Object} param basis {String} 页面区分依据 [ name | path | fullPath ]
+     * @param {Object} param user {Boolean} 是否区分用户
      */
-    databaseByUser () {
+    databasePage (context, {
+      vm,
+      basis = 'name',
+      user = false
+    } = {}) {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
-          path: '',
-          user: true,
+          path: vm.$route[basis],
+          user,
           defaultValue: {}
         })))
       })
     },
     /**
-     * @description 清空存储数据库对象 [区分用户]
+     * @description 清空存储数据库对象 [ 区分页面 ]
+     * @param {Object} context context
+     * @param {Object} param vm {Object} vue
+     * @param {Object} param basis {String} 页面区分依据 [ name | path | fullPath ]
+     * @param {Object} param user {Boolean} 是否区分用户
      */
-    databaseByUserClear () {
+    databasePageClear (context, {
+      vm,
+      basis = 'name',
+      user = false
+    } = {}) {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
-          path: '',
-          user: true,
+          path: vm.$route[basis],
+          user,
+          validator: () => false,
+          defaultValue: {}
+        })))
+      })
+    },
+    /**
+     * @description 快速将页面当前的数据 ( $data ) 持久化
+     * @param {Object} context context
+     * @param {Object} param vm {Object} vue
+     * @param {Object} param basis {String} 页面区分依据 [ name | path | fullPath ]
+     * @param {Object} param user {Boolean} 是否区分用户
+     */
+    pageSet (context, {
+      vm,
+      basis = 'name',
+      user = false
+    }) {
+      return new Promise(resolve => {
+        resolve(db.get(pathInit({
+          dbName: 'database',
+          path: `${vm.$route[basis]}.$data`,
+          user,
+          validator: () => false,
+          defaultValue: vm.$data
+        })))
+      })
+    },
+    /**
+     * @description 快速获取页面快速持久化的数据
+     * @param {Object} context context
+     * @param {Object} param vm {Object} vue
+     * @param {Object} param basis {String} 页面区分依据 [ name | path | fullPath ]
+     * @param {Object} param user {Boolean} 是否区分用户
+     */
+    pageLoad (context, {
+      vm,
+      basis = 'name',
+      user = false
+    }) {
+      return new Promise(resolve => {
+        resolve(db.get(pathInit({
+          dbName: 'database',
+          path: `${vm.$route[basis]}.$data`,
+          user,
+          defaultValue: vm.$data
+        })).value())
+      })
+    },
+    /**
+     * @description 清空页面快照
+     * @param {Object} context context
+     * @param {Object} param vm {Object} vue
+     * @param {Object} param basis {String} 页面区分依据 [ name | path | fullPath ]
+     * @param {Object} param user {Boolean} 是否区分用户
+     */
+    pageClear (context, {
+      vm,
+      basis = 'name',
+      user = false
+    }) {
+      return new Promise(resolve => {
+        resolve(db.get(pathInit({
+          dbName: 'database',
+          path: `${vm.$route[basis]}.$data`,
+          user,
           validator: () => false,
           defaultValue: {}
         })))
@@ -147,7 +236,7 @@ export default {
       })
     },
     /**
-     * @description 获取数据 [区分用户]
+     * @description 获取数据 [ 区分用户 ]
      * @description 效果类似于 dbName.path[user] || defaultValue
      * @param {Object} state vuex state
      * @param {Object} param dbName {String} 数据库名称
