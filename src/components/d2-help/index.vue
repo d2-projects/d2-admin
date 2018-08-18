@@ -23,18 +23,18 @@
             <d2-icon name="question" class="d2-mr-5"/>
             issues
           </el-button>
-          <el-button @click="$open('https://github.com/d2-projects/d2-admin/issues/new')">
+          <el-button @click="$open('https://github.com/d2-projects/d2-admin/issues/new/choose')">
             <d2-icon name="plus" class="d2-mr-5"/>
-            new issues
+            New issue
           </el-button>
         </el-button-group>
         <el-row :gutter="20">
           <el-col :span="12">
-            <el-alert :closable="false" type="info" title="扫码进 QQ 群" class="d2-mb"/>
+            <el-alert :closable="false" type="info" title="扫码进 QQ 群 [ 推荐 ]" class="d2-mb"/>
             <img src="./image/qq.jpg" style="width: 100%;">
           </el-col>
           <el-col :span="12">
-            <el-alert :closable="false" type="info" title="作者微信 加好友拉进微信群" class="d2-mb"/>
+            <el-alert :closable="false" type="info" title="作者微信 加好友后邀请进微信群" class="d2-mb"/>
             <img src="./image/we.jpg" style="width: 100%;">
           </el-col>
         </el-row>
