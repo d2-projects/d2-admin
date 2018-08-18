@@ -1,12 +1,13 @@
-import list from '@/assets/style/theme/list.js'
+// 设置文件
+import setting from '@/setting.js'
 
 export default {
   namespaced: true,
   state: {
     // 主题
-    list,
+    list: setting.theme.list,
     // 现在激活的主题 这应该是一个名字 不是对象
-    activeName: list[0].name
+    activeName: setting.theme.list[0].name
   },
   getters: {
     /**
