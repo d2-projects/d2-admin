@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <template slot="header">持久化存储公用数据（当前用户）</template>
+    <template slot="header">持久化存储数据（此页面独享）</template>
     <el-row>
       <el-col :span="12">
         <p class="d2-mt-0">增加不重复字段</p>
@@ -55,14 +55,17 @@ export default {
   },
   methods: {
     ...mapActions('d2admin/db', [
-      'database',
-      'databaseClear'
+      'databasePage',
+      'databasePageClear'
     ]),
     /**
      * 加载本地数据
      */
     async load () {
-      const db = await this.database({ user: true })
+      const db = await this.databasePage({
+        vm: this,
+        user: true
+      })
       this.dataDisplay = JSON.stringify(db.value(), null, 2)
       this.keyNameList = Object.keys(db.value()).map(k => ({
         value: k,
@@ -73,7 +76,10 @@ export default {
      * 删除一个字段
      */
     async handleDelete (name) {
-      const db = await this.database({ user: true })
+      const db = await this.databasePage({
+        vm: this,
+        user: true
+      })
       db
         .unset(name)
         .write()
@@ -84,7 +90,10 @@ export default {
      * 清空当前用户的数据
      */
     async handleClear () {
-      await this.databaseClear({ user: true })
+      await this.databasePageClear({
+        vm: this,
+        user: true
+      })
       this.load()
     },
     /**
@@ -95,7 +104,10 @@ export default {
         this.$message.error('字段名不能为空')
         return
       }
-      const db = await this.database({ user: true })
+      const db = await this.databasePage({
+        vm: this,
+        user: true
+      })
       db
         .set(this.keyNameToSet, this.valueToSet)
         .write()
@@ -106,7 +118,10 @@ export default {
      */
     async handleSetRandom () {
       const id = day().valueOf()
-      const db = await this.database({ user: true })
+      const db = await this.databasePage({
+        vm: this,
+        user: true
+      })
       db
         .set(id, Math.round(id * Math.random()))
         .write()

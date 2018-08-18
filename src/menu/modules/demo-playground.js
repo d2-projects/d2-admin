@@ -43,7 +43,11 @@ export default {
       children: [
         { path: `${pre}db/all`, title: '全部数据', icon: 'table' },
         { path: `${pre}db/user`, title: '用户数据', icon: 'user' },
-        { path: `${pre}db/public`, title: '公用数据', icon: 'users' }
+        { path: `${pre}db/public`, title: '公用数据', icon: 'users' },
+        { path: `${pre}db/page-public`, title: '页面存储', icon: 'file-o' },
+        { path: `${pre}db/page-user`, title: '页面存储 用户', icon: 'file-o' },
+        { path: `${pre}db/page-snapshot-public`, title: '页面快照', icon: 'file' },
+        { path: `${pre}db/page-snapshot-user`, title: '页面快照 用户', icon: 'file' }
       ]
     },
     {
