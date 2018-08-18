@@ -1,5 +1,5 @@
 <template>
-  <d2-container class="page">
+  <d2-container>
     <template slot="header">持久化存储用户数据（用户区分存储）</template>
     <el-row>
       <el-col :span="12">
