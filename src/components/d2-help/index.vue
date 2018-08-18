@@ -1,10 +1,9 @@
 <template>
   <div>
-    <el-tooltip effect="dark" content="疑问" placement="bottom">
-      <el-button class="d2-ml-0 d2-mr btn-text can-hover" type="text" @click="dialogVisible = true">
-        <d2-icon name="question-circle" style="font-size: 20px"/>
-      </el-button>
-    </el-tooltip>
+    <img
+      src="./image/d2-help-button@2x.png"
+      style="width: 138px;"
+      @click="dialogVisible = true">
     <el-dialog
       title="帮助"
       width="600px"
