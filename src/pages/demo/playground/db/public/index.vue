@@ -1,6 +1,12 @@
 <template>
   <d2-container>
-    <template slot="header">持久化存储公用数据（所有用户共享）</template>
+    <template slot="header">
+      <el-alert
+        type="success"
+        :closable="false"
+        title="公用存储指所有用户共用的存储区域，
+          使用 await this.$store.dispatch('d2admin/db/database') 获得存储实例进行操作"/>
+    </template>
     <el-row>
       <el-col :span="12">
         <p class="d2-mt-0">增加不重复字段</p>
