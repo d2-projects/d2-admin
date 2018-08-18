@@ -1,3 +1,6 @@
+// 设置文件
+import setting from '@/setting.js'
+
 export default {
   namespaced: true,
   state: {
@@ -6,7 +9,7 @@ export default {
     // 侧栏菜单
     aside: [],
     // 侧边栏收缩
-    asideCollapse: false
+    asideCollapse: setting.menu.asideCollapse
   },
   mutations: {
     /**
@@ -63,7 +66,7 @@ export default {
       state.asideCollapse = await this.dispatch('d2admin/db/getByUser', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
-        defaultValue: false
+        defaultValue: setting.menu.asideCollapse
       })
     }
   }
