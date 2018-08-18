@@ -1,10 +1,11 @@
+// 设置文件
+import setting from '@/setting.js'
+
 export default {
   namespaced: true,
   state: {
     // 用户信息
-    info: {
-      name: ''
-    }
+    info: setting.user.info
   },
   mutations: {
     /**
@@ -31,9 +32,7 @@ export default {
       state.info = await this.dispatch('d2admin/db/getByUser', {
         dbName: 'sys',
         path: 'user.info',
-        defaultValue: {
-          name: 'Ghost'
-        }
+        defaultValue: setting.user.info
       })
     }
   }

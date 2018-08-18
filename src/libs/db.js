@@ -1,8 +1,8 @@
 import low from 'lowdb'
 import LocalStorage from 'lowdb/adapters/LocalStorage'
-import { version } from '../../package'
+import setting from '@/setting.js'
 
-const adapter = new LocalStorage(`d2admin-${version}`)
+const adapter = new LocalStorage(`d2admin-${setting.version}`)
 const db = low(adapter)
 
 // 初始化数据库
