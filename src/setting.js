@@ -7,7 +7,7 @@ const setting = {
   transition: {
     active: true
   },
-  // 在读取页面持久化数据失败时默认页面
+  // 在读取持久化数据失败时默认页面
   page: {
     opened: [
       {
@@ -54,6 +54,12 @@ const setting = {
         preview: 'image/theme/tomorrow-night-blue/preview@2x.png'
       }
     ]
+  },
+  // 在读取持久化数据失败时默认用户信息
+  user: {
+    info: {
+      name: 'Ghost'
+    }
   }
 }
 
