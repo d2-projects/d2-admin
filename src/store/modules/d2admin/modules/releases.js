@@ -1,10 +1,10 @@
-import { version } from '../../../../../package'
+import setting from '@/setting.js'
 
 export default {
   namespaced: true,
   state: {
     // D2Admin 版本
-    version,
+    version: setting.version,
     // 最新版本的信息
     latest: {},
     // 有新版本
