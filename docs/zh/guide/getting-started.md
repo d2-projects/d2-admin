@@ -67,7 +67,7 @@ npm -v
 5.6.0
 ```
 
-### nrm or cnpm
+### npm or cnpm
 
 由于网络原因，npm 在国内使用比较慢，建议切换 npm 源到国内镜像。
 
