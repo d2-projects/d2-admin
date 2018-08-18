@@ -1,16 +1,22 @@
 <template>
   <d2-container>
-    <el-alert
-      slot="header"
-      type="success"
-      :closable="false"
-      title="下面的表单来自 Element 的表单示例，
-        在 D2Admin 的本页示例中你可以随意填写这个表单，
-        表单内容会自动实时持久化，
-        无论是切换标签页、重新打开标签页、刷新浏览器、重开浏览器、重开浏览器标签页等，
-        该页面数据都会自动恢复到上次填写的状态，
-        这些都只需要你使用 D2Admin 提供的两个方法，
-        总共只需要多写十几行代码"/>
+    <template slot="header">
+      <el-alert
+        type="success"
+        :closable="false"
+        class="d2-mb-10"
+        title="下面的表单来自 Element 的表单示例，
+          在 D2Admin 的本页示例中你可以随意填写这个表单，
+          表单内容会自动实时持久化，
+          无论是切换标签页、重新打开标签页、刷新浏览器、重开浏览器、重开浏览器标签页等，
+          该页面数据都会自动恢复到上次填写的状态，
+          这些都只需要你使用 D2Admin 提供的两个方法，
+          总共只需要多写十几行代码"/>
+      <el-alert
+        type="success"
+        :closable="false"
+        title="此页面数据持久化自动区分用户保存"/>
+    </template>
     <el-form ref="form" :model="form" label-width="80px" style="max-width: 600px; margin: 0px auto;">
       <el-form-item label="活动名称">
         <el-input v-model="form.name"></el-input>
