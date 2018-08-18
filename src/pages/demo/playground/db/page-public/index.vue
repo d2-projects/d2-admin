@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import day from 'dayjs'
+import { uniqueId } from 'lodash'
 import { mapActions } from 'vuex'
 export default {
   data () {
@@ -113,12 +113,12 @@ export default {
      * 添加一个随机数据
      */
     async handleSetRandom () {
-      const id = day().valueOf()
+      const id = uniqueId()
       const db = await this.databasePage({
         vm: this
       })
       db
-        .set(id, Math.round(id * Math.random()))
+        .set(`uniqueKey${id}`, `value${id}`)
         .write()
       this.load()
     }

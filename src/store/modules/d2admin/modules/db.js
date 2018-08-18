@@ -120,7 +120,7 @@ export default {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
-          path: vm.$route[basis],
+          path: `$page.${vm.$route[basis]}`,
           user,
           defaultValue: {}
         })))
@@ -141,7 +141,7 @@ export default {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
-          path: vm.$route[basis],
+          path: `$page.${vm.$route[basis]}`,
           user,
           validator: () => false,
           defaultValue: {}
@@ -163,7 +163,7 @@ export default {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
-          path: `${vm.$route[basis]}.$data`,
+          path: `$page.${vm.$route[basis]}.$data`,
           user,
           validator: () => false,
           defaultValue: vm.$data
@@ -185,7 +185,7 @@ export default {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
-          path: `${vm.$route[basis]}.$data`,
+          path: `$page.${vm.$route[basis]}.$data`,
           user,
           defaultValue: vm.$data
         })).value())
@@ -206,7 +206,7 @@ export default {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName: 'database',
-          path: `${vm.$route[basis]}.$data`,
+          path: `$page.${vm.$route[basis]}.$data`,
           user,
           validator: () => false,
           defaultValue: {}
