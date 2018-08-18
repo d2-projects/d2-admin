@@ -1,8 +1,11 @@
+// 设置文件
+import setting from '@/setting.js'
+
 export default {
   namespaced: true,
   state: {
     // 是否开启页面过度动画
-    active: true
+    active: setting.transition.active
   },
   mutations: {
     /**
@@ -29,7 +32,7 @@ export default {
       state.active = await this.dispatch('d2admin/db/getByUser', {
         dbName: 'sys',
         path: 'transition.active',
-        defaultValue: true
+        defaultValue: setting.transition.active
       })
     }
   }
