@@ -1,7 +1,10 @@
 <template>
   <d2-container type="card">
+    <template slot="header">
+      当前状态 {{active ? '开启过渡动画' : '关闭过渡动画'}}
+    </template>
     <el-button type="primary" @click="set(!active)">
-      {{active ? '关闭页面切换动画' : '打开页面切换动画'}}
+      {{active ? '关闭页面过渡动画' : '打开页面过渡动画'}}
     </el-button>
   </d2-container>
 </template>
