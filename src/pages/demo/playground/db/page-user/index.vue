@@ -1,6 +1,18 @@
 <template>
   <d2-container>
-    <template slot="header">持久化存储数据（此页面独享）</template>
+    <template slot="header">
+      <el-alert
+        type="success"
+        :closable="false"
+        title="私有路由存储指当前路由的存储区域，
+          并且同时还根据用户区分，
+          相当于结合了 “路由存储” 和 “私有存储”，
+          不同路由以及不同用户之间存储不会相互干扰，
+          使用 await this.$store.dispatch('d2admin/db/databasePage', { vm: this, user: true }) 获得存储实例进行操作，
+          不同路由和用户条件下获取的存储实例指向位置不同，
+          可以指定路由区分依据 name | path | fullPath，
+          默认根据路由的 name 区分不同的路由"/>
+    </template>
     <el-row>
       <el-col :span="12">
         <p class="d2-mt-0">增加不重复字段</p>
