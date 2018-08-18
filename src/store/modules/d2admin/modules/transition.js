@@ -1,3 +1,4 @@
+// 设置文件
 import setting from '@/setting.js'
 
 export default {

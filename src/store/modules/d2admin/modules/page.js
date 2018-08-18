@@ -1,10 +1,5 @@
-const openedDefult = {
-  name: 'index',
-  meta: {
-    title: '首页',
-    requiresAuth: false
-  }
-}
+// 设置文件
+import setting from '@/setting.js'
 
 export default {
   namespaced: true,
@@ -12,9 +7,7 @@ export default {
     // 可以在多页 tab 模式下显示的页面
     pool: [],
     // 当前显示的多页面列表
-    opened: [
-      openedDefult
-    ],
+    opened: setting.page.opened,
     // 当前页面
     current: ''
   },
@@ -116,9 +109,7 @@ export default {
       const value = await this.dispatch('d2admin/db/getByUser', {
         dbName: 'sys',
         path: 'page.opened',
-        defaultValue: [
-          openedDefult
-        ]
+        defaultValue: setting.page.opened
       })
       // 在处理函数中进行数据优化 过滤掉现在已经失效的页签或者已经改变了信息的页签
       // 以 name 字段为准
