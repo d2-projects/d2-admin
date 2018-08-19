@@ -75,18 +75,23 @@ module.exports = {
           {
             text: '其它',
             items: [
-              { text: '文章归档', link: '' },
-              { text: '更新日志', link: '' },
-              { text: '参与者名单', link: '' },
+              { text: '文章归档', link: '/zh/article/' },
+              { text: '更新日志', link: '/zh/change-log/' },
+              { text: '参与者名单', link: '/zh/collaborator/' },
+              {
+                text: '交流',
+                items: [
+                  { text: '微信公众号', link: '' },
+                  { text: '交流群', link: '' }
+                ]
+              },
               {
                 text: '关注我们',
                 items: [
                   { text: '掘金', link: '' },
                   { text: 'CSDN', link: '' },
                   { text: 'segmentfault', link: '' },
-                  { text: '知乎', link: '' },
-                  { text: '微信公众号', link: '' },
-                  { text: '交流群', link: '' }
+                  { text: '知乎', link: '' }
                 ]
               }
             ]
@@ -96,7 +101,8 @@ module.exports = {
         sidebar: {
           '/zh/learn-guide/': sideBarLearnGuide(),
           '/zh/sys-components/': sideBarSysComponents(),
-          '/zh/sys-plugins/': sideBarSysPlugins()
+          '/zh/sys-plugins/': sideBarSysPlugins(),
+          '/zh/article/': sideBarArticle('版本发布')
         }
       }
     }
@@ -142,6 +148,21 @@ function sideBarSysPlugins () {
         'data-import',
         'i18n',
         'mock.md'
+      ]
+    }
+  ]
+}
+
+function sideBarArticle (titleUpdate) {
+  return [
+    {
+      title: titleUpdate,
+      collapsable: false,
+      children: [
+        'update/ice-1.1.2',
+        'update/1.1.5',
+        'update/1.1.4',
+        'update/0.0.0'
       ]
     }
   ]
