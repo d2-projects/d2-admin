@@ -49,26 +49,27 @@ module.exports = {
             ]
           },
           {
-            text: '系统',
+            text: '系统模块',
             items: [
-              { text: '内置组件', link: '' },
-              { text: '插件', link: '' },
-              { text: 'vuex', link: '' },
-              { text: '菜单', link: '' },
-              { text: '路由', link: '' },
-              { text: '主题系统', link: '' },
-              { text: '数据持久化', link: '' },
-              { text: 'CSS 实用类', link: '' },
-              { text: 'JS Util', link: '' }
+              { text: '组件', link: '/zh/sys-components/' },
+              { text: '插件', link: '/zh/sys-plugins/' },
+              { text: 'vuex', link: '/zh/sys-vuex/' },
+              { text: '菜单', link: '/zh/sys-menu/' },
+              { text: '路由', link: '/zh/sys-route/' },
+              { text: '多页面', link: '/zh/sys-multi-page/' },
+              { text: '主题系统', link: '/zh/sys-theme/' },
+              { text: '数据持久化', link: '/zh/sys-db/' },
+              { text: 'CSS 实用类', link: '/zh/sys-css/' },
+              { text: 'JS Util', link: '/zh/sys-util/' }
             ]
           },
           {
             text: '生态',
             items: [
-              { text: 'D2 Admin start kit', link: '' },
-              { text: 'D2 Admin ICE', link: '' },
-              { text: 'D2 CRUD', link: '' },
-              { text: 'D2 Ribbons', link: '' }
+              { text: 'D2 Admin start kit', link: '/zh/ecosystem-d2-admin-start-kit/' },
+              { text: 'D2 Admin ICE', link: '/zh/ecosystem-d2-admin-ice/' },
+              { text: 'D2 CRUD', link: '/zh/ecosystem-d2-crud/' },
+              { text: 'D2 Ribbons', link: '/zh/ecosystem-d2-ribbons/' }
             ]
           },
           {
@@ -84,15 +85,18 @@ module.exports = {
                   { text: 'CSDN', link: '' },
                   { text: 'segmentfault', link: '' },
                   { text: '知乎', link: '' },
-                  { text: '微信公众号', link: '' }
+                  { text: '微信公众号', link: '' },
+                  { text: '交流群', link: '' }
                 ]
               }
             ]
           },
-          { text: '常见问题', link: '' }
+          { text: '常见问题', link: '/zh/question/' }
         ],
         sidebar: {
-          '/zh/learn-guide/': sideBarLearnGuide()
+          '/zh/learn-guide/': sideBarLearnGuide(),
+          '/zh/sys-components/': sideBarSysComponents(),
+          '/zh/sys-plugins/': sideBarSysPlugins()
         }
       }
     }
@@ -106,6 +110,38 @@ function sideBarLearnGuide () {
       children: [
         '',
         'getting-started'
+      ]
+    }
+  ]
+}
+
+function sideBarSysComponents () {
+  return [
+    {
+      collapsable: false,
+      children: [
+        'container',
+        'icon',
+        'icon-svg',
+        'icon-select',
+        'charts-new',
+        'markdown',
+        'highlight',
+        'count-up'
+      ]
+    }
+  ]
+}
+
+function sideBarSysPlugins () {
+  return [
+    {
+      collapsable: false,
+      children: [
+        'data-export',
+        'data-import',
+        'i18n',
+        'mock.md'
       ]
     }
   ]
