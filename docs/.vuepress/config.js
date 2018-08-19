@@ -72,10 +72,10 @@ module.exports = {
               { text: 'D2 Ribbons', link: '/zh/ecosystem-d2-ribbons/' }
             ]
           },
+          { text: '文章', link: '/zh/article/' },
           {
             text: '其它',
             items: [
-              { text: '文章归档', link: '/zh/article/' },
               { text: '更新日志', link: '/zh/change-log/' },
               { text: '参与者名单', link: '/zh/collaborator/' },
               {
@@ -102,7 +102,7 @@ module.exports = {
           '/zh/learn-guide/': sideBarLearnGuide(),
           '/zh/sys-components/': sideBarSysComponents(),
           '/zh/sys-plugins/': sideBarSysPlugins(),
-          '/zh/article/': sideBarArticle('版本发布')
+          '/zh/article/': sideBarArticle('版本发布', 'Cookbook')
         }
       }
     }
@@ -153,8 +153,16 @@ function sideBarSysPlugins () {
   ]
 }
 
-function sideBarArticle (titleUpdate) {
+function sideBarArticle (titleUpdate, titleCookbook) {
   return [
+    {
+      title: titleCookbook,
+      collapsable: false,
+      children: [
+        'cookbook/what-is-cookbook',
+        'cookbook/combinable-questionnaire'
+      ]
+    },
     {
       title: titleUpdate,
       collapsable: false,
