@@ -41,105 +41,71 @@ module.exports = {
         editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: '最后更新',
         nav: [
-          { text: '指南', link: '/zh/guide/' },
-          { text: '插件', link: '/zh/plugins/' },
-          { text: '组件', link: '/zh/components/' },
-          { text: '文章', link: '/zh/article/' },
-          { text: '其它', link: '/zh/others/' },
-          { text: '预览', link: 'https://fairyever.gitee.io/d2-admin-preview/#/index' }
+          {
+            text: '学习',
+            items: [
+              { text: '教程', link: '/zh/learn-guide/' },
+              { text: '相关知识', link: '/zh/learn-knowledge/' }
+            ]
+          },
+          {
+            text: '系统',
+            items: [
+              { text: '内置组件', link: '' },
+              { text: '插件', link: '' },
+              { text: 'vuex', link: '' },
+              { text: '菜单', link: '' },
+              { text: '路由', link: '' },
+              { text: '主题系统', link: '' },
+              { text: '数据持久化', link: '' },
+              { text: 'CSS 实用类', link: '' },
+              { text: 'JS Util', link: '' }
+            ]
+          },
+          {
+            text: '生态',
+            items: [
+              { text: 'D2 Admin start kit', link: '' },
+              { text: 'D2 Admin ICE', link: '' },
+              { text: 'D2 CRUD', link: '' },
+              { text: 'D2 Ribbons', link: '' }
+            ]
+          },
+          {
+            text: '其它',
+            items: [
+              { text: '文章归档', link: '' },
+              { text: '更新日志', link: '' },
+              { text: '参与者名单', link: '' },
+              {
+                text: '关注我们',
+                items: [
+                  { text: '掘金', link: '' },
+                  { text: 'CSDN', link: '' },
+                  { text: 'segmentfault', link: '' },
+                  { text: '知乎', link: '' },
+                  { text: '微信公众号', link: '' }
+                ]
+              }
+            ]
+          },
+          { text: '常见问题', link: '' }
         ],
         sidebar: {
-          '/zh/guide/': sideBarGuide('指南'),
-          '/zh/plugins/': sideBarPlugins('插件'),
-          '/zh/components/': sideBarComponents('组件'),
-          '/zh/article/': sideBarArticle('Cookbook', '版本更新'),
-          '/zh/others/': sideBarOthers('其它')
+          '/zh/learn-guide/': sideBarLearnGuide()
         }
       }
     }
   }
 }
 
-function sideBarGuide (title) {
+function sideBarLearnGuide () {
   return [
     {
-      title,
       collapsable: false,
       children: [
         '',
-        'getting-started',
-        'question',
-        'plagiarize',
-        'change-log'
-      ]
-    }
-  ]
-}
-
-function sideBarPlugins () {
-  return [
-    '',
-    'data-export',
-    'data-import',
-    'i18n',
-    'mock',
-    'vuex',
-    'util'
-  ]
-}
-
-function sideBarComponents (title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        '',
-        'charts',
-        'charts-new',
-        'container',
-        'count-up',
-        'highlight',
-        'icon-select',
-        'icon-svg',
-        'icon',
-        'markdown'
-      ]
-    }
-  ]
-}
-
-function sideBarArticle (titleCookBook, titleUpdate) {
-  return [
-    {
-      title: titleCookBook,
-      collapsable: false,
-      children: [
-        'cookbook/what-is-cookbook',
-        'cookbook/combinable-questionnaire',
-      ]
-    },
-    {
-      title: titleUpdate,
-      collapsable: false,
-      children: [
-        'update/ice-1.1.2',
-        'update/1.1.5',
-        'update/1.1.4',
-        'update/0.0.0'
-      ]
-    }
-  ]
-}
-
-function sideBarOthers (title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        '',
-        'css'
+        'getting-started'
       ]
     }
   ]

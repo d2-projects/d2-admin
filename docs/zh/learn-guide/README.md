@@ -23,23 +23,13 @@ D2Admin 是一个开源的管理系统前端集成方案
 [码云仓库](https://gitee.com/fairyever/d2-admin-start-kit) | 
 [预览地址](https://fairyever.gitee.io/d2-admin-start-kit-preview/#/index)
 
-![preview](./image/preview@2x.png)
-
 D2Admin 完整版集成了很多的插件和组件，首次加载会占用很多的时间，所以加入了首屏加载动画。
 
 如果您欣赏 D2Admin 的设计风格，希望基于它开发您的管理系统，**建议使用 [d2-admin-start-kit 简化模板](https://github.com/d2-projects/d2-admin-start-kit)**，简化版模板保留了所有的系统功能，包括登陆注销，主题切换，图标，数据持久化等。其它不必要的组件和插件您可以参照 D2Admin 完整版自行加入。
 
 如果您执意在完整版基础上开发，请您在发布之前一定要删除没有用到的代码，比如项目没有用到图表、示例、插件组件。
 
-D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https://github.com/FairyEver) 工作之余完完成（希望您看到这里，可以移步 [Github](https://github.com/d2-projects/d2-admin) 点个 star 支持我），如果你也一样喜欢前端开发，欢迎加入我们的讨论/学习群，群内可以`提问答疑`，`分享学习资料`。
-
-![preview](./image/join@2x.png)
-
-::: tip Thanks
-D2Admin 创建于2018年1月14日零点51分，四个月后在2018年5月26日正式发布，39天时间 star 突破 1k ，在此对所有的 D2Admin 支持者表示感谢，项目将会保持更新，如果你有想法、建议、或者问题欢迎加群讨论
-
-—— 2018年7月5日
-:::
+D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https://github.com/FairyEver) 工作之余完完成（希望您看到这里，可以移步 [Github](https://github.com/d2-projects/d2-admin) 点个 star 支持我）。
 
 ## 功能
 
@@ -154,3 +144,13 @@ npm run build
 ```
 
 > 如果上述步骤出现错误，建议您升级 node 版本 > 8，如果有其它疑问请参考[常见问题](/zh/guide/question.html)
+
+## Thanks
+
+D2Admin 创建于2018年1月14日零点51分，四个月后在2018年5月26日正式发布，39天时间 star 突破 1k ，在此对所有的 D2Admin 支持者表示感谢，项目将会保持更新，如果你有想法、建议、或者问题欢迎加群讨论
+
+—— 2018年7月5日
+
+star 破 2k
+
+—— 2018年8月7日
