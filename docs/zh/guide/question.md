@@ -50,7 +50,7 @@ yarn run serve
 
 首先，需要提前下载 node-sass 的二进制文件，这个文件可以去 cnpm 仓库下载或者 node-sass 的 github 上去下载，在下载之前我们需要先查看电脑的系统的版本，来确定适合哪个版本的二进制文件，查看版本的指令如下：
 
-``` sh
+```
 node -p "[process.platform, process.arch, process.versions.modules].join('-')"
 ```
 
@@ -64,14 +64,14 @@ node -p "[process.platform, process.arch, process.versions.modules].join('-')"
 
 npm
 
-``` sh
+```
 npm config set sass-binary-path 你存放刚才下载的二进制文件的目录
 // 例如 npm config set sass-binary-path e:/web/win32-x64-48_binding.node
 ```
 
 yarn
 
-``` sh
+```
 yarn config set sass-binary-path 你存放刚才下载的二进制文件的目录
 // 例如 yarn config set sass-binary-path e:/web/win32-x64-48_binding.node
 ```
@@ -90,13 +90,13 @@ yarn config set sass-binary-path 你存放刚才下载的二进制文件的目�
 
 npm
 
-``` sh
+```
 npm config set registry http://registry.npm.taobao.org
 ```
 
 yarn
 
-``` sh
+```
 yarn config set registry http://registry.npm.taobao.org
 ```
 
@@ -104,13 +104,13 @@ yarn config set registry http://registry.npm.taobao.org
 
 npm
 
-``` sh
+```
 npm config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
 ```
 
 yarn
 
-``` sh
+```
 yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
 ```
 
@@ -206,13 +206,13 @@ D2Admin 会在很多地方使用 cookie 中的此字段区分用户，比如不�
 
 首先将 vuepress 安装到全局
 
-``` sh
+```
 npm i -g vuepress
 ```
 
 启动服务
 
-``` sh
+```
 npm run doc:dev
 ```
 
@@ -363,7 +363,7 @@ Mock.setup({
 
 打开终端 cd 到项目文件夹，执行
 
-``` sh
+```
 npm remove @antv/data-set -S
 npm remove @antv/g2 -S
 ```
@@ -376,7 +376,7 @@ npm remove @antv/g2 -S
 
 报错代码
 
-``` sh
+```
 E:\VS\TFS_FREE_Z\BaseProjects\VUE\d2-admin-z>npm i
 npm WARN tar zlib error: unexpected end of file
 npm ERR! cb() never called!
@@ -390,6 +390,6 @@ npm ERR!     C:\Users\ZHZ\AppData\Roaming\npm-cache\_logs\2018-07-27T13_13_56_69
 
 目前只有一位朋友遇到这个问题，最后使用 cnpm 绕过了这个错误
 
-``` sh
+```
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```

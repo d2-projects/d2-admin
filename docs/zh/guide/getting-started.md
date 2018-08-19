@@ -60,7 +60,7 @@
 
 安装完毕后检查版本（最好使用 node 8 版本）。
 
-``` sh
+```
 node -v
 v8.11.1
 npm -v
@@ -77,13 +77,13 @@ npm -v
 
 安装：
 
-``` sh
+```
 npm install -g nrm
 ```
 
 查看所有可用源：
 
-``` sh
+```
 nrm ls
 * npm -----  https://registry.npmjs.org/
   cnpm ----  http://r.cnpmjs.org/
@@ -95,7 +95,7 @@ nrm ls
 
 切换源：
 
-``` sh
+```
 nrm use taobao
 ```
 
@@ -103,7 +103,7 @@ nrm use taobao
 
 安装：
 
-``` sh
+```
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 
@@ -111,7 +111,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 将终端切换到项目目录之后安装依赖：
 
-``` sh
+```
 npm i
 ```
 
@@ -121,19 +121,19 @@ npm i
 
 在项目目录内启动项目：
 
-``` sh
+```
 npm run dev
 ```
 
 或者使用：
 
-``` sh
+```
 npm start
 ```
 
 也可以使用 cli3 新推荐的命令：
 
-``` sh
+```
 npm run serve
 ```
 
