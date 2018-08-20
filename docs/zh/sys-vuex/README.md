@@ -733,6 +733,8 @@ this.$store.commit('d2admin/menu/headerSet', menu)
 ]
 ```
 
+#### 临时菜单
+
 支持设置临时菜单，如果您在开发页面前需要先设计好菜单结构，可以只设置 title 字段，D2Admin 在生成菜单时会使用随机唯一 id 区分菜单项目，并且在点击时提示这是一个临时菜单。
 
 设置临时菜单的示例：
@@ -756,6 +758,33 @@ this.$store.commit('d2admin/menu/headerSet', menu)
   }
 ]
 ```
+
+#### 外部链接
+
+支持设置外部链接，您可以直接这样写：
+
+``` js
+[
+  {
+    title: '跳转外部链接',
+    icon: 'link',
+    children: [
+      {
+        path: 'https://github.com/d2-projects/d2-admin',
+        title: 'D2Admin Github',
+        icon: 'github'
+      },
+      {
+        path: 'https://juejin.im/user/57a48b632e958a006691b946/posts',
+        title: '掘金',
+        icon: 'globe'
+      }
+    ]
+  }
+]
+```
+
+以 https:// 或者 http:// 开头的 path 会被当做外部链接处理
 
 ### mutations.asideSet
 
