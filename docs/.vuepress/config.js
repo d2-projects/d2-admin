@@ -89,10 +89,10 @@ module.exports = {
               {
                 text: '关注我们',
                 items: [
-                  { text: '掘金', link: '' },
-                  { text: 'CSDN', link: '' },
-                  { text: 'segmentfault', link: '' },
-                  { text: '知乎', link: '' }
+                  { text: '掘金', link: 'https://juejin.im/user/57a48b632e958a006691b946/posts' },
+                  { text: 'CSDN', link: 'https://blog.csdn.net/fairyever' },
+                  { text: 'segmentfault', link: 'https://segmentfault.com/blog/liyang-note-book' },
+                  { text: '知乎', link: 'https://www.zhihu.com/people/fairy-ever/activities' }
                 ]
               }
             ]
