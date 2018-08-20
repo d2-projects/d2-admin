@@ -11,7 +11,7 @@ import util from '@/libs/util.js'
  * @returns {String} 可以直接使用的路径
  */
 function pathInit ({
-  dbName = 'db',
+  dbName = 'database',
   path = '',
   user = true,
   validator = () => true,
@@ -33,14 +33,14 @@ export default {
   mutations: {
     /**
      * @description 将数据存储到指定位置 | 路径不存在会自动初始化
-     * @description 效果类似于 dbName.path = value
+     * @description 效果类似于取值 dbName.path = value
      * @param {Object} state vuex state
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param value {*} 需要存储的值
      */
     set (state, {
-      dbName = 'db',
+      dbName = 'database',
       path = '',
       value = ''
     }) {
@@ -52,14 +52,14 @@ export default {
     },
     /**
      * @description 将数据存储到指定位置 | 路径不存在会自动初始化 [ 区分用户 ]
-     * @description 效果类似于 dbName.path[user] = value
+     * @description 效果类似于取值 dbName.path[user] = value
      * @param {Object} state vuex state
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param value {*} 需要存储的值
      */
     setByUser (state, {
-      dbName = 'db',
+      dbName = 'database',
       path = '',
       value = ''
     }) {
@@ -70,6 +70,50 @@ export default {
     }
   },
   actions: {
+    /**
+     * @description 获取数据
+     * @description 效果类似于取值 dbName.path || defaultValue
+     * @param {Object} state vuex state
+     * @param {Object} param dbName {String} 数据库名称
+     * @param {Object} param path {String} 存储路径
+     * @param {Object} param defaultValue {*} 取值失败的默认值
+     */
+    get (context, {
+      dbName = 'database',
+      path = '',
+      defaultValue = ''
+    }) {
+      return new Promise(resolve => {
+        resolve(db.get(pathInit({
+          dbName,
+          path,
+          user: false,
+          defaultValue
+        })).value())
+      })
+    },
+    /**
+     * @description 获取数据 [ 区分用户 ]
+     * @description 效果类似于取值 dbName.path[user] || defaultValue
+     * @param {Object} state vuex state
+     * @param {Object} param dbName {String} 数据库名称
+     * @param {Object} param path {String} 存储路径
+     * @param {Object} param defaultValue {*} 取值失败的默认值
+     */
+    getByUser (context, {
+      dbName = 'database',
+      path = '',
+      defaultValue = ''
+    }) {
+      return new Promise((resolve, reject) => {
+        resolve(db.get(pathInit({
+          dbName,
+          path,
+          user: true,
+          defaultValue
+        })).value())
+      })
+    },
     /**
      * @description 获取存储数据库对象
      * @param {Object} context context
@@ -211,50 +255,6 @@ export default {
           validator: () => false,
           defaultValue: {}
         })))
-      })
-    },
-    /**
-     * @description 获取数据
-     * @description 效果类似于 dbName.path || defaultValue
-     * @param {Object} state vuex state
-     * @param {Object} param dbName {String} 数据库名称
-     * @param {Object} param path {String} 存储路径
-     * @param {Object} param defaultValue {*} 取值失败的默认值
-     */
-    get (context, {
-      dbName = 'db',
-      path = '',
-      defaultValue = ''
-    }) {
-      return new Promise(resolve => {
-        resolve(db.get(pathInit({
-          dbName,
-          path,
-          user: false,
-          defaultValue
-        })).value())
-      })
-    },
-    /**
-     * @description 获取数据 [ 区分用户 ]
-     * @description 效果类似于 dbName.path[user] || defaultValue
-     * @param {Object} state vuex state
-     * @param {Object} param dbName {String} 数据库名称
-     * @param {Object} param path {String} 存储路径
-     * @param {Object} param defaultValue {*} 取值失败的默认值
-     */
-    getByUser (context, {
-      dbName = 'db',
-      path = '',
-      defaultValue = ''
-    }) {
-      return new Promise((resolve, reject) => {
-        resolve(db.get(pathInit({
-          dbName,
-          path,
-          user: true,
-          defaultValue
-        })).value())
       })
     }
   }
