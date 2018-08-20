@@ -27,4 +27,4 @@ $store.commit('d2admin/page/poolSet', pool)
 
 ## 标签页控制
 
-标签页组件在 `d2-admin/src/layout/header-aside/components/tabs/index.vue`，该组件实现多页面的各种关闭控制。
+标签页组件在 `d2-admin/src/layout/header-aside/components/tabs/index.vue`，该组件实现多页面的各种关闭控制。涉及的方法参见 [API](../sys-vuex/#page)
