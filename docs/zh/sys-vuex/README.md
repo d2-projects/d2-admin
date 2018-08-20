@@ -1,6 +1,5 @@
 ---
 sidebar: auto
-sidebarDepth: 2
 ---
 
 # VUEX
@@ -80,7 +79,7 @@ this.$store.dispatch('d2admin/account/logout', {
 
 #### 介绍
 
-用户登陆后从数据库加载一系列的设置，例如：
+用户登陆后从持久化数据加载一系列的设置，例如：
 
 * 用户名
 * 主题
@@ -116,14 +115,14 @@ this.$store.commit('d2admin/account/load')
 
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
-| dbName | 数据库名称 | 非 | String | database, sys | database |
+| dbName | 持久化数据分区名称 | 非 | String | database, sys | database |
 | path | 存储路径 | 非 | String |  | 空字符串 |
 | value | 需要存储的值 | 非 | String |  | 空字符串 |
 
 #### 示例
 
 ``` js
-this.commit('d2admin/db/set', {
+this.$store.commit('d2admin/db/set', {
   dbName: 'database',
   path: 'demo.sometext',
   value: 'Hello World'
@@ -144,14 +143,14 @@ this.commit('d2admin/db/set', {
 
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
-| dbName | 数据库名称 | 非 | String | database, sys | database |
+| dbName | 持久化数据分区名称 | 非 | String | database, sys | database |
 | path | 存储路径 | 非 | String |  | 空字符串 |
 | value | 需要存储的值 | 非 | String |  | 空字符串 |
 
 #### 示例
 
 ``` js
-this.commit('d2admin/db/setByUser', {
+this.$store.commit('d2admin/db/setByUser', {
   dbName: 'database',
   path: 'demo.sometext',
   value: 'Hello World'
@@ -172,14 +171,14 @@ this.commit('d2admin/db/setByUser', {
 
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
-| dbName | 数据库名称 | 非 | String | database, sys | database |
+| dbName | 持久化数据分区名称 | 非 | String | database, sys | database |
 | path | 存储路径 | 非 | String |  | 空字符串 |
 | defaultValue | 取值失败的默认值 | 非 | String |  | 空字符串 |
 
 #### 示例
 
 ``` js
-const value = await this.dispatch('d2admin/db/get', {
+const value = await this.$store.dispatch('d2admin/db/get', {
   dbName: 'database',
   path: 'demo.sometext',
   defaultValue: 'Hello World'
@@ -200,14 +199,14 @@ const value = await this.dispatch('d2admin/db/get', {
 
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
-| dbName | 数据库名称 | 非 | String | database, sys | database |
+| dbName | 持久化数据分区名称 | 非 | String | database, sys | database |
 | path | 存储路径 | 非 | String |  | 空字符串 |
 | defaultValue | 取值失败的默认值 | 非 | String |  | 空字符串 |
 
 #### 示例
 
 ``` js
-const value = await this.dispatch('d2admin/db/getByUser', {
+const value = await this.$store.dispatch('d2admin/db/getByUser', {
   dbName: 'database',
   path: 'demo.sometext',
   defaultValue: 'Hello World'
@@ -218,7 +217,7 @@ const value = await this.dispatch('d2admin/db/getByUser', {
 
 #### 介绍
 
-获取存储数据库对象。
+获取持久化数据对象。
 
 #### 参数
 
@@ -231,7 +230,7 @@ const value = await this.dispatch('d2admin/db/getByUser', {
 不区分用户存储：
 
 ``` js
-const db = await this.dispatch('d2admin/db/database')
+const db = await this.$store.dispatch('d2admin/db/database')
 db
   .set('keyName', 'value')
   .write()
@@ -240,7 +239,7 @@ db
 区分用户存储：
 
 ``` js
-const db = await this.dispatch('d2admin/db/database', {
+const db = await this.$store.dispatch('d2admin/db/database', {
   user: true
 })
 db
@@ -252,7 +251,7 @@ db
 
 #### 介绍
 
-清空存储数据库对象。
+清空持久化数据对象。
 
 #### 参数
 
@@ -265,13 +264,13 @@ db
 不区分用户清空：
 
 ``` js
-this.dispatch('d2admin/db/databaseClear')
+this.$store.dispatch('d2admin/db/databaseClear')
 ```
 
 区分用户清空：
 
 ``` js
-this.dispatch('d2admin/db/databaseClear', {
+this.$store.dispatch('d2admin/db/databaseClear', {
   user: true
 })
 ```
@@ -279,7 +278,7 @@ this.dispatch('d2admin/db/databaseClear', {
 如果您想进行后续操作，可以接受返回值，返回值为可以直接操作的 db 对象：
 
 ``` js
-const db = await this.dispatch('d2admin/db/databaseClear')
+const db = await this.$store.dispatch('d2admin/db/databaseClear')
 db
   .set('keyName', 'value')
   .write()
@@ -289,7 +288,7 @@ db
 
 #### 介绍
 
-获取存储数据库对象 [ 区分页面 ]。
+获取持久化数据对象 [ 区分页面 ]。
 
 #### 参数
 
@@ -328,7 +327,7 @@ db
 
 #### 介绍
 
-清空存储数据库对象 [ 区分页面 ]。
+清空持久化数据对象 [ 区分页面 ]。
 
 #### 参数
 
@@ -360,7 +359,7 @@ this.$store.dispatch('d2admin/db/databasePageClear', {
 如果您想进行后续操作，可以接受返回值，返回值为可以直接操作的 db 对象：
 
 ``` js
-const db = await this.dispatch('d2admin/db/databasePageClear')
+const db = await this.$store.dispatch('d2admin/db/databasePageClear')
 db
   .set('keyName', 'value')
   .write()
@@ -478,19 +477,818 @@ this.$store.dispatch('d2admin/db/pageClear', {
 如果您想进行后续操作，可以接受返回值，返回值为可以直接操作的 db 对象：
 
 ``` js
-const db = await this.dispatch('d2admin/db/pageClear')
+const db = await this.$store.dispatch('d2admin/db/pageClear')
 db
   .set('keyName', 'value')
   .write()
 ```
 
 ## fullscreen
+
+### mutations.toggle
+
+#### 介绍
+
+切换全屏。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/fullscreen/toggle')
+```
+
+### mutations.set
+
+#### 介绍
+
+设置全屏状态。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| active | 新的值 | 必选 | Boolean |  |  |
+
+#### 示例
+
+``` js
+// 打开全屏
+this.$store.commit('d2admin/fullscreen/set', true)
+// 关闭全屏
+this.$store.commit('d2admin/fullscreen/set', false)
+```
+
 ## gray
+
+### mutations.toggle
+
+#### 介绍
+
+切换灰度模式。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/gray/toggle')
+```
+
+### mutations.set
+
+#### 介绍
+
+设置灰度模式。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| active | 新的值 | 必选 | Boolean |  |  |
+
+#### 示例
+
+``` js
+// 打开灰度模式
+this.$store.commit('d2admin/gray/set', true)
+// 关闭灰度模式
+this.$store.commit('d2admin/gray/set', false)
+```
+
 ## log
+
+### getters.length
+
+#### 介绍
+
+返回现存 log (all) 的条数。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.getters['d2admin/log/length']
+```
+
+### getters.lengthError
+
+#### 介绍
+
+返回现存 log (error) 的条数。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.getters['d2admin/log/lengthError']
+```
+
+### mutations.clean
+
+#### 介绍
+
+清空日志。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/log/clean')
+```
+
+### actions.add
+
+#### 介绍
+
+添加一个日志。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| type | 日志类型 | 非 | String | log, error | log |
+| err | 错误对象 | 非 | Error |  |  |
+| vm | vue 实例 | 非 | Object |  |  |
+| info | 信息 | 非 | String |  |  |
+
+#### 示例
+
+记录日志：
+
+``` js
+this.$store.dispatch('d2admin/log/add', {
+  info: 'this is a log'
+})
+```
+
+记录错误：
+
+``` js
+import store from '@/store'
+export default {
+  install (Vue, options) {
+    Vue.config.errorHandler = function (err, vm, info) {
+      Vue.nextTick(() => {
+        store.dispatch('d2admin/log/add', {
+          type: 'error',
+          err,
+          vm,
+          info
+        })
+      })
+    }
+  }
+}
+```
+
 ## menu
+
+### mutations.headerSet
+
+#### 介绍
+
+设置顶栏菜单。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| menu | 菜单 | 必选 | Array |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/menu/headerSet', menu)
+```
+
+#### menu 数据格式
+
+| 字段名 | 介绍 | 必选 | 值类型 | 默认值 |
+| --- | --- | --- | --- | --- |
+| path | 路由 path | 非 | String | `lodash.uniqueId('d2-menu-empty-')` |
+| title | 菜单名称 | 必选 | String | 未命名菜单 |
+| icon | 菜单图标 | 非 | String | file-o |
+| children | 子菜单数据 | 非 | Array |  |
+
+示例：
+
+``` js
+[
+  {
+    path: '/index',
+    title: '首页',
+    icon: 'home'
+  },
+  {
+    path: '/demo',
+    title: '示例',
+    icon: 'puzzle-piece',
+    children: [
+      {
+        path: '/demo/plugins',
+        title: '插件',
+        icon: 'plug'
+      }
+    ]
+  }
+]
+```
+
+支持设置临时菜单，如果您在开发页面前需要先设计好菜单结构，可以只设置 title 字段，D2Admin 在生成菜单时会使用随机唯一 id 区分菜单项目，并且在点击时提示这是一个临时菜单。
+
+设置临时菜单的示例：
+
+``` js
+[
+  {
+    title: '空菜单演示',
+    icon: 'folder-o',
+    children: [
+      {
+        title: '正在开发 1',
+        children: [
+          { title: '正在开发 1-1' },
+          { title: '正在开发 1-2' }
+        ]
+      },
+      { title: '正在开发 2' },
+      { title: '正在开发 3' }
+    ]
+  }
+]
+```
+
+### mutations.asideSet
+
+#### 介绍
+
+设置侧边栏菜单。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| menu | 菜单 | 必选 | Array |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/menu/asideSet', menu)
+```
+
+menu 的格式同 mutations.headerSet
+
+### mutations.asideCollapseSet
+
+#### 介绍
+
+设置侧边栏展开或者收缩。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| collapse | 新的值 | 必选 | Boolean |  |  |
+
+#### 示例
+
+``` js
+// 折叠侧边栏菜单
+this.$store.commit('d2admin/menu/asideCollapseSet', true)
+// 展开侧边栏菜单
+this.$store.commit('d2admin/menu/asideCollapseSet', false)
+```
+
+### mutations.asideCollapseToggle
+
+#### 介绍
+
+切换侧边栏展开和收缩。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/menu/asideCollapseToggle')
+```
+
+### mutations.asideCollapseLoad
+
+#### 介绍
+
+从持久化数据读取侧边栏展开或者收缩。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/menu/asideCollapseLoad')
+```
+
 ## page
+
+### getters.keepAlive
+
+#### 介绍
+
+从当前所有打开的多标签页里返回需要缓存的页面 name。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.getters['d2admin/page/keepAlive']
+```
+
+### mutations.open
+
+#### 介绍
+
+打开一个新的页面。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| name | route name | 必选 | String |  |  |
+| params | route params | 非 | Object |  |  |
+| query | route query | 非 | Object |  |  |
+
+#### 示例
+
+``` js
+router.afterEach(to => {
+  // 需要的信息
+  const app = router.app
+  const { name, params, query } = to
+  // 多页控制 打开新的页面
+  app.$store.commit('d2admin/page/open', { name, params, query })
+})
+```
+
+### mutations.currentSet
+
+#### 介绍
+
+设置当前激活的页面 name。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| name | route name | 必选 | String |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/currentSet', 'route-name')
+```
+
+### mutations.openedUpdate
+
+#### 介绍
+
+更新页面列表上的某一项。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| index | 已经打开的页面的位置 | 必选 | Number |  |  |
+| params | route params | 非 | Object |  |  |
+| query | route query | 非 | Object |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/openedUpdate', {
+  index: 2,
+  params: {
+    name: 'new-name'
+  },
+  query: {
+    value: 'new-value'
+  }
+})
+```
+
+### mutations.opend2db
+
+#### 介绍
+
+将 opened 属性赋值并持久化。
+
+::: tip
+在这之前请先确保已经更新了 state.opened。
+:::
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/opend2db')
+```
+
+### mutations.openedLoad
+
+#### 介绍
+
+从持久化数据载入分页列表。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/openedLoad')
+```
+
+### mutations.add
+
+#### 介绍
+
+新增一个 tag。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| tag | { name, path, meta } | state.pool 中的某项 | Object |  |  |
+| params | route params | 非 | Object |  |  |
+| query | route query | 非 | Object |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/add', {
+  tag: {
+    name: 'route-name',
+    path: 'route-path',
+    meta: {}
+  },
+  params: {},
+  query: {}
+})
+```
+
+### mutations.close
+
+#### 介绍
+
+关闭一个 tag。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| tagName | 要关闭的标签名字 | 必选 | String |  |  |
+| vm | vue 实例 | 必选 | Object |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/close', {
+  tagName: 'route-name',
+  vm: this
+})
+```
+
+### mutations.closeLeft
+
+#### 介绍
+
+关闭当前标签左边的标签。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| pageSelect | 当前选中的 tagName | 必选 | String |  |  |
+| vm | vue 实例 | 必选 | Object |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/closeLeft', {
+  pageSelect: 'route-name',
+  vm: this
+})
+```
+
+### mutations.closeRight
+
+#### 介绍
+
+关闭当前标签右边的标签。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| pageSelect | 当前选中的 tagName | 必选 | String |  |  |
+| vm | vue 实例 | 必选 | Object |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/closeRight', {
+  pageSelect: 'route-name',
+  vm: this
+})
+```
+
+### mutations.closeOther
+
+#### 介绍
+
+关闭当前激活之外的标签。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| pageSelect | 当前选中的 tagName | 必选 | String |  |  |
+| vm | vue 实例 | 必选 | Object |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/closeOther', {
+  pageSelect: 'route-name',
+  vm: this
+})
+```
+
+### mutations.closeAll
+
+#### 介绍
+
+关闭所有标签。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| vm | vue 实例 | 必选 | Object |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/closeAll', {
+  vm: this
+})
+```
+
+### mutations.poolSet
+
+#### 介绍
+
+保存所有支持多标签页方式显示的路由池。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| pool | 路由池 | 必选 | Array |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/page/poolSet', [
+  {
+    name: 'route-name',
+    path: 'route-path',
+    meta: {}
+  }
+])
+```
+
 ## releases
+
+### mutations.updateSet
+
+#### 介绍
+
+设置是否有新的 D2Admin 版本。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| update | 是否有新版本 | 必选 | Boolean |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/releases/updateSet', true)
+```
+
+### mutations.latestSet
+
+#### 介绍
+
+设置最新版本的信息。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| latest | 最新版本的信息 | 必选 | Object |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/releases/latestSet', {})
+```
+
 ## theme
+
+### getters.activeSetting
+
+#### 介绍
+
+返回当前的主题信息，不是一个名字，而是当前激活主题的所有数据。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.getters['d2admin/theme/activeSetting']
+```
+
+### mutations.set
+
+#### 介绍
+
+激活一个主题。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| themeName | 需要激活的主题名称 | 必选 | String |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/theme/set', 'd2')
+```
+
+### mutations.load
+
+#### 介绍
+
+从持久化数据加载主题设置。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/theme/load')
+```
+
+### mutations.dom
+
+#### 介绍
+
+将 vuex 中的主题应用到 dom。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/theme/dom')
+```
+
 ## transition
+
+### mutations.set
+
+#### 介绍
+
+设置页面动画开启状态。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| active | 新的值 | 必选 | Boolean |  |  |
+
+#### 示例
+
+``` js
+// 打开页面动画
+this.$store.commit('d2admin/transition/set', true)
+// 关闭页面动画
+this.$store.commit('d2admin/transition/set', false)
+```
+
+### mutations.load
+
+#### 介绍
+
+从持久化数据读取页面过渡动画设置。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/transition/load')
+```
+
 ## ua
+
+### mutations.get
+
+#### 介绍
+
+记录 UA。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/ua/get')
+```
+
 ## user
+
+### mutations.set
+
+#### 介绍
+
+设置用户数据。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| info | 用户数据 | 必选 | Object |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/user/set', {
+  name: 'my-name'
+})
+```
+
+### mutations.load
+
+#### 介绍
+
+从持久化数据读取用户数据。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/user/load')
+```

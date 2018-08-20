@@ -15,10 +15,10 @@ export default {
     /**
      * @description 设置灰度模式
      * @param {Object} state vuex state
-     * @param {Boolean} value new value
+     * @param {Boolean} active active
      */
-    set (state, value) {
-      state.active = value
+    set (state, active) {
+      state.active = active
     }
   }
 }
