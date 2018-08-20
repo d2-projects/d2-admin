@@ -94,6 +94,14 @@ module.exports = {
                   { text: 'segmentfault', link: 'https://segmentfault.com/blog/liyang-note-book' },
                   { text: '知乎', link: 'https://www.zhihu.com/people/fairy-ever/activities' }
                 ]
+              },
+              {
+                text: 'D2 在其它地方',
+                items: [
+                  { text: 'awesome-vue', link: 'https://github.com/vuejs/awesome-vue' },
+                  { text: 'ant design 脚手架市场', link: 'http://scaffold.ant.design/#/scaffolds/d2-admin' },
+                  { text: 'awesomes.cn', link: 'https://www.awesomes.cn/repo/d2-projects/d2-admin' }
+                ]
               }
             ]
           },
