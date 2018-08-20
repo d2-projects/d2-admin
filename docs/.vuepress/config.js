@@ -157,7 +157,10 @@ function sideBarSysPlugins () {
         'data-export',
         'data-import',
         'i18n',
-        'mock.md'
+        'mock',
+        'error',
+        'log',
+        'console'
       ]
     }
   ]
