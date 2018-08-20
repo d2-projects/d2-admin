@@ -19,7 +19,7 @@ import { frameInRoutes } from '@/router/routes'
 ``` js
 $store.commit('d2admin/page/poolSet', pool)
 ```
-将得到的路由数据存储到 vuex 中备用。
+将得到的路由数据存储到 vuex 中备用。这份数据在操作多页面数据时会使用到。
 
 ## 触发
 
