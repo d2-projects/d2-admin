@@ -58,6 +58,7 @@ module.exports = {
               { text: '路由', link: '/zh/sys-route/' },
               { text: '多页面', link: '/zh/sys-multi-page/' },
               { text: '主题系统', link: '/zh/sys-theme/' },
+              { text: '登陆和注销', link: '/zh/sys-account/' },
               { text: '数据持久化', link: '/zh/sys-db/' },
               { text: 'CSS 实用类', link: '/zh/sys-css/' },
               { text: 'JS Util', link: '/zh/sys-util/' }
@@ -130,10 +131,10 @@ function sideBarSysComponents () {
         'icon',
         'icon-svg',
         'icon-select',
-        'charts-new',
         'markdown',
         'highlight',
-        'count-up'
+        'count-up',
+        'charts'
       ]
     }
   ]

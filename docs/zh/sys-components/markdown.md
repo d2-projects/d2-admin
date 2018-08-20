@@ -1,4 +1,6 @@
-# markdown 渲染器
+# d2-markdown
+
+markdown 渲染器组件
 
 ## 参数
 
