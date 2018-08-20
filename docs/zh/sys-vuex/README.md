@@ -485,6 +485,10 @@ db
 
 ## fullscreen
 
+### state.active
+
+当前的全屏状态激活标识
+
 ### mutations.toggle
 
 #### 介绍
@@ -524,6 +528,10 @@ this.$store.commit('d2admin/fullscreen/set', false)
 
 ## gray
 
+### state.active
+
+当前的灰度状态激活标识
+
 ### mutations.toggle
 
 #### 介绍
@@ -562,6 +570,10 @@ this.$store.commit('d2admin/gray/set', false)
 ```
 
 ## log
+
+### state.list
+
+当前的日志记录
 
 ### getters.length
 
@@ -657,6 +669,18 @@ export default {
 ```
 
 ## menu
+
+### state.header
+
+顶栏菜单
+
+### state.aside
+
+侧边栏菜单
+
+### state.asideCollapse
+
+侧边栏的折叠状态
 
 ### mutations.headerSet
 
@@ -807,6 +831,18 @@ this.$store.commit('d2admin/menu/asideCollapseLoad')
 ```
 
 ## page
+
+### state.pool
+
+可以在多页 tab 模式下显示的页面
+
+### state.opened
+
+当前显示的多页面列表
+
+### state.current
+
+当前页面
 
 ### getters.keepAlive
 
@@ -1094,6 +1130,18 @@ this.$store.commit('d2admin/page/poolSet', [
 
 ## releases
 
+### state.version
+
+当前版本
+
+### state.latest
+
+最新版本的信息
+
+### state.update
+
+有新版本
+
 ### mutations.updateSet
 
 #### 介绍
@@ -1131,6 +1179,14 @@ this.$store.commit('d2admin/releases/latestSet', {})
 ```
 
 ## theme
+
+### state.list
+
+所有注册的主题
+
+### state.activeName
+
+当前激活的主题名称
 
 ### getters.activeSetting
 
@@ -1200,6 +1256,10 @@ this.$store.commit('d2admin/theme/dom')
 
 ## transition
 
+### state.active
+
+是否开启页面过度动画
+
 ### mutations.set
 
 #### 介绍
@@ -1239,6 +1299,10 @@ this.$store.commit('d2admin/transition/load')
 
 ## ua
 
+### state.data
+
+用户 UA 信息
+
 ### mutations.get
 
 #### 介绍
@@ -1256,6 +1320,10 @@ this.$store.commit('d2admin/ua/get')
 ```
 
 ## user
+
+### state.info
+
+用户信息
 
 ### mutations.set
 
