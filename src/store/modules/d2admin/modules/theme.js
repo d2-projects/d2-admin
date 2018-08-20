@@ -30,10 +30,11 @@ export default {
       // 将 vuex 中的主题应用到 dom
       this.commit('d2admin/theme/dom')
       // 持久化
-      this.dispatch('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/set', {
         dbName: 'sys',
         path: 'theme.activeName',
-        value: state.activeName
+        value: state.activeName,
+        user: true
       })
     },
     /**
@@ -42,10 +43,11 @@ export default {
      */
     async load (state) {
       // store 赋值
-      state.activeName = await this.dispatch('d2admin/db/getByUser', {
+      state.activeName = await this.dispatch('d2admin/db/get', {
         dbName: 'sys',
         path: 'theme.activeName',
-        defaultValue: state.list[0].name
+        defaultValue: state.list[0].name,
+        user: true
       })
       // 更新到页面
       this.commit('d2admin/theme/dom')

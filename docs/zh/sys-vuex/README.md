@@ -118,39 +118,12 @@ this.$store.commit('d2admin/account/load')
 | dbName | 持久化数据分区名称 | 非 | String | database, sys | database |
 | path | 存储路径 | 非 | String |  | 空字符串 |
 | value | 需要存储的值 | 非 | String |  | 空字符串 |
+| user | 是否区分用户 | 非 | Boolean |  | false |
 
 #### 示例
 
 ``` js
 this.$store.dispatch('d2admin/db/set', {
-  dbName: 'database',
-  path: 'demo.sometext',
-  value: 'Hello World'
-})
-```
-
-### actions.setByUser
-
-#### 介绍
-
-将数据存储到指定位置 | 路径不存在会自动初始化 [ 区分用户 ]。
-
-::: warning 注意
-不建议在业务代码中使用此方法，此方法可以访问到任何的持久化数据位置，只在开发系统模块时调用，并且使用时您应该十分清楚您正在做什么。
-:::
-
-#### 参数
-
-| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
-| --- | --- | --- | --- | --- | --- |
-| dbName | 持久化数据分区名称 | 非 | String | database, sys | database |
-| path | 存储路径 | 非 | String |  | 空字符串 |
-| value | 需要存储的值 | 非 | String |  | 空字符串 |
-
-#### 示例
-
-``` js
-this.$store.dispatch('d2admin/db/setByUser', {
   dbName: 'database',
   path: 'demo.sometext',
   value: 'Hello World'
@@ -174,39 +147,12 @@ this.$store.dispatch('d2admin/db/setByUser', {
 | dbName | 持久化数据分区名称 | 非 | String | database, sys | database |
 | path | 存储路径 | 非 | String |  | 空字符串 |
 | defaultValue | 取值失败的默认值 | 非 | String |  | 空字符串 |
+| user | 是否区分用户 | 非 | Boolean |  | false |
 
 #### 示例
 
 ``` js
 const value = await this.$store.dispatch('d2admin/db/get', {
-  dbName: 'database',
-  path: 'demo.sometext',
-  defaultValue: 'Hello World'
-})
-```
-
-### actions.getByUser
-
-#### 介绍
-
-效果类似于取值 dbName.path[user] || defaultValue。
-
-::: warning 注意
-不建议在业务代码中使用此方法，此方法可以访问到任何的持久化数据位置，只在开发系统模块时调用，并且使用时您应该十分清楚您正在做什么。
-:::
-
-#### 参数
-
-| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
-| --- | --- | --- | --- | --- | --- |
-| dbName | 持久化数据分区名称 | 非 | String | database, sys | database |
-| path | 存储路径 | 非 | String |  | 空字符串 |
-| defaultValue | 取值失败的默认值 | 非 | String |  | 空字符串 |
-
-#### 示例
-
-``` js
-const value = await this.$store.dispatch('d2admin/db/getByUser', {
   dbName: 'database',
   path: 'demo.sometext',
   defaultValue: 'Hello World'
@@ -398,7 +344,7 @@ this.$store.dispatch('d2admin/db/pageSet', {
 })
 ```
 
-### actions.pageLoad
+### actions.pageGet
 
 #### 介绍
 
@@ -418,7 +364,7 @@ this.$store.dispatch('d2admin/db/pageSet', {
 
 ``` js
 // 获取数据
-const data = await this.pageLoad({
+const data = await this.pageGet({
   vm: this
 })
 // 将数据还原到页面
@@ -431,7 +377,7 @@ for (const key in data) {
 
 ``` js
 // 获取数据
-const data = await this.pageLoad({
+const data = await this.pageGet({
   vm: this,
   user: true
 })

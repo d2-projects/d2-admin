@@ -39,10 +39,11 @@ export default {
       // store 赋值
       state.asideCollapse = collapse
       // 持久化
-      this.dispatch('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/set', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
-        value: state.asideCollapse
+        value: state.asideCollapse,
+        user: true
       })
     },
     /**
@@ -53,10 +54,11 @@ export default {
       // store 赋值
       state.asideCollapse = !state.asideCollapse
       // 持久化
-      this.dispatch('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/set', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
-        value: state.asideCollapse
+        value: state.asideCollapse,
+        user: true
       })
     },
     /**
@@ -65,10 +67,11 @@ export default {
      */
     async asideCollapseLoad (state) {
       // store 赋值
-      state.asideCollapse = await this.dispatch('d2admin/db/getByUser', {
+      state.asideCollapse = await this.dispatch('d2admin/db/get', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
-        defaultValue: setting.menu.asideCollapse
+        defaultValue: setting.menu.asideCollapse,
+        user: true
       })
     }
   }

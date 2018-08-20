@@ -37,33 +37,18 @@ export default {
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param value {*} 需要存储的值
+     * @param {Object} param user {Boolean} 是否区分用户
      */
     set (context, {
       dbName = 'database',
       path = '',
-      value = ''
+      value = '',
+      user = false
     }) {
       db.set(pathInit({
         dbName,
         path,
-        user: false
-      }), value).write()
-    },
-    /**
-     * @description 将数据存储到指定位置 | 路径不存在会自动初始化 [ 区分用户 ]
-     * @description 效果类似于取值 dbName.path[user] = value
-     * @param {Object} param dbName {String} 数据库名称
-     * @param {Object} param path {String} 存储路径
-     * @param {Object} param value {*} 需要存储的值
-     */
-    setByUser (context, {
-      dbName = 'database',
-      path = '',
-      value = ''
-    }) {
-      db.set(pathInit({
-        dbName,
-        path
+        user
       }), value).write()
     },
     /**
@@ -72,38 +57,19 @@ export default {
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param defaultValue {*} 取值失败的默认值
+     * @param {Object} param user {Boolean} 是否区分用户
      */
     get (context, {
       dbName = 'database',
       path = '',
-      defaultValue = ''
+      defaultValue = '',
+      user = false
     }) {
       return new Promise(resolve => {
         resolve(db.get(pathInit({
           dbName,
           path,
-          user: false,
-          defaultValue
-        })).value())
-      })
-    },
-    /**
-     * @description 获取数据 [ 区分用户 ]
-     * @description 效果类似于取值 dbName.path[user] || defaultValue
-     * @param {Object} param dbName {String} 数据库名称
-     * @param {Object} param path {String} 存储路径
-     * @param {Object} param defaultValue {*} 取值失败的默认值
-     */
-    getByUser (context, {
-      dbName = 'database',
-      path = '',
-      defaultValue = ''
-    }) {
-      return new Promise((resolve, reject) => {
-        resolve(db.get(pathInit({
-          dbName,
-          path,
-          user: true,
+          user,
           defaultValue
         })).value())
       })
@@ -215,7 +181,7 @@ export default {
      * @param {Object} param basis {String} 页面区分依据 [ name | path | fullPath ]
      * @param {Object} param user {Boolean} 是否区分用户
      */
-    pageLoad (context, {
+    pageGet (context, {
       vm,
       basis = 'name',
       user = false
