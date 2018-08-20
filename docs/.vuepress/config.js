@@ -99,8 +99,11 @@ module.exports = {
                 text: 'D2 在其它地方',
                 items: [
                   { text: 'awesome-vue', link: 'https://github.com/vuejs/awesome-vue' },
-                  { text: 'ant design 脚手架市场', link: 'http://scaffold.ant.design/#/scaffolds/d2-admin' },
-                  { text: 'awesomes.cn', link: 'https://www.awesomes.cn/repo/d2-projects/d2-admin' }
+                  { text: 'ant design scaffolds', link: 'http://scaffold.ant.design/#/scaffolds/d2-admin' },
+                  { text: 'ice vue scaffold', link: 'https://alibaba.github.io/ice/scaffold?type=vue' },
+                  { text: 'awesomes.cn', link: 'https://www.awesomes.cn/repo/d2-projects/d2-admin' },
+                  { text: 'oschina.net', link: 'https://www.oschina.net/p/D2admin' },
+                  { text: 'ctolib.com', link: 'https://www.ctolib.com/FairyEver-d2-admin.html' }
                 ]
               }
             ]
