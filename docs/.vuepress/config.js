@@ -82,8 +82,8 @@ module.exports = {
               {
                 text: '交流',
                 items: [
-                  { text: '微信公众号', link: '' },
-                  { text: '交流群', link: '' }
+                  { text: '微信公众号', link: '/zh/communication-we/' },
+                  { text: '交流群', link: '/zh/communication-group-chat/' }
                 ]
               },
               {
