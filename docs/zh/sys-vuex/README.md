@@ -784,7 +784,7 @@ this.$store.commit('d2admin/menu/headerSet', menu)
 ]
 ```
 
-以 https:// 或者 http:// 开头的 path 会被当做外部链接处理
+以 `https://` 或者 `http://` 开头的 path 会被当做外部链接处理
 
 ### mutations.asideSet
 
