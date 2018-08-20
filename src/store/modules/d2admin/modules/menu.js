@@ -39,7 +39,7 @@ export default {
       // store 赋值
       state.asideCollapse = collapse
       // 持久化
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
         value: state.asideCollapse
@@ -53,7 +53,7 @@ export default {
       // store 赋值
       state.asideCollapse = !state.asideCollapse
       // 持久化
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
         value: state.asideCollapse

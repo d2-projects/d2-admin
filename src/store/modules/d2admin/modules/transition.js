@@ -17,7 +17,7 @@ export default {
       // store 赋值
       state.active = active
       // 持久化
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'transition.active',
         value: state.active
