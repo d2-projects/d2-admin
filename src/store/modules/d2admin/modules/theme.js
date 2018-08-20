@@ -30,7 +30,7 @@ export default {
       // 将 vuex 中的主题应用到 dom
       this.commit('d2admin/theme/dom')
       // 持久化
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'theme.activeName',
         value: state.activeName

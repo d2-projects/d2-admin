@@ -17,7 +17,7 @@ export default {
       // store 赋值
       state.info = info
       // 持久化
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'user.info',
         value: info

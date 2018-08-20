@@ -93,7 +93,7 @@ export default {
      * @param {Object} state vuex state
      */
     opend2db (state) {
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/setByUser', {
         dbName: 'sys',
         path: 'page.opened',
         value: state.opened

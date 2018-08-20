@@ -101,7 +101,7 @@ this.$store.commit('d2admin/account/load')
 
 ## db
 
-### mutations.set
+### actions.set
 
 #### 介绍
 
@@ -122,14 +122,14 @@ this.$store.commit('d2admin/account/load')
 #### 示例
 
 ``` js
-this.$store.commit('d2admin/db/set', {
+this.$store.dispatch('d2admin/db/set', {
   dbName: 'database',
   path: 'demo.sometext',
   value: 'Hello World'
 })
 ```
 
-### mutations.setByUser
+### actions.setByUser
 
 #### 介绍
 
@@ -150,7 +150,7 @@ this.$store.commit('d2admin/db/set', {
 #### 示例
 
 ``` js
-this.$store.commit('d2admin/db/setByUser', {
+this.$store.dispatch('d2admin/db/setByUser', {
   dbName: 'database',
   path: 'demo.sometext',
   value: 'Hello World'
