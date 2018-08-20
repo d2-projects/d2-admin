@@ -1,4 +1,6 @@
-# 页面容器
+# d2-container
+
+页面容器组件
 
 ::: tip 提示
 `<d2-container>` 是 D2Admin 构建页面最重要的组件，请仔细阅读本文档
