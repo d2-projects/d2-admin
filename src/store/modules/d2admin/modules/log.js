@@ -37,7 +37,6 @@ export default {
   actions: {
     /**
      * @description 添加一个日志
-     * @param {Object} state vuex state
      * @param {Object} param type {String} 类型
      * @param {Object} param err {Error} 错误对象
      * @param {Object} param vm {Object} vue 实例

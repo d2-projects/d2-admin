@@ -20,7 +20,7 @@ export default {
   },
   mutations: {
     /**
-     * @description 激活一个主题（应用到dom上）
+     * @description 激活一个主题
      * @param {Object} state vuex state
      * @param {String} themeValue 需要激活的主题名称
      */
@@ -37,7 +37,7 @@ export default {
       })
     },
     /**
-     * @description 从数据库加载主题设置
+     * @description 从持久化数据加载主题设置
      * @param {Object} state vuex state
      */
     async load (state) {

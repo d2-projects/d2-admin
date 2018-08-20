@@ -13,6 +13,7 @@ export default {
   },
   mutations: {
     /**
+     * @description 设置顶栏菜单
      * @param {Object} state vuex state
      * @param {Array} menu menu setting
      */
@@ -21,6 +22,7 @@ export default {
       state.header = menu
     },
     /**
+     * @description 设置侧边栏菜单
      * @param {Object} state vuex state
      * @param {Array} menu menu setting
      */
@@ -58,7 +60,7 @@ export default {
       })
     },
     /**
-     * 从数据库读取侧边栏展开或者收缩
+     * 从持久化数据读取侧边栏展开或者收缩
      * @param {Object} state vuex state
      */
     async asideCollapseLoad (state) {

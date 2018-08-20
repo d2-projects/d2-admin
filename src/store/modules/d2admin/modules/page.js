@@ -101,7 +101,7 @@ export default {
     },
     /**
      * @class opened
-     * @description 从数据库载入分页列表
+     * @description 从持久化数据载入分页列表
      * @param {Object} state vuex state
      */
     async openedLoad (state) {
