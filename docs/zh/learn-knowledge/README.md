@@ -35,7 +35,7 @@ sidebar: auto
 
 | 名称 | 介绍 |
 | --- | --- |
-| [vue-cli3](https://github.com/vuejs/vue-docs-zh-cn/tree/master/vue-cli) | 项目脚手架 |
+| [vue-cli3](https://cli.vuejs.org/zh/) | 项目脚手架 |
 | [webpack-chain](https://github.com/mozilla-neutrino/webpack-chain) | vue-cli3 中 webpack 的配置语法 |
 
 插件：
