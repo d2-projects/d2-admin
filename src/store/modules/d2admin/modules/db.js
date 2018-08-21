@@ -11,7 +11,7 @@ import util from '@/libs/util.js'
  * @returns {String} 可以直接使用的路径
  */
 function pathInit ({
-  dbName = 'db',
+  dbName = 'database',
   path = '',
   user = true,
   validator = () => true,
@@ -30,46 +30,50 @@ function pathInit ({
 
 export default {
   namespaced: true,
-  mutations: {
+  actions: {
     /**
      * @description 将数据存储到指定位置 | 路径不存在会自动初始化
-     * @description 效果类似于 dbName.path = value
-     * @param {Object} state vuex state
+     * @description 效果类似于取值 dbName.path = value
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param value {*} 需要存储的值
+     * @param {Object} param user {Boolean} 是否区分用户
      */
-    set (state, {
-      dbName = 'db',
+    set (context, {
+      dbName = 'database',
       path = '',
-      value = ''
+      value = '',
+      user = false
     }) {
       db.set(pathInit({
         dbName,
         path,
-        user: false
+        user
       }), value).write()
     },
     /**
-     * @description 将数据存储到指定位置 | 路径不存在会自动初始化 [ 区分用户 ]
-     * @description 效果类似于 dbName.path[user] = value
-     * @param {Object} state vuex state
+     * @description 获取数据
+     * @description 效果类似于取值 dbName.path || defaultValue
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
-     * @param {Object} param value {*} 需要存储的值
+     * @param {Object} param defaultValue {*} 取值失败的默认值
+     * @param {Object} param user {Boolean} 是否区分用户
      */
-    setByUser (state, {
-      dbName = 'db',
+    get (context, {
+      dbName = 'database',
       path = '',
-      value = ''
+      defaultValue = '',
+      user = false
     }) {
-      db.set(pathInit({
-        dbName,
-        path
-      }), value).write()
-    }
-  },
-  actions: {
+      return new Promise(resolve => {
+        resolve(db.get(pathInit({
+          dbName,
+          path,
+          user,
+          defaultValue
+        })).value())
+      })
+    },
     /**
      * @description 获取存储数据库对象
      * @param {Object} context context
@@ -177,7 +181,7 @@ export default {
      * @param {Object} param basis {String} 页面区分依据 [ name | path | fullPath ]
      * @param {Object} param user {Boolean} 是否区分用户
      */
-    pageLoad (context, {
+    pageGet (context, {
       vm,
       basis = 'name',
       user = false
@@ -211,50 +215,6 @@ export default {
           validator: () => false,
           defaultValue: {}
         })))
-      })
-    },
-    /**
-     * @description 获取数据
-     * @description 效果类似于 dbName.path || defaultValue
-     * @param {Object} state vuex state
-     * @param {Object} param dbName {String} 数据库名称
-     * @param {Object} param path {String} 存储路径
-     * @param {Object} param defaultValue {*} 取值失败的默认值
-     */
-    get (context, {
-      dbName = 'db',
-      path = '',
-      defaultValue = ''
-    }) {
-      return new Promise(resolve => {
-        resolve(db.get(pathInit({
-          dbName,
-          path,
-          user: false,
-          defaultValue
-        })).value())
-      })
-    },
-    /**
-     * @description 获取数据 [ 区分用户 ]
-     * @description 效果类似于 dbName.path[user] || defaultValue
-     * @param {Object} state vuex state
-     * @param {Object} param dbName {String} 数据库名称
-     * @param {Object} param path {String} 存储路径
-     * @param {Object} param defaultValue {*} 取值失败的默认值
-     */
-    getByUser (context, {
-      dbName = 'db',
-      path = '',
-      defaultValue = ''
-    }) {
-      return new Promise((resolve, reject) => {
-        resolve(db.get(pathInit({
-          dbName,
-          path,
-          user: true,
-          defaultValue
-        })).value())
       })
     }
   }

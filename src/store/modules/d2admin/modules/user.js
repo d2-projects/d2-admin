@@ -17,10 +17,11 @@ export default {
       // store 赋值
       state.info = info
       // 持久化
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/set', {
         dbName: 'sys',
         path: 'user.info',
-        value: info
+        value: info,
+        user: true
       })
     },
     /**
@@ -29,10 +30,11 @@ export default {
      */
     async load (state) {
       // store 赋值
-      state.info = await this.dispatch('d2admin/db/getByUser', {
+      state.info = await this.dispatch('d2admin/db/get', {
         dbName: 'sys',
         path: 'user.info',
-        defaultValue: setting.user.info
+        defaultValue: setting.user.info,
+        user: true
       })
     }
   }

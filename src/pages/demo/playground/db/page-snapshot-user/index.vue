@@ -86,7 +86,7 @@ export default {
     }
   },
   async created () {
-    const data = await this.pageLoad({ vm: this, user: true })
+    const data = await this.pageGet({ vm: this, user: true })
     for (const key in data) {
       if (data.hasOwnProperty(key)) this[key] = data[key]
     }
@@ -102,7 +102,7 @@ export default {
   methods: {
     ...mapActions('d2admin/db', [
       'pageSet',
-      'pageLoad',
+      'pageGet',
       'pageClear'
     ]),
     async handleClear () {

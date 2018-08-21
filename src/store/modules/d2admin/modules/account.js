@@ -32,7 +32,7 @@ export default {
           commit('d2admin/user/set', {
             name: res.data.name
           }, { root: true })
-          // 用户登陆后从数据库加载一系列的设置
+          // 用户登陆后从持久化数据加载一系列的设置
           commit('d2admin/account/load', null, { root: true })
           // 跳转路由
           vm.$router.push({
@@ -51,7 +51,7 @@ export default {
      * @param {Object} param vm {Object} vue 实例
      * @param {Object} param confirm {Boolean} 是否需要确认
      */
-    logout ({ commit }, { vm, confirm }) {
+    logout ({ commit }, { vm, confirm = false }) {
       /**
        * @description 注销
        */
@@ -87,8 +87,7 @@ export default {
   },
   mutations: {
     /**
-     * @class ...
-     * @description 用户登陆后从数据库加载一系列的设置
+     * @description 用户登陆后从持久化数据加载一系列的设置
      * @param {Object} state vuex state
      */
     load (state) {
@@ -98,9 +97,9 @@ export default {
       this.commit('d2admin/theme/load')
       // DB -> store 加载页面过渡效果设置
       this.commit('d2admin/transition/load')
-      // DB -> store 数据库加载上次退出时的多页列表
+      // DB -> store 持久化数据加载上次退出时的多页列表
       this.commit('d2admin/page/openedLoad')
-      // DB -> store 数据库加载这个用户之前设置的侧边栏折叠状态
+      // DB -> store 持久化数据加载这个用户之前设置的侧边栏折叠状态
       this.commit('d2admin/menu/asideCollapseLoad')
     }
   }

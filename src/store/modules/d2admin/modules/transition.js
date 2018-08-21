@@ -17,10 +17,11 @@ export default {
       // store 赋值
       state.active = active
       // 持久化
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/set', {
         dbName: 'sys',
         path: 'transition.active',
-        value: state.active
+        value: state.active,
+        user: true
       })
     },
     /**
@@ -29,10 +30,11 @@ export default {
      */
     async load (state) {
       // store 赋值
-      state.active = await this.dispatch('d2admin/db/getByUser', {
+      state.active = await this.dispatch('d2admin/db/get', {
         dbName: 'sys',
         path: 'transition.active',
-        defaultValue: setting.transition.active
+        defaultValue: setting.transition.active,
+        user: true
       })
     }
   }

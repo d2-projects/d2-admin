@@ -41,82 +41,141 @@ module.exports = {
         editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: '最后更新',
         nav: [
-          { text: '指南', link: '/zh/guide/' },
-          { text: '插件', link: '/zh/plugins/' },
-          { text: '组件', link: '/zh/components/' },
+          {
+            text: '学习',
+            items: [
+              { text: '教程', link: '/zh/learn-guide/' },
+              { text: '相关知识', link: '/zh/learn-knowledge/' }
+            ]
+          },
+          {
+            text: '模块',
+            items: [
+              { text: '组件', link: '/zh/sys-components/' },
+              { text: '插件', link: '/zh/sys-plugins/' },
+              { text: 'vuex', link: '/zh/sys-vuex/' },
+              { text: '菜单', link: '/zh/sys-menu/' },
+              { text: '路由', link: '/zh/sys-route/' },
+              { text: '多页面', link: '/zh/sys-multi-page/' },
+              { text: '数据持久化', link: '/zh/sys-db/' },
+              { text: 'CSS 实用类', link: '/zh/sys-css/' },
+              { text: 'JS Util', link: '/zh/sys-util/' },
+              { text: 'cli3 和 webpack', link: '/zh/sys-cli3-webpack/' }
+            ]
+          },
+          {
+            text: '生态',
+            items: [
+              { text: 'D2 Admin start kit', link: '/zh/ecosystem-d2-admin-start-kit/' },
+              { text: 'D2 Admin ICE', link: '/zh/ecosystem-d2-admin-ice/' },
+              { text: 'D2 CRUD', link: '/zh/ecosystem-d2-crud/' },
+              { text: 'D2 Ribbons', link: '/zh/ecosystem-d2-ribbons/' }
+            ]
+          },
           { text: '文章', link: '/zh/article/' },
-          { text: '其它', link: '/zh/others/' },
-          { text: '预览', link: 'https://fairyever.gitee.io/d2-admin-preview/#/index' }
+          {
+            text: '其它',
+            items: [
+              { text: '更新日志', link: '/zh/change-log/' },
+              { text: '参与者名单', link: '/zh/collaborator/' },
+              { text: '借鉴 D2Admin 的项目', link: '/zh/plagiarize/' },
+              {
+                text: '交流',
+                items: [
+                  { text: '微信公众号', link: '/zh/communication-we/' },
+                  { text: '交流群', link: '/zh/communication-group-chat/' }
+                ]
+              },
+              {
+                text: '关注我们',
+                items: [
+                  { text: '掘金', link: 'https://juejin.im/user/57a48b632e958a006691b946/posts' },
+                  { text: 'CSDN', link: 'https://blog.csdn.net/fairyever' },
+                  { text: 'segmentfault', link: 'https://segmentfault.com/blog/liyang-note-book' },
+                  { text: '知乎', link: 'https://www.zhihu.com/people/fairy-ever/activities' }
+                ]
+              },
+              {
+                text: 'D2 在其它地方',
+                items: [
+                  { text: 'awesome-vue', link: 'https://github.com/vuejs/awesome-vue' },
+                  { text: 'ant design scaffolds', link: 'http://scaffold.ant.design/#/scaffolds/d2-admin' },
+                  { text: 'ice vue scaffold', link: 'https://alibaba.github.io/ice/scaffold?type=vue' },
+                  { text: 'awesomes.cn', link: 'https://www.awesomes.cn/repo/d2-projects/d2-admin' },
+                  { text: 'oschina.net', link: 'https://www.oschina.net/p/D2admin' },
+                  { text: 'ctolib.com', link: 'https://www.ctolib.com/FairyEver-d2-admin.html' }
+                ]
+              }
+            ]
+          },
+          { text: '常见问题', link: '/zh/question/' }
         ],
         sidebar: {
-          '/zh/guide/': sideBarGuide('指南'),
-          '/zh/plugins/': sideBarPlugins('插件'),
-          '/zh/components/': sideBarComponents('组件'),
-          '/zh/article/': sideBarArticle('Cookbook', '版本更新'),
-          '/zh/others/': sideBarOthers('其它')
+          '/zh/learn-guide/': sideBarLearnGuide(),
+          '/zh/sys-components/': sideBarSysComponents(),
+          '/zh/sys-plugins/': sideBarSysPlugins(),
+          '/zh/article/': sideBarArticle('版本发布', 'Cookbook')
         }
       }
     }
   }
 }
 
-function sideBarGuide (title) {
+function sideBarLearnGuide () {
   return [
     {
-      title,
       collapsable: false,
       children: [
         '',
-        'getting-started',
-        'question',
-        'plagiarize',
-        'change-log'
+        'getting-started'
       ]
     }
   ]
 }
 
-function sideBarPlugins () {
-  return [
-    '',
-    'data-export',
-    'data-import',
-    'i18n',
-    'mock',
-    'vuex',
-    'util'
-  ]
-}
-
-function sideBarComponents (title) {
+function sideBarSysComponents () {
   return [
     {
-      title,
       collapsable: false,
       children: [
-        '',
-        'charts',
-        'charts-new',
         'container',
-        'count-up',
-        'highlight',
-        'icon-select',
-        'icon-svg',
         'icon',
-        'markdown'
+        'icon-svg',
+        'icon-select',
+        'markdown',
+        'highlight',
+        'count-up',
+        'charts'
       ]
     }
   ]
 }
 
-function sideBarArticle (titleCookBook, titleUpdate) {
+function sideBarSysPlugins () {
   return [
     {
-      title: titleCookBook,
+      collapsable: false,
+      children: [
+        'data-export',
+        'data-import',
+        'i18n',
+        'mock',
+        'error',
+        'log',
+        'console'
+      ]
+    }
+  ]
+}
+
+function sideBarArticle (titleUpdate, titleCookbook) {
+  return [
+    {
+      title: titleCookbook,
       collapsable: false,
       children: [
         'cookbook/what-is-cookbook',
-        'cookbook/combinable-questionnaire',
+        'cookbook/combinable-questionnaire'
       ]
     },
     {
@@ -127,19 +186,6 @@ function sideBarArticle (titleCookBook, titleUpdate) {
         'update/1.1.5',
         'update/1.1.4',
         'update/0.0.0'
-      ]
-    }
-  ]
-}
-
-function sideBarOthers (title) {
-  return [
-    {
-      title,
-      collapsable: false,
-      children: [
-        '',
-        'css'
       ]
     }
   ]

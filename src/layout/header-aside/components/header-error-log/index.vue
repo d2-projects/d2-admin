@@ -34,7 +34,6 @@
           清空
         </el-button>
       </div>
-
       <d2-error-log-list/>
     </el-dialog>
   </div>
