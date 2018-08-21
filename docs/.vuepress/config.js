@@ -115,7 +115,8 @@ module.exports = {
           '/zh/learn-guide/': sideBarLearnGuide(),
           '/zh/sys-components/': sideBarSysComponents(),
           '/zh/sys-plugins/': sideBarSysPlugins(),
-          '/zh/article/': sideBarArticle('版本发布', 'Cookbook')
+          '/zh/article/': sideBarArticle('版本发布', 'Cookbook'),
+          '/zh/ecosystem-d2-crud/': sideBarEcosystemD2Crud()
         }
       }
     }
@@ -187,6 +188,18 @@ function sideBarArticle (titleUpdate, titleCookbook) {
         'update/1.1.5',
         'update/1.1.4',
         'update/0.0.0'
+      ]
+    }
+  ]
+}
+
+function sideBarEcosystemD2Crud () {
+  return [
+    {
+      collapsable: false,
+      children: [
+        '',
+        'api'
       ]
     }
   ]
