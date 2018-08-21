@@ -49,7 +49,7 @@ module.exports = {
             ]
           },
           {
-            text: '系统模块',
+            text: '模块',
             items: [
               { text: '组件', link: '/zh/sys-components/' },
               { text: '插件', link: '/zh/sys-plugins/' },
@@ -59,7 +59,8 @@ module.exports = {
               { text: '多页面', link: '/zh/sys-multi-page/' },
               { text: '数据持久化', link: '/zh/sys-db/' },
               { text: 'CSS 实用类', link: '/zh/sys-css/' },
-              { text: 'JS Util', link: '/zh/sys-util/' }
+              { text: 'JS Util', link: '/zh/sys-util/' },
+              { text: 'cli3 和 webpack', link: '/zh/sys-cli3-webpack/' }
             ]
           },
           {
