@@ -364,7 +364,7 @@ this.$store.dispatch('d2admin/db/pageSet', {
 
 ``` js
 // 获取数据
-const data = await this.pageGet({
+const data = await this.$store.dispatch('d2admin/db/pageGet', {
   vm: this
 })
 // 将数据还原到页面
@@ -377,7 +377,7 @@ for (const key in data) {
 
 ``` js
 // 获取数据
-const data = await this.pageGet({
+const data = await this.$store.dispatch('d2admin/db/pageGet', {
   vm: this,
   user: true
 })

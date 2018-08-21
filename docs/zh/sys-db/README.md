@@ -10,6 +10,8 @@ D2Admin 对数据持久化做了更清晰的包装，您可以通过
 
 ![](http://fairyever.qiniudn.com/20180820235417.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
+[详细 API](../sys-vuex/#db)
+
 ## 总览
 
 D2Admin 数据持久化依赖浏览器的 LocalStorage，使用 [lowdb](https://github.com/typicode/lowdb) API 加自己的取值包装实现了便捷的的操作和取值方法，通过不同的接口可以访问到持久化数据不同的内容，例如不同用户独有的存储区域，系统存储区域，公用存储，根据路由自动划分的存储区域等。
@@ -247,16 +249,269 @@ const db = await this.$store.dispatch('d2admin/db/database', {
 db.get('keyName').value() // 'value'
 ```
 
-如果是不同用户分别使用上面的代码存储，存储结果将是：
+如果是不同用户分别进行了存储（获取实例方法一样，但是存储了不同的值），存储结果将是：
 
 ![](http://fairyever.qiniudn.com/20180821093321.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 取值时将分别取到 value1，value2，value3
 
+## 清空存储实例
+
+使用下面的代码清空存储实例：
+
+### 公有
+
+``` js
+this.$store.dispatch('d2admin/db/databaseClear')
+```
+
+### 私有
+
+``` js
+this.$store.dispatch('d2admin/db/databaseClear', {
+  user: true
+})
+```
+
 ## 获得路由存储实例
 
 ### 公用
 
+假设当前页面路由信息为：
+
+``` js
+{
+  name: 'page-1',
+  path: '/page1',
+  component: component
+}
+```
+
+使用如下代码获取公用路由存储实例：
+
+``` js
+const db = await this.$store.dispatch('d2admin/db/databasePage', {
+  vm: this
+})
+```
+
+您将获得下图所示节点（绿色高亮区域）：
+
+![](http://fairyever.qiniudn.com/20180821094404.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+写入：
+
+``` js
+const db = await this.$store.dispatch('d2admin/db/databasePage', {
+  vm: this
+})
+db
+  .set('pageName', 'page-1')
+  .write()
+```
+
+结果：
+
+![](http://fairyever.qiniudn.com/20180821094549.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+取值：
+
+``` js
+const db = await this.$store.dispatch('d2admin/db/databasePage', {
+  vm: this
+})
+db.get('pageName').value() // page-1
+```
+
+假设在下列页面中都进行存储操作（获取实例方法一样，但是存储了不同的值）：
+
+``` js
+{
+  name: 'page-1',
+  path: '/page1',
+  component: component
+},
+{
+  name: 'page-2',
+  path: '/page2',
+  component: component
+},
+{
+  name: 'page-3',
+  path: '/page3',
+  component: component
+}
+```
+
+结果：
+
+![](http://fairyever.qiniudn.com/20180821095545.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+三个页面取值时也会分别取到 page-1，page-2，page-3
+
 ### 私有
 
-## 路由快照操作
+路由存储支持私有化，即每个用户的路由存储相互区分，使用方法和普通的路由存储基本一致，只是在获取存储实例时增加一个参数：
+
+``` js
+const db = await this.$store.dispatch('d2admin/db/databasePage', {
+  vm: this,
+  user: true
+})
+```
+
+这样在每个用户进行路由存储操作的时候数据会相互隔离。
+
+例如 **用户 A** 在 **页面1** 中使用上述代码取得的存储实例指向位置为：
+
+![](http://fairyever.qiniudn.com/20180821100933.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+**用户 B** 在 **页面1** 中使用上述代码取得的存储实例指向位置为：
+
+![](http://fairyever.qiniudn.com/20180821101019.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+如果 **用户 A**，**用户 B** 在 **页面1**，**页面2** 分别都存储了数据，最后结果大致这样：
+
+![](http://fairyever.qiniudn.com/20180821101536.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+## 清空路由存储实例
+
+### 公有
+
+``` js
+this.$store.dispatch('d2admin/db/databasePageClear', {
+  vm: this
+})
+```
+
+### 私有
+
+``` js
+this.$store.dispatch('d2admin/db/databasePageClear', {
+  vm: this,
+  user: true
+})
+```
+
+## 路由快照
+
+路由快照操作相当于路由存储的一个快捷操作方式，旨在**快速将当前页面的 $data 数据持久化**。
+
+路由快照将会存储到当前路由存储的 $data 字段下。
+
+### 公有
+
+假设当前页面路由信息为：
+
+``` js
+{
+  name: 'page-1',
+  path: '/page1',
+  component: component
+}
+```
+
+使用如下代码存储当前页面快照：
+
+``` js
+this.$store.dispatch('d2admin/db/pageSet', {
+  vm: this
+})
+```
+
+结果：
+
+![](http://fairyever.qiniudn.com/20180821102036.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+使用如下代码将快照数据还原回页面：
+
+``` js
+// 获取数据
+const data = await this.$store.dispatch('d2admin/db/pageGet', {
+  vm: this
+})
+// 将数据还原到页面
+for (const key in data) {
+  if (data.hasOwnProperty(key)) this[key] = data[key]
+}
+```
+
+假设在下列页面中都进行快照操作：
+
+``` js
+{
+  name: 'page-1',
+  path: '/page1',
+  component: component
+},
+{
+  name: 'page-2',
+  path: '/page2',
+  component: component
+},
+{
+  name: 'page-3',
+  path: '/page3',
+  component: component
+}
+```
+
+每个页面的快照将会区分存放：
+
+![](http://fairyever.qiniudn.com/20180821102520.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+### 私有
+
+路由快照支持私有化，即每个用户的路由快照相互区分，使用方法和普通的路由快照基本一致，只是在操作快照时增加一个参数：
+
+存储快照：
+
+``` js
+this.$store.dispatch('d2admin/db/pageSet', {
+  vm: this,
+  user: true
+})
+```
+
+读取快照：
+
+``` js
+// 获取数据
+const data = await this.$store.dispatch('d2admin/db/pageGet', {
+  vm: this,
+  user: true
+})
+```
+
+这样在每个用户进行路由快照操作的时候数据会相互隔离。
+
+例如 **用户 A** 在 **页面1** 中存储了快照：
+
+![](http://fairyever.qiniudn.com/20180821103126.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+**用户 B** 在 **页面1** 中存储了快照：
+
+![](http://fairyever.qiniudn.com/20180821103205.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+如果 **用户 A**，**用户 B** 在 **页面1**，**页面2** 分别都存储了数据，最后结果大致这样：
+
+![](http://fairyever.qiniudn.com/20180821103306.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+## 路由快照清空
+
+### 公有
+
+``` js
+this.$store.dispatch('d2admin/db/pageClear', {
+  vm: this
+})
+```
+
+### 私有
+
+``` js
+this.$store.dispatch('d2admin/db/pageClear', {
+  vm: this,
+  user: true
+})
+```
