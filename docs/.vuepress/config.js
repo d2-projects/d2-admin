@@ -36,7 +36,7 @@ module.exports = {
         ]
       },
       '/zh/': {
-        selectText: '选择语言',
+        selectText: '语言',
         label: '简体中文',
         editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: '最后更新',
@@ -108,7 +108,13 @@ module.exports = {
               }
             ]
           },
-          { text: '常见问题', link: '/zh/question/' }
+          { text: '常见问题', link: '/zh/question/' },
+          {
+            text: '旧版文档',
+            items: [
+              { text: '1.1.11', link: 'http://app.d3collection.cn/d2-admin-doc/1.1.11/zh/' }
+            ]
+          }
         ],
         sidebar: {
           '/zh/learn-guide/': sideBarLearnGuide(),
