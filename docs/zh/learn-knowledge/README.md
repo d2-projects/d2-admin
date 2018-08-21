@@ -44,7 +44,7 @@ sidebar: auto
 | --- | --- |
 | [lodash](https://lodash.com/docs/4.17.10) | 一致性、模块化、高性能的 JavaScript 实用工具库 |
 | [axios](https://github.com/axios/axios) | 最流行的网络请求库 |
-| [better-scroll](https://github.com/ustbhuangyi/better-scroll) | [d2-container](../components/container.md) 的自定义滚动条依赖 |
+| [better-scroll](https://github.com/ustbhuangyi/better-scroll) | [d2-container](../sys-components/container.md) 的自定义滚动条依赖 |
 | [dayjs](https://github.com/iamkun/dayjs) | 日期处理库 |
 | [v-charts](https://v-charts.js.org/#/props) | vue 版本的 echarts 由饿了么开发 |
 | [echarts](http://echarts.baidu.com/index.html) | v-charts 的核心 |
