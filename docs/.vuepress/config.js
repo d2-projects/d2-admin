@@ -77,6 +77,7 @@ module.exports = {
             items: [
               { text: '更新日志', link: '/zh/change-log/' },
               { text: '参与者名单', link: '/zh/collaborator/' },
+              { text: '借鉴 D2Admin 的项目', link: '/zh/plagiarize/' },
               {
                 text: '交流',
                 items: [
