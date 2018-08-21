@@ -396,3 +396,21 @@ npm ERR!     C:\Users\ZHZ\AppData\Roaming\npm-cache\_logs\2018-07-27T13_13_56_69
 ```
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
+
+## 打包后 CSS 文件位置出错
+
+如果您发现打包后 CSS 文件出现在 dist 文件夹目录内，请检查 `d2-admin/vue.config.js` 中 `baseUrl` 的设置。
+
+`baseUrl` 为项目部署的基础路径，应该以 '/' 开始并且以 '/' 结束
+
+假设你的应用将会部署在域名的根部，比如 https://www.my-app.com/，那么 `baseUrl` 应该值为 '/'
+
+如果你的应用时部署在一个子路径下，那么你需要在这里指定子路径。比如，如果你的应用部署在 https://www.foobar.com/my-app/，那么将这个值改为 `/my-app/`
+
+## 打包后无法运行
+
+打包后会生成 dist 文件夹，请在本地开启一个 http 服务来运行打包后的项目。
+
+如果您不清楚如何操作，建议您使用 [browsersync](http://www.browsersync.cn/)
+
+![](http://fairyever.qiniudn.com/20180821144014.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
