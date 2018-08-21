@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie'
-import { version } from '../../package.json'
+import setting from '@/setting.js'
 
 const cookies = {}
 
@@ -9,12 +9,12 @@ const cookies = {}
  * @param {String} value cookie value
  * @param {Object} setting cookie setting
  */
-cookies.set = function (name = 'default', value = '', setting = {}) {
-  let cookieSetting = {
+cookies.set = function (name = 'default', value = '', cookieSetting = {}) {
+  let currentCookieSetting = {
     expires: 1
   }
-  Object.assign(cookieSetting, setting)
-  Cookies.set(`d2admin-${version}-${name}`, value, cookieSetting)
+  Object.assign(currentCookieSetting, cookieSetting)
+  Cookies.set(`d2admin-${setting.releases.version}-${name}`, value, currentCookieSetting)
 }
 
 /**
@@ -22,7 +22,7 @@ cookies.set = function (name = 'default', value = '', setting = {}) {
  * @param {String} name cookie name
  */
 cookies.get = function (name = 'default') {
-  return Cookies.get(`d2admin-${version}-${name}`)
+  return Cookies.get(`d2admin-${setting.releases.version}-${name}`)
 }
 
 /**
@@ -37,7 +37,7 @@ cookies.getAll = function () {
  * @param {String} name cookie name
  */
 cookies.remove = function (name = 'default') {
-  return Cookies.remove(`d2admin-${version}-${name}`)
+  return Cookies.remove(`d2admin-${setting.releases.version}-${name}`)
 }
 
 export default cookies

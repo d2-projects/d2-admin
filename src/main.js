@@ -54,14 +54,14 @@ new Vue({
     this.$store.commit('d2admin/menu/headerSet', menuHeader)
   },
   mounted () {
-    // D2Admin 开发环境检查更新
-    util.checkUpdate(this)
-    // 获取并记录用户 UA
-    this.$store.commit('d2admin/ua/get')
     // 展示系统信息
-    util.showInfo()
+    this.$store.commit('d2admin/releases/versionShow')
+    // 检查最新版本
+    this.$store.dispatch('d2admin/releases/checkUpdate')
     // 用户登陆后从数据库加载一系列的设置
     this.$store.commit('d2admin/account/load')
+    // 获取并记录用户 UA
+    this.$store.commit('d2admin/ua/get')
     // 初始化全屏监听
     this.fullscreenListenerInit()
   },

@@ -4,7 +4,7 @@ export default {
   namespaced: true,
   actions: {
     /**
-     * 登陆
+     * @description 登陆
      * @param {Object} param context
      * @param {Object} param vm {Object} vue 实例
      * @param {Object} param username {String} 用户账号
@@ -33,7 +33,7 @@ export default {
             name: res.data.name
           }, { root: true })
           // 用户登陆后从持久化数据加载一系列的设置
-          commit('d2admin/account/load', null, { root: true })
+          commit('load')
           // 跳转路由
           vm.$router.push({
             name: 'index'
@@ -46,7 +46,7 @@ export default {
         })
     },
     /**
-     * 注销用户并返回登陆页面
+     * @description 注销用户并返回登陆页面
      * @param {Object} param context
      * @param {Object} param vm {Object} vue 实例
      * @param {Object} param confirm {Boolean} 是否需要确认
