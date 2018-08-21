@@ -1,4 +1,4 @@
-# 介绍
+# 教程
 
 D2Admin 是一个开源的管理系统前端集成方案
 
@@ -6,8 +6,6 @@ D2Admin 是一个开源的管理系统前端集成方案
   <iframe src="//ghbtns.com/github-btn.html?user=d2-projects&repo=d2-admin&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
   <iframe src="//ghbtns.com/github-btn.html?user=d2-projects&repo=d2-admin&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
 </div>
-
-本项目仓库在 Github 和 Gitee 同步发布
 
 [中文文档](http://d2admin.fairyever.com/zh/)
 
@@ -22,6 +20,12 @@ D2Admin 是一个开源的管理系统前端集成方案
 [Github 仓库](https://github.com/d2-projects/d2-admin-start-kit) | 
 [码云仓库](https://gitee.com/fairyever/d2-admin-start-kit) | 
 [预览地址](https://fairyever.gitee.io/d2-admin-start-kit-preview/#/index)
+
+**飞冰物料**
+
+[D2Admin ICE](https://alibaba.github.io/ice/scaffold?type=vue) | 
+[介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) | 
+[预览地址](https://fairyever.gitee.io/d2-admin-ice-preview)
 
 D2Admin 完整版集成了很多的插件和组件，首次加载会占用很多的时间，所以加入了首屏加载动画。
 
@@ -143,7 +147,7 @@ npm run dev
 npm run build
 ```
 
-> 如果上述步骤出现错误，建议您升级 node 版本 > 8，如果有其它疑问请参考[常见问题](/zh/guide/question.html)
+> 如果上述步骤出现错误，建议您升级 node 版本 > 8，如果有其它疑问请参考[常见问题](/zh/question)
 
 ## Thanks
 
