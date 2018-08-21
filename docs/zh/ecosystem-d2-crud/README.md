@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # D2 CRUD
 
-comming soon
+介绍内容
