@@ -43,10 +43,9 @@
           </div>
           <div class="d2-theme-container-main-body" flex-box="1">
             <transition :name="transitionActive ? 'fade-transverse' : ''">
-              <keep-alive v-if="keepAlive">
+              <keep-alive :include="keepAlive">
                 <router-view/>
               </keep-alive>
-              <router-view v-else/>
             </transition>
           </div>
         </div>
