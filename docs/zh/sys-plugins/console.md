@@ -2,7 +2,7 @@
 
 使用 $log 可以在控制台输出美观的日志信息
 
-<img src="http://localhost:8082/d2-admin-preview/img/demo.dc86019c.png" style="width: 260px;"/>
+<img src="http://fairyever.qiniudn.com/20180821133308.png" style="width: 260px; border: 1px solid #eaecef;"/>
 
 ## 胶囊
 

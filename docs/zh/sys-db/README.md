@@ -146,7 +146,9 @@ const db = await this.$store.dispatch('d2admin/db/databasePage', {
 * sys 模块您在业务代码中不会访问
 * database 中的存储结构您绝不会使用某一个 API 全部获得，每次您操作的只是某个节点下的一部分数据，D2Admin 通过不同 API 来简化您在上述数数据中快速定位到需要的数据节点
 
-## root 级别方法
+## 使用方式
+
+### root 级别方法
 
 root 级别的方法有两个，分别为：
 
@@ -175,11 +177,11 @@ const value = await this.$store.dispatch('d2admin/db/get', {
 
 这两个方法可以在持久化数据中的任意位置（也就是上面“数据格式”章节中展示的图片上所有节点）进行读写操作，D2Admin 内部模块使用此 API 访问持久化数据，**不建议在业务代码中使用**，除非您非常清楚您正在做什么。
 
-## 获得存储实例
+### 获得存储实例
 
 要想向持久化数据中写入数据或者读取数据，第一步就是获得存储实例。可以通过 `d2admin/db/get` 获得存储实例。
 
-### 公用
+#### 公用
 
 使用如下代码获取公用存储实例：
 
@@ -211,7 +213,7 @@ const db = await this.$store.dispatch('d2admin/db/database')
 db.get('keyName').value() // 'value'
 ```
 
-### 私有
+#### 私有
 
 如果需要，您也可以获取根据用户区分的私有存储实例：
 
@@ -255,17 +257,17 @@ db.get('keyName').value() // 'value'
 
 取值时将分别取到 value1，value2，value3
 
-## 清空存储实例
+### 清空存储实例
 
 使用下面的代码清空存储实例：
 
-### 公有
+#### 公有
 
 ``` js
 this.$store.dispatch('d2admin/db/databaseClear')
 ```
 
-### 私有
+#### 私有
 
 ``` js
 this.$store.dispatch('d2admin/db/databaseClear', {
@@ -273,9 +275,9 @@ this.$store.dispatch('d2admin/db/databaseClear', {
 })
 ```
 
-## 获得路由存储实例
+### 获得路由存储实例
 
-### 公用
+#### 公用
 
 假设当前页面路由信息为：
 
@@ -349,7 +351,7 @@ db.get('pageName').value() // page-1
 
 三个页面取值时也会分别取到 page-1，page-2，page-3
 
-### 私有
+#### 私有
 
 路由存储支持私有化，即每个用户的路由存储相互区分，使用方法和普通的路由存储基本一致，只是在获取存储实例时增加一个参数：
 
@@ -374,9 +376,9 @@ const db = await this.$store.dispatch('d2admin/db/databasePage', {
 
 ![](http://fairyever.qiniudn.com/20180821101536.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
-## 清空路由存储实例
+### 清空路由存储实例
 
-### 公有
+#### 公有
 
 ``` js
 this.$store.dispatch('d2admin/db/databasePageClear', {
@@ -384,7 +386,7 @@ this.$store.dispatch('d2admin/db/databasePageClear', {
 })
 ```
 
-### 私有
+#### 私有
 
 ``` js
 this.$store.dispatch('d2admin/db/databasePageClear', {
@@ -393,13 +395,13 @@ this.$store.dispatch('d2admin/db/databasePageClear', {
 })
 ```
 
-## 路由快照
+### 路由快照
 
 路由快照操作相当于路由存储的一个快捷操作方式，旨在**快速将当前页面的 $data 数据持久化**。
 
 路由快照将会存储到当前路由存储的 $data 字段下。
 
-### 公有
+#### 公有
 
 假设当前页面路由信息为：
 
@@ -460,7 +462,7 @@ for (const key in data) {
 
 ![](http://fairyever.qiniudn.com/20180821102520.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
-### 私有
+#### 私有
 
 路由快照支持私有化，即每个用户的路由快照相互区分，使用方法和普通的路由快照基本一致，只是在操作快照时增加一个参数：
 
@@ -497,9 +499,9 @@ const data = await this.$store.dispatch('d2admin/db/pageGet', {
 
 ![](http://fairyever.qiniudn.com/20180821103306.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
-## 路由快照清空
+### 路由快照清空
 
-### 公有
+#### 公有
 
 ``` js
 this.$store.dispatch('d2admin/db/pageClear', {
@@ -507,7 +509,7 @@ this.$store.dispatch('d2admin/db/pageClear', {
 })
 ```
 
-### 私有
+#### 私有
 
 ``` js
 this.$store.dispatch('d2admin/db/pageClear', {
