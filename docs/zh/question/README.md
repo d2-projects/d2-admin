@@ -385,3 +385,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 如果您不清楚如何操作，建议您使用 [browsersync](http://www.browsersync.cn/)
 
 ![](http://fairyever.qiniudn.com/20180821144014.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
+
+## 灰度模式下弹出框被遮住
+
+如果您发现 [dialog](http://element.eleme.io/#/zh-CN/component/dialog) 在 D2Admin 灰度模式打开情况下被遮罩遮住，可以尝试在弹出框上添加 `:append-to-body="true"`，将 Dialog 自身是插入至 body 元素上。
