@@ -139,7 +139,7 @@ npm run serve
 </template>
 ```
 
-上面的代码生成了一个带有 header 和 footer 的页面，页面内容只有一句话，如果您好奇为什么这么写，可以参考 [页面容器](../components/container.md)
+上面的代码生成了一个带有 header 和 footer 的页面，页面内容只有一句话，如果您好奇为什么这么写，可以参考 [页面容器](../sys-components/container.md)
 
 ![](http://fairyever.qiniudn.com/20180729095919.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
