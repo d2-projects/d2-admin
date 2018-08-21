@@ -13,6 +13,7 @@ export default {
   },
   mutations: {
     /**
+     * @description 设置顶栏菜单
      * @param {Object} state vuex state
      * @param {Array} menu menu setting
      */
@@ -21,6 +22,7 @@ export default {
       state.header = menu
     },
     /**
+     * @description 设置侧边栏菜单
      * @param {Object} state vuex state
      * @param {Array} menu menu setting
      */
@@ -37,10 +39,11 @@ export default {
       // store 赋值
       state.asideCollapse = collapse
       // 持久化
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/set', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
-        value: state.asideCollapse
+        value: state.asideCollapse,
+        user: true
       })
     },
     /**
@@ -51,22 +54,24 @@ export default {
       // store 赋值
       state.asideCollapse = !state.asideCollapse
       // 持久化
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/set', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
-        value: state.asideCollapse
+        value: state.asideCollapse,
+        user: true
       })
     },
     /**
-     * 从数据库读取侧边栏展开或者收缩
+     * 从持久化数据读取侧边栏展开或者收缩
      * @param {Object} state vuex state
      */
     async asideCollapseLoad (state) {
       // store 赋值
-      state.asideCollapse = await this.dispatch('d2admin/db/getByUser', {
+      state.asideCollapse = await this.dispatch('d2admin/db/get', {
         dbName: 'sys',
         path: 'menu.asideCollapse',
-        defaultValue: setting.menu.asideCollapse
+        defaultValue: setting.menu.asideCollapse,
+        user: true
       })
     }
   }

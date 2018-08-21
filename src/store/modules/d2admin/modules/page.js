@@ -93,23 +93,25 @@ export default {
      * @param {Object} state vuex state
      */
     opend2db (state) {
-      this.commit('d2admin/db/setByUser', {
+      this.dispatch('d2admin/db/set', {
         dbName: 'sys',
         path: 'page.opened',
-        value: state.opened
+        value: state.opened,
+        user: true
       })
     },
     /**
      * @class opened
-     * @description 从数据库载入分页列表
+     * @description 从持久化数据载入分页列表
      * @param {Object} state vuex state
      */
     async openedLoad (state) {
       // store 赋值
-      const value = await this.dispatch('d2admin/db/getByUser', {
+      const value = await this.dispatch('d2admin/db/get', {
         dbName: 'sys',
         path: 'page.opened',
-        defaultValue: setting.page.opened
+        defaultValue: setting.page.opened,
+        user: true
       })
       // 在处理函数中进行数据优化 过滤掉现在已经失效的页签或者已经改变了信息的页签
       // 以 name 字段为准
