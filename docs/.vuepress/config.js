@@ -18,8 +18,6 @@ module.exports = {
   themeConfig: {
     // 项目仓库地址
     repo: 'https://github.com/d2-projects/d2-admin',
-    // 自定义仓库链接文字
-    repoLabel: '查看源码',
     // 文档不是放在仓库的根目录下
     docsDir: 'docs',
     // 默认是 false, 设置为 true 来启用
@@ -30,10 +28,7 @@ module.exports = {
         selectText: 'Languages',
         label: 'English',
         editLinkText: 'Edit this page on GitHub',
-        lastUpdated: 'Last update',
-        nav: [
-          { text: 'preview', link: 'https://fairyever.gitee.io/d2-admin-preview/#/index' }
-        ]
+        lastUpdated: 'Last update'
       },
       '/zh/': {
         selectText: '语言',
