@@ -1112,6 +1112,22 @@ this.$store.commit('d2admin/page/init', frameInRoutes)
 
 有新版本
 
+### actions.checkUpdate
+
+#### 介绍
+
+检查版本更新。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+this.$store.dispatch('d2admin/releases/checkUpdate')
+```
+
 ### mutations.updateSet
 
 #### 介绍
