@@ -1079,28 +1079,23 @@ this.$store.commit('d2admin/page/closeAll', {
 })
 ```
 
-### mutations.poolSet
+### mutations.init
 
 #### 介绍
 
-保存所有支持多标签页方式显示的路由池。
+初始化多页面功能，将路由设置转化为 store 中的预备数据
 
 #### 参数
 
 | 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | --- |
-| pool | 路由池 | 必选 | Array |  |  |
+| routes | 路由设置 | 必选 | Array |  |  |
 
 #### 示例
 
 ``` js
-this.$store.commit('d2admin/page/poolSet', [
-  {
-    name: 'route-name',
-    path: 'route-path',
-    meta: {}
-  }
-])
+import { frameInRoutes } from '@/router/routes'
+this.$store.commit('d2admin/page/init', frameInRoutes)
 ```
 
 ## releases

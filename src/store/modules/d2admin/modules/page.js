@@ -293,9 +293,21 @@ export default {
      * @class pool
      * @description 保存 pool (候选池)
      * @param {Object} state vuex state
-     * @param {Array} pool pages
+     * @param {Array} routes routes
      */
-    poolSet (state, pool) {
+    init (state, routes) {
+      const pool = []
+      const push = function (routes) {
+        routes.forEach(route => {
+          if (route.children) {
+            push(route.children)
+          } else {
+            const { meta, name, path } = route
+            pool.push({ meta, name, path })
+          }
+        })
+      }
+      push(routes)
       state.pool = pool
     }
   }
