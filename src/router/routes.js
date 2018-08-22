@@ -53,6 +53,17 @@ const frameIn = [
     ])('demo-playground-')
   },
   {
+    path: '/demo/d2-crud',
+    name: 'demo-d2-crud',
+    meta,
+    redirect: { name: 'demo-d2-crud-index' },
+    component: layoutHeaderAside,
+    children: (pre => [
+      { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/d2-crud/index'), meta: { ...meta, title: 'D2 CRUD 首页' } },
+      { path: 'demo1', name: `${pre}demo1`, component: () => import('@/pages/demo/d2-crud/demo1'), meta: { ...meta, title: '示例1' } }
+    ])('demo-d2-crud-')
+  },
+  {
     path: '/demo/plugins',
     name: 'demo-plugins',
     meta,

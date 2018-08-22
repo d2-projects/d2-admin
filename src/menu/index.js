@@ -10,6 +10,8 @@ import demoElement from './modules/demo-element'
 import demoPlayground from './modules/demo-playground'
 // 示例
 import demoBusiness from './modules/demo-business'
+// 示例
+import demoD2Crud from './modules/demo-d2-crud'
 
 // 菜单 侧边栏
 export const menuAside = [
@@ -18,7 +20,8 @@ export const menuAside = [
   demoCharts,
   demoElement,
   demoPlayground,
-  demoBusiness
+  demoBusiness,
+  demoD2Crud
 ]
 
 // 菜单 顶栏
@@ -32,6 +35,7 @@ export const menuHeader = [
     title: '功能',
     icon: 'puzzle-piece',
     children: [
+      demoD2Crud,
       demoComponents,
       demoElement,
       demoCharts,
