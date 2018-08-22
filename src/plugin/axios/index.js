@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import axios from 'axios'
 
 axios.interceptors.response.use(res => {
@@ -7,4 +6,8 @@ axios.interceptors.response.use(res => {
   return Promise.reject(err)
 })
 
-Vue.prototype.$axios = axios
+export default {
+  install (Vue, options) {
+    Vue.prototype.$axios = axios
+  }
+}

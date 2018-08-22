@@ -12,14 +12,14 @@
         </d2-contextmenu>
         <el-tabs
           class="d2-multiple-page-control"
-          :value="pageCurrent"
+          :value="current"
           type="card"
           :closable="true"
           @tab-click="handleClick"
           @edit="handleTabsEdit"
           @contextmenu.native="handleContextmenu">
           <el-tab-pane
-            v-for="(page, index) in pageOpenedList"
+            v-for="(page, index) in opened"
             :key="index"
             :label="page.meta.title || '未命名'"
             :name="page.name"/>
@@ -82,17 +82,18 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      pageOpenedList: state => state.d2admin.pageOpenedList,
-      pageCurrent: state => state.d2admin.pageCurrent
-    })
+    ...mapState('d2admin/page', [
+      'opened',
+      'current'
+    ])
   },
   methods: {
-    ...mapMutations([
-      'd2adminTagCloseLeft',
-      'd2adminTagCloseRight',
-      'd2adminTagCloseOther',
-      'd2adminTagCloseAll'
+    ...mapMutations('d2admin/page', [
+      'close',
+      'closeLeft',
+      'closeRight',
+      'closeOther',
+      'closeAll'
     ]),
     /**
      * @description 右键菜单功能点击
@@ -136,16 +137,16 @@ export default {
       }
       switch (command) {
         case 'left':
-          this.d2adminTagCloseLeft(params)
+          this.closeLeft(params)
           break
         case 'right':
-          this.d2adminTagCloseRight(params)
+          this.closeRight(params)
           break
         case 'other':
-          this.d2adminTagCloseOther(params)
+          this.closeOther(params)
           break
         case 'all':
-          this.d2adminTagCloseAll(this)
+          this.closeAll(this)
           break
         default:
           this.$message.error('无效的操作')
@@ -156,14 +157,14 @@ export default {
      * @description 接收点击关闭控制上按钮的事件
      */
     handleControlBtnClick () {
-      this.d2adminTagCloseAll(this)
+      this.closeAll(this)
     },
     /**
      * @description 接收点击 tab 标签的事件
      */
     handleClick (tab, event) {
       // 找到点击的页面在 tag 列表里是哪个
-      const page = this.pageOpenedList.find(page => page.name === tab.name)
+      const page = this.opened.find(page => page.name === tab.name)
       const { name, params, query } = page
       if (page) {
         this.$router.push({ name, params, query })
@@ -174,7 +175,7 @@ export default {
      */
     handleTabsEdit (tagName, action) {
       if (action === 'remove') {
-        this.$store.commit('d2adminTagClose', {
+        this.close({
           tagName,
           vm: this
         })

@@ -2,16 +2,16 @@
   <div
     class="d2-layout-header-aside-group"
     :style="styleLayoutMainGroup"
-    :class="{grayMode: isGrayMode}">
+    :class="{grayMode: grayActive}">
     <!-- 半透明遮罩 -->
     <div class="d2-layout-header-aside-mask"></div>
     <!-- 主体内容 -->
     <div class="d2-layout-header-aside-content" flex="dir:top">
       <!-- 顶栏 -->
       <div class="d2-theme-header" flex-box="0">
-        <div class="logo-group" :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
-          <img v-if="isMenuAsideCollapse" :src="`${$baseUrl}image/theme/${d2adminThemeActiveSetting.name}/logo/icon-only.png`">
-          <img v-else :src="`${$baseUrl}image/theme/${d2adminThemeActiveSetting.name}/logo/all.png`">
+        <div class="logo-group" :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}">
+          <img v-if="asideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
+          <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/all.png`">
         </div>
         <div class="toggle-aside-btn" @click="handleToggleAside">
           <d2-icon name="bars"/>
@@ -21,7 +21,6 @@
         <div class="d2-header-right">
           <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
           <d2-header-error-log/>
-          <d2-header-help/>
           <d2-header-fullscreen/>
           <d2-header-theme/>
           <d2-header-user/>
@@ -34,7 +33,7 @@
           flex-box="0"
           ref="aside"
           class="d2-theme-container-aside"
-          :style="{width: isMenuAsideCollapse ? asideWidthCollapse : asideWidth}">
+          :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}">
           <d2-menu-side/>
         </div>
         <!-- 主体 -->
@@ -43,8 +42,8 @@
             <d2-tabs/>
           </div>
           <div class="d2-theme-container-main-body" flex-box="1">
-            <transition name="fade-transverse">
-              <keep-alive :include="d2adminKeepAliveInclude">
+            <transition :name="transitionActive ? 'fade-transverse' : ''">
+              <keep-alive :include="keepAlive">
                 <router-view/>
               </keep-alive>
             </transition>
@@ -66,7 +65,6 @@ export default {
     'd2-header-fullscreen': () => import('./components/header-fullscreen'),
     'd2-header-theme': () => import('./components/header-theme'),
     'd2-header-user': () => import('./components/header-user'),
-    'd2-header-help': () => import('./components/header-help'),
     'd2-header-error-log': () => import('./components/header-error-log')
   },
   data () {
@@ -78,35 +76,35 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      isGrayMode: state => state.d2admin.isGrayMode,
-      pageOpenedList: state => state.d2admin.pageOpenedList,
-      isMenuAsideCollapse: state => state.d2admin.isMenuAsideCollapse
+    ...mapState('d2admin', {
+      grayActive: state => state.gray.active,
+      transitionActive: state => state.transition.active,
+      asideCollapse: state => state.menu.asideCollapse
     }),
-    ...mapGetters([
-      'd2adminThemeActiveSetting',
-      'd2adminKeepAliveInclude'
-    ]),
+    ...mapGetters('d2admin', {
+      keepAlive: 'page/keepAlive',
+      themeActiveSetting: 'theme/activeSetting'
+    }),
     /**
      * @description 最外层容器的背景图片样式
      */
     styleLayoutMainGroup () {
       return {
-        ...this.d2adminThemeActiveSetting.backgroundImage ? {
-          backgroundImage: `url('${this.$baseUrl}${this.d2adminThemeActiveSetting.backgroundImage}')`
+        ...this.themeActiveSetting.backgroundImage ? {
+          backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')`
         } : {}
       }
     }
   },
   methods: {
-    ...mapMutations([
-      'd2adminMenuAsideCollapseToggle'
+    ...mapMutations('d2admin/menu', [
+      'asideCollapseToggle'
     ]),
     /**
      * 接收点击切换侧边栏的按钮
      */
     handleToggleAside () {
-      this.d2adminMenuAsideCollapseToggle()
+      this.asideCollapseToggle()
     }
   }
 }

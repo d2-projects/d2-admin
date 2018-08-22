@@ -1,6 +1,14 @@
 <template>
-  <d2-container class="page">
-    <template slot="header">持久化存储用户数据（用户区分存储）</template>
+  <d2-container>
+    <template slot="header">
+      <el-alert
+        type="success"
+        :closable="false"
+        title="私有存储指当前用户专用的存储区域，
+          不同用户之间存储不会相互干扰，
+          使用 await this.$store.dispatch('d2admin/db/database', { user: true }) 获得存储实例进行操作，
+          不同用户条件下获取的存储实例指向位置不同"/>
+    </template>
     <el-row>
       <el-col :span="12">
         <p class="d2-mt-0">增加不重复字段</p>
@@ -31,8 +39,8 @@
 </template>
 
 <script>
-import day from 'dayjs'
-import { mapMutations } from 'vuex'
+import { uniqueId } from 'lodash'
+import { mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -54,66 +62,62 @@ export default {
     this.load()
   },
   methods: {
-    ...mapMutations([
-      'd2adminUtilDatabaseUser',
-      'd2adminUtilDatabaseUserClear'
+    ...mapActions('d2admin/db', [
+      'database',
+      'databaseClear'
     ]),
     /**
      * 加载本地数据
      */
-    load () {
-      this.d2adminUtilDatabaseUser(database => {
-        this.dataDisplay = JSON.stringify(database.value(), null, 2)
-        this.keyNameList = Object.keys(database.value()).map(k => ({
-          value: k,
-          label: k
-        }))
-      })
+    async load () {
+      const db = await this.database({ user: true })
+      this.dataDisplay = JSON.stringify(db.value(), null, 2)
+      this.keyNameList = Object.keys(db.value()).map(k => ({
+        value: k,
+        label: k
+      }))
     },
     /**
      * 删除一个字段
      */
-    handleDelete (name) {
-      this.d2adminUtilDatabaseUser(database => {
-        database
-          .unset(name)
-          .write()
-      })
+    async handleDelete (name) {
+      const db = await this.database({ user: true })
+      db
+        .unset(name)
+        .write()
       this.load()
       this.keyNameToDelete = ''
     },
     /**
      * 清空当前用户的数据
      */
-    handleClear () {
-      this.d2adminUtilDatabaseUserClear()
+    async handleClear () {
+      await this.databaseClear({ user: true })
       this.load()
     },
     /**
      * 添加一个数据
      */
-    handleSet () {
+    async handleSet () {
       if (this.keyNameToSet === '') {
         this.$message.error('字段名不能为空')
         return
       }
-      this.d2adminUtilDatabaseUser(database => {
-        database
-          .set(this.keyNameToSet, this.valueToSet)
-          .write()
-      })
+      const db = await this.database({ user: true })
+      db
+        .set(this.keyNameToSet, this.valueToSet)
+        .write()
       this.load()
     },
     /**
      * 添加一个随机数据
      */
-    handleSetRandom () {
-      this.d2adminUtilDatabaseUser(database => {
-        const id = day().valueOf()
-        database
-          .set(id, Math.round(id * Math.random()))
-          .write()
-      })
+    async handleSetRandom () {
+      const id = uniqueId()
+      const db = await this.database({ user: true })
+      db
+        .set(`uniqueKey${id}`, `value${id}`)
+        .write()
       this.load()
     }
   }

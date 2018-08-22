@@ -1,18 +1,15 @@
 import low from 'lowdb'
 import LocalStorage from 'lowdb/adapters/LocalStorage'
-import { version } from '../../package'
+import setting from '@/setting.js'
 
-const adapter = new LocalStorage(`d2admin-${version}`)
+const adapter = new LocalStorage(`d2admin-${setting.releases.version}`)
 const db = low(adapter)
 
-// 初始化数据库
-db.defaults({
-  themeActiveName: [],
-  pageOpenedList: [],
-  userInfo: [],
-  isMenuAsideCollapse: [],
-  database: [],
-  databasePublic: {}
-}).write()
+db
+  .defaults({
+    sys: {},
+    database: {}
+  })
+  .write()
 
 export default db

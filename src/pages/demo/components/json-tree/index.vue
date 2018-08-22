@@ -1,5 +1,5 @@
 <template>
-  <d2-container class="page">
+  <d2-container>
     <tree-view :data="packJson" :options="options"/>
   </d2-container>
 </template>

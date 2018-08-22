@@ -3,24 +3,24 @@
     <el-tabs>
       <el-tab-pane label="顶栏菜单">
         <el-button-group class="d2-mb">
-          <el-button @click="handleMenuHeaderSet">设置顶栏空菜单</el-button>
-          <el-button @click="menuHeaderReset">恢复顶栏菜单</el-button>
+          <el-button @click="handleHeaderSet">设置顶栏空菜单</el-button>
+          <el-button @click="headerReset">恢复顶栏菜单</el-button>
         </el-button-group>
-        <d2-highlight :code="JSON.stringify(menuHeader, null, 2)"/>
+        <d2-highlight :code="JSON.stringify(header, null, 2)"/>
       </el-tab-pane>
       <el-tab-pane label="侧栏菜单">
         <el-button-group class="d2-mb">
-          <el-button @click="handleMenuAsideSet">设置侧栏空菜单</el-button>
-          <el-button @click="menuAsideReset">恢复侧栏菜单</el-button>
+          <el-button @click="handleAsideSet">设置侧栏空菜单</el-button>
+          <el-button @click="asideReset">恢复侧栏菜单</el-button>
         </el-button-group>
-        <d2-highlight :code="JSON.stringify(menuAside, null, 2)"/>
+        <d2-highlight :code="JSON.stringify(aside, null, 2)"/>
       </el-tab-pane>
     </el-tabs>
   </d2-container>
 </template>
 
 <script>
-import clonedeep from 'lodash.clonedeep'
+import { cloneDeep } from 'lodash'
 import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
@@ -42,26 +42,26 @@ export default {
           ]
         }
       ],
-      menuHeaderChanged: false,
-      menuAsideChanged: false,
-      menuHeaderBak: [],
-      menuAsideBak: []
+      headerChanged: false,
+      asideChanged: false,
+      headerBak: [],
+      asideBak: []
     }
   },
   computed: {
-    ...mapState({
-      menuHeader: state => state.d2admin.menuHeader,
-      menuAside: state => state.d2admin.menuAside
-    })
+    ...mapState('d2admin/menu', [
+      'header',
+      'aside'
+    ])
   },
   created () {
-    this.menuHeaderBak = clonedeep(this.menuHeader)
-    this.menuAsideBak = clonedeep(this.menuAside)
+    this.headerBak = cloneDeep(this.header)
+    this.asideBak = cloneDeep(this.aside)
   },
   beforeDestroy () {
-    if (this.menuHeaderChanged && this.menuAsideChanged) {
-      this.d2adminMenuHeaderSet(this.menuHeaderBak)
-      this.d2adminMenuAsideSet(this.menuAsideBak)
+    if (this.headerChanged && this.asideChanged) {
+      this.headerSet(this.headerBak)
+      this.asideSet(this.asideBak)
       this.$notify({
         title: '菜单恢复',
         message: '对侧边栏和顶栏菜单的修改已经复原',
@@ -69,8 +69,8 @@ export default {
       })
       return
     }
-    if (this.menuHeaderChanged) {
-      this.d2adminMenuHeaderSet(this.menuHeaderBak)
+    if (this.headerChanged) {
+      this.headerSet(this.headerBak)
       this.$notify({
         title: '菜单恢复',
         message: '对顶栏菜单的修改已经复原',
@@ -78,8 +78,8 @@ export default {
       })
       return
     }
-    if (this.menuAsideChanged) {
-      this.d2adminMenuAsideSet(this.menuAsideBak)
+    if (this.asideChanged) {
+      this.asideSet(this.asideBak)
       this.$notify({
         title: '菜单恢复',
         message: '对侧边栏菜单的修改已经复原',
@@ -88,16 +88,16 @@ export default {
     }
   },
   methods: {
-    ...mapMutations([
-      'd2adminMenuHeaderSet',
-      'd2adminMenuAsideSet'
+    ...mapMutations('d2admin/menu', [
+      'headerSet',
+      'asideSet'
     ]),
     /**
      * 修改顶栏菜单
      */
-    handleMenuHeaderSet () {
-      this.menuHeaderChanged = true
-      this.d2adminMenuHeaderSet(this.menuEmpty)
+    handleHeaderSet () {
+      this.headerChanged = true
+      this.headerSet(this.menuEmpty)
       this.$notify({
         title: '菜单修改',
         message: '对顶栏菜单的修改已经生效',
@@ -107,9 +107,9 @@ export default {
     /**
      * 修改侧边栏菜单
      */
-    handleMenuAsideSet () {
-      this.menuAsideChanged = true
-      this.d2adminMenuAsideSet(this.menuEmpty)
+    handleAsideSet () {
+      this.asideChanged = true
+      this.asideSet(this.menuEmpty)
       this.$notify({
         title: '菜单修改',
         message: '对侧边栏菜单的修改已经生效',
@@ -119,8 +119,8 @@ export default {
     /**
      * 恢复顶栏菜单
      */
-    menuHeaderReset () {
-      this.d2adminMenuHeaderSet(this.menuHeaderBak)
+    headerReset () {
+      this.headerSet(this.headerBak)
       this.$notify({
         title: '菜单恢复',
         message: '对顶栏菜单的修改已经复原',
@@ -130,8 +130,8 @@ export default {
     /**
      * 恢复侧边栏菜单
      */
-    menuAsideReset () {
-      this.d2adminMenuAsideSet(this.menuAsideBak)
+    asideReset () {
+      this.asideSet(this.asideBak)
       this.$notify({
         title: '菜单恢复',
         message: '对侧边栏菜单的修改已经复原',

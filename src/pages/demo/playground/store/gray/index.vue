@@ -1,12 +1,12 @@
 <template>
-  <d2-container type="card" class="page-demo-playground-gray">
+  <d2-container type="card" class="page">
     <template slot="header">
-      <div class="colorful">{{isGrayMode ? 'GRAY' : 'COLORFUL'}}</div>
+      <div class="colorful">{{grayActive ? 'GRAY' : 'COLORFUL'}}</div>
     </template>
     <el-button-group>
-      <el-button @click="d2adminGrayModeToggle">切换灰度模式</el-button>
-      <el-button @click="d2adminGrayModeSet(true)">打开灰度模式</el-button>
-      <el-button @click="d2adminGrayModeSet(false)">关闭灰度模式</el-button>
+      <el-button @click="grayToggle">切换灰度模式</el-button>
+      <el-button @click="graySet(true)">打开灰度模式</el-button>
+      <el-button @click="graySet(false)">关闭灰度模式</el-button>
       <el-button @click="dialogVisible = true">模拟报错提示框</el-button>
     </el-button-group>
     <el-dialog
@@ -47,20 +47,20 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      isGrayMode: state => state.d2admin.isGrayMode
+    ...mapState('d2admin/gray', {
+      grayActive: 'active'
     })
   },
   methods: {
-    ...mapMutations([
-      'd2adminGrayModeToggle',
-      'd2adminGrayModeSet'
-    ]),
+    ...mapMutations('d2admin/gray', {
+      grayToggle: 'toggle',
+      graySet: 'set'
+    }),
     handleDialogOpen () {
-      this.d2adminGrayModeSet(true)
+      this.graySet(true)
     },
     handleDialogClosed () {
-      this.d2adminGrayModeSet(false)
+      this.graySet(false)
     }
   }
 }
@@ -68,7 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
-.page-demo-playground-gray {
+.page {
   .colorful {
     @extend %unable-select;
     line-height: 300px;
