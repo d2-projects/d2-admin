@@ -145,6 +145,10 @@ const db = await this.$store.dispatch('d2admin/db/databasePage', {
 
 首先展示完整的 D2Admin 数据存储格式：
 
+::: tip
+不要被这张图吓到，在您使用过程中根本不会对这个结构有任何感知，API 会直接返回供您操作的节点。
+:::
+
 ![](http://fairyever.qiniudn.com/20180821090300.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
 这张图体现了数据的普通存储、用户存储、路由存储、私有路由存储、路由快照以及私有路由快照的存储位置，现在您会感觉很乱，但是请注意以下几点：

@@ -1,4 +1,5 @@
 module.exports = {
+  // base: '/d2-admin-doc/lastest/',
   locales: {
     '/': {
       lang: 'en-US',
@@ -184,6 +185,7 @@ function sideBarArticle (titleUpdate, titleCookbook) {
       title: titleUpdate,
       collapsable: false,
       children: [
+        'update/1.2.0',
         'update/ice-1.1.2',
         'update/1.1.5',
         'update/1.1.4',
