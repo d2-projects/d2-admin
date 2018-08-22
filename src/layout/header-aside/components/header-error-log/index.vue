@@ -41,7 +41,11 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
+import D2ErrorLogList from './components/list'
 export default {
+  components: {
+    D2ErrorLogList
+  },
   data () {
     return {
       dialogVisible: false
