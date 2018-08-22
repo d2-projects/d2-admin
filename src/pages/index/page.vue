@@ -27,11 +27,20 @@
             </p>
           </el-popover>
         </div>
-        <d2-help class="d2-mt"/>
+        <d2-help-btn class="d2-mt"/>
       </template>
     </d2-page-cover>
   </d2-container>
 </template>
+
+<script>
+import D2HelpBtn from './components/d2-help-btn'
+export default {
+  components: {
+    D2HelpBtn
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '~@/assets/style/public.scss';
