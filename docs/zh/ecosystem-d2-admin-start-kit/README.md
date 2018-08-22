@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # D2Admin 项目起始模板
 
 项目地址 [https://github.com/d2-projects/d2-admin-start-kit](https://github.com/d2-projects/d2-admin-start-kit)
