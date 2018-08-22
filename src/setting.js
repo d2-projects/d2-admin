@@ -19,7 +19,8 @@ const setting = {
   },
   // 版本
   releases: {
-    version: version
+    version: version,
+    api: 'https://api.github.com/repos/FairyEver/d2-admin/releases/latest'
   },
   // 注册的主题
   theme: {

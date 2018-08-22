@@ -19,7 +19,7 @@ export default {
      * @param {Object} param context
      */
     checkUpdate ({ state, commit }) {
-      axios.get('https://api.github.com/repos/FairyEver/d2-admin/releases/latest')
+      axios.get(setting.releases.api)
         .then(res => {
           let versionGet = res.tag_name
           const update = semver.lt(state.version, versionGet)
