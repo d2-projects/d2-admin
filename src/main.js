@@ -16,6 +16,7 @@ import '@/mock'
 import '@/plugin/axios'
 import pluginLog from '@/plugin/log'
 import pluginOpen from '@/plugin/open'
+import pluginD2Admin from '@/plugin/d2admin'
 import pluginError from '@/plugin/error'
 import pluginImport from '@/plugin/import'
 import pluginExport from '@/plugin/export'
@@ -30,15 +31,11 @@ Vue.use(VCharts)
 Vue.use(contentmenu)
 Vue.use(pluginLog)
 Vue.use(pluginOpen)
+Vue.use(pluginD2Admin)
 Vue.use(pluginError)
 Vue.use(pluginImport)
 Vue.use(pluginExport)
 Vue.use(vueJsonTreeView)
-
-Vue.config.productionTip = false
-
-Vue.prototype.$env = process.env.NODE_ENV
-Vue.prototype.$baseUrl = process.env.BASE_URL
 
 new Vue({
   router,
