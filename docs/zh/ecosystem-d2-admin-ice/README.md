@@ -1,8 +1,6 @@
----
-sidebar: auto
----
-
 # D2Admin ICE
+
+飞冰官方网站 [https://alibaba.github.io/ice](https://alibaba.github.io/ice)
 
 项目地址 [https://github.com/d2-projects/d2-admin-ice](https://github.com/d2-projects/d2-admin-ice)
 
