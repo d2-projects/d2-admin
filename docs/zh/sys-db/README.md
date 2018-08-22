@@ -4,17 +4,23 @@ sidebar: auto
 
 # 数据持久化
 
-D2Admin 对数据持久化做了更清晰的包装，您可以通过
+D2Admin 对数据持久化做了更清晰的包装。
+
+## 总览
+
+D2Admin 数据持久化依赖浏览器的 LocalStorage，使用 [lowdb](https://github.com/typicode/lowdb) API 加自己的取值包装实现了便捷的的操作和取值方法，通过不同的接口可以访问到持久化数据不同的内容，例如不同用户独有的存储区域，系统存储区域，公用存储，根据路由自动划分的存储区域等。
 
 在 `src/store/modules/d2admin/modules/db.js` 文件中提供了4组共9个方法读写持久化数据
 
 ![](http://fairyever.qiniudn.com/20180820235417.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
-[详细 API](../sys-vuex/#db)
+## 我应该选择哪种方式
 
-## 总览
+有可能您会对如何选择持久化存储的 API 感到困惑，下图会帮助您在存储数据时，根据您的需要选择合适的存储方法：
 
-D2Admin 数据持久化依赖浏览器的 LocalStorage，使用 [lowdb](https://github.com/typicode/lowdb) API 加自己的取值包装实现了便捷的的操作和取值方法，通过不同的接口可以访问到持久化数据不同的内容，例如不同用户独有的存储区域，系统存储区域，公用存储，根据路由自动划分的存储区域等。
+![](http://fairyever.qiniudn.com/20180822223058.png)
+
+如果是希望读取数据，依旧遵循上图的选择条件。具体的方法介绍见本页面其它章节，具体 API 详见 [vuex db 模块](/zh/sys-vuex/#db)
 
 ## 概念
 
