@@ -7,17 +7,17 @@ import App from './App'
 import store from '@/store/index'
 // 模拟数据
 import '@/mock'
-// 图表
-import VCharts from 'v-charts'
-// 右键菜单
-import contentmenu from 'v-contextmenu'
-import 'v-contextmenu/dist/index.css'
-// JSON 树状视图
-import vueJsonTreeView from 'vue-json-tree-view'
 // 多国语
 import i18n from './i18n'
 // 核心插件
 import d2Admin from '@/plugin/d2admin'
+// [ 可选第三方插件 ] 图表
+import VCharts from 'v-charts'
+// [ 可选第三方插件 ] 右键菜单
+import contentmenu from 'v-contextmenu'
+import 'v-contextmenu/dist/index.css'
+// [ 可选第三方插件 ] JSON 树状视图
+import vueJsonTreeView from 'vue-json-tree-view'
 // 菜单和路由设置
 import router from './router'
 import { menuHeader, menuAside } from '@/menu'
