@@ -1,40 +1,33 @@
+// polyfill
 import 'babel-polyfill'
+// Vue
 import Vue from 'vue'
 import App from './App'
-import 'flex.css'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+// store
+import store from '@/store/index'
+// 模拟数据
+import '@/mock'
+// 图表
 import VCharts from 'v-charts'
+// 右键菜单
 import contentmenu from 'v-contextmenu'
 import 'v-contextmenu/dist/index.css'
+// JSON 树状视图
 import vueJsonTreeView from 'vue-json-tree-view'
+// 多国语
 import i18n from './i18n'
-import store from '@/store/index'
-import '@/assets/svg-icons'
-import '@/components'
-import '@/mock'
-import '@/plugin/axios'
-import pluginLog from '@/plugin/log'
-import pluginOpen from '@/plugin/open'
-import pluginD2Admin from '@/plugin/d2admin'
-import pluginError from '@/plugin/error'
-import pluginImport from '@/plugin/import'
-import pluginExport from '@/plugin/export'
-
+// 核心插件
+import d2Admin from '@/plugin/d2admin'
 // 菜单和路由设置
 import router from './router'
 import { menuHeader, menuAside } from '@/menu'
 import { frameInRoutes } from '@/router/routes'
 
-Vue.use(ElementUI)
+// 核心插件
+Vue.use(d2Admin)
+// 可选第三方插件
 Vue.use(VCharts)
 Vue.use(contentmenu)
-Vue.use(pluginLog)
-Vue.use(pluginOpen)
-Vue.use(pluginD2Admin)
-Vue.use(pluginError)
-Vue.use(pluginImport)
-Vue.use(pluginExport)
 Vue.use(vueJsonTreeView)
 
 new Vue({

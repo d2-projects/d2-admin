@@ -1,5 +1,31 @@
+// Element
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+// flex 布局库
+import 'flex.css'
+// 组件
+import '@/components'
+// svg 图标
+import '@/assets/svg-icons'
+// 功能插件
+import pluginAxios from '@/plugin/axios'
+import pluginLog from '@/plugin/log'
+import pluginOpen from '@/plugin/open'
+import pluginError from '@/plugin/error'
+import pluginImport from '@/plugin/import'
+import pluginExport from '@/plugin/export'
+
 export default {
   install (Vue, options) {
+    // Element
+    Vue.use(ElementUI)
+    // 插件
+    Vue.use(pluginLog)
+    Vue.use(pluginOpen)
+    Vue.use(pluginAxios)
+    Vue.use(pluginError)
+    Vue.use(pluginImport)
+    Vue.use(pluginExport)
     // 设置为 false 以阻止 vue 在启动时生成生产提示。
     // https://cn.vuejs.org/v2/api/#productionTip
     Vue.config.productionTip = false
