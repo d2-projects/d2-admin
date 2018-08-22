@@ -9,13 +9,13 @@ import contentmenu from 'v-contextmenu'
 import 'v-contextmenu/dist/index.css'
 import vueJsonTreeView from 'vue-json-tree-view'
 import i18n from './i18n'
-import util from '@/libs/util.js'
 import store from '@/store/index'
 import '@/assets/svg-icons'
 import '@/components'
 import '@/mock'
 import '@/plugin/axios'
 import pluginLog from '@/plugin/log'
+import pluginOpen from '@/plugin/open'
 import pluginError from '@/plugin/error'
 import pluginImport from '@/plugin/import'
 import pluginExport from '@/plugin/export'
@@ -29,6 +29,7 @@ Vue.use(ElementUI)
 Vue.use(VCharts)
 Vue.use(contentmenu)
 Vue.use(pluginLog)
+Vue.use(pluginOpen)
 Vue.use(pluginError)
 Vue.use(pluginImport)
 Vue.use(pluginExport)
@@ -38,8 +39,6 @@ Vue.config.productionTip = false
 
 Vue.prototype.$env = process.env.NODE_ENV
 Vue.prototype.$baseUrl = process.env.BASE_URL
-
-Vue.prototype.$open = util.open
 
 new Vue({
   router,
