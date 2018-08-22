@@ -730,7 +730,24 @@ this.$store.commit('d2admin/menu/headerSet', menu)
 ]
 ```
 
-以 `https://` 或者 `http://` 开头的 path 会被当做外部链接处理
+以 `https://` 或者 `http://` 开头的 path 会被当做外部链接处理。
+
+#### svg 图标
+
+如果您不满足于 fontawesome 图表库，或者需要自己定制菜单图标，可以在菜单中增加 iconSvg 字段：
+
+``` js
+{
+  title: 'svg 菜单图标',
+  iconSvg: 'd2admin',
+  children: [
+    { title: 'add', iconSvg: 'add' },
+    { title: 'alarm', iconSvg: 'alarm' }
+  ]
+}
+```
+
+iconSvg 字段可选值同 [icon-svg](/zh/sys-components/icon-svg.md) 的 name 属性。
 
 ### mutations.asideSet
 
