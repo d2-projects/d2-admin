@@ -5,7 +5,6 @@ import 'flex.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VCharts from 'v-charts'
-import screenfull from 'screenfull'
 import contentmenu from 'v-contextmenu'
 import 'v-contextmenu/dist/index.css'
 import vueJsonTreeView from 'vue-json-tree-view'
@@ -63,7 +62,7 @@ new Vue({
     // 获取并记录用户 UA
     this.$store.commit('d2admin/ua/get')
     // 初始化全屏监听
-    this.fullscreenListenerInit()
+    this.$store.commit('d2admin/fullscreen/listen')
   },
   watch: {
     // 监听路由 控制侧边栏显示
@@ -73,18 +72,6 @@ new Vue({
     }
   },
   methods: {
-    /**
-     * 初始化全屏监听
-     */
-    fullscreenListenerInit () {
-      if (screenfull.enabled) {
-        screenfull.on('change', () => {
-          if (!screenfull.isFullscreen) {
-            this.$store.commit('d2admin/fullscreen/set', false)
-          }
-        })
-      }
-    },
     /**
      * 处理路由 得到所有的页面
      */

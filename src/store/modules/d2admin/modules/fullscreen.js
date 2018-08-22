@@ -8,6 +8,18 @@ export default {
   },
   mutations: {
     /**
+     * @description 初始化监听
+     */
+    listen () {
+      if (screenfull.enabled) {
+        screenfull.on('change', () => {
+          if (!screenfull.isFullscreen) {
+            this.commit('d2admin/fullscreen/set', false)
+          }
+        })
+      }
+    },
+    /**
      * @description 切换全屏
      */
     toggle () {
