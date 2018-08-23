@@ -4,8 +4,7 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 
 本项目仓库在 Github 和 Gitee 同步发布
 
-[中文文档](http://d2admin.fairyever.com/zh/) | 
-[中文文档 备用](http://app.d3collection.cn/d2-admin-doc/lastest/zh/)
+[中文文档](http://app.d3collection.cn/d2-admin-doc/lastest/zh/)
 
 **完整版**
 
@@ -100,7 +99,7 @@ D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https
 
 ## 使用
 
-详细用法见 [快速上手](http://d2admin.fairyever.com/zh/guide/getting-started.html)
+详细用法见 [快速上手](http://app.d3collection.cn/d2-admin-doc/lastest/zh/guide/getting-started.html)
 
 ```
 // 安装依赖
@@ -117,7 +116,7 @@ npm run build
 
 <img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/reward-me@2x.png"/>
 
-更多介绍和使用方法见 [文档](http://d2admin.fairyever.com/zh/)
+更多介绍和使用方法见 [文档](http://app.d3collection.cn/d2-admin-doc/lastest/zh/)
 
 ## 友情链接
 

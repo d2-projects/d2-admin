@@ -43,7 +43,7 @@ export default {
     versionShow (state) {
       util.log.capsule('D2Admin', `v${state.version}`)
       console.log('Github https://github.com/d2-projects/d2-admin')
-      console.log('Doc    http://d2admin.fairyever.com/zh/')
+      console.log('Doc    http://app.d3collection.cn/d2-admin-doc/lastest/zh/')
     },
     /**
      * @description 设置是否有新的 D2Admin 版本
