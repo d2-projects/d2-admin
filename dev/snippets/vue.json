@@ -9,7 +9,7 @@
       "      可选 type = full(默认) | card | ghost",
       "      可选 better-scroll 属性",
 			"      可选 better-scroll-option 属性",
-			"      文档 http://d2admin.fairyever.com/zh/components/container.html",
+			"      文档 http://app.d3collection.cn/d2-admin-doc/lastest/zh/components/container.html",
       "    -->",
       "    <template slot=\"header\">header</template>",
       "    <span class=\"${1:page-name}_title\">this is [ {{name}} ]</span>",
