@@ -209,7 +209,7 @@ D2Admin ICE 将会保持和 D2Admin Start Kit 一致更新，如果你看到完�
 | 地址 | 描述 |
 | --- | --- |
 | [团队主页](https://github.com/d2-projects) | D2Admin 所属的团队主页 |
-| [中文文档](http://d2admin.fairyever.com/zh/) | 中文文档 |
+| [中文文档](http://app.d3collection.cn/d2-admin-doc/lastest/zh/) | 中文文档 |
 | [D2Admin 完整版 预览地址](https://fairyever.gitee.io/d2-admin-preview/#/index) | 完整版 预览地址 |
 | [D2Admin 完整版 github](https://github.com/d2-projects/d2-admin) | 完整版 Github 仓库 |
 | [D2Admin 完整版 码云](https://gitee.com/fairyever/d2-admin) | 完整版 码云镜像仓库 |
@@ -221,6 +221,6 @@ D2Admin ICE 将会保持和 D2Admin Start Kit 一致更新，如果你看到完�
 
 <img src="http://fairyever.qiniudn.com/20180801111123.jpg" style="width: 200px;"/>
 
-[本文在项目文档中收录位置](http://d2admin.fairyever.com/zh/article/update/ice-1.1.2.html)
+[本文在项目文档中收录位置](http://app.d3collection.cn/d2-admin-doc/lastest/zh/article/update/ice-1.1.2.html)
 
 在最后，如果你看完了，并且觉得还不错，希望可以到 [项目主页](https://github.com/d2-projects/d2-admin) 上点一个 **star** 作为你对这个项目的认可与支持，谢谢。
