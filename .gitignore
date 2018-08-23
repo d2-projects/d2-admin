@@ -18,3 +18,4 @@ yarn-error.log*
 
 # d2admin
 dev/design
+docs/.vuepress/dist
