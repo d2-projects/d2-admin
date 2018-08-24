@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { PluginMocksAjax } from '@/api/demo/plugins/mocks/ajax'
 export default {
   data () {
     return {
@@ -37,7 +38,7 @@ export default {
   },
   methods: {
     ajax () {
-      this.$axios.get('/api/demo/plugins/mock/ajax')
+      PluginMocksAjax
         .then(res => {
           this.table.columns = Object.keys(res.list[0]).map(e => ({
             label: e,
