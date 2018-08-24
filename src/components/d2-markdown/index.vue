@@ -21,12 +21,6 @@ export default {
       required: false,
       default: ''
     },
-    // axios的baseurl
-    baseurl: {
-      type: String,
-      required: false,
-      default: process.env.VUE_APP_API
-    }
     source: {
       type: String,
       required: false,
@@ -70,7 +64,7 @@ export default {
     },
     // 从 url 加载原始数据
     async getReadme (url) {
-      const data = await ComponentsMarkdownBase(url, this.baseurl)
+      const data = await ComponentsMarkdownBase(url)
       return this.marked(data)
     },
     marked (data) {
