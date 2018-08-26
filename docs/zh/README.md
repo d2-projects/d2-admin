@@ -16,5 +16,11 @@ features:
   details: 已经为你准备好了很可能用到的插件和组件，专为 D2Admin 设计，或者来自第三方。
 - title: ElementUI组件库
   details: 集成完善且强大的 ElementUI，随意搭配使用任何 ElementUI 组件。
+- title: 可视化构建
+  details: 支持 CLI3 的可视化面板，并且提供飞冰版本脚手架。
+- title: 文档完善
+  details: 提供事无巨细的文档说明，并且文档也一直在更新完善。
+- title: 活跃交流群
+  details: 提供QQ和微信群供大家集中讨论学习，或者互相解决问题。
 footer: MIT Licensed | Copyright © 2018-present FairyEver
 ---

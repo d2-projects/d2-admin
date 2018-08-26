@@ -22,4 +22,4 @@ git push -f git@gitee.com:fairyever/d2-admin-doc.git master
 
 cd -
 
-# echo "publish to http://app.d3collection.cn/d2-admin-doc/lastest/zh/"
+echo "publish to http://d2admin.fairyever.com/"
