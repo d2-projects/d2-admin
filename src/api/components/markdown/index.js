@@ -7,10 +7,3 @@ export function ComponentsMarkdownBase (url) {
     method: 'get'
   })
 }
-
-export function ComponentsMarkdownApi (url) {
-  return request({
-    url,
-    method: 'get'
-  })
-}
