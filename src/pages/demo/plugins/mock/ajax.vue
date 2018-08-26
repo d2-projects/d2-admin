@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     ajax () {
-      PluginMocksAjax
+      PluginMocksAjax()
         .then(res => {
           this.table.columns = Object.keys(res.list[0]).map(e => ({
             label: e,
