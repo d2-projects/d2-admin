@@ -1,4 +1,5 @@
 import util from '@/libs/util.js'
+import { AccountLogin } from '@/api/sys/login'
 
 export default {
   namespaced: true,
@@ -12,13 +13,9 @@ export default {
      */
     login ({ commit }, { vm, username, password }) {
       // 开始请求登录接口
-      vm.$axios({
-        method: 'post',
-        url: '/login',
-        data: {
-          username,
-          password
-        }
+      AccountLogin({
+        username,
+        password
       })
         .then(res => {
           // 设置 cookie 一定要存 uuid 和 token 两个 cookie
