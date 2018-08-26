@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/d2-admin-doc/lastest/',
+  // base: '/d2-admin-doc/lastest/', // 发布到 http://app.d3collection.cn/d2-admin-doc/lastest/
   locales: {
     '/': {
       lang: 'en-US',
@@ -41,7 +41,8 @@ module.exports = {
             text: '学习',
             items: [
               { text: '教程', link: '/zh/learn-guide/' },
-              { text: '相关知识', link: '/zh/learn-knowledge/' }
+              { text: '相关知识', link: '/zh/learn-knowledge/' },
+              { text: '升级指引', link: '/zh/learn-update/' }
             ]
           },
           {
@@ -114,6 +115,7 @@ module.exports = {
         ],
         sidebar: {
           '/zh/learn-guide/': sideBarLearnGuide(),
+          '/zh/learn-update/': sideBarLearnUpdate(),
           '/zh/sys-components/': sideBarSysComponents(),
           '/zh/sys-plugins/': sideBarSysPlugins(),
           '/zh/article/': sideBarArticle('版本发布', 'Cookbook'),
@@ -131,6 +133,18 @@ function sideBarLearnGuide () {
       children: [
         '',
         'getting-started'
+      ]
+    }
+  ]
+}
+
+function sideBarLearnUpdate () {
+  return [
+    {
+      collapsable: false,
+      children: [
+        '',
+        'ice-1.2.6-to-1.2.7.md'
       ]
     }
   ]
