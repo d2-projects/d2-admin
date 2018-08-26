@@ -34,7 +34,7 @@ service.interceptors.response.use(
     return response.data
   },
   error => {
-    util.log.danger('>>>>>> Error [ service.interceptors.response ] >>>>>>')
+    util.log.danger('>>>>>> Error >>>>>>')
     console.log(error)
     Message({
       message: error.message,
