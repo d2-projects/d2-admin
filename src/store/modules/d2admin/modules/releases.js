@@ -1,4 +1,4 @@
-import axios from 'axios'
+import { httpGet } from '@/api/sys/http'
 import semver from 'semver'
 import util from '@/libs/util.js'
 import setting from '@/setting.js'
@@ -19,7 +19,7 @@ export default {
      * @param {Object} param context
      */
     checkUpdate ({ state, commit }) {
-      axios.get(setting.releases.api)
+      httpGet(setting.releases.api)
         .then(res => {
           let versionGet = res.tag_name
           const update = semver.lt(state.version, versionGet)
