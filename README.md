@@ -5,7 +5,7 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 **文档**
 
 [中文文档 码云部署](http://d2admin.fairyever.com/zh/) | 
-[中文文档 VPS部署](http://app.d3collection.cn/d2-admin-doc/lastest/zh/)
+[中文文档 服务器部署](http://app.d3collection.cn/d2-admin-doc/lastest/zh/)
 
 两个文档地址内容一致，哪个快请用哪个。
 
