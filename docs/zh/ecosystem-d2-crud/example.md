@@ -3,3 +3,5 @@
 | 示例 | 代码与演示 |
 | --- | --- |
 | 基础表格 | [点我查看](https://fairyever.gitee.io//d2-admin-preview/#/demo/d2-crud/demo1) |
+| 带斑马纹表格 | [点我查看](https://fairyever.gitee.io//d2-admin-preview/#/demo/d2-crud/demo2) |
+| 带边框表格 | [点我查看](https://fairyever.gitee.io//d2-admin-preview/#/demo/d2-crud/demo3) |
