@@ -64,7 +64,8 @@ const frameIn = [
       { path: 'demo2', name: `${pre}demo2`, component: () => import('@/pages/demo/d2-crud/demo2'), meta: { ...meta, title: '带斑马纹表格' } },
       { path: 'demo3', name: `${pre}demo3`, component: () => import('@/pages/demo/d2-crud/demo3'), meta: { ...meta, title: '带边框表格' } },
       { path: 'demo4', name: `${pre}demo4`, component: () => import('@/pages/demo/d2-crud/demo4'), meta: { ...meta, title: '带状态表格' } },
-      { path: 'demo5', name: `${pre}demo5`, component: () => import('@/pages/demo/d2-crud/demo5'), meta: { ...meta, title: '固定表头' } }
+      { path: 'demo5', name: `${pre}demo5`, component: () => import('@/pages/demo/d2-crud/demo5'), meta: { ...meta, title: '固定表头' } },
+      { path: 'demo6', name: `${pre}demo6`, component: () => import('@/pages/demo/d2-crud/demo6'), meta: { ...meta, title: '固定列' } }
     ])('demo-d2-crud-')
   },
   {
