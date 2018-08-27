@@ -1,6 +1,6 @@
 <template>
   <d2-container>
-    <template slot="header">带边框表格</template>
+    <template slot="header">带状态表格</template>
     <d2-crud
       :columns="columns"
       :data="data"
@@ -65,9 +65,26 @@ export default {
         }
       ],
       options: {
-        border: true
+        rowClassName ({row, rowIndex}) {
+          if (rowIndex === 1) {
+            return 'warning-row'
+          } else if (rowIndex === 3) {
+            return 'success-row'
+          }
+          return ''
+        }
       }
     }
   }
 }
 </script>
+
+<style>
+.el-table .warning-row {
+  background: oldlace;
+}
+
+.el-table .success-row {
+  background: #f0f9eb;
+}
+</style>

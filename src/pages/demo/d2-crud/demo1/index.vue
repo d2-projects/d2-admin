@@ -5,9 +5,7 @@
       :columns="columns"
       :data="data"/>
     <el-card shadow="never" class="d2-mb">
-      <p>
-        在d2-crud元素中注入columns和data对象数组，即可创建一个最基础的表格，可以在columns对象中传入width属性来控制列宽。代码如下：
-      </p>
+      <d2-markdown :source="doc"/>
     </el-card>
     <el-card shadow="never" class="d2-mb">
       <d2-highlight :code="code"/>
@@ -19,11 +17,13 @@
 </template>
 
 <script>
+import doc from './doc.md'
 import code from './code.js'
 
 export default {
   data () {
     return {
+      doc,
       code,
       columns: [
         {
