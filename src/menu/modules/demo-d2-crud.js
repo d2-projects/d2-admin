@@ -10,6 +10,7 @@ export default {
     { path: `${pre}demo4`, title: '带状态表格' },
     { path: `${pre}demo5`, title: '固定表头' },
     { path: `${pre}demo6`, title: '固定列' },
-    { path: `${pre}demo7`, title: '流体高度' }
+    { path: `${pre}demo7`, title: '流体高度' },
+    { path: `${pre}demo8`, title: '多级表头' }
   ])('/demo/d2-crud/')
 }
