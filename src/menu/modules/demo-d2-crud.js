@@ -7,6 +7,7 @@ export default {
     { path: `${pre}demo1`, title: '基础表格' },
     { path: `${pre}demo2`, title: '带斑马纹表格' },
     { path: `${pre}demo3`, title: '带边框表格' },
-    { path: `${pre}demo4`, title: '带状态表格' }
+    { path: `${pre}demo4`, title: '带状态表格' },
+    { path: `${pre}demo5`, title: '固定表头' }
   ])('/demo/d2-crud/')
 }
