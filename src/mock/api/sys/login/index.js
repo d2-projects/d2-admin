@@ -36,7 +36,8 @@ Mock.mock('/api/login', 'post', ({url, type, body}) => {
   } else {
     return {
       code: 401,
-      msg: '用户名或密码错误'
+      msg: '用户名或密码错误',
+      data: {}
     }
   }
 })

@@ -31,7 +31,18 @@ service.interceptors.request.use(
 // 响应拦截器
 service.interceptors.response.use(
   response => {
-    return response.data
+    // dataAxios 是 axios 返回数据中的 data
+    const dataAxios = response.data
+    // 这个状态码是和后端约定的
+    const { code } = dataAxios
+    // 根据 code 进行判断
+    if (code === undefined) {
+      // 如果没有 code 代表这不是后端返回的数据（例如请求 D2Admin 最新版本）
+      return dataAxios
+    } else {
+      // 有 code 代表这是一个后端接口
+      return dataAxios.data
+    }
   },
   error => {
     util.log.danger('>>>>>> Error >>>>>>')
