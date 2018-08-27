@@ -23,7 +23,9 @@
 </template>
 
 <script>
+import { PluginMocksAjax } from '@/api/demo/plugins/mocks/ajax'
 export default {
+  name: 'demo-plugins-mock-ajax',
   data () {
     return {
       table: {
@@ -37,13 +39,16 @@ export default {
   },
   methods: {
     ajax () {
-      this.$axios.get('/api/demo/plugins/mock/ajax')
+      PluginMocksAjax()
         .then(res => {
           this.table.columns = Object.keys(res.list[0]).map(e => ({
             label: e,
             prop: e
           }))
           this.table.data = res.list
+        })
+        .catch(() => {
+          // 错误情况
         })
     }
   }
