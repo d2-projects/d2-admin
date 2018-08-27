@@ -11,3 +11,4 @@ sidebar: auto
 | <img src="https://avatars2.githubusercontent.com/u/11420885?s=460&v=4" style="width: 30px;"/> | namklaw | [https://github.com/namklaw](https://github.com/namklaw) |
 | <img src="https://avatars2.githubusercontent.com/u/6757507?s=460&v=4" style="width: 30px;"/> | mokeyjay | [https://github.com/mokeyjay](https://github.com/mokeyjay) |
 | <img src="https://avatars2.githubusercontent.com/u/10137653?s=460&v=4" style="width: 30px;"/> | Aysnine | [https://github.com/Aysnine](https://github.com/Aysnine) |
+| <img src="https://avatars2.githubusercontent.com/u/12825624?s=460&v=4" style="width: 30px;"/> | rongxingsun | [https://github.com/rongxingsun](https://github.com/rongxingsun) |
