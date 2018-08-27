@@ -1,31 +1,16 @@
-<template>
-  <d2-container>
-    <template slot="header">带边框表格</template>
+export default `<template>
+  <div>
     <d2-crud
       :columns="columns"
       :data="data"
       :options="options"/>
-    <el-card shadow="never" class="d2-mb">
-      <d2-markdown :source="doc"/>
-    </el-card>
-    <el-card shadow="never" class="d2-mb">
-      <d2-highlight :code="code"/>
-    </el-card>
-    <template slot="footer">
-      <d2-link-btn title="D2 CRUD" link="https://github.com/d2-projects/d2-crud"/>
-    </template>
-  </d2-container>
+  </div>
 </template>
 
 <script>
-import doc from './doc.md'
-import code from './code.js'
-
 export default {
   data () {
     return {
-      doc,
-      code,
       columns: [
         {
           title: '日期',
@@ -65,9 +50,26 @@ export default {
         }
       ],
       options: {
-        border: true
+        rowClassName ({row, rowIndex}) {
+          if (rowIndex === 1) {
+            return 'warning-row'
+          } else if (rowIndex === 3) {
+            return 'success-row'
+          }
+          return ''
+        }
       }
     }
   }
 }
 </script>
+
+<style>
+.el-table .warning-row {
+  background: oldlace;
+}
+
+.el-table .success-row {
+  background: #f0f9eb;
+}
+</style>`

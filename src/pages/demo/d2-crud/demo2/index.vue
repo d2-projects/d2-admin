@@ -6,9 +6,7 @@
       :data="data"
       :options="options"/>
     <el-card shadow="never" class="d2-mb">
-      <p>
-        options对象可以对表格进行配置，其中stripe属性可以创建带斑马纹的表格。它接受一个Boolean，设置为true即为启用。代码如下：
-      </p>
+      <d2-markdown :source="doc"/>
     </el-card>
     <el-card shadow="never" class="d2-mb">
       <d2-highlight :code="code"/>
@@ -20,11 +18,13 @@
 </template>
 
 <script>
+import doc from './doc.md'
 import code from './code.js'
 
 export default {
   data () {
     return {
+      doc,
       code,
       columns: [
         {
