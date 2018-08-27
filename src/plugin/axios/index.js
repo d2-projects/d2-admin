@@ -76,8 +76,7 @@ service.interceptors.response.use(
           return dataAxios.data
         case 'xxx':
           // [ 示例 ] 其它和后台约定的 code
-          util.log.error('code xxx')
-          errorCreat(`${dataAxios.msg}: ${response.config.url}`)
+          errorCreat(`[ code: xxx ] ${dataAxios.msg}: ${response.config.url}`)
           break
         default:
           // 不是正确的 code
