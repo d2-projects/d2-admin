@@ -106,9 +106,6 @@ VUE_APP_API=/api-dev/
 service.interceptors.response.use(
   response => {
     // 成功返回数据，在这里判断和后台约定的状态标识
-  },
-  error => {
-    // 发生 http 错误，在这里判断状态码
   }
 )
 ```
@@ -116,6 +113,15 @@ service.interceptors.response.use(
 ### http 错误
 
 如果需要针对某个 http 错误指定处理方法，应该在响应拦截器中第二个参数中添加对应的代码。
+
+``` js
+service.interceptors.response.use(
+  response => {},
+  error => {
+    // 发生 http 错误，在这里判断状态码
+  }
+)
+```
 
 ### 不返回 code
 
