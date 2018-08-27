@@ -8,7 +8,6 @@ import '@/components'
 // svg 图标
 import '@/assets/svg-icons'
 // 功能插件
-import pluginAxios from '@/plugin/axios'
 import pluginError from '@/plugin/error'
 import pluginExport from '@/plugin/export'
 import pluginImport from '@/plugin/import'
@@ -20,7 +19,6 @@ export default {
     // Element
     Vue.use(ElementUI)
     // 插件
-    Vue.use(pluginAxios)
     Vue.use(pluginError)
     Vue.use(pluginExport)
     Vue.use(pluginImport)
