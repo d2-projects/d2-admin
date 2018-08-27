@@ -69,7 +69,7 @@ export const menuHeader = [
       },
       {
         title: 'svg 菜单图标',
-        iconSvg: 'd2admin',
+        iconSvg: 'd2-admin',
         children: [
           { title: 'add', iconSvg: 'add' },
           { title: 'alarm', iconSvg: 'alarm' },

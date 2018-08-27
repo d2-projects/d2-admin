@@ -3,7 +3,7 @@
     <d2-page-cover
       title="I AM D2ADMIN"
       sub-title="追求简约美感的后台管理系统集成方案">
-      <d2-icon-svg style="width: 120px;" name="d2admin"/>
+      <d2-icon-svg style="width: 120px;" name="d2-admin"/>
       <template slot="footer">
         <div class="page__btn-group">
           <span @click="$open('https://github.com/d2-projects')">项目组</span> |
