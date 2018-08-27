@@ -66,7 +66,8 @@ const frameIn = [
       { path: 'demo4', name: `${pre}demo4`, component: () => import('@/pages/demo/d2-crud/demo4'), meta: { ...meta, title: '带状态表格' } },
       { path: 'demo5', name: `${pre}demo5`, component: () => import('@/pages/demo/d2-crud/demo5'), meta: { ...meta, title: '固定表头' } },
       { path: 'demo6', name: `${pre}demo6`, component: () => import('@/pages/demo/d2-crud/demo6'), meta: { ...meta, title: '固定列' } },
-      { path: 'demo7', name: `${pre}demo7`, component: () => import('@/pages/demo/d2-crud/demo7'), meta: { ...meta, title: '流体高度' } }
+      { path: 'demo7', name: `${pre}demo7`, component: () => import('@/pages/demo/d2-crud/demo7'), meta: { ...meta, title: '流体高度' } },
+      { path: 'demo8', name: `${pre}demo8`, component: () => import('@/pages/demo/d2-crud/demo8'), meta: { ...meta, title: '多级表头' } }
     ])('demo-d2-crud-')
   },
   {
