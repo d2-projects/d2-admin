@@ -60,7 +60,7 @@ const frameIn = [
     component: layoutHeaderAside,
     children: (pre => [
       { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/d2-crud/index'), meta: { ...meta, title: 'D2 CRUD 首页' } },
-      { path: 'demo1', name: `${pre}demo1`, component: () => import('@/pages/demo/d2-crud/demo1'), meta: { ...meta, title: '基本表格' } }
+      { path: 'demo1', name: `${pre}demo1`, component: () => import('@/pages/demo/d2-crud/demo1'), meta: { ...meta, title: '基础表格' } }
     ])('demo-d2-crud-')
   },
   {

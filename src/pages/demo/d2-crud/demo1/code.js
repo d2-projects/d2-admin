@@ -1,30 +1,15 @@
-<template>
-  <d2-container>
-    <template slot="header">基础表格</template>
+export default `<template>
+  <div>
     <d2-crud
       :columns="columns"
       :data="data"/>
-    <el-card shadow="never" class="d2-mb">
-      <p>
-        在d2-crud元素中注入columns和data对象数组，即可创建一个最基础的表格，可以在columns对象中传入width属性来控制列宽。代码如下：
-      </p>
-    </el-card>
-    <el-card shadow="never" class="d2-mb">
-      <d2-highlight :code="code"/>
-    </el-card>
-    <template slot="footer">
-      <d2-link-btn title="D2 CRUD" link="https://github.com/d2-projects/d2-crud"/>
-    </template>
-  </d2-container>
+  </div>
 </template>
 
 <script>
-import code from './code.js'
-
 export default {
   data () {
     return {
-      code,
       columns: [
         {
           title: '日期',
@@ -66,4 +51,4 @@ export default {
     }
   }
 }
-</script>
+</script>`
