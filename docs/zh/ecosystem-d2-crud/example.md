@@ -7,3 +7,4 @@
 | 带边框表格 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo3) |
 | 带状态表格 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo4) |
 | 固定表头 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo5) |
+| 固定列 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo6) |
