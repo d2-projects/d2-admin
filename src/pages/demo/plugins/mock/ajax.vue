@@ -25,6 +25,7 @@
 <script>
 import { PluginMocksAjax } from '@/api/demo/plugins/mocks/ajax'
 export default {
+  name: 'demo-plugins-mock-ajax',
   data () {
     return {
       table: {
@@ -45,6 +46,9 @@ export default {
             prop: e
           }))
           this.table.data = res.list
+        })
+        .catch(() => {
+          // 错误情况
         })
     }
   }
