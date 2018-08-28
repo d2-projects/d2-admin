@@ -14,4 +14,6 @@
 | 多选 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo10) |
 | 排序 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo11) |
 | 筛选 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo12) |
-| 展开行 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo13) |
+| 表尾合计行 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo13) |
+| 合并行 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo14) |
+| 合并列 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo15) |
