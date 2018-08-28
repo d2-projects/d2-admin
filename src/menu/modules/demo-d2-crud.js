@@ -14,6 +14,7 @@ export default {
     { path: `${pre}demo8`, title: '多级表头' },
     { path: `${pre}demo9`, title: '单选' },
     { path: `${pre}demo10`, title: '多选' },
-    { path: `${pre}demo11`, title: '排序' }
+    { path: `${pre}demo11`, title: '排序' },
+    { path: `${pre}demo12`, title: '筛选' }
   ])('/demo/d2-crud/')
 }
