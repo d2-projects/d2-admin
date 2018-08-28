@@ -25,3 +25,4 @@
 | 示例 | 代码与演示 |
 | --- | --- |
 | 新增数据 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo16) |
+| 修改数据 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo17) |
