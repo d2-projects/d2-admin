@@ -38,9 +38,10 @@ export default {
 @import '~@/assets/style/public.scss';
 .d2-panel-search-item {
   height: 64px;
-  margin: 0px;
+  margin: 0px -20px;
   &.can-hover {
     @extend %unable-select;
+    margin: 0px;
     &:hover {
       background-color: #F5F7FA;
     }
