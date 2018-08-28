@@ -4,7 +4,7 @@ export default {
   namespaced: true,
   state: {
     // 搜索面板激活状态
-    active: false,
+    active: true,
     hotkey: {
       open: setting.hotkey.search.open,
       close: setting.hotkey.search.close
