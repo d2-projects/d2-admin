@@ -23,6 +23,12 @@ export default {
         { path: `${pre}demo14`, title: '合并行' },
         { path: `${pre}demo15`, title: '合并列' }
       ]
+    },
+    {
+      title: '数据操作',
+      children: [
+        { path: `${pre}demo16`, title: '新增数据' }
+      ]
     }
   ])('/demo/d2-crud/')
 }

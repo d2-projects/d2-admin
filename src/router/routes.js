@@ -74,7 +74,8 @@ const frameIn = [
       { path: 'demo12', name: `${pre}demo12`, component: () => import('@/pages/demo/d2-crud/demo12'), meta: { ...meta, title: '筛选' } },
       { path: 'demo13', name: `${pre}demo13`, component: () => import('@/pages/demo/d2-crud/demo13'), meta: { ...meta, title: '表尾合计行' } },
       { path: 'demo14', name: `${pre}demo14`, component: () => import('@/pages/demo/d2-crud/demo14'), meta: { ...meta, title: '合并行' } },
-      { path: 'demo15', name: `${pre}demo15`, component: () => import('@/pages/demo/d2-crud/demo15'), meta: { ...meta, title: '合并列' } }
+      { path: 'demo15', name: `${pre}demo15`, component: () => import('@/pages/demo/d2-crud/demo15'), meta: { ...meta, title: '合并列' } },
+      { path: 'demo16', name: `${pre}demo16`, component: () => import('@/pages/demo/d2-crud/demo16'), meta: { ...meta, title: '新增数据' } }
     ])('demo-d2-crud-')
   },
   {

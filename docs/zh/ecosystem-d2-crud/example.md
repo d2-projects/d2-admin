@@ -1,5 +1,7 @@
 # 示例
 
+## 基础功能
+
 | 示例 | 代码与演示 |
 | --- | --- |
 | 基础表格 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo1) |
@@ -17,3 +19,9 @@
 | 表尾合计行 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo13) |
 | 合并行 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo14) |
 | 合并列 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo15) |
+
+## 数据操作
+
+| 示例 | 代码与演示 |
+| --- | --- |
+| 新增数据 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo16) |
