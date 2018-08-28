@@ -13,6 +13,7 @@ export default {
     { path: `${pre}demo7`, title: '流体高度' },
     { path: `${pre}demo8`, title: '多级表头' },
     { path: `${pre}demo9`, title: '单选' },
-    { path: `${pre}demo10`, title: '多选' }
+    { path: `${pre}demo10`, title: '多选' },
+    { path: `${pre}demo11`, title: '排序' }
   ])('/demo/d2-crud/')
 }
