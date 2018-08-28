@@ -1,6 +1,7 @@
 export default `<template>
   <div>
     <d2-crud
+      ref="d2Crud"
       :columns="columns"
       :data="data"/>
   </div>
@@ -49,6 +50,9 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    console.log(this.$refs.d2Crud.d2Data)
   }
 }
 </script>`
