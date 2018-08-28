@@ -6,7 +6,8 @@
         ref="input"
         v-model="input"
         suffix-icon="el-icon-search"
-        placeholder="搜索页面"/>
+        placeholder="搜索页面"
+        @keydown.esc.native="handleEsc"/>
     </div>
   </div>
 </template>
@@ -21,8 +22,12 @@ export default {
   methods: {
     focus () {
       this.$nextTick(() => {
+        this.input = ''
         this.$refs.input.focus()
       })
+    },
+    handleEsc () {
+      this.$emit('close')
     }
   }
 }

@@ -20,7 +20,7 @@
         <!-- 顶栏右侧 -->
         <div class="d2-header-right">
           <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
-          <d2-header-search @click="handleSearch"/>
+          <d2-header-search @click="handleSearchClick"/>
           <d2-header-error-log/>
           <d2-header-fullscreen/>
           <d2-header-theme/>
@@ -41,7 +41,9 @@
         <div class="d2-theme-container-main" flex-box="1" flex>
           <transition name="fade-scale">
             <div v-show="searchActive" class="d2-theme-container-main-layer" flex="dir:top">
-              <d2-panel-search ref="panelSearch"/>
+              <d2-panel-search
+                ref="panelSearch"
+                @close="searchPanelClose"/>
             </div>
           </transition>
           <transition name="fade-scale">
@@ -66,6 +68,7 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
+import hotkeys from 'hotkeys-js'
 export default {
   name: 'd2-layout-header-aside',
   components: {
@@ -87,10 +90,27 @@ export default {
       asideWidthCollapse: '65px'
     }
   },
+  mounted () {
+    // 绑定搜索功能快捷键 [ 打开 ]
+    hotkeys(this.searchHotkey.open, event => {
+      event.preventDefault()
+      this.searchPanelOpen()
+    })
+    // 绑定搜索功能快捷键 [ 关闭 ]
+    hotkeys(this.searchHotkey.close, event => {
+      event.preventDefault()
+      this.searchPanelClose()
+    })
+  },
+  beforeDestroy () {
+    // 解绑搜索功能快捷键
+    hotkeys.unbind('esc')
+  },
   computed: {
     ...mapState('d2admin', {
       grayActive: state => state.gray.active,
       searchActive: state => state.search.active,
+      searchHotkey: state => state.search.hotkey,
       transitionActive: state => state.transition.active,
       asideCollapse: state => state.menu.asideCollapse
     }),
@@ -112,7 +132,8 @@ export default {
   methods: {
     ...mapMutations({
       menuAsideCollapseToggle: 'd2admin/menu/asideCollapseToggle',
-      searchToggle: 'd2admin/search/toggle'
+      searchToggle: 'd2admin/search/toggle',
+      searchSet: 'd2admin/search/set'
     }),
     /**
      * 接收点击切换侧边栏的按钮
@@ -123,10 +144,22 @@ export default {
     /**
      * 接收点击搜索按钮
      */
-    handleSearch () {
+    handleSearchClick () {
       this.searchToggle()
       if (this.searchActive) {
         this.$refs.panelSearch.focus()
+      }
+    },
+    searchPanelOpen () {
+      if (!this.searchActive) {
+        this.searchSet(true)
+        this.$refs.panelSearch.focus()
+      }
+    },
+    // 关闭搜索面板
+    searchPanelClose () {
+      if (this.searchActive) {
+        this.searchSet(false)
       }
     }
   }
