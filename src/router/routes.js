@@ -76,7 +76,8 @@ const frameIn = [
       { path: 'demo14', name: `${pre}demo14`, component: () => import('@/pages/demo/d2-crud/demo14'), meta: { ...meta, title: '合并行' } },
       { path: 'demo15', name: `${pre}demo15`, component: () => import('@/pages/demo/d2-crud/demo15'), meta: { ...meta, title: '合并列' } },
       { path: 'demo16', name: `${pre}demo16`, component: () => import('@/pages/demo/d2-crud/demo16'), meta: { ...meta, title: '新增数据' } },
-      { path: 'demo17', name: `${pre}demo17`, component: () => import('@/pages/demo/d2-crud/demo17'), meta: { ...meta, title: '修改数据' } }
+      { path: 'demo17', name: `${pre}demo17`, component: () => import('@/pages/demo/d2-crud/demo17'), meta: { ...meta, title: '修改数据' } },
+      { path: 'demo18', name: `${pre}demo18`, component: () => import('@/pages/demo/d2-crud/demo18'), meta: { ...meta, title: '删除数据' } }
     ])('demo-d2-crud-')
   },
   {
