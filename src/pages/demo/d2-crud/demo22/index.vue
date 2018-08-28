@@ -1,14 +1,15 @@
 <template>
   <d2-container>
-    <template slot="header">新增数据</template>
+    <template slot="header">表单校验</template>
     <d2-crud
       :columns="columns"
       :data="data"
       title="D2 CRUD"
-      add-mode
+      addMode
       :addButton="addButton"
       :form-template="formTemplate"
       :form-options="formOptions"
+      :form-rules="formRules"
       @row-add="handleRowAdd"
       @dialog-cancel="handleDialogCancel">
     </d2-crud>
@@ -70,27 +71,33 @@ export default {
         }
       ],
       addButton: {
+        text: '点我查看表单校验',
         icon: 'el-icon-plus',
         size: 'small'
       },
       formTemplate: {
         date: {
           title: '日期',
-          value: '2016-05-05'
+          value: ''
         },
         name: {
           title: '姓名',
-          value: '王小虎'
+          value: ''
         },
         address: {
           title: '地址',
-          value: '上海市普陀区金沙江路 1520 弄'
+          value: ''
         }
       },
       formOptions: {
         labelWidth: '80px',
         labelPosition: 'left',
         saveLoading: false
+      },
+      formRules: {
+        date: [ { required: true, message: '请输入日期', trigger: 'blur' } ],
+        name: [ { required: true, message: '请输入姓名', trigger: 'blur' } ],
+        address: [ { required: true, message: '请输入地址', trigger: 'blur' } ]
       }
     }
   },
