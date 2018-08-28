@@ -68,9 +68,12 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-import hotkeys from 'hotkeys-js'
+import mixinSearch from './mixins/search'
 export default {
   name: 'd2-layout-header-aside',
+  mixins: [
+    mixinSearch
+  ],
   components: {
     'd2-menu-side': () => import('./components/menu-side'),
     'd2-menu-header': () => import('./components/menu-header'),
@@ -79,8 +82,7 @@ export default {
     'd2-header-search': () => import('./components/header-search'),
     'd2-header-theme': () => import('./components/header-theme'),
     'd2-header-user': () => import('./components/header-user'),
-    'd2-header-error-log': () => import('./components/header-error-log'),
-    'd2-panel-search': () => import('./components/panel-search')
+    'd2-header-error-log': () => import('./components/header-error-log')
   },
   data () {
     return {
@@ -90,27 +92,9 @@ export default {
       asideWidthCollapse: '65px'
     }
   },
-  mounted () {
-    // 绑定搜索功能快捷键 [ 打开 ]
-    hotkeys(this.searchHotkey.open, event => {
-      event.preventDefault()
-      this.searchPanelOpen()
-    })
-    // 绑定搜索功能快捷键 [ 关闭 ]
-    hotkeys(this.searchHotkey.close, event => {
-      event.preventDefault()
-      this.searchPanelClose()
-    })
-  },
-  beforeDestroy () {
-    // 解绑搜索功能快捷键
-    hotkeys.unbind('esc')
-  },
   computed: {
     ...mapState('d2admin', {
       grayActive: state => state.gray.active,
-      searchActive: state => state.search.active,
-      searchHotkey: state => state.search.hotkey,
       transitionActive: state => state.transition.active,
       asideCollapse: state => state.menu.asideCollapse
     }),
@@ -131,36 +115,13 @@ export default {
   },
   methods: {
     ...mapMutations({
-      menuAsideCollapseToggle: 'd2admin/menu/asideCollapseToggle',
-      searchToggle: 'd2admin/search/toggle',
-      searchSet: 'd2admin/search/set'
+      menuAsideCollapseToggle: 'd2admin/menu/asideCollapseToggle'
     }),
     /**
      * 接收点击切换侧边栏的按钮
      */
     handleToggleAside () {
       this.menuAsideCollapseToggle()
-    },
-    /**
-     * 接收点击搜索按钮
-     */
-    handleSearchClick () {
-      this.searchToggle()
-      if (this.searchActive) {
-        this.$refs.panelSearch.focus()
-      }
-    },
-    searchPanelOpen () {
-      if (!this.searchActive) {
-        this.searchSet(true)
-        this.$refs.panelSearch.focus()
-      }
-    },
-    // 关闭搜索面板
-    searchPanelClose () {
-      if (this.searchActive) {
-        this.searchSet(false)
-      }
     }
   }
 }

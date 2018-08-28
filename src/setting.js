@@ -30,6 +30,10 @@ const setting = {
     version: version,
     api: 'https://api.github.com/repos/FairyEver/d2-admin/releases/latest'
   },
+  // 菜单搜索
+  search: {
+    enable: true
+  },
   // 注册的主题
   theme: {
     list: [
