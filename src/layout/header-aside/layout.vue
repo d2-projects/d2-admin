@@ -20,6 +20,7 @@
         <!-- 顶栏右侧 -->
         <div class="d2-header-right">
           <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
+          <d2-header-search @click="handleSearch"/>
           <d2-header-error-log/>
           <d2-header-fullscreen/>
           <d2-header-theme/>
@@ -37,17 +38,26 @@
           <d2-menu-side/>
         </div>
         <!-- 主体 -->
-        <div class="d2-theme-container-main" flex-box="1" flex="dir:top">
-          <div class="d2-theme-container-main-header" flex-box="0">
-            <d2-tabs/>
-          </div>
-          <div class="d2-theme-container-main-body" flex-box="1">
-            <transition :name="transitionActive ? 'fade-transverse' : ''">
-              <keep-alive :include="keepAlive">
-                <router-view/>
-              </keep-alive>
-            </transition>
-          </div>
+        <div class="d2-theme-container-main" flex-box="1" flex>
+          <transition name="fade-scale">
+            <div v-show="searchActive" class="d2-theme-container-main-layer" flex="dir:top">
+              <d2-panel-search ref="panelSearch"/>
+            </div>
+          </transition>
+          <transition name="fade-scale">
+            <div v-show="!searchActive" class="d2-theme-container-main-layer" flex="dir:top">
+              <div class="d2-theme-container-main-header" flex-box="0">
+                <d2-tabs/>
+              </div>
+              <div class="d2-theme-container-main-body" flex-box="1">
+                <transition :name="transitionActive ? 'fade-transverse' : ''">
+                  <keep-alive :include="keepAlive">
+                    <router-view/>
+                  </keep-alive>
+                </transition>
+              </div>
+            </div>
+          </transition>
         </div>
       </div>
     </div>
@@ -63,9 +73,11 @@ export default {
     'd2-menu-header': () => import('./components/menu-header'),
     'd2-tabs': () => import('./components/tabs'),
     'd2-header-fullscreen': () => import('./components/header-fullscreen'),
+    'd2-header-search': () => import('./components/header-search'),
     'd2-header-theme': () => import('./components/header-theme'),
     'd2-header-user': () => import('./components/header-user'),
-    'd2-header-error-log': () => import('./components/header-error-log')
+    'd2-header-error-log': () => import('./components/header-error-log'),
+    'd2-panel-search': () => import('./components/panel-search')
   },
   data () {
     return {
@@ -78,6 +90,7 @@ export default {
   computed: {
     ...mapState('d2admin', {
       grayActive: state => state.gray.active,
+      searchActive: state => state.search.active,
       transitionActive: state => state.transition.active,
       asideCollapse: state => state.menu.asideCollapse
     }),
@@ -97,14 +110,24 @@ export default {
     }
   },
   methods: {
-    ...mapMutations('d2admin/menu', [
-      'asideCollapseToggle'
-    ]),
+    ...mapMutations({
+      menuAsideCollapseToggle: 'd2admin/menu/asideCollapseToggle',
+      searchToggle: 'd2admin/search/toggle'
+    }),
     /**
      * 接收点击切换侧边栏的按钮
      */
     handleToggleAside () {
-      this.asideCollapseToggle()
+      this.menuAsideCollapseToggle()
+    },
+    /**
+     * 接收点击搜索按钮
+     */
+    handleSearch () {
+      this.searchToggle()
+      if (this.searchActive) {
+        this.$refs.panelSearch.focus()
+      }
     }
   }
 }
