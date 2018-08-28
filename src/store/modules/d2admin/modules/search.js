@@ -1,8 +1,14 @@
+import setting from '@/setting.js'
+
 export default {
   namespaced: true,
   state: {
     // 搜索面板激活状态
-    active: false
+    active: false,
+    hotkey: {
+      open: setting.hotkey.search.open,
+      close: setting.hotkey.search.close
+    }
   },
   mutations: {
     /**

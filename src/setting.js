@@ -1,6 +1,14 @@
 import { version } from '../package'
 
 const setting = {
+  // 快捷键
+  // 支持快捷键 例如 ctrl+shift+s
+  hotkey: {
+    search: {
+      open: 's',
+      close: 'esc'
+    }
+  },
   // 侧边栏默认折叠状态
   menu: {
     asideCollapse: false
