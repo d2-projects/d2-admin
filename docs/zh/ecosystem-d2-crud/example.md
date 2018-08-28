@@ -10,3 +10,5 @@
 | 固定列 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo6) |
 | 流体高度 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo7) |
 | 多级表头 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo8) |
+| 单选 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo9) |
+| 多选 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo10) |
