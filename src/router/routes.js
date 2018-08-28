@@ -81,7 +81,8 @@ const frameIn = [
       { path: 'demo19', name: `${pre}demo19`, component: () => import('@/pages/demo/d2-crud/demo19'), meta: { ...meta, title: '自定义操作列' } },
       { path: 'demo20', name: `${pre}demo20`, component: () => import('@/pages/demo/d2-crud/demo20'), meta: { ...meta, title: '表单组件渲染' } },
       { path: 'demo21', name: `${pre}demo21`, component: () => import('@/pages/demo/d2-crud/demo21'), meta: { ...meta, title: '表单布局' } },
-      { path: 'demo22', name: `${pre}demo22`, component: () => import('@/pages/demo/d2-crud/demo22'), meta: { ...meta, title: '表单校验' } }
+      { path: 'demo22', name: `${pre}demo22`, component: () => import('@/pages/demo/d2-crud/demo22'), meta: { ...meta, title: '表单校验' } },
+      { path: 'demo23', name: `${pre}demo23`, component: () => import('@/pages/demo/d2-crud/demo23'), meta: { ...meta, title: '表格内编辑' } }
     ])('demo-d2-crud-')
   },
   {
