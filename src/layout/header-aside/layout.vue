@@ -8,7 +8,12 @@
     <!-- 主体内容 -->
     <div class="d2-layout-header-aside-content" flex="dir:top">
       <!-- 顶栏 -->
-      <div class="d2-theme-header" flex-box="0">
+      <div
+        class="d2-theme-header"
+        :style="{
+          opacity: this.searchActive ? 0.3 : 1
+        }"
+        flex-box="0">
         <div class="logo-group" :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}">
           <img v-if="asideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
           <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/all.png`">
@@ -34,7 +39,10 @@
           flex-box="0"
           ref="aside"
           class="d2-theme-container-aside"
-          :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}">
+          :style="{
+            width: asideCollapse ? asideWidthCollapse : asideWidth,
+            opacity: this.searchActive ? 0.3 : 1
+          }">
           <d2-menu-side/>
         </div>
         <!-- 主体 -->
