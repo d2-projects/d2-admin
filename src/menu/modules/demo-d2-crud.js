@@ -32,7 +32,8 @@ export default {
         { path: `${pre}demo18`, title: '删除数据' },
         { path: `${pre}demo19`, title: '自定义操作列' },
         { path: `${pre}demo20`, title: '表单组件渲染' },
-        { path: `${pre}demo21`, title: '表单布局' }
+        { path: `${pre}demo21`, title: '表单布局' },
+        { path: `${pre}demo22`, title: '表单校验' }
       ]
     }
   ])('/demo/d2-crud/')
