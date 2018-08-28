@@ -28,3 +28,5 @@
 | 修改数据 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo17) |
 | 删除数据 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo18) |
 | 自定义操作列 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo19) |
+| 表单组件渲染 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo20) |
+| 表单布局 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo21) |

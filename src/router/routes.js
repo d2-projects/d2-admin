@@ -78,7 +78,9 @@ const frameIn = [
       { path: 'demo16', name: `${pre}demo16`, component: () => import('@/pages/demo/d2-crud/demo16'), meta: { ...meta, title: '新增数据' } },
       { path: 'demo17', name: `${pre}demo17`, component: () => import('@/pages/demo/d2-crud/demo17'), meta: { ...meta, title: '修改数据' } },
       { path: 'demo18', name: `${pre}demo18`, component: () => import('@/pages/demo/d2-crud/demo18'), meta: { ...meta, title: '删除数据' } },
-      { path: 'demo19', name: `${pre}demo19`, component: () => import('@/pages/demo/d2-crud/demo19'), meta: { ...meta, title: '自定义操作列' } }
+      { path: 'demo19', name: `${pre}demo19`, component: () => import('@/pages/demo/d2-crud/demo19'), meta: { ...meta, title: '自定义操作列' } },
+      { path: 'demo20', name: `${pre}demo20`, component: () => import('@/pages/demo/d2-crud/demo20'), meta: { ...meta, title: '表单组件渲染' } },
+      { path: 'demo21', name: `${pre}demo21`, component: () => import('@/pages/demo/d2-crud/demo21'), meta: { ...meta, title: '表单布局' } }
     ])('demo-d2-crud-')
   },
   {
