@@ -29,13 +29,15 @@
   %el-menu-icon {
     i {
       display: inline-block;
-      width: 15px;
+      width: 14px;
       text-align: center;
       margin-right: 5px;
-      svg {
-        height: 14px;
-        width: 14px;
-      }
+    }
+    svg {
+      margin: 0px;
+      height: 14px;
+      width: 14px;
+      margin-right: 5px;
     }
   }
   .el-submenu__title {
