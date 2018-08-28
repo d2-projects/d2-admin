@@ -67,9 +67,22 @@ export default {
     ])
   },
   methods: {
+    /**
+     * @description 过滤选项 这个方法在每次输入框的值发生变化时会触发
+     */
     querySearch (queryString, callback) {
       var pool = this.pool
-      const results = (queryString ? pool : []).filter(item => {
+      const results = this.query(queryString ? pool : [], queryString)
+      this.results = results
+      callback(results)
+    },
+    /**
+     * @description 指定的数据源中根据指定的查询字符串过滤数据
+     * @param {Object} pool 需要过滤的数据
+     * @param {String} queryString 查询字符串
+     */
+    query (pool, queryString) {
+      return pool.filter(item => {
         const path = item.path || ''
         const fullTitle = item.fullTitle || ''
         return (`${fullTitle}${path}`.toLowerCase().indexOf(queryString.toLowerCase()) >= 0)
@@ -77,16 +90,19 @@ export default {
         value: e.fullTitle,
         ...e
       }))
-      this.results = results
-      callback(results)
     },
+    /**
+     * @description 聚焦输入框
+     */
     focus () {
       this.input = ''
       setTimeout(() => {
         this.$refs.input.focus()
       }, 500)
     },
-    // 接收用户在列表中选择项目的事件
+    /**
+     * @description 接收用户在列表中选择项目的事件
+     */
     handleResultsGroupItemClick (path) {
       // 如果用户选择的就是当前页面 就直接关闭搜索面板
       if (path === this.$route.path) {
@@ -96,7 +112,9 @@ export default {
       // 用户选择的是其它页面
       this.handleMenuSelect(path)
     },
-    // 接收用户在下拉菜单中选中事件
+    /**
+     * @description 接收用户在下拉菜单中选中事件
+     */
     handleSelect ({ path }) {
       // 如果用户选择的就是当前页面 就直接关闭搜索面板
       if (path === this.$route.path) {
@@ -108,12 +126,18 @@ export default {
         this.handleMenuSelect(path)
       })
     },
+    /**
+     * @augments 关闭输入框的下拉菜单
+     */
     closeSuggestion () {
       if (this.$refs.input.activated) {
         this.$refs.input.suggestions = []
         this.$refs.input.activated = false
       }
     },
+    /**
+     * @augments 接收用户触发的关闭
+     */
     handleEsc () {
       this.closeSuggestion()
       this.$nextTick(() => {
