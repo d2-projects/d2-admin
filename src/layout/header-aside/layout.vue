@@ -39,6 +39,7 @@
         </div>
         <!-- 主体 -->
         <div class="d2-theme-container-main" flex-box="1" flex>
+          <!-- 搜索 -->
           <transition name="fade-scale">
             <div v-show="searchActive" class="d2-theme-container-main-layer" flex="dir:top">
               <d2-panel-search
@@ -46,11 +47,14 @@
                 @close="searchPanelClose"/>
             </div>
           </transition>
+          <!-- 内容 -->
           <transition name="fade-scale">
             <div v-show="!searchActive" class="d2-theme-container-main-layer" flex="dir:top">
+              <!-- tab -->
               <div class="d2-theme-container-main-header" flex-box="0">
                 <d2-tabs/>
               </div>
+              <!-- 页面 -->
               <div class="d2-theme-container-main-body" flex-box="1">
                 <transition :name="transitionActive ? 'fade-transverse' : ''">
                   <keep-alive :include="keepAlive">
