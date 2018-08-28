@@ -31,3 +31,4 @@
 | 表单组件渲染 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo20) |
 | 表单布局 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo21) |
 | 表单校验 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo22) |
+| 表格内编辑 | [点我查看](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/demo23) |

@@ -2,6 +2,7 @@
   <d2-container>
     <template slot="header">基础表格</template>
     <d2-crud
+      ref="d2Crud"
       :columns="columns"
       :data="data"/>
     <el-card shadow="never" class="d2-mb">
@@ -64,6 +65,9 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    console.log(this.$refs.d2Crud.d2Data)
   }
 }
 </script>
