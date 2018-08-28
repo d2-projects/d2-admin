@@ -1,0 +1,1 @@
+通过给 `D2 Crud` 传入 `add-mode` 可开启新增模式，需要传入 `form-template` 来为新增的表单添加模板，向`form-options` 中传入 `labelWidth` 和 `labelPosition` 来控制表单中label的显示, `saveLoading` 则控制保存按钮的loading状态，`addButton` 可以控制表格顶部新增按钮的样式， `row-add` 事件控制数据新增，接收两个参数： `row` 是当前新增行的数据， `done` 用于控制保存成功，可以在 `done()` 之前加入自己的逻辑代码。代码如下：
