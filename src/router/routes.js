@@ -70,7 +70,8 @@ const frameIn = [
       { path: 'demo8', name: `${pre}demo8`, component: () => import('@/pages/demo/d2-crud/demo8'), meta: { ...meta, title: '多级表头' } },
       { path: 'demo9', name: `${pre}demo9`, component: () => import('@/pages/demo/d2-crud/demo9'), meta: { ...meta, title: '单选' } },
       { path: 'demo10', name: `${pre}demo10`, component: () => import('@/pages/demo/d2-crud/demo10'), meta: { ...meta, title: '多选' } },
-      { path: 'demo11', name: `${pre}demo11`, component: () => import('@/pages/demo/d2-crud/demo11'), meta: { ...meta, title: '排序' } }
+      { path: 'demo11', name: `${pre}demo11`, component: () => import('@/pages/demo/d2-crud/demo11'), meta: { ...meta, title: '排序' } },
+      { path: 'demo12', name: `${pre}demo12`, component: () => import('@/pages/demo/d2-crud/demo12'), meta: { ...meta, title: '筛选' } }
     ])('demo-d2-crud-')
   },
   {
