@@ -28,7 +28,8 @@ export default {
       title: '数据操作',
       children: [
         { path: `${pre}demo16`, title: '新增数据' },
-        { path: `${pre}demo17`, title: '修改数据' }
+        { path: `${pre}demo17`, title: '修改数据' },
+        { path: `${pre}demo18`, title: '删除数据' }
       ]
     }
   ])('/demo/d2-crud/')
