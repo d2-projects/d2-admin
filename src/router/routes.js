@@ -53,6 +53,16 @@ const frameIn = [
     ])('demo-playground-')
   },
   {
+    path: '/demo/frame',
+    name: 'demo-frame',
+    meta,
+    redirect: { name: 'demo-frame-index' },
+    component: layoutHeaderAside,
+    children: (pre => [
+      { path: 'd2-doc', name: `${pre}d2-doc`, component: () => import('@/pages/demo/frame/d2-doc'), meta: { ...meta, title: '内嵌第三方网页' } }
+    ])('demo-frame-')
+  },
+  {
     path: '/demo/d2-crud',
     name: 'demo-d2-crud',
     meta,
