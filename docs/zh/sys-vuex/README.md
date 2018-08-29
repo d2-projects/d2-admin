@@ -70,10 +70,10 @@ this.$store.dispatch('d2admin/account/login', {
 route 字段会这样被调用：
 
 ``` js
-vm.$router.push(route)
+vm.$router.replace(route)
 ```
 
-route 的值可以是任何 [vue-router](https://router.vuejs.org/zh/) push 方法的 location 参数支持的数据格式。详见 [编程式的导航](https://router.vuejs.org/zh/guide/essentials/navigation.html)
+route 的值可以是任何 [vue-router](https://router.vuejs.org/zh/) replace 方法的 location 参数支持的数据格式。详见 [编程式的导航](https://router.vuejs.org/zh/guide/essentials/navigation.html)
 
 ### actions.logout
 

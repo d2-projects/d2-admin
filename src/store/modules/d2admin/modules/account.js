@@ -41,8 +41,8 @@ export default {
           }, { root: true })
           // 用户登陆后从持久化数据加载一系列的设置
           commit('load')
-          // 跳转路由
-          vm.$router.push(route)
+          // 更新路由
+          vm.$router.replace(route)
         })
         .catch(err => {
           console.group('登陆结果')

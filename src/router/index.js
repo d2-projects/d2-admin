@@ -26,6 +26,7 @@ router.beforeEach((to, from, next) => {
     if (token && token !== 'undefined') {
       next()
     } else {
+      util.cookies.set('redirect', to.fullPath)
       // 没有登陆的时候跳转到登陆界面
       next({
         name: 'login'
