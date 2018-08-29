@@ -42,6 +42,7 @@ account 负责实现用户的登陆和注销逻辑。
 | vm | vue 实例 | 必选 | Object |  |  |
 | username | 账号 | 必选 | String |  |  |
 | password | 密码 | 必选 | String |  |  |
+| route | 重定向 | 必选 | Object |  | `{ name: 'index' }` |
 
 #### 示例
 
@@ -52,6 +53,27 @@ this.$store.dispatch('d2admin/account/login', {
   password: this.formLogin.password
 })
 ```
+
+登陆后重定向到指定页面：
+
+``` js
+this.$store.dispatch('d2admin/account/login', {
+  vm: this,
+  username: this.formLogin.username,
+  password: this.formLogin.password,
+  route: {
+    name: 'your-page'
+  }
+})
+```
+
+route 字段会这样被调用：
+
+``` js
+vm.$router.push(route)
+```
+
+route 的值可以是任何 [vue-router](https://router.vuejs.org/zh/) 支持的数据格式。详见 [编程式的导航](https://router.vuejs.org/zh/guide/essentials/navigation.html)
 
 ### actions.logout
 
