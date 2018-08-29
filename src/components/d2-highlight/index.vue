@@ -1,11 +1,11 @@
 <template>
-  <pre class="d2-highlight" v-html="highlightHTML"></pre>
+  <pre class="d2-highlight hljs" v-html="highlightHTML"></pre>
 </template>
 
 <script>
 // https://highlightjs.org/usage/
 // http://highlightjs.readthedocs.io/en/latest/api.html#configure-options
-import './styles/atom-one-light.css'
+import './styles/github-gist.css'
 import htmlFormat from './libs/htmlFormat'
 import highlight from 'highlight.js'
 export default {
@@ -14,12 +14,17 @@ export default {
     code: {
       type: String,
       required: false,
-      default: `console.log('you lost code prop')`
+      default: ''
     },
     formatHtml: {
       type: Boolean,
       required: false,
       default: false
+    },
+    lang: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   data () {
@@ -38,7 +43,15 @@ export default {
   methods: {
     highlight () {
       const code = this.formatHtml ? htmlFormat(this.code) : this.code
-      this.highlightHTML = highlight.highlightAuto(code).value
+      this.highlightHTML = highlight.highlightAuto(code, [
+        this.lang,
+        'html',
+        'javascript',
+        'json',
+        'css',
+        'scss',
+        'less'
+      ]).value
     }
   }
 }
