@@ -42,7 +42,7 @@ account 负责实现用户的登陆和注销逻辑。
 | vm | vue 实例 | 必选 | Object |  |  |
 | username | 账号 | 必选 | String |  |  |
 | password | 密码 | 必选 | String |  |  |
-| route | 重定向 | 必选 | Object |  | `{ name: 'index' }` |
+| route | 重定向 | 非 | Object |  | `{ name: 'index' }` |
 
 #### 示例
 
