@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import store from '@/store/index'
+
 import util from '@/libs/util.js'
 
 // 路由数据
@@ -18,6 +20,8 @@ const router = new VueRouter({
  * 权限验证
  */
 router.beforeEach((to, from, next) => {
+  // 关闭搜索面板
+  store.commit('d2admin/search/set', false)
   // 验证当前路由所有的匹配中是否需要有登陆验证的
   if (to.matched.some(r => r.meta.requiresAuth)) {
     // 这里暂时将cookie里是否存有token作为验证是否登陆的条件

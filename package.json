@@ -26,6 +26,7 @@
     "flex.css": "^1.1.7",
     "github-markdown-css": "^2.10.0",
     "highlight.js": "^9.12.0",
+    "hotkeys-js": "^3.3.6",
     "js-cookie": "^2.2.0",
     "lodash": "^4.17.10",
     "lowdb": "^1.0.0",
