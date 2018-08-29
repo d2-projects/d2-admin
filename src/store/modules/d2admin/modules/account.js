@@ -41,8 +41,12 @@ export default {
           }, { root: true })
           // 用户登陆后从持久化数据加载一系列的设置
           commit('load')
-          // 更新路由
-          vm.$router.replace(route)
+          // 更新路由 尝试去获取 cookie 里保存的需要重定向的页面完整地址
+          const path = util.cookies.get('redirect')
+          // 根据是否存有重定向页面判断如何重定向
+          vm.$router.replace(path ? { path } : route)
+          // 删除 cookie 中保存的重定向页面
+          util.cookies.remove('redirect')
         })
         .catch(err => {
           console.group('登陆结果')

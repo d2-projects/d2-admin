@@ -26,6 +26,8 @@ router.beforeEach((to, from, next) => {
     if (token && token !== 'undefined') {
       next()
     } else {
+      // 将当前预计打开的页面完整地址临时存储 登陆后继续跳转
+      // 这个 cookie(redirect) 会在登陆后自动删除
       util.cookies.set('redirect', to.fullPath)
       // 没有登陆的时候跳转到登陆界面
       next({
