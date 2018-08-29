@@ -10,8 +10,18 @@ export default {
      * @param {Object} param vm {Object} vue 实例
      * @param {Object} param username {String} 用户账号
      * @param {Object} param password {String} 密码
+     * @param {Object} param route {Object} 登陆成功后定向的路由对象
      */
-    login ({ commit }, { vm, username, password }) {
+    login ({
+      commit
+    }, {
+      vm,
+      username,
+      password,
+      route = {
+        name: 'index'
+      }
+    }) {
       // 开始请求登录接口
       AccountLogin({
         username,
@@ -31,10 +41,12 @@ export default {
           }, { root: true })
           // 用户登陆后从持久化数据加载一系列的设置
           commit('load')
-          // 跳转路由
-          vm.$router.push({
-            name: 'index'
-          })
+          // 更新路由 尝试去获取 cookie 里保存的需要重定向的页面完整地址
+          const path = util.cookies.get('redirect')
+          // 根据是否存有重定向页面判断如何重定向
+          vm.$router.replace(path ? { path } : route)
+          // 删除 cookie 中保存的重定向页面
+          util.cookies.remove('redirect')
         })
         .catch(err => {
           console.group('登陆结果')
