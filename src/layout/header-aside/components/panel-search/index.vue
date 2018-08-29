@@ -1,10 +1,13 @@
 <template>
   <div class="panel-search" flex="dir:top">
     <div class="panel-search__input-group" flex-box="0" flex="dir:top main:center cross:center">
+      <d2-icon-svg
+        class="panel-search__logo"
+        name="d2-admin-text"/>
       <el-autocomplete
         class="panel-search__input"
         ref="input"
-        v-model="input"
+        v-model="searchText"
         suffix-icon="el-icon-search"
         placeholder="搜索页面"
         :fetch-suggestions="querySearch"
@@ -27,13 +30,13 @@
       </div>
     </div>
     <div
-      v-if="results.length > 0"
+      v-if="resultsList.length > 0"
       class="panel-search__results-group"
       flex-box="1">
       <el-card>
         <div class="panel-search__results-group-inner">
           <d2-panel-search-item
-            v-for="(item, index) in results"
+            v-for="(item, index) in resultsList"
             :key="index"
             :item="item"
             :hover-mode="true"
@@ -56,7 +59,7 @@ export default {
   },
   data () {
     return {
-      input: '',
+      searchText: '',
       results: []
     }
   },
@@ -64,7 +67,14 @@ export default {
     ...mapState('d2admin/search', [
       'hotkey',
       'pool'
-    ])
+    ]),
+    // 这份数据是展示在搜索面板下面的
+    resultsList () {
+      return (this.results.length === 0 && this.searchText === '') ? this.pool.map(e => ({
+        value: e.fullTitle,
+        ...e
+      })) : this.results
+    }
   },
   methods: {
     /**
@@ -98,6 +108,9 @@ export default {
       this.input = ''
       setTimeout(() => {
         this.$refs.input.focus()
+        // 还原
+        this.searchText = ''
+        this.results = []
       }, 500)
     },
     /**
@@ -153,13 +166,19 @@ export default {
 .panel-search {
   margin: 20px;
   .panel-search__input-group {
-    height: 200px;
+    height: 240px;
+    .panel-search__logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+    }
     .panel-search__input {
       width: 500px;
     }
     .panel-search__tip {
       @extend %unable-select;
       margin-top: 20px;
+      margin-bottom: 40px;
       font-size: 12px;
       color: $color-text-sub;
       .panel-search__key {

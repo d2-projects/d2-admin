@@ -44,6 +44,25 @@ export default {
     margin: 0px;
     &:hover {
       background-color: #F5F7FA;
+      .d2-panel-search-item__icon {
+        .d2-panel-search-item__icon-box {
+          i {
+            font-size: 24px;
+            color: $color-primary;
+          }
+        }
+      }
+      .d2-panel-search-item__info {
+        .d2-panel-search-item__info-title {
+          color: $color-text-main;
+        }
+        .d2-panel-search-item__info-fullTitle {
+          color: $color-text-normal;
+        }
+        .d2-panel-search-item__info-path {
+          color: $color-text-normal;
+        }
+      }
     }
   }
   .d2-panel-search-item__icon {
