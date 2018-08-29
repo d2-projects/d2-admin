@@ -10,8 +10,18 @@ export default {
      * @param {Object} param vm {Object} vue 实例
      * @param {Object} param username {String} 用户账号
      * @param {Object} param password {String} 密码
+     * @param {Object} param route {Object} 登陆成功后定向的路由对象
      */
-    login ({ commit }, { vm, username, password }) {
+    login ({
+      commit
+    }, {
+      vm,
+      username,
+      password,
+      route = {
+        name: 'index'
+      }
+    }) {
       // 开始请求登录接口
       AccountLogin({
         username,
@@ -32,9 +42,7 @@ export default {
           // 用户登陆后从持久化数据加载一系列的设置
           commit('load')
           // 跳转路由
-          vm.$router.push({
-            name: 'index'
-          })
+          vm.$router.push(route)
         })
         .catch(err => {
           console.group('登陆结果')
