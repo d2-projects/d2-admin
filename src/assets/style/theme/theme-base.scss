@@ -43,8 +43,14 @@
         padding: 0px;
         position: relative;
         overflow: hidden;
+        .d2-theme-container-main-layer {
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          left: 0px;
+          right: 0px;
+        }
         .d2-theme-container-main-body {
-          flex-grow: 1;
           position: relative;
         }
       }
