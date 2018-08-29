@@ -59,7 +59,7 @@ const frameIn = [
     redirect: { name: 'demo-frame-index' },
     component: layoutHeaderAside,
     children: (pre => [
-      { path: 'd2-doc', name: `${pre}d2-doc`, component: () => import('@/pages/demo/frame/d2-doc'), meta: { ...meta, title: '内嵌第三方网页' } }
+      { path: 'd2-doc', name: `${pre}d2-doc`, component: () => import('@/pages/demo/frame/d2-doc'), meta: { ...meta, title: 'D2Admin 中文文档' } }
     ])('demo-frame-')
   },
   {
