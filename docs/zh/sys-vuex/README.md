@@ -75,6 +75,8 @@ vm.$router.replace(route)
 
 route 的值可以是任何 [vue-router](https://router.vuejs.org/zh/) replace 方法的 location 参数支持的数据格式。详见 [编程式的导航](https://router.vuejs.org/zh/guide/essentials/navigation.html)
 
+route 字段的值在下面的情况下会失效：用户在试图访问某个页面（例如：/demo/page1）时被检查到非登陆状态，会被自动定向到登陆页面，这时候在用户完成登陆后会自动跳转到 /demo/page1 继续浏览。
+
 ### actions.logout
 
 #### 介绍
