@@ -8,20 +8,21 @@ vuex 系统模块目录 `d2-admin/src/store/modules/d2admin/modules`。
 
 所有模块：
 
-| 模块名 | 介绍 |
-| --- | --- |
-| account | 账户 |
-| db | 持久化 |
-| fullscreen | 全屏 |
-| gray | 灰度 |
-| log | 日志 |
-| menu | 菜单 |
-| page | 页面和多标签 |
-| releases | 版本 |
-| theme | 主题 |
-| transition | 页面过渡动画 |
-| ua | user agent |
-| user | 用户信息 |
+| 模块名 | 介绍 | 跳转 |
+| --- | --- | --- |
+| account | 账户 | [link](#account) |
+| db | 持久化 | [link](#db) |
+| fullscreen | 全屏 | [link](#fullscreen) |
+| gray | 灰度 | [link](#gray) |
+| log | 日志 | [link](#log) |
+| menu | 菜单 | [link](#menu) |
+| page | 页面和多标签 | [link](#page) |
+| releases | 版本 | [link](#releases) |
+| theme | 主题 | [link](#theme) |
+| search | 页面搜索 | [link](#search) |
+| transition | 页面过渡动画 | [link](#transition) |
+| ua | user agent | [link](#ua) |
+| user | 用户信息 | [link](#user) |
 
 下面是每个模块的介绍：
 
@@ -1280,6 +1281,78 @@ this.$store.commit('d2admin/theme/load')
 ``` js
 this.$store.commit('d2admin/theme/dom')
 ```
+
+## search
+
+### state.active
+
+搜索面板激活状态
+
+### state.hotkey
+
+快捷键设置
+
+### state.pool
+
+所有可以搜索的页面
+
+### mutations.toggle
+
+#### 介绍
+
+切换激活状态。
+
+#### 参数
+
+无
+
+#### 示例
+
+``` js
+// 切换搜索面板的激活状态
+this.$store.commit('d2admin/search/toggle')
+```
+
+### mutations.set
+
+#### 介绍
+
+设置搜索面板的激活状态。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| active | 新的值 | 必选 | Boolean |  |  |
+
+#### 示例
+
+``` js
+// 打开搜索面板
+this.$store.commit('d2admin/search/set', true)
+// 关闭搜索面板
+this.$store.commit('d2admin/search/set', false)
+```
+
+### mutations.init
+
+#### 介绍
+
+初始化。
+
+#### 参数
+
+| 参数名 | 介绍 | 必选 | 值类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- | --- |
+| menu | 候选菜单 | 必选 | Array |  |  |
+
+#### 示例
+
+``` js
+this.$store.commit('d2admin/search/init', menu)
+```
+
+menu 的数据类型和菜单的数据类型一致 [menu 数据格式](#menu-数据格式)
 
 ## transition
 
