@@ -32,23 +32,23 @@ export default {
     /**
      * @description 初始化
      * @param {Object} state vuex state
-     * @param {Array} menus menus
+     * @param {Array} menu menu
      */
-    init (state, menus) {
+    init (state, menu) {
       const pool = []
-      const push = function (menus, titlePrefix = []) {
-        menus.forEach(menu => {
-          if (menu.children) {
-            push(menu.children, [ ...titlePrefix, menu.title ])
+      const push = function (menu, titlePrefix = []) {
+        menu.forEach(m => {
+          if (m.children) {
+            push(m.children, [ ...titlePrefix, m.title ])
           } else {
             pool.push({
-              ...menu,
-              fullTitle: [ ...titlePrefix, menu.title ].join(' / ')
+              ...m,
+              fullTitle: [ ...titlePrefix, m.title ].join(' / ')
             })
           }
         })
       }
-      push(menus)
+      push(menu)
       state.pool = pool
     }
   }
