@@ -45,7 +45,7 @@ export const menuHeader = [
       demoPlugins,
       demoFrame,
       {
-        title: '跳转外部链接',
+        title: '新窗口打开链接',
         icon: 'link',
         children: [
           { path: 'https://github.com/d2-projects/d2-admin', title: 'D2Admin Github', icon: 'github' },
