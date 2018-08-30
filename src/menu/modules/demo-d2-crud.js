@@ -21,7 +21,8 @@ export default {
         { path: `${pre}demo12`, title: '筛选' },
         { path: `${pre}demo13`, title: '表尾合计行' },
         { path: `${pre}demo14`, title: '合并行' },
-        { path: `${pre}demo15`, title: '合并列' }
+        { path: `${pre}demo15`, title: '合并列' },
+        { path: `${pre}demo24`, title: '表格slot' }
       ]
     },
     {
