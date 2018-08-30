@@ -10,8 +10,10 @@ import demoElement from './modules/demo-element'
 import demoPlayground from './modules/demo-playground'
 // 示例
 import demoBusiness from './modules/demo-business'
-// 示例
+// CRUD
 import demoD2Crud from './modules/demo-d2-crud'
+// 第三方网页
+import demoFrame from './modules/demo-frame'
 
 // 菜单 侧边栏
 export const menuAside = [
@@ -21,7 +23,8 @@ export const menuAside = [
   demoElement,
   demoPlayground,
   demoBusiness,
-  demoD2Crud
+  demoD2Crud,
+  demoFrame
 ]
 
 // 菜单 顶栏
@@ -40,8 +43,9 @@ export const menuHeader = [
       demoElement,
       demoCharts,
       demoPlugins,
+      demoFrame,
       {
-        title: '跳转外部链接',
+        title: '新窗口打开链接',
         icon: 'link',
         children: [
           { path: 'https://github.com/d2-projects/d2-admin', title: 'D2Admin Github', icon: 'github' },
