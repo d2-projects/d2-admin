@@ -1,7 +1,16 @@
 # D2 CRUD
 
 ## 介绍
-`D2-Crud`是一套基于[Vue.js 2.2.0+](https://cn.vuejs.org/)和[Element 2.0.0+](http://element-cn.eleme.io/#/zh-CN)的表格组件，可根据配置的json文件自动生成表格，并实现了表格内的增删改查、新增和修改数据校验、表格内编辑等功能。
+`D2-Crud`是一套基于[Vue.js 2.2.0+](https://cn.vuejs.org/)和[Element 2.0.0+](http://element-cn.eleme.io/#/zh-CN)的表格组件，`D2-Crud`将 `Element` 的功能进行了封装，并增加了表格的增删改查、数据校验、表格内编辑等常用的功能。大部分功能可根据配置的json实现，大大简化了开发流程。
+
+## 功能
+- 继承了 Element 中表格所有功能
+- 新增表格数据
+- 修改表格数据
+- 删除表格数据
+- 使用 Element 中的组件渲染表格内容和表单内容
+- 表单校验
+- 表格内编辑
 
 ## 安装
 使用npm
@@ -31,4 +40,9 @@ new Vue({
 })
 ```
 
-之后就可以在项目中使用`D2-Crud`了。具体使用方法请查看 [API](./api.md) 和 [表格实例](./example.md)
+之后就可以在项目中使用`D2-Crud`了。
+
+## 文档
+[API](./api.md)
+
+[使用示例](./example.md) 

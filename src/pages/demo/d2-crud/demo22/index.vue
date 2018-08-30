@@ -5,8 +5,8 @@
       :columns="columns"
       :data="data"
       title="D2 CRUD"
-      addMode
-      :addButton="addButton"
+      add-mode
+      :add-button="addButton"
       :form-template="formTemplate"
       :form-options="formOptions"
       :form-rules="formRules"
