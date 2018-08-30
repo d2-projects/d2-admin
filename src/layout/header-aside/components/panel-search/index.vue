@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import Fuse from 'fuse.js'
 import { mapState } from 'vuex'
 import mixin from '../mixin/menu'
 export default {
@@ -92,14 +93,24 @@ export default {
      * @param {String} queryString 查询字符串
      */
     query (pool, queryString) {
-      return pool.filter(item => {
-        const path = item.path || ''
-        const fullTitle = item.fullTitle || ''
-        return (`${fullTitle}${path}`.toLowerCase().indexOf(queryString.toLowerCase()) >= 0)
-      }).map(e => ({
-        value: e.fullTitle,
-        ...e
-      }))
+      return new Fuse(pool, {
+        shouldSort: true,
+        tokenize: true,
+        threshold: 0.6,
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        minMatchCharLength: 1,
+        keys: [
+          'fullTitle',
+          'path'
+        ]
+      })
+        .search(queryString)
+        .map(e => ({
+          value: e.fullTitle,
+          ...e
+        }))
     },
     /**
      * @description 聚焦输入框
