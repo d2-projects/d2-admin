@@ -6,7 +6,7 @@
       :data="data"
       title="D2 CRUD"
       add-mode
-      :addButton="addButton"
+      :add-button="addButton"
       :form-template="formTemplate"
       :form-options="formOptions"
       @row-add="handleRowAdd"
