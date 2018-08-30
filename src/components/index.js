@@ -1,10 +1,12 @@
 import Vue from 'vue'
 
 import d2Container from './d2-container'
+import d2ContainerFrame from './d2-container-frame'
 import d2LinkBtn from './d2-link-btn'
 
 // 注意 有些组件使用异步加载会有影响
 Vue.component('d2-container', d2Container)
+Vue.component('d2-container-frame', d2ContainerFrame)
 Vue.component('d2-link-btn', d2LinkBtn)
 Vue.component('d2-page-cover', () => import('./d2-page-cover'))
 Vue.component('d2-count-up', () => import('./d2-count-up'))
