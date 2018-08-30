@@ -216,6 +216,7 @@ function sideBarEcosystemD2Crud () {
       collapsable: false,
       children: [
         '',
+        'guide',
         'api',
         'example'
       ]
