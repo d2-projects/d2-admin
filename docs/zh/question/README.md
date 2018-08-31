@@ -148,7 +148,7 @@ rules: {
 
 ## 无法跳转路由
 
-有可能你在 D2Admin 的基础上进行你的开发时，发现在登陆页面进行
+有可能你在 D2Admin 的基础上进行你的开发时，发现在登录页面进行
 
 ``` js
 this.$router.push({ name: 'index' })
@@ -160,7 +160,7 @@ this.$router.push({ name: 'index' })
 Cookies.set('token', res.token, setting)
 ```
 
-原因根源是在 `src/router/index.js` 中有如下一段代码，根据 `token` 判断用户是否登陆
+原因根源是在 `src/router/index.js` 中有如下一段代码，根据 `token` 判断用户是否登录
 
 ``` js {3-9}
 router.beforeEach((to, from, next) => {
@@ -180,9 +180,9 @@ router.beforeEach((to, from, next) => {
 
 所以如果你没有存 token 字段在 cookie 中，路由鉴权机制将会重定向到登录页
 
-如果你想修改基于 token 验证用户登陆状态的机制，请在 `./src` 下搜索 `token` 关键字并修改他们，但是我**十分不建议你修改它们**
+如果你想修改基于 token 验证用户登录状态的机制，请在 `./src` 下搜索 `token` 关键字并修改他们，但是我**十分不建议你修改它们**
 
-最好的做法是在登陆后返回本次登陆的 token 并且存储在 cookie 中，然后在每次 ajax 请求时都携带这个 token 给后端做权限验证（必要的话你可以还可以增加 token 的更新机制）
+最好的做法是在登录后返回本次登录的 token 并且存储在 cookie 中，然后在每次 ajax 请求时都携带这个 token 给后端做权限验证（必要的话你可以还可以增加 token 的更新机制）
 
 ::: tip 同样需要注意的地方
 除了需要在 cookie 中保存 token，你还要保存 uuid 字段，意为“用户唯一标识”

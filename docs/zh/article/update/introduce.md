@@ -4,7 +4,7 @@
 
 [D2Admin](https://github.com/d2-projects/d2-admin) 是一个开源的管理系统前端集成方案，为了方便开发者快速进行管理系统开发而设计，提供了大量开箱即用的功能：
 
-* 登陆和注销的页面、逻辑、路由拦截
+* 登录和注销的页面、逻辑、路由拦截
 * 主题系统
 * 基于 ElementUI 的优化外观
 * 表格 CRUD 封装 ([d2-crud](https://github.com/d2-projects/d2-crud))

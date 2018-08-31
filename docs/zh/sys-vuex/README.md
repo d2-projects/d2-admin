@@ -28,13 +28,13 @@ vuex 系统模块目录 `d2-admin/src/store/modules/d2admin/modules`。
 
 ## account
 
-account 负责实现用户的登陆和注销逻辑。
+account 负责实现用户的登录和注销逻辑。
 
 ### actions.login
 
 #### 介绍
 
-用户登陆，通常情况下您需要适当修改这个方法来适配您的特殊需要。
+用户登录，通常情况下您需要适当修改这个方法来适配您的特殊需要。
 
 #### 参数
 
@@ -55,7 +55,7 @@ this.$store.dispatch('d2admin/account/login', {
 })
 ```
 
-登陆后重定向到指定页面：
+登录后重定向到指定页面：
 
 ``` js
 this.$store.dispatch('d2admin/account/login', {
@@ -76,7 +76,7 @@ vm.$router.replace(route)
 
 route 的值可以是任何 [vue-router](https://router.vuejs.org/zh/) replace 方法的 location 参数支持的数据格式。详见 [编程式的导航](https://router.vuejs.org/zh/guide/essentials/navigation.html)
 
-route 字段的值在下面的情况下会失效：用户在试图访问某个页面（例如：/demo/page1）时被检查到非登陆状态，会被自动定向到登陆页面，这时候在用户完成登陆后会自动跳转到 /demo/page1 继续浏览。
+route 字段的值在下面的情况下会失效：用户在试图访问某个页面（例如：/demo/page1）时被检查到非登录状态，会被自动定向到登录页面，这时候在用户完成登录后会自动跳转到 /demo/page1 继续浏览。
 
 ### actions.logout
 
@@ -104,7 +104,7 @@ this.$store.dispatch('d2admin/account/logout', {
 
 #### 介绍
 
-用户登陆后从持久化数据加载一系列的设置，例如：
+用户登录后从持久化数据加载一系列的设置，例如：
 
 * 用户名
 * 主题

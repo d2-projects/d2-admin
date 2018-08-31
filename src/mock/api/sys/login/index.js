@@ -27,7 +27,7 @@ Mock.mock('/api/login', 'post', ({url, type, body}) => {
   if (user) {
     return {
       code: 0,
-      msg: '登陆成功',
+      msg: '登录成功',
       data: {
         ...user,
         token: 'd787syv8dys8cas80d9s0a0d8f79ads56f7s4d56f879a8as89fd980s7dg'
