@@ -5,12 +5,12 @@ export default {
   namespaced: true,
   actions: {
     /**
-     * @description 登陆
+     * @description 登录
      * @param {Object} param context
      * @param {Object} param vm {Object} vue 实例
      * @param {Object} param username {String} 用户账号
      * @param {Object} param password {String} 密码
-     * @param {Object} param route {Object} 登陆成功后定向的路由对象
+     * @param {Object} param route {Object} 登录成功后定向的路由对象
      */
     login ({
       commit
@@ -39,7 +39,7 @@ export default {
           commit('d2admin/user/set', {
             name: res.name
           }, { root: true })
-          // 用户登陆后从持久化数据加载一系列的设置
+          // 用户登录后从持久化数据加载一系列的设置
           commit('load')
           // 更新路由 尝试去获取 cookie 里保存的需要重定向的页面完整地址
           const path = util.cookies.get('redirect')
@@ -49,13 +49,13 @@ export default {
           util.cookies.remove('redirect')
         })
         .catch(err => {
-          console.group('登陆结果')
+          console.group('登录结果')
           console.log('err: ', err)
           console.groupEnd()
         })
     },
     /**
-     * @description 注销用户并返回登陆页面
+     * @description 注销用户并返回登录页面
      * @param {Object} param context
      * @param {Object} param vm {Object} vue 实例
      * @param {Object} param confirm {Boolean} 是否需要确认
@@ -96,7 +96,7 @@ export default {
   },
   mutations: {
     /**
-     * @description 用户登陆后从持久化数据加载一系列的设置
+     * @description 用户登录后从持久化数据加载一系列的设置
      * @param {Object} state vuex state
      */
     load (state) {
