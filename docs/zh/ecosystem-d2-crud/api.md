@@ -896,21 +896,21 @@ sidebarDepth: 2
 
 ### component.name
 
-* 说明: 表单渲染的组件名，组件样式及功能请参考
+* 说明: 表单渲染的组件名，组件请参考 [组件](http://element-cn.eleme.io/#/zh-CN/component)
 * 类型: String
 * 可选值: el-input / el-input-number / el-radio / el-checkbox / el-select / el-cascader / el-switch / el-slider / el-time-select / el-time-picker / el-date-picker / el-rate / el-color-picker
 * 默认值: 无
 
 ### component.span
 
-* 说明: 表单布局所占栅格数，栅格布局请参考
+* 说明: 表单布局所占栅格数，栅格布局请参考 [Layout 布局](http://element-cn.eleme.io/#/zh-CN/component/layout)
 * 类型: number
 * 可选值: 无
 * 默认值: 无
 
 ### component.offset
 
-* 说明: 表单布局偏移量
+* 说明: 表单栅格布局偏移量，栅格布局请参考 [Layout 布局](http://element-cn.eleme.io/#/zh-CN/component/layout)
 * 类型: number
 * 可选值: 无
 * 默认值: 无
