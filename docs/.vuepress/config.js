@@ -217,7 +217,8 @@ function sideBarArticle (titleUpdate, titleCookbook) {
         'update/ice-1.1.2',
         'update/1.1.5',
         'update/1.1.4',
-        'update/0.0.0'
+        'update/0.0.0',
+        'update/introduce'
       ]
     }
   ]
