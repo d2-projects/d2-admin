@@ -117,7 +117,7 @@ npm run serve
 
 以上每种方式效果都是一样的，只是为了照顾不同人的习惯起了三个名字，实质上都是运行了 `vue-cli-service serve --open`。
 
-成功运行后会显示登陆界面：
+成功运行后会显示登录界面：
 
 ![](http://fairyever.qiniudn.com/20180729094841.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
