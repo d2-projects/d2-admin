@@ -102,7 +102,7 @@ D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https
 
 ## 使用
 
-详细用法见 [快速上手](http://app.d3collection.cn/d2-admin-doc/lastest/zh/guide/getting-started.html)
+详细用法见 [快速上手](http://app.d3collection.cn/d2-admin-doc/lastest/zh/learn-guide/getting-started.html)
 
 ```
 // 安装依赖
