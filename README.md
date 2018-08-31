@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/banner.png"/>
+
 D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者快速进行管理系统开发而设计。
 
 ## 仓库和文档
@@ -7,7 +9,7 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 * <http://d2admin.fairyever.com/zh/>
 * <http://app.d3collection.cn/d2-admin-doc/lastest/zh/>
 
-两个文档地址内容一致，哪个快请用哪个。
+> 两个文档地址内容一致，哪个快请用哪个。如果其中一个挂掉了，请记得来这里使用另一个 ~
 
 **完整版**
 
@@ -26,10 +28,6 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 [D2Admin ICE](https://alibaba.github.io/ice/scaffold?type=vue) | 
 [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) | 
 [预览地址](https://fairyever.gitee.io/d2-admin-ice-preview)
-
-因为现在集成了很多的插件和组件，首次加载会占用很多的时间，虽然已经做了首屏加载动画，但还是建议您在发布之前一定要删除没有用到的代码，比如项目没有用到图表、示例、插件组件
-
-<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/banner.png"/>
 
 ## 功能
 
@@ -87,30 +85,3 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 D2Admin 是完全开源免费的管理系统集成方案，由 [FairyEver](https://github.com/FairyEver) 在工作之余完全由兴趣驱动完成，如果你也一样喜欢前端开发，欢迎加入我们的讨论/学习群，群内可以`提问答疑`，`分享学习资料`或者随便扯淡
 
 <img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/join@2x.png"/>
-
-## 获取代码
-
-有两种方式可以获得 D2Admin 的代码
-
-* 在 [releases](https://github.com/d2-projects/d2-admin/releases) 页面下载最新的发行版。发行版一般是完成了某个大升级或者修复重要 bug 后发布的压缩包，你可以下载下来直接使用
-
-* Fork 仓库到你的 github 然后克隆到本地，然后使用 master 分支继续你的开发。这种方式得到的是最新的代码，但是会有未完成的新功能。**不建议使用这种方式**
-
-* 由于 github 访问较慢，推荐前往码云仓库下载 [gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin)，码云上的仓库**在每次发布版本才会更新**，所以如果你选择此方法，请直接 fork 仓库并克隆到本地
-
-> 码云的仓库由 github 同步，但是发行版和标签同步有一些问题，所以推荐直接 fork 仓库
-
-## 使用
-
-详细用法见 [快速上手](http://app.d3collection.cn/d2-admin-doc/lastest/zh/learn-guide/getting-started.html)
-
-```
-// 安装依赖
-npm i
-
-// 运行
-npm run dev
-
-// 打包
-npm run build
-```
