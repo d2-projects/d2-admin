@@ -82,7 +82,7 @@ const db = await this.$store.dispatch('d2admin/db/database', {
 const myName = db.get('myName').value()
 ```
 
-这次是使用完全一样的代码，但是 A 用户登陆的情况下取得的值是 `myName = userA`，B 用户登陆的情况下取得的值是 `myName = userB`。
+这次是使用完全一样的代码，但是 A 用户登录的情况下取得的值是 `myName = userA`，B 用户登录的情况下取得的值是 `myName = userB`。
 
 上面介绍的特性即为“用户私有”，**在 D2Admin 中，所有的数据持久化 API 都支持数据私有配置**。
 
@@ -233,7 +233,7 @@ const db = await this.$store.dispatch('d2admin/db/database', {
 })
 ```
 
-假设当前登陆用户的 uuid 为 uuid-A，您将获得下图所示节点（绿色高亮区域）：
+假设当前登录用户的 uuid 为 uuid-A，您将获得下图所示节点（绿色高亮区域）：
 
 ![](http://fairyever.qiniudn.com/20180821092920.png?imageMogr2/auto-orient/thumbnail/1480x/blur/1x0/quality/100|imageslim)
 
