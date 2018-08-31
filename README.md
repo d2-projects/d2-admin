@@ -4,8 +4,8 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 
 **文档**
 
-[中文文档 码云部署](http://d2admin.fairyever.com/zh/) | 
-[中文文档 服务器部署](http://app.d3collection.cn/d2-admin-doc/lastest/zh/)
+* <http://d2admin.fairyever.com/zh/>
+* <http://app.d3collection.cn/d2-admin-doc/lastest/zh/>
 
 两个文档地址内容一致，哪个快请用哪个。
 
@@ -29,7 +29,7 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 
 因为现在集成了很多的插件和组件，首次加载会占用很多的时间，虽然已经做了首屏加载动画，但还是建议您在发布之前一定要删除没有用到的代码，比如项目没有用到图表、示例、插件组件
 
-<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/preview@2x.png"/>
+<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/banner.png"/>
 
 ## 功能
 
