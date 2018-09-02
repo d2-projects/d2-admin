@@ -8,9 +8,7 @@
     "dev": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint --fix",
-    "test:unit": "vue-cli-service test:unit",
-    "doc:dev": "vuepress dev docs",
-    "doc:build": "vuepress build docs"
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "@d2-projects/d2-crud": "^1.0.2",
