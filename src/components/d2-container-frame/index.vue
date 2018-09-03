@@ -14,7 +14,7 @@ export default {
     src: {
       type: String,
       required: false,
-      default: 'http://app.d3collection.cn/d2-admin-doc/lastest/zh/'
+      default: 'https://d2-projects.github.io/d2-admin-doc/zh/'
     }
   }
 }
