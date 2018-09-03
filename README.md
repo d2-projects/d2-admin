@@ -6,8 +6,7 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 
 **文档**
 
-* <http://d2admin.fairyever.com/zh/>
-* <http://app.d3collection.cn/d2-admin-doc/lastest/zh/>
+* <https://d2-projects.github.io/d2-admin-doc/zh/>
 
 > 两个文档地址内容一致，哪个快请用哪个。如果其中一个挂掉了，请记得来这里使用另一个 ~
 
@@ -15,7 +14,7 @@ D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者
 
 [Github 仓库](https://github.com/d2-projects/d2-admin) | 
 [码云仓库](https://gitee.com/fairyever/d2-admin) | 
-[预览地址](https://fairyever.gitee.io/d2-admin-preview)
+[预览地址](https://d2-projects.github.io/d2-admin/)
 
 **简化版模板**
 
