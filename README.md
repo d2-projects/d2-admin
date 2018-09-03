@@ -2,19 +2,21 @@
 
 D2Admin 是一个开源的管理系统前端集成方案，为了方便开发者快速进行管理系统开发而设计。
 
+[![Build Status](https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master)](https://www.travis-ci.org/d2-projects/d2-admin)
+
 ## 仓库和文档
 
 **文档**
 
-* <https://d2-projects.github.io/d2-admin-doc/zh/>
-
-> 两个文档地址内容一致，哪个快请用哪个。如果其中一个挂掉了，请记得来这里使用另一个 ~
+[中文文档](https://d2-projects.github.io/d2-admin-doc/zh/)
 
 **完整版**
 
 [Github 仓库](https://github.com/d2-projects/d2-admin) | 
 [码云仓库](https://gitee.com/fairyever/d2-admin) | 
-[预览地址](https://d2-projects.github.io/d2-admin/) (部署在GitHub Page，如果无法加载，请克隆到本地)
+[预览地址](https://d2-projects.github.io/d2-admin/)
+
+> 演示项目部署在 GitHub Page，如果网络较慢无法加载，请克隆到本地运行
 
 **简化版模板**
 
