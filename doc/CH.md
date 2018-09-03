@@ -95,5 +95,3 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 
 [D2 项目组](https://github.com/d2-projects)
 
-
-
