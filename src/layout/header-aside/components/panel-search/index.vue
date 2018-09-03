@@ -19,13 +19,9 @@
       </el-autocomplete>
       <div class="panel-search__tip">
         您可以使用快捷键
-        <span class="panel-search__key">
-          {{hotkey.open}}
-        </span>
+        <span class="panel-search__key">{{hotkey.open}}</span>
         唤醒搜索面板，按
-        <span class="panel-search__key">
-          {{hotkey.close}}
-        </span>
+        <span class="panel-search__key">{{hotkey.close}}</span>
         关闭
       </div>
     </div>
