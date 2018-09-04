@@ -84,14 +84,14 @@
 
 | 名称 | Github / 主页 | 码云 | 预览 | 介绍 |
 | --- | --- | --- | --- | --- |
-| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [码云](https://gitee.com/fairyever/d2-admin-start-kit) | [预览](https://fairyever.gitee.io/d2-admin-start-kit-preview) | 无 |
+| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [码云](https://gitee.com/fairyever/d2-admin-start-kit) | [预览](https://d2-projects.github.io/d2-admin-start-kit) | 无 |
 | 飞冰脚手架 | [飞冰](https://alibaba.github.io/ice/scaffold?type=vue) | 无 | [预览](https://fairyever.gitee.io/d2-admin-ice-preview) | [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
 ## 生态
 
 | 名称 | Github / 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
-| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/index) | 表格常用操作封装 |
+| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://d2-projects.github.io/d2-admin/#/demo/d2-crud/index) | 表格常用操作封装 |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
 
 ## 加入我们
