@@ -104,7 +104,7 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 
 项目组官方微信公众号：
 
-<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/we@2x.png" style="width: 172px;"/>
+<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/we@2x.png" width="172"/>
 
 关注公众号可以获得以下内容：
 
