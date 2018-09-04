@@ -33,13 +33,15 @@ new Vue({
     this.$store.commit('d2admin/menu/headerSet', menuHeader)
     // 设置侧边栏菜单
     this.$store.commit('d2admin/menu/asideSet', menuAside)
+    // 初始化菜单搜索功能
+    this.$store.commit('d2admin/search/init', menuHeader)
   },
   mounted () {
     // 展示系统信息
     this.$store.commit('d2admin/releases/versionShow')
     // 检查最新版本
     this.$store.dispatch('d2admin/releases/checkUpdate')
-    // 用户登陆后从数据库加载一系列的设置
+    // 用户登录后从数据库加载一系列的设置
     this.$store.commit('d2admin/account/load')
     // 获取并记录用户 UA
     this.$store.commit('d2admin/ua/get')
