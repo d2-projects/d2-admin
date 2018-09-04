@@ -1,8 +1,23 @@
-<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/banner.png"/>
+![banner](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/banner.png)
 
-D2Admin 是一个完全开源免费的管理系统前端集成方案，为您做好大部分前期准备工作，方便快速进行管理系统开发。
+<p align="center">
+  <a><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/></a>
+  <a><img src="https://badge.fury.io/js/%40d2-admin%2Fice-scaffold.svg"/></a>
+  <a><img src="https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master"/></a>
+  <a><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/></a>
+  <a><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/></a>
+</p>
 
-[![Build Status](https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master)](https://www.travis-ci.org/d2-projects/d2-admin)
+<p align="center">
+	<a><img src="https://img.shields.io/github/issues/d2-projects/d2-admin.svg"/></a>
+	<a><img src="https://img.shields.io/github/issues-closed/d2-projects/d2-admin.svg"/></a>
+	<a><img src="https://img.shields.io/github/issues-pr/d2-projects/d2-admin.svg"/></a>
+	<a><img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg"/></a>
+	<a><img src="https://img.shields.io/github/forks/d2-projects/d2-admin.svg"/></a>
+	<a><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/></a>
+</p>
+
+[D2Admin](https://github.com/d2-projects/d2-admin) 是一个完全**开源免费**的管理系统前端集成方案，为您做好大部分项目前期准备工作，提供大量示例代码，方便快速进行管理系统开发。
 
 ## 文档
 
@@ -17,43 +32,39 @@ D2Admin 是一个完全开源免费的管理系统前端集成方案，为您做
 ## 功能
 
 * 使用 vue-cli3 构建
-* 首屏加载等待动画 避免首次加载白屏尴尬
-* 简约主题
-* 每个插件和组件都配有介绍文档
+* 首屏加载等待动画
+* 五款主题
+* 详细的文档
 * 登录和注销
-* 根据路由自动生成菜单
+* 分离的路由和菜单设置
 * 可折叠侧边栏
-* 方便的菜单设置
-* 多国语言支持
+* 多国语
 * 富文本编辑器
 * Markdown 编辑器
-* 全屏功能
+* 全屏
 * Fontawesome 图标库
-* 图标选择器（组件）
-* 自动引入下载的 SVG 图标
-* 前端假数据支持（ mock ）
-* 简化剪贴板操作
-* 集成图表插件
+* 图标选择器
+* 自动注册 SVG 图标
+* 模拟数据
+* 剪贴板封装
+* 图表库
 * 时间日期计算工具
-* 导入 Excel （ xlsx 格式 + csv 格式 ）
-* 数据导出 Excel （ xlsx 格式 + csv 格式 ）
+* 导入 Excel （ xlsx + csv ）
+* 数据导出 Excel （ xlsx + csv ）
 * 数据导出文本
 * 数字动画
-* 可拖拽调整大小的切分布局
+* 可拖拽调整大小的区块布局
 * 可拖拽调整大小和位置的网格布局
-* 提供三种方便的页面容器组件（正常卡片，隐形容器，填满页面）
-* 代码高亮显示
-* 加载并解析（或者直接指定资源） markdown 文件
+* 开箱即用的页面布局组件
+* 加载并解析 markdown 文件
 * GitHub 样式的 markdown 显示组件
 * markdown 内代码高亮
 * 为 markdown 扩展了百度云链接解析和优化显示
 * 右键菜单组件
 * 自定义滚动条和滚动控制
-* 内置5种主题
 * 公用样式抽离，方便的主题定制
-* 打包后随意目录部署（已经做好兼容设置）
 * 支持临时菜单配置
-* 提供“试验台”功能 方便展示系统功能调用方法 `1.1.4 +`
+* 系统功能展示模块 `1.1.4 +`
 * 多标签页模式 `1.1.4 +`
 * 美化滚动条 `1.1.4 +`
 * json view `1.1.4 +`
@@ -71,27 +82,24 @@ D2Admin 是一个完全开源免费的管理系统前端集成方案，为您做
 
 ## 其它版本
 
-**简化版模板**
-
-* [Github](https://github.com/d2-projects/d2-admin-start-kit)
-* [码云仓库](https://gitee.com/fairyever/d2-admin-start-kit)
-* [预览地址](https://fairyever.gitee.io/d2-admin-start-kit-preview)
-
-**D2Admin ICE 飞冰脚手架**
-
-* [Github](https://alibaba.github.io/ice/scaffold?type=vue)
-* [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6)
-* [预览地址](https://fairyever.gitee.io/d2-admin-ice-preview)
+| 名称 | Github / 主页 | 码云 | 预览 | 介绍 |
+| --- | --- | --- | --- | --- |
+| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [码云](https://gitee.com/fairyever/d2-admin-start-kit) | [预览](https://fairyever.gitee.io/d2-admin-start-kit-preview) | 无 |
+| 飞冰脚手架 | [飞冰](https://alibaba.github.io/ice/scaffold?type=vue) | 无 | [预览](https://fairyever.gitee.io/d2-admin-ice-preview) | [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
 ## 加入我们
 
 D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行管理系统开发，同时也提供 2000 人的 QQ 交流群和微信群，前后端的朋友可以相互答疑，项目组成员全部在内，所有 D2 相关项目使用问题欢迎在群内提问。
 
-<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/dev/github/join@2x.png"/>
+![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
 
 > 隐性福利：重要通知会发群红包
 
-## 其它
+## 支持
 
-[D2 项目组](https://github.com/d2-projects)
+![reward-me](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/reward-me@2x.png)
+
+![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/give-a-star@2x.png)
+
+
 
