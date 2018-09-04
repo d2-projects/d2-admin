@@ -104,8 +104,10 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 
 ## 支持
 
+D2 Projects 相关项目全部完全免费，但是也有相关的费用支出，比如七牛图床、码云付费 page 服务（已经废弃）、服务器和域名（现已全部转至 Github）、QQ 群扩容、群内红包福利等，现已花费数百元。所以如果您喜欢这些项目欢迎小额捐助一下，十分感谢。
+
 ![reward-me](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/reward-me@2x.png)
 
-如果希望您的博客或者网站出现在 D2 Projects 项目的 README 以及文档中，请联系作者。
+如果希望您的博客或者网站出现在 [D2 Projects](https://github.com/d2-projects) 项目的 README 以及文档中，请联系作者。
 
 ![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/give-a-star@2x.png)
