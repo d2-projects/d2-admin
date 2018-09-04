@@ -86,10 +86,10 @@
 
 ## 其它版本
 
-| 名称 | Github / 主页 | 码云 | 预览 | 介绍 |
-| --- | --- | --- | --- | --- |
-| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [码云](https://gitee.com/fairyever/d2-admin-start-kit) | [预览](https://d2-projects.github.io/d2-admin-start-kit) | 无 |
-| 飞冰脚手架 | [飞冰](https://alibaba.github.io/ice/scaffold?type=vue) | 无 | [预览](https://fairyever.gitee.io/d2-admin-ice-preview) | [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) |
+| 名称 | Github / 主页  | 预览 | 介绍 |
+| --- | --- | --- | --- |
+| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://d2-projects.github.io/d2-admin-start-kit) | 无 |
+| 飞冰脚手架 | [飞冰](https://alibaba.github.io/ice/scaffold?type=vue) | [预览](https://d2-projects.github.io/d2-admin-ice) | [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
 ## 生态
 
