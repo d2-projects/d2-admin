@@ -29,6 +29,10 @@
 
 > 预览部署在 Github Page ，如果您访问时由于网络原因卡在载入界面或者白屏，请克隆或者下载本仓库在本地运行查看效果。
 
+## 码云镜像
+
+[码云](https://gitee.com/fairyever/d2-admin)
+
 ## 功能
 
 * 使用 vue-cli3 构建
