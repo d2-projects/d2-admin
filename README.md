@@ -102,23 +102,10 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 
 ![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
 
-项目组官方微信公众号：
-
-<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/we@2x.png" width="172"/>
-
-关注公众号可以获得以下内容：
-
-* D2 Projects 相关项目更新信息
-* 永远最新的文档地址
-* 前端 / 后端开发技术文章
-* 福利活动通知
-* 不定期分享资源
-
 ## 支持
 
 ![reward-me](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/reward-me@2x.png)
 
+如果希望您的博客或者网站出现在 D2 Projects 项目的 README 以及文档中，请联系作者。
+
 ![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/give-a-star@2x.png)
-
-
-
