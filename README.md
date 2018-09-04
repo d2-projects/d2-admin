@@ -3,7 +3,7 @@
 <p align="center">
   <a><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/></a>
   <a><img src="https://badge.fury.io/js/%40d2-admin%2Fice-scaffold.svg"/></a>
-  <a><img src="https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master"/></a>
+  <a href="https://www.travis-ci.org/d2-projects/d2-admin"><img src="https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master"/></a>
   <a><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/></a>
   <a><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/></a>
 </p>
