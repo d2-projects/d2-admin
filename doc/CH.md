@@ -3,7 +3,7 @@
 <p align="center">
   <a><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/></a>
   <a><img src="https://badge.fury.io/js/%40d2-admin%2Fice-scaffold.svg"/></a>
-  <a><img src="https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master"/></a>
+  <a href="https://www.travis-ci.org/d2-projects/d2-admin"><img src="https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master"/></a>
   <a><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/></a>
   <a><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/></a>
 </p>
@@ -28,6 +28,10 @@
 [预览地址](https://d2-projects.github.io/d2-admin/)
 
 > 预览部署在 Github Page ，如果您访问时由于网络原因卡在载入界面或者白屏，请克隆或者下载本仓库在本地运行查看效果。
+
+## 码云镜像
+
+[码云](https://gitee.com/fairyever/d2-admin)
 
 ## 功能
 
@@ -87,19 +91,27 @@
 | 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [码云](https://gitee.com/fairyever/d2-admin-start-kit) | [预览](https://d2-projects.github.io/d2-admin-start-kit) | 无 |
 | 飞冰脚手架 | [飞冰](https://alibaba.github.io/ice/scaffold?type=vue) | 无 | [预览](https://fairyever.gitee.io/d2-admin-ice-preview) | [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
+## 生态
+
+| 名称 | Github / 主页 | 预览 | 介绍 |
+| --- | --- | --- | --- |
+| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://d2-projects.github.io/d2-admin/#/demo/d2-crud/index) | 表格常用操作封装 |
+| D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
+
 ## 加入我们
 
 D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行管理系统开发，同时也提供 2000 人的 QQ 交流群和微信群，前后端的朋友可以相互答疑，项目组成员全部在内，所有 D2 相关项目使用问题欢迎在群内提问。
 
-![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
-
 > 隐性福利：重要通知会发群红包
+
+![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
 
 ## 支持
 
+D2 Projects 相关项目全部完全免费，但是也有相关的费用支出，比如七牛图床、码云付费 page 服务（已经废弃）、服务器和域名（现已全部转至 Github）、QQ 群扩容、群内红包福利等，现已花费数百元。所以如果您喜欢这些项目欢迎小额捐助一下，十分感谢。
+
 ![reward-me](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/reward-me@2x.png)
 
+如果希望您的博客或者网站出现在 [D2 Projects](https://github.com/d2-projects) 项目的 README 以及文档中，请联系作者。
+
 ![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/give-a-star@2x.png)
-
-
-
