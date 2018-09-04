@@ -87,13 +87,32 @@
 | 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [码云](https://gitee.com/fairyever/d2-admin-start-kit) | [预览](https://fairyever.gitee.io/d2-admin-start-kit-preview) | 无 |
 | 飞冰脚手架 | [飞冰](https://alibaba.github.io/ice/scaffold?type=vue) | 无 | [预览](https://fairyever.gitee.io/d2-admin-ice-preview) | [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
+## 生态
+
+| 名称 | Github / 主页 | 预览 | 介绍 |
+| --- | --- | --- | --- |
+| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://fairyever.gitee.io/d2-admin-preview/#/demo/d2-crud/index) | 表格常用操作封装 |
+| D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
+
 ## 加入我们
 
 D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行管理系统开发，同时也提供 2000 人的 QQ 交流群和微信群，前后端的朋友可以相互答疑，项目组成员全部在内，所有 D2 相关项目使用问题欢迎在群内提问。
 
+> 隐性福利：重要通知会发群红包
+
 ![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
 
-> 隐性福利：重要通知会发群红包
+项目组官方微信公众号：
+
+<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/we@2x.png" style="width: 172px;"/>
+
+关注公众号可以获得以下内容：
+
+* D2 Projects 相关项目更新信息
+* 永远最新的文档地址
+* 前端 / 后端开发技术文章
+* 福利活动通知
+* 不定期分享资源
 
 ## 支持
 
