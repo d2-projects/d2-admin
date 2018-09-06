@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import menuMixin from '../mixin/menu'
 import d2LayoutMainMenuItem from '../components/menu-item/index.vue'
 import d2LayoutMainMenuSub from '../components/menu-sub/index.vue'
@@ -43,6 +43,7 @@ export default {
   computed: {
     ...mapState('d2admin/menu', [
       'aside',
+      'menuAside',
       'asideCollapse'
     ])
   },
@@ -58,6 +59,8 @@ export default {
     '$route.matched': {
       handler (val) {
         this.active = val[val.length - 1].path
+        const _side = this.menuAside.filter(menu => menu.path === val[0].path)
+        this.asideSet(_side.length > 0 ? _side[0].children : [])
         this.$nextTick(() => {
           if (this.aside.length > 0) {
             this.$refs.menu.activeIndex = this.active
@@ -74,6 +77,9 @@ export default {
     this.scrollDestroy()
   },
   methods: {
+    ...mapMutations('d2admin/menu', [
+      'asideSet'
+    ]),
     scrollInit () {
       this.BS = new BScroll(this.$el, {
         mouseWheel: true

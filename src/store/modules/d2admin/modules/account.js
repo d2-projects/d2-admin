@@ -68,6 +68,7 @@ export default {
         // 删除cookie
         util.cookies.remove('token')
         util.cookies.remove('uuid')
+        commit('d2admin/menu/init', [], { root: true })
         // 跳转路由
         vm.$router.push({
           name: 'login'
