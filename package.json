@@ -11,7 +11,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@d2-projects/d2-crud": "^1.0.2",
+    "@d2-projects/d2-crud": "^1.1.0",
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
     "better-scroll": "^1.12.1",
