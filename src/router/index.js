@@ -51,7 +51,7 @@ router.beforeEach((to, from, next) => {
           next()
         } else {
           next({ path: '/401', replace: true })
-          NProgress.done()
+          // NProgress.done()
         }
         // 可删 ↑
       }
@@ -63,7 +63,7 @@ router.beforeEach((to, from, next) => {
       next({
         name: 'login'
       })
-      NProgress.done()
+      // NProgress.done()
     }
   } else {
     // 不需要身份校验 直接通过
@@ -72,7 +72,7 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach(to => {
-  NProgress.done()
+  // NProgress.done()
   // 需要的信息
   const { name, params, query } = to
   // 多页控制 打开新的页面
