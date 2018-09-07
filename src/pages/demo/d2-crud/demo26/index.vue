@@ -1,33 +1,74 @@
-export default `<template>
-  <div>
+<template>
+  <d2-container>
+    <template slot="header">表单自定义组件</template>
     <d2-crud
+      ref="d2Crud"
       :columns="columns"
       :data="data"
-      title="D2 CRUD"
       :rowHandle="rowHandle"
       :form-template="formTemplate"
-      :form-options="formOptions"
+      @d2-data-change="handleDataChange"
       @row-edit="handleRowEdit"
       @dialog-cancel="handleDialogCancel"/>
-  </div>
+    <el-card shadow="never" class="d2-mb">
+      <d2-markdown :source="doc"/>
+    </el-card>
+    <el-card shadow="never" class="d2-mb">
+      <h4>全局注册写法：</h4>
+      <d2-highlight :code="codeOverall"/>
+    </el-card>
+    <el-card shadow="never" class="d2-mb">
+      <h4>局部注册写法：</h4>
+      <d2-highlight :code="codePart"/>
+    </el-card>
+    <el-card shadow="never" class="d2-mb">
+      <h4>自定义组件 MyTag 代码：</h4>
+      <d2-highlight :code="codeComponent"/>
+    </el-card>
+    <template slot="footer">
+      <d2-link-btn title="文档" link="https://d2-projects.github.io/d2-admin-doc/zh/ecosystem-d2-crud/"/>
+    </template>
+  </d2-container>
 </template>
 
 <script>
+import doc from './doc.md'
+import codeOverall from './codeOverall.js'
+import codePart from './codePart.js'
+import codeComponent from './codeComponent.js'
+import MyTag from './MyTag'
+
 export default {
+  components: {
+    MyTag
+  },
   data () {
     return {
+      doc,
+      codeOverall,
+      codePart,
+      codeComponent,
       columns: [
         {
           title: '日期',
-          key: 'date'
+          key: 'date',
+          width: '180'
         },
         {
           title: '姓名',
-          key: 'name'
+          key: 'name',
+          width: '180'
         },
         {
           title: '地址',
           key: 'address'
+        },
+        {
+          title: '检查状态（点击可修改）',
+          key: 'check',
+          component: {
+            name: MyTag
+          }
         }
       ],
       data: [
@@ -35,49 +76,33 @@ export default {
           date: '2016-05-02',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄',
-          forbidEdit: true,
-          showEditButton: true
+          check: true
         },
         {
           date: '2016-05-04',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1517 弄',
-          forbidEdit: false,
-          showEditButton: true
+          check: false
         },
         {
           date: '2016-05-01',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1519 弄',
-          forbidEdit: false,
-          showEditButton: false
+          check: true
         },
         {
           date: '2016-05-03',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄',
-          forbidEdit: false,
-          showEditButton: true
+          check: true
         }
       ],
       rowHandle: {
         columnHeader: '编辑表格',
         edit: {
           icon: 'el-icon-edit',
-          text: '点我进行编辑',
-          size: 'small',
-          show (index, row) {
-            if (row.showEditButton) {
-              return true
-            }
-            return false
-          },
-          disabled (index, row) {
-            if (row.forbidEdit) {
-              return true
-            }
-            return false
-          }
+          text: '点我编辑自定义表单组件',
+          size: 'small'
         }
       },
       formTemplate: {
@@ -92,6 +117,13 @@ export default {
         address: {
           title: '地址',
           value: ''
+        },
+        check: {
+          title: '检查状态（点击进行修改）',
+          value: false,
+          component: {
+            name: MyTag
+          }
         }
       },
       formOptions: {
@@ -102,6 +134,9 @@ export default {
     }
   },
   methods: {
+    handleDataChange (data) {
+      console.log(data)
+    },
     handleRowEdit ({index, row}, done) {
       this.formOptions.saveLoading = true
       setTimeout(() => {
@@ -124,4 +159,4 @@ export default {
     }
   }
 }
-</script>`
+</script>
