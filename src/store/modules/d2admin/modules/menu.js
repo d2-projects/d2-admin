@@ -57,7 +57,7 @@ export default {
       })
     },
     /**
-     * 从持久化数据读取侧边栏展开或者收缩
+     * 从持久化存储读取侧边栏展开或者收缩
      * @param {Object} state vuex state
      */
     async asideCollapseLoad (state) {
