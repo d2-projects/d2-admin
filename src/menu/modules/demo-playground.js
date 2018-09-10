@@ -93,6 +93,7 @@ export default {
         { path: `${pre}log/console`, title: '控制台日志', icon: 'lightbulb-o' }
       ]
     },
-    { path: `${pre}env`, title: '环境信息', icon: 'exclamation-circle' }
+    { path: `${pre}env`, title: '环境信息', icon: 'exclamation-circle' }，
+    { path: `${pre}size`, title: '组件尺寸', icon: 'search' }
   ])('/demo/playground/')
 }

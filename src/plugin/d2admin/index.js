@@ -13,11 +13,15 @@ import pluginExport from '@/plugin/export'
 import pluginImport from '@/plugin/import'
 import pluginLog from '@/plugin/log'
 import pluginOpen from '@/plugin/open'
+import util from '@/libs/util'
 
 export default {
   install (Vue, options) {
     // Element
-    Vue.use(ElementUI)
+    // size  element组件尺寸
+    Vue.use(ElementUI, {
+      size: util.cookies.get('size') || 'default'
+    })
     // 插件
     Vue.use(pluginError)
     Vue.use(pluginExport)
