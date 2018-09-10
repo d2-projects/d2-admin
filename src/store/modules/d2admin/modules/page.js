@@ -9,15 +9,18 @@ export default {
     // 当前显示的多页面列表
     opened: setting.page.opened,
     // 当前页面
-    current: ''
+    current: '',
+    // 需要缓存的页面 name
+    keepAlive: []
   },
-  getters: {
+  mutations: {
     /**
-     * @description 从当前所有打开的多标签页里返回需要缓存的页面 name
-     * @param {*} state vuex state
+     * @class keepAlive
+     * @description 从已经打开的页面记录中更新需要缓存的页面记录
+     * @param {Object} state vuex state
      */
-    keepAlive (state) {
-      return state.opened.filter(item => {
+    updateKeepAliveFromOpened (state) {
+      state.keepAlive = state.opened.filter(item => {
         if (item.meta) {
           if (item.meta.notCache) {
             return false
@@ -25,9 +28,7 @@ export default {
         }
         return true
       }).map(e => e.name)
-    }
-  },
-  mutations: {
+    },
     /**
      * @class current
      * @description 打开一个新的页面
