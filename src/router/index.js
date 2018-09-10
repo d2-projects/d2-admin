@@ -32,19 +32,24 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(r => r.meta.requiresAuth)) {
     // 这里暂时将cookie里是否存有token作为验证是否登录的条件
     // 请根据自身业务需要修改
+    // 获取当前用户的 token
     const token = util.cookies.get('token')
+    // 检验逻辑
     if (token && token !== 'undefined') {
+      // token 存在 代表当前用户已经登陆
       if (store.state.d2admin.menu.pool.length === 0) {
-        store.dispatch('d2admin/user/getUserInfo').then(res => {
-          // 用户登录后从数据库加载一系列的设置
-          store.commit('d2admin/account/load')
-          next({ ...to, replace: true })
-        }).catch((err) => {
-          console.log(err)
-          Message.error('Token失效，重新登录')
-          store.dispatch('d2admin/account/logout', { vm: router.app })
-        })
+        // vuex 中不存在可以打开的页面池（一般是刚刷新）
+        store.dispatch('d2admin/user/getUserInfo')
+          .then(res => {
+            next()
+          }).catch(err => {
+            console.log(err)
+            Message.error('Token失效，重新登录')
+            store.dispatch('d2admin/account/logout', { vm: router.app })
+            NProgress.done()
+          })
       } else {
+        // token 不存在 代表当前用户登陆状态不合法
         // 判断用户是否有浏览此路径的权限
         // 根据菜单路径判断
         if (store.state.d2admin.menu.pool.indexOf(to.fullPath) >= 0) {

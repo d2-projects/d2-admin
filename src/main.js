@@ -11,6 +11,8 @@ import '@/mock'
 import i18n from './i18n'
 // 核心插件
 import d2Admin from '@/plugin/d2admin'
+// 权限
+import permission from '@/directive/permission'
 
 // [ 可选插件组件 ]D2-Crud
 import D2Crud from '@d2-projects/d2-crud'
@@ -25,8 +27,6 @@ import vueJsonTreeView from 'vue-json-tree-view'
 import { GridLayout, GridItem } from 'vue-grid-layout'
 // [ 可选插件组件 ] 区域划分组件
 import SplitPane from 'vue-splitpane'
-
-import permission from '@/directive/permission'
 
 // 路由设置
 import router from './router'

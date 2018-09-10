@@ -32,16 +32,14 @@ const permissionDB = {
   user1: ['search']
 }
 
-Mock.mock('/api/login', 'post', ({url, type, body}) => {
+Mock.mock('/api/login', 'post', ({ url, type, body }) => {
   const bodyObj = JSON.parse(body)
   const user = userDB.find(e => e.username === bodyObj.username && e.password === bodyObj.password)
   if (user) {
     return {
       code: 0,
       msg: '登录成功',
-      data: {
-        ...user
-      }
+      data: user
     }
   } else {
     return {
@@ -52,7 +50,7 @@ Mock.mock('/api/login', 'post', ({url, type, body}) => {
   }
 })
 
-Mock.mock(/\/api\/user\/info\.*/, ({url, type, body}) => {
+Mock.mock(/\/api\/user\/info\.*/, ({ url, type, body }) => {
   const { token } = util.param2Obj(url)
   const user = userDB.find(e => e.token === token)
   if (user) {

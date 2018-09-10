@@ -95,6 +95,7 @@ export default {
       ]
     },
     { path: `${pre}env`, title: '环境信息', icon: 'exclamation-circle' },
-    { path: `${pre}permission`, title: '权限控制', icon: 'unlock-alt' }
+    { path: `${pre}permission`, title: '权限控制', icon: 'unlock-alt' },
+    { path: `${pre}size`, title: '组件尺寸', icon: 'search' }
   ])('/demo/playground/')
 }

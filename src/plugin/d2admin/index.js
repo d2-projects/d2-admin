@@ -13,17 +13,22 @@ import pluginExport from '@/plugin/export'
 import pluginImport from '@/plugin/import'
 import pluginLog from '@/plugin/log'
 import pluginOpen from '@/plugin/open'
+import pluginPermission from '@/plugin/permission'
+import util from '@/libs/util'
 
 export default {
   install (Vue, options) {
     // Element
-    Vue.use(ElementUI)
+    Vue.use(ElementUI, {
+      size: util.cookies.get('size') || 'default'
+    })
     // 插件
     Vue.use(pluginError)
     Vue.use(pluginExport)
     Vue.use(pluginImport)
     Vue.use(pluginLog)
     Vue.use(pluginOpen)
+    Vue.use(pluginPermission)
     // 设置为 false 以阻止 vue 在启动时生成生产提示。
     // https://cn.vuejs.org/v2/api/#productionTip
     Vue.config.productionTip = false

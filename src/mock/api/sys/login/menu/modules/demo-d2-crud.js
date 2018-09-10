@@ -36,7 +36,9 @@ export default {
         { path: `${pre}demo20`, title: '表单组件渲染' },
         { path: `${pre}demo21`, title: '表单布局' },
         { path: `${pre}demo22`, title: '表单校验' },
-        { path: `${pre}demo23`, title: '表格内编辑' }
+        { path: `${pre}demo23`, title: '表格内编辑' },
+        { path: `${pre}demo25`, title: '表格自定义组件' },
+        { path: `${pre}demo26`, title: '表单自定义组件' }
       ]
     }
   ])('/demo/d2-crud/')

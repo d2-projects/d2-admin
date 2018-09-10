@@ -1,18 +1,25 @@
 <template>
   <d2-container>
-    <template slot="header">删除数据</template>
+    <template slot="header">表格自定义组件</template>
     <d2-crud
+      ref="d2Crud"
       :columns="columns"
       :data="data"
-      title="D2 CRUD"
-      :rowHandle="rowHandle"
-      @row-remove="handleRowRemove">
-    </d2-crud>
+      @d2-data-change="handleDataChange"/>
     <el-card shadow="never" class="d2-mb">
       <d2-markdown :source="doc"/>
     </el-card>
     <el-card shadow="never" class="d2-mb">
-      <d2-highlight :code="code"/>
+      <h4>全局注册写法：</h4>
+      <d2-highlight :code="codeOverall"/>
+    </el-card>
+    <el-card shadow="never" class="d2-mb">
+      <h4>局部注册写法：</h4>
+      <d2-highlight :code="codePart"/>
+    </el-card>
+    <el-card shadow="never" class="d2-mb">
+      <h4>自定义组件 MyTag 代码：</h4>
+      <d2-highlight :code="codeComponent"/>
     </el-card>
     <template slot="footer">
       <d2-link-btn title="文档" link="https://d2-projects.github.io/d2-admin-doc/zh/ecosystem-d2-crud/"/>
@@ -22,25 +29,42 @@
 
 <script>
 import doc from './doc.md'
-import code from './code.js'
+import codeOverall from './codeOverall.js'
+import codePart from './codePart.js'
+import codeComponent from './codeComponent.js'
+import MyTag from './MyTag'
 
 export default {
+  components: {
+    MyTag
+  },
   data () {
     return {
       doc,
-      code,
+      codeOverall,
+      codePart,
+      codeComponent,
       columns: [
         {
           title: '日期',
-          key: 'date'
+          key: 'date',
+          width: '180'
         },
         {
           title: '姓名',
-          key: 'name'
+          key: 'name',
+          width: '180'
         },
         {
           title: '地址',
           key: 'address'
+        },
+        {
+          title: '检查状态（点击可修改）',
+          key: 'check',
+          component: {
+            name: MyTag
+          }
         }
       ],
       data: [
@@ -48,64 +72,32 @@ export default {
           date: '2016-05-02',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄',
-          forbidRemove: true,
-          showRemoveButton: true
+          check: true
         },
         {
           date: '2016-05-04',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1517 弄',
-          forbidRemove: false,
-          showRemoveButton: true
+          check: false
         },
         {
           date: '2016-05-01',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1519 弄',
-          forbidRemove: false,
-          showRemoveButton: false
+          check: true
         },
         {
           date: '2016-05-03',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄',
-          forbidRemove: false,
-          showRemoveButton: true
+          check: true
         }
-      ],
-      rowHandle: {
-        remove: {
-          icon: 'el-icon-delete',
-          size: 'small',
-          fixed: 'right',
-          confirm: true,
-          show (index, row) {
-            if (row.showRemoveButton) {
-              return true
-            }
-            return false
-          },
-          disabled (index, row) {
-            if (row.forbidRemove) {
-              return true
-            }
-            return false
-          }
-        }
-      }
+      ]
     }
   },
   methods: {
-    handleRowRemove ({index, row}, done) {
-      setTimeout(() => {
-        console.log(index)
-        console.log(row)
-        this.$message({
-          message: '删除成功',
-          type: 'success'
-        })
-        done()
-      }, 300)
+    handleDataChange (data) {
+      console.log(data)
     }
   }
 }

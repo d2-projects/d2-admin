@@ -27,7 +27,8 @@
             </p>
           </el-popover>
         </div>
-        <d2-help-btn class="d2-mt"/>
+        <d2-badge/>
+        <d2-help-btn/>
       </template>
     </d2-page-cover>
   </d2-container>
@@ -35,9 +36,11 @@
 
 <script>
 import D2HelpBtn from './components/d2-help-btn'
+import D2Badge from './components/d2-badge'
 export default {
   components: {
-    D2HelpBtn
+    D2HelpBtn,
+    D2Badge
   }
 }
 </script>
@@ -48,6 +51,8 @@ export default {
   .page__btn-group {
     color: $color-text-placehoder;
     font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 20px;
     span {
       color: $color-text-sub;
       &:hover {
