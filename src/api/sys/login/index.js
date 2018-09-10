@@ -7,3 +7,11 @@ export function AccountLogin (data) {
     data
   })
 }
+
+export function GetUserInfo (token) {
+  return request({
+    url: 'user/info',
+    method: 'get',
+    params: { token }
+  })
+}

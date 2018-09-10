@@ -50,6 +50,7 @@ const frameIn = [
       { path: 'log/error', name: `${pre}log-error`, component: () => import('@/pages/demo/playground/log/error'), meta: { ...meta, title: '错误捕捉' } },
       { path: 'log/console', name: `${pre}log-console`, component: () => import('@/pages/demo/playground/log/console'), meta: { ...meta, title: '控制台日志' } },
       { path: 'env', name: `${pre}env`, component: () => import('@/pages/demo/playground/env'), meta: { ...meta, title: '环境信息' } },
+      { path: 'permission', name: `${pre}permission`, component: () => import('@/pages/demo/playground/permission'), meta: { ...meta, title: '按钮权限控制' } },
       { path: 'size', name: `${pre}size`, component: () => import('@/pages/demo/playground/size'), meta: { ...meta, title: 'ElementUI组件尺寸' } }
     ])('demo-playground-')
   },
@@ -298,11 +299,17 @@ const frameOut = [
  * 错误页面
  */
 const errorPage = [
+  // 401
+  {
+    path: '/401',
+    name: '401',
+    component: () => import('@/pages/error-page/401')
+  },
   // 404
   {
     path: '*',
     name: '404',
-    component: () => import('@/pages/error-page-404')
+    component: () => import('@/pages/error-page/404')
   }
 ]
 

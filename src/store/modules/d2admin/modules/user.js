@@ -1,11 +1,36 @@
 // 设置文件
 import setting from '@/setting.js'
+import { GetUserInfo } from '@/api/sys/login'
+import util from '@/libs/util'
 
 export default {
   namespaced: true,
   state: {
     // 用户信息
-    info: setting.user.info
+    info: setting.user.info,
+    permission: []
+  },
+  actions: {
+    getUserInfo ({ state, commit }) {
+      return new Promise((resolve, reject) => {
+        GetUserInfo(util.cookies.get('token'))
+          .then(res => {
+            // 设置用户信息
+            state.info = res.info
+            // 设置用户权限
+            state.permission = res.permission
+            // 初始化菜单
+            commit('d2admin/menu/init', res.menu, { root: true })
+            // 初始化菜单搜索功能
+            commit('d2admin/search/init', res.menu, { root: true })
+            // 用户登录后从持久化存储加载一系列的设置
+            commit('d2admin/account/load', null, { root: true })
+            resolve()
+          }).catch(err => {
+            reject(err)
+          })
+      })
+    }
   },
   mutations: {
     /**
@@ -25,7 +50,7 @@ export default {
       })
     },
     /**
-     * @description 从数据库取用户数据
+     * @description 从持久化存储取用户数据
      * @param {Object} state vuex state
      */
     async load (state) {

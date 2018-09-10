@@ -25,7 +25,7 @@ export default {
       })
     },
     /**
-     * 从数据库读取页面过渡动画设置
+     * 从持久化存储读取页面过渡动画设置
      * @param {Object} state vuex state
      */
     async load (state) {
