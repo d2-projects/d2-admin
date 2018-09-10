@@ -728,9 +728,9 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@d2-projects/d2-crud@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@d2-projects/d2-crud/-/d2-crud-1.0.2.tgz#2377194e6389aa4ef6106a86b3c15dd389e12834"
+"@d2-projects/d2-crud@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@d2-projects/d2-crud/-/d2-crud-1.0.7.tgz#50e2a7d063c290e757a16539c5371cd40469413c"
   dependencies:
     lodash.clonedeep "^4.5.0"
     lodash.foreach "^4.5.0"

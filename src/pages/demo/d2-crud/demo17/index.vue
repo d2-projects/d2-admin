@@ -50,22 +50,30 @@ export default {
         {
           date: '2016-05-02',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          address: '上海市普陀区金沙江路 1518 弄',
+          forbidEdit: true,
+          showEditButton: true
         },
         {
           date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          address: '上海市普陀区金沙江路 1517 弄',
+          forbidEdit: false,
+          showEditButton: true
         },
         {
           date: '2016-05-01',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
+          address: '上海市普陀区金沙江路 1519 弄',
+          forbidEdit: false,
+          showEditButton: false
         },
         {
           date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          address: '上海市普陀区金沙江路 1516 弄',
+          forbidEdit: false,
+          showEditButton: true
         }
       ],
       rowHandle: {
@@ -74,7 +82,18 @@ export default {
           icon: 'el-icon-edit',
           text: '点我进行编辑',
           size: 'small',
-          fixed: 'right'
+          show (index, row) {
+            if (row.showEditButton) {
+              return true
+            }
+            return false
+          },
+          disabled (index, row) {
+            if (row.forbidEdit) {
+              return true
+            }
+            return false
+          }
         }
       },
       formTemplate: {

@@ -1,12 +1,12 @@
 export default `<template>
   <div>
     <d2-crud
+      ref="d2Crud"
       :columns="columns"
       :data="data"
-      title="D2 CRUD"
       :rowHandle="rowHandle"
       :form-template="formTemplate"
-      :form-options="formOptions"
+      @d2-data-change="handleDataChange"
       @row-edit="handleRowEdit"
       @dialog-cancel="handleDialogCancel"/>
   </div>
@@ -19,15 +19,24 @@ export default {
       columns: [
         {
           title: '日期',
-          key: 'date'
+          key: 'date',
+          width: '180'
         },
         {
           title: '姓名',
-          key: 'name'
+          key: 'name',
+          width: '180'
         },
         {
           title: '地址',
           key: 'address'
+        },
+        {
+          title: '检查状态（点击可修改）',
+          key: 'check',
+          component: {
+            name: 'my-tag'
+          }
         }
       ],
       data: [
@@ -35,49 +44,33 @@ export default {
           date: '2016-05-02',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄',
-          forbidEdit: true,
-          showEditButton: true
+          check: true
         },
         {
           date: '2016-05-04',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1517 弄',
-          forbidEdit: false,
-          showEditButton: true
+          check: false
         },
         {
           date: '2016-05-01',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1519 弄',
-          forbidEdit: false,
-          showEditButton: false
+          check: true
         },
         {
           date: '2016-05-03',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄',
-          forbidEdit: false,
-          showEditButton: true
+          check: true
         }
       ],
       rowHandle: {
         columnHeader: '编辑表格',
         edit: {
           icon: 'el-icon-edit',
-          text: '点我进行编辑',
-          size: 'small',
-          show (index, row) {
-            if (row.showEditButton) {
-              return true
-            }
-            return false
-          },
-          disabled (index, row) {
-            if (row.forbidEdit) {
-              return true
-            }
-            return false
-          }
+          text: '点我编辑自定义表单组件',
+          size: 'small'
         }
       },
       formTemplate: {
@@ -92,6 +85,13 @@ export default {
         address: {
           title: '地址',
           value: ''
+        },
+        check: {
+          title: '检查状态（点击进行修改）',
+          value: false,
+          component: {
+            name: 'my-tag'
+          }
         }
       },
       formOptions: {
@@ -102,6 +102,9 @@ export default {
     }
   },
   methods: {
+    handleDataChange (data) {
+      console.log(data)
+    },
     handleRowEdit ({index, row}, done) {
       this.formOptions.saveLoading = true
       setTimeout(() => {
