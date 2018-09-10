@@ -11,6 +11,7 @@ import gray from './modules/gray'
 import page from './modules/page'
 import transition from './modules/transition'
 import search from './modules/search'
+import size from './modules/size'
 
 export default {
   namespaced: true,
@@ -27,6 +28,7 @@ export default {
     gray,
     page,
     transition,
-    search
+    search,
+    size
   }
 }
