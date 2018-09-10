@@ -108,8 +108,10 @@ export default {
       this.commit('d2admin/transition/load')
       // DB -> store 持久化数据加载上次退出时的多页列表
       this.commit('d2admin/page/openedLoad')
-      // DB -> store 持久化数据加载这个用户之前设置的侧边栏折叠状态
+      // DB -> store 持久化数据加载侧边栏折叠状态
       this.commit('d2admin/menu/asideCollapseLoad')
+      // DB -> store 持久化数据加载全局尺寸
+      this.commit('d2admin/size/load')
     }
   }
 }

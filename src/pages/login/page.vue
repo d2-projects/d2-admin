@@ -9,7 +9,7 @@
       <!-- 表单部分 -->
       <div class="form-group">
         <el-card>
-          <el-form ref="loginForm" label-position="top" :rules="rules" :model="formLogin">
+          <el-form ref="loginForm" label-position="top" :rules="rules" :model="formLogin" size="default">
             <el-form-item  prop="username">
               <el-input type="text" v-model="formLogin.username" placeholder="用户名">
                 <i slot="prepend" class="fa fa-user-circle-o"></i>
