@@ -35,12 +35,12 @@
 </template>
 
 <script>
-import D2Badge from './components/d2-badge'
 import D2HelpBtn from './components/d2-help-btn'
+import D2Badge from './components/d2-badge'
 export default {
   components: {
-    D2Badge,
-    D2HelpBtn
+    D2HelpBtn,
+    D2Badge
   }
 }
 </script>
@@ -51,6 +51,7 @@ export default {
   .page__btn-group {
     color: $color-text-placehoder;
     font-size: 12px;
+    margin-top: -10px;
     margin-bottom: 20px;
     span {
       color: $color-text-sub;
