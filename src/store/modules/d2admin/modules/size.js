@@ -2,7 +2,7 @@ export default {
   namespaced: true,
   state: {
     // 尺寸
-    value: 'medium' // small mini
+    value: '' // medium small mini
   },
   mutations: {
     /**
@@ -25,12 +25,12 @@ export default {
      * @description 从持久化数据读取尺寸设置
      * @param {Object} state vuex state
      */
-    async asideCollapseLoad (state) {
+    async load (state) {
       // store 赋值
       state.value = await this.dispatch('d2admin/db/get', {
         dbName: 'sys',
         path: 'size.value',
-        defaultValue: 'medium',
+        defaultValue: 'default',
         user: true
       })
     }
