@@ -30,6 +30,7 @@
       class="d2-multiple-page-control-btn"
       flex-box="0">
       <el-dropdown
+        size="default"
         split-button
         @click="handleControlBtnClick"
         @command="command => handleControlItemClick(command)">
