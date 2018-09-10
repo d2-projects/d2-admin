@@ -3,6 +3,8 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // flex 布局库
 import 'flex.css'
+// store
+import store from '@/store/index'
 // 组件
 import '@/components'
 // svg 图标
@@ -15,9 +17,19 @@ import pluginLog from '@/plugin/log'
 import pluginOpen from '@/plugin/open'
 
 export default {
-  install (Vue, options) {
+  async install (Vue, options) {
+    // 获得用户设置的全局尺寸
+    const size = await store.dispatch('d2admin/db/get', {
+      dbName: 'sys',
+      path: 'size.value',
+      defaultValue: '',
+      user: true
+    })
+    console.log('size: ', size)
     // Element
-    Vue.use(ElementUI)
+    Vue.use(ElementUI, {
+      size
+    })
     // 插件
     Vue.use(pluginError)
     Vue.use(pluginExport)
