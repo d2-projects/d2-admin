@@ -112,6 +112,8 @@
 <a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/d2-admin@2x.png" width="200"></a>
 ```
 
+同时您可以将您的项目汇报给我们，优秀项目我们会放置在 D2Admin 相关位置并帮助您宣传。
+
 ## 加入我们
 
 D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行管理系统开发，同时也提供 2000 人的 QQ 交流群和微信群，前后端的朋友可以相互答疑，项目组成员全部在内，所有 D2 相关项目使用问题欢迎在群内提问。
