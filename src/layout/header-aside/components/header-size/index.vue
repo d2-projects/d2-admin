@@ -23,16 +23,17 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 export default {
-  name: 'd2-size-control',
+  name: 'd2-header-size',
   computed: {
     ...mapState('d2admin/size', [
       'value'
     ])
   },
   watch: {
+    // 注意 这里是关键
+    // 因为需要访问 this.$ELEMENT 所以只能在这里使用这种方式
     value: {
       handler (val) {
-        console.log('handler')
         this.$ELEMENT.size = val
       },
       immediate: true
