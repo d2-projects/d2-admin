@@ -4,7 +4,7 @@
       <d2-icon name="font" style="font-size: 16px;"/>
     </el-button>
     <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item command="">
+      <el-dropdown-item command="default">
         <d2-icon :name="iconName('default')" class="d2-mr-5"/>默认
       </el-dropdown-item>
       <el-dropdown-item command="medium">
@@ -34,21 +34,28 @@ export default {
     // 因为需要访问 this.$ELEMENT 所以只能在这里使用这种方式
     value: {
       handler (val) {
-        this.$ELEMENT.size = val
+        if (this.$ELEMENT.size !== val) {
+          // 设置 element 全局尺寸
+          this.$ELEMENT.size = val
+          // 清空缓存设置
+          this.pageKeepAliveClean()
+          // 刷新此页面
+          const { path, query } = this.$route
+          this.$router.replace({
+            path: '/redirect/' + JSON.stringify({ path, query })
+          })
+        }
       },
       immediate: true
     }
   },
   methods: {
-    ...mapMutations('d2admin/size', [
-      'set'
-    ]),
+    ...mapMutations({
+      sizeSet: 'd2admin/size/set',
+      pageKeepAliveClean: 'd2admin/page/keepAliveClean'
+    }),
     handleChange (value) {
-      this.set(value)
-      this.$message({
-        message: `设置尺寸成功 ${value}`,
-        type: 'success'
-      })
+      this.sizeSet(value)
     },
     iconName (name) {
       return name === this.value ? 'dot-circle-o' : 'circle-o'
