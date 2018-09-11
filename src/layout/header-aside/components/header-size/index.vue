@@ -4,7 +4,7 @@
       <d2-icon name="font" style="font-size: 16px;"/>
     </el-button>
     <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item command="">
+      <el-dropdown-item command="default">
         <d2-icon :name="iconName('default')" class="d2-mr-5"/>默认
       </el-dropdown-item>
       <el-dropdown-item command="medium">
@@ -35,20 +35,26 @@ export default {
     value: {
       handler (val) {
         this.$ELEMENT.size = val
+        this.$message({
+          message: `设置尺寸成功 ${val}`,
+          type: 'success'
+        })
+        this.pageKeepAliveClean()
+        const { path } = this.$route
+        this.$router.replace({
+          path: '/redirect' + path
+        })
       },
       immediate: true
     }
   },
   methods: {
-    ...mapMutations('d2admin/size', [
-      'set'
-    ]),
+    ...mapMutations({
+      sizeSet: 'd2admin/size/set',
+      pageKeepAliveClean: 'd2admin/page/keepAliveClean'
+    }),
     handleChange (value) {
-      this.set(value)
-      this.$message({
-        message: `设置尺寸成功 ${value}`,
-        type: 'success'
-      })
+      this.sizeSet(value)
     },
     iconName (name) {
       return name === this.value ? 'dot-circle-o' : 'circle-o'

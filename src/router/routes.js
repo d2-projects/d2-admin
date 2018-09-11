@@ -21,6 +21,17 @@ const frameIn = [
     ]
   },
   {
+    path: '/redirect',
+    component: layoutHeaderAside,
+    children: [
+      {
+        hidden: true,
+        path: '/redirect/:path*',
+        component: () => import('@/pages/redirect')
+      }
+    ]
+  },
+  {
     path: '/demo/playground',
     name: 'demo-playground',
     meta,

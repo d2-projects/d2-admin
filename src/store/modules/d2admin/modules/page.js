@@ -345,8 +345,10 @@ export default {
           if (route.children) {
             push(route.children)
           } else {
-            const { meta, name, path } = route
-            pool.push({ meta, name, path })
+            if (!route.hidden) {
+              const { meta, name, path } = route
+              pool.push({ meta, name, path })
+            }
           }
         })
       }
