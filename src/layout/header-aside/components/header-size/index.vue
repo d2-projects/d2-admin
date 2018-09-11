@@ -34,16 +34,14 @@ export default {
     // 因为需要访问 this.$ELEMENT 所以只能在这里使用这种方式
     value: {
       handler (val) {
-        this.$ELEMENT.size = val
-        this.$message({
-          message: `设置尺寸成功 ${val}`,
-          type: 'success'
-        })
-        this.pageKeepAliveClean()
-        const { path } = this.$route
-        this.$router.replace({
-          path: '/redirect' + path
-        })
+        if (this.$ELEMENT.size !== val) {
+          this.$ELEMENT.size = val
+          this.pageKeepAliveClean()
+          const { path } = this.$route
+          this.$router.replace({
+            path: '/redirect' + path
+          })
+        }
       },
       immediate: true
     }
