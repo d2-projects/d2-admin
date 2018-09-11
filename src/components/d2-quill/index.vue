@@ -60,7 +60,7 @@ export default {
         const text = this.Quill.getText()
         const quill = this.Quill
         this.$emit('input', html)
-        this.$emit('change', {html, text, quill})
+        this.$emit('change', { html, text, quill })
       })
       this.Quill.on('text-change', (delta, oldDelta, source) => {
         this.$emit('text-change', delta, oldDelta, source)

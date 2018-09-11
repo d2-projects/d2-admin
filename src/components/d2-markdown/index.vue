@@ -74,7 +74,7 @@ export default {
         return (this.baidupan && bandupan(quote, this.$baseUrl)) || `<blockquote>${quote}</blockquote>`
       }
       return marked(data, {
-        ...this.highlight ? {highlight: (code) => highlight.highlightAuto(code).value} : {},
+        ...this.highlight ? { highlight: (code) => highlight.highlightAuto(code).value } : {},
         renderer
       })
     }
