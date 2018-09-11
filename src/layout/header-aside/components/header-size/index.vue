@@ -35,11 +35,14 @@ export default {
     value: {
       handler (val) {
         if (this.$ELEMENT.size !== val) {
+          // 设置 element 全局尺寸
           this.$ELEMENT.size = val
+          // 清空缓存设置
           this.pageKeepAliveClean()
-          const { path } = this.$route
+          // 刷新此页面
+          const { path, query } = this.$route
           this.$router.replace({
-            path: '/redirect' + path
+            path: '/redirect/' + JSON.stringify({ path, query })
           })
         }
       },

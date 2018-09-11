@@ -3,7 +3,7 @@
 export default {
   beforeCreate () {
     const path = this.$route.params.path
-    this.$router.replace('/' + path)
+    this.$router.replace(JSON.parse(path))
   },
   render: function (h) {
     return h()
