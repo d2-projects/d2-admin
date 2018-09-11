@@ -6,18 +6,18 @@
         <el-col :span="12">
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">顶栏菜单数据</template>
-            <div style="height: 300px; overflow: auto;">
+            <div style="height: 260px; overflow: auto;">
               <tree-view
                 class="tree-view-small"
                 :data="menuHeader"
-                :options="{ rootObjectKey: 'menuHeader', maxDepth: 2 }"/>
+                :options="{ rootObjectKey: 'menuHeader', maxDepth: 1 }"/>
             </div>
           </el-card>
         </el-col>
         <el-col :span="12">
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">侧边栏菜单数据</template>
-            <div style="height: 300px; overflow: auto;">
+            <div style="height: 260px; overflow: auto;">
               <tree-view
                 class="tree-view-small"
                 :data="menuAside"
@@ -27,22 +27,28 @@
         </el-col>
       </el-row>
       <el-row :gutter="20">
-        <el-col :span="8">
+        <el-col :span="6">
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">全屏模式</template>
             <el-switch v-model="fullscreenActive" active-text="打开" inactive-text="关闭" disabled/>
           </el-card>
         </el-col>
-        <el-col :span="8">
+        <el-col :span="6">
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">灰度模式</template>
             <el-switch v-model="grayActive" active-text="打开" inactive-text="关闭" disabled/>
           </el-card>
         </el-col>
-        <el-col :span="8">
+        <el-col :span="6">
           <el-card shadow="never" class="d2-card d2-mb">
             <template slot="header">侧边栏折叠</template>
             <el-switch v-model="menuAsideCollapse" active-text="收缩" inactive-text="展开" disabled/>
+          </el-card>
+        </el-col>
+        <el-col :span="6">
+          <el-card shadow="never" class="d2-card d2-mb">
+            <template slot="header">全局尺寸</template>
+            {{sizeValue}}
           </el-card>
         </el-col>
       </el-row>
@@ -153,7 +159,9 @@ export default {
       // tag 池
       pagePool: state => state.page.pool,
       pageCurrent: state => state.page.current,
-      pageopened: state => state.page.opened
+      pageopened: state => state.page.opened,
+      // 全局尺寸
+      sizeValue: state => state.size.value
     }),
     ...mapGetters('d2admin', {
       keepAlive: 'page/keepAlive',
