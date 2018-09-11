@@ -1,3 +1,5 @@
+import { remove, get } from 'lodash'
+
 // 设置文件
 import setting from '@/setting.js'
 
@@ -19,7 +21,7 @@ export default {
      * @description 从已经打开的页面记录中更新需要缓存的页面记录
      * @param {Object} state vuex state
      */
-    updateKeepAliveFromOpened (state) {
+    keepAliveRefresh (state) {
       state.keepAlive = state.opened.filter(item => {
         if (item.meta) {
           if (item.meta.notCache) {
@@ -28,6 +30,33 @@ export default {
         }
         return true
       }).map(e => e.name)
+    },
+    /**
+     * @description 删除一个页面的缓存设置
+     * @param {Object} state vuex state
+     * @param {String} name name
+     */
+    keepAliveRemove (state, name) {
+      const list = [ ...state.keepAlive ]
+      remove(list, item => item === name)
+      state.keepAlive = list
+    },
+    /**
+     * @description 增加一个页面的缓存设置
+     * @param {Object} state vuex state
+     * @param {String} name name
+     */
+    keepAlivePush (state, name) {
+      const keep = [ ...state.keepAlive ]
+      keep.push(name)
+      state.keepAlive = Array.from(new Set(keep))
+    },
+    /**
+     * @description 清空页面缓存设置
+     * @param {Object} state vuex state
+     */
+    keepAliveClean (state) {
+      state.keepAlive = []
     },
     /**
      * @class current
@@ -86,6 +115,8 @@ export default {
       page.params = params || page.params
       page.query = query || page.query
       state.opened.splice(index, 1, page)
+      // 增加缓存设置
+      this.commit('d2admin/page/keepAlivePush', page.name)
       // 持久化
       this.commit('d2admin/page/opend2db')
     },
@@ -134,6 +165,8 @@ export default {
         // 新的数据中一般不会携带 params 和 query, 所以旧的参数会留存
         return Object.assign({}, opened, find)
       }).filter((opened, index) => valid[index] === 1)
+      // 根据 opened 数据生成缓存设置
+      this.commit('d2admin/page/keepAliveRefresh')
     },
     /**
      * @class opened
@@ -148,6 +181,10 @@ export default {
       newTag.query = query || newTag.query
       // 添加进当前显示的页面数组
       state.opened.push(newTag)
+      // 如果这个页面需要缓存 将其添加到缓存设置
+      if (get(newTag, 'meta.requiresAuth', false)) {
+        this.commit('d2admin/page/keepAlivePush', tag.name)
+      }
       // 持久化
       this.commit('d2admin/page/opend2db')
     },
@@ -179,7 +216,10 @@ export default {
       // 找到这个页面在已经打开的数据里是第几个
       const index = state.opened.findIndex(page => page.name === tagName)
       if (index >= 0) {
+        // 更新数据 删除关闭的页面
         state.opened.splice(index, 1)
+        // 如果这个页面是缓存的页面 将其在缓存设置中删除
+        this.commit('d2admin/page/keepAliveRemove', tagName)
       }
       // 持久化
       this.commit('d2admin/page/opend2db')
@@ -209,7 +249,8 @@ export default {
         }
       })
       if (currentIndex > 0) {
-        state.opened.splice(1, currentIndex - 1)
+        // 删除打开的页面 并在缓存设置中删除
+        state.opened.splice(1, currentIndex - 1).forEach(({ name }) => this.commit('d2admin/page/keepAliveRemove', name))
       }
       state.current = pageAim
       if (vm && vm.$route.name !== pageAim) {
@@ -234,7 +275,9 @@ export default {
           currentIndex = index
         }
       })
-      state.opened.splice(currentIndex + 1)
+      // 删除打开的页面 并在缓存设置中删除
+      state.opened.splice(currentIndex + 1).forEach(({ name }) => this.commit('d2admin/page/keepAliveRemove', name))
+      // 设置当前的页面
       state.current = pageAim
       if (vm && vm.$route.name !== pageAim) {
         vm.$router.push({
@@ -258,12 +301,14 @@ export default {
           currentIndex = index
         }
       })
+      // 删除打开的页面数据 并更新缓存设置
       if (currentIndex === 0) {
-        state.opened.splice(1)
+        state.opened.splice(1).forEach(({ name }) => this.commit('d2admin/page/keepAliveRemove', name))
       } else {
-        state.opened.splice(currentIndex + 1)
-        state.opened.splice(1, currentIndex - 1)
+        state.opened.splice(currentIndex + 1).forEach(({ name }) => this.commit('d2admin/page/keepAliveRemove', name))
+        state.opened.splice(1, currentIndex - 1).forEach(({ name }) => this.commit('d2admin/page/keepAliveRemove', name))
       }
+      // 设置新的页面
       state.current = pageAim
       if (vm && vm.$route.name !== pageAim) {
         vm.$router.push({
@@ -280,7 +325,8 @@ export default {
      * @param {Object} vm vue
      */
     closeAll (state, vm) {
-      state.opened.splice(1)
+      // 删除打开的页面 并在缓存设置中删除
+      state.opened.splice(1).forEach(({ name }) => this.commit('d2admin/page/keepAliveRemove', name))
       // 持久化
       this.commit('d2admin/page/opend2db')
       // 关闭所有的标签页后需要判断一次现在是不是在首页
@@ -303,8 +349,10 @@ export default {
           if (route.children) {
             push(route.children)
           } else {
-            const { meta, name, path } = route
-            pool.push({ meta, name, path })
+            if (!route.hidden) {
+              const { meta, name, path } = route
+              pool.push({ meta, name, path })
+            }
           }
         })
       }

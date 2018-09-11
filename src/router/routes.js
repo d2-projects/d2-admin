@@ -285,6 +285,11 @@ const frameIn = [
  * 在主框架之外显示
  */
 const frameOut = [
+  // 页面重定向使用 必须保留
+  {
+    path: '/redirect/:path*',
+    component: () => import('@/pages/redirect')
+  },
   // 登录
   {
     path: '/login',
