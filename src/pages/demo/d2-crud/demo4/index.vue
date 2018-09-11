@@ -65,7 +65,7 @@ export default {
         }
       ],
       options: {
-        rowClassName ({row, rowIndex}) {
+        rowClassName ({ row, rowIndex }) {
           if (rowIndex === 1) {
             return 'warning-row'
           } else if (rowIndex === 3) {
