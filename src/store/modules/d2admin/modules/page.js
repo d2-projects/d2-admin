@@ -47,7 +47,9 @@ export default {
      * @param {String} name name
      */
     keepAlivePush (state, name) {
-      state.keepAlive.push(name)
+      const keep = [ ...state.keepAlive ]
+      keep.push(name)
+      state.keepAlive = Array.from(new Set(keep))
     },
     /**
      * @description 清空页面缓存设置
@@ -113,6 +115,8 @@ export default {
       page.params = params || page.params
       page.query = query || page.query
       state.opened.splice(index, 1, page)
+      // 增加缓存设置
+      this.commit('d2admin/page/keepAlivePush', page.name)
       // 持久化
       this.commit('d2admin/page/opend2db')
     },
