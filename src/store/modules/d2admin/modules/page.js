@@ -21,7 +21,7 @@ export default {
      * @description 从已经打开的页面记录中更新需要缓存的页面记录
      * @param {Object} state vuex state
      */
-    keepAliveUpdateFromOpened (state) {
+    keepAliveRefresh (state) {
       state.keepAlive = state.opened.filter(item => {
         if (item.meta) {
           if (item.meta.notCache) {
@@ -166,7 +166,7 @@ export default {
         return Object.assign({}, opened, find)
       }).filter((opened, index) => valid[index] === 1)
       // 根据 opened 数据生成缓存设置
-      this.commit('d2admin/page/keepAliveUpdateFromOpened')
+      this.commit('d2admin/page/keepAliveRefresh')
     },
     /**
      * @class opened
