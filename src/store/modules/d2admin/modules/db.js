@@ -3,7 +3,7 @@ import util from '@/libs/util.js'
 
 /**
  * @description 检查路径是否存在 不存在的话初始化
- * @param {Object} param dbName {String} 持久化存储名称
+ * @param {Object} param dbName {String} 数据库名称
  * @param {Object} param path {String} 路径
  * @param {Object} param user {Boolean} 区分用户
  * @param {Object} param validator {Function} 数据校验钩子 返回 true 表示验证通过
@@ -34,7 +34,7 @@ export default {
     /**
      * @description 将数据存储到指定位置 | 路径不存在会自动初始化
      * @description 效果类似于取值 dbName.path = value
-     * @param {Object} param dbName {String} 持久化存储名称
+     * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param value {*} 需要存储的值
      * @param {Object} param user {Boolean} 是否区分用户
@@ -54,7 +54,7 @@ export default {
     /**
      * @description 获取数据
      * @description 效果类似于取值 dbName.path || defaultValue
-     * @param {Object} param dbName {String} 持久化存储名称
+     * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param defaultValue {*} 取值失败的默认值
      * @param {Object} param user {Boolean} 是否区分用户
@@ -75,7 +75,7 @@ export default {
       })
     },
     /**
-     * @description 获取存储持久化存储对象
+     * @description 获取存储数据库对象
      * @param {Object} context context
      * @param {Object} param user {Boolean} 是否区分用户
      */
@@ -92,7 +92,7 @@ export default {
       })
     },
     /**
-     * @description 清空存储持久化存储对象
+     * @description 清空存储数据库对象
      * @param {Object} context context
      * @param {Object} param user {Boolean} 是否区分用户
      */
@@ -110,7 +110,7 @@ export default {
       })
     },
     /**
-     * @description 获取存储持久化存储对象 [ 区分页面 ]
+     * @description 获取存储数据库对象 [ 区分页面 ]
      * @param {Object} context context
      * @param {Object} param vm {Object} vue
      * @param {Object} param basis {String} 页面区分依据 [ name | path | fullPath ]
@@ -131,7 +131,7 @@ export default {
       })
     },
     /**
-     * @description 清空存储持久化存储对象 [ 区分页面 ]
+     * @description 清空存储数据库对象 [ 区分页面 ]
      * @param {Object} context context
      * @param {Object} param vm {Object} vue
      * @param {Object} param basis {String} 页面区分依据 [ name | path | fullPath ]

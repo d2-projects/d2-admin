@@ -38,7 +38,7 @@ export default {
       })
     },
     /**
-     * @description 从持久化存储加载主题设置
+     * @description 从持久化数据加载主题设置
      * @param {Object} state vuex state
      */
     async load (state) {

@@ -78,7 +78,7 @@ export default {
     }
   },
   methods: {
-    handleCustomEvent ({index, row}) {
+    handleCustomEvent ({ index, row }) {
       console.log(index)
       console.log(row)
     }

@@ -36,15 +36,16 @@ export default {
      */
     init (state, menu) {
       const pool = []
-      const push = function (menu, titlePrefix = []) {
+      const push = function (menu, titlePrefix = [], pathPrefix = []) {
         menu.forEach(m => {
           if (m.children) {
-            push(m.children, [ ...titlePrefix, m.title ])
+            push(m.children, [ ...titlePrefix, m.meta.title ], [ ...pathPrefix, m.path ])
           } else {
-            pool.push({
-              ...m,
-              fullTitle: [ ...titlePrefix, m.title ].join(' / ')
-            })
+            if (!(/^https:\/\/|http:\/\//.test(m.path)) && m.path !== undefined) {
+              m.path = '/' + [ ...pathPrefix, m.path ].join('/')
+            }
+            m.meta.fullTitle = [ ...titlePrefix, m.meta.title ].join(' / ')
+            pool.push(m)
           }
         })
       }

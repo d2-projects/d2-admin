@@ -2,17 +2,17 @@
   <div class="d2-panel-search-item" :class="hoverMode ? 'can-hover' : ''" flex>
     <div class="d2-panel-search-item__icon" flex-box="0">
       <div class="d2-panel-search-item__icon-box" flex="main:center cross:center">
-        <d2-icon v-if="item.icon" :name="item.icon"/>
-        <d2-icon-svg v-else-if="item.iconSvg" :name="item.iconSvg"/>
+        <d2-icon v-if="item.meta.icon" :name="item.meta.icon"/>
+        <d2-icon-svg v-else-if="item.meta.iconSvg" :name="item.meta.iconSvg"/>
         <d2-icon v-else name="file-o"/>
       </div>
     </div>
     <div class="d2-panel-search-item__info" flex-box="1" flex="dir:top">
       <div class="d2-panel-search-item__info-title" flex-box="1" flex="cross:center">
-        <span>{{item.title}}</span>
+        <span>{{item.meta.title}}</span>
       </div>
       <div class="d2-panel-search-item__info-fullTitle" flex-box="0">
-        <span>{{item.fullTitle}}</span>
+        <span>{{item.meta.fullTitle}}</span>
       </div>
       <div class="d2-panel-search-item__info-path" flex-box="0">
         <span>{{item.path}}</span>

@@ -15,14 +15,17 @@ export default {
       return new Promise((resolve, reject) => {
         GetUserInfo(util.cookies.get('token'))
           .then(res => {
+            const { info, menu, permission } = res
             // 设置用户信息
-            state.info = res.info
+            state.info = info
             // 设置用户权限
-            state.permission = res.permission
+            state.permission = permission
             // 初始化菜单
-            commit('d2admin/menu/init', res.menu, { root: true })
+            commit('d2admin/menu/headerSet', menu, { root: true })
             // 初始化菜单搜索功能
-            commit('d2admin/search/init', res.menu, { root: true })
+            commit('d2admin/search/init', menu, { root: true })
+            // 根据菜单初始化路由
+            commit('d2admin/router/GenerateRoutes', menu, { root: true })
             // 用户登录后从持久化存储加载一系列的设置
             commit('d2admin/account/load', null, { root: true })
             resolve()
@@ -50,7 +53,7 @@ export default {
       })
     },
     /**
-     * @description 从持久化存储取用户数据
+     * @description 从数据库取用户数据
      * @param {Object} state vuex state
      */
     async load (state) {

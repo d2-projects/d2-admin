@@ -1,16 +1,33 @@
 export default {
-  path: '/demo/business',
-  title: '示例',
-  icon: 'flask',
-  aside: true,
-  children: (pre => [
-    { path: `${pre}index`, title: '示例首页', icon: 'home' },
-    {
-      title: '表格',
-      icon: 'table',
-      children: [
-        { path: `${pre}table/1`, title: '表格 1' }
-      ]
+  path: 'demo/business',
+  name: 'demo-business',
+  meta: {
+    title: '示例',
+    icon: 'flask',
+    aside: true
+  },
+  children: (pre => [{
+    path: 'index',
+    name: `${pre}index`,
+    meta: {
+      title: '示例首页',
+      icon: 'home'
     }
-  ])('/demo/business/')
+  },
+  {
+    path: 'table',
+    name: `${pre}table`,
+    meta: {
+      title: '表格',
+      icon: 'table'
+    },
+    children: [{
+      path: '1',
+      name: `${pre}table-1`,
+      meta: {
+        title: '表格 1'
+      }
+    }]
+  }
+  ])('demo-business-')
 }

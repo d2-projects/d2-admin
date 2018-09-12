@@ -58,8 +58,18 @@ export default {
     // 监听路由 控制侧边栏激活状态
     '$route.matched': {
       handler (val) {
-        this.active = val[val.length - 1].path
-        const _side = this.menuAside.filter(menu => menu.path === val[0].path)
+        this.active = val[val.length - 1].name
+        let _side = []
+        try {
+          val.forEach(router => {
+            _side = this.menuAside.filter(menu => menu.name === router.name)
+            if (_side.length > 0) {
+              throw new Error('找到侧栏，跳出循环')
+            }
+          })
+        } catch (err) {
+          console.log(err.message)
+        }
         this.asideSet(_side.length > 0 ? _side[0].children : [])
         this.$nextTick(() => {
           if (this.aside.length > 0) {

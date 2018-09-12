@@ -9,7 +9,7 @@ export default {
         util.open(index)
       } else {
         this.$router.push({
-          path: index
+          name: index
         })
       }
     }

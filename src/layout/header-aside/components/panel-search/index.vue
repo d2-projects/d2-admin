@@ -36,7 +36,7 @@
             :key="index"
             :item="item"
             :hover-mode="true"
-            @click.native="handleResultsGroupItemClick(item.path)"/>
+            @click.native="handleResultsGroupItemClick(item)"/>
         </div>
       </el-card>
     </div>
@@ -68,7 +68,7 @@ export default {
     // 这份数据是展示在搜索面板下面的
     resultsList () {
       return (this.results.length === 0 && this.searchText === '') ? this.pool.map(e => ({
-        value: e.fullTitle,
+        value: e.meta.fullTitle,
         ...e
       })) : this.results
     }
@@ -98,13 +98,13 @@ export default {
         maxPatternLength: 32,
         minMatchCharLength: 1,
         keys: [
-          'fullTitle',
+          'meta.fullTitle',
           'path'
         ]
       })
         .search(queryString)
         .map(e => ({
-          value: e.fullTitle,
+          value: e.meta.fullTitle,
           ...e
         }))
     },
@@ -123,28 +123,37 @@ export default {
     /**
      * @description 接收用户在列表中选择项目的事件
      */
-    handleResultsGroupItemClick (path) {
+    handleResultsGroupItemClick ({ path, name }) {
       // 如果用户选择的就是当前页面 就直接关闭搜索面板
       if (path === this.$route.path) {
         this.handleEsc()
         return
       }
+      const index = this.handleMenuIndex({ path, name })
       // 用户选择的是其它页面
-      this.handleMenuSelect(path)
+      this.handleMenuSelect(index)
     },
     /**
      * @description 接收用户在下拉菜单中选中事件
      */
-    handleSelect ({ path }) {
+    handleSelect ({ path, name }) {
       // 如果用户选择的就是当前页面 就直接关闭搜索面板
       if (path === this.$route.path) {
         this.handleEsc()
         return
       }
+      const index = this.handleMenuIndex({ path, name })
       // 用户选择的是其它页面
       this.$nextTick(() => {
-        this.handleMenuSelect(path)
+        this.handleMenuSelect(index)
       })
+    },
+    handleMenuIndex ({ path, name }) {
+      if (!(/^https:\/\/|http:\/\//.test(path)) && path !== undefined) {
+        return name
+      } else {
+        return path
+      }
     },
     /**
      * @augments 关闭输入框的下拉菜单

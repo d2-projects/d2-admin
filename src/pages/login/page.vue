@@ -9,7 +9,7 @@
       <!-- 表单部分 -->
       <div class="form-group">
         <el-card>
-          <el-form ref="loginForm" label-position="top" :rules="rules" :model="formLogin">
+          <el-form ref="loginForm" label-position="top" :rules="rules" :model="formLogin" size="default">
             <el-form-item  prop="username">
               <el-input type="text" v-model="formLogin.username" placeholder="用户名">
                 <i slot="prepend" class="fa fa-user-circle-o"></i>
@@ -28,12 +28,12 @@
                 </template>
               </el-input>
             </el-form-item>
-            <el-button @click="submit" type="primary" class="button-login">登录</el-button>
+            <el-button size="default" @click="submit" type="primary" class="button-login">登录</el-button>
           </el-form>
         </el-card>
       </div>
       <!-- 快速登录按钮 -->
-      <el-button type="info" class="button-help" @click="dialogVisible = true">
+      <el-button size="default" type="info" class="button-help" @click="dialogVisible = true">
         快速选择用户（测试功能）
       </el-button>
     </div>

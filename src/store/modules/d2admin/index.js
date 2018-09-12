@@ -2,6 +2,7 @@ import db from './modules/db'
 import releases from './modules/releases'
 import user from './modules/user'
 import menu from './modules/menu'
+import router from './modules/router'
 import theme from './modules/theme'
 import log from './modules/log'
 import account from './modules/account'
@@ -11,6 +12,7 @@ import gray from './modules/gray'
 import page from './modules/page'
 import transition from './modules/transition'
 import search from './modules/search'
+import size from './modules/size'
 
 export default {
   namespaced: true,
@@ -19,6 +21,7 @@ export default {
     releases,
     user,
     menu,
+    router,
     theme,
     log,
     account,
@@ -27,6 +30,7 @@ export default {
     gray,
     page,
     transition,
-    search
+    search,
+    size
   }
 }

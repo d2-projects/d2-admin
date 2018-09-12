@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     handlerSizeChange (size) {
-      util.cookies.set('size', size, { expires: 365 })
+      util.cookies.set('size', size)
     }
   }
 }

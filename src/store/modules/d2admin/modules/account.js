@@ -39,7 +39,7 @@ export default {
           // commit('d2admin/user/set', {
           //   name: res.name
           // }, { root: true })
-          // 用户登录后从持久化存储加载一系列的设置
+          // 用户登录后从持久化数据加载一系列的设置
           commit('load')
           // 更新路由 尝试去获取 cookie 里保存的需要重定向的页面完整地址
           const path = util.cookies.get('redirect')
@@ -68,9 +68,8 @@ export default {
         // 删除cookie
         util.cookies.remove('token')
         util.cookies.remove('uuid')
-        commit('d2admin/menu/init', [], { root: true })
         // 跳转路由
-        vm.$router.push({
+        vm.$router.replace({
           name: 'login'
         })
       }
@@ -97,7 +96,7 @@ export default {
   },
   mutations: {
     /**
-     * @description 用户登录后从持久化存储加载一系列的设置
+     * @description 用户登录后从持久化数据加载一系列的设置
      * @param {Object} state vuex state
      */
     load (state) {
@@ -107,10 +106,12 @@ export default {
       this.commit('d2admin/theme/load')
       // DB -> store 加载页面过渡效果设置
       this.commit('d2admin/transition/load')
-      // DB -> store 持久化存储加载上次退出时的多页列表
+      // DB -> store 持久化数据加载上次退出时的多页列表
       this.commit('d2admin/page/openedLoad')
-      // DB -> store 持久化存储加载这个用户之前设置的侧边栏折叠状态
+      // DB -> store 持久化数据加载侧边栏折叠状态
       this.commit('d2admin/menu/asideCollapseLoad')
+      // DB -> store 持久化数据加载全局尺寸
+      this.commit('d2admin/size/load')
     }
   }
 }

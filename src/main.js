@@ -30,7 +30,6 @@ import SplitPane from 'vue-splitpane'
 
 // 路由设置
 import router from './router'
-import { frameInRoutes } from '@/router/routes'
 
 // 核心插件
 Vue.use(d2Admin)
@@ -52,10 +51,6 @@ new Vue({
   store,
   i18n,
   render: h => h(App),
-  created () {
-    // 处理路由 得到每一级的路由设置
-    this.$store.commit('d2admin/page/init', frameInRoutes)
-  },
   mounted () {
     // 展示系统信息
     this.$store.commit('d2admin/releases/versionShow')

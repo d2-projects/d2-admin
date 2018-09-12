@@ -25,7 +25,7 @@ export default {
   title: '带状态表格',
   index: 4,
   methods: {
-    tableRowClassName ({row, rowIndex}) {
+    tableRowClassName ({ row, rowIndex }) {
       if (rowIndex === 1) {
         return 'warning-row'
       } else if (rowIndex === 3) {

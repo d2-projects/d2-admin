@@ -13,14 +13,13 @@ const setting = {
   menu: {
     asideCollapse: false
   },
-  // 在读取持久化存储失败时默认页面
+  // 在读取持久化数据失败时默认页面
   page: {
     opened: [
       {
         name: 'index',
         meta: {
-          title: '首页',
-          requiresAuth: false
+          title: '首页'
         }
       }
     ]
@@ -70,7 +69,7 @@ const setting = {
   transition: {
     active: true
   },
-  // 在读取持久化存储失败时默认用户信息
+  // 在读取持久化数据失败时默认用户信息
   user: {
     info: {
       name: 'Ghost'
