@@ -60,7 +60,6 @@ export default {
       title: '全局状态管理',
       icon: 'bolt',
       children: [
-        { path: `${pre}store/sys`, title: '系统状态', icon: 'microchip' },
         { path: `${pre}store/menu`, title: '菜单控制', icon: 'bars' },
         { path: `${pre}store/ua`, title: '浏览器信息', icon: 'info-circle' },
         { path: `${pre}store/gray`, title: '灰度模式', icon: 'eye' },
