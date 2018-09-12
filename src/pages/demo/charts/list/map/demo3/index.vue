@@ -1,10 +1,9 @@
 <template>
   <d2-container>
     <template slot="header">设置样式</template>
-    <!-- <div class="inner">
+    <div class="inner">
       <ve-map :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-map>
-    </div> -->
-    <!-- 大概由于 mock.js 和 v-charts 的网络请求冲突，本示例暂时无法展示 -->
+    </div>
     <template slot="footer">
       <d2-link-btn title="更多示例和文档" link="https://v-charts.js.org"/>
     </template>
@@ -13,22 +12,24 @@
 
 <script>
 import list from '@/pages/demo/charts/list/_mixin/list.js'
+import mapOrigin from '@/pages/demo/charts/list/_data/china'
 export default {
   mixins: [
     list
   ],
   data () {
-    this.chartSettings = {
-      position: 'china',
-      label: false,
-      itemStyle: {
-        normal: {
-          borderColor: '#00f'
-        }
-      },
-      zoom: 1.2
-    }
     return {
+      chartSettings: {
+        position: 'china',
+        mapOrigin,
+        label: false,
+        itemStyle: {
+          normal: {
+            borderColor: '#00f'
+          }
+        },
+        zoom: 1.2
+      },
       chartData: {
         columns: ['位置', '人口'],
         rows: [
