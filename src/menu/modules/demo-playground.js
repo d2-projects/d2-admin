@@ -61,6 +61,7 @@ export default {
       icon: 'bolt',
       children: [
         { path: `${pre}store/menu`, title: '菜单控制', icon: 'bars' },
+        { path: `${pre}store/size`, title: '全局尺寸', icon: 'font' },
         { path: `${pre}store/ua`, title: '浏览器信息', icon: 'info-circle' },
         { path: `${pre}store/gray`, title: '灰度模式', icon: 'eye' },
         { path: `${pre}store/fullscreen`, title: '全屏', icon: 'arrows-alt' },
