@@ -25,7 +25,6 @@ export default {
       defaultValue: '',
       user: true
     })
-    console.log('size: ', size)
     // Element
     Vue.use(ElementUI, {
       size
