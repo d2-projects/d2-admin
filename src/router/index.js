@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+// 进度条
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 import store from '@/store/index'
 
 import util from '@/libs/util.js'
@@ -20,6 +24,8 @@ const router = new VueRouter({
  * 权限验证
  */
 router.beforeEach((to, from, next) => {
+  // 进度条
+  NProgress.start()
   // 关闭搜索面板
   store.commit('d2admin/search/set', false)
   // 验证当前路由所有的匹配中是否需要有登录验证的
@@ -45,6 +51,8 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach(to => {
+  // 进度条
+  NProgress.done()
   // 需要的信息
   const app = router.app
   const { name, params, query } = to
