@@ -6,7 +6,9 @@ function resolve (dir) {
 }
 
 // 基础路径 注意发布之前要先修改这里
-const baseUrl = '/d2-admin/'
+let baseUrl = '/'
+// 演示项目自动构建使用
+if (process.env.NODE_ENV === 'travis') baseUrl = '/d2-admin/'
 
 module.exports = {
   baseUrl: baseUrl, // 根据你的实际情况更改这里
