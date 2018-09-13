@@ -11,7 +11,7 @@
       <div
         class="d2-theme-header"
         :style="{
-          opacity: this.searchActive ? 0.3 : 1
+          opacity: this.searchActive ? 0.5 : 1
         }"
         flex-box="0">
         <div class="logo-group" :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}">
@@ -42,7 +42,7 @@
           class="d2-theme-container-aside"
           :style="{
             width: asideCollapse ? asideWidthCollapse : asideWidth,
-            opacity: this.searchActive ? 0.3 : 1
+            opacity: this.searchActive ? 0.5 : 1
           }">
           <d2-menu-side/>
         </div>
