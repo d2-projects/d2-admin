@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'd2-header-size',
   computed: {
@@ -38,7 +38,7 @@ export default {
           // 设置 element 全局尺寸
           this.$ELEMENT.size = val
           // 清空缓存设置
-          this.keepAliveClean()
+          this.pageKeepAliveClean()
           // 刷新此页面
           const { path, query } = this.$route
           this.$router.replace({
@@ -50,14 +50,12 @@ export default {
     }
   },
   methods: {
-    ...mapMutations('d2admin/page', [
-      'keepAliveClean'
-    ]),
-    ...mapActions('d2admin/size', [
-      'set'
-    ]),
+    ...mapActions({
+      pageKeepAliveClean: 'd2admin/page/keepAliveClean',
+      sizeSet: 'd2admin/size/set'
+    }),
     handleChange (value) {
-      this.set(value)
+      this.sizeSet(value)
     },
     iconName (name) {
       return name === this.value ? 'dot-circle-o' : 'circle-o'
