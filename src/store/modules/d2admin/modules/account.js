@@ -104,7 +104,7 @@ export default {
         // DB -> store 持久化数据加载上次退出时的多页列表
         commit('d2admin/page/openedLoad', null, { root: true })
         // DB -> store 持久化数据加载侧边栏折叠状态
-        commit('d2admin/menu/asideCollapseLoad', null, { root: true })
+        await dispatch('d2admin/menu/asideCollapseLoad', null, { root: true })
         // DB -> store 持久化数据加载全局尺寸
         commit('d2admin/size/load', null, { root: true })
         // end
