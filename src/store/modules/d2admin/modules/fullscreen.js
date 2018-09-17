@@ -14,7 +14,7 @@ export default {
       if (screenfull.enabled) {
         screenfull.on('change', () => {
           if (!screenfull.isFullscreen) {
-            this.commit('d2admin/fullscreen/set', false)
+            this.commit('set', false)
           }
         })
       }
@@ -25,10 +25,10 @@ export default {
     toggle () {
       if (screenfull.isFullscreen) {
         screenfull.exit()
-        this.commit('d2admin/fullscreen/set', false)
+        this.commit('set', false)
       } else {
         screenfull.request()
-        this.commit('d2admin/fullscreen/set', true)
+        this.commit('set', true)
       }
     },
     /**
