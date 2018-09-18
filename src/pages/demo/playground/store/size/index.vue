@@ -1,6 +1,6 @@
 <template>
   <d2-container type="card">
-    <el-radio-group v-model="currentValue" @change="sizeSet">
+    <el-radio-group v-model="currentValue" @change="set">
       <el-radio-button label="default"></el-radio-button>
       <el-radio-button label="medium"></el-radio-button>
       <el-radio-button label="small"></el-radio-button>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -31,9 +31,9 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({
-      sizeSet: 'd2admin/size/set'
-    })
+    ...mapActions('d2admin/size', [
+      'set'
+    ])
   }
 }
 </script>

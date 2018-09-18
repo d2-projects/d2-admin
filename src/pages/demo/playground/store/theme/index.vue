@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -48,7 +48,7 @@ export default {
     ])
   },
   methods: {
-    ...mapMutations('d2admin/theme', [
+    ...mapActions('d2admin/theme', [
       'set'
     ]),
     handleSelectTheme (name) {
