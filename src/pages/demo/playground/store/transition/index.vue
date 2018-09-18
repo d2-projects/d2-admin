@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   computed: {
     ...mapState('d2admin/transition', [
@@ -18,7 +18,7 @@ export default {
     ])
   },
   methods: {
-    ...mapMutations('d2admin/transition', [
+    ...mapActions('d2admin/transition', [
       'set'
     ])
   }

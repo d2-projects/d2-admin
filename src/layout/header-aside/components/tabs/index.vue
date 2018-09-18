@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   components: {
     D2Contextmenu: () => import('../contextmenu'),
@@ -89,7 +89,7 @@ export default {
     ])
   },
   methods: {
-    ...mapMutations('d2admin/page', [
+    ...mapActions('d2admin/page', [
       'close',
       'closeLeft',
       'closeRight',
@@ -101,7 +101,6 @@ export default {
      */
     handleContextmenu (event) {
       let target = event.target
-
       // 解决 https://github.com/d2-projects/d2-admin/issues/54
       let flag = false
       if (target.className.indexOf('el-tabs__item') > -1) flag = true
@@ -109,7 +108,6 @@ export default {
         target = target.parentNode
         flag = true
       }
-
       if (flag) {
         event.preventDefault()
         event.stopPropagation()
