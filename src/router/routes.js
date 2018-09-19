@@ -95,7 +95,10 @@ const frameIn = [
       { path: 'demo23', name: `${pre}demo23`, component: () => import('@/pages/demo/d2-crud/demo23'), meta: { ...meta, title: '表格内编辑' } },
       { path: 'demo24', name: `${pre}demo24`, component: () => import('@/pages/demo/d2-crud/demo24'), meta: { ...meta, title: '表格slot' } },
       { path: 'demo25', name: `${pre}demo25`, component: () => import('@/pages/demo/d2-crud/demo25'), meta: { ...meta, title: '表格自定义组件' } },
-      { path: 'demo26', name: `${pre}demo26`, component: () => import('@/pages/demo/d2-crud/demo26'), meta: { ...meta, title: '表单自定义组件' } }
+      { path: 'demo26', name: `${pre}demo26`, component: () => import('@/pages/demo/d2-crud/demo26'), meta: { ...meta, title: '表单自定义组件' } },
+      { path: 'demo27', name: `${pre}demo27`, component: () => import('@/pages/demo/d2-crud/demo27'), meta: { ...meta, title: '加载状态' } },
+      { path: 'demo28', name: `${pre}demo28`, component: () => import('@/pages/demo/d2-crud/demo28'), meta: { ...meta, title: '自定义加载状态' } },
+      { path: 'demo29', name: `${pre}demo29`, component: () => import('@/pages/demo/d2-crud/demo29'), meta: { ...meta, title: '分页' } }
     ])('demo-d2-crud-')
   },
   {

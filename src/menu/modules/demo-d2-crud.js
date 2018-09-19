@@ -8,6 +8,8 @@ export default {
       title: '基础功能',
       children: [
         { path: `${pre}demo1`, title: '基础表格' },
+        { path: `${pre}demo27`, title: '加载状态' },
+        { path: `${pre}demo28`, title: '自定义加载状态' },
         { path: `${pre}demo2`, title: '带斑马纹表格' },
         { path: `${pre}demo3`, title: '带边框表格' },
         { path: `${pre}demo4`, title: '带状态表格' },
@@ -28,6 +30,7 @@ export default {
     {
       title: '数据操作',
       children: [
+        { path: `${pre}demo29`, title: '分页' },
         { path: `${pre}demo16`, title: '新增数据' },
         { path: `${pre}demo17`, title: '修改数据' },
         { path: `${pre}demo18`, title: '删除数据' },
