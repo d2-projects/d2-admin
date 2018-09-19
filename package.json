@@ -1,6 +1,6 @@
 {
   "name": "d2-admin",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
@@ -12,7 +12,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@d2-projects/d2-crud": "^1.1.0",
+    "@d2-projects/d2-crud": "^1.2.0",
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
     "better-scroll": "^1.12.1",

@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
 export default {
   methods: {
-    ...mapMutations('d2admin/fullscreen', [
+    ...mapActions('d2admin/fullscreen', [
       'toggle'
     ])
   }

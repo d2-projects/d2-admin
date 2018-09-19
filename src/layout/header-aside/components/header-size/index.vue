@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 export default {
   name: 'd2-header-size',
   computed: {
@@ -51,8 +51,10 @@ export default {
   },
   methods: {
     ...mapMutations({
-      sizeSet: 'd2admin/size/set',
       pageKeepAliveClean: 'd2admin/page/keepAliveClean'
+    }),
+    ...mapActions({
+      sizeSet: 'd2admin/size/set'
     }),
     handleChange (value) {
       this.sizeSet(value)
