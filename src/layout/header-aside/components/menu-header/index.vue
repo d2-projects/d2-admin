@@ -1,7 +1,7 @@
 <template>
-  <div class="d2admin_menu_header-page" ref="page" :class="{'is-scrollable': isScroll}" flex="cross:center">
-    <div class="d2admin_menu_header-content" ref="content" flex-box="1" flex>
-      <div class="d2admin_menu_header-scroll" ref="scroll" flex-box="0" :style="'transform: translateX(' + currentTranslateX + 'px);'">
+  <div class="d2-theme-header-menu" ref="page" :class="{'is-scrollable': isScroll}" flex="cross:center">
+    <div class="d2-theme-header-menu__content" ref="content" flex-box="1" flex>
+      <div class="d2-theme-header-menu__scroll" ref="scroll" flex-box="0" :style="'transform: translateX(' + currentTranslateX + 'px);'">
         <el-menu mode="horizontal" :default-active="active" @select="handleMenuSelect">
           <template v-for="(menu, menuIndex) in header">
             <d2-layout-header-aside-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
@@ -10,10 +10,10 @@
         </el-menu>
       </div>
     </div>
-    <div v-if="isScroll" class="d2admin_menu_header-prev" flex-box="0" @click="scroll('left')" flex="main:center cross:center">
+    <div v-if="isScroll" class="d2-theme-header-menu__prev" flex-box="0" @click="scroll('left')" flex="main:center cross:center">
       <i class="el-icon-arrow-left"></i>
     </div>
-    <div v-if="isScroll" class="d2admin_menu_header-next" flex-box="0" @click="scroll('right')" flex="cross:center">
+    <div v-if="isScroll" class="d2-theme-header-menu__next" flex-box="0" @click="scroll('right')" flex="cross:center">
       <i class="el-icon-arrow-right"></i>
     </div>
   </div>
@@ -116,47 +116,3 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-  $prefix: "d2admin_menu_header";
-  .#{$prefix}-page {
-    overflow: hidden;
-    &.is-scrollable {
-      position: relative;
-      padding: 0 20px;
-      .#{$prefix}-prev, .#{$prefix}-next {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-      }
-    }
-    .#{$prefix}-content {
-      overflow: hidden;
-      .#{$prefix}-scroll {
-        white-space: nowrap;
-        position: relative;
-        -webkit-transition: -webkit-transform .3s;
-        transition: -webkit-transform .3s;
-        transition: transform .3s;
-        transition: transform .3s, -webkit-transform .3s;
-        transition: transform .3s,-webkit-transform .3s;
-        float: left;
-      }
-    }
-    .#{$prefix}-prev, .#{$prefix}-next {
-      height: 60px;
-      position: absolute;
-      top: 0;
-      font-size: 20px;
-      color: #cfd7e5;
-      cursor: pointer;
-      background: white;
-      display: none;
-    }
-    .#{$prefix}-prev {
-      left: 0;
-    }
-    .#{$prefix}-next {
-      right: 0;
-    }
-  }
-</style>
