@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { throttle } from 'lodash'
 import { mapState } from 'vuex'
 import menuMixin from '../mixin/menu'
 import d2LayoutMainMenuItem from '../components/menu-item/index.vue'
@@ -44,7 +45,8 @@ export default {
       isScroll: false,
       scrollWidth: 0,
       contentWidth: 0,
-      currentTranslateX: 0
+      currentTranslateX: 0,
+      throttledCheckScroll: null
     }
   },
   watch: {
@@ -68,10 +70,8 @@ export default {
           this.currentTranslateX = this.contentWidth - this.scrollWidth
         }
       }
-    }
-  },
-  mounted () {
-    const checkScroll = () => {
+    },
+    checkScroll () {
       let contentWidth = this.$refs.content.clientWidth
       let scrollWidth = this.$refs.scroll.clientWidth
       if (this.isScroll) {
@@ -105,14 +105,18 @@ export default {
         })
       }
     }
+  },
+  mounted () {
     // 初始化判断
-    checkScroll()
-
     // 默认判断父元素和子元素的大小，以确定初始情况是否显示滚动
+    this.checkScroll()
     // 全局窗口变化监听，判断父元素和子元素的大小，从而控制isScroll的开关
-    window.onresize = () => {
-      checkScroll()
-    }
+    this.throttledCheckScroll = throttle(this.checkScroll, 300)
+    window.addEventListener('resize', this.throttledCheckScroll)
+  },
+  beforeDestroy () {
+    // 取消监听
+    window.removeEventListener('resize', this.throttledCheckScroll)
   }
 }
 </script>
