@@ -87,12 +87,12 @@ export default {
         // 更新元素数据
         this.contentWidth = contentWidth
         this.scrollWidth = scrollWidth
-        // 判断何时滚动消失: 当page > content + btns(40)
-        if (contentWidth > scrollWidth + 40) {
+        // 判断何时滚动消失: 当scroll > content
+        if (contentWidth > scrollWidth) {
           this.isScroll = false
         }
       }
-      // 判断何时滚动出现: 当page < content
+      // 判断何时滚动出现: 当scroll < content
       if (!this.isScroll && contentWidth < scrollWidth) {
         this.isScroll = true
         // 注意，当isScroll变为true，对应的元素盒子大小会发生变化
