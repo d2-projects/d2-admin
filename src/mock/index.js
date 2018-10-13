@@ -1,9 +1,9 @@
 import Mock from 'mockjs'
 
 // 补丁 解决 mock.js 影响 Cookie 携带
-import MockCookie from './plugin/mock-cookie'
+import PatchCookie from './patch/cookie'
 
-MockCookie(Mock)
+PatchCookie(Mock)
 
 // 导入所有的接口
 const req = context => context.keys().map(context)
