@@ -36,7 +36,9 @@ export default {
           const paramsDefault = {
             columns: [],
             data: [],
-            title: 'table'
+            title: 'table',
+            header: null,
+            merges: []
           }
           // 合并参数
           const _params = Object.assign({}, paramsDefault, params)
@@ -44,7 +46,7 @@ export default {
           const header = _params.columns.map(e => e.label)
           const data = _params.data.map(row => _params.columns.map(col => row[col.prop]))
           // 导出
-          Excel.export_json_to_excel(header, data, _params.title)
+          Excel.export_json_to_excel(header, data, _params.title, { merges: _params.merges, header: _params.header })
           // 完成
           resolve()
         })
