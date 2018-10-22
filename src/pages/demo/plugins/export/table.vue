@@ -50,7 +50,9 @@ export default {
     exportExcel () {
       this.$export.excel({
         columns: this.table.columns,
-        data: this.table.data
+        data: this.table.data,
+        header: '导出 Excel',
+        merges: ['A1', 'E1']
       })
         .then(() => {
           this.$message('导出表格成功')
