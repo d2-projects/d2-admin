@@ -15,4 +15,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
-dist_electron
