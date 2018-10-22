@@ -124,16 +124,22 @@ export function export_table_to_excel(id) {
 function formatJson(jsonData) {
     console.log(jsonData)
 }
-export function export_json_to_excel(th, jsonData, defaultTitle) {
+export function export_json_to_excel(th, jsonData, defaultTitle, options = { merges: [], header: null }) {
 
     /* original data */
 
     var data = jsonData;
     data.unshift(th);
+    if (options.header) data.unshift([options.header]);
     var ws_name = "SheetJS";
 
     var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
 
+    /* add merges area to worksheet */
+    let { merges } = options;
+    if (typeof merges[0] == 'string' && merges.length == 2) merges = [merges] // just one # ['A1', 'C1'] = > [['A1', 'C1']]
+    merges = merges.map(i => i instanceof Array ? { s: i[0], e: i[1] } : i); // be sort :) # ['A1', 'C1'] => { s: 'A1', e: 'C3' }
+    ws['!merges'] = merges;
 
     /* add worksheet to workbook */
     wb.SheetNames.push(ws_name);
