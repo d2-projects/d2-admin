@@ -1,5 +1,6 @@
 language: node_js
 node_js: stable
+
 cache:
   directories:
     - "node_modules"
@@ -11,11 +12,11 @@ branches:
 script:
   - npm run build:travis
 
-deploy:
-  provider: pages
-  local-dir: dist
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  keep-history: true
-  on:
-    branch: master
+before_install:
+  - ./qshell account $AK $SK
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
+
+after_success:
+  - ./qshell qupload qiniu-config
+  - ./qshell cdnrefresh -dirs cdnrefresh-dirs.txt
