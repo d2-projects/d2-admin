@@ -25,7 +25,7 @@
 
 ## 预览
 
-[预览地址](https://d2-projects.github.io/d2-admin/)
+[预览地址](https://d2admin.fairyever.com)
 
 > 预览部署在 Github Page ，如果您访问时由于网络原因卡在载入界面或者白屏，请克隆或者下载本仓库在本地运行查看效果。
 
@@ -101,7 +101,7 @@
 
 | 名称 | Github / 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
-| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://d2-projects.github.io/d2-admin/#/demo/d2-crud/index) | 表格常用操作封装 |
+| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://d2admin.fairyever.com/#/demo/d2-crud/index) | 表格常用操作封装 |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
 
 ## 后端实现
