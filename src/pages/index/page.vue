@@ -7,7 +7,7 @@
       <template slot="footer">
         <div class="page__btn-group">
           <span @click="$open('https://github.com/d2-projects')">开源组织</span> |
-          <span @click="$open('https://d2-projects.github.io/d2-admin-doc/zh/')">文档</span> |
+          <span @click="$open('https://doc.d2admin.fairyever.com/zh/')">文档</span> |
           <span @click="$open('https://github.com/d2-projects/d2-admin-start-kit')">简化版</span> |
           <span @click="$open('https://alibaba.github.io/ice/scaffold?type=vue')">飞冰</span> |
           <span @click="$open('https://juejin.im/user/57a48b632e958a006691b946/posts')">掘金</span> |
