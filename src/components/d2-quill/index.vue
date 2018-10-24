@@ -19,6 +19,7 @@ export default {
   data () {
     return {
       Quill: undefined,
+      currentValue: '',
       options: {
         theme: 'snow',
         bounds: document.body,
@@ -45,23 +46,44 @@ export default {
       }
     }
   },
+  watch: {
+    value: {
+      handler (val) {
+        // 确认是新的值
+        if (val !== this.currentValue) {
+          this.currentValue = val
+          // 尝试更新
+          if (this.Quill) {
+            this.Quill.pasteHTML(this.value)
+          }
+        }
+      },
+      immediate: true
+    }
+  },
   mounted () {
     this.init()
   },
   methods: {
     init () {
       const editor = this.$refs.editor
+      // 初始化编辑器
       this.Quill = new Quill(editor, this.options)
       // 默认值
-      this.Quill.pasteHTML(this.value)
+      this.Quill.pasteHTML(this.currentValue)
       // 绑定事件
       this.Quill.on('text-change', (delta, oldDelta, source) => {
         const html = this.$refs.editor.children[0].innerHTML
         const text = this.Quill.getText()
         const quill = this.Quill
+        // 更新内部的值
+        this.currentValue = html
+        // 发出事件 v-model
         this.$emit('input', html)
+        // 发出事件
         this.$emit('change', { html, text, quill })
       })
+      // 将一些 quill 自带的事件传递出去
       this.Quill.on('text-change', (delta, oldDelta, source) => {
         this.$emit('text-change', delta, oldDelta, source)
       })
