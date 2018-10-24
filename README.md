@@ -21,7 +21,7 @@
 
 ## 文档
 
-[中文文档](https://d2-projects.github.io/d2-admin-doc/zh/)
+[中文文档](https://doc.d2admin.fairyever.com/zh/)
 
 ## 预览
 

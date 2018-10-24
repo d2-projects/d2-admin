@@ -14,7 +14,7 @@ export default {
     src: {
       type: String,
       required: false,
-      default: 'https://d2-projects.github.io/d2-admin-doc/zh/'
+      default: 'https://doc.d2admin.fairyever.com/zh/'
     }
   }
 }
