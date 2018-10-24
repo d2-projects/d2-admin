@@ -2,11 +2,16 @@
   <d2-container>
     <template slot="header">基本示例</template>
     <d2-quill
-      style="min-height: 200px;"
+      style="min-height: 200px; margin-bottom: 20px;"
       v-model="value"
       @text-change="textChangeHandler"
       @selection-change="selectionChangeHandler"
       @editor-change="editorChangeHandler"/>
+    <el-button
+      type="primary"
+      @click="handleAddRow">
+      添加一行
+    </el-button>
     <el-card shadow="never" class="d2-card d2-mt">
       <d2-highlight :code="value" format-html/>
     </el-card>
@@ -22,6 +27,9 @@ export default {
     }
   },
   methods: {
+    handleAddRow () {
+      this.value += '<p style="color: #409EFF;">我是新增的行</p>'
+    },
     textChangeHandler (delta, oldDelta, source) {
       // console.group('QuillEditor textChangeHandler')
       // console.log(delta, oldDelta, source)
