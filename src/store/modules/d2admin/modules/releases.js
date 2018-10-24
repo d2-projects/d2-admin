@@ -15,7 +15,7 @@ export default {
     versionShow (state) {
       util.log.capsule('D2Admin', `v${state.version}`)
       console.log('Github https://github.com/d2-projects/d2-admin')
-      console.log('Doc    https://d2-projects.github.io/d2-admin-doc/zh/')
+      console.log('Doc    https://doc.d2admin.fairyever.com/zh/')
       console.log('请不要吝啬您的 star，谢谢 ~')
     }
   }
