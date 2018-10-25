@@ -1,6 +1,6 @@
 import { version } from '../package'
 
-const setting = {
+export default {
   // 快捷键
   // 支持快捷键 例如 ctrl+shift+s
   hotkey: {
@@ -76,5 +76,3 @@ const setting = {
     }
   }
 }
-
-export default setting
