@@ -17,11 +17,11 @@
 	<a><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/></a>
 </p>
 
-[D2Admin](https://github.com/d2-projects/d2-admin) 是一个完全**开源免费**的管理系统前端集成方案，为您做好大部分项目前期准备工作，提供大量示例代码，方便快速进行管理系统开发。
+[D2Admin](https://github.com/d2-projects/d2-admin) 是一个完全 **开源免费** 的企业中后台产品前端集成方案，使用最新的前端技术栈，已经做好大部分项目前期准备工作，并且带有大量示例代码，助力管理系统敏捷开发。
 
 ## 文档
 
-[中文文档](https://doc.d2admin.fairyever.com/zh/)
+[文档](https://doc.d2admin.fairyever.com)
 
 ## 预览
 
@@ -83,12 +83,10 @@
 * 日志记录和错误捕捉 `1.3.0 +`
 * 全局菜单搜索 `1.3.0 +`
 * 自定义登录重定向 `1.3.0 +`
-
-## TODO
-
-* 可以折叠后显示一行输入控件的的表格搜索栏组件
-* 用户管理示例界面（用户管理、权限管理、角色管理等）方便对接后台
-* 更多的错误信息页面以及美化错误页面（404、401...）
+* 切换全局基础组件尺寸 `1.4.0 +`
+* 页面载入进度条 `1.4.1 +`
+* 自适应的顶部菜单栏 `1.4.7 +`
+* 数据导出 xslx 时支持合并单元格 `1.5.4 +`
 
 ## 其它版本
 
@@ -101,10 +99,13 @@
 
 | 名称 | Github / 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
+| D2 日报 | [Github](https://github.com/d2-projects/d2-awesome) | [网站](https://awesome.fairyever.com/daily/) | 每天更新设计与技术圈的新闻和资源 |
 | D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://d2admin.fairyever.com/#/demo/d2-crud/index) | 表格常用操作封装 |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
 
-## 后端实现
+## 开源后端实现
+
+> 后端由开源社区贡献，不保证使用 D2Admin 最新版本，相关使用问题请联系其开源作者。
 
 | 名称 | Github / 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
@@ -134,12 +135,12 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 
 ![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
 
-## 支持
+## License
 
-D2 Projects 相关项目全部完全免费，但是也有相关的费用支出，比如七牛图床、码云付费 page 服务（已经废弃）、服务器和域名（现已全部转至 Github）、QQ 群扩容、群内红包福利等，现已花费数百元。所以如果您喜欢这些项目欢迎小额捐助一下，十分感谢。
+[MIT](https://github.com/d2-projects/d2-admin/blob/master/LICENSE)
 
-![reward-me](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/reward-me@2x.png)
+Copyright (c) 2018-present FairyEver
 
-如果希望您的博客或者网站出现在 [D2 Projects](https://github.com/d2-projects) 项目的 README 以及文档中，请联系作者。
+![](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/give-a-star@2x.png)
 
-![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/give-a-star@2x.png)
+
