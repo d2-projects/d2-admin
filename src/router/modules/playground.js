@@ -10,8 +10,8 @@ export default {
   component: layoutHeaderAside,
   children: (pre => [
     { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/playground/index'), meta: { ...meta, title: '试验台首页' } },
-    { path: 'page-cache/on', name: `${pre}page-cache-on`, component: () => import('@/pages/demo/playground/page-cache/on.vue'), meta: { ...meta, title: '开启缓存' } },
-    { path: 'page-cache/off', name: `${pre}page-cache-off`, component: () => import('@/pages/demo/playground/page-cache/off.vue'), meta: { ...meta, notCache: true, title: '关闭缓存' } },
+    { path: 'page-cache/on', name: `${pre}page-cache-on`, component: () => import('@/pages/demo/playground/page-cache/on.vue'), meta: { ...meta, cache: true, title: '开启缓存' } },
+    { path: 'page-cache/off', name: `${pre}page-cache-off`, component: () => import('@/pages/demo/playground/page-cache/off.vue'), meta: { ...meta, title: '关闭缓存' } },
     { path: 'page-argu/send', name: `${pre}page-argu-send`, component: () => import('@/pages/demo/playground/page-argu/send.vue'), meta: { ...meta, title: '参数传递 发送' } },
     { path: 'page-argu/get/:username', name: `${pre}page-argu-get`, component: () => import('@/pages/demo/playground/page-argu/get.vue'), meta: { ...meta, title: '参数传递 接收' } },
     { path: 'store/menu', name: `${pre}store-menu`, component: () => import('@/pages/demo/playground/store/menu'), meta: { ...meta, title: '菜单控制' } },
