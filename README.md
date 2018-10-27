@@ -27,8 +27,6 @@
 
 [预览地址](https://d2admin.fairyever.com)
 
-> 预览部署在 Github Page ，如果您访问时由于网络原因卡在载入界面或者白屏，请克隆或者下载本仓库在本地运行查看效果。
-
 ## 码云镜像
 
 [码云](https://gitee.com/fairyever/d2-admin)
@@ -142,5 +140,3 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 Copyright (c) 2018-present FairyEver
 
 ![](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/give-a-star@2x.png)
-
-
