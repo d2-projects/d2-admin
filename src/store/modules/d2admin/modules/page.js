@@ -109,7 +109,7 @@ export default {
         // 添加进当前显示的页面数组
         state.opened.push(newTag)
         // 如果这个页面需要缓存 将其添加到缓存设置
-        if (get(newTag, 'meta.requiresAuth', false)) {
+        if (get(newTag, 'meta.cache', false)) {
           commit('keepAlivePush', tag.name)
         }
         // 持久化
