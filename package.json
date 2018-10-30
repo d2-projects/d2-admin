@@ -1,11 +1,11 @@
 {
   "name": "d2-admin",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "start": "vue-cli-service serve --open",
-    "dev": "vue-cli-service serve --open",
+    "start": "npm run serve",
+    "dev": "npm run serve",
     "build": "vue-cli-service build",
     "build:travis": "vue-cli-service build --mode travis",
     "lint": "vue-cli-service lint --fix",
