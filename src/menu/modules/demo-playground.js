@@ -38,6 +38,21 @@ export default {
       ]
     },
     {
+      path: `${pre}store`,
+      title: '全局状态管理',
+      icon: 'bolt',
+      children: [
+        { path: `${pre}store/page`, title: '多标签页控制', icon: 'window-restore' },
+        { path: `${pre}store/menu`, title: '菜单控制', icon: 'bars' },
+        { path: `${pre}store/size`, title: '全局尺寸', icon: 'font' },
+        { path: `${pre}store/ua`, title: '浏览器信息', icon: 'info-circle' },
+        { path: `${pre}store/gray`, title: '灰度模式', icon: 'eye' },
+        { path: `${pre}store/fullscreen`, title: '全屏', icon: 'arrows-alt' },
+        { path: `${pre}store/theme`, title: '主题', icon: 'diamond' },
+        { path: `${pre}store/transition`, title: '页面过渡开关', icon: 'toggle-on' }
+      ]
+    },
+    {
       path: `${pre}page-cache`,
       title: '页面缓存',
       icon: 'hdd-o',
@@ -53,20 +68,6 @@ export default {
       children: [
         { path: `${pre}page-argu/send`, title: '发送' },
         { path: `${pre}page-argu/get/username-from-menu?userid=userid-from-menu`, title: '接收' }
-      ]
-    },
-    {
-      path: `${pre}store`,
-      title: '全局状态管理',
-      icon: 'bolt',
-      children: [
-        { path: `${pre}store/menu`, title: '菜单控制', icon: 'bars' },
-        { path: `${pre}store/size`, title: '全局尺寸', icon: 'font' },
-        { path: `${pre}store/ua`, title: '浏览器信息', icon: 'info-circle' },
-        { path: `${pre}store/gray`, title: '灰度模式', icon: 'eye' },
-        { path: `${pre}store/fullscreen`, title: '全屏', icon: 'arrows-alt' },
-        { path: `${pre}store/theme`, title: '主题', icon: 'diamond' },
-        { path: `${pre}store/transition`, title: '页面过渡开关', icon: 'toggle-on' }
       ]
     },
     {
