@@ -6,3 +6,11 @@
     <el-button type="primary" @click="$router.push({ name: 'demo-playground-page-argu-send' })">返回发送数据的页面</el-button>
   </d2-container>
 </template>
+
+<script>
+export default {
+  mounted () {
+    console.log('this.$route', this.$route)
+  }
+}
+</script>
