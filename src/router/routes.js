@@ -20,11 +20,36 @@ const frameIn = [
     redirect: { name: 'index' },
     component: layoutHeaderAside,
     children: [
+      // 首页 必须 name:index
       {
         path: 'index',
         name: 'index',
         meta,
         component: () => import('@/pages/index')
+      },
+      // 刷新页面 必须保留
+      {
+        path: 'refresh',
+        name: 'refresh',
+        hidden: true,
+        component: {
+          beforeRouteEnter (to, from, next) {
+            next(vm => vm.$router.replace(from.fullPath))
+          },
+          render: h => h()
+        }
+      },
+      // 页面重定向 必须保留
+      {
+        path: 'redirect/:route*',
+        name: 'redirect',
+        hidden: true,
+        component: {
+          beforeRouteEnter (to, from, next) {
+            next(vm => vm.$router.replace(JSON.parse(from.params.route)))
+          },
+          render: h => h()
+        }
       }
     ]
   },
@@ -42,19 +67,6 @@ const frameIn = [
  * 在主框架之外显示
  */
 const frameOut = [
-  // 页面重定向使用 必须保留
-  {
-    path: '/redirect/:path*',
-    component: {
-      beforeCreate () {
-        const path = this.$route.params.path
-        this.$router.replace(JSON.parse(path))
-      },
-      render: function (h) {
-        return h()
-      }
-    }
-  },
   // 登录
   {
     path: '/login',

@@ -10,7 +10,7 @@ export default {
   component: layoutHeaderAside,
   children: (pre => [
     { path: 'index', name: `${pre}index`, component: () => import('@/pages/demo/playground/index'), meta: { ...meta, title: '试验台首页' } },
-    { path: 'store/page', name: `${pre}store-page`, component: () => import('@/pages/demo/playground/store/page'), meta: { ...meta, title: '多标签页控制' } },
+    { path: 'store/page', name: `${pre}store-page`, component: () => import('@/pages/demo/playground/store/page'), meta: { ...meta, cache: true, title: '多标签页控制' } },
     { path: 'store/menu', name: `${pre}store-menu`, component: () => import('@/pages/demo/playground/store/menu'), meta: { ...meta, title: '菜单控制' } },
     { path: 'store/size', name: `${pre}store-size`, component: () => import('@/pages/demo/playground/store/size'), meta: { ...meta, title: '全局尺寸' } },
     { path: 'store/ua', name: `${pre}store-ua`, component: () => import('@/pages/demo/playground/store/ua'), meta: { ...meta, title: '浏览器信息' } },
