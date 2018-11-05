@@ -339,14 +339,7 @@ export default {
      * @param {Object} state vuex state
      */
     keepAliveRefresh (state) {
-      state.keepAlive = state.opened.filter(item => {
-        if (item.meta) {
-          if (item.meta.notCache) {
-            return false
-          }
-        }
-        return true
-      }).map(e => e.name)
+      state.keepAlive = state.opened.filter(item => isKeepAlive(item)).map(e => e.name)
     },
     /**
      * @description 删除一个页面的缓存设置
