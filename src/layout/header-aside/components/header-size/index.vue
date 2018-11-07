@@ -33,7 +33,11 @@ export default {
     // 注意 这里是关键
     // 因为需要访问 this.$ELEMENT 所以只能在这里使用这种方式
     value: {
-      handler (val) {
+      handler (val, oldVal) {
+        if (!oldVal) {
+          // 旧值为空是时设置 element 全局尺寸
+          this.$ELEMENT.size = this.value
+        }
         if (this.$ELEMENT.size !== val) {
           // 设置 element 全局尺寸
           this.$ELEMENT.size = val
