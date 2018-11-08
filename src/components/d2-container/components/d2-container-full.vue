@@ -17,9 +17,15 @@ import scroll from './mixins/scroll.normal'
 export default {
   name: 'd2-container-full',
   mixins: [
-    scroll({
-      ref: 'body'
-    })
-  ]
+    scroll
+  ],
+  mounted () {
+    // 增加滚动事件监听
+    this.addScrollListener()
+  },
+  beforeDestroy () {
+    // 移除滚动事件监听
+    this.removeScrollListener()
+  }
 }
 </script>
