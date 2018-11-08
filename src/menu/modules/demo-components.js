@@ -17,7 +17,8 @@ export default {
         { path: `${pre}container/ghost-bs`, title: '隐形 滚动优化' },
         { path: `${pre}container/card`, title: '卡片' },
         { path: `${pre}container/card-slot`, title: '卡片 插槽' },
-        { path: `${pre}container/card-bs`, title: '卡片 滚动优化' }
+        { path: `${pre}container/card-bs`, title: '卡片 滚动优化' },
+        { path: `${pre}container/api`, title: 'API' }
       ]
     },
     {

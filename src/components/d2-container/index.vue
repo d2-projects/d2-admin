@@ -1,7 +1,7 @@
 <template>
   <div class="container-component" ref="container">
     <!-- [card] 卡片容器 -->
-    <d2-container-card v-if="type === 'card' && !betterScroll">
+    <d2-container-card v-bind="$attrs" v-if="type === 'card' && !betterScroll" @scroll="e => this.$emit('scroll', e)">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
@@ -13,7 +13,7 @@
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
     </d2-container-card-bs>
     <!-- [ghost] 隐形容器 -->
-    <d2-container-ghost v-if="type === 'ghost' && !betterScroll">
+    <d2-container-ghost v-bind="$attrs" v-if="type === 'ghost' && !betterScroll" @scroll="e => this.$emit('scroll', e)">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
@@ -25,7 +25,7 @@
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
     </d2-container-ghost-bs>
     <!-- [container-full] 填充 -->
-    <d2-container-full v-if="type === 'full' && !betterScroll">
+    <d2-container-full v-bind="$attrs" v-if="type === 'full' && !betterScroll" @scroll="e => this.$emit('scroll', e)">
       <slot v-if="$slots.header" name="header" slot="header"/>
       <slot/>
       <slot v-if="$slots.footer" name="footer" slot="footer"/>
