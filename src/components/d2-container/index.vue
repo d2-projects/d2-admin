@@ -63,12 +63,6 @@ export default {
       type: String,
       required: false,
       default: 'full'
-    },
-    // 滚动优化
-    betterScroll: {
-      type: Boolean,
-      required: false,
-      default: false
     }
   }
 }
