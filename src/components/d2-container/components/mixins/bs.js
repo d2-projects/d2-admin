@@ -1,6 +1,13 @@
 import BScroll from 'better-scroll'
 export default {
   props: {
+    // 滚动优化
+    betterScroll: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    // 滚动优化的选项
     betterScrollOptions: {
       type: Object,
       required: false,
