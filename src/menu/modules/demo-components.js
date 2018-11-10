@@ -9,6 +9,7 @@ export default {
       title: '布局容器',
       icon: 'window-restore',
       children: [
+        { path: `${pre}container/api`, title: 'API' },
         { path: `${pre}container/full`, title: '填充' },
         { path: `${pre}container/full-slot`, title: '填充 插槽' },
         { path: `${pre}container/full-bs`, title: '填充 滚动优化' },
@@ -17,8 +18,7 @@ export default {
         { path: `${pre}container/ghost-bs`, title: '隐形 滚动优化' },
         { path: `${pre}container/card`, title: '卡片' },
         { path: `${pre}container/card-slot`, title: '卡片 插槽' },
-        { path: `${pre}container/card-bs`, title: '卡片 滚动优化' },
-        { path: `${pre}container/api`, title: 'API' }
+        { path: `${pre}container/card-bs`, title: '卡片 滚动优化' }
       ]
     },
     {
