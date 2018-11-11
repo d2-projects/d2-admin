@@ -130,8 +130,6 @@
 
 D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行管理系统开发，同时也提供 2000 人的 QQ 交流群和微信群，前后端的朋友可以相互答疑，项目组成员全部在内，所有 D2 相关项目使用问题欢迎在群内提问。
 
-> 隐性福利：重要通知会发群红包
-
 ![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
 
 ## License
