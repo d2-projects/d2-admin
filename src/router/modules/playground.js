@@ -20,6 +20,7 @@ export default {
     { path: 'store/transition', name: `${pre}store-transition`, component: () => import('@/pages/demo/playground/store/transition'), meta: { ...meta, title: '页面过渡开关' } },
     { path: 'page-cache/on', name: `${pre}page-cache-on`, component: () => import('@/pages/demo/playground/page-cache/on.vue'), meta: { ...meta, cache: true, title: '开启缓存' } },
     { path: 'page-cache/off', name: `${pre}page-cache-off`, component: () => import('@/pages/demo/playground/page-cache/off.vue'), meta: { ...meta, title: '关闭缓存' } },
+    { path: 'page-cache/params/:id', name: `${pre}page-cache-params`, component: () => import('@/pages/demo/playground/page-cache/params.vue'), meta: { ...meta, cache: true, title: '带参路由缓存' }, props: true },
     { path: 'page-argu/send', name: `${pre}page-argu-send`, component: () => import('@/pages/demo/playground/page-argu/send.vue'), meta: { ...meta, title: '参数传递 发送' } },
     { path: 'page-argu/get/:username', name: `${pre}page-argu-get`, component: () => import('@/pages/demo/playground/page-argu/get.vue'), meta: { ...meta, title: '参数传递 接收' } },
     { path: 'db/all', name: `${pre}db-all`, component: () => import('@/pages/demo/playground/db/all'), meta: { ...meta, title: '总览' } },

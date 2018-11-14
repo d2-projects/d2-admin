@@ -1,4 +1,4 @@
-import { remove, get } from 'lodash'
+import { get } from 'lodash'
 
 // 设置文件
 import setting from '@/setting.js'
@@ -34,14 +34,14 @@ export default {
           user: true
         }, { root: true })
         // 在处理函数中进行数据优化 过滤掉现在已经失效的页签或者已经改变了信息的页签
-        // 以 name 字段为准
+        // 以 fullPath 字段为准
         // 如果页面过多的话可能需要优化算法
         // valid 有效列表 1, 1, 0, 1 => 有效, 有效, 失效, 有效
         const valid = []
         // 处理数据
         state.opened = value.map(opened => {
           // 忽略首页
-          if (opened.name === 'index') {
+          if (opened.fullPath === '/index') {
             valid.push(1)
             return opened
           }
@@ -80,19 +80,16 @@ export default {
      * @class opened
      * @description 更新页面列表上的某一项
      * @param {Object} state vuex state
-     * @param {Object} param { index, params, query } 路由信息
+     * @param {Object} param { index, params, query, fullPath } 路由信息
      */
-    openedUpdate ({ state, commit, dispatch }, { index, params, query }) {
+    openedUpdate ({ state, commit, dispatch }, { index, params, query, fullPath }) {
       return new Promise(async resolve => {
         // 更新页面列表某一项
         let page = state.opened[index]
         page.params = params || page.params
         page.query = query || page.query
+        page.fullPath = fullPath || page.fullPath
         state.opened.splice(index, 1, page)
-        // 增加缓存设置
-        if (isKeepAlive(page)) {
-          commit('keepAlivePush', page.name)
-        }
         // 持久化
         await dispatch('opend2db')
         // end
@@ -105,12 +102,13 @@ export default {
      * @param {Object} state vuex state
      * @param {Object} param new tag info
      */
-    add ({ state, commit, dispatch }, { tag, params, query }) {
+    add ({ state, commit, dispatch }, { tag, params, query, fullPath }) {
       return new Promise(async resolve => {
         // 设置新的 tag 在新打开一个以前没打开过的页面时使用
         let newTag = tag
         newTag.params = params || newTag.params
         newTag.query = query || newTag.query
+        newTag.fullPath = fullPath || newTag.fullPath
         // 添加进当前显示的页面数组
         state.opened.push(newTag)
         // 如果这个页面需要缓存 将其添加到缓存设置
@@ -127,25 +125,26 @@ export default {
      * @class current
      * @description 打开一个新的页面
      * @param {Object} state vuex state
-     * @param {Object} param { name, params, query } 路由信息
+     * @param {Object} param { name, params, query, fullPath } 路由信息
      */
-    open ({ state, commit, dispatch }, { name, params, query }) {
+    open ({ state, commit, dispatch }, { name, params, query, fullPath }) {
       return new Promise(async resolve => {
         // 已经打开的页面
         let opened = state.opened
         // 判断此页面是否已经打开 并且记录位置
         let pageOpendIndex = 0
         const pageOpend = opened.find((page, index) => {
-          const same = page.name === name
+          const same = page.fullPath === fullPath
           pageOpendIndex = same ? index : pageOpendIndex
           return same
         })
         if (pageOpend) {
-          // 页面以前打开过 但是新的页面可能 name 一样，参数不一样
+          // 页面以前打开过
           await dispatch('openedUpdate', {
             index: pageOpendIndex,
             params,
-            query
+            query,
+            fullPath
           })
         } else {
           // 页面以前没有打开过
@@ -153,13 +152,14 @@ export default {
           // 如果这里没有找到 page 代表这个路由虽然在框架内 但是不参与标签页显示
           if (page) {
             await dispatch('add', {
-              tag: page,
+              tag: Object.assign({}, page),
               params,
-              query
+              query,
+              fullPath
             })
           }
         }
-        commit('currentSet', name)
+        commit('currentSet', fullPath)
         // end
         resolve()
       })
@@ -180,7 +180,7 @@ export default {
           // 去找一个新的页面
           let len = state.opened.length
           for (let i = 1; i < len; i++) {
-            if (state.opened[i].name === tagName) {
+            if (state.opened[i].fullPath === tagName) {
               if (i < len - 1) {
                 newPage = state.opened[i + 1]
               } else {
@@ -191,12 +191,12 @@ export default {
           }
         }
         // 找到这个页面在已经打开的数据里是第几个
-        const index = state.opened.findIndex(page => page.name === tagName)
+        const index = state.opened.findIndex(page => page.fullPath === tagName)
         if (index >= 0) {
+          // 如果这个页面是缓存的页面 将其在缓存设置中删除
+          commit('keepAliveRemove', state.opened[index].name)
           // 更新数据 删除关闭的页面
           state.opened.splice(index, 1)
-          // 如果这个页面是缓存的页面 将其在缓存设置中删除
-          commit('keepAliveRemove', tagName)
         }
         // 持久化
         await dispatch('opend2db')
@@ -225,7 +225,7 @@ export default {
         const pageAim = pageSelect || state.current
         let currentIndex = 0
         state.opened.forEach((page, index) => {
-          if (page.name === pageAim) {
+          if (page.fullPath === pageAim) {
             currentIndex = index
           }
         })
@@ -234,10 +234,8 @@ export default {
           state.opened.splice(1, currentIndex - 1).forEach(({ name }) => commit('keepAliveRemove', name))
         }
         state.current = pageAim
-        if (vm && vm.$route.name !== pageAim) {
-          vm.$router.push({
-            name: pageAim
-          })
+        if (vm && vm.$route.fullPath !== pageAim) {
+          vm.$router.push(pageAim)
         }
         // 持久化
         await dispatch('opend2db')
@@ -256,7 +254,7 @@ export default {
         const pageAim = pageSelect || state.current
         let currentIndex = 0
         state.opened.forEach((page, index) => {
-          if (page.name === pageAim) {
+          if (page.fullPath === pageAim) {
             currentIndex = index
           }
         })
@@ -264,10 +262,8 @@ export default {
         state.opened.splice(currentIndex + 1).forEach(({ name }) => commit('keepAliveRemove', name))
         // 设置当前的页面
         state.current = pageAim
-        if (vm && vm.$route.name !== pageAim) {
-          vm.$router.push({
-            name: pageAim
-          })
+        if (vm && vm.$route.fullPath !== pageAim) {
+          vm.$router.push(pageAim)
         }
         // 持久化
         await dispatch('opend2db')
@@ -286,7 +282,7 @@ export default {
         const pageAim = pageSelect || state.current
         let currentIndex = 0
         state.opened.forEach((page, index) => {
-          if (page.name === pageAim) {
+          if (page.fullPath === pageAim) {
             currentIndex = index
           }
         })
@@ -299,10 +295,8 @@ export default {
         }
         // 设置新的页面
         state.current = pageAim
-        if (vm && vm.$route.name !== pageAim) {
-          vm.$router.push({
-            name: pageAim
-          })
+        if (vm && vm.$route.fullPath !== pageAim) {
+          vm.$router.push(pageAim)
         }
         // 持久化
         await dispatch('opend2db')
@@ -349,7 +343,8 @@ export default {
      */
     keepAliveRemove (state, name) {
       const list = [ ...state.keepAlive ]
-      remove(list, item => item === name)
+      const index = list.findIndex(item => item === name)
+      list.splice(index, 1)
       state.keepAlive = list
     },
     /**
@@ -360,7 +355,7 @@ export default {
     keepAlivePush (state, name) {
       const keep = [ ...state.keepAlive ]
       keep.push(name)
-      state.keepAlive = Array.from(new Set(keep))
+      state.keepAlive = keep
     },
     /**
      * @description 清空页面缓存设置
@@ -371,12 +366,12 @@ export default {
     },
     /**
      * @class current
-     * @description 设置当前激活的页面 name
+     * @description 设置当前激活的页面 fullPath
      * @param {Object} state vuex state
-     * @param {String} name new name
+     * @param {String} fullPath new fullPath
      */
-    currentSet (state, name) {
-      state.current = name
+    currentSet (state, fullPath) {
+      state.current = fullPath
     },
     /**
      * @class pool
