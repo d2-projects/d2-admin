@@ -52,6 +52,10 @@ module.exports = {
     // 重新设置 alias
     config.resolve.alias
       .set('@', resolve('src'))
+    // node
+    config.node
+      .set('__dirname', true)
+      .set('__filename', true)
     // babel-polyfill 加入 entry
     const entry = config.entry('app')
     entry
