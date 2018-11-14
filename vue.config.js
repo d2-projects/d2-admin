@@ -57,5 +57,11 @@ module.exports = {
     entry
       .add('babel-polyfill')
       .end()
+    // 判断环境加入模拟数据
+    if (process.env.VUE_APP_BUILD_MODE !== 'nomock') {
+      entry
+        .add('@/mock')
+        .end()
+    }
   }
 }
