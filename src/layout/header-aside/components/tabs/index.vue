@@ -7,7 +7,7 @@
           :x="contentmenuX"
           :y="contentmenuY">
           <d2-contextmenu-list
-            :menulist="tagName === 'index' ? contextmenuListIndex : contextmenuList"
+            :menulist="tagName === '/index' ? contextmenuListIndex : contextmenuList"
             @rowClick="contextmenuClick"/>
         </d2-contextmenu>
         <el-tabs
@@ -22,7 +22,7 @@
             v-for="(page, index) in opened"
             :key="index"
             :label="page.meta.title || '未命名'"
-            :name="page.name"/>
+            :name="page.fullPath"/>
         </el-tabs>
       </div>
     </div>
@@ -79,7 +79,7 @@ export default {
         { icon: 'times', title: '关闭其它', value: 'other' },
         { icon: 'times-circle', title: '关闭全部', value: 'all' }
       ],
-      tagName: 'index'
+      tagName: '/index'
     }
   },
   computed: {
@@ -163,7 +163,7 @@ export default {
      */
     handleClick (tab, event) {
       // 找到点击的页面在 tag 列表里是哪个
-      const page = this.opened.find(page => page.name === tab.name)
+      const page = this.opened.find(page => page.fullPath === tab.name)
       const { name, params, query } = page
       if (page) {
         this.$router.push({ name, params, query })
