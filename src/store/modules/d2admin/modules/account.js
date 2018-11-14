@@ -10,14 +10,14 @@ export default {
      * @param {Object} param vm {Object} vue 实例
      * @param {Object} param username {String} 用户账号
      * @param {Object} param password {String} 密码
-     * @param {Object} param route {Object} 登录成功后定向的路由对象
+     * @param {Object} param route {Object} 登录成功后定向的路由对象 任何 vue-router 支持的格式
      */
     login ({ dispatch }, {
       vm,
       username,
       password,
       route = {
-        name: 'index'
+        path: '/'
       }
     }) {
       // 开始请求登录接口

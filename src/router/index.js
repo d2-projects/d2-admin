@@ -55,9 +55,9 @@ router.afterEach(to => {
   NProgress.done()
   // 需要的信息
   const app = router.app
-  const { name, params, query } = to
+  const { name, params, query, fullPath } = to
   // 多页控制 打开新的页面
-  app.$store.dispatch('d2admin/page/open', { name, params, query })
+  app.$store.dispatch('d2admin/page/open', { name, params, query, fullPath })
   // 更改标题
   util.title(to.meta.title)
 })

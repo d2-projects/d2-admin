@@ -5,8 +5,6 @@ import Vue from 'vue'
 import App from './App'
 // store
 import store from '@/store/index'
-// 模拟数据
-import '@/mock'
 // 多国语
 import i18n from './i18n'
 // 核心插件
