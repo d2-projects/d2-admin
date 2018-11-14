@@ -44,9 +44,7 @@ export default {
     if (this.$slots.footer) slots.push(h('div', { slot: 'footer' }, [ this.$slots.footer ]))
     return h('div', {
       ref: 'container',
-      attrs: {
-        'class': 'container-component'
-      }
+      class: 'container-component'
     }, [
       h(this.component, {
         props: this.$attrs,
