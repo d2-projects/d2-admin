@@ -53,7 +53,9 @@ export default {
           scroll: e => this.$emit('scroll', e)
         }
       }, slots),
-      h(d2Source)
+      h(d2Source, {
+        props: this.$attrs
+      })
     ])
   }
 }
