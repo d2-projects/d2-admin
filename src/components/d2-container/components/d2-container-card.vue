@@ -4,7 +4,7 @@
       <slot name="header"/>
     </div>
     <div class="d2-container-card__body">
-      <div class="d2-container-card__body-card">
+      <div class="d2-container-card__body-card" ref="body">
         <slot/>
       </div>
     </div>
@@ -15,7 +15,11 @@
 </template>
 
 <script>
+import scroll from './mixins/normal'
 export default {
-  name: 'd2-container-card'
+  name: 'd2-container-card',
+  mixins: [
+    scroll
+  ]
 }
 </script>

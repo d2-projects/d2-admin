@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import scroll from './mixins/scroll.normal'
+import scroll from './mixins/normal'
 export default {
   name: 'd2-container-full',
   mixins: [
