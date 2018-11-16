@@ -35,7 +35,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .d2-panel-search-item {
   height: 64px;
   margin: 0px -20px;
