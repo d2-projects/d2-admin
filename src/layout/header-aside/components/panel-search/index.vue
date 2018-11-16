@@ -183,7 +183,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .panel-search {
   margin: 20px;
   .panel-search__input-group {

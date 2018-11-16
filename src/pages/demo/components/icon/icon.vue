@@ -9,7 +9,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .icon-demo {
   transition: all .3s;
   font-size: 100px;
