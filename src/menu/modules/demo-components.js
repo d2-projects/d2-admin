@@ -9,15 +9,37 @@ export default {
       title: '布局容器',
       icon: 'window-restore',
       children: [
-        { path: `${pre}container/full`, title: '填充' },
-        { path: `${pre}container/full-slot`, title: '填充 插槽' },
-        { path: `${pre}container/full-bs`, title: '填充 滚动优化' },
-        { path: `${pre}container/ghost`, title: '隐形' },
-        { path: `${pre}container/ghost-slot`, title: '隐形 插槽' },
-        { path: `${pre}container/ghost-bs`, title: '隐形 滚动优化' },
-        { path: `${pre}container/card`, title: '卡片' },
-        { path: `${pre}container/card-slot`, title: '卡片 插槽' },
-        { path: `${pre}container/card-bs`, title: '卡片 滚动优化' }
+        {
+          title: '填充型',
+          children: [
+            { path: `${pre}container/full`, title: '基础', icon: '' },
+            { path: `${pre}container/full-slot`, title: '插槽', icon: '' },
+            { path: `${pre}container/full-bs`, title: '滚动优化', icon: '' }
+          ]
+        },
+        {
+          title: '隐形模式',
+          children: [
+            { path: `${pre}container/ghost`, title: '基础', icon: '' },
+            { path: `${pre}container/ghost-slot`, title: '插槽', icon: '' },
+            { path: `${pre}container/ghost-bs`, title: '滚动优化', icon: '' }
+          ]
+        },
+        {
+          title: '卡片型',
+          children: [
+            { path: `${pre}container/card`, title: '基础', icon: '' },
+            { path: `${pre}container/card-slot`, title: '插槽', icon: '' },
+            { path: `${pre}container/card-bs`, title: '滚动优化', icon: '' }
+          ]
+        },
+        {
+          title: '方法',
+          children: [
+            { path: `${pre}container/api?bs=false`, title: '滚动控制', icon: '' },
+            { path: `${pre}container/api?bs=true`, title: '滚动控制 BS', icon: '' }
+          ]
+        }
       ]
     },
     {
