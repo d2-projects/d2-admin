@@ -2,8 +2,9 @@
   <d2-container
     ref="container"
     :type="containerType"
+    :better-scroll="betterScroll"
     :scroll-delay="scrollDelay"
-    @scroll="e => { scrollTop = e.target.scrollTop }">
+    @scroll="({x, y}) => { scrollTop = y }">
     <template slot="header">
       <el-form
         :inline="true"
@@ -27,11 +28,12 @@
           </el-input>
         </el-form-item>
         <el-form-item
+          v-if="!betterScroll"
           label="事件延迟(ms)"
           class="d2-mb-0">
           <el-input-number
             v-model="scrollDelay"
-            :min="100"
+            :min="10"
             :max="2000"
             :step="100"
             style="width: 110px;"/>
@@ -48,7 +50,7 @@
     </template>
     <el-alert
       type="success"
-      title="请向下滚动"
+      :title="`${betterScroll ? '此示例开启了 BetterScroll ' : ''}请向下滚动`"
       class="d2-mb-10"
       center/>
     <d2-demo-article
@@ -83,25 +85,20 @@ export default {
   data () {
     return {
       containerType: 'full',
-      scrollDelay: 100,
+      scrollDelay: 10,
       scrollTop: 0
     }
   },
   computed: {
+    // 是否开启 better scroll
+    betterScroll () {
+      return this.$route.query.bs === 'true'
+    },
+    // 根据滚动位置返回文章的样式
     articleStyle () {
       return {
         opacity: this.scrollTop > 55 ? '1' : '.1'
       }
-    }
-  },
-  watch: {
-    containerType (val, oldVal) {
-      let top = this.scrollTop
-      // 因为 ghost 模式下的容器没有 20px 的 padding
-      // 为了保持垂直位置 需要重新计算定位高度
-      if (oldVal === 'ghost') top += 20
-      if (val === 'ghost') top -= 20
-      this.$nextTick(() => this.$refs.container.scrollTo(0, top))
     }
   }
 }

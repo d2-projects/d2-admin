@@ -36,7 +36,8 @@ export default {
         {
           title: '方法',
           children: [
-            { path: `${pre}container/api`, title: 'API' }
+            { path: `${pre}container/api?bs=false`, title: '滚动控制' },
+            { path: `${pre}container/api?bs=true`, title: '滚动控制 BS' }
           ]
         }
       ]
