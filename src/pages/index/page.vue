@@ -1,5 +1,7 @@
 <template>
-  <d2-container class="page">
+  <d2-container
+    class="page"
+    :filename="filename">
     <d2-page-cover
       :title="`D2 Admin ${version}`"
       sub-title="优雅的中后台集成方案">
@@ -42,6 +44,11 @@ export default {
   components: {
     D2HelpBtn,
     D2Badge
+  },
+  data () {
+    return {
+      filename: __filename
+    }
   },
   computed: {
     ...mapState('d2admin/releases', [

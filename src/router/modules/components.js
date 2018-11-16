@@ -18,6 +18,7 @@ export default {
     { path: 'container/card', name: `${pre}container-card`, component: () => import('@/pages/demo/components/container/card.vue'), meta: { ...meta, title: '布局组件 卡片' } },
     { path: 'container/card-slot', name: `${pre}container-card-slot`, component: () => import('@/pages/demo/components/container/card-slot.vue'), meta: { ...meta, title: '布局组件 卡片 插槽' } },
     { path: 'container/card-bs', name: `${pre}container-card-bs`, component: () => import('@/pages/demo/components/container/card-bs.vue'), meta: { ...meta, title: '布局组件 卡片 滚动优化' } },
+    { path: 'container/api', name: `${pre}container-api`, component: () => import('@/pages/demo/components/container/api.vue'), meta: { ...meta, title: '布局组件 API' } },
     { path: 'contextmenu/simple', name: `${pre}contextmenu-simple`, component: () => import('@/pages/demo/components/contextmenu/simple.vue'), meta: { ...meta, title: '右键菜单 基础' } },
     { path: 'contextmenu/divier', name: `${pre}contextmenu-divier`, component: () => import('@/pages/demo/components/contextmenu/divier.vue'), meta: { ...meta, title: '右键菜单 分割线' } },
     { path: 'contextmenu/group', name: `${pre}contextmenu-group`, component: () => import('@/pages/demo/components/contextmenu/group.vue'), meta: { ...meta, title: '右键菜单 分组' } },
