@@ -83,7 +83,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@/assets/style/public.scss';
 .component-markdown {
   .spin-group {
     height: 100px;

@@ -159,7 +159,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .group {
   max-height: 400px;
   overflow-x: hidden;
