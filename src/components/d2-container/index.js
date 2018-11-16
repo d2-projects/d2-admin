@@ -64,6 +64,18 @@ export default {
     // 返回顶部
     scrollToTop () {
       this.$refs.component.scrollToTop()
+    },
+    // 用法同原生方法 scrollBy
+    scrollBy (x = 0, y = 0) {
+      this.$refs.component.$refs.body.scrollBy(x, y)
+    },
+    // 用法同原生方法 scrollTo
+    scrollTo (x = 0, y = 0) {
+      this.$refs.component.$refs.body.scrollTo(x, y)
+    },
+    // 用法同原生方法 scrollTop
+    scrollTop (top = 0) {
+      this.$refs.component.$refs.body.scrollTop = top
     }
   }
 }
