@@ -38,7 +38,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .title-group {
   margin-top: 20px;
   margin-bottom: 10px;

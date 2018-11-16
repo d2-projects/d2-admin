@@ -33,7 +33,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .d2-page-cover {
   @extend %full;
   @extend %unable-select;
