@@ -1,6 +1,7 @@
 <template>
   <d2-container
     ref="container"
+    type="card"
     :scroll-delay="scrollDelay"
     @scroll="handleScroll">
     <template slot="header">
