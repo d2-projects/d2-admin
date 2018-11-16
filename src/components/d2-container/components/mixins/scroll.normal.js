@@ -45,6 +45,17 @@ export default {
     // 移除滚动事件监听
     removeScrollListener () {
       this.$refs.body.removeEventListener('scroll', this.handleScroll)
+    },
+    // 外部调用的方法 返回顶部
+    scrollToTop () {
+      const smoothscroll = () => {
+        var currentScroll = this.$refs.body.scrollTop
+        if (currentScroll > 0) {
+          window.requestAnimationFrame(smoothscroll)
+          this.$refs.body.scrollTo(0, currentScroll - (currentScroll / 5))
+        }
+      }
+      smoothscroll()
     }
   }
 }

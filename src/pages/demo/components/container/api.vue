@@ -8,16 +8,16 @@
         :inline="true"
         size="mini">
         <el-form-item
-          label="scrollTop"
+          label="滚动距离"
           class="d2-mb-0">
           <el-input
             :value="scrollTop"
-            style="width: 110px;">
+            style="width: 120px;">
             <template slot="append">px</template>
           </el-input>
         </el-form-item>
         <el-form-item
-          label="scrollDelay"
+          label="事件延迟(ms)"
           class="d2-mb-0">
           <el-input-number
             v-model="scrollDelay"
@@ -30,7 +30,7 @@
           <el-button
             v-if="scrollTop >= 55"
             type="primary"
-            @click="handleTop">
+            @click="handleScrollToTop">
             回到顶部
           </el-button>
         </el-form-item>
@@ -38,8 +38,10 @@
     </template>
     <el-alert type="success" title="请向下滚动" center class="d2-mb-10"/>
     <d2-demo-article
-      long
-      :style="articleStyle"/>
+      v-for="i in 10"
+      :key="i"
+      :style="articleStyle"
+      long/>
     <template slot="footer">
       <el-form
         :inline="true"
@@ -81,7 +83,9 @@ export default {
     handleScroll (e) {
       this.scrollTop = e.target.scrollTop
     },
-    handleTop () {},
+    handleScrollToTop () {
+      this.$refs.container.scrollToTop()
+    },
     handleScrollBy () {
       this.$refs.container.$children[0].$refs.body.scrollBy(0, 30)
     },

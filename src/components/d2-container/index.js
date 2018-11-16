@@ -48,6 +48,7 @@ export default {
       class: 'container-component'
     }, [
       h(this.component, {
+        ref: 'component',
         props: this.$attrs,
         on: {
           scroll: e => this.$emit('scroll', e)
@@ -58,5 +59,11 @@ export default {
         props: this.$attrs
       }) : undefined
     ])
+  },
+  methods: {
+    // 返回顶部
+    scrollToTop () {
+      this.$refs.component.scrollToTop()
+    }
   }
 }
