@@ -1,19 +1,28 @@
 <template>
   <d2-container
     ref="container"
-    type="card"
+    :type="containerType"
     :scroll-delay="scrollDelay"
-    @scroll="handleScroll">
+    @scroll="e => { scrollTop = e.target.scrollTop }">
     <template slot="header">
       <el-form
         :inline="true"
         size="mini">
         <el-form-item
+          label="布局类型"
+          class="d2-mb-0">
+          <el-radio-group v-model="containerType">
+            <el-radio-button label="full"></el-radio-button>
+            <el-radio-button label="card"></el-radio-button>
+            <el-radio-button label="ghost"></el-radio-button>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item
           label="滚动距离"
           class="d2-mb-0">
           <el-input
             :value="scrollTop"
-            style="width: 120px;">
+            style="width: 130px;">
             <template slot="append">px</template>
           </el-input>
         </el-form-item>
@@ -31,13 +40,17 @@
           <el-button
             v-if="scrollTop >= 55"
             type="primary"
-            @click="handleScrollToTop">
+            @click="$refs.container.scrollToTop">
             回到顶部
           </el-button>
         </el-form-item>
       </el-form>
     </template>
-    <el-alert type="success" title="请向下滚动" center class="d2-mb-10"/>
+    <el-alert
+      type="success"
+      title="请向下滚动"
+      class="d2-mb-10"
+      center/>
     <d2-demo-article
       v-for="i in 10"
       :key="i"
@@ -48,13 +61,13 @@
         :inline="true"
         size="mini">
         <el-form-item class="d2-mb-0">
-          <el-button @click="handleScrollBy">相对滚动 (0, 30) 像素</el-button>
+          <el-button @click="$refs.container.scrollBy(0, 30)">相对滚动 (0, 30) 像素</el-button>
         </el-form-item>
         <el-form-item class="d2-mb-0">
-          <el-button @click="handleScrollTo">滚动到 (0, 100) 像素位置</el-button>
+          <el-button @click="$refs.container.scrollTo(0, 100)">滚动到 (0, 100) 像素位置</el-button>
         </el-form-item>
         <el-form-item class="d2-mb-0">
-          <el-button @click="handleScrollTop">滚动到垂直位置 100</el-button>
+          <el-button @click="$refs.container.scrollTop(100)">滚动到垂直位置 100</el-button>
         </el-form-item>
       </el-form>
     </template>
@@ -69,6 +82,7 @@ export default {
   },
   data () {
     return {
+      containerType: 'full',
       scrollDelay: 100,
       scrollTop: 0
     }
@@ -80,21 +94,14 @@ export default {
       }
     }
   },
-  methods: {
-    handleScroll (e) {
-      this.scrollTop = e.target.scrollTop
-    },
-    handleScrollToTop () {
-      this.$refs.container.scrollToTop()
-    },
-    handleScrollBy () {
-      this.$refs.container.$children[0].$refs.body.scrollBy(0, 30)
-    },
-    handleScrollTo () {
-      this.$refs.container.$children[0].$refs.body.scrollTo(0, 100)
-    },
-    handleScrollTop () {
-      this.$refs.container.$children[0].$refs.body.scrollTop = 100
+  watch: {
+    containerType (val, oldVal) {
+      let top = this.scrollTop
+      // 因为 ghost 模式下的容器没有 20px 的 padding
+      // 为了保持垂直位置 需要重新计算定位高度
+      if (oldVal === 'ghost') top += 20
+      if (val === 'ghost') top -= 20
+      this.$nextTick(() => this.$refs.container.scrollTo(0, top))
     }
   }
 }
