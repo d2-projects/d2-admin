@@ -49,10 +49,11 @@ export default {
     // 外部调用的方法 返回顶部
     scrollToTop () {
       const smoothscroll = () => {
-        var currentScroll = this.$refs.body.scrollTop
+        const body = this.$refs.body
+        const currentScroll = body.scrollTop
         if (currentScroll > 0) {
           window.requestAnimationFrame(smoothscroll)
-          this.$refs.body.scrollTo(0, currentScroll - (currentScroll / 5))
+          body.scrollTo(0, currentScroll - (currentScroll / 5))
         }
       }
       smoothscroll()

@@ -3,7 +3,7 @@
     <div v-if="$slots.header" class="d2-container-ghost__header" ref="header">
       <slot name="header"/>
     </div>
-    <div class="d2-container-ghost__body">
+    <div class="d2-container-ghost__body" ref="body">
       <slot/>
     </div>
     <div v-if="$slots.footer" class="d2-container-ghost__footer" ref="footer">
@@ -11,3 +11,13 @@
     </div>
   </div>
 </template>
+
+<script>
+import scroll from './mixins/normal'
+export default {
+  name: 'd2-container-ghost',
+  mixins: [
+    scroll
+  ]
+}
+</script>
