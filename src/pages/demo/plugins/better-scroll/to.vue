@@ -87,7 +87,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .demo-bs-wrapper {
   height: 400px;
   position: relative;

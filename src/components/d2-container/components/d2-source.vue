@@ -41,7 +41,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .d2-source {
   $borderRadius: 4px;
   $paddingLR: 15px;

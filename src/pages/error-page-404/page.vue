@@ -8,7 +8,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .page {
   background: #303133;
   background-blend-mode: multiply,multiply;

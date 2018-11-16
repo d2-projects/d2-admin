@@ -69,7 +69,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .theme-preview {
   height: 50px;
   width: 100px;
