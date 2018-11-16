@@ -64,18 +64,48 @@ export default {
     // 返回顶部
     scrollToTop () {
       this.$refs.component.scrollToTop()
+      // 如果开启了 better scroll 还需要手动触发一遍 scroll 事件
+      const bs = this.$refs.component.BS
+      if (bs) this.$refs.component.scroll()
     },
     // 用法同原生方法 scrollBy
-    scrollBy (x = 0, y = 0) {
-      this.$refs.component.$refs.body.scrollBy(x, y)
+    scrollBy (x = 0, y = 0, time = 300) {
+      if (this.betterScroll) {
+        const bs = this.$refs.component.BS
+        if (bs) {
+          bs.scrollBy(-x, -y, time)
+          // 手动触发一遍 scroll 事件
+          this.$refs.component.scroll()
+        }
+      } else {
+        this.$refs.component.$refs.body.scrollBy(x, y)
+      }
     },
     // 用法同原生方法 scrollTo
-    scrollTo (x = 0, y = 0) {
-      this.$refs.component.$refs.body.scrollTo(x, y)
+    scrollTo (x = 0, y = 0, time = 300) {
+      if (this.betterScroll) {
+        const bs = this.$refs.component.BS
+        if (bs) {
+          bs.scrollTo(-x, -y, time)
+          // 手动触发一遍 scroll 事件
+          this.$refs.component.scroll()
+        }
+      } else {
+        this.$refs.component.$refs.body.scrollTo(x, y)
+      }
     },
     // 用法同原生方法 scrollTop
-    scrollTop (top = 0) {
-      this.$refs.component.$refs.body.scrollTop = top
+    scrollTop (top = 0, time = 300) {
+      if (this.betterScroll) {
+        const bs = this.$refs.component.BS
+        if (bs) {
+          bs.scrollTo(bs.x, -top, time)
+          // 手动触发一遍 scroll 事件
+          this.$refs.component.scroll()
+        }
+      } else {
+        this.$refs.component.$refs.body.scrollTop = top
+      }
     }
   }
 }

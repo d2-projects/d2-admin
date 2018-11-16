@@ -5,7 +5,12 @@ import { throttle } from 'lodash'
 
 // 生成滚动事件的 handler
 function handleMaker (wait) {
-  return throttle(e => this.$emit('scroll', e), wait)
+  return throttle(e => {
+    this.$emit('scroll', {
+      x: e.target.scrollLeft,
+      y: e.target.scrollTop
+    })
+  }, wait)
 }
 
 export default {
@@ -14,7 +19,7 @@ export default {
     scrollDelay: {
       type: Number,
       required: false,
-      default: 100
+      default: 10
     }
   },
   data () {
