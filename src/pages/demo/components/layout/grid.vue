@@ -98,7 +98,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .page {
   .vue-grid-layout {
     background-color: $color-bg;

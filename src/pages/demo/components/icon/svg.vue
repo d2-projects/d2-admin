@@ -13,7 +13,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .icon-card {
   display: flex;
   justify-content: center;

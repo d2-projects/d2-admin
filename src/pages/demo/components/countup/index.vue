@@ -75,7 +75,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/public.scss';
 .page {
   .group {
     display: flex;
