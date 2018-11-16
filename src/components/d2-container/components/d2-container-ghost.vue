@@ -18,6 +18,14 @@ export default {
   name: 'd2-container-ghost',
   mixins: [
     scroll
-  ]
+  ],
+  mounted () {
+    // 增加滚动事件监听
+    this.addScrollListener()
+  },
+  beforeDestroy () {
+    // 移除滚动事件监听
+    this.removeScrollListener()
+  }
 }
 </script>
