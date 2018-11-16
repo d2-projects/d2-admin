@@ -2,7 +2,7 @@
   <el-submenu :index="menu.path || uniqueId">
     <template slot="title">
       <i v-if="menu.icon" :class="`fa fa-${menu.icon}`"></i>
-      <i v-if="menu.icon === undefined" class="fa fa-folder-o"></i>
+      <i v-if="menu.icon === undefined & !menu.iconSvg" class="fa fa-folder-o"></i>
       <d2-icon-svg v-if="menu.iconSvg" :name="menu.iconSvg"/>
       <span slot="title">{{menu.title}}</span>
     </template>
