@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">记录日志内容</template>
     <p class="d2-mt-0">在下方输入你要记录的日志，然后点击记录按钮</p>
     <el-input
@@ -15,6 +15,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       text: 'D2Admin log info'
     }
   },

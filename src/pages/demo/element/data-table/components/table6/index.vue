@@ -50,11 +50,6 @@
 export default {
   title: '固定列',
   index: 6,
-  methods: {
-    handleClick (row) {
-      console.log(row)
-    }
-  },
   data () {
     return {
       tableData: [{
@@ -86,6 +81,11 @@ export default {
         address: '上海市普陀区金沙江路 1518 弄',
         zip: 200333
       }]
+    }
+  },
+  methods: {
+    handleClick (row) {
+      console.log(row)
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
 
     <h1 class="d2-mt-0">基础布局</h1>
     <el-row>
@@ -104,6 +104,16 @@
 
   </d2-container>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      filename: __filename
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .el-row {

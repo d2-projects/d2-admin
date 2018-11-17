@@ -24,16 +24,6 @@
 export default {
   title: '带状态表格',
   index: 4,
-  methods: {
-    tableRowClassName ({ row, rowIndex }) {
-      if (rowIndex === 1) {
-        return 'warning-row'
-      } else if (rowIndex === 3) {
-        return 'success-row'
-      }
-      return ''
-    }
-  },
   data () {
     return {
       tableData2: [{
@@ -53,6 +43,16 @@ export default {
         name: '王小虎',
         address: '上海市普陀区金沙江路 1518 弄'
       }]
+    }
+  },
+  methods: {
+    tableRowClassName ({ row, rowIndex }) {
+      if (rowIndex === 1) {
+        return 'warning-row'
+      } else if (rowIndex === 3) {
+        return 'success-row'
+      }
+      return ''
     }
   }
 }

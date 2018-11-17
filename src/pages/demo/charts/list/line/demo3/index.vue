@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">堆叠面积图</template>
     <div class="inner">
       <ve-line :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-line>
@@ -22,6 +22,7 @@ export default {
       area: true
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [

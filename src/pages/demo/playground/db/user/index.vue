@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">
       <el-alert
         type="success"
@@ -44,6 +44,7 @@ import { mapActions } from 'vuex'
 export default {
   data () {
     return {
+      filename: __filename,
       dataDisplay: '',
       keyNameToSet: '',
       valueToSet: '',

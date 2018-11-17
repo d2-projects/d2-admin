@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <d2-page-cover
       title="基础组件库"
       sub-title="D2Admin 集成由饿了么出品的 ElementUI">
@@ -7,3 +7,13 @@
     </d2-page-cover>
   </d2-container>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      filename: __filename
+    }
+  }
+}
+</script>

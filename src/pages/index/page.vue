@@ -1,7 +1,5 @@
 <template>
-  <d2-container
-    class="page"
-    :filename="filename">
+  <d2-container :filename="filename" class="page">
     <d2-page-cover
       :title="`D2 Admin ${version}`"
       sub-title="优雅的中后台集成方案">

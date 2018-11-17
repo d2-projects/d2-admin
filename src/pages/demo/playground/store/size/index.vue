@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="card">
+  <d2-container :filename="filename" type="card">
     <el-radio-group v-model="currentValue" @change="set">
       <el-radio-button label="default"></el-radio-button>
       <el-radio-button label="medium"></el-radio-button>
@@ -14,6 +14,7 @@ import { mapState, mapActions } from 'vuex'
 export default {
   data () {
     return {
+      filename: __filename,
       currentValue: ''
     }
   },

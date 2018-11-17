@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">堆叠条形图</template>
     <div class="inner">
       <ve-bar :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-bar>
@@ -23,6 +23,7 @@ export default {
       }
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [
