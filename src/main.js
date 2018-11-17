@@ -23,6 +23,8 @@ import vueJsonTreeView from 'vue-json-tree-view'
 import { GridLayout, GridItem } from 'vue-grid-layout'
 // [ 可选插件组件 ] 区域划分组件
 import SplitPane from 'vue-splitpane'
+// [ 可选插件组件 ] UEditor
+import VueUeditorWrap from 'vue-ueditor-wrap'
 
 // 菜单和路由设置
 import router from './router'
@@ -40,6 +42,7 @@ Vue.use(vueJsonTreeView)
 Vue.component('d2-grid-layout', GridLayout)
 Vue.component('d2-grid-item', GridItem)
 Vue.component('SplitPane', SplitPane)
+Vue.component('VueUeditorWrap', VueUeditorWrap)
 
 new Vue({
   router,
