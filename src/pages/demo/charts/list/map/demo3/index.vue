@@ -30,6 +30,7 @@ export default {
         },
         zoom: 1.2
       },
+      filename: __filename,
       chartData: {
         columns: ['位置', '人口'],
         rows: [

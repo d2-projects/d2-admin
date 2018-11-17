@@ -18,6 +18,7 @@ export default {
   ],
   data () {
     return {
+      filename: __filename,
       chartData: {
         columns: ['type', 'a', 'b', 'value'],
         rows: [

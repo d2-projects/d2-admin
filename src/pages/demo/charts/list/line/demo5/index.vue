@@ -27,6 +27,7 @@ export default {
       }
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['date', 'PV', 'Order', 'OrderRate'],
         rows: [

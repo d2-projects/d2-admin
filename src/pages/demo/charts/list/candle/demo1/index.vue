@@ -18,6 +18,7 @@ export default {
   ],
   data () {
     return {
+      filename: __filename,
       chartData: {
         columns: ['日期', 'open', 'close', 'lowest', 'highest', 'vol'],
         rows: [

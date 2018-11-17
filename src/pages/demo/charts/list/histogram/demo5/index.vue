@@ -17,12 +17,13 @@ export default {
     list
   ],
   data () {
-    this.extend = {
-      series: {
-        label: { show: true, position: 'top' }
-      }
-    }
     return {
+      filename: __filename,
+      extend: {
+        series: {
+          label: { show: true, position: 'top' }
+        }
+      },
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [

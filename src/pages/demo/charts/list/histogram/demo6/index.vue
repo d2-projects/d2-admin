@@ -21,6 +21,7 @@ export default {
       xAxisType: 'value'
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [

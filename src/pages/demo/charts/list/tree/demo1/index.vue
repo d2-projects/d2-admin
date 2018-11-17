@@ -25,6 +25,7 @@ export default {
       }
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['name', 'value'],
         rows: [

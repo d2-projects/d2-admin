@@ -16,11 +16,12 @@ export default {
   mixins: [
     list
   ],
-  data: function () {
-    this.extend = {
-      'xAxis.0.axisLabel.rotate': 45
-    }
+  data () {
     return {
+      filename: __filename,
+      extend: {
+        'xAxis.0.axisLabel.rotate': 45
+      },
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [

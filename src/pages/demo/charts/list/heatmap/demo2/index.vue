@@ -38,6 +38,7 @@ export default {
       }
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['lat', 'lng', '人数'],
         rows: [
