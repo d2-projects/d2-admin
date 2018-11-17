@@ -46,16 +46,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      filename: __filename
-    }
-  }
-}
-</script>
-
-
-export default {
   title: '展开行',
   index: 15,
   data () {

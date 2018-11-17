@@ -39,16 +39,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      filename: __filename
-    }
-  }
-}
-</script>
-
-
-export default {
   title: '自定义列模板',
   index: 14,
   data () {

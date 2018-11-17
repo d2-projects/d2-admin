@@ -64,16 +64,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      filename: __filename
-    }
-  }
-}
-</script>
-
-
-export default {
   title: '表尾合计行',
   index: 16,
   data () {
