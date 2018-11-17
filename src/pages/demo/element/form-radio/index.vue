@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <el-row>
       <el-col :span="12">
 
@@ -91,6 +91,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       radio: '1',
       radio2: '上海'
     }

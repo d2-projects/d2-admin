@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <div slot="header">
       <el-button
         size="mini"
@@ -28,6 +28,7 @@ export default {
   name: 'demo-plugins-mock-ajax',
   data () {
     return {
+      filename: __filename,
       table: {
         columns: [],
         data: [],

@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">
       <el-radio-group v-model="showIndex" size="mini">
         <el-radio-button
@@ -27,6 +27,7 @@ export default {
   },
   data () {
     return {
+      filename: __filename,
       icon,
       showIndex: 12
     }

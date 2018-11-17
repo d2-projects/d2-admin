@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">设置饼图半径边距</template>
     <div class="inner">
       <ve-pie :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-pie>
@@ -22,6 +22,7 @@ export default {
       offsetY: 250
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [

@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">默认显示柱状图数据</template>
     <div class="inner">
       <ve-histogram :data="chartData" :extend="extend" v-bind="pubSetting"></ve-histogram>
@@ -17,12 +17,13 @@ export default {
     list
   ],
   data () {
-    this.extend = {
-      series: {
-        label: { show: true, position: 'top' }
-      }
-    }
     return {
+      filename: __filename,
+      extend: {
+        series: {
+          label: { show: true, position: 'top' }
+        }
+      },
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [

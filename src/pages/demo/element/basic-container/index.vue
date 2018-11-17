@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
 
     <el-container class="d2-mb">
       <el-header>顶栏</el-header>
@@ -55,6 +55,16 @@
 
   </d2-container>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      filename: __filename
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .el-header, .el-footer {

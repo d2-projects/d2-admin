@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">玫瑰图</template>
     <div class="inner">
       <ve-ring :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-ring>
@@ -21,6 +21,7 @@ export default {
       roseType: 'radius'
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [

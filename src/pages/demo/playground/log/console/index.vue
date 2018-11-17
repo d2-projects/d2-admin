@@ -1,5 +1,5 @@
 <template>
-  <d2-container class="page">
+  <d2-container :filename="filename" class="page">
     <p class="d2-mt-0">$log.capsule</p>
     <el-button size="small" type="primary" @click="$log.capsule('title', 'primary')">
       $log.capsule('title', 'primary')
@@ -42,6 +42,9 @@
 
 <script>
 export default {
+  data () {
+    filename: __filename
+  },
   methods: {
     handleColorful () {
       this.$log.colorful([

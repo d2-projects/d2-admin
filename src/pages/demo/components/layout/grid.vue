@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full" class="page">
+  <d2-container :filename="filename" type="full" class="page">
     <d2-grid-layout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">
@@ -28,6 +28,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       layout: {
         layout: [
           { 'x': 0, 'y': 0, 'w': 4, 'h': 10, 'i': '0' },

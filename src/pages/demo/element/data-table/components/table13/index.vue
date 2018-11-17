@@ -37,7 +37,7 @@
   </el-table>
 </template>
 
-<script>
+
 export default {
   title: '筛选',
   index: 13,

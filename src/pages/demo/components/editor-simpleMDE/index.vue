@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">基本示例</template>
     <d2-mde
       v-model="text"
@@ -15,6 +15,7 @@ import text from './text'
 export default {
   data () {
     return {
+      filename: __filename,
       text
     }
   }
