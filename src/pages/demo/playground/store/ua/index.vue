@@ -11,7 +11,9 @@
 import { mapState } from 'vuex'
 export default {
   data () {
-    filename: __filename
+    return {
+      filename: __filename
+    }
   },
   computed: {
     ...mapState('d2admin/ua', {
