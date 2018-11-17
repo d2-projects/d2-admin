@@ -87,6 +87,11 @@
 export default {
   components: {
     'd2-element-basic-color-info': () => import('./components/info.vue')
+  },
+  data () {
+    return {
+      filename: __filename
+    }
   }
 }
 </script>

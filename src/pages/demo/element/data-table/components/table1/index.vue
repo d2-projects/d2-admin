@@ -25,6 +25,7 @@ export default {
   index: 1,
   data () {
     return {
+      filename: __filename,
       tableData: [
         {
           date: '2016-05-02',

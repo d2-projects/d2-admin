@@ -56,6 +56,16 @@
   </d2-container>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      filename: __filename
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .el-header, .el-footer {
   background-color: #B3C0D1;

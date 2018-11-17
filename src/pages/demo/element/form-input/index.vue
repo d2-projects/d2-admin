@@ -194,6 +194,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       textarea: '',
       textarea2: '',
       textarea3: '',

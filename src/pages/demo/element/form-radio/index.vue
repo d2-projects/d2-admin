@@ -91,6 +91,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       radio: '1',
       radio2: '上海'
     }
