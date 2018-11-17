@@ -28,6 +28,7 @@ export default {
       ]
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['页面', '访问量'],
         rows: [

@@ -22,6 +22,7 @@ export default {
       offsetY: 250
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [

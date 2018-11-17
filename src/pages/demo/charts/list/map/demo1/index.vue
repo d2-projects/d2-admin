@@ -22,6 +22,7 @@ export default {
       chartSettings: {
         mapOrigin
       },
+      filename: __filename,
       chartData: {
         columns: ['位置', '税收', '人口', '面积'],
         rows: [

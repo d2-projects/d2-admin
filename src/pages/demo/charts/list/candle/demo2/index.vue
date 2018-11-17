@@ -22,6 +22,7 @@ export default {
       showVol: true
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['日期', 'open', 'close', 'lowest', 'highest', 'vol'],
         rows: [

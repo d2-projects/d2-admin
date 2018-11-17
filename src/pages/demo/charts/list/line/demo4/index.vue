@@ -17,16 +17,17 @@ export default {
     list
   ],
   data () {
-    this.extend = {
-      series: {
-        label: {
-          normal: {
-            show: true
+    return {
+      filename: __filename,
+      extend: {
+        series: {
+          label: {
+            normal: {
+              show: true
+            }
           }
         }
-      }
-    }
-    return {
+      },
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [
