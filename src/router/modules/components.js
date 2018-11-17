@@ -26,6 +26,7 @@ export default {
     { path: 'contextmenu/disabled', name: `${pre}contextmenu-disabled`, component: () => import('@/pages/demo/components/contextmenu/disabled.vue'), meta: { ...meta, title: '右键菜单 禁用' } },
     { path: 'contextmenu/custom-trigger', name: `${pre}contextmenu-custom-trigger`, component: () => import('@/pages/demo/components/contextmenu/custom-trigger.vue'), meta: { ...meta, title: '右键菜单 自定义触发' } },
     { path: 'countup', name: `${pre}countup`, component: () => import('@/pages/demo/components/countup'), meta: { ...meta, title: '数字动画' } },
+    { path: 'editor-ueditor', name: `${pre}editor-ueditor`, component: () => import('@/pages/demo/components/editor-ueditor'), meta: { ...meta, title: 'UEditor' } },
     { path: 'editor-quill', name: `${pre}editor-quill`, component: () => import('@/pages/demo/components/editor-quill'), meta: { ...meta, title: '富文本编辑器' } },
     { path: 'editor-simpleMDE', name: `${pre}editor-simpleMDE`, component: () => import('@/pages/demo/components/editor-simpleMDE'), meta: { ...meta, title: 'markdown编辑器' } },
     { path: 'highlight', name: `${pre}highlight`, component: () => import('@/pages/demo/components/highlight'), meta: { ...meta, title: '代码高亮组件' } },
