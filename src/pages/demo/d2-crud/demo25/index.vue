@@ -40,6 +40,7 @@ export default {
   },
   data () {
     return {
+      filename: __filename,
       doc,
       codeOverall,
       codePart,
