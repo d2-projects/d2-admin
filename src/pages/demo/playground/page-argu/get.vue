@@ -10,7 +10,9 @@
 <script>
 export default {
   data () {
-    filename: __filename
+    return {
+      filename: __filename
+    }
   },
   mounted () {
     console.log('this.$route', this.$route)
