@@ -43,7 +43,9 @@
 <script>
 export default {
   data () {
-    filename: __filename
+    return {
+      filename: __filename
+    }
   },
   methods: {
     handleColorful () {

@@ -13,7 +13,9 @@ export default {
     DemoI18n: () => import('./components/DemoI18n')
   },
   data () {
-    filename: __filename
+    return {
+      filename: __filename
+    }
   }
 }
 </script>
