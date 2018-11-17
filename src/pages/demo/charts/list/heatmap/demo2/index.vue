@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">地图热力图</template>
     <div class="inner">
       <ve-heatmap :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-heatmap>
@@ -38,6 +38,7 @@ export default {
       }
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['lat', 'lng', '人数'],
         rows: [

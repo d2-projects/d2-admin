@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">显示指标数值</template>
     <div class="inner">
       <ve-line :data="chartData" :extend="extend" v-bind="pubSetting"></ve-line>
@@ -17,16 +17,17 @@ export default {
     list
   ],
   data () {
-    this.extend = {
-      series: {
-        label: {
-          normal: {
-            show: true
+    return {
+      filename: __filename,
+      extend: {
+        series: {
+          label: {
+            normal: {
+              show: true
+            }
           }
         }
-      }
-    }
-    return {
+      },
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [

@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">金字塔</template>
     <div class="inner">
       <ve-funnel :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-funnel>
@@ -21,6 +21,7 @@ export default {
       ascending: true
     }
     return {
+      filename: __filename,
       chartData: {
         columns: ['状态', '数值'],
         rows: [

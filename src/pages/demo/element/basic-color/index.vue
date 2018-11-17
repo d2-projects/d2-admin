@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
 
     <h1 class="d2-mt-0">主色</h1>
     <el-row :gutter="20">
@@ -87,6 +87,11 @@
 export default {
   components: {
     'd2-element-basic-color-info': () => import('./components/info.vue')
+  },
+  data () {
+    return {
+      filename: __filename
+    }
   }
 }
 </script>

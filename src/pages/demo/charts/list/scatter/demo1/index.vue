@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">单维度多指标</template>
     <div class="inner">
       <ve-scatter :data="chartData" v-bind="pubSetting"></ve-scatter>
@@ -18,6 +18,7 @@ export default {
   ],
   data () {
     return {
+      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '年龄'],
         rows: [

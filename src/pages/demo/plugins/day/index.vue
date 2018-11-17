@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">日期计算</template>
     <h1 class="d2-mt-0">解析</h1>
     <el-row :gutter="20" class="d2-mt">
@@ -66,6 +66,7 @@ import dayjs from 'dayjs'
 export default {
   data () {
     return {
+      filename: __filename,
       dayjs
     }
   }

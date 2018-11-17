@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <el-tabs>
       <el-tab-pane label="顶栏菜单">
         <el-button-group class="d2-mb">
@@ -25,6 +25,7 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
     return {
+      filename: __filename,
       menuEmpty: [
         {
           title: '空菜单演示',

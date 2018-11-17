@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
 
     <h1 class="d2-mt-0">中文字体</h1>
     <el-row :gutter="10">
@@ -55,6 +55,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       code: 'font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;'
     }
   }
