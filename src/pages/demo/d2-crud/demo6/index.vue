@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">固定列</template>
     <d2-crud
       :columns="columns"

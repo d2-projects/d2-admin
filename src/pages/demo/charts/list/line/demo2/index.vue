@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">横坐标的倾斜</template>
     <div class="inner">
       <ve-line :data="chartData" :extend="extend" v-bind="pubSetting"></ve-line>

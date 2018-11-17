@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">基础表格</template>
     <d2-crud
       ref="d2Crud"

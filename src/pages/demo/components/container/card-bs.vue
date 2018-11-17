@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="card" better-scroll>
+  <d2-container :filename="filename" type="card" better-scroll>
     <template slot="header">Header</template>
     <d2-demo-article/>
     <template slot="footer">Footer</template>

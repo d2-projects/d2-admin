@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">剪贴板访问</template>
     <el-row :gutter="10">
       <el-col :span="12">

@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="ghost">
+  <d2-container :filename="filename" type="ghost">
     <div class="d2-pt d2-pb">
       <el-card shadow="never" class="d2-card" style="width: 400px;">
         <d2-demo-article/>

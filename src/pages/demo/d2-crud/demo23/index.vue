@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">表格内编辑</template>
     <d2-crud
       :columns="columns"

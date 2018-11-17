@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">指定资源</template>
     <d2-markdown :source="doc"/>
   </d2-container>

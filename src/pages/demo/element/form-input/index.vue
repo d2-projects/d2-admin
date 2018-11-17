@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
 
     <h1 class="d2-mt-0">基础用法</h1>
     <el-input v-model="input" placeholder="请输入内容" class="input-demo-200"></el-input>

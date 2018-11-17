@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">{{`${$t('pub.pageHeader.demo')} 1`}}</template>
     <DemoI18nControl></DemoI18nControl>
     <DemoI18n></DemoI18n>

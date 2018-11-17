@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">自定义加载状态</template>
     <el-button @click="handleLoading">点我切换加载状态</el-button>
     <d2-crud

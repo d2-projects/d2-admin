@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <demo-page-header
       slot="header"
       @submit="handleSubmit"
@@ -28,6 +28,7 @@ export default {
   },
   data () {
     return {
+      filename: __filename,
       table: [],
       loading: false,
       page: {

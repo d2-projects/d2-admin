@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <p class="d2-mt-0">useragent</p>
     <el-input :value="uaData.ua"></el-input>
     <p>格式化数据 in vuex: state.d2admin.ua.data</p>

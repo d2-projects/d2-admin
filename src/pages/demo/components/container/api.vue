@@ -1,5 +1,5 @@
 <template>
-  <d2-container
+  <d2-container :filename="filename"
     ref="container"
     :type="containerType"
     :better-scroll="betterScroll"

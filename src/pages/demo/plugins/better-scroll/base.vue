@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">基础用法</template>
     <div ref="wrapper" class="demo-bs-wrapper">
       <div>
