@@ -24,6 +24,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      filename: __filename
+    }
+  },
   methods: {
     handleClick (vm, event) {
       this.$message({

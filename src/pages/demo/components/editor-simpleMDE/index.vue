@@ -15,6 +15,7 @@ import text from './text'
 export default {
   data () {
     return {
+      filename: __filename,
       text
     }
   }

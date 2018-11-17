@@ -10,6 +10,7 @@ import doc from './md/doc.md'
 export default {
   data () {
     return {
+      filename: __filename,
       doc
     }
   }

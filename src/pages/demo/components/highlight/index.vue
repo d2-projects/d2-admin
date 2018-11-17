@@ -28,6 +28,7 @@ import codeHTML from './code/html'
 export default {
   data () {
     return {
+      filename: __filename,
       codeJavascript,
       codeCSS,
       codeSCSS,

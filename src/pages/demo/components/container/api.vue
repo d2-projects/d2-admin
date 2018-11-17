@@ -84,6 +84,7 @@ export default {
   },
   data () {
     return {
+      filename: __filename,
       containerType: 'full',
       scrollDelay: 10,
       scrollTop: 0

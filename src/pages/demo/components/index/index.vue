@@ -7,3 +7,13 @@
     </d2-page-cover>
   </d2-container>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      filename: __filename
+    }
+  }
+}
+</script>
