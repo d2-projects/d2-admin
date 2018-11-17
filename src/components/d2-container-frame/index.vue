@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container v-bind="$attrs">
     <iframe
       class="d2-container-frame"
       :src="src"

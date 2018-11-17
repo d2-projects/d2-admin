@@ -1,6 +1,6 @@
 {
   "name": "d2-admin",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
@@ -48,6 +48,7 @@
     "vue-json-tree-view": "^2.1.4",
     "vue-router": "^3.0.1",
     "vue-splitpane": "^1.0.2",
+    "vue-ueditor-wrap": "^1.5.0",
     "vuex": "^3.0.1",
     "xlsx": "^0.12.0"
   },
