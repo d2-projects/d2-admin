@@ -48,7 +48,8 @@ export default {
   $fontSize: 12px;
   $rightOuter: $paddingLR / 2;
   opacity: 0;
-  position: absolute;
+  position: fixed;
+  z-index: 9999;
   right: - $borderRadius - $rightOuter;
   bottom: 20px;
   font-size: $fontSize;
