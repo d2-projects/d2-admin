@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">图标选择器</template>
     <div class="title-group">
       <p class="title">一般用法</p>

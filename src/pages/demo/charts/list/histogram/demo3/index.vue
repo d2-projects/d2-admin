@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">柱状图+折线图</template>
     <div class="inner">
       <ve-histogram :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-histogram>

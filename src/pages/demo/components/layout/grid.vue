@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="full" class="page">
+  <d2-container :filename="filename" type="full" class="page">
     <d2-grid-layout
       v-bind="layout"
       @layout-updated="layoutUpdatedHandler">

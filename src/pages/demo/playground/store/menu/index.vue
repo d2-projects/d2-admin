@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <el-tabs>
       <el-tab-pane label="顶栏菜单">
         <el-button-group class="d2-mb">

@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <d2-page-cover
       title="插件演示"
       sub-title="D2Admin 集成了许多实用插件">

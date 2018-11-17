@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">异步加载文件</template>
     <d2-markdown url="markdown/demo.md"/>
   </d2-container>

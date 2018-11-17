@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <d2-page-cover
       title="图表"
       sub-title="集成图表组件">

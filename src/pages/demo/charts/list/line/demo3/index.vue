@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">堆叠面积图</template>
     <div class="inner">
       <ve-line :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-line>

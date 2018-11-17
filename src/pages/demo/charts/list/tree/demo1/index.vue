@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">径向树图</template>
     <div class="inner">
       <ve-tree :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-tree>

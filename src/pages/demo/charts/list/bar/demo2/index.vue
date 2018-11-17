@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">指定指标维度</template>
     <div class="inner">
       <ve-bar :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-bar>

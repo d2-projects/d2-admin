@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">设置别名</template>
     <div class="inner">
       <ve-line :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-line>

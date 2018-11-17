@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
 
     <el-container class="d2-mb">
       <el-header>顶栏</el-header>

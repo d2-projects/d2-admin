@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">
       <div class="d2-mb">Cookie 读写</div>
       <el-alert

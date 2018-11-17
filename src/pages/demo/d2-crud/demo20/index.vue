@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">表单组件渲染</template>
     <d2-crud
       :columns="columns"
