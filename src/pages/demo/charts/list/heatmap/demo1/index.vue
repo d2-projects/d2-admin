@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">一般</template>
     <div class="inner">
       <ve-heatmap :data="chartData" v-bind="pubSetting"></ve-heatmap>
@@ -18,6 +18,7 @@ export default {
   ],
   data () {
     return {
+      filename: __filename,
       chartData: {
         columns: ['时间', '地点', '人数'],
         rows: [

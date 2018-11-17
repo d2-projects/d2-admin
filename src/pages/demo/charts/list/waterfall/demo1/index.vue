@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">一般</template>
     <div class="inner">
       <ve-waterfall :data="chartData" v-bind="pubSetting"></ve-waterfall>
@@ -18,6 +18,7 @@ export default {
   ],
   data () {
     return {
+      filename: __filename,
       chartData: {
         columns: ['活动', '时间'],
         rows: [

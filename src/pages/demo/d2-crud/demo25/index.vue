@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">表格自定义组件</template>
     <d2-crud
       ref="d2Crud"
@@ -40,6 +40,7 @@ export default {
   },
   data () {
     return {
+      filename: __filename,
       doc,
       codeOverall,
       codePart,

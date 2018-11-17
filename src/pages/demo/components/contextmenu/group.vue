@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="card">
+  <d2-container :filename="filename" type="card">
     <template slot="header">按钮组</template>
     <v-contextmenu ref="contextmenu">
       <v-contextmenu-group>
@@ -23,6 +23,16 @@
     </div>
   </d2-container>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      filename: __filename
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import './style/pub.scss';

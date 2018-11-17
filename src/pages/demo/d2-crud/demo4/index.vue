@@ -1,5 +1,5 @@
 <template>
-  <d2-container>
+  <d2-container :filename="filename">
     <template slot="header">带状态表格</template>
     <d2-crud
       :columns="columns"
@@ -24,6 +24,7 @@ import code from './code.js'
 export default {
   data () {
     return {
+      filename: __filename,
       doc,
       code,
       columns: [

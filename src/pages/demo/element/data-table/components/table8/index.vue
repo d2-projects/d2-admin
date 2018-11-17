@@ -54,11 +54,6 @@
 export default {
   title: '流体高度',
   index: 8,
-  methods: {
-    deleteRow (index, rows) {
-      rows.splice(index, 1)
-    }
-  },
   data () {
     return {
       tableData4: [{
@@ -111,6 +106,11 @@ export default {
         address: '上海市普陀区金沙江路 1518 弄',
         zip: 200333
       }]
+    }
+  },
+  methods: {
+    deleteRow (index, rows) {
+      rows.splice(index, 1)
     }
   }
 }
