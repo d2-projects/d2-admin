@@ -14,6 +14,7 @@ import { mapState, mapActions } from 'vuex'
 export default {
   data () {
     return {
+      filename: __filename,
       currentValue: ''
     }
   },

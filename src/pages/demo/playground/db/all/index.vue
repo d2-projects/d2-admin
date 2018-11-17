@@ -20,6 +20,7 @@ import db from '@/libs/db.js'
 export default {
   data () {
     return {
+      filename: __filename,
       dbData: ''
     }
   },

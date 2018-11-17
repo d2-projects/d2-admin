@@ -73,6 +73,7 @@ import { mapActions } from 'vuex'
 export default {
   data () {
     return {
+      filename: __filename,
       form: {
         name: '',
         region: '',

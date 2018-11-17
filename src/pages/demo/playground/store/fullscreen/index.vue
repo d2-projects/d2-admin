@@ -10,6 +10,9 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
+  data () {
+    filename: __filename
+  },
   methods: {
     ...mapActions('d2admin/fullscreen', [
       'toggle'

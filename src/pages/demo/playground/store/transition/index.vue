@@ -17,6 +17,9 @@ export default {
       'active'
     ])
   },
+  data () {
+    filename: __filename
+  },
   methods: {
     ...mapActions('d2admin/transition', [
       'set'

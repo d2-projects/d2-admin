@@ -11,6 +11,7 @@ export default {
   name: 'demo-playground-page-cache-on',
   data () {
     return {
+      filename: __filename,
       value: ''
     }
   }

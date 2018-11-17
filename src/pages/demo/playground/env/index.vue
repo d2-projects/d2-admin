@@ -9,6 +9,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       env: JSON.stringify(process.env, null, 2)
     }
   }

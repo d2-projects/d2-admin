@@ -42,6 +42,7 @@ export default {
   name: 'demo-playground-store-page',
   data () {
     return {
+      filename: __filename,
       value: ''
     }
   },
