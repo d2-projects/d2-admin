@@ -28,6 +28,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       layout: {
         layout: [
           { 'x': 0, 'y': 0, 'w': 4, 'h': 10, 'i': '0' },

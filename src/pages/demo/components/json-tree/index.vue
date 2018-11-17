@@ -9,6 +9,7 @@ import packJson from '../../../../../package.json'
 export default {
   data () {
     return {
+      filename: __filename,
       options: {
         maxDepth: 10,
         rootObjectKey: 'package.json',

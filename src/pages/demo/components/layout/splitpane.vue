@@ -17,6 +17,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      filename: __filename
+    }
+  },
   mounted () {
     // 加载完成后显示提示
     this.showInfo()

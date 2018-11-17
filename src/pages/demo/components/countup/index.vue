@@ -58,6 +58,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       // 回调函数使用
       className: '',
       // 更新数值用

@@ -27,6 +27,7 @@ export default {
   },
   data () {
     return {
+      filename: __filename,
       icon,
       showIndex: 12
     }

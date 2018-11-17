@@ -23,6 +23,7 @@ import value from './value'
 export default {
   data () {
     return {
+      filename: __filename,
       value
     }
   },
