@@ -52,7 +52,6 @@ export default {
   index: 6,
   data () {
     return {
-      filename: __filename,
       tableData: [{
         date: '2016-05-03',
         name: '王小虎',
