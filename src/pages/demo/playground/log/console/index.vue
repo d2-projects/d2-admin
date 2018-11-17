@@ -42,6 +42,9 @@
 
 <script>
 export default {
+  data () {
+    filename: __filename
+  },
   methods: {
     handleColorful () {
       this.$log.colorful([

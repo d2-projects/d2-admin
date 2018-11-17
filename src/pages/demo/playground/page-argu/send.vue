@@ -18,6 +18,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       sendForm: {
         username: 'FairyEver',
         userid: '001'

@@ -25,6 +25,7 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
     return {
+      filename: __filename,
       menuEmpty: [
         {
           title: '空菜单演示',

@@ -42,6 +42,7 @@ import { mapActions } from 'vuex'
 export default {
   data () {
     return {
+      filename: __filename,
       dataDisplay: '',
       keyNameToSet: '',
       valueToSet: '',

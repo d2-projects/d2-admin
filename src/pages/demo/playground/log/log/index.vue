@@ -15,6 +15,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       text: 'D2Admin log info'
     }
   },

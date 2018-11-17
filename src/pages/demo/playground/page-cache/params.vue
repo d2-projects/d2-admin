@@ -19,6 +19,9 @@ export default {
       required: true
     }
   },
+  data () {
+    filename: __filename
+  },
   computed: {
     /**
      * 带参路由多组参数使用同一个组件实例，需要在组件内部对多个参数的情况进行统一处理

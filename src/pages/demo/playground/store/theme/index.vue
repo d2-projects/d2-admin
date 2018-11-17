@@ -35,6 +35,7 @@ import { mapState, mapActions } from 'vuex'
 export default {
   data () {
     return {
+      filename: __filename,
       table: {
         showHeader: false,
         border: true

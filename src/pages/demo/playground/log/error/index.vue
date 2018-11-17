@@ -8,6 +8,9 @@
 
 <script>
 export default {
+  data () {
+    filename: __filename
+  },
   methods: {
     handleNewError () {
       console.log(a) // eslint-disable-line

@@ -43,6 +43,7 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
     return {
+      filename: __filename,
       dialogVisible: false
     }
   },
