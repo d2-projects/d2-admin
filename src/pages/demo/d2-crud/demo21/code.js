@@ -16,6 +16,7 @@ export default `<template>
 export default {
   data () {
     return {
+      filename: __filename,
       columns: [
         {
           title: '日期',
