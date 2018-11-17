@@ -28,6 +28,7 @@ export default {
   name: 'demo-plugins-mock-ajax',
   data () {
     return {
+      filename: __filename,
       table: {
         columns: [],
         data: [],

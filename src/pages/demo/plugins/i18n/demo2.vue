@@ -11,6 +11,9 @@ export default {
   components: {
     DemoI18nControl: () => import('./components/DemoI18nControl'),
     DemoI18n: () => import('./components/DemoI18n')
+  },
+  data () {
+    filename: __filename
   }
 }
 </script>

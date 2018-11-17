@@ -48,6 +48,7 @@ import BScroll from 'better-scroll'
 export default {
   data () {
     return {
+      filename: __filename,
       time: 300,
       BS: null
     }

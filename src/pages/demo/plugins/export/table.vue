@@ -28,6 +28,7 @@ import table from './data'
 export default {
   data () {
     return {
+      filename: __filename,
       table: {
         columns: table.columns,
         data: table.data,

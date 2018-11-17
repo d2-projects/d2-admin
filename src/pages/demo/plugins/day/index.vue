@@ -66,6 +66,7 @@ import dayjs from 'dayjs'
 export default {
   data () {
     return {
+      filename: __filename,
       dayjs
     }
   }

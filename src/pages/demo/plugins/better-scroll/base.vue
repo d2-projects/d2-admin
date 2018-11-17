@@ -14,6 +14,7 @@ import BScroll from 'better-scroll'
 export default {
   data () {
     return {
+      filename: __filename,
       BS: null
     }
   },

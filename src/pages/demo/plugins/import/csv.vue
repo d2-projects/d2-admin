@@ -30,6 +30,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       table: {
         columns: [],
         data: [],

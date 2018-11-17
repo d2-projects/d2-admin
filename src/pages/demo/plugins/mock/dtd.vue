@@ -44,6 +44,7 @@ export default {
   },
   data () {
     return {
+      filename: __filename,
       mockResult: [],
       settingDTD,
       settingDTDClone: cloneDeep(settingDTD),
