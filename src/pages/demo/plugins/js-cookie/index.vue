@@ -26,7 +26,9 @@
 import util from '@/libs/util.js'
 export default {
   data () {
-    filename: __filename
+    return {
+      filename: __filename
+    }
   },
   methods: {
     set (name = 'default-name', value = 'default-value') {
