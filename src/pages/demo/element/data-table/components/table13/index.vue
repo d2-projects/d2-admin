@@ -37,12 +37,13 @@
   </el-table>
 </template>
 
-<script>
+
 export default {
   title: '筛选',
   index: 13,
   data () {
     return {
+      filename: __filename,
       tableData: [{
         date: '2016-05-02',
         name: '王小虎',

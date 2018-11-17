@@ -34,6 +34,7 @@ export default {
   components,
   data () {
     return {
+      filename: __filename,
       tableList
     }
   }

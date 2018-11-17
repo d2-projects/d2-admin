@@ -91,6 +91,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       checked1: true,
       checked2: false,
       checkList: ['选中且禁用', '复选框 A'],

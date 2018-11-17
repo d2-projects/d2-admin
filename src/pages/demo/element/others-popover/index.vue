@@ -5,3 +5,13 @@
     <d2-link-btn title="Element" link="http://element.eleme.io/#/zh-CN"/>
   </d2-container>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      filename: __filename
+    }
+  }
+}
+</script>

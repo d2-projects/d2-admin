@@ -29,6 +29,11 @@ export default {
       required: false,
       default: ''
     }
+  },
+  data () {
+    return {
+      filename: __filename
+    }
   }
 }
 </script>

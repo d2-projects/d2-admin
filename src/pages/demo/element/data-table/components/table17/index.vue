@@ -67,6 +67,7 @@ export default {
   index: 17,
   data () {
     return {
+      filename: __filename,
       tableData6: [{
         id: '12987122',
         name: '王小虎',
