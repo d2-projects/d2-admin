@@ -26,6 +26,7 @@ export default {
   },
   data () {
     return {
+      filename: __filename,
       mockResult: [],
       settingDPD,
       settingDPDClone: cloneDeep(settingDPD),
