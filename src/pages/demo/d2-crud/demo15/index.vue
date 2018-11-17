@@ -25,6 +25,7 @@ import code from './code.js'
 export default {
   data () {
     return {
+      filename: __filename,
       doc,
       code,
       columns: [
