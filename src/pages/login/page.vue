@@ -141,6 +141,16 @@ export default {
             username: this.formLogin.username,
             password: this.formLogin.password
           })
+            .then(() => {
+              const redirect = this.$route.query.redirect
+              if (redirect) {
+                // 重定向到指定的页面
+                this.$router.replace(redirect)
+              } else {
+                // 重定向到开始路径
+                this.$router.replace('/')
+              }
+            })
         } else {
           // 登录表单校验失败
           this.$message.error('表单校验失败')

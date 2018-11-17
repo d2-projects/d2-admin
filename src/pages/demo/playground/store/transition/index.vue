@@ -18,7 +18,9 @@ export default {
     ])
   },
   data () {
-    filename: __filename
+    return {
+      filename: __filename
+    }
   },
   methods: {
     ...mapActions('d2admin/transition', [
