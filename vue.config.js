@@ -34,23 +34,30 @@ module.exports = {
     // 解决 cli3 热更新失效 https://github.com/vuejs/vue-cli/issues/1559
     config.resolve
       .symlinks(true)
-    if (process.env.NODE_ENV === 'production') {
-      config.optimization
-        // 生产环境移除 console
-        // 其它优化选项 https://segmentfault.com/a/1190000008995453?utm_source=tag-newest#articleHeader12
-        .minimizer([
-          new UglifyJsPlugin({
-            uglifyOptions: {
-              compress: {
-                warnings: false,
-                drop_console: true,
-                drop_debugger: true,
-                pure_funcs: ['console.log']
+    config
+      // 开发环境
+      .when(process.env.NODE_ENV === 'development',
+        // sourcemap不包含列信息
+        config => config.devtool('cheap-source-map')
+      )
+      // 非开发环境
+      .when(process.env.NODE_ENV !== 'development', config => {
+        config.optimization
+          .minimizer([
+            new UglifyJsPlugin({
+              uglifyOptions: {
+                // 移除 console
+                // 其它优化选项 https://segmentfault.com/a/1190000010874406
+                compress: {
+                  warnings: false,
+                  drop_console: true,
+                  drop_debugger: true,
+                  pure_funcs: ['console.log']
+                }
               }
-            }
-          })
-        ])
-    }
+            })
+          ])
+      })
     // markdown
     config.module
       .rule('md')

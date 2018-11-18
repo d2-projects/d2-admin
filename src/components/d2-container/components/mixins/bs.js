@@ -30,7 +30,7 @@ export default {
         }
       }, this.betterScrollOptions))
       // 滚动时发出事件 并且统一返回的数据格式
-      this.BS.on('scroll', ({x, y}) => this.$emit('scroll', {
+      this.BS.on('scroll', ({ x, y }) => this.$emit('scroll', {
         x: -x,
         y: -y
       }))
