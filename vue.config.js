@@ -1,3 +1,5 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 // 拼接路径
 const resolve = dir => require('path').join(__dirname, dir)
 
@@ -20,9 +22,35 @@ module.exports = {
   },
   // 默认设置: https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js
   chainWebpack: config => {
+    /**
+     * 删除懒加载模块的 prefetch preload，降低带宽压力
+     * https://cli.vuejs.org/zh/guide/html-and-static-assets.html#prefetch
+     * https://cli.vuejs.org/zh/guide/html-and-static-assets.html#preload
+     * 而且预渲染时生成的 prefetch 标签是 modern 版本的，低版本浏览器是不需要的
+     */
+    config.plugins
+      .delete('prefetch')
+      .delete('preload')
     // 解决 cli3 热更新失效 https://github.com/vuejs/vue-cli/issues/1559
     config.resolve
       .symlinks(true)
+    if (process.env.NODE_ENV === 'production') {
+      config.optimization
+        // 生产环境移除 console
+        // 其它优化选项 https://segmentfault.com/a/1190000008995453?utm_source=tag-newest#articleHeader12
+        .minimizer([
+          new UglifyJsPlugin({
+            uglifyOptions: {
+              compress: {
+                warnings: false,
+                drop_console: true,
+                drop_debugger: true,
+                pure_funcs: ['console.log']
+              }
+            }
+          })
+        ])
+    }
     // markdown
     config.module
       .rule('md')
