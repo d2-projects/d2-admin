@@ -44,6 +44,7 @@ router.beforeEach((to, from, next) => {
           redirect: to.fullPath
         }
       })
+      NProgress.done() // hack
     }
   } else {
     // 不需要身份校验 直接通过
