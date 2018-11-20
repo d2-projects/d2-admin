@@ -142,14 +142,8 @@ export default {
             password: this.formLogin.password
           })
             .then(() => {
-              const redirect = this.$route.query.redirect
-              if (redirect) {
-                // 重定向到指定的页面
-                this.$router.replace(redirect)
-              } else {
-                // 重定向到开始路径
-                this.$router.replace('/')
-              }
+              // 重定向对象不存着则返回顶层路径
+              this.$router.replace(this.$route.query.redirect || '/')
             })
         } else {
           // 登录表单校验失败
