@@ -44,6 +44,8 @@ router.beforeEach((to, from, next) => {
           redirect: to.fullPath
         }
       })
+      // https://github.com/d2-projects/d2-admin/issues/138
+      NProgress.done()
     }
   } else {
     // 不需要身份校验 直接通过
