@@ -17,7 +17,7 @@
 	<a><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/></a>
 </p>
 
-[D2Admin](https://github.com/d2-projects/d2-admin) is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
+D2Admin is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
 
 [中文介绍](https://github.com/d2-projects/d2-admin/blob/master/doc/README.zh.md) | **English**
 
@@ -29,7 +29,7 @@
 
 [preview](https://d2admin.fairyever.com)
 
-## Feature
+## Features
 
 * Build with vue-cli3
 * First screen loading waiting animation
@@ -86,14 +86,14 @@
 
 ## Other version
 
-| Name | Github / HomePage  | Preview | Introduction |
+| Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
 | Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://start-kit.d2admin.fairyever.com) |  |
 | Alibaba Ice scaffold | [Ice](https://alibaba.github.io/ice/scaffold?type=vue) | [Preview](https://ice.d2admin.fairyever.com) | [Introduction](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
 ## Ecology
 
-| Name | Github / HomePage  | Preview | Introduction |
+| Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
 | D2 Daily | [Github](https://github.com/d2-projects/d2-awesome) | [Site](https://awesome.fairyever.com/daily/) | Update news and resources in the design and technology circles every day |
 | D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [Preview](https://d2admin.fairyever.com/#/demo/d2-crud/index) | Table common operation package |
@@ -103,11 +103,11 @@
 
 > The backend is contributed by the open source community. The latest version of D2Admin is not guaranteed. Please contact its open source author for related usage issues.
 
-| Name | Github / HomePage  | Preview | Introduction |
+| Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| `Spring Cloud` **Taroco** | [Github](https://github.com/liuht777/Taroco) | [Preview](http://111.231.192.110/) | Complete microservice enterprise solution |
-| `Spring Cloud` **Aooms** | [gitee](https://gitee.com/cyb-javaer/Aooms) | [Preview](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
-| `Beego` **GOA** | [Github](https://github.com/Qsnh/goa) | [Preview](http://goaio.vip/) | Online question answering system based on Beego + Vue |
+| **Taroco** `Spring Cloud` | [Github](https://github.com/liuht777/Taroco) | [Preview](http://111.231.192.110/) | Complete microservice enterprise solution |
+| **Aooms** `Spring Cloud` | [gitee](https://gitee.com/cyb-javaer/Aooms) | [Preview](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
+| **GOA** `Beego` | [Github](https://github.com/Qsnh/goa) | [Preview](http://goaio.vip/) | Online question answering system based on Beego + Vue |
 
 ## Badge
 
