@@ -17,126 +17,116 @@
 	<a><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/></a>
 </p>
 
-[D2Admin](https://github.com/d2-projects/d2-admin) 是一个完全 **开源免费** 的企业中后台产品前端集成方案，使用最新的前端技术栈，已经做好大部分项目前期准备工作，并且带有大量示例代码，助力管理系统敏捷开发。
+[D2Admin](https://github.com/d2-projects/d2-admin) is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
 
-## 文档
+[中文介绍](https://github.com/d2-projects/d2-admin/blob/master/doc/README.zh.md) | **English**
 
-[文档](https://doc.d2admin.fairyever.com)
+## Document
 
-## 预览
+[document](https://doc.d2admin.fairyever.com)
 
-[预览地址](https://d2admin.fairyever.com)
+## Preview
 
-## 码云镜像
+[preview](https://d2admin.fairyever.com)
 
-[码云](https://gitee.com/fairyever/d2-admin)
+## Feature
 
-## 功能
-
-* 使用 vue-cli3 构建
-* 首屏加载等待动画
-* 五款主题
-* 详细的文档
-* 登录和注销
-* 分离的路由和菜单设置
-* 可折叠侧边栏
-* 多国语
-* 富文本编辑器
-* Markdown 编辑器
-* 全屏
-* Fontawesome 图标库
-* 图标选择器
-* 自动注册 SVG 图标
-* 模拟数据
-* 剪贴板封装
-* 图表库
-* 时间日期计算工具
-* 导入 Excel （ xlsx + csv ）
-* 数据导出 Excel （ xlsx + csv ）
-* 数据导出文本
-* 数字动画
-* 可拖拽调整大小的区块布局
-* 可拖拽调整大小和位置的网格布局
-* 开箱即用的页面布局组件
-* 加载并解析 markdown 文件
-* GitHub 样式的 markdown 显示组件
-* markdown 内代码高亮
-* 为 markdown 扩展了百度云链接解析和优化显示
-* 右键菜单组件
-* 自定义滚动条和滚动控制
-* 公用样式抽离，方便的主题定制
-* 支持临时菜单配置
-* 系统功能展示模块 `1.1.4 +`
-* 多标签页模式 `1.1.4 +`
-* 美化滚动条 `1.1.4 +`
+* Build with vue-cli3
+* First screen loading waiting animation
+* Five themes
+* Detailed documentation
+* Login and logout
+* Separate routing and menu settings
+* Foldable sidebar
+* Multi-national language
+* Rich text editor
+* Markdown editor
+* full screen
+* Fontawesome icon library
+* Icon selector
+* Automatically register SVG icon
+* Simulation data
+* Clipboard package
+* Chart library
+* Time and date calculation tool
+* Import Excel ( xlsx + csv )
+* Data export Excel ( xlsx + csv )
+* Data export text
+* Digital animation
+* Drag and drop the size of the block layout
+* Grid layout for drag and resize and position
+* Out-of-the-box page layout components
+* Load and parse markdown files
+* GitHub style markdown display component
+* markdown internal code highlighting
+* Expanded Baidu cloud link resolution and optimized display for markdown
+* Right click menu component
+* Custom scrollbars and scrolling controls
+* Common style extraction, convenient theme customization
+* Support temporary menu configuration
+* System function display module `1.1.4 +`
+* Multi-tab mode `1.1.4 +`
+* Beautify the scroll bar `1.1.4 +`
 * json view `1.1.4 +`
-* cookie 封装 `1.1.5 +`
-* 多标签页全局控制 API `1.1.5 +`
-* 菜单全局控制 API `1.1.5 +`
-* 多标签页关闭控制支持右键菜单 `1.1.10 +`
-* 模块化全局状态管理 `1.2.0 +`
-* 多种数据持久化方式：区分用户，区分路由，页面数据快照功能 `1.2.0 +`
-* 支持跳出外部链接的菜单系统 `1.2.0 +`
-* 支持菜单 svg 图标 `1.3.0 +`
-* 日志记录和错误捕捉 `1.3.0 +`
-* 全局菜单搜索 `1.3.0 +`
-* 自定义登录重定向 `1.3.0 +`
-* 切换全局基础组件尺寸 `1.4.0 +`
-* 页面载入进度条 `1.4.1 +`
-* 自适应的顶部菜单栏 `1.4.7 +`
-* 数据导出 xslx 时支持合并单元格 `1.5.4 +`
+* cookie wrapper `1.1.5 +`
+* Multi-tab global control API `1.1.5 +`
+* Menu Global Control API `1.1.5 +`
+* Multi-tab page close control support right-click menu `1.1.10 +`
+* Modular global state management `1.2.0 +`
+* Multiple data persistence methods: distinguish users, distinguish routes, page data snapshot function `1.2.0 +`
+* Support for menu system that jumps out of external links `1.2.0 +`
+* Support menu svg icon `1.3.0 +`
+* Logging and error catching `1.3.0 +`
+* Global menu search `1.3.0 +`
+* Custom login redirect `1.3.0 +`
+* Switch global base component size `1.4.0 +`
+* Page loading progress bar `1.4.1 +`
+* Adaptive top menu bar `1.4.7 +`
+* Support for merging cells when exporting xslx `1.5.4 +`
 
-## 其它版本
+## Other version
 
-| 名称 | Github / 主页  | 预览 | 介绍 |
+| Name | Github / HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://start-kit.d2admin.fairyever.com) | 无 |
-| 飞冰脚手架 | [飞冰](https://alibaba.github.io/ice/scaffold?type=vue) | [预览](https://ice.d2admin.fairyever.com) | [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) |
+| Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://start-kit.d2admin.fairyever.com) |  |
+| Alibaba Ice scaffold | [Ice](https://alibaba.github.io/ice/scaffold?type=vue) | [Preview](https://ice.d2admin.fairyever.com) | [Introduction](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
-## 生态
+## Ecology
 
-| 名称 | Github / 主页 | 预览 | 介绍 |
+| Name | Github / HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| D2 日报 | [Github](https://github.com/d2-projects/d2-awesome) | [网站](https://awesome.fairyever.com/daily/) | 每天更新设计与技术圈的新闻和资源 |
-| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://d2admin.fairyever.com/#/demo/d2-crud/index) | 表格常用操作封装 |
-| D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
+| D2 Daily | [Github](https://github.com/d2-projects/d2-awesome) | [Site](https://awesome.fairyever.com/daily/) | Update news and resources in the design and technology circles every day |
+| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [Preview](https://d2admin.fairyever.com/#/demo/d2-crud/index) | Table common operation package |
+| D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [Preview](https://github.com/d2-projects/d2-ribbons) | Open source project logo library |
 
-## 开源后端实现
+## Open source backend implementation
 
-> 后端由开源社区贡献，不保证使用 D2Admin 最新版本，相关使用问题请联系其开源作者。
+> The backend is contributed by the open source community. The latest version of D2Admin is not guaranteed. Please contact its open source author for related usage issues.
 
-| 名称 | Github / 主页 | 预览 | 介绍 |
+| Name | Github / HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| ( Spring Cloud ) Taroco | [Github](https://github.com/liuht777/Taroco) | [预览](http://111.231.192.110/) | 整套微服务企业级解决方案 |
-| ( Spring Cloud ) Aooms | [码云](https://gitee.com/cyb-javaer/Aooms) | [预览](https://www.yuboon.com/Aooms) | 极速微服务开发，不止像JFinal一样简单 |
-| ( Beego ) GOA | [Github](https://github.com/Qsnh/goa) | [预览](http://goaio.vip/) | 基于 Beego + Vue 开发的在线问答系统 |
+| `Spring Cloud` **Taroco** | [Github](https://github.com/liuht777/Taroco) | [Preview](http://111.231.192.110/) | Complete microservice enterprise solution |
+| `Spring Cloud` **Aooms** | [gitee](https://gitee.com/cyb-javaer/Aooms) | [Preview](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
+| `Beego` **GOA** | [Github](https://github.com/Qsnh/goa) | [Preview](http://goaio.vip/) | Online question answering system based on Beego + Vue |
 
-## 徽章
+## Badge
 
-如果您的开源项目基于 D2Admin 开发，请在您的 README 添加下面的徽章：
+If your open source project is based on D2Admin development, please add the following badge to your README:
 
 <a href="https://github.com/d2-projects/d2-admin" target="_blank">
 	<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/d2-admin@2x.png" width="200">
 </a>
 
-复制下面代码加入到 README 中即可：
+Copy the following code into the README to:
 
 ``` html
 <a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/d2-admin@2x.png" width="200"></a>
 ```
 
-同时您可以将您的项目汇报给我们，优秀项目我们会放置在 D2Admin 相关位置并帮助您宣传。
-
-## 加入我们
-
-D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行管理系统开发，同时也提供 2000 人的 QQ 交流群和微信群，前后端的朋友可以相互答疑，项目组成员全部在内，所有 D2 相关项目使用问题欢迎在群内提问。
-
-![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
+At the same time, you can report your project to us. We will place the excellent project in D2Admin and help you publicize it.
 
 ## License
 
 [MIT](https://github.com/d2-projects/d2-admin/blob/master/LICENSE)
 
 Copyright (c) 2018-present FairyEver
-
-![](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/give-a-star@2x.png)
