@@ -34,6 +34,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 * Build with vue-cli3
 * First screen loading waiting animation
 * Five themes
+* Built-in UEditor rich text editor
 * Detailed documentation
 * Login and logout
 * Separate routing and menu settings
