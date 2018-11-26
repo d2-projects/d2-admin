@@ -23,6 +23,9 @@ export default {
       return this.value ? 'success' : 'danger'
     },
     text () {
+      if (this.scope.$index === 1) {
+        return this.myProps
+      }
       return this.value ? '是' : '否'
     }
   },
