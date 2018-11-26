@@ -31,7 +31,10 @@ export default {
           title: '检查状态（点击可修改）',
           key: 'check',
           component: {
-            name: 'my-tag'
+            name: 'my-tag',
+            props: {
+              myProps: '我是通过props传过来的数据！'
+            }
           }
         }
       ],

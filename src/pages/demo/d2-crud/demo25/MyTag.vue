@@ -10,6 +10,12 @@ export default {
     value: {
       type: Boolean,
       require: true
+    },
+    scope: {
+      default: null
+    },
+    myProps: {
+      default: null
     }
   },
   computed: {
@@ -19,6 +25,10 @@ export default {
     text () {
       return this.value ? '是' : '否'
     }
+  },
+  mounted () {
+    console.log(this.scope)
+    console.log(this.myProps)
   },
   methods: {
     handleClick () {
