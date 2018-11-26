@@ -25,7 +25,7 @@ export default {
     // 一秒后显示按钮
     setTimeout(() => {
       this.isActive = true
-    }, 1000)
+    }, 500)
   },
   methods: {
     // 点击按钮的时候跳转到源代码
