@@ -64,7 +64,10 @@ export default {
           title: '检查状态（点击可修改）',
           key: 'check',
           component: {
-            name: MyTag
+            name: MyTag,
+            props: {
+              myProps: '我是通过props传过来的数据！'
+            }
           }
         }
       ],

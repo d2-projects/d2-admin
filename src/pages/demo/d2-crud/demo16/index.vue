@@ -104,7 +104,9 @@ export default {
           message: '保存成功',
           type: 'success'
         })
-        done()
+        done({
+          address: '我是通过done事件传入的数据！'
+        })
         this.formOptions.saveLoading = false
       }, 300)
     },
