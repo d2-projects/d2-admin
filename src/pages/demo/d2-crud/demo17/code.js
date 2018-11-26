@@ -139,7 +139,11 @@ export default {
           message: '编辑成功',
           type: 'success'
         })
-        done()
+
+        // done可以传入一个对象来修改提交的某个字段
+        done({
+          address: '我是通过done事件传入的数据！'
+        })
         this.formOptions.saveLoading = false
       }, 300)
     },
