@@ -1,12 +1,12 @@
 <template>
   <div class="page-login">
-    <div class="page-login--layer area">
+    <div class="page-login--layer page-login--layer-area">
       <ul class="circles">
         <li v-for="n in 10" :key="n"></li>
       </ul>
     </div>
     <div
-      class="page-login--layer page-login--time"
+      class="page-login--layer page-login--layer-time"
       flex="main:center cross:center">
       {{time}}
     </div>
@@ -202,8 +202,11 @@ export default {
     @extend %full;
     overflow: auto;
   }
+  .page-login--layer-area {
+    overflow: hidden;
+  }
   // 时间
-  .page-login--time {
+  .page-login--layer-time {
     font-size: 24em;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.03);
