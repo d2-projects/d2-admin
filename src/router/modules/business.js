@@ -43,7 +43,7 @@ export default {
       props: true,
       meta: {
         ...meta,
-        title: 'issue #142 Edit'
+        title: '无缓存编辑'
       }
     }
   ])('demo-business-')
