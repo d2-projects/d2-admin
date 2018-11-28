@@ -3,7 +3,11 @@
     type="card"
     class="demo-business-issues-142-edit">
     <template slot="header">编辑 id: {{id}}</template>
-    <el-form ref="form" :model="form" label-width="80px" class="demo-business-issues-142-edit--form">
+    <el-form
+      ref="form"
+      :model="form"
+      label-width="80px"
+      class="demo-business-issues-142-edit--form">
       <el-form-item label="姓名">
         <el-input v-model="form.name"/>
       </el-form-item>
@@ -12,14 +16,12 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="handleSubmit">修改</el-button>
-        <el-button @click="handleCancel">取消</el-button>
       </el-form-item>
     </el-form>
   </d2-container>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 import { get } from '@/api/demo/business/issues/142'
 export default {
   props: {
@@ -36,34 +38,55 @@ export default {
       }
     }
   },
-  created () {
-    // 自动加载一次表单数据
-    this.getFormData()
+  // 第一次进入或从其他组件对应路由进入时触发
+  beforeRouteEnter (to, from, next) {
+    const id = to.params.id
+    if (id) {
+      next(vm => {
+        vm.resetFormData()
+        vm.getFormData(id)
+      })
+    }
+    else {
+      next(new Error('未指定ID'))
+    }
+  },
+  // 在同一组件对应的多个路由间切换时触发
+  beforeRouteUpdate (to, from, next) {
+    const id = to.params.id
+    if (id) {
+      this.resetFormData()
+      this.getFormData(id)
+      next()
+    } else {
+      next(new Error('未指定ID'))
+    }
   },
   methods: {
-    ...mapActions('d2admin/page', [
-      'close'
-    ]),
-    // 根据 id 获取数据
-    getFormData () {
-      get(this.id)
+    // [业务逻辑] 重置表单
+    resetFormData () {
+      this.form = {
+        name: '',
+        address: ''
+      }
+    },
+    // [业务逻辑] 根据 id 获取数据
+    getFormData (id) {
+      get(id)
         .then(res => {
-          this.form.name = res.name
-          this.form.address = res.address
+          const { name, address } = res
+          this.form = { name, address }
         })
         .catch(err => {
           console.log('err', err)
         })
     },
-    // 提交
+    // [业务逻辑] 提交
     handleSubmit () {
-      console.log('submit!')
-    },
-    // 取消编辑
-    handleCancel () {
-      this.close({
-        tagName: this.$route.fullPath,
-        vm: this
+      this.$notify({
+        title: 'Submit',
+        message: '提交了表单',
+        type: 'success'
       })
     }
   }

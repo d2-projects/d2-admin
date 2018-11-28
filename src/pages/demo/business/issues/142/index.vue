@@ -32,12 +32,10 @@ export default {
           size: 'mini'
         },
         rowHandle: {
-          width: 80,
           align: 'center',
           custom: [
             {
-              text: '编辑',
-              type: 'primary',
+              text: '无缓存编辑',
               size: 'mini',
               emit: 'edit'
             }
