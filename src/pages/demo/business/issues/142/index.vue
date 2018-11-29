@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="card">
+  <d2-container :filename="filename" type="card">
     <d2-crud
       v-bind="crud"
       @edit="({ index, row }) => goToEditPage('demo-business-issues-142-edit', row.id)"
@@ -17,6 +17,7 @@
 export default {
   data () {
     return {
+      filename: __filename,
       crud: {
         columns: [
           { title: '姓名', key: 'name' },
