@@ -61,28 +61,28 @@ export default {
     // 关闭当前
     handleCloseCurrent () {
       this.close({
-        tagName: this.$route.name,
+        tagName: this.$route.fullPath,
         vm: this
       })
     },
     // 关闭左侧
     handleCloseLeft () {
       this.closeLeft({
-        tagName: this.$route.name,
+        tagName: this.$route.fullPath,
         vm: this
       })
     },
     // 关闭右侧
     handleCloseRight () {
       this.closeRight({
-        tagName: this.$route.name,
+        tagName: this.$route.fullPath,
         vm: this
       })
     },
     // 关闭其他
     handleCloseOther () {
       this.closeOther({
-        tagName: this.$route.name,
+        tagName: this.$route.fullPath,
         vm: this
       })
     },
@@ -92,7 +92,7 @@ export default {
     },
     // 清空当前页缓存并刷新此页面
     handleCleanCacheAndRefreshCurrent () {
-      this.keepAliveRemove(this.$route.name)
+      this.keepAliveRemove(this.$route.fullPath)
       this.$nextTick(this.$router.replace('/refresh'))
     },
     // 清空所有的缓存并刷新此页面
