@@ -1,5 +1,6 @@
 <template>
   <d2-container
+    :filename="filename"
     type="card"
     class="page">
     <el-form
@@ -27,6 +28,11 @@ export default {
   mixins: [
     base
   ],
+  data () {
+    return {
+      filename: __filename
+    }
+  },
   // 第一次进入或从其他组件对应路由进入时触发
   beforeRouteEnter (to, from, next) {
     const id = to.params.id
