@@ -45,6 +45,16 @@ export default {
         ...meta,
         title: '无缓存编辑'
       }
+    },
+    {
+      path: 'issues/142/edit-cache-db/:id',
+      name: `${pre}issues-142-edit-cache-db`,
+      component: () => import('@/pages/demo/business/issues/142/edit-cache-db'),
+      props: true,
+      meta: {
+        ...meta,
+        title: '带缓存编辑 DB'
+      }
     }
   ])('demo-business-')
 }
