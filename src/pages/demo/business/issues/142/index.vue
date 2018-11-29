@@ -2,7 +2,8 @@
   <d2-container type="card">
     <d2-crud
       v-bind="crud"
-      @edit="handleEdit"
+      @edit="({ index, row }) => goToEditPage('demo-business-issues-142-edit', row.id)"
+      @edit-cache-db="({ index, row }) => goToEditPage('demo-business-issues-142-edit-cache-db', row.id)"
       style="margin: -15px 0;"/>
     <template slot="footer">
       <d2-link-btn
@@ -38,6 +39,11 @@ export default {
               text: '无缓存编辑',
               size: 'mini',
               emit: 'edit'
+            },
+            {
+              text: '带缓存编辑 DB',
+              size: 'mini',
+              emit: 'edit-cache-db'
             }
           ]
         }
@@ -45,11 +51,11 @@ export default {
     }
   },
   methods: {
-    handleEdit ({ index, row }) {
+    goToEditPage (name, id) {
       this.$router.push({
-        name: 'demo-business-issues-142-edit',
+        name,
         params: {
-          id: row.id
+          id
         }
       })
     }
