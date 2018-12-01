@@ -21,13 +21,13 @@ function pathInit ({
   const uuid = util.cookies.get('uuid') || 'ghost-uuid'
   const currentPath = `${dbName}.${user ? `user.${uuid}` : 'public'}${path ? `.${path}` : ''}`
   const value = db.get(currentPath).value()
-  console.group('pathInit')
-  console.log('dbName', dbName)
-  console.log('path', path)
-  console.log('user', user)
-  console.log('defaultValue', defaultValue)
-  console.log('value', value)
-  console.groupEnd()
+  // console.group('pathInit')
+  // console.log('dbName', dbName)
+  // console.log('path', path)
+  // console.log('user', user)
+  // console.log('defaultValue', defaultValue)
+  // console.log('value', value)
+  // console.groupEnd()
   if (!(value !== undefined && validator(value))) {
     db
       .set(currentPath, defaultValue)
