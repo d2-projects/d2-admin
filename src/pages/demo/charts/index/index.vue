@@ -1,6 +1,6 @@
 <template>
-  <d2-container :filename="filename" type="card">
-    <d2-module-index :banner="banner"/>
+  <d2-container :filename="filename" type="ghost">
+    <d2-module-banner slot="header" v-bind="banner"/>
   </d2-container>
 </template>
 
