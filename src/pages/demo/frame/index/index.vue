@@ -10,8 +10,8 @@ export default {
     return {
       filename: __filename,
       banner: {
-        title: 'PLAYGROUND',
-        subTitle: '在这里可以测试一些 D2Admin 的系统功能'
+        title: 'FRAME',
+        subTitle: '在 D2Admin 中嵌入其它页面'
       }
     }
   }
