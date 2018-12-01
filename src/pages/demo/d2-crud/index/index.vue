@@ -1,10 +1,6 @@
 <template>
-  <d2-container :filename="filename">
-    <d2-page-cover
-      title="D2 CRUD"
-      sub-title="表格封装">
-      <img src="./image/icon.png">
-    </d2-page-cover>
+  <d2-container :filename="filename" type="card">
+    <d2-module-index :banner="banner"/>
   </d2-container>
 </template>
 
@@ -12,7 +8,12 @@
 export default {
   data () {
     return {
-      filename: __filename
+      filename: __filename,
+      banner: {
+        title: 'D2 CRUD',
+        subTitle: 'D2 Crud 是一个基于 Vue.js 和 Element UI 的表格组件，封装了常用的表格操作。',
+        link: 'https://github.com/d2-projects/d2-crud'
+      }
     }
   }
 }

@@ -1,10 +1,6 @@
 <template>
-  <d2-container :filename="filename">
-    <d2-page-cover
-      title="图表"
-      sub-title="集成图表组件">
-      <img src="./image/icon.png">
-    </d2-page-cover>
+  <d2-container :filename="filename" type="card">
+    <d2-module-index :banner="banner"/>
   </d2-container>
 </template>
 
@@ -12,7 +8,11 @@
 export default {
   data () {
     return {
-      filename: __filename
+      filename: __filename,
+      banner: {
+        title: 'CHARTS',
+        subTitle: '图表示例'
+      }
     }
   }
 }
