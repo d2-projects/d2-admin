@@ -21,7 +21,7 @@ export default {
         fullPath: '/index',
         meta: {
           title: '首页',
-          requiresAuth: false
+          auth: false
         }
       }
     ]
