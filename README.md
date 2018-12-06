@@ -126,6 +126,15 @@ Copy the following code into the README to:
 
 At the same time, you can report your project to us. We will place the excellent project in D2Admin and help you publicize it.
 
+## Important Contributor
+
+* [@FairyEver](https://github.com/FairyEver)
+* [@sunhaoxiang](https://github.com/sunhaoxiang)
+* [@Aysnine](https://github.com/Aysnine)
+* [@han-feng](https://github.com/han-feng)
+* [@rongxingsun](https://github.com/rongxingsun)
+* [@dnyz520](https://github.com/dnyz520)
+
 ## License
 
 [MIT](https://github.com/d2-projects/d2-admin/blob/master/LICENSE)
