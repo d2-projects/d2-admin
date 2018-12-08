@@ -344,8 +344,11 @@ export default {
     keepAliveRemove (state, name) {
       const list = [ ...state.keepAlive ]
       const index = list.findIndex(item => item === name)
-      list.splice(index, 1)
-      state.keepAlive = list
+
+      if (index !== -1) {
+        list.splice(index, 1)
+        state.keepAlive = list
+      }
     },
     /**
      * @description 增加一个页面的缓存设置
