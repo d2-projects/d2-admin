@@ -1,23 +1,20 @@
 <template>
   <el-button
     class="d2-module-index-menu-item"
-    @click="handleClick">
+    @click="handleMenuSelect(menu.path)">
     {{menu.title}}
   </el-button>
 </template>
 
 <script>
+import mixinMenu from '@/layout/header-aside/components/mixin/menu'
 export default {
+  mixins: [
+    mixinMenu
+  ],
   props: {
     menu: {
       default: () => ({})
-    }
-  },
-  methods: {
-    handleClick () {
-      if (this.menu.path) {
-        this.$router.push(this.menu.path)
-      }
     }
   }
 }
