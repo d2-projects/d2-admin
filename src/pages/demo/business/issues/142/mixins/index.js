@@ -1,4 +1,4 @@
-import { get } from '@/api/demo/business/issues/142'
+import { get } from '@api/demo.business.issues.142'
 
 export default {
   props: {
