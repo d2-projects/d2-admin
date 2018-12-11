@@ -95,6 +95,7 @@ module.exports = {
     // 重新设置 alias
     config.resolve.alias
       .set('@', resolve('src'))
+      .set('@api', resolve('src/api'))
     // node
     config.node
       .set('__dirname', true)

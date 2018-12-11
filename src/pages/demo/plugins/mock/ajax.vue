@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { PluginMocksAjax } from '@/api/demo/plugins/mocks/ajax'
+import { PluginMocksAjax } from '@api/demo.plugins.mocks.ajax'
 export default {
   name: 'demo-plugins-mock-ajax',
   data () {
