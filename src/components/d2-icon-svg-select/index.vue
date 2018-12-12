@@ -6,8 +6,17 @@
       :placement="placement"
       width="300"
       trigger="click">
-      <div class="header d2-clearfix d2-mb-10" v-if="clearable">
-        <el-button type="danger" icon="el-icon-delete" size="mini" class="d2-fr" @click="selectIcon()">清空</el-button>
+      <div
+        class="d2-clearfix d2-mb-10"
+        v-if="clearable">
+        <el-button
+          type="danger"
+          icon="el-icon-delete"
+          size="mini"
+          class="d2-fr"
+          @click="selectIcon()">
+          清空
+        </el-button>
       </div>
       <el-input
         v-model="searchText"
@@ -15,18 +24,16 @@
         placeholder="搜索 比如 'plus'"
         prefix-icon="el-icon-search">
       </el-input>
-      <div class="group">
-        <el-row>
-          <el-col
-            v-for="(item, index) in iconFilted"
-            :key="index"
-            class="icon-item"
-            :span="4"
-            @click.native="selectIcon(item)">
-            <d2-icon-svg :name="item"/>
-          </el-col>
-        </el-row>
-      </div>
+      <el-row class="d2-icon-svg-select--group">
+        <el-col
+          v-for="(item, index) in iconFilted"
+          :key="index"
+          class="d2-icon-svg-select--item"
+          :span="4"
+          @click.native="selectIcon(item)">
+          <d2-icon-svg :name="item"/>
+        </el-col>
+      </el-row>
     </el-popover>
     <!-- 允许用户输入 -->
     <el-input
@@ -35,7 +42,9 @@
       v-bind="bind"
       style="max-width: 240px;">
       <template v-if="value" slot="prepend">
-        <d2-icon-svg class="d2-icon-svg--input-preview" :name="value"/>
+        <d2-icon-svg
+          class="d2-icon-svg-select--input-preview"
+          :name="value"/>
       </template>
       <el-button v-popover:pop slot="append">
         <i class="fa fa-list"></i>
@@ -44,7 +53,10 @@
     <!-- 不允许用户输入 -->
     <el-button v-popover:pop v-if="!userInput">
       <span flex="dir:left main:center cross:center">
-        <d2-icon-svg v-if="value" class="d2-icon-svg--input-preview d2-mr-10" :name="value"/>
+        <d2-icon-svg
+          v-if="value"
+          class="d2-icon-svg-select--input-preview d2-mr-10"
+          :name="value"/>
         <span>{{value ? value : placeholder}}</span>
       </span>
     </el-button>
@@ -52,9 +64,8 @@
 </template>
 
 <script>
-import icon from './data/index'
 export default {
-  name: 'd2-icon-select',
+  name: 'd2-icon-svg-select',
   props: {
     // 值
     value: {
@@ -97,14 +108,10 @@ export default {
     return {
       // 绑定弹出框
       pop: false,
-      // 所有图标
-      icon,
       // 组件内输入框的值
       currentValue: '',
       // 搜索的文字
-      searchText: '',
-      // 不是搜索的时候显示的折叠面板绑定的展开数据
-      collapseActive: []
+      searchText: ''
     }
   },
   computed: {
@@ -148,32 +155,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.d2-icon-svg--input-preview {
+.d2-icon-svg-select--input-preview {
   height: 14px;
   width: 14px;
   display: block;
 }
-.group {
+.d2-icon-svg-select--group {
   max-height: 400px;
   overflow-x: hidden;
   overflow-y: scroll;
   margin-top: 10px;
-  .icon-item {
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $color-text-sub;
-    svg {
-      height: 20px;
-      width: 20px;
-    }
-    &:hover {
-      color: $color-text-main;
-      background-color: $color-bg;
-      border-radius: 4px;
-      box-shadow: inset 0px 0px 0px 1px $color-border-1;
-    }
+}
+.d2-icon-svg-select--item {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-text-sub;
+  svg {
+    height: 20px;
+    width: 20px;
+  }
+  &:hover {
+    color: $color-text-main;
+    background-color: $color-bg;
+    border-radius: 4px;
+    box-shadow: inset 0px 0px 0px 1px $color-border-1;
   }
 }
 </style>
