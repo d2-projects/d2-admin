@@ -81,6 +81,7 @@
 </template>
 
 <script>
+import d2HeaderSize from './components/header-size'
 import { mapState, mapGetters, mapActions } from 'vuex'
 import mixinSearch from './mixins/search'
 export default {
@@ -94,7 +95,7 @@ export default {
     'd2-tabs': () => import('./components/tabs'),
     'd2-header-fullscreen': () => import('./components/header-fullscreen'),
     'd2-header-search': () => import('./components/header-search'),
-    'd2-header-size': () => import('./components/header-size'),
+    d2HeaderSize,
     'd2-header-theme': () => import('./components/header-theme'),
     'd2-header-user': () => import('./components/header-user'),
     'd2-header-error-log': () => import('./components/header-error-log')
