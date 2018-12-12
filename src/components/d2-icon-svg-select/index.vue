@@ -15,24 +15,17 @@
         placeholder="搜索 比如 'plus'"
         prefix-icon="el-icon-search">
       </el-input>
-      <el-collapse v-if="!searchMode" class="group" v-model="collapseActive">
-        <el-collapse-item v-for="(item, index) in icon" :key="index" :title="item.title" :name="index" class="class">
-          <el-row class="class-row">
-            <el-col class="class-col" v-for="(iconName, iconIndex) in item.icon" :key="iconIndex" :span="4" @click.native="selectIcon(iconName)">
-              <i :class="'fa fa-' + iconName"></i>
-            </el-col>
-          </el-row>
-        </el-collapse-item>
-      </el-collapse>
-      <div v-if="searchMode" class="group">
-        <div class="class" v-for="(item, index) in iconFilted" :key="index">
-          <div class="class-title">{{item.title}}</div>
-          <el-row class="class-row">
-            <el-col class="class-col" v-for="(iconName, iconIndex) in item.icon" :key="iconIndex" :span="4" @click.native="selectIcon(iconName)">
-              <i :class="'fa fa-' + iconName"></i>
-            </el-col>
-          </el-row>
-        </div>
+      <div class="group">
+        <el-row>
+          <el-col
+            v-for="(item, index) in iconFilted"
+            :key="index"
+            class="icon-item"
+            :span="4"
+            @click.native="selectIcon(item)">
+            <d2-icon-svg :name="item"/>
+          </el-col>
+        </el-row>
       </div>
     </el-popover>
     <!-- 允许用户输入 -->
@@ -42,7 +35,7 @@
       v-bind="bind"
       style="max-width: 240px;">
       <template v-if="value" slot="prepend">
-        <i :class="'fa fa-' + value"></i>
+        <d2-icon-svg class="d2-icon-svg--input-preview" :name="value"/>
       </template>
       <el-button v-popover:pop slot="append">
         <i class="fa fa-list"></i>
@@ -50,10 +43,10 @@
     </el-input>
     <!-- 不允许用户输入 -->
     <el-button v-popover:pop v-if="!userInput">
-      <template v-if="value">
-        <i :class="'fa fa-' + value"></i>
-      </template>
-      {{value ? value : placeholder}}
+      <span flex="dir:left main:center cross:center">
+        <d2-icon-svg v-if="value" class="d2-icon-svg--input-preview d2-mr-10" :name="value"/>
+        <span>{{value ? value : placeholder}}</span>
+      </span>
     </el-button>
   </span>
 </template>
@@ -112,7 +105,6 @@ export default {
       searchText: '',
       // 不是搜索的时候显示的折叠面板绑定的展开数据
       collapseActive: []
-      // collapseActive: [...Array(icon.length)].map((e, i) => i)
     }
   },
   computed: {
@@ -130,10 +122,7 @@ export default {
     },
     // 过滤后的图标
     iconFilted () {
-      return this.icon.map(iconClass => ({
-        title: iconClass.title,
-        icon: iconClass.icon.filter(icon => icon.indexOf(this.searchText) >= 0)
-      })).filter(iconClass => iconClass.icon.length > 0)
+      return this.$IconSvg.filter(icon => icon.indexOf(this.searchText) >= 0)
     }
   },
   watch: {
@@ -159,33 +148,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.d2-icon-svg--input-preview {
+  height: 14px;
+  width: 14px;
+  display: block;
+}
 .group {
   max-height: 400px;
   overflow-x: hidden;
   overflow-y: scroll;
-  border-top: none;
-  border-bottom: none;
-  .class {
-    .class-title {
-      line-height: 30px;
-      text-align: center;
+  margin-top: 10px;
+  .icon-item {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-text-sub;
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+    &:hover {
+      color: $color-text-main;
       background-color: $color-bg;
       border-radius: 4px;
-      margin: 10px 0px;
-    }
-    .class-row {
-      .class-col {
-        line-height: 40px;
-        text-align: center;
-        color: $color-text-sub;
-        &:hover {
-          color: $color-text-main;
-          background-color: $color-bg;
-          border-radius: 4px;
-          font-size: 26px;
-          box-shadow: inset 0px 0px 0px 1px $color-border-1;
-        }
-      }
+      box-shadow: inset 0px 0px 0px 1px $color-border-1;
     }
   }
 }
