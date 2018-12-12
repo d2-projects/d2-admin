@@ -6,9 +6,9 @@ const db = [
 ]
 
 export default {
-  path: RegExp('/api/demo/business/issues/142' + '.*'),
+  path: RegExp('/api/demo/business/issues/142.*'),
   method: 'get',
-  handle ({ method, url, params, body, Mock, Random, Generator, Repeat }) {
+  handle ({ params }) {
     return {
       code: 0,
       msg: '获取数据成功',

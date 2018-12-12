@@ -33,7 +33,7 @@ export default {
       loading: false,
       page: {
         current: 1,
-        size: 100,
+        size: 10,
         total: 0
       }
     }
