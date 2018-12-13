@@ -135,9 +135,6 @@ export default {
   watch: {
     value (value) {
       this.currentValue = value
-    },
-    currentValue (value) {
-      this.selectIcon(value)
     }
   },
   created () {
@@ -171,13 +168,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $color-text-sub;
   svg {
     height: 20px;
     width: 20px;
   }
   &:hover {
-    color: $color-text-main;
     background-color: $color-bg;
     border-radius: 4px;
     box-shadow: inset 0px 0px 0px 1px $color-border-1;
