@@ -9,9 +9,9 @@
       :loading="loading"/>
     <demo-page-footer
       slot="footer"
-      :current="page.current"
-      :size="page.size"
-      :total="page.total"
+      :current="page.pageCurrent"
+      :size="page.pageSize"
+      :total="page.pageTotal"
       @change="handlePaginationChange"/>
   </d2-container>
 </template>
@@ -32,9 +32,9 @@ export default {
       table: [],
       loading: false,
       page: {
-        current: 1,
-        size: 10,
-        total: 0
+        pageCurrent: 1,
+        pageSize: 10,
+        pageTotal: 0
       }
     }
   },
@@ -57,7 +57,7 @@ export default {
       })
       BusinessTable1List({
         ...form,
-        page: this.page
+        ...this.page
       })
         .then(res => {
           this.loading = false
@@ -65,7 +65,7 @@ export default {
             title: '模拟表格数据请求完毕'
           })
           this.table = res.list
-          this.page = res.page
+          this.page.pageTotal = res.page.total
         })
         .catch(err => {
           this.loading = false

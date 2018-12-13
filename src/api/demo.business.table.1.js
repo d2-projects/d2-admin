@@ -1,9 +1,9 @@
 import request from '@/plugin/axios'
 
-export function BusinessTable1List (data) {
+export function BusinessTable1List (params) {
   return request({
-    url: '/demo/business/table/1',
-    method: 'post',
-    data
+    url: '/demo/business/table/1/fetch',
+    method: 'get',
+    params
   })
 }

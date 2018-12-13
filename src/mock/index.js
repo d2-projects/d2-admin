@@ -5,4 +5,6 @@ const options = req(require.context('./api/', true, /\.js$/))
   .filter(e => e.default)
   .map(e => e.default)
 
-d2Mock.load(options)
+options.forEach(option => {
+  d2Mock.load(option)
+})
