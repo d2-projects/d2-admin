@@ -5,14 +5,16 @@ const db = [
   { id: '4', name: '王小虎4', address: '上海市普陀区金沙江路 1516 弄' }
 ]
 
-export default {
-  path: RegExp('/api/demo/business/issues/142.*'),
-  method: 'get',
-  handle ({ params }) {
-    return {
-      code: 0,
-      msg: '获取数据成功',
-      data: db.find(e => e.id === params.id)
+export default [
+  {
+    path: '/api/demo/business/issues/142/detail.*',
+    method: 'get',
+    handle ({ params }) {
+      return {
+        code: 0,
+        msg: '获取数据成功',
+        data: db.find(e => e.id === params.id)
+      }
     }
   }
-}
+]

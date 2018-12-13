@@ -1,24 +1,21 @@
 import Mock from 'mockjs'
 import qs from 'qs'
-import patch from './patch'
+import withCredentials from './patch/withCredentials'
 
-/* 打补丁 */
-patch(Mock)
+/* 补丁 */
+withCredentials(Mock)
 
 /* Mock 默认配置 */
-
 Mock.setup({ timeout: '200-300' })
 
-/* 扩展 */
-
+/* 扩展 [生成器] */
 const Generator = (prop, template) => {
   const obj = {}
   obj[prop] = [template]
   return Mock.mock(obj)
 }
 
-/* 扩展 */
-
+/* 扩展 [循环] */
 const Repeat = (num, itemTemplate) => Generator(`data|${num}`, itemTemplate).data
 
 const CustomExtends = {
@@ -33,7 +30,6 @@ const extend = (prop, value) => {
 }
 
 /* 装配配置组 */
-
 const wired = ({ url, type, body }) => ({
   method: type,
   params: qs.parse(url.split('?').length > 1 ? url.split('?')[1] : ''),
@@ -44,7 +40,7 @@ const wired = ({ url, type, body }) => ({
 
 const setup = (path, method, handle) => {
   Mock.mock(
-    path,
+    RegExp(path),
     method,
     typeof handle === 'function' ? o => handle(wired(o)) : handle
   )
