@@ -67,9 +67,10 @@ export default {
       icon: 'star',
       children: [
         { path: `${pre}icon/icon`, title: '图标组件' },
-        { path: `${pre}icon/list`, title: 'FontAwesome' },
+        { path: `${pre}icon/icon-svg`, title: 'svg 图标组件' },
         { path: `${pre}icon/select`, title: '图标选择器' },
-        { path: `${pre}icon/svg`, title: 'SVG图标组件' }
+        { path: `${pre}icon/select-svg`, title: 'svg 图标选择器' },
+        { path: `${pre}icon/list`, title: 'FontAwesome' }
       ]
     },
     {

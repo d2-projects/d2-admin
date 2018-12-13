@@ -1,18 +1,17 @@
-import Mock from 'mockjs'
-
-Mock.mock('/api/demo/business/table/1', ({ body }) => {
-  // 这是通过 post 传来的参数
-  body = JSON.parse(body)
-  const { page } = body
-  page.total = 1000
-  return Mock.mock(
-    {
-      code: 0,
-      msg: '获取数据成功',
-      data: {
-        page,
-        'list|20': [
-          {
+export default [
+  {
+    path: '/api/demo/business/table/1/fetch.*',
+    method: 'get',
+    handle ({ params, Repeat }) {
+      let { pageSize } = params
+      return {
+        code: 0,
+        msg: '获取数据成功',
+        data: {
+          page: {
+            total: 1000
+          },
+          list: Repeat(pageSize, {
             'key': '@guid',
             'value|1': [10, 100, 200, 500],
             'type': '@boolean',
@@ -21,9 +20,9 @@ Mock.mock('/api/demo/business/table/1', ({ body }) => {
             'dateTimeCreat': '@datetime',
             'used': '@boolean',
             'dateTimeUse': '@datetime'
-          }
-        ]
+          })
+        }
       }
     }
-  )
-})
+  }
+]
