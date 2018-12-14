@@ -1,4 +1,6 @@
-import { get } from '@api/demo.business.issues.142'
+import {
+  detail
+} from '@api/demo.business.issues.142'
 
 export default {
   props: {
@@ -29,7 +31,7 @@ export default {
         // 重置表单
         this.resetFormData()
         // 请求数据
-        get(id)
+        detail(id)
           .then(res => {
             const { name, address } = res
             this.form = { name, address }
