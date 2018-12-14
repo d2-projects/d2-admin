@@ -1,8 +1,6 @@
 <template>
   <d2-container :filename="filename" class="page">
-    <d2-page-cover
-      :title="`D2 Admin ${version}`"
-      sub-title="优雅的中后台集成方案">
+    <d2-page-cover>
       <d2-icon-svg
         class="page__logo"
         name="d2-admin"/>
@@ -35,7 +33,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import D2HelpBtn from './components/d2-help-btn'
 import D2Badge from './components/d2-badge'
 export default {
@@ -47,11 +44,6 @@ export default {
     return {
       filename: __filename
     }
-  },
-  computed: {
-    ...mapState('d2admin/releases', [
-      'version'
-    ])
   }
 }
 </script>
@@ -64,7 +56,7 @@ export default {
   .page__btn-group {
     color: $color-text-placehoder;
     font-size: 12px;
-    margin-top: -10px;
+    margin-top: 0px;
     margin-bottom: 20px;
     span {
       color: $color-text-sub;
