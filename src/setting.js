@@ -1,5 +1,3 @@
-import { version } from '../package'
-
 export default {
   // 快捷键
   // 支持快捷键 例如 ctrl+shift+s
@@ -25,10 +23,6 @@ export default {
         }
       }
     ]
-  },
-  // 版本
-  releases: {
-    version
   },
   // 菜单搜索
   search: {
