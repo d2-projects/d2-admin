@@ -59,7 +59,9 @@ export default {
     // 请求表格数据
     getTableData () {
       fetch()
-        .then(res => this.crud.data = res.list)
+        .then(res => {
+          this.crud.data = res.list
+        })
         .catch(err => console.log(err))
     },
     // 跳转到编辑页面
