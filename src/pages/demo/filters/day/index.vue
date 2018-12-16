@@ -5,76 +5,76 @@
       <el-button size="mini" type="primary">原值 value : {{value}}</el-button>
     </div>
     <code-title title="获取" sub-title="获取日期的指定部分"/>
-    <code-and-result label="day_year" :value="value|day_year"/>
-    <code-and-result label="day_month" :value="value|day_month"/>
-    <code-and-result label="day_date" :value="value|day_date"/>
-    <code-and-result label="day_day" :value="value|day_day"/>
-    <code-and-result label="day_hour" :value="value|day_hour"/>
-    <code-and-result label="day_minute" :value="value|day_minute"/>
-    <code-and-result label="day_second" :value="value|day_second"/>
-    <code-and-result label="day_millisecond" :value="value|day_millisecond"/>
+    <code-and-result label="date_year" :value="value|date_year"/>
+    <code-and-result label="date_month" :value="value|date_month"/>
+    <code-and-result label="date_date" :value="value|date_date"/>
+    <code-and-result label="date_day" :value="value|date_day"/>
+    <code-and-result label="date_hour" :value="value|date_hour"/>
+    <code-and-result label="date_minute" :value="value|date_minute"/>
+    <code-and-result label="date_second" :value="value|date_second"/>
+    <code-and-result label="date_millisecond" :value="value|date_millisecond"/>
     <code-title title="设置" sub-title="设置日期指定部分的值"/>
-    <code-and-result label="day_set('year', 2020)|day_format('< YYYY > - MM - DD')" :value="value|day_set('year', 2020)|day_format('< YYYY > - MM - DD')"/>
-    <code-and-result label="day_set('month', 0)|day_format('YYYY - < MM > - DD')" :value="value|day_set('month', 0)|day_format('YYYY - < MM > - DD')"/>
-    <code-and-result label="day_set('date', 1)|day_format('YYYY - MM - < DD >')" :value="value|day_set('date', 1)|day_format('YYYY - MM - < DD >')"/>
-    <code-and-result label="day_set('hour', 0)|day_format('< HH > : mm : ss')" :value="value|day_set('hour', 0)|day_format('< HH > : mm : ss')"/>
-    <code-and-result label="day_set('minute', 0)|day_format('HH : < mm > : ss')" :value="value|day_set('minute', 0)|day_format('HH : < mm > : ss')"/>
-    <code-and-result label="day_set('second', 0)|day_format('HH : mm : < ss >')" :value="value|day_set('second', 0)|day_format('HH : mm : < ss >')"/>
+    <code-and-result label="date_set('year', 2020)|date_format('< YYYY > - MM - DD')" :value="value|date_set('year', 2020)|date_format('< YYYY > - MM - DD')"/>
+    <code-and-result label="date_set('month', 0)|date_format('YYYY - < MM > - DD')" :value="value|date_set('month', 0)|date_format('YYYY - < MM > - DD')"/>
+    <code-and-result label="date_set('date', 1)|date_format('YYYY - MM - < DD >')" :value="value|date_set('date', 1)|date_format('YYYY - MM - < DD >')"/>
+    <code-and-result label="date_set('hour', 0)|date_format('< HH > : mm : ss')" :value="value|date_set('hour', 0)|date_format('< HH > : mm : ss')"/>
+    <code-and-result label="date_set('minute', 0)|date_format('HH : < mm > : ss')" :value="value|date_set('minute', 0)|date_format('HH : < mm > : ss')"/>
+    <code-and-result label="date_set('second', 0)|date_format('HH : mm : < ss >')" :value="value|date_set('second', 0)|date_format('HH : mm : < ss >')"/>
     <code-title title="增加" sub-title="增加时间并返回一个新的 Dayjs 对象"/>
-    <code-and-result label="day_add(1, 'year')|day_format('< YYYY > - MM - DD')" :value="value|day_add(1, 'year')|day_format('< YYYY > - MM - DD')"/>
-    <code-and-result label="day_add(1, 'month')|day_format('YYYY - < MM > - DD')" :value="value|day_add(1, 'month')|day_format('YYYY - < MM > - DD')"/>
-    <code-and-result label="day_add(1, 'day')|day_format('YYYY - MM - < DD >')" :value="value|day_add(1, 'day')|day_format('YYYY - MM - < DD >')"/>
-    <code-and-result label="day_add(1, 'hour')|day_format('< HH > : mm : ss')" :value="value|day_add(1, 'hour')|day_format('< HH > : mm : ss')"/>
-    <code-and-result label="day_add(1, 'minute')|day_format('HH : < mm > : ss')" :value="value|day_add(1, 'minute')|day_format('HH : < mm > : ss')"/>
-    <code-and-result label="day_add(1, 'second')|day_format('HH : mm : < ss >')" :value="value|day_add(1, 'second')|day_format('HH : mm : < ss >')"/>
+    <code-and-result label="date_add(1, 'year')|date_format('< YYYY > - MM - DD')" :value="value|date_add(1, 'year')|date_format('< YYYY > - MM - DD')"/>
+    <code-and-result label="date_add(1, 'month')|date_format('YYYY - < MM > - DD')" :value="value|date_add(1, 'month')|date_format('YYYY - < MM > - DD')"/>
+    <code-and-result label="date_add(1, 'day')|date_format('YYYY - MM - < DD >')" :value="value|date_add(1, 'day')|date_format('YYYY - MM - < DD >')"/>
+    <code-and-result label="date_add(1, 'hour')|date_format('< HH > : mm : ss')" :value="value|date_add(1, 'hour')|date_format('< HH > : mm : ss')"/>
+    <code-and-result label="date_add(1, 'minute')|date_format('HH : < mm > : ss')" :value="value|date_add(1, 'minute')|date_format('HH : < mm > : ss')"/>
+    <code-and-result label="date_add(1, 'second')|date_format('HH : mm : < ss >')" :value="value|date_add(1, 'second')|date_format('HH : mm : < ss >')"/>
     <code-title title="减少" sub-title="减少时间并返回一个新的 Dayjs 对象"/>
-    <code-and-result label="day_subtract(1, 'year')|day_format('< YYYY > - MM - DD')" :value="value|day_subtract(1, 'year')|day_format('< YYYY > - MM - DD')"/>
-    <code-and-result label="day_subtract(1, 'month')|day_format('YYYY - < MM > - DD')" :value="value|day_subtract(1, 'month')|day_format('YYYY - < MM > - DD')"/>
-    <code-and-result label="day_subtract(1, 'day')|day_format('YYYY - MM - < DD >')" :value="value|day_subtract(1, 'day')|day_format('YYYY - MM - < DD >')"/>
-    <code-and-result label="day_subtract(1, 'hour')|day_format('< HH > : mm : ss')" :value="value|day_subtract(1, 'hour')|day_format('< HH > : mm : ss')"/>
-    <code-and-result label="day_subtract(1, 'minute')|day_format('HH : < mm > : ss')" :value="value|day_subtract(1, 'minute')|day_format('HH : < mm > : ss')"/>
-    <code-and-result label="day_subtract(1, 'second')|day_format('HH : mm : < ss >')" :value="value|day_subtract(1, 'second')|day_format('HH : mm : < ss >')"/>
+    <code-and-result label="date_subtract(1, 'year')|date_format('< YYYY > - MM - DD')" :value="value|date_subtract(1, 'year')|date_format('< YYYY > - MM - DD')"/>
+    <code-and-result label="date_subtract(1, 'month')|date_format('YYYY - < MM > - DD')" :value="value|date_subtract(1, 'month')|date_format('YYYY - < MM > - DD')"/>
+    <code-and-result label="date_subtract(1, 'day')|date_format('YYYY - MM - < DD >')" :value="value|date_subtract(1, 'day')|date_format('YYYY - MM - < DD >')"/>
+    <code-and-result label="date_subtract(1, 'hour')|date_format('< HH > : mm : ss')" :value="value|date_subtract(1, 'hour')|date_format('< HH > : mm : ss')"/>
+    <code-and-result label="date_subtract(1, 'minute')|date_format('HH : < mm > : ss')" :value="value|date_subtract(1, 'minute')|date_format('HH : < mm > : ss')"/>
+    <code-and-result label="date_subtract(1, 'second')|date_format('HH : mm : < ss >')" :value="value|date_subtract(1, 'second')|date_format('HH : mm : < ss >')"/>
     <code-title title="开头时间" sub-title="返回当前时间的开头时间的 Dayjs 对象，如月份的第一天"/>
-    <code-and-result label="day_startof('year')|day_format" :value="value|day_startof('year')|day_format"/>
-    <code-and-result label="day_startof('month')|day_format" :value="value|day_startof('month')|day_format"/>
-    <code-and-result label="day_startof('date')|day_format" :value="value|day_startof('date')|day_format"/>
-    <code-and-result label="day_startof('hour')|day_format" :value="value|day_startof('hour')|day_format"/>
-    <code-and-result label="day_startof('minute')|day_format" :value="value|day_startof('minute')|day_format"/>
+    <code-and-result label="date_startof('year')|date_format" :value="value|date_startof('year')|date_format"/>
+    <code-and-result label="date_startof('month')|date_format" :value="value|date_startof('month')|date_format"/>
+    <code-and-result label="date_startof('date')|date_format" :value="value|date_startof('date')|date_format"/>
+    <code-and-result label="date_startof('hour')|date_format" :value="value|date_startof('hour')|date_format"/>
+    <code-and-result label="date_startof('minute')|date_format" :value="value|date_startof('minute')|date_format"/>
     <code-title title="末尾时间" sub-title="返回当前时间的末尾时间的 Dayjs 对象，如月份的最后一天"/>
-    <code-and-result label="day_endof('year')|day_format" :value="value|day_endof('year')|day_format"/>
-    <code-and-result label="day_endof('month')|day_format" :value="value|day_endof('month')|day_format"/>
-    <code-and-result label="day_endof('date')|day_format" :value="value|day_endof('date')|day_format"/>
-    <code-and-result label="day_endof('hour')|day_format" :value="value|day_endof('hour')|day_format"/>
-    <code-and-result label="day_endof('minute')|day_format" :value="value|day_endof('minute')|day_format"/>
+    <code-and-result label="date_endof('year')|date_format" :value="value|date_endof('year')|date_format"/>
+    <code-and-result label="date_endof('month')|date_format" :value="value|date_endof('month')|date_format"/>
+    <code-and-result label="date_endof('date')|date_format" :value="value|date_endof('date')|date_format"/>
+    <code-and-result label="date_endof('hour')|date_format" :value="value|date_endof('hour')|date_format"/>
+    <code-and-result label="date_endof('minute')|date_format" :value="value|date_endof('minute')|date_format"/>
     <code-title title="显示" sub-title="格式化 Dayjs 对象并展示"/>
-    <code-and-result label="day_format" :value="value|day_format"/>
-    <code-and-result label="day_format('YY-MM-DD')" :value="value|day_format('YY-MM-DD')"/>
-    <code-and-result label="day_format('YYYY-M-D')" :value="value|day_format('YYYY-M-D')"/>
-    <code-and-result label="day_format('YYYY-M-D H:m:s')" :value="value|day_format('YYYY-M-D H:m:s')"/>
+    <code-and-result label="date_format" :value="value|date_format"/>
+    <code-and-result label="date_format('YY-MM-DD')" :value="value|date_format('YY-MM-DD')"/>
+    <code-and-result label="date_format('YYYY-M-D')" :value="value|date_format('YYYY-M-D')"/>
+    <code-and-result label="date_format('YYYY-M-D H:m:s')" :value="value|date_format('YYYY-M-D H:m:s')"/>
     <code-title title="时间差" sub-title="获取两个 Dayjs 对象的时间差，默认毫秒"/>
-    <code-and-result label="day_diff('2012-10-31', 'year')" :value="value|day_diff('2012-10-31', 'year')"/>
-    <code-and-result label="day_diff('2012-10-31', 'month')" :value="value|day_diff('2012-10-31', 'month')"/>
-    <code-and-result label="day_diff('2012-10-31', 'day')" :value="value|day_diff('2012-10-31', 'day')"/>
-    <code-and-result label="day_diff('2012-10-31', 'hour')" :value="value|day_diff('2012-10-31', 'hour')"/>
-    <code-and-result label="day_diff('2012-10-31', 'minute')" :value="value|day_diff('2012-10-31', 'minute')"/>
-    <code-and-result label="day_diff('2012-10-31', 'second')" :value="value|day_diff('2012-10-31', 'second')"/>
+    <code-and-result label="date_diff('2012-10-31', 'year')" :value="value|date_diff('2012-10-31', 'year')"/>
+    <code-and-result label="date_diff('2012-10-31', 'month')" :value="value|date_diff('2012-10-31', 'month')"/>
+    <code-and-result label="date_diff('2012-10-31', 'day')" :value="value|date_diff('2012-10-31', 'day')"/>
+    <code-and-result label="date_diff('2012-10-31', 'hour')" :value="value|date_diff('2012-10-31', 'hour')"/>
+    <code-and-result label="date_diff('2012-10-31', 'minute')" :value="value|date_diff('2012-10-31', 'minute')"/>
+    <code-and-result label="date_diff('2012-10-31', 'second')" :value="value|date_diff('2012-10-31', 'second')"/>
     <code-title title="Unix 时间戳" sub-title="返回毫秒和秒"/>
-    <code-and-result label="day_value_millisecond" :value="value|day_value_millisecond"/>
-    <code-and-result label="day_value_second" :value="value|day_value_second"/>
+    <code-and-result label="date_value_millisecond" :value="value|date_value_millisecond"/>
+    <code-and-result label="date_value_second" :value="value|date_value_second"/>
     <code-title title="月份天数" sub-title="返回传入日期月份的天数"/>
-    <code-and-result label="day_days_in_month" :value="value|day_days_in_month"/>
+    <code-and-result label="date_days_in_month" :value="value|date_days_in_month"/>
     <code-title title="处理为其它格式" sub-title="原生的 Date 对象，数组，json，ios 标准，对象，字符串"/>
-    <code-and-result label="day_to_date" :value="value|day_to_date"/>
-    <code-and-result label="day_to_array" :value="value|day_to_array"/>
-    <code-and-result label="day_to_json" :value="value|day_to_json"/>
-    <code-and-result label="day_to_iso" :value="value|day_to_iso"/>
-    <code-and-result label="day_to_object" :value="value|day_to_object"/>
-    <code-and-result label="day_to_string" :value="value|day_to_string"/>
+    <code-and-result label="date_to_date" :value="value|date_to_date"/>
+    <code-and-result label="date_to_array" :value="value|date_to_array"/>
+    <code-and-result label="date_to_json" :value="value|date_to_json"/>
+    <code-and-result label="date_to_iso" :value="value|date_to_iso"/>
+    <code-and-result label="date_to_object" :value="value|date_to_object"/>
+    <code-and-result label="date_to_string" :value="value|date_to_string"/>
     <code-title title="查询" sub-title="是否之前，之后，或者相同"/>
-    <code-and-result label="day_is_before('2020-1-1')" :value="value|day_is_before('2020-1-1')"/>
-    <code-and-result label="day_is_after('2012-1-1')" :value="value|day_is_after('2012-1-1')"/>
-    <code-and-result label="day_is_same(new Date())" :value="value|day_is_same(new Date())"/>
-    <code-and-result label="day_is_same(new Date(), 'date')" :value="value|day_is_same(new Date(), 'date')"/>
+    <code-and-result label="date_is_before('2020-1-1')" :value="value|date_is_before('2020-1-1')"/>
+    <code-and-result label="date_is_after('2012-1-1')" :value="value|date_is_after('2012-1-1')"/>
+    <code-and-result label="date_is_same(new Date())" :value="value|date_is_same(new Date())"/>
+    <code-and-result label="date_is_same(new Date(), 'date')" :value="value|date_is_same(new Date(), 'date')"/>
   </d2-container>
 </template>
 
