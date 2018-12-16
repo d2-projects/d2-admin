@@ -1,8 +1,8 @@
 <template>
   <d2-container>
     <div slot="header" flex="main:justify">
-      <el-date-picker size="small" type="datetime" v-model="value" placeholder="选择一个日期"/>
-      <el-button size="small" type="primary">原值 value : {{value}}</el-button>
+      <el-date-picker size="mini" type="datetime" v-model="value" placeholder="选择一个日期"/>
+      <el-button size="mini" type="primary">原值 value : {{value}}</el-button>
     </div>
     <code-title title="获取" sub-title="获取日期的指定部分"/>
     <code-and-result label="day_year" :value="value|day_year"/>
