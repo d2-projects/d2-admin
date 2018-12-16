@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import db from '@/libs/db.js'
+import util from '@/libs/util'
 export default {
   data () {
     return {
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     load () {
-      this.dbData = JSON.stringify(db.value(), null, 2)
+      this.dbData = JSON.stringify(util.db.value(), null, 2)
     }
   }
 }
