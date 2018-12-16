@@ -2,17 +2,25 @@
   <div class="d2-mb-10">
     <el-button-group>
       <el-button
+        class="code-and-result--button"
+        size="mini">
+        原值
+      </el-button>
+    </el-button-group>
+    <d2-icon name="plus" class="code-and-result--icon"/>
+    <el-button-group>
+      <el-button
         v-for="(label, index) in labelList"
         :key="index"
-        :class="buttonClass(index)"
+        class="code-and-result--button"
         size="mini"
         type="primary"
         @click="handleClip(label)">
         {{label}}
       </el-button>
     </el-button-group>
-    <d2-icon name="arrow-right" class="code-and-result--arrow-right"/>
-    {{value}}
+    <d2-icon name="arrow-right" class="code-and-result--icon"/>
+    <span class="code-and-result--value">{{value}}</span>
   </div>
 </template>
 
@@ -33,15 +41,6 @@ export default {
     }
   },
   methods: {
-    buttonClass (index) {
-      if (index === 0) {
-        return 'code-and-result--button__first'
-      } else if (index === this.labelList.length - 1) {
-        return 'code-and-result--button__last'
-      } else {
-        return 'code-and-result--button'
-      }
-    },
     handleClip (value) {
       clipboard.writeText(value)
       this.$notify({
@@ -56,22 +55,15 @@ export default {
 
 <style lang="scss" scoped>
 .code-and-result--button {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.code-and-result--button__first {
-  padding-right: 5px;
   padding-left: 10px;
-}
-.code-and-result--button__last {
-  padding-left: 5px;
   padding-right: 10px;
 }
-.code-and-result--arrow-right {
+.code-and-result--icon {
   color: $color-info;
   margin: 0px 20px;
 }
 .code-and-result--value {
-  line-height: 32px;
+  font-size: 14px;
+  color: $color-text-main;
 }
 </style>
