@@ -3,7 +3,7 @@ export default {
   title: '示例',
   icon: 'flask',
   children: (pre => [
-    { path: `${pre}index`, title: '示例首页', icon: 'home' },
+    { path: `${pre}index`, title: '示例', icon: 'home' },
     {
       title: '表格',
       icon: 'table',

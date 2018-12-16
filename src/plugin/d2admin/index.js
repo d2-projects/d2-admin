@@ -7,6 +7,8 @@ import 'flex.css'
 import '@/components'
 // svg 图标
 import '@/assets/svg-icons'
+// 过滤器
+import d2VueFiltersDateModule from '@/filters/module.date'
 // 功能插件
 import pluginError from '@/plugin/error'
 import pluginExport from '@/plugin/export'
@@ -29,6 +31,8 @@ export default {
     Vue.prototype.$buildTime = process.env.VUE_APP_BUILD_TIME
     // Element
     Vue.use(ElementUI)
+    // 过滤器 日期模块
+    Vue.use(d2VueFiltersDateModule)
     // 插件
     Vue.use(pluginError)
     Vue.use(pluginExport)

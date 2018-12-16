@@ -3,7 +3,7 @@ export default {
   title: '试验台',
   icon: 'flask',
   children: (pre => [
-    { path: `${pre}index`, title: '试验台首页', icon: 'home' },
+    { path: `${pre}index`, title: '试验台', icon: 'home' },
     {
       title: 'svg 菜单图标',
       iconSvg: 'd2-admin',

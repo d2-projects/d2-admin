@@ -6,6 +6,8 @@ import demoComponents from './modules/demo-components'
 import demoCharts from './modules/demo-charts'
 // 组件库
 import demoElement from './modules/demo-element'
+// 组件库
+import demoFilters from './modules/demo-filters'
 // 试验台
 import demoPlayground from './modules/demo-playground'
 // 示例
@@ -21,6 +23,7 @@ export const menuAside = [
   demoPlugins,
   demoCharts,
   demoElement,
+  demoFilters,
   demoPlayground,
   demoBusiness,
   demoD2Crud,
@@ -40,6 +43,7 @@ export const menuHeader = [
     children: [
       demoD2Crud,
       demoComponents,
+      demoFilters,
       demoElement,
       demoCharts,
       demoPlugins,

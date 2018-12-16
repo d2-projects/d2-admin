@@ -3,7 +3,7 @@ export default {
   title: '基础组件库',
   icon: 'cubes',
   children: (pre => [
-    { path: `${pre}index`, title: '基础组件库首页', icon: 'home' },
+    { path: `${pre}index`, title: '基础组件库', icon: 'home' },
     {
       path: `${pre}basic`,
       title: '基础',
