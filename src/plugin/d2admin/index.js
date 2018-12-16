@@ -11,8 +11,8 @@ import '@/assets/svg-icons'
 import d2VueFiltersDate from '@d2-projects/vue-filters-date'
 // 功能插件
 import pluginError from '@/plugin/error'
-import pluginExport from '@/plugin/export'
-import pluginImport from '@/plugin/import'
+import pluginExport from '@d2-projects/vue-table-export'
+import pluginImport from '@d2-projects/vue-table-import'
 import pluginLog from '@/plugin/log'
 import pluginOpen from '@/plugin/open'
 
