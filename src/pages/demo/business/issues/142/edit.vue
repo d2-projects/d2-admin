@@ -40,8 +40,7 @@ export default {
         vm.resetFormData()
         vm.getFormData(id)
       })
-    }
-    else {
+    } else {
       next(new Error('未指定ID'))
     }
   },

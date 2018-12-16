@@ -3,7 +3,7 @@ export default {
   title: '图表',
   icon: 'line-chart',
   children: (pre => [
-    { path: `${pre}index`, title: '图表首页', icon: 'home' },
+    { path: `${pre}index`, title: '图表', icon: 'home' },
     {
       path: `${pre}list`,
       title: '图表',

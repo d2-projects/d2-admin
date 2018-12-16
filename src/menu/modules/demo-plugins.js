@@ -3,7 +3,7 @@ export default {
   title: '插件',
   icon: 'plug',
   children: (pre => [
-    { path: `${pre}index`, title: '插件首页', icon: 'home' },
+    { path: `${pre}index`, title: '插件', icon: 'home' },
     {
       path: `${pre}mock`,
       title: '模拟数据',

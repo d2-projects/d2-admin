@@ -3,7 +3,7 @@ export default {
   title: 'D2 CRUD',
   iconSvg: 'd2-crud',
   children: (pre => [
-    { path: `${pre}index`, title: 'D2 CRUD 首页', icon: 'home' },
+    { path: `${pre}index`, title: 'D2 CRUD ', icon: 'home' },
     {
       title: '基础功能',
       children: [
