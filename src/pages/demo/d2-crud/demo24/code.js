@@ -1,12 +1,16 @@
 export default `<template>
   <div>
-  <d2-crud
-    ref="d2Crud"
-    :columns="columns"
-    :data="data">
-    <el-button slot="headerButton">自定义按钮1</el-button>
-    <el-button slot="headerButton" type="primary" round>自定义按钮2</el-button>
-  </d2-crud>
+    <d2-crud
+      ref="d2Crud"
+      :columns="columns"
+      :data="data">
+      <el-input slot="header" placeholder="请输入内容" style="margin-bottom: 5px">
+        <template slot="prepend">Http://</template>
+        <template slot="append">.com</template>
+      </el-input>
+      <el-button slot="header" style="margin-bottom: 5px">自定义按钮1</el-button>
+      <el-button slot="header" type="primary" round style="margin-bottom: 5px">自定义按钮2</el-button>
+    </d2-crud>
   </div>
 </template>
 
@@ -53,9 +57,6 @@ export default {
         }
       ]
     }
-  },
-  mounted () {
-    console.log(this.$refs.d2Crud.d2Data)
   }
 }
 </script>`
