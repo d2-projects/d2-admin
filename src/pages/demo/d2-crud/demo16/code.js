@@ -116,7 +116,7 @@ export default {
           address: '我是通过done事件传入的数据！'
         })
         this.formOptions.saveLoading = false
-      }, 300);
+      }, 300)
     },
     handleDialogCancel (done) {
       this.$message({
