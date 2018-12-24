@@ -4,7 +4,6 @@
     <d2-crud
       :columns="columns"
       :data="data"
-      title="D2 CRUD"
       :rowHandle="rowHandle"
       @row-remove="handleRowRemove">
     </d2-crud>

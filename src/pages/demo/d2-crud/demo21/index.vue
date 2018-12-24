@@ -4,7 +4,6 @@
     <d2-crud
       :columns="columns"
       :data="data"
-      title="D2 CRUD"
       :rowHandle="rowHandle"
       :form-template="formTemplate"
       :form-options="formOptions"
