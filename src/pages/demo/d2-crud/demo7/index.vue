@@ -5,7 +5,8 @@
       :columns="columns"
       :data="data"
       :options="options"
-      :rowHandle="rowHandle"/>
+      :rowHandle="rowHandle"
+      @row-remove="handleRowRemove"/>
     <el-card shadow="never" class="d2-mb">
       <d2-markdown :source="doc"/>
     </el-card>
@@ -122,6 +123,15 @@ export default {
           confirm: false
         }
       }
+    }
+  },
+  methods: {
+    handleRowRemove ({index, row}, done) {
+      this.$message({
+        message: '删除成功',
+        type: 'success'
+      })
+      done()
     }
   }
 }
