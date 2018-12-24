@@ -2,16 +2,15 @@
   <d2-container :filename="filename">
     <template slot="header">修改数据</template>
     <d2-crud
+      ref="d2Crud"
       :columns="columns"
       :data="data"
-      title="D2 CRUD"
-      add-mode
       :rowHandle="rowHandle"
-      :form-template="formTemplate"
+      :edit-template="editTemplate"
       :form-options="formOptions"
-      @row-add="handleRowAdd"
       @row-edit="handleRowEdit"
       @dialog-cancel="handleDialogCancel">
+      <el-button slot="header" style="margin-bottom: 5px" @click="editRowWithNewTemplate">使用自定义模板编辑第三行</el-button>
     </d2-crud>
     <el-card shadow="never" class="d2-mb">
       <d2-markdown :source="doc"/>
@@ -99,7 +98,7 @@ export default {
           }
         }
       },
-      formTemplate: {
+      editTemplate: {
         date: {
           title: '日期',
           value: ''
@@ -135,17 +134,21 @@ export default {
     }
   },
   methods: {
-    handleRowAdd (row, done) {
-      this.formOptions.saveLoading = true
-      setTimeout(() => {
-        console.log(row)
-        this.$message({
-          message: '保存成功',
-          type: 'success'
-        })
-        done()
-        this.formOptions.saveLoading = false
-      }, 300)
+    editRowWithNewTemplate () {
+      this.$refs.d2Crud.showDialog({
+        mode: "edit",
+        rowIndex: 2,
+        template: {
+          date: {
+            title: '日期',
+            value: ''
+          },
+          name: {
+            title: '姓名',
+            value: ''
+          }
+        }
+      })
     },
     handleRowEdit ({ index, row }, done) {
       this.formOptions.saveLoading = true

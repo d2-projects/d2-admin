@@ -3,7 +3,6 @@ export default `<template>
     <d2-crud
       :columns="columns"
       :data="data"
-      title="D2 CRUD"
       add-mode
       :add-button="addButton"
       :form-template="formTemplate"
