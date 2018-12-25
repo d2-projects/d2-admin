@@ -4,7 +4,7 @@
     <d2-crud
       :columns="columns"
       :data="data"
-      @cell-data-change="cellDataChange"/>
+      @cell-data-change="handleCellDataChange"/>
     <el-card shadow="never" class="d2-mb">
       <d2-markdown :source="doc"/>
     </el-card>
@@ -92,7 +92,7 @@ export default {
     }
   },
   methods: {
-    cellDataChange ({rowIndex, key, value, row}) {
+    handleCellDataChange ({rowIndex, key, value, row}) {
       console.log(rowIndex)
       console.log(key)
       console.log(value)

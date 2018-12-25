@@ -1,6 +1,6 @@
 <template>
   <d2-container :filename="filename">
-    <template slot="header">Crud事件</template>
+    <template slot="header">CRUD事件</template>
     <d2-crud
       ref="d2Crud"
       :columns="columns"

@@ -3,7 +3,7 @@ export default `<template>
     <d2-crud
       :columns="columns"
       :data="data"
-      @cell-data-change="cellDataChange"/>
+      @cell-data-change="handleCellDataChange"/>
   </div>
 </template>
 
@@ -76,7 +76,7 @@ export default {
     }
   },
   methods: {
-    cellDataChange ({rowIndex, key, value, row}) {
+    handleCellDataChange ({rowIndex, key, value, row}) {
       console.log(rowIndex)
       console.log(key)
       console.log(value)

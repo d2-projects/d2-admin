@@ -42,7 +42,7 @@ export default {
         { path: `${pre}demo25`, title: '表格自定义组件' },
         { path: `${pre}demo30`, title: '表单事件监听' },
         { path: `${pre}demo26`, title: '表单自定义组件' },
-        { path: `${pre}demo31`, title: 'Crud事件' }
+        { path: `${pre}demo31`, title: 'CRUD事件' }
       ]
     }
   ])('/demo/d2-crud/')
