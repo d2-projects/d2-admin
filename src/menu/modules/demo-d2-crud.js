@@ -40,6 +40,7 @@ export default {
         { path: `${pre}demo22`, title: '表单校验' },
         { path: `${pre}demo23`, title: '表格内编辑' },
         { path: `${pre}demo25`, title: '表格自定义组件' },
+        { path: `${pre}demo30`, title: '表单事件监听' },
         { path: `${pre}demo26`, title: '表单自定义组件' }
       ]
     }
