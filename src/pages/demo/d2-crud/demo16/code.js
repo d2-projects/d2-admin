@@ -4,6 +4,7 @@ export default `<template>
       ref="d2Crud"
       :columns="columns"
       :data="data"
+      add-title="我的新增"
       :form-template="formTemplate"
       :form-options="formOptions"
       @row-add="handleRowAdd"

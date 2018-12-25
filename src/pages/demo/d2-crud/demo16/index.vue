@@ -5,6 +5,7 @@
       ref="d2Crud"
       :columns="columns"
       :data="data"
+      add-title="我的新增"
       :add-template="addTemplate"
       :form-options="formOptions"
       @row-add="handleRowAdd"

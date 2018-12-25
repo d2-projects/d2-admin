@@ -5,6 +5,7 @@ export default `<template>
       :columns="columns"
       :data="data"
       :rowHandle="rowHandle"
+      edit-title="我的修改"
       :edit-template="editTemplate"
       :form-options="formOptions"
       @row-edit="handleRowEdit"
