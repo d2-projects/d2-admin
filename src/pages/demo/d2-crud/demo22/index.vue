@@ -2,15 +2,15 @@
   <d2-container :filename="filename">
     <template slot="header">表单校验</template>
     <d2-crud
+      ref="d2Crud"
       :columns="columns"
       :data="data"
-      add-mode
-      :add-button="addButton"
-      :form-template="formTemplate"
+      :add-template="addTemplate"
       :form-options="formOptions"
-      :form-rules="formRules"
+      :add-rules="addRules"
       @row-add="handleRowAdd"
       @dialog-cancel="handleDialogCancel">
+      <el-button slot="header" style="margin-bottom: 5px" @click="addRow">新增</el-button>
     </d2-crud>
     <el-card shadow="never" class="d2-mb">
       <d2-markdown :source="doc"/>
@@ -75,7 +75,7 @@ export default {
         icon: 'el-icon-plus',
         size: 'small'
       },
-      formTemplate: {
+      addTemplate: {
         date: {
           title: '日期',
           value: ''
@@ -94,7 +94,7 @@ export default {
         labelPosition: 'left',
         saveLoading: false
       },
-      formRules: {
+      addRules: {
         date: [ { required: true, message: '请输入日期', trigger: 'blur' } ],
         name: [ { required: true, message: '请输入姓名', trigger: 'blur' } ],
         address: [ { required: true, message: '请输入地址', trigger: 'blur' } ]
@@ -102,6 +102,11 @@ export default {
     }
   },
   methods: {
+    addRow () {
+      this.$refs.d2Crud.showDialog({
+        mode: 'add'
+      })
+    },
     handleRowAdd (row, done) {
       this.formOptions.saveLoading = true
       setTimeout(() => {
