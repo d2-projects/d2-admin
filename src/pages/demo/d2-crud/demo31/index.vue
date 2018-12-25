@@ -1,16 +1,15 @@
 <template>
   <d2-container :filename="filename">
-    <template slot="header">表单事件监听</template>
+    <template slot="header">Crud事件</template>
     <d2-crud
       ref="d2Crud"
       :columns="columns"
-      :data="data"
-      :rowHandle="rowHandle"
-      :edit-template="editTemplate"
-      :form-options="formOptions"
-      @row-edit="handleRowEdit"
-      @dialog-cancel="handleDialogCancel"
-      @form-data-change="handleFormDataChange"/>
+      :data="data">
+      <el-button slot="header" style="margin-bottom: 5px" @click="updateCell">更新第二行日期</el-button>
+      <el-button slot="header" style="margin-bottom: 5px" @click="updateRow">更新第三行所有数据</el-button>
+      <el-button slot="header" style="margin-bottom: 5px" @click="addRow">新增一行</el-button>
+      <el-button slot="header" style="margin-bottom: 5px" @click="removeRow">删除最后一行</el-button>
+    </d2-crud>
     <el-card shadow="never" class="d2-mb">
       <d2-markdown :source="doc"/>
     </el-card>
@@ -26,6 +25,7 @@
 <script>
 import doc from './doc.md'
 import code from './code.js'
+import { BusinessTable1List } from '@api/demo.business.table.1'
 
 export default {
   data () {
@@ -76,74 +76,29 @@ export default {
           forbidEdit: false,
           showEditButton: true
         }
-      ],
-      rowHandle: {
-        columnHeader: '编辑表格',
-        edit: {
-          icon: 'el-icon-edit',
-          text: '点我进行编辑',
-          size: 'small'
-        }
-      },
-      editTemplate: {
-        date: {
-          title: '日期',
-          value: ''
-        },
-        name: {
-          title: '姓名',
-          value: ''
-        },
-        address: {
-          title: '地址',
-          value: ''
-        },
-        forbidEdit: {
-          title: '禁用按钮',
-          value: false,
-          component: {
-            show: false
-          }
-        },
-        showEditButton: {
-          title: '显示按钮',
-          value: true,
-          component: {
-            show: false
-          }
-        }
-      },
-      formOptions: {
-        labelWidth: '80px',
-        labelPosition: 'left',
-        saveLoading: false
-      }
+      ]
     }
   },
   methods: {
-    handleFormDataChange ({key, value}) {
-      console.log(key)
-      console.log(value)
+    updateCell () {
+      this.$refs.d2Crud.updateCell(1, 'date', '2018-01-01')
     },
-    handleRowEdit ({index, row}, done) {
-      this.formOptions.saveLoading = true
-      setTimeout(() => {
-        console.log(index)
-        console.log(row)
-        this.$message({
-          message: '编辑成功',
-          type: 'success'
-        })
-        done()
-        this.formOptions.saveLoading = false
-      }, 300)
-    },
-    handleDialogCancel (done) {
-      this.$message({
-        message: '取消编辑',
-        type: 'warning'
+    updateRow () {
+      this.$refs.d2Crud.updateRow(2, {
+        date: '2018-01-01',
+        name: '王小小',
+        address: '上海市普陀区金沙江路 2333 弄'
       })
-      done()
+    },
+    addRow () {
+      this.$refs.d2Crud.addRow({
+        date: '2018-01-01',
+        name: '王小二',
+        address: '上海市普陀区金沙江路 7777 弄'
+      })
+    },
+    removeRow () {
+      this.$refs.d2Crud.removeRow(this.$refs.d2Crud.d2CrudData.length - 1)
     }
   }
 }
