@@ -5,7 +5,7 @@ export default `<template>
       :columns="columns"
       :data="data"
       :rowHandle="rowHandle"
-      :form-template="formTemplate"
+      :edit-template="editTemplate"
       @d2-data-change="handleDataChange"
       @row-edit="handleRowEdit"
       @dialog-cancel="handleDialogCancel"/>
@@ -73,7 +73,7 @@ export default {
           size: 'small'
         }
       },
-      formTemplate: {
+      editTemplate: {
         date: {
           title: '日期',
           value: ''
