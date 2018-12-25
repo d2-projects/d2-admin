@@ -136,7 +136,7 @@ export default {
   methods: {
     editRowWithNewTemplate () {
       this.$refs.d2Crud.showDialog({
-        mode: "edit",
+        mode: 'edit',
         rowIndex: 2,
         template: {
           date: {
