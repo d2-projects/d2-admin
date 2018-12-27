@@ -4,7 +4,8 @@ export default `<template>
       :columns="columns"
       :data="data"
       :options="options"
-      :rowHandle="rowHandle"/>
+      :rowHandle="rowHandle"
+      @row-remove="handleRowRemove"/>
   </div>
 </template>
 
@@ -106,6 +107,15 @@ export default {
           confirm: false
         }
       }
+    }
+  },
+  methods: {
+    handleRowRemove ({index, row}, done) {
+      this.$message({
+        message: '删除成功',
+        type: 'success'
+      })
+      done()
     }
   }
 }

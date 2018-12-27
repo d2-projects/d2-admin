@@ -1,17 +1,16 @@
 <template>
   <d2-container :filename="filename">
-    <template slot="header">表单校验</template>
+    <template slot="header">表单事件监听</template>
     <d2-crud
       ref="d2Crud"
       :columns="columns"
       :data="data"
-      :add-template="addTemplate"
+      :rowHandle="rowHandle"
+      :edit-template="editTemplate"
       :form-options="formOptions"
-      :add-rules="addRules"
-      @row-add="handleRowAdd"
-      @dialog-cancel="handleDialogCancel">
-      <el-button slot="header" style="margin-bottom: 5px" @click="addRow">新增</el-button>
-    </d2-crud>
+      @row-edit="handleRowEdit"
+      @dialog-cancel="handleDialogCancel"
+      @form-data-change="handleFormDataChange"/>
     <el-card shadow="never" class="d2-mb">
       <d2-markdown :source="doc"/>
     </el-card>
@@ -52,30 +51,41 @@ export default {
         {
           date: '2016-05-02',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          address: '上海市普陀区金沙江路 1518 弄',
+          forbidEdit: true,
+          showEditButton: true
         },
         {
           date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          address: '上海市普陀区金沙江路 1517 弄',
+          forbidEdit: false,
+          showEditButton: true
         },
         {
           date: '2016-05-01',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
+          address: '上海市普陀区金沙江路 1519 弄',
+          forbidEdit: false,
+          showEditButton: false
         },
         {
           date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          address: '上海市普陀区金沙江路 1516 弄',
+          forbidEdit: false,
+          showEditButton: true
         }
       ],
-      addButton: {
-        text: '点我查看表单校验',
-        icon: 'el-icon-plus',
-        size: 'small'
+      rowHandle: {
+        columnHeader: '编辑表格',
+        edit: {
+          icon: 'el-icon-edit',
+          text: '点我进行编辑',
+          size: 'small'
+        }
       },
-      addTemplate: {
+      editTemplate: {
         date: {
           title: '日期',
           value: ''
@@ -87,32 +97,41 @@ export default {
         address: {
           title: '地址',
           value: ''
+        },
+        forbidEdit: {
+          title: '禁用按钮',
+          value: false,
+          component: {
+            show: false
+          }
+        },
+        showEditButton: {
+          title: '显示按钮',
+          value: true,
+          component: {
+            show: false
+          }
         }
       },
       formOptions: {
         labelWidth: '80px',
         labelPosition: 'left',
         saveLoading: false
-      },
-      addRules: {
-        date: [ { required: true, message: '请输入日期', trigger: 'blur' } ],
-        name: [ { required: true, message: '请输入姓名', trigger: 'blur' } ],
-        address: [ { required: true, message: '请输入地址', trigger: 'blur' } ]
       }
     }
   },
   methods: {
-    addRow () {
-      this.$refs.d2Crud.showDialog({
-        mode: 'add'
-      })
+    handleFormDataChange ({key, value}) {
+      console.log(key)
+      console.log(value)
     },
-    handleRowAdd (row, done) {
+    handleRowEdit ({index, row}, done) {
       this.formOptions.saveLoading = true
       setTimeout(() => {
+        console.log(index)
         console.log(row)
         this.$message({
-          message: '保存成功',
+          message: '编辑成功',
           type: 'success'
         })
         done()
@@ -121,7 +140,7 @@ export default {
     },
     handleDialogCancel (done) {
       this.$message({
-        message: '取消保存',
+        message: '取消编辑',
         type: 'warning'
       })
       done()

@@ -728,16 +728,41 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@d2-projects/d2-crud@^1.3.4":
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/@d2-projects/d2-crud/-/d2-crud-1.3.4.tgz#12478e0bbd99670c48c315b285f2f5ed95dc8257"
-  integrity sha512-WuvccdalYnDuHiS1jUocnH2dCP1r7biF0R5pUuoOSzhvfKQGmvdXAOuOE7h6WQL0krt0fGbX0q6OSm7Ub1B2fw==
+"@d2-projects/d2-crud@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@d2-projects/d2-crud/-/d2-crud-2.0.3.tgz#adf8824d620cdfb8641835ff2738aca366a06266"
+  integrity sha512-45PIyfFi6iO187C45Dp28egnEPYPCLW68PSOX5q3BX2X1p9lwYNDkPdLAQgVf5CfrN+0Db/Cqkw1jb7f0jDvGQ==
   dependencies:
     lodash.clonedeep "^4.5.0"
     lodash.foreach "^4.5.0"
     lodash.get "^4.4.2"
     lodash.set "^4.3.2"
+    vue "^2.5.19"
+
+"@d2-projects/vue-filters-date@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@d2-projects/vue-filters-date/-/vue-filters-date-1.0.2.tgz#2102ab923f3566519f7656a8e74a1712f4005219"
+  integrity sha512-xzItrCCcjn7pamokaXy3gbo1h4/Wnh3oXy0kfZufd9EjCCQ2xVAJvbtcj01RR0z02Yr3Dqk1RA0N7gISBaqW1A==
+  dependencies:
     vue "^2.5.11"
+
+"@d2-projects/vue-table-export@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@d2-projects/vue-table-export/-/vue-table-export-1.0.1.tgz#c4d3c3670ce8f59a6ca5e9610a8da05b446eb583"
+  integrity sha512-/F+ctYRSP79LmtiD+B53VBr0s7WhqHOgsxtxbnt9vN5zreMUkfd81wQKWxt2soH+FXiPDWxFi9cPSs29Iru30w==
+  dependencies:
+    file-saver "^2.0.0"
+    vue "^2.5.11"
+    xlsx "^0.14.1"
+
+"@d2-projects/vue-table-import@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@d2-projects/vue-table-import/-/vue-table-import-1.0.0.tgz#2eae225097f5b17e3f7b5681b02d55b1f682a6ae"
+  integrity sha512-kHict+AhB/hpQqwXpL3Nzvlz8bMt0AMMub3/DlbWxqiZLE9G3E97TL3eSJzOt6xZ/6WwYP6yYnUHzaxyNav5KQ==
+  dependencies:
+    papaparse "^4.6.2"
+    vue "^2.5.11"
+    xlsx "^0.14.1"
 
 "@intervolga/optimize-cssnano-plugin@^1.0.5":
   version "1.0.6"
@@ -2026,11 +2051,14 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-cfb@~1.0.7:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/cfb/-/cfb-1.0.8.tgz#77f213493d697d754fd9c0f5511eab5ad72d02cf"
+cfb@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/cfb/-/cfb-1.1.0.tgz#44fb1b30eee014fa5633a0ed5f26c87fd765799a"
+  integrity sha512-ZqfxNGWTMKhd0a/n6YKJLq8hWbd5kR3cA4kXwUj9vVEdHlwJ09werR8gN15Z7Y1FTXqdD6dE3GGCxv4uc28raA==
   dependencies:
-    commander "^2.14.1"
+    adler-32 "~1.2.0"
+    commander "^2.16.0"
+    crc-32 "~1.2.0"
     printj "~1.1.2"
 
 chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
@@ -2225,9 +2253,10 @@ codemirror@*:
   version "5.40.0"
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.40.0.tgz#2f5ed47366e514f41349ba0fe34daaa39be4e257"
 
-codepage@~1.13.0:
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/codepage/-/codepage-1.13.1.tgz#4f19dbbe3ebc2909dc8ebfc47ea26d838715e3f8"
+codepage@~1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/codepage/-/codepage-1.14.0.tgz#8cbe25481323559d7d307571b0fff91e7a1d2f99"
+  integrity sha1-jL4lSBMjVZ19MHVxsP/5HnodL5k=
   dependencies:
     commander "~2.14.1"
     exit-on-epipe "~1.0.1"
@@ -2277,6 +2306,11 @@ commander@*, commander@2.17.x, commander@^2.11.0, commander@^2.13.0, commander@^
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
 
+commander@^2.16.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
+  integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
+
 commander@~2.13.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
@@ -2284,10 +2318,6 @@ commander@~2.13.0:
 commander@~2.14.1:
   version "2.14.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
-
-commander@~2.15.1:
-  version "2.15.1"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -3671,9 +3701,10 @@ file-loader@^1.1.11:
     loader-utils "^1.0.2"
     schema-utils "^0.4.5"
 
-file-saver@^1.3.3:
-  version "1.3.8"
-  resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-1.3.8.tgz#e68a30c7cb044e2fb362b428469feb291c2e09d8"
+file-saver@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-2.0.0.tgz#74eef7748159503b60008a15af2f1930fb5df7ab"
+  integrity sha512-cYM1ic5DAkg25pHKgi5f10ziAM7RJU37gaH1XQlyNDrtUnzhC/dfoV9zf2OmF0RMKi42jG5B0JWBnPQqyj/G6g==
 
 filename-regex@^2.0.0:
   version "2.0.1"
@@ -6574,9 +6605,10 @@ pako@~1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.6.tgz#0101211baa70c4bca4a0f63f2206e97b7dfaf258"
 
-papaparse@^4.3.6:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/papaparse/-/papaparse-4.6.0.tgz#4e3b8d6bf9f7900da437912794ec292207526867"
+papaparse@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/papaparse/-/papaparse-4.6.2.tgz#5b2df0296f505f1c9d4c2261f903d3b44866a28d"
+  integrity sha512-P/4p6S6wZyXAjcFPnJAjFn7lxMIkd+23prFELhcbfWswQfg7dG1XJfV8/lKvk5lu5BGSSJZFHSDMejjFcB1feg==
 
 parallel-transform@^1.1.0:
   version "1.1.0"
@@ -6635,10 +6667,6 @@ parse5@4.0.0:
 parseurl@~1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
-
-particles.js@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/particles.js/-/particles.js-2.0.0.tgz#21386c4328d6c7f96780a201e96eedfc09c736f6"
 
 pascalcase@^0.1.1:
   version "0.1.1"
@@ -7265,6 +7293,11 @@ q@^1.1.2:
 qs@6.5.1:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
+
+qs@^6.6.0:
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.6.0.tgz#a99c0f69a8d26bf7ef012f871cdabb0aee4424c2"
+  integrity sha512-KIJqT9jQJDQx5h5uAVPimw6yVg2SekOKu959OCtktD3FjzbpvaPr8i4zzg07DOMz+igA4W/aNM7OV8H37pFYfA==
 
 qs@~6.5.1, qs@~6.5.2:
   version "6.5.2"
@@ -9089,6 +9122,11 @@ vue@^2.5.11, vue@^2.5.16, vue@^2.5.17:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
 
+vue@^2.5.19:
+  version "2.5.21"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.21.tgz#3d33dcd03bb813912ce894a8303ab553699c4a85"
+  integrity sha512-Aejvyyfhn0zjVeLvXd70h4hrE4zZDx1wfZqia6ekkobLmUZ+vNFQer53B4fu0EjWBSiqApxPejzkO1Znt3joxQ==
+
 vuex@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.0.1.tgz#e761352ebe0af537d4bb755a9b9dc4be3df7efd2"
@@ -9371,14 +9409,15 @@ ws@^5.2.0:
   dependencies:
     async-limiter "~1.0.0"
 
-xlsx@^0.12.0:
-  version "0.12.13"
-  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.12.13.tgz#f6bec7cf8d916cf625685116170cc3b224228658"
+xlsx@^0.14.1:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/xlsx/-/xlsx-0.14.1.tgz#ecedf536bd1e94055486ff484f5888dcaa89bd3d"
+  integrity sha512-7hjB5YuyJo1fuuzXQjwuxD8LSUzE4Rxu5ToC3fB5JSunZxGjLcgKg69bEFG9GYoxeVDx5GL0k1dUodlvaQNRQw==
   dependencies:
     adler-32 "~1.2.0"
-    cfb "~1.0.7"
-    codepage "~1.13.0"
-    commander "~2.15.1"
+    cfb "^1.1.0"
+    codepage "~1.14.0"
+    commander "~2.17.1"
     crc-32 "~1.2.0"
     exit-on-epipe "~1.0.1"
     ssf "~0.10.2"
