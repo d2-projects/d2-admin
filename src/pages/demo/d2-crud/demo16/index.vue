@@ -8,6 +8,7 @@
       add-title="我的新增"
       :add-template="addTemplate"
       :form-options="formOptions"
+      @dialog-open="handleDialogOpen"
       @row-add="handleRowAdd"
       @dialog-cancel="handleDialogCancel">
       <el-button slot="header" style="margin-bottom: 5px" @click="addRow">新增</el-button>
@@ -93,6 +94,12 @@ export default {
     }
   },
   methods: {
+    handleDialogOpen ({mode}) {
+      this.$message({
+        message: '打开模态框，模式为：' + mode,
+        type: 'success'
+      })
+    },
     addRow () {
       this.$refs.d2Crud.showDialog({
         mode: 'add'
