@@ -9,6 +9,7 @@
       edit-title="我的修改"
       :edit-template="editTemplate"
       :form-options="formOptions"
+      @dialog-open="handleDialogOpen"
       @row-edit="handleRowEdit"
       @dialog-cancel="handleDialogCancel">
       <el-button slot="header" style="margin-bottom: 5px" @click="editRowWithNewTemplate">使用自定义模板编辑第三行</el-button>
@@ -135,6 +136,12 @@ export default {
     }
   },
   methods: {
+    handleDialogOpen ({mode, row}) {
+      this.$message({
+        message: '打开模态框，模式为：' + mode,
+        type: 'success'
+      })
+    },
     editRowWithNewTemplate () {
       this.$refs.d2Crud.showDialog({
         mode: 'edit',

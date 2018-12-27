@@ -728,10 +728,10 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@d2-projects/d2-crud@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@d2-projects/d2-crud/-/d2-crud-2.0.2.tgz#5bf1e1d0076982f8350b8ab01748814f46d0ab76"
-  integrity sha512-Ns4a1g3rkNvTnzwBebFmGWc8wcywPVaRH0aFw7MI+qucNljaqv843xKDbjTvi5ABtRHzRZY5dz1YfP/4Yzfq1Q==
+"@d2-projects/d2-crud@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@d2-projects/d2-crud/-/d2-crud-2.0.3.tgz#adf8824d620cdfb8641835ff2738aca366a06266"
+  integrity sha512-45PIyfFi6iO187C45Dp28egnEPYPCLW68PSOX5q3BX2X1p9lwYNDkPdLAQgVf5CfrN+0Db/Cqkw1jb7f0jDvGQ==
   dependencies:
     lodash.clonedeep "^4.5.0"
     lodash.foreach "^4.5.0"
