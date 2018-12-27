@@ -2,7 +2,8 @@ export default `<template>
   <div>
     <d2-crud
       :columns="columns"
-      :data="data"/>
+      :data="data"
+      @cell-data-change="handleCellDataChange"/>
   </div>
 </template>
 
@@ -72,6 +73,14 @@ export default {
           address: '上海市普陀区金沙江路 1516 弄'
         }
       ]
+    }
+  },
+  methods: {
+    handleCellDataChange ({rowIndex, key, value, row}) {
+      console.log(rowIndex)
+      console.log(key)
+      console.log(value)
+      console.log(row)
     }
   }
 }

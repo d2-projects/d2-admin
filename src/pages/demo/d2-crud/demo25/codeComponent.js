@@ -29,6 +29,8 @@ export default {
     text () {
       if (this.scope.$index === 1) {
         return this.myProps
+      } else if (this.scope.$index === 3) {
+        return '通过scope拿到了当前行日期：' + this.scope.row.date
       }
       return this.value ? '是' : '否'
     }

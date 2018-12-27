@@ -1,1 +1,1 @@
-`headerButton` slot 可以在表头添加自定义按钮。代码如下：
+`header` slot 可以在表头添加自定义内容。代码如下：
