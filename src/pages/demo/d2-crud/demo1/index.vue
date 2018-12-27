@@ -68,7 +68,7 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$refs.d2Crud.d2Data)
+    console.log(this.$refs.d2Crud.d2CrudData)
   }
 }
 </script>

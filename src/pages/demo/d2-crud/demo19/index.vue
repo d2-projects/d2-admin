@@ -4,7 +4,6 @@
     <d2-crud
       :columns="columns"
       :data="data"
-      title="D2 CRUD"
       :rowHandle="rowHandle"
       @custom-emit-1="handleCustomEvent">
     </d2-crud>

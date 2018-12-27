@@ -3,9 +3,8 @@ export default `<template>
     <d2-crud
       :columns="columns"
       :data="data"
-      title="D2 CRUD"
       :rowHandle="rowHandle"
-      :form-template="formTemplate"
+      :edit-template="editTemplate"
       :form-options="formOptions"
       @row-edit="handleRowEdit"
       @dialog-cancel="handleDialogCancel"/>
@@ -60,7 +59,7 @@ export default {
           fixed: 'right'
         }
       },
-      formTemplate: {
+      editTemplate: {
         date: {
           title: '日期',
           value: '',

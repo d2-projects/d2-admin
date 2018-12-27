@@ -3,7 +3,8 @@
     <template slot="header">表格内编辑</template>
     <d2-crud
       :columns="columns"
-      :data="data"/>
+      :data="data"
+      @cell-data-change="handleCellDataChange"/>
     <el-card shadow="never" class="d2-mb">
       <d2-markdown :source="doc"/>
     </el-card>
@@ -88,6 +89,14 @@ export default {
           address: '上海市普陀区金沙江路 1516 弄'
         }
       ]
+    }
+  },
+  methods: {
+    handleCellDataChange ({rowIndex, key, value, row}) {
+      console.log(rowIndex)
+      console.log(key)
+      console.log(value)
+      console.log(row)
     }
   }
 }
