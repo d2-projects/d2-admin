@@ -110,7 +110,7 @@ export default {
     }
   },
   methods: {
-    handleRowRemove ({index, row}, done) {
+    handleRowRemove ({ index, row }, done) {
       this.$message({
         message: '删除成功',
         type: 'success'
