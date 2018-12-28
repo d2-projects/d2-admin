@@ -107,7 +107,7 @@ export default {
     }
   },
   methods: {
-    handleRowEdit ({index, row}, done) {
+    handleRowEdit ({ index, row }, done) {
       this.formOptions.saveLoading = true
       setTimeout(() => {
         console.log(index)

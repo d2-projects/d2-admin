@@ -105,11 +105,11 @@ export default {
     }
   },
   methods: {
-    handleFormDataChange ({key, value}) {
+    handleFormDataChange ({ key, value }) {
       console.log(key)
       console.log(value)
     },
-    handleRowEdit ({index, row}, done) {
+    handleRowEdit ({ index, row }, done) {
       this.formOptions.saveLoading = true
       setTimeout(() => {
         console.log(index)
