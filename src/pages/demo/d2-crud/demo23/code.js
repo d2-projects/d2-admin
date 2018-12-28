@@ -76,7 +76,7 @@ export default {
     }
   },
   methods: {
-    handleCellDataChange ({rowIndex, key, value, row}) {
+    handleCellDataChange ({ rowIndex, key, value, row }) {
       console.log(rowIndex)
       console.log(key)
       console.log(value)

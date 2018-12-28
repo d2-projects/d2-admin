@@ -79,7 +79,7 @@ export default {
     }
   },
   methods: {
-    handleRowRemove ({index, row}, done) {
+    handleRowRemove ({ index, row }, done) {
       setTimeout(() => {
         console.log(index)
         console.log(row)

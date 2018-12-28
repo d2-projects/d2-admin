@@ -136,7 +136,7 @@ export default {
     }
   },
   methods: {
-    handleDialogOpen ({mode, row}) {
+    handleDialogOpen ({ mode, row }) {
       this.$message({
         message: '打开模态框，模式为：' + mode,
         type: 'success'
