@@ -1,7 +1,3 @@
-// 暂时 D2 没有单元测试代码 此文件为自动生成
-
-// import { shallowMount } from '@vue/test-utils'
-// import HelloWorld from '@/components/HelloWorld.vue'
 import { mount } from '@vue/test-utils'
 import D2ContainerCard from '@/components/d2-container/components/d2-container-card.vue'
 
