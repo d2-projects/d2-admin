@@ -1,6 +1,5 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import D2Source from '@/components/d2-container/components/d2-source.vue'
-import util from '@/libs/util'
 
 describe('d2-source.vue', () => {
   // 存在且是Vue组件实例
