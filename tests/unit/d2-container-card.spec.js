@@ -25,7 +25,18 @@ describe('d2-container-card.vue', () => {
     expect(wrapper.contains('.d2-container-card__body')).toBeTruthy()
     expect(wrapper.contains('.d2-container-card__body-card')).toBeTruthy()
     expect(wrapper.contains('.d2-container-card__footer')).toBeTruthy()
-  });
+  })
+
+  // 节流间隔prop
+  it('has a property named \'scrollDelay\'', () => {
+    const wrapper = mount(D2ContainerCard, {
+      propsData: {
+        scrollDelay: 30
+      }
+    })
+
+    expect(wrapper.props().scrollDelay).toEqual(30)
+  })
 
   // 渲染slot
   it('has one or more slots', () => {
