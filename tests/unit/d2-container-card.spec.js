@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import D2ContainerCard from '@/components/d2-container/components/d2-container-card.vue'
 
-describe('d2-container-card.vue', () => {
+describe('d2-container-card', () => {
   // 存在且是Vue组件实例
   it('is a vue instance', () => {
     const wrapper = mount(D2ContainerCard)

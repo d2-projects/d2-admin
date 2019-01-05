@@ -2,7 +2,7 @@ import { mount, createLocalVue } from '@vue/test-utils'
 import D2IconSelect from '@/components/d2-icon-select/index.vue'
 import ElementUI from 'element-ui'
 
-describe('d2-icon-select.vue', () => {
+describe('d2-icon-select', () => {
   const localVue = createLocalVue()
   localVue.use(ElementUI)
 
