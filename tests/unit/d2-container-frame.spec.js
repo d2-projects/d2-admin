@@ -21,8 +21,8 @@ describe('d2-container-frame.vue', () => {
     expect(wrapper.contains('.d2-container-frame')).toBeTruthy()
   })
 
-  // src prop
-  it('has a property named \'src\'', () => {
+  // props
+  it('has props', () => {
     const wrapper = mount(D2ContainerFrame, {
       stubs: ['d2-container'],
       propsData: {

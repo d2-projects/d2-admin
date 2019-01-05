@@ -26,8 +26,8 @@ describe('d2-container-full.vue', () => {
     expect(wrapper.contains('.d2-container-full__footer')).toBeTruthy()
   })
 
-  // 节流间隔prop
-  it('has a property named \'scrollDelay\'', () => {
+  // props
+  it('has props', () => {
     const wrapper = mount(D2ContainerFull, {
       propsData: {
         scrollDelay: 30

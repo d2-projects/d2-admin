@@ -32,8 +32,8 @@ describe('d2-container-ghost-bs.vue', () => {
     expect(wrapper.contains('.d2-container-ghost-bs__footer')).toBeTruthy()
   })
 
-  // betterScrollOptions prop
-  it('has a property named \'betterScrollOptions\'', () => {
+  // props
+  it('has props', () => {
     const wrapper = mount(D2ContainerGhostBs, {
       slots: {
         default: '<div>body</div>',

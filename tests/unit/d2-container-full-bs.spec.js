@@ -27,8 +27,8 @@ describe('d2-container-full-bs.vue', () => {
     expect(wrapper.contains('.d2-container-full-bs__footer')).toBeTruthy()
   })
 
-  // betterScrollOptions prop
-  it('has a property named \'betterScrollOptions\'', () => {
+  // props
+  it('has props', () => {
     const wrapper = mount(D2ContainerFullBs, {
       propsData: {
         betterScrollOptions: {}
