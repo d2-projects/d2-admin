@@ -13,7 +13,7 @@ describe('d2-source.vue', () => {
   })
 
   // 包含特定类名
-  it('contains specific classnames', () => {
+  it('contains specific classnames', (done) => {
     const wrapper = mount(D2Source, {
       stubs: ['d2-icon']
     })
@@ -21,7 +21,8 @@ describe('d2-source.vue', () => {
     expect(wrapper.is('.d2-source')).toBeTruthy()
     setTimeout(() => {
       expect(wrapper.contains('.d2-source--active')).toBeTruthy()
-    }, 500)
+      done()
+    }, 600)
   })
 
   // filename prop
