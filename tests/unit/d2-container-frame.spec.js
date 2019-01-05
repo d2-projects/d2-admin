@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import D2ContainerFrame from '@/components/d2-container-frame/index.vue'
 
-describe('d2-container-frame.vue', () => {
+describe('d2-container-frame', () => {
   // 存在且是Vue组件实例
   it('is a vue instance', () => {
     const wrapper = mount(D2ContainerFrame, {

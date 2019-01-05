@@ -1,7 +1,7 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import D2Source from '@/components/d2-container/components/d2-source.vue'
 
-describe('d2-source.vue', () => {
+describe('d2-source', () => {
   // 存在且是Vue组件实例
   it('is a vue instance', () => {
     const wrapper = mount(D2Source, {
