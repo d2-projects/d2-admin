@@ -25,8 +25,8 @@ describe('d2-source.vue', () => {
     }, 600)
   })
 
-  // filename prop
-  it('has a property named \'filename\'', () => {
+  // props
+  it('has props', () => {
     const wrapper = mount(D2Source, {
       stubs: ['d2-icon'],
       propsData: {

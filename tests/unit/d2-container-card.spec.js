@@ -27,8 +27,8 @@ describe('d2-container-card.vue', () => {
     expect(wrapper.contains('.d2-container-card__footer')).toBeTruthy()
   })
 
-  // 节流间隔prop
-  it('has a property named \'scrollDelay\'', () => {
+  // props
+  it('has props', () => {
     const wrapper = mount(D2ContainerCard, {
       propsData: {
         scrollDelay: 30

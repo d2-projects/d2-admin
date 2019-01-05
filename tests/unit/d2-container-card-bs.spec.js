@@ -27,8 +27,8 @@ describe('d2-container-card-bs.vue', () => {
     expect(wrapper.contains('.d2-container-card-bs__footer')).toBeTruthy()
   })
 
-  // betterScrollOptions prop
-  it('has a property named \'betterScrollOptions\'', () => {
+  // props
+  it('has props', () => {
     const wrapper = mount(D2ContainerCardBs, {
       propsData: {
         betterScrollOptions: {}

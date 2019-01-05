@@ -18,8 +18,8 @@ describe('d2-icon.vue', () => {
     expect(wrapper.contains('.fa-font-awesome')).toBeTruthy()
   })
 
-  // name prop
-  it('has a property named \'name\'', () => {
+  // props
+  it('has props', () => {
     const wrapper = mount(D2Icon, {
       propsData: {
         name: 'font-awesome'
