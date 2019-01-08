@@ -4,7 +4,7 @@ import { Message } from 'element-ui'
 import util from '@/libs/util'
 
 // 创建一个错误
-function errorCreat (msg) {
+function errorCreate (msg) {
   const err = new Error(msg)
   errorLog(err)
   throw err
@@ -72,11 +72,11 @@ service.interceptors.response.use(
           return dataAxios.data
         case 'xxx':
           // [ 示例 ] 其它和后台约定的 code
-          errorCreat(`[ code: xxx ] ${dataAxios.msg}: ${response.config.url}`)
+          errorCreate(`[ code: xxx ] ${dataAxios.msg}: ${response.config.url}`)
           break
         default:
           // 不是正确的 code
-          errorCreat(`${dataAxios.msg}: ${response.config.url}`)
+          errorCreate(`${dataAxios.msg}: ${response.config.url}`)
           break
       }
     }
