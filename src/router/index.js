@@ -53,7 +53,7 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-router.afterEach((to) => {
+router.afterEach(to => {
   // 进度条
   NProgress.done()
   // 多页控制 打开新的页面
