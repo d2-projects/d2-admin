@@ -125,7 +125,7 @@ export default {
      * @class current
      * @description 打开一个新的页面
      * @param {Object} state vuex state
-     * @param {Object} param { name, params, query, fullPath } 路由信息
+     * @param {Object} param 从路由钩子的 to 对象上获取 { name, params, query, fullPath } 路由信息
      */
     open ({ state, commit, dispatch }, { name, params, query, fullPath }) {
       return new Promise(async resolve => {
