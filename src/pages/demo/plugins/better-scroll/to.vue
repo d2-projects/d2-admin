@@ -72,6 +72,7 @@ export default {
     scrollInit () {
       this.BS = new BScroll(this.$refs.wrapper, {
         mouseWheel: true,
+        click: true,
         scrollbar: {
           fade: true,
           interactive: false

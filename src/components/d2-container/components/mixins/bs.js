@@ -24,6 +24,7 @@ export default {
       // 初始化 bs
       this.BS = new BScroll(this.$refs.wrapper, Object.assign({
         mouseWheel: true,
+        click: true,
         scrollbar: {
           fade: true,
           interactive: false
