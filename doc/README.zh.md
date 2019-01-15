@@ -104,6 +104,14 @@
 | D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://d2admin.fairyever.com/#/demo/d2-crud/index) | 表格常用操作封装 |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
 
+## 衍生开源项目
+
+> 这些项目由开源社区贡献，不保证使用 D2Admin 最新版本，相关使用问题请联系其开源作者。
+
+| 名称 | Github / 主页 | 预览 | 介绍 |
+| --- | --- | --- | --- |
+| d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [预览](http://jaycewu.coding.me/d2-admin-pm) | 基于 d2-admin 的 RBAC 权限管理解决方案 |
+
 ## 开源后端实现
 
 > 后端由开源社区贡献，不保证使用 D2Admin 最新版本，相关使用问题请联系其开源作者。

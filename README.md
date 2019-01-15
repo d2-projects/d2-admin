@@ -100,6 +100,14 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 | D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [Preview](https://d2admin.fairyever.com/#/demo/d2-crud/index) | Table common operation package |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [Preview](https://github.com/d2-projects/d2-ribbons) | Open source project logo library |
 
+## Derived open source projects
+
+> These projects are contributed by the open source community and are not guaranteed to use the latest version of D2Admin. Please contact their open source authors for related usage questions.
+
+| Name | Github / HomePage | Preview | Introduction |
+| --- | --- | --- | --- |
+| d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [Preview](http://jaycewu.coding.me/d2-admin-pm) | RBAC privilege management solution based on d2-admin |
+
 ## Open source backend implementation
 
 > The backend is contributed by the open source community. The latest version of D2Admin is not guaranteed. Please contact its open source author for related usage issues.
