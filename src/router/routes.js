@@ -10,8 +10,6 @@ import business from './modules/business'
 
 import layoutHeaderAside from '@/layout/header-aside'
 
-const meta = { auth: true }
-
 /**
  * 在主框架内显示
  */
@@ -25,7 +23,9 @@ const frameIn = [
       {
         path: 'index',
         name: 'index',
-        meta,
+        meta: {
+          auth: true
+        },
         component: () => import('@/pages/index')
       },
       // 刷新页面 必须保留
