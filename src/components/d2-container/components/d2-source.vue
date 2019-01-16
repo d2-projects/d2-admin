@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="active"
     class="d2-source"
     :class="{ 'd2-source--active': isActive }"
     @click="handleClick">
@@ -19,6 +20,13 @@ export default {
   data () {
     return {
       isActive: false
+    }
+  },
+  computed: {
+    active () {
+      return process.env.VUE_APP_BUILD_MODE === 'TRAVIS' ||
+        process.env.NODE_ENV === 'development' &&
+        this.filename
     }
   },
   mounted () {

@@ -54,10 +54,9 @@ export default {
           scroll: e => this.$emit('scroll', e)
         }
       }, slots),
-      // 只在预览和开发模式下显示源码按钮
-      process.env.VUE_APP_BUILD_MODE === 'TRAVIS' || process.env.NODE_ENV === 'development' ? h(d2Source, {
+      h(d2Source, {
         props: this.$attrs
-      }) : undefined
+      })
     ])
   },
   methods: {
