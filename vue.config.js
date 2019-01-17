@@ -103,9 +103,8 @@ module.exports = {
     config.node
       .set('__dirname', true)
       .set('__filename', true)
-    // babel-polyfill 加入 entry
-    const entry = config.entry('app')
     // 判断环境加入模拟数据
+    const entry = config.entry('app')
     if (process.env.VUE_APP_BUILD_MODE !== 'nomock') {
       entry
         .add('@/mock')
