@@ -1,6 +1,6 @@
 {
   "name": "d2-admin",
-  "version": "1.6.13",
+  "version": "1.6.14",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
@@ -13,12 +13,12 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@babel/runtime": "^7.2.0",
     "@d2-projects/d2-crud": "^2.0.3",
     "@d2-projects/vue-filters-date": "^1.0.2",
     "@d2-projects/vue-table-export": "^1.0.1",
     "@d2-projects/vue-table-import": "^1.0.0",
     "axios": "^0.17.1",
-    "babel-polyfill": "^6.26.0",
     "better-scroll": "^1.12.1",
     "clipboard-polyfill": "^2.4.1",
     "countup.js": "^1.9.3",
@@ -53,6 +53,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "@kazupon/vue-i18n-loader": "^0.3.0",
     "@vue/cli-plugin-babel": "^3.0.0",
     "@vue/cli-plugin-eslint": "^3.0.0",

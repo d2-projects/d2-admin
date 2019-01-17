@@ -1,5 +1,3 @@
-// polyfill
-import 'babel-polyfill'
 // Vue
 import Vue from 'vue'
 import App from './App'
