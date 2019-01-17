@@ -98,7 +98,6 @@ module.exports = {
       .end()
     // 重新设置 alias
     config.resolve.alias
-      .set('@', resolve('src'))
       .set('@api', resolve('src/api'))
     // node
     config.node
@@ -106,9 +105,6 @@ module.exports = {
       .set('__filename', true)
     // babel-polyfill 加入 entry
     const entry = config.entry('app')
-    entry
-      .add('babel-polyfill')
-      .end()
     // 判断环境加入模拟数据
     if (process.env.VUE_APP_BUILD_MODE !== 'nomock') {
       entry
