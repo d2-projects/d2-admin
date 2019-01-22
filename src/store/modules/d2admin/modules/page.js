@@ -13,6 +13,10 @@ export default {
     pool: [],
     // 当前显示的多页面列表
     opened: setting.page.opened,
+    // 上次访问页面
+    previousPage: {},
+    // 是否开启关闭页签时切换到上一次访问页面的功能
+    isPreviousPage: setting.page.isPreviousPage,
     // 当前页面
     current: '',
     // 需要缓存的页面 name
@@ -190,6 +194,15 @@ export default {
             }
           }
         }
+        // 如果关闭的页面恰好是上次浏览的历史页面 则把previousPage设置为空
+        if (tagName === state.previousPage.fullPath) {
+          commit('previousPageSet', {})
+        }
+        const isInOpened = state.opened.find(item => item.name === state.previousPage.name)
+        // 如果上次访问的页面仍然在opened中 并且isPreviousPage为true  则newPage设置为上次访问的页面
+        if (isInOpened && state.isPreviousPage && state.previousPage !== {}) {
+          newPage = state.previousPage
+        }
         // 找到这个页面在已经打开的数据里是第几个
         const index = state.opened.findIndex(page => page.fullPath === tagName)
         if (index >= 0) {
@@ -231,7 +244,13 @@ export default {
         })
         if (currentIndex > 0) {
           // 删除打开的页面 并在缓存设置中删除
-          state.opened.splice(1, currentIndex - 1).forEach(({ name }) => commit('keepAliveRemove', name))
+          state.opened.splice(1, currentIndex - 1).forEach(({ name }) => {
+            // 批量关闭页面是 如果关闭的页面中有上次浏览的页面 则将previousPage设置为空
+            if (state.previousPage.name === name) {
+              commit('previousPageSet', {})
+            }
+            commit('keepAliveRemove', name)
+          })
         }
         state.current = pageAim
         if (vm && vm.$route.fullPath !== pageAim) {
@@ -259,7 +278,13 @@ export default {
           }
         })
         // 删除打开的页面 并在缓存设置中删除
-        state.opened.splice(currentIndex + 1).forEach(({ name }) => commit('keepAliveRemove', name))
+        state.opened.splice(currentIndex + 1).forEach(({ name }) => {
+          // 批量关闭页面是 如果关闭的页面中有上次浏览的页面 则将previousPage设置为空
+          if (state.previousPage.name === name) {
+            commit('previousPageSet', {})
+          }
+          commit('keepAliveRemove', name)
+        })
         // 设置当前的页面
         state.current = pageAim
         if (vm && vm.$route.fullPath !== pageAim) {
@@ -286,13 +311,22 @@ export default {
             currentIndex = index
           }
         })
-        // 删除打开的页面数据 并更新缓存设置
+        // 记录要删除的页面
+        let deleted = []
         if (currentIndex === 0) {
-          state.opened.splice(1).forEach(({ name }) => commit('keepAliveRemove', name))
+          deleted = [ ...deleted, ...state.opened.splice(1) ]
         } else {
-          state.opened.splice(currentIndex + 1).forEach(({ name }) => commit('keepAliveRemove', name))
-          state.opened.splice(1, currentIndex - 1).forEach(({ name }) => commit('keepAliveRemove', name))
+          deleted = [ ...deleted, ...state.opened.splice(currentIndex + 1) ]
+          deleted = [ ...deleted, ...state.opened.splice(1, currentIndex - 1) ]
         }
+        // 删除打开的页面数据 更新缓存设置
+        deleted.forEach(({ name }) => {
+          // 批量关闭页面是 如果关闭的页面中有上次浏览的页面 则将previousPage设置为空
+          if (state.previousPage.name === name) {
+            commit('previousPageSet', {})
+          }
+          commit('keepAliveRemove', name)
+        })
         // 设置新的页面
         state.current = pageAim
         if (vm && vm.$route.fullPath !== pageAim) {
@@ -375,6 +409,15 @@ export default {
      */
     currentSet (state, fullPath) {
       state.current = fullPath
+    },
+    /**
+     * @class previousPage
+     * @description 记录上次访问页面历史 在routes.js中完成更新
+     * @param {Object} state vuex state
+     * @param {Object} previousPage previous page
+     */
+    previousPageSet (state, previousPage) {
+      state.previousPage = previousPage
     },
     /**
      * @class pool

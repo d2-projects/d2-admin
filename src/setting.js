@@ -22,7 +22,9 @@ export default {
           auth: false
         }
       }
-    ]
+    ],
+    // 是否开启记录上次访问过的页面
+    isPreviousPage: false
   },
   // 菜单搜索
   search: {

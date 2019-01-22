@@ -53,11 +53,13 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-router.afterEach(to => {
+router.afterEach((to, from) => {
   // 进度条
   NProgress.done()
   // 多页控制 打开新的页面
   store.dispatch('d2admin/page/open', to)
+  // 记录上次访问过的页面
+  store.commit('d2admin/page/previousPageSet', from)
   // 更改标题
   util.title(to.meta.title)
 })
