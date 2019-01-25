@@ -5,7 +5,7 @@ export default `<template>
       :columns="columns"
       :data="data"
       add-title="我的新增"
-      :form-template="formTemplate"
+      :add-template="addTemplate"
       :form-options="formOptions"
       @dialog-open="handleDialogOpen"
       @row-add="handleRowAdd"
