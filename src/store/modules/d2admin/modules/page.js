@@ -1,6 +1,5 @@
 import { get } from 'lodash'
-
-// 设置文件
+import router from '@/router'
 import setting from '@/setting.js'
 
 // 判定是否需要缓存
@@ -168,9 +167,9 @@ export default {
      * @class opened
      * @description 关闭一个 tag (关闭一个页面)
      * @param {Object} state vuex state
-     * @param {Object} param { tagName: 要关闭的标签名字, vm: vue }
+     * @param {Object} param { tagName: 要关闭的标签名字 }
      */
-    close ({ state, commit, dispatch }, { tagName, vm }) {
+    close ({ state, commit, dispatch }, { tagName }) {
       return new Promise(async resolve => {
         // 下个新的页面
         let newPage = state.opened[0]
@@ -208,7 +207,7 @@ export default {
             params,
             query
           }
-          vm.$router.push(routerObj)
+          router.push(routerObj)
         }
         // end
         resolve()
