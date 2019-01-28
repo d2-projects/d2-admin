@@ -32,7 +32,7 @@
       <el-dropdown
         size="default"
         split-button
-        @click="handleControlBtnClick"
+        @click="closeAll"
         @command="command => handleControlItemClick(command)">
         <d2-icon name="times-circle"/>
         <el-dropdown-menu slot="dropdown">
@@ -131,8 +131,7 @@ export default {
         this.contextmenuFlag = false
       }
       const params = {
-        pageSelect: tagName,
-        vm: this
+        pageSelect: tagName
       }
       switch (command) {
         case 'left':
@@ -145,18 +144,12 @@ export default {
           this.closeOther(params)
           break
         case 'all':
-          this.closeAll(this)
+          this.closeAll()
           break
         default:
           this.$message.error('无效的操作')
           break
       }
-    },
-    /**
-     * @description 接收点击关闭控制上按钮的事件
-     */
-    handleControlBtnClick () {
-      this.closeAll(this)
     },
     /**
      * @description 接收点击 tab 标签的事件

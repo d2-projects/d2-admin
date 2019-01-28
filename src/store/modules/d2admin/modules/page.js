@@ -217,9 +217,9 @@ export default {
      * @class opened
      * @description 关闭当前标签左边的标签
      * @param {Object} state vuex state
-     * @param {Object} param { pageSelect: 当前选中的tagName, vm: vue }
+     * @param {Object} param { pageSelect: 当前选中的tagName }
      */
-    closeLeft ({ state, commit, dispatch }, { pageSelect, vm } = {}) {
+    closeLeft ({ state, commit, dispatch }, { pageSelect } = {}) {
       return new Promise(async resolve => {
         const pageAim = pageSelect || state.current
         let currentIndex = 0
@@ -233,8 +233,8 @@ export default {
           state.opened.splice(1, currentIndex - 1).forEach(({ name }) => commit('keepAliveRemove', name))
         }
         state.current = pageAim
-        if (vm && vm.$route.fullPath !== pageAim) {
-          vm.$router.push(pageAim)
+        if (router.app.$route.fullPath !== pageAim) {
+          router.push(pageAim)
         }
         // 持久化
         await dispatch('opend2db')
@@ -246,9 +246,9 @@ export default {
      * @class opened
      * @description 关闭当前标签右边的标签
      * @param {Object} state vuex state
-     * @param {Object} param { pageSelect: 当前选中的tagName, vm: vue }
+     * @param {Object} param { pageSelect: 当前选中的tagName }
      */
-    closeRight ({ state, commit, dispatch }, { pageSelect, vm } = {}) {
+    closeRight ({ state, commit, dispatch }, { pageSelect } = {}) {
       return new Promise(async resolve => {
         const pageAim = pageSelect || state.current
         let currentIndex = 0
@@ -261,8 +261,8 @@ export default {
         state.opened.splice(currentIndex + 1).forEach(({ name }) => commit('keepAliveRemove', name))
         // 设置当前的页面
         state.current = pageAim
-        if (vm && vm.$route.fullPath !== pageAim) {
-          vm.$router.push(pageAim)
+        if (router.app.$route.fullPath !== pageAim) {
+          router.push(pageAim)
         }
         // 持久化
         await dispatch('opend2db')
@@ -274,9 +274,9 @@ export default {
      * @class opened
      * @description 关闭当前激活之外的 tag
      * @param {Object} state vuex state
-     * @param {Object} param { pageSelect: 当前选中的tagName, vm: vue }
+     * @param {Object} param { pageSelect: 当前选中的tagName }
      */
-    closeOther ({ state, commit, dispatch }, { pageSelect, vm } = {}) {
+    closeOther ({ state, commit, dispatch }, { pageSelect } = {}) {
       return new Promise(async resolve => {
         const pageAim = pageSelect || state.current
         let currentIndex = 0
@@ -294,8 +294,8 @@ export default {
         }
         // 设置新的页面
         state.current = pageAim
-        if (vm && vm.$route.fullPath !== pageAim) {
-          vm.$router.push(pageAim)
+        if (router.app.$route.fullPath !== pageAim) {
+          router.push(pageAim)
         }
         // 持久化
         await dispatch('opend2db')
@@ -307,17 +307,16 @@ export default {
      * @class opened
      * @description 关闭所有 tag
      * @param {Object} state vuex state
-     * @param {Object} vm vue
      */
-    closeAll ({ state, commit, dispatch }, vm) {
+    closeAll ({ state, commit, dispatch }) {
       return new Promise(async resolve => {
         // 删除打开的页面 并在缓存设置中删除
         state.opened.splice(1).forEach(({ name }) => commit('keepAliveRemove', name))
         // 持久化
         await dispatch('opend2db')
         // 关闭所有的标签页后需要判断一次现在是不是在首页
-        if (vm.$route.name !== 'index') {
-          vm.$router.push({
+        if (router.app.$route.name !== 'index') {
+          router.push({
             name: 'index'
           })
         }
