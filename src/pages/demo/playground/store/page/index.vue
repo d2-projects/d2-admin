@@ -18,7 +18,7 @@
       <el-button @click="handleCloseOther">
         其它 <d2-icon name="times"/>
       </el-button>
-      <el-button @click="handleCloseAll">
+      <el-button @click="closeAll">
         全部 <d2-icon name="times-circle"/>
       </el-button>
     </el-button-group>
@@ -61,34 +61,26 @@ export default {
     // 关闭当前
     handleCloseCurrent () {
       this.close({
-        tagName: this.$route.fullPath,
-        vm: this
+        tagName: this.$route.fullPath
       })
     },
     // 关闭左侧
     handleCloseLeft () {
       this.closeLeft({
-        tagName: this.$route.fullPath,
-        vm: this
+        tagName: this.$route.fullPath
       })
     },
     // 关闭右侧
     handleCloseRight () {
       this.closeRight({
-        tagName: this.$route.fullPath,
-        vm: this
+        tagName: this.$route.fullPath
       })
     },
     // 关闭其他
     handleCloseOther () {
       this.closeOther({
-        tagName: this.$route.fullPath,
-        vm: this
+        tagName: this.$route.fullPath
       })
-    },
-    // 关闭全部
-    handleCloseAll () {
-      this.closeAll(this)
     },
     // 清空当前页缓存并刷新此页面
     handleCleanCacheAndRefreshCurrent () {
