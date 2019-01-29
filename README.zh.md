@@ -29,9 +29,11 @@
 
 [预览地址](https://d2admin.fairyever.com)
 
-## 码云镜像
+## 码云仓库
 
 [码云](https://gitee.com/fairyever/d2-admin)
+
+> 如果您在 github 仓库下载很慢，可以尝试使用我们的码云仓库克隆代码
 
 ## 功能
 
