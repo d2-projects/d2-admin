@@ -14,9 +14,9 @@ export default {
      * @param {Object} param route {Object} 登录成功后定向的路由对象 任何 vue-router 支持的格式
      */
     login ({ dispatch }, {
-      username,
-      password
-    }) {
+      username = '',
+      password = ''
+    } = {}) {
       return new Promise((resolve, reject) => {
         // 开始请求登录接口
         AccountLogin({
