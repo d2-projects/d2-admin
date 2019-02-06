@@ -43,9 +43,7 @@ export default {
     console.log('beforeRouteEnter => ', to)
     const id = to.params.id
     if (id) {
-      next(vm => {
-        vm.switchData(id)
-      })
+      next(instance => instance.switchData(id))
     } else {
       next(new Error('未指定ID'))
     }

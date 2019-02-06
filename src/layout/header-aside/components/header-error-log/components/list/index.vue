@@ -20,7 +20,7 @@
           v-if="props.row.type === 'error'"
           type="error"
           title="报错组件"
-          :value="get(props.row.vm, '$vnode.tag', '')"/>
+          :value="get(props.row.instance, '$vnode.tag', '')"/>
         <expand-item
           v-if="props.row.type === 'error'"
           type="error"

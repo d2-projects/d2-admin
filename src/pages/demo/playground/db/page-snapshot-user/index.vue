@@ -5,7 +5,7 @@
         type="success"
         :closable="false"
         title="私有路由快照相当于私有路由存储一种快捷操作，
-          会将传入 vm 实例的 $data 全部根据用户区分持久化，
+          会将传入的 vue instance 携带的 $data 全部根据用户区分持久化，
           下面的表单来自 Element 的表单示例，
           在 D2Admin 的本页示例中你可以随意填写这个表单，
           表单内容会自动实时持久化，
@@ -87,7 +87,7 @@ export default {
     }
   },
   async created () {
-    const data = await this.pageGet({ vm: this, user: true })
+    const data = await this.pageGet({ instance: this, user: true })
     for (const key in data) {
       if (data.hasOwnProperty(key)) this[key] = data[key]
     }
@@ -95,7 +95,7 @@ export default {
   watch: {
     $data: {
       handler () {
-        this.pageSet({ vm: this, user: true })
+        this.pageSet({ instance: this, user: true })
       },
       deep: true
     }
@@ -107,7 +107,7 @@ export default {
       'pageClear'
     ]),
     async handleClear () {
-      await this.pageClear({ vm: this, user: true })
+      await this.pageClear({ instance: this, user: true })
       this.$message.success('此页面快照已经删除，请重新进入该页面或者关闭选项卡重新打开')
     }
   }

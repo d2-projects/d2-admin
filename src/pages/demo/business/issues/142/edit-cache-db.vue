@@ -37,12 +37,12 @@ export default {
   beforeRouteEnter (to, from, next) {
     const id = to.params.id
     if (id) {
-      next(async vm => {
+      next(async instance => {
         if (from.name === 'demo-business-issues-142') {
-          await vm.getFormData(id)
-          vm.saveDataToDb()
+          await instance.getFormData(id)
+          instance.saveDataToDb()
         } else {
-          vm.loadDataFromDb(to)
+          instance.loadDataFromDb(to)
         }
       })
     }
@@ -67,23 +67,22 @@ export default {
   methods: {
     ...mapActions('d2admin/db', [
       'pageSet',
-      'pageGet',
-      'pageClear'
+      'pageGet'
     ]),
     // 将页面数据同步到持久化存储
     saveDataToDb () {
-      this.pageSet({ vm: this, user: true })
+      this.pageSet({ instance: this, user: true })
     },
     // 从持久化存储恢复数据到页面
     async loadDataFromDb (to) {
-      const vm = {
+      const instance = {
         $route: {
           fullPath: to.fullPath
         },
         $data: {}
       }
       const data = await this.pageGet({
-        vm,
+        instance,
         user: true
       })
       for (const key in data) {

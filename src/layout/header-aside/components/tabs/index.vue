@@ -168,8 +168,7 @@ export default {
     handleTabsEdit (tagName, action) {
       if (action === 'remove') {
         this.close({
-          tagName,
-          vm: this
+          tagName
         })
       }
     }

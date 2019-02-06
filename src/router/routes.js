@@ -35,7 +35,7 @@ const frameIn = [
         hidden: true,
         component: {
           beforeRouteEnter (to, from, next) {
-            next(vm => vm.$router.replace(from.fullPath))
+            next(instance => instance.$router.replace(from.fullPath))
           },
           render: h => h()
         }
@@ -47,7 +47,7 @@ const frameIn = [
         hidden: true,
         component: {
           beforeRouteEnter (to, from, next) {
-            next(vm => vm.$router.replace(JSON.parse(from.params.route)))
+            next(instance => instance.$router.replace(JSON.parse(from.params.route)))
           },
           render: h => h()
         }

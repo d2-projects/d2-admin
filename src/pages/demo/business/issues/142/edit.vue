@@ -36,9 +36,9 @@ export default {
   beforeRouteEnter (to, from, next) {
     const id = to.params.id
     if (id) {
-      next(vm => {
-        vm.resetFormData()
-        vm.getFormData(id)
+      next(instance => {
+        instance.resetFormData()
+        instance.getFormData(id)
       })
     } else {
       next(new Error('未指定ID'))
