@@ -35,8 +35,8 @@ export default {
     add ({ state, rootState }, { type, err, instance, info }) {
       // store 赋值
       state.list.push(Object.assign({
-        // 记录类型
-        type: 'log', // or error
+        // 记录类型 "log" or "error"
+        type: 'log',
         // 信息
         info: '',
         // 错误对象
