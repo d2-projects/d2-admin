@@ -29,10 +29,10 @@ export default {
      * @description 添加一个日志
      * @param {Object} param type {String} 类型
      * @param {Object} param err {Error} 错误对象
-     * @param {Object} param vm {Object} vue 实例
+     * @param {Object} param instance {Object} vue 实例
      * @param {Object} param info {String} 信息
      */
-    add ({ state, rootState }, { type, err, vm, info }) {
+    add ({ state, rootState }, { type, err, instance, info }) {
       // store 赋值
       state.list.push(Object.assign({
         // 记录类型
@@ -42,7 +42,7 @@ export default {
         // 错误对象
         err: '',
         // vue 实例
-        vm: '',
+        instance: '',
         // 当前用户信息
         user: rootState.d2admin.user.info,
         // 当前用户的 uuid
@@ -56,7 +56,7 @@ export default {
       }, {
         type,
         err,
-        vm,
+        instance,
         info: toString(info)
       }))
     }

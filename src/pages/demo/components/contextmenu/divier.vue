@@ -21,9 +21,9 @@ export default {
     }
   },
   methods: {
-    handleClick (vm, event) {
+    handleClick (instance, event) {
       this.$message({
-        message: `你点击了${vm.$slots.default[0].text}`,
+        message: `你点击了${instance.$slots.default[0].text}`,
         type: 'info'
       })
     }

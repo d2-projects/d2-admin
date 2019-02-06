@@ -6,7 +6,7 @@
         :closable="false"
         title="路由存储指当前路由的存储区域，
           不同路由之间存储不会相互干扰，
-          使用 await this.$store.dispatch('d2admin/db/databasePage', { vm: this }) 获得存储实例进行操作，
+          使用 await this.$store.dispatch('d2admin/db/databasePage') 获得存储实例进行操作，
           不同路由条件下获取的存储实例指向位置不同，
           可以指定路由区分依据 name | path | fullPath，
           默认根据路由的 name 区分不同的路由"/>
@@ -73,9 +73,7 @@ export default {
      * 加载本地数据
      */
     async load () {
-      const db = await this.databasePage({
-        vm: this
-      })
+      const db = await this.databasePage()
       this.dataDisplay = JSON.stringify(db.value(), null, 2)
       this.keyNameList = Object.keys(db.value()).map(k => ({
         value: k,
@@ -86,9 +84,7 @@ export default {
      * 删除一个字段
      */
     async handleDelete (name) {
-      const db = await this.databasePage({
-        vm: this
-      })
+      const db = await this.databasePage()
       db
         .unset(name)
         .write()
@@ -99,9 +95,7 @@ export default {
      * 清空当前用户的数据
      */
     async handleClear () {
-      await this.databasePageClear({
-        vm: this
-      })
+      await this.databasePageClear()
       this.load()
     },
     /**
@@ -112,9 +106,7 @@ export default {
         this.$message.error('字段名不能为空')
         return
       }
-      const db = await this.databasePage({
-        vm: this
-      })
+      const db = await this.databasePage()
       db
         .set(this.keyNameToSet, this.valueToSet)
         .write()
@@ -125,9 +117,7 @@ export default {
      */
     async handleSetRandom () {
       const id = uniqueId()
-      const db = await this.databasePage({
-        vm: this
-      })
+      const db = await this.databasePage()
       db
         .set(`uniqueKey${id}`, `value${id}`)
         .write()
