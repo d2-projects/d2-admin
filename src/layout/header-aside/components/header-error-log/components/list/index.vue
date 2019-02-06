@@ -1,6 +1,6 @@
 <template>
   <el-table
-    :data="logReverse"
+    :data="logReversed"
     border
     stripe
     style="width: 100%"
@@ -121,7 +121,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { get } from 'lodash'
+import { get, cloneDeep } from 'lodash'
 import ExpandItem from './components/ExpandItem'
 export default {
   name: 'd2-error-log-list',
@@ -132,14 +132,8 @@ export default {
     ...mapState('d2admin', {
       logList: state => state.log.list
     }),
-    logReverse () {
-      // 直接 reverse 的话有点问题
-      const res = []
-      const loglength = this.logList.length
-      this.logList.forEach((log, index) => {
-        res.push(this.logList[loglength - 1 - index])
-      })
-      return res
+    logReversed () {
+      return cloneDeep(this.logList).reverse()
     }
   },
   methods: {
