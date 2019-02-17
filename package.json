@@ -1,6 +1,6 @@
 {
   "name": "d2-admin",
-  "version": "1.6.15",
+  "version": "1.6.16",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
