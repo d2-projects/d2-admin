@@ -10,7 +10,7 @@ branches:
   - master
 
 script:
-  - npm run build:travis
+  - yarn run build:travis
 
 before_install:
   - ./qshell account $AK $SK
