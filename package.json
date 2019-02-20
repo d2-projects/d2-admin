@@ -68,7 +68,7 @@
     "sass-loader": "^7.0.1",
     "svg-sprite-loader": "^3.8.0",
     "text-loader": "0.0.1",
-    "uglifyjs-webpack-plugin": "^2.0.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
     "vue-template-compiler": "^2.5.17"
   },
   "lint-staged": {
