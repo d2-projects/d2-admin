@@ -75,6 +75,9 @@
     <code-and-result label="date_is_after('2012-1-1')" :value="value|date_is_after('2012-1-1')"/>
     <code-and-result label="date_is_same(new Date())" :value="value|date_is_same(new Date())"/>
     <code-and-result label="date_is_same(new Date(), 'date')" :value="value|date_is_same(new Date(), 'date')"/>
+    <template slot="footer">
+      <d2-link-btn title="文档" link="https://doc.d2admin.fairyever.com/zh/sys-plugins/vue-filters-date.html"/>
+    </template>
   </d2-container>
 </template>
 
