@@ -23,34 +23,12 @@
           style="font-size: 20px"/>
       </el-button>
     </el-tooltip>
-    <el-dialog
-      :title="tooltipContent"
-      :fullscreen="true"
-      :visible.sync="dialogVisible"
-      :append-to-body="true">
-      <div class="d2-mb-10">
-        <el-button type="danger" size="mini" @click="handleLogClean">
-          <d2-icon name="trash-o"/>
-          清空
-        </el-button>
-      </div>
-      <d2-error-log-list/>
-    </el-dialog>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
-import D2ErrorLogList from './components/list'
 export default {
-  components: {
-    D2ErrorLogList
-  },
-  data () {
-    return {
-      dialogVisible: false
-    }
-  },
   computed: {
     ...mapGetters('d2admin', {
       logLength: 'log/length',
@@ -69,13 +47,7 @@ export default {
       'clean'
     ]),
     handleClick () {
-      if (this.logLength > 0) {
-        this.dialogVisible = true
-      }
-    },
-    handleLogClean () {
-      this.dialogVisible = false
-      this.clean()
+      //
     }
   }
 }
