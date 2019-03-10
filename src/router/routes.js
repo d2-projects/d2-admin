@@ -10,6 +10,9 @@ import business from './modules/business'
 
 import layoutHeaderAside from '@/layout/header-aside'
 
+// 由于懒加载页面太多的话会造成webpack热更新太慢，所以开发环境不使用懒加载，只有生产环境使用懒加载
+const _import = require('@/libs/util.import.' + process.env.NODE_ENV)
+
 /**
  * 在主框架内显示
  */
@@ -26,7 +29,7 @@ const frameIn = [
         meta: {
           auth: true
         },
-        component: () => import('@/pages/index')
+        component: _import('index')
       },
       // 刷新页面 必须保留
       {
@@ -73,7 +76,7 @@ const frameOut = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/pages/login')
+    component: _import('login')
   }
 ]
 
@@ -85,7 +88,7 @@ const errorPage = [
   {
     path: '*',
     name: '404',
-    component: () => import('@/pages/error-page-404')
+    component: _import('error-page-404')
   }
 ]
 
