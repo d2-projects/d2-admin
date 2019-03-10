@@ -7,12 +7,9 @@ import 'flex.css'
 import '@/components'
 // svg 图标
 import '@/assets/svg-icons'
-// 过滤器
-import d2VueFiltersDate from '@d2-projects/vue-filters-date'
+
 // 功能插件
 import pluginError from '@/plugin/error'
-import pluginExport from '@d2-projects/vue-table-export'
-import pluginImport from '@d2-projects/vue-table-import'
 import pluginLog from '@/plugin/log'
 import pluginOpen from '@/plugin/open'
 
@@ -31,12 +28,8 @@ export default {
     Vue.prototype.$buildTime = process.env.VUE_APP_BUILD_TIME
     // Element
     Vue.use(ElementUI)
-    // 过滤器 日期模块
-    Vue.use(d2VueFiltersDate)
     // 插件
     Vue.use(pluginError)
-    Vue.use(pluginExport)
-    Vue.use(pluginImport)
     Vue.use(pluginLog)
     Vue.use(pluginOpen)
   }

@@ -1,28 +1,33 @@
 // Vue
 import Vue from 'vue'
 import App from './App'
+// 核心插件
+import d2Admin from '@/plugin/d2admin'
 // store
 import store from '@/store/index'
 // 多国语
 import i18n from './i18n'
-// 核心插件
-import d2Admin from '@/plugin/d2admin'
 
-// [ 可选插件组件 ]D2-Crud
+// [ 可选组件 ]D2-Crud
 import D2Crud from '@d2-projects/d2-crud'
-// [ 可选插件组件 ] 图表
+// [ 可选组件 ] 图表
 import VCharts from 'v-charts'
-// [ 可选插件组件 ] 右键菜单
+// [ 可选组件 ] 右键菜单
 import contentmenu from 'v-contextmenu'
 import 'v-contextmenu/dist/index.css'
-// [ 可选插件组件 ] JSON 树状视图
+// [ 可选组件 ] JSON 树状视图
 import vueJsonTreeView from 'vue-json-tree-view'
-// [ 可选插件组件 ] 网格布局组件
+// [ 可选组件 ] 网格布局
 import { GridLayout, GridItem } from 'vue-grid-layout'
-// [ 可选插件组件 ] 区域划分组件
+// [ 可选组件 ] 区域划分
 import SplitPane from 'vue-splitpane'
-// [ 可选插件组件 ] UEditor
+// [ 可选组件 ] UEditor
 import VueUeditorWrap from 'vue-ueditor-wrap'
+// [ 可选插件 ] 数据导入导出
+import pluginExport from '@d2-projects/vue-table-export'
+import pluginImport from '@d2-projects/vue-table-import'
+// [ 可选过滤器 ] 日期相关过滤器
+import d2VueFiltersDate from '@d2-projects/vue-filters-date'
 
 // 菜单和路由设置
 import router from './router'
@@ -37,6 +42,9 @@ Vue.use(D2Crud)
 Vue.use(VCharts)
 Vue.use(contentmenu)
 Vue.use(vueJsonTreeView)
+Vue.use(pluginExport)
+Vue.use(pluginImport)
+Vue.use(d2VueFiltersDate)
 Vue.component('d2-grid-layout', GridLayout)
 Vue.component('d2-grid-item', GridItem)
 Vue.component('SplitPane', SplitPane)
