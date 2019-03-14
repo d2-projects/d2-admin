@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import list from '@/pages/demo/charts/list/_mixin/list.js'
+import list from '@/views/demo/charts/list/_mixin/list.js'
 export default {
   mixins: [
     list

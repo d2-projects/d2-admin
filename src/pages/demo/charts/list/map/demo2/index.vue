@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import list from '@/pages/demo/charts/list/_mixin/list.js'
-import mapOrigin from '@/pages/demo/charts/list/_data/beijing'
+import list from '@/views/demo/charts/list/_mixin/list.js'
+import mapOrigin from '@/views/demo/charts/list/_data/beijing'
 export default {
   mixins: [
     list
