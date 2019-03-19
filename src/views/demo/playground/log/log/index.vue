@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     handleAdd () {
-      this.$logAdd({
+      this.$log.push({
         message: this.text
       })
     }
