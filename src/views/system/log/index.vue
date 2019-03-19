@@ -59,6 +59,7 @@ export default {
     margin: 4px -4px;
     padding: 4px;
     border-radius: 2px;
+    font-size: 14px;
     @extend %unable-select;
     &:hover {
       background-color: $color-bg;
