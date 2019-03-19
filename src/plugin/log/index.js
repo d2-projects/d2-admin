@@ -6,16 +6,9 @@ export default {
     // 快速打印 log
     Vue.prototype.$log = util.log
     // 快速记录日志
-    Vue.prototype.$logAdd = function (info, show = true) {
+    Vue.prototype.$logAdd = function (data) {
       // store 赋值
-      store.dispatch('d2admin/log/add', {
-        type: 'log',
-        info
-      })
-      // 显示在控制台
-      if (show && process.env.NODE_ENV === 'development') {
-        util.log.default(info)
-      }
+      store.dispatch('d2admin/log/add', data)
     }
   }
 }
