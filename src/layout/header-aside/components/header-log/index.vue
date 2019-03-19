@@ -45,7 +45,9 @@ export default {
       'clean'
     ]),
     handleClick () {
-      //
+      this.$router.push({
+        name: 'log'
+      })
     }
   }
 }
