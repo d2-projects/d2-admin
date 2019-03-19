@@ -6,6 +6,7 @@
         size="mini"
         :loading="uploading"
         @click="handleUpload">
+        <d2-icon name="cloud-upload"/>
         Upload
       </el-button>
     </template>
