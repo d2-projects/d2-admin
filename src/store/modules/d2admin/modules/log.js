@@ -8,8 +8,8 @@ export default {
     // 错误日志
     // + 日志条目的属性
     //   - message 必须 日志信息
-    //   - time 必须 日志记录时间
     //   - type 非必须 类型 success | warning | info | error
+    //   - time 必须 日志记录时间
     //   - meta 非必须 其它携带信息
     list: []
   },
@@ -32,16 +32,15 @@ export default {
   actions: {
     /**
      * @description 添加一个日志
-     * @param {Object} param type {String} 类型
-     * @param {Object} param err {Error} 错误对象
-     * @param {Object} param instance {Object} vue 实例
-     * @param {Object} param info {String} 信息
+     * @param {String} param message {String} 信息
+     * @param {String} param type {String} 类型
+     * @param {Object} param meta {Object} 附带的信息
      */
     add ({ rootState, commit }, { message, type, meta }) {
       commit('add', {
         message,
-        time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
         type,
+        time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
         meta: {
           // 当前用户信息
           user: rootState.d2admin.user.info,
