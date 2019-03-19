@@ -16,6 +16,9 @@
         <span class="log-message">{{log.message}}</span>
       </p>
     </section>
+    <template slot="footer">
+      <span>{{list.length}}条记录</span>
+    </template>
   </d2-container>
 </template>
 

@@ -1,11 +1,11 @@
 <template>
   <el-card shadow="never" class="d2-mb">
-    <div slot="header" class="d2-clearfix">
+    <el-row type="flex" justify="end" slot="header">
       <el-button type="text" size="mini">{{title}}</el-button>
       <el-tooltip content="重新 mock 数据" placement="top-end">
         <el-button type="primary" size="mini" @click="$emit('reload')" class="d2-fr">刷新</el-button>
       </el-tooltip>
-    </div>
+    </el-row>
     <el-row :gutter="10">
       <el-col :span="12">
         <div class="col col-l">
