@@ -234,6 +234,7 @@
       .d2-theme-container-main {
         // 主体部分分为多页面控制器 和主体
         .d2-theme-container-main-header {
+          height: 41px;
           // 多页面控制器
           .d2-multiple-page-control-group {
             padding-right: 20px;
@@ -288,6 +289,7 @@
               }
               .d2-container-full__body {
                 flex-grow: 1;
+                height: 100%;
                 padding: 20px 20px;
                 overflow: auto;
                 position: relative;
