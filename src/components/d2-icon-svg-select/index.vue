@@ -6,9 +6,7 @@
       :placement="placement"
       width="300"
       trigger="click">
-      <div
-        class="d2-clearfix d2-mb-10"
-        v-if="clearable">
+      <el-row type="flex" justify="end" class="d2-mb-10" v-if="clearable">
         <el-button
           type="danger"
           icon="el-icon-delete"
@@ -17,7 +15,7 @@
           @click="selectIcon()">
           清空
         </el-button>
-      </div>
+      </el-row>
       <el-input
         v-model="searchText"
         :clearable="true"

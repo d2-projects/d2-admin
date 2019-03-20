@@ -34,14 +34,6 @@
 .#{$prefix}-fr {
   float: right;
 }
-.#{$prefix}-clearfix:before,
-.#{$prefix}-clearfix:after {
-  display: table;
-  content: "";
-}
-.#{$prefix}-clearfix:after {
-  clear: both
-}
 
 // 边距相关
 $sizes: (0, 5, 10, 15, 20);
