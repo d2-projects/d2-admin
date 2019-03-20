@@ -1,11 +1,16 @@
 import dayjs from 'dayjs'
-import { get, toString } from 'lodash'
+import { get } from 'lodash'
 import util from '@/libs/util.js'
 
 export default {
   namespaced: true,
   state: {
     // 错误日志
+    // + 日志条目的属性
+    //   - message 必须 日志信息
+    //   - type 非必须 类型 success | warning | info | error
+    //   - time 必须 日志记录时间
+    //   - meta 非必须 其它携带信息
     list: []
   },
   getters: {
@@ -27,41 +32,39 @@ export default {
   actions: {
     /**
      * @description 添加一个日志
-     * @param {Object} param type {String} 类型
-     * @param {Object} param err {Error} 错误对象
-     * @param {Object} param instance {Object} vue 实例
-     * @param {Object} param info {String} 信息
+     * @param {String} param message {String} 信息
+     * @param {String} param type {String} 类型
+     * @param {Object} param meta {Object} 附带的信息
      */
-    add ({ state, rootState }, { type, err, instance, info }) {
-      // store 赋值
-      state.list.push(Object.assign({
-        // 记录类型 "log" or "error"
-        type: 'log',
-        // 信息
-        info: '',
-        // 错误对象
-        err: '',
-        // vue 实例
-        instance: '',
-        // 当前用户信息
-        user: rootState.d2admin.user.info,
-        // 当前用户的 uuid
-        uuid: util.cookies.get('uuid'),
-        // 当前的 token
-        token: util.cookies.get('token'),
-        // 当前地址
-        url: get(window, 'location.href', ''),
-        // 当前时间
-        time: dayjs().format('YYYY-M-D HH:mm:ss')
-      }, {
+    add ({ rootState, commit }, { message, type, meta }) {
+      commit('add', {
+        message,
         type,
-        err,
-        instance,
-        info: toString(info)
-      }))
+        time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+        meta: {
+          // 当前用户信息
+          user: rootState.d2admin.user.info,
+          // 当前用户的 uuid
+          uuid: util.cookies.get('uuid'),
+          // 当前的 token
+          token: util.cookies.get('token'),
+          // 当前地址
+          url: get(window, 'location.href', ''),
+          // 用户设置
+          ...meta
+        }
+      })
     }
   },
   mutations: {
+    /**
+     * @description 添加日志
+     * @param {Object} state vuex state
+     * @param {Object} log data
+     */
+    add (state, log) {
+      state.list.push(log)
+    },
     /**
      * @description 清空日志
      * @param {Object} state vuex state
