@@ -7,7 +7,7 @@
         :loading="uploading"
         @click="handleUpload">
         <d2-icon name="cloud-upload"/>
-        Upload
+        Upload {{list.length}} log data
       </el-button>
     </template>
     <section class="page">
@@ -16,9 +16,6 @@
         <span class="log-message">{{log.message}}</span>
       </p>
     </section>
-    <template slot="footer">
-      <span>{{list.length}}条记录</span>
-    </template>
   </d2-container>
 </template>
 

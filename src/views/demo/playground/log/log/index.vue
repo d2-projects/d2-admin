@@ -16,14 +16,12 @@ export default {
   data () {
     return {
       filename: __filename,
-      text: 'D2Admin log info'
+      text: 'some text'
     }
   },
   methods: {
     handleAdd () {
-      this.$log.push({
-        message: this.text
-      })
+      this.$log.push(this.text)
     }
   }
 }
