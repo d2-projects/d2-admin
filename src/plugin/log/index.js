@@ -7,7 +7,18 @@ export default {
     Vue.prototype.$log = {
       ...util.log,
       push (data) {
-        store.dispatch('d2admin/log/add', data)
+        if (typeof data === 'string') {
+          // 如果传递来的数据是字符串
+          // 赋值给 message 字段
+          // 为了方便使用
+          // eg: this.$log.push('foo text')
+          store.dispatch('d2admin/log/add', {
+            message: data
+          })
+        } else if (typeof data === 'object') {
+          // 如果传递来的数据是对象
+          store.dispatch('d2admin/log/add', data)
+        }
       }
     }
   }
