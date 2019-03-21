@@ -8,7 +8,7 @@ export default {
         // store 追加 log
         store.dispatch('d2admin/log/push', {
           message: `${info}: ${error.message}`,
-          type: 'error',
+          type: 'danger',
           meta: {
             error,
             instance

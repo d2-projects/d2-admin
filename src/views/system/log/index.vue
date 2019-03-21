@@ -16,7 +16,7 @@
         v-for="(logItem, logIndex) in log"
         :key="logIndex">
         <span class="log-time">{{logItem.time}}</span>
-        <span class="log-message">{{logItem.message}}</span>
+        <span class="log-message" :class="`log-message--${logItem.type}`">{{logItem.message}}</span>
       </p>
     </section>
   </d2-container>
@@ -79,6 +79,18 @@ export default {
     }
     .log-message {
       color: $color-text-normal;
+      &.log-message--success {
+        color: $color-success;
+      }
+      &.log-message--warning {
+        color: $color-warning;
+      }
+      &.log-message--info {
+        color: $color-info;
+      }
+      &.log-message--danger {
+        color: $color-danger;
+      }
     }
   }
 }

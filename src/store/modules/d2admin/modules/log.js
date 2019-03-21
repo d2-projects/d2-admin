@@ -8,7 +8,7 @@ export default {
     // 错误日志
     // + 日志条目的属性
     //   - message 必须 日志信息
-    //   - type 非必须 类型 success | warning | info | error
+    //   - type 非必须 类型 success | warning | info(默认) | error
     //   - time 必须 日志记录时间
     //   - meta 非必须 其它携带信息
     log: []
@@ -36,7 +36,7 @@ export default {
      * @param {String} param type {String} 类型
      * @param {Object} param meta {Object} 附带的信息
      */
-    push ({ rootState, commit }, { message, type, meta }) {
+    push ({ rootState, commit }, { message, type = 'info', meta }) {
       commit('push', {
         message,
         type,
