@@ -1,6 +1,21 @@
 <template>
   <d2-container>
-    <template slot="header">
+    <el-table
+      :data="log"
+      size="mini"
+      style="width: 100%"
+      stripe>
+      <el-table-column
+        prop="time"
+        label="Time"
+        width="140">
+      </el-table-column>
+      <el-table-column
+        prop="message"
+        label="Message">
+      </el-table-column>
+    </el-table>
+    <template slot="footer">
       <el-button
         type="primary"
         size="mini"
@@ -10,28 +25,16 @@
         Upload {{log.length}} log data
       </el-button>
     </template>
-    <section class="page">
-      <p
-        class="log"
-        v-for="(logItem, logIndex) in log"
-        :key="logIndex">
-        <span class="log-time">{{logItem.time}}</span>
-        <span
-          class="log-message"
-          :class="`log-message--${logItem.type}`">
-          {{logItem.message}}
-        </span>
-        <span class="log-url"> - {{logItem.meta.url}}</span>
-      </p>
-    </section>
   </d2-container>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import { get } from 'lodash'
 export default {
   data () {
     return {
+      get,
       uploading: false
     }
   },
@@ -41,6 +44,11 @@ export default {
     ])
   },
   methods: {
+    handleLogConsole (log) {
+      // 打印一条日志的所有信息到控制台
+      console.log(log)
+    },
+    // 日志上传
     handleUpload () {
       this.uploading = true
       this.$notify({
@@ -60,46 +68,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.page {
-  .log {
-    margin: 4px -4px;
-    padding: 4px;
-    border-radius: 2px;
-    font-size: 14px;
-    &:hover {
-      background-color: $color-bg;
-    }
-    &:first-child {
-      margin-top: 0px;
-    }
-    &:last-child {
-      margin-bottom: 0px;
-    }
-    .log-time {
-      color: $color-text-main;
-      margin-right: 10px;
-    }
-    .log-url {
-      color: $color-text-placehoder;
-    }
-    .log-message {
-      font-weight: bold;
-      color: $color-text-normal;
-      &.log-message--success {
-        color: $color-success;
-      }
-      &.log-message--warning {
-        color: $color-warning;
-      }
-      &.log-message--info {
-        color: $color-info;
-      }
-      &.log-message--danger {
-        color: $color-danger;
-      }
-    }
-  }
-}
-</style>
