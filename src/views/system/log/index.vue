@@ -7,13 +7,16 @@
         :loading="uploading"
         @click="handleUpload">
         <d2-icon name="cloud-upload"/>
-        Upload {{list.length}} log data
+        Upload {{log.length}} log data
       </el-button>
     </template>
     <section class="page">
-      <p class="log" v-for="(log, logIndex) in list" :key="logIndex">
-        <span class="log-time">{{log.time}}</span>
-        <span class="log-message">{{log.message}}</span>
+      <p
+        class="log"
+        v-for="(logItem, logIndex) in log"
+        :key="logIndex">
+        <span class="log-time">{{logItem.time}}</span>
+        <span class="log-message">{{logItem.message}}</span>
       </p>
     </section>
   </d2-container>
@@ -29,7 +32,7 @@ export default {
   },
   computed: {
     ...mapState('d2admin/log', [
-      'list'
+      'log'
     ])
   },
   methods: {
@@ -38,7 +41,7 @@ export default {
       this.$notify({
         type: 'info',
         title: '日志上传',
-        message: `开始上传${this.list.length}条日志`
+        message: `开始上传${this.log.length}条日志`
       })
       setTimeout(() => {
         this.uploading = false

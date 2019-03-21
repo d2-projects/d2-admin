@@ -11,7 +11,7 @@ export default {
     //   - type 非必须 类型 success | warning | info | error
     //   - time 必须 日志记录时间
     //   - meta 非必须 其它携带信息
-    list: []
+    log: []
   },
   getters: {
     /**
@@ -19,14 +19,14 @@ export default {
      * @param {*} state vuex state
      */
     length (state) {
-      return state.list.length
+      return state.log.length
     },
     /**
      * @description 返回现存 log (error) 的条数
      * @param {*} state vuex state
      */
     lengthError (state) {
-      return state.list.filter(l => l.type === 'error').length
+      return state.log.filter(l => l.type === 'error').length
     }
   },
   actions: {
@@ -36,8 +36,8 @@ export default {
      * @param {String} param type {String} 类型
      * @param {Object} param meta {Object} 附带的信息
      */
-    add ({ rootState, commit }, { message, type, meta }) {
-      commit('add', {
+    push ({ rootState, commit }, { message, type, meta }) {
+      commit('push', {
         message,
         type,
         time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
@@ -62,8 +62,8 @@ export default {
      * @param {Object} state vuex state
      * @param {Object} log data
      */
-    add (state, log) {
-      state.list.push(log)
+    push (state, log) {
+      state.log.push(log)
     },
     /**
      * @description 清空日志
@@ -71,7 +71,7 @@ export default {
      */
     clean (state) {
       // store 赋值
-      state.list = []
+      state.log = []
     }
   }
 }
