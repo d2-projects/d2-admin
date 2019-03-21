@@ -16,7 +16,12 @@
         v-for="(logItem, logIndex) in log"
         :key="logIndex">
         <span class="log-time">{{logItem.time}}</span>
-        <span class="log-message" :class="`log-message--${logItem.type}`">{{logItem.message}}</span>
+        <span
+          class="log-message"
+          :class="`log-message--${logItem.type}`">
+          {{logItem.message}}
+        </span>
+        <span class="log-url"> - {{logItem.meta.url}}</span>
       </p>
     </section>
   </d2-container>
@@ -63,7 +68,6 @@ export default {
     padding: 4px;
     border-radius: 2px;
     font-size: 14px;
-    @extend %unable-select;
     &:hover {
       background-color: $color-bg;
     }
@@ -77,7 +81,11 @@ export default {
       color: $color-text-main;
       margin-right: 10px;
     }
+    .log-url {
+      color: $color-text-placehoder;
+    }
     .log-message {
+      font-weight: bold;
       color: $color-text-normal;
       &.log-message--success {
         color: $color-success;
