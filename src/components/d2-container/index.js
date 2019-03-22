@@ -38,11 +38,9 @@ export default {
     }
   },
   render (h) {
-    const slots = [
-      h('div', this.$slots.default)
-    ]
-    if (this.$slots.header) slots.push(h('div', { slot: 'header' }, [ this.$slots.header ]))
-    if (this.$slots.footer) slots.push(h('div', { slot: 'footer' }, [ this.$slots.footer ]))
+    const slots = [ this.$slots.default ]
+    if (this.$slots.header) slots.push(h('template', { slot: 'header' }, [ this.$slots.header ]))
+    if (this.$slots.footer) slots.push(h('template', { slot: 'footer' }, [ this.$slots.footer ]))
     return h('div', {
       ref: 'container',
       class: 'container-component'
