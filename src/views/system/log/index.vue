@@ -4,6 +4,7 @@
       :data="log"
       size="mini"
       style="width: 100%"
+      empty-text="暂无日志信息"
       stripe>
       <!-- 时间 -->
       <el-table-column
