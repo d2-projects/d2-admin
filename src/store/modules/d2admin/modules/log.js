@@ -8,7 +8,7 @@ export default {
     // 错误日志
     // + 日志条目的属性
     //   - message 必须 日志信息
-    //   - type 非必须 类型 success | warning | info(默认) | error
+    //   - type 非必须 类型 success | warning | info(默认) | danger
     //   - time 必须 日志记录时间
     //   - meta 非必须 其它携带信息
     log: []
@@ -26,7 +26,7 @@ export default {
      * @param {*} state vuex state
      */
     lengthError (state) {
-      return state.log.filter(l => l.type === 'error').length
+      return state.log.filter(log => log.type === 'danger').length
     }
   },
   actions: {
