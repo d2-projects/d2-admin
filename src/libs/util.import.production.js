@@ -1,1 +1,1 @@
-module.exports = file => () => import('@/pages/' + file)
+module.exports = file => () => import('@/views/' + file)

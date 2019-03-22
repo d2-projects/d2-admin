@@ -22,38 +22,38 @@ const frameIn = [
     redirect: { name: 'index' },
     component: layoutHeaderAside,
     children: [
-      // 首页 必须 name:index
+      // 首页
       {
         path: 'index',
         name: 'index',
         meta: {
           auth: true
         },
-        component: _import('index')
+        component: _import('system/index')
+      },
+      // 系统 前端日志
+      {
+        path: 'log',
+        name: 'log',
+        meta: {
+          title: '前端日志',
+          auth: true
+        },
+        component: _import('system/log')
       },
       // 刷新页面 必须保留
       {
         path: 'refresh',
         name: 'refresh',
         hidden: true,
-        component: {
-          beforeRouteEnter (to, from, next) {
-            next(instance => instance.$router.replace(from.fullPath))
-          },
-          render: h => h()
-        }
+        component: _import('system/function/refresh')
       },
       // 页面重定向 必须保留
       {
         path: 'redirect/:route*',
         name: 'redirect',
         hidden: true,
-        component: {
-          beforeRouteEnter (to, from, next) {
-            next(instance => instance.$router.replace(JSON.parse(from.params.route)))
-          },
-          render: h => h()
-        }
+        component: _import('system/function/redirect')
       }
     ]
   },
@@ -76,7 +76,7 @@ const frameOut = [
   {
     path: '/login',
     name: 'login',
-    component: _import('login')
+    component: _import('system/login')
   }
 ]
 
@@ -84,11 +84,10 @@ const frameOut = [
  * 错误页面
  */
 const errorPage = [
-  // 404
   {
     path: '*',
     name: '404',
-    component: _import('error-page-404')
+    component: _import('system/error/404')
   }
 ]
 

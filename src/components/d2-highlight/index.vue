@@ -3,11 +3,12 @@
 </template>
 
 <script>
+// 相关文档
 // https://highlightjs.org/usage/
 // http://highlightjs.readthedocs.io/en/latest/api.html#configure-options
-import './styles/github-gist.css'
-import htmlFormat from './libs/htmlFormat'
 import highlight from 'highlight.js'
+import '../highlight-styles/github-gist.css'
+import htmlFormat from './libs/htmlFormat'
 export default {
   name: 'd2-highlight',
   props: {

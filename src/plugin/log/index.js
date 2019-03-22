@@ -4,17 +4,21 @@ import util from '@/libs/util'
 export default {
   install (Vue, options) {
     // 快速打印 log
-    Vue.prototype.$log = util.log
-    // 快速记录日志
-    Vue.prototype.$logAdd = function (info, show = true) {
-      // store 赋值
-      store.dispatch('d2admin/log/add', {
-        type: 'log',
-        info
-      })
-      // 显示在控制台
-      if (show && process.env.NODE_ENV === 'development') {
-        util.log.default(info)
+    Vue.prototype.$log = {
+      ...util.log,
+      push (data) {
+        if (typeof data === 'string') {
+          // 如果传递来的数据是字符串
+          // 赋值给 message 字段
+          // 为了方便使用
+          // eg: this.$log.push('foo text')
+          store.dispatch('d2admin/log/push', {
+            message: data
+          })
+        } else if (typeof data === 'object') {
+          // 如果传递来的数据是对象
+          store.dispatch('d2admin/log/push', data)
+        }
       }
     }
   }
