@@ -1,1 +1,1 @@
-module.exports = file => require('@/pages/' + file).default
+module.exports = file => require('@/views/' + file).default

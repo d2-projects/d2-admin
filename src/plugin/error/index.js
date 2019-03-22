@@ -3,14 +3,16 @@ import util from '@/libs/util'
 
 export default {
   install (Vue, options) {
-    Vue.config.errorHandler = function (err, instance, info) {
+    Vue.config.errorHandler = function (error, instance, info) {
       Vue.nextTick(() => {
-        // 添加 log
-        store.dispatch('d2admin/log/add', {
-          type: 'error',
-          err,
-          instance,
-          info
+        // store 追加 log
+        store.dispatch('d2admin/log/push', {
+          message: `${info}: ${error.message}`,
+          type: 'danger',
+          meta: {
+            error,
+            instance
+          }
         })
         // 只在开发模式下打印 log
         if (process.env.NODE_ENV === 'development') {
@@ -20,7 +22,7 @@ export default {
           util.log.danger('>>>>>> Vue 实例 >>>>>>')
           console.log(instance)
           util.log.danger('>>>>>> Error >>>>>>')
-          console.log(err)
+          console.log(error)
         }
       })
     }
