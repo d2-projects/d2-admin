@@ -42,11 +42,11 @@
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`// Unix 时间戳 (秒)\ndayjs().unix()`"/>{{dayjs().unix()}}</el-card></el-col>
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`// 天数 (月)\ndayjs().daysInMonth()`"/>{{dayjs().daysInMonth()}}</el-card></el-col>
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`// Date 对象\ndayjs().toDate()`"/>{{dayjs().toDate()}}</el-card></el-col>
-      <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`// 数组\ndayjs().toArray()`"/>{{dayjs().toArray()}}</el-card></el-col>
+      <!-- <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`// 数组\ndayjs().toArray()`"/>{{dayjs().toArray()}}</el-card></el-col> -->
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`// 序列化 Dayjs 对象时会返回 ISO 8601 格式的字符串\ndayjs().toJSON()`"/>{{dayjs().toJSON()}}</el-card></el-col>
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`// ISO 8601 字符串\ndayjs().toISOString()`"/>{{dayjs().toISOString()}}</el-card></el-col>
       <el-col :span="12"><el-card shadow="never" class="d2-mb"><d2-highlight slot="header" :code="`// 字符串\ndayjs().toString()`"/>{{dayjs().toString()}}</el-card></el-col>
-      <el-col :span="24"><el-card shadow="never"><d2-highlight slot="header" :code="`// 对象\ndayjs().toObject()`"/>{{dayjs().toObject()}}</el-card></el-col>
+      <!-- <el-col :span="24"><el-card shadow="never"><d2-highlight slot="header" :code="`// 对象\ndayjs().toObject()`"/>{{dayjs().toObject()}}</el-card></el-col> -->
     </el-row>
     <h1>查询</h1>
     <el-row :gutter="20" class="d2-mt">
