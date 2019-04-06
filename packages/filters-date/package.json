@@ -1,0 +1,12 @@
+{
+  "name": "@d2-admin/filters-dayjs",
+  "version": "1.0.1",
+  "description": "dayjs to vue filters",
+  "main": "src/index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.8.12"
+  }
+}
