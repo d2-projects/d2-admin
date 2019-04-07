@@ -33,9 +33,10 @@ export default {
     { path: 'db/page-user', name: `${pre}db-page-user`, component: _import('demo/playground/db/page-user'), meta: { ...meta, title: '私有路由存储' } },
     { path: 'db/page-snapshot-public', name: `${pre}db-page-snapshot-public`, component: _import('demo/playground/db/page-snapshot-public'), meta: { ...meta, title: '路由快照' } },
     { path: 'db/page-snapshot-user', name: `${pre}db-page-snapshot-user`, component: _import('demo/playground/db/page-snapshot-user'), meta: { ...meta, title: '私有路由快照' } },
-    { path: 'log/log', name: `${pre}log-log`, component: _import('demo/playground/log/log'), meta: { ...meta, title: '日志记录' } },
-    { path: 'log/error', name: `${pre}log-error`, component: _import('demo/playground/log/error'), meta: { ...meta, title: '错误捕捉' } },
+    { path: 'log/ajax', name: `${pre}log-ajax`, component: _import('demo/playground/log/ajax'), meta: { ...meta, title: 'Ajax 错误' } },
     { path: 'log/console', name: `${pre}log-console`, component: _import('demo/playground/log/console'), meta: { ...meta, title: '控制台日志' } },
+    { path: 'log/error', name: `${pre}log-error`, component: _import('demo/playground/log/error'), meta: { ...meta, title: '错误捕捉' } },
+    { path: 'log/log', name: `${pre}log-log`, component: _import('demo/playground/log/log'), meta: { ...meta, title: '日志记录' } },
     { path: 'env', name: `${pre}env`, component: _import('demo/playground/env'), meta: { ...meta, title: '环境信息' } }
   ])('demo-playground-')
 }
