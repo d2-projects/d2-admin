@@ -107,6 +107,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 | Name | Github / HomePage | Preview | Introduction |
 | --- | --- | --- | --- |
 | d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [Preview](http://jaycewu.coding.me/d2-admin-pm) | RBAC privilege management solution based on d2-admin |
+| LanBlog | [Github](https://github.com/sinksmell/LanBlog) | [Preview](http://47.101.222.133/) | Vue + Beego restful api personal blog system |
 
 ## Open source backend implementation
 
