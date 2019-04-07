@@ -5,27 +5,29 @@ import util from '@/libs/util'
 
 // 创建一个错误
 function errorCreate (msg) {
-  const err = new Error(msg)
-  errorLog(err)
-  throw err
+  const error = new Error(msg)
+  errorLog(error)
+  throw error
 }
 
 // 记录和显示错误
-function errorLog (err) {
+function errorLog (error) {
   // 添加到日志
-  store.dispatch('d2admin/log/add', {
-    type: 'error',
-    err,
-    info: '数据请求异常'
+  store.dispatch('d2admin/log/push', {
+    message: '数据请求异常',
+    type: 'danger',
+    meta: {
+      error
+    }
   })
   // 打印到控制台
   if (process.env.NODE_ENV === 'development') {
     util.log.danger('>>>>>> Error >>>>>>')
-    console.log(err)
+    console.log(error)
   }
   // 显示提示
   Message({
-    message: err.message,
+    message: error.message,
     type: 'error',
     duration: 5 * 1000
   })
