@@ -65,10 +65,8 @@
     <code-and-result label="date_days_in_month" :value="value|date_days_in_month"/>
     <code-title title="处理为其它格式" sub-title="原生的 Date 对象，数组，json，ios 标准，对象，字符串"/>
     <code-and-result label="date_to_date" :value="value|date_to_date"/>
-    <code-and-result label="date_to_array" :value="value|date_to_array"/>
     <code-and-result label="date_to_json" :value="value|date_to_json"/>
     <code-and-result label="date_to_iso" :value="value|date_to_iso"/>
-    <code-and-result label="date_to_object" :value="value|date_to_object"/>
     <code-and-result label="date_to_string" :value="value|date_to_string"/>
     <code-title title="查询" sub-title="是否之前，之后，或者相同"/>
     <code-and-result label="date_is_before('2020-1-1')" :value="value|date_is_before('2020-1-1')"/>
