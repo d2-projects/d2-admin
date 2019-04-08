@@ -76,9 +76,11 @@ new Vue({
   watch: {
     // 检测路由变化切换侧边栏内容
     '$route.matched': {
-      handler (value) {
-        const _side = menuAside.filter(menu => menu.path === value[0].path)
-        this.$store.commit('d2admin/menu/asideSet', _side.length > 0 ? _side[0].children : [])
+      handler (matched) {
+        if (matched.length > 0) {
+          const _side = menuAside.filter(menu => menu.path === matched[0].path)
+          this.$store.commit('d2admin/menu/asideSet', _side.length > 0 ? _side[0].children : [])
+        }
       },
       immediate: true
     }
