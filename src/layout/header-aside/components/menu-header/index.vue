@@ -117,6 +117,7 @@ export default {
   beforeDestroy () {
     // 取消监听
     window.removeEventListener('resize', this.throttledCheckScroll)
+    window.removeEventListener('load', this.checkScroll)
   }
 }
 </script>
