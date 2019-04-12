@@ -213,6 +213,30 @@ export default {
         resolve()
       })
     },
+     /**
+     * @class opened
+     * @description 关闭一个当前 tag，打开指定的tag
+     * @param {Object} state vuex state
+     * @param {Object} param { routerPath: 要打开tag的路由path }
+     */
+    closeCurrent ({ state, commit, dispatch }, { routerPath }) {
+      return new Promise(async resolve => {
+        // 找到这个页面在已经打开的数据里是第几个
+        const index = state.opened.findIndex(page => page.fullPath === state.current)
+        if (index >= 0) {
+          // 如果这个页面是缓存的页面 将其在缓存设置中删除
+          commit('keepAliveRemove', state.opened[index].name)
+          // 更新数据 删除关闭的页面
+          state.opened.splice(index, 1)
+        }
+        // 持久化
+        await dispatch('opend2db')
+        // 打开指定的页面
+        router.push({path: routerPath})
+        // end
+        resolve()
+      })
+    },
     /**
      * @class opened
      * @description 关闭当前标签左边的标签
