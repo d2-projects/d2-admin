@@ -24,7 +24,7 @@
   p {
     margin: 0px;
     margin-bottom: 2px;
-    :nth-last-child() {
+    &:last-child {
       margin-bottom: 0px;
     }
     a {
