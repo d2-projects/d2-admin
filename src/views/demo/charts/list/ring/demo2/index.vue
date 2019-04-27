@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">指定指标维度</template>
     <div class="inner">
       <ve-ring :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-ring>
@@ -22,7 +22,6 @@ export default {
       metrics: '访问用户'
     }
     return {
-      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [

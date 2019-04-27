@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <el-row>
       <el-col :span="12">
 
@@ -91,7 +91,6 @@
 export default {
   data () {
     return {
-      filename: __filename,
       checked1: true,
       checked2: false,
       checkList: ['选中且禁用', '复选框 A'],

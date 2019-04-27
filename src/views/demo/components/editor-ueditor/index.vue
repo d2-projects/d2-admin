@@ -1,5 +1,5 @@
 <template>
-  <d2-container type="card" :filename="filename">
+  <d2-container type="card">
     <el-row :gutter="20">
       <el-col :span="14">
         <d2-ueditor v-model="text"/>
@@ -26,7 +26,6 @@
 export default {
   data () {
     return {
-      filename: __filename,
       text: '<p>Hello World</p>'
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <p class="d2-mt-0">useragent</p>
     <el-input :value="uaData.ua"></el-input>
     <p>格式化数据 in vuex: state.d2admin.ua.data</p>
@@ -10,11 +10,6 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  data () {
-    return {
-      filename: __filename
-    }
-  },
   computed: {
     ...mapState('d2admin/ua', {
       uaData: 'data'

@@ -1,5 +1,5 @@
 <template>
-  <d2-container-frame :filename="filename" :src="`${$baseUrl}html/demo.html`"/>
+  <d2-container-frame :src="`${$baseUrl}html/demo.html`"/>
 </template>
 
 <script>

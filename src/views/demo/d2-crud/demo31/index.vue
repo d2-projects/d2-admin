@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">CRUD事件</template>
     <d2-crud
       ref="d2Crud"
@@ -29,7 +29,6 @@ import code from './code.js'
 export default {
   data () {
     return {
-      filename: __filename,
       doc,
       code,
       columns: [

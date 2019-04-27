@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">Ajax 错误</template>
     <p class="d2-mt-0">请打开浏览器控制台，然后点击下面的按钮，尝试访问一个不存在的网络地址</p>
     <el-button type="danger" @click="handleClick">请求错误的地址</el-button>
@@ -10,11 +10,6 @@
 <script>
 import { getInvalidUrl } from '@api/demo.playground.log.ajax.js'
 export default {
-  data () {
-    return {
-      filename: __filename
-    }
-  },
   methods: {
     handleClick () {
       getInvalidUrl()

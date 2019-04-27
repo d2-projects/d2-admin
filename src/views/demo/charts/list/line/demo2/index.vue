@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">横坐标的倾斜</template>
     <div class="inner">
       <ve-line :data="chartData" :extend="extend" v-bind="pubSetting"></ve-line>
@@ -18,7 +18,6 @@ export default {
   ],
   data () {
     return {
-      filename: __filename,
       extend: {
         'xAxis.0.axisLabel.rotate': 45
       },

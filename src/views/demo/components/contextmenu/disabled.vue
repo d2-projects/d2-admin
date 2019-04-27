@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename" type="card">
+  <d2-container type="card">
     <template slot="header">禁用</template>
     <v-contextmenu ref="contextmenu">
       <v-contextmenu-item @click="handleClick">菜单1</v-contextmenu-item>
@@ -22,11 +22,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      filename: __filename
-    }
-  },
   methods: {
     handleClick (instance, event) {
       this.$message({

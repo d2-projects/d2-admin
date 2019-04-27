@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">分页</template>
     <d2-crud
       :columns="columns"
@@ -27,7 +27,6 @@ import { BusinessTable1List } from '@api/demo.business.table.1'
 export default {
   data () {
     return {
-      filename: __filename,
       doc,
       code,
       columns: [

@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">设置别名</template>
     <div class="inner">
       <ve-line :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-line>
@@ -27,7 +27,6 @@ export default {
       }
     }
     return {
-      filename: __filename,
       chartData: {
         columns: ['date', 'PV', 'Order', 'OrderRate'],
         rows: [

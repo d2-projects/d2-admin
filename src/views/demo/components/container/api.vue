@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename"
+  <d2-container
     ref="container"
     :type="containerType"
     :better-scroll="betterScroll"
@@ -84,7 +84,6 @@ export default {
   },
   data () {
     return {
-      filename: __filename,
       containerType: 'full',
       scrollDelay: 10,
       scrollTop: 0

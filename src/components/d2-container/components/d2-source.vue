@@ -10,13 +10,6 @@
 
 <script>
 export default {
-  props: {
-    // 文件路径
-    filename: {
-      type: String,
-      default: ''
-    }
-  },
   data () {
     return {
       isActive: false
@@ -24,7 +17,7 @@ export default {
   },
   computed: {
     show () {
-      return (process.env.VUE_APP_BUILD_MODE === 'TRAVIS' || process.env.NODE_ENV === 'development') && this.filename
+      return process.env.VUE_APP_BUILD_MODE === 'TRAVIS' || process.env.NODE_ENV === 'development'
     }
   },
   mounted () {
@@ -36,11 +29,7 @@ export default {
   methods: {
     // 点击按钮的时候跳转到源代码
     handleClick () {
-      const file = this.filename.split('?')[0]
-      const url = file
-        ? `https://github.com/d2-projects/d2-admin/blob/master/${file}`
-        : 'https://github.com/d2-projects/d2-admin'
-      this.$open(url)
+      this.$open(`https://github.com/d2-projects/d2-admin/blob/master/${this.$parent.$parent.$options.__file}`)
     }
   }
 }

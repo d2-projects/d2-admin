@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename" type="card" class="page">
+  <d2-container type="card" class="page">
     <template slot="header">数字动画组件</template>
     <el-row :gutter="20">
       <el-col :span="6">
@@ -58,7 +58,6 @@
 export default {
   data () {
     return {
-      filename: __filename,
       // 回调函数使用
       className: '',
       // 更新数值用

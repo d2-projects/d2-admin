@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">表格slot</template>
     <d2-crud ref="d2Crud" :columns="columns" :data="data">
       <el-input slot="header" placeholder="请输入内容" style="margin-bottom: 5px">
@@ -28,7 +28,6 @@ import code from './code.js'
 export default {
   data () {
     return {
-      filename: __filename,
       doc,
       code,
       columns: [

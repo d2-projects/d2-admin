@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">基础用法</template>
     <div ref="wrapper" class="demo-bs-wrapper">
       <div>
@@ -14,7 +14,6 @@ import BScroll from 'better-scroll'
 export default {
   data () {
     return {
-      filename: __filename,
       BS: null
     }
   },
