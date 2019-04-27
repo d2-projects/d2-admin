@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">设置显示的指标维度</template>
     <div class="inner">
       <ve-histogram :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-histogram>
@@ -22,7 +22,6 @@ export default {
       dimension: ['日期']
     }
     return {
-      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [

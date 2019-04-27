@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <d2-quill
       style="min-height: 200px; margin-bottom: 20px;"
       v-model="value"
@@ -22,7 +22,6 @@ import value from './value'
 export default {
   data () {
     return {
-      filename: __filename,
       value
     }
   },

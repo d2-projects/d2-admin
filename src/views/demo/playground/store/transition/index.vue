@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename" type="card">
+  <d2-container type="card">
     <template slot="header">
       当前状态 {{active ? '开启过渡动画' : '关闭过渡动画'}}
     </template>
@@ -16,11 +16,6 @@ export default {
     ...mapState('d2admin/transition', [
       'active'
     ])
-  },
-  data () {
-    return {
-      filename: __filename
-    }
   },
   methods: {
     ...mapActions('d2admin/transition', [

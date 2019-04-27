@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">
       <div class="d2-mb">Cookie 读写</div>
       <el-alert
@@ -25,11 +25,6 @@
 <script>
 import util from '@/libs/util.js'
 export default {
-  data () {
-    return {
-      filename: __filename
-    }
-  },
   methods: {
     set (name = 'default-name', value = 'default-value') {
       util.cookies.set(name, value)

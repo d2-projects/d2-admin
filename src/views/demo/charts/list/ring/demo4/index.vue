@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">限制显示条数环图</template>
     <div class="inner">
       <ve-ring :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-ring>
@@ -21,7 +21,6 @@ export default {
       limitShowNum: 3
     }
     return {
-      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [

@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename" class="page">
+  <d2-container class="page">
     <d2-page-cover>
       <d2-icon-svg
         class="page__logo"

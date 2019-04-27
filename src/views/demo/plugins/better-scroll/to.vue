@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">滚动定位</template>
     <el-row :gutter="20">
       <el-col :span="8">
@@ -48,7 +48,6 @@ import BScroll from 'better-scroll'
 export default {
   data () {
     return {
-      filename: __filename,
       time: 300,
       BS: null
     }

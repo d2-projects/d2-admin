@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">显示 MA VOL</template>
     <div class="inner">
       <ve-candle :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-candle>
@@ -22,7 +22,6 @@ export default {
       showVol: true
     }
     return {
-      filename: __filename,
       chartData: {
         columns: ['日期', 'open', 'close', 'lowest', 'highest', 'vol'],
         rows: [

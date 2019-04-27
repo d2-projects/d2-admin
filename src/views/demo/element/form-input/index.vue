@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
 
     <h1 class="d2-mt-0">基础用法</h1>
     <el-input v-model="input" placeholder="请输入内容" class="input-demo-200"></el-input>
@@ -194,7 +194,6 @@
 export default {
   data () {
     return {
-      filename: __filename,
       textarea: '',
       textarea2: '',
       textarea3: '',

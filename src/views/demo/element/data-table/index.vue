@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename" type="ghost">
+  <d2-container type="ghost">
     <template slot="header">表格组件</template>
     <div class="d2-mt d2-mr">
       <el-card
@@ -34,7 +34,6 @@ export default {
   components,
   data () {
     return {
-      filename: __filename,
       tableList
     }
   }

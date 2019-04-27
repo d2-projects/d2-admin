@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">多圆饼图</template>
     <div class="inner">
       <ve-pie :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-pie>
@@ -24,7 +24,6 @@ export default {
       ]
     }
     return {
-      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [

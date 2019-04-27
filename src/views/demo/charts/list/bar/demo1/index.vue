@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">一般</template>
     <div class="inner">
       <ve-bar :data="chartData" v-bind="pubSetting"></ve-bar>
@@ -18,7 +18,6 @@ export default {
   ],
   data () {
     return {
-      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [

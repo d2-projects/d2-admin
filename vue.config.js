@@ -99,10 +99,6 @@ module.exports = {
     // 重新设置 alias
     config.resolve.alias
       .set('@api', resolve('src/api'))
-    // node
-    config.node
-      .set('__dirname', true)
-      .set('__filename', true)
     // 判断环境加入模拟数据
     const entry = config.entry('app')
     if (process.env.VUE_APP_BUILD_MODE !== 'nomock') {
