@@ -9,15 +9,25 @@
 </template>
 
 <script>
+import { last, get } from 'lodash'
 export default {
   data () {
     return {
-      isActive: false
+      isActive: false,
+      path: ''
     }
   },
   computed: {
     show () {
-      return process.env.VUE_APP_BUILD_MODE === 'TRAVIS'
+      return process.env.VUE_APP_BUILD_MODE === 'TRAVIS' || process.env.NODE_ENV === 'development'
+    }
+  },
+  watch: {
+    $route: {
+      handler (to) {
+        this.path = get(last(to.matched), 'components.default.__file')
+      },
+      immediate: true
     }
   },
   mounted () {
@@ -29,7 +39,7 @@ export default {
   methods: {
     // 点击按钮的时候跳转到源代码
     handleClick () {
-      this.$open(`https://github.com/d2-projects/d2-admin/blob/master/${this.$parent.$parent.$options.__file}`)
+      this.$open(`${process.env.VUE_APP_REPO}/blob/master/${this.path}`)
     }
   }
 }
