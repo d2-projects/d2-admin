@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     show () {
-      return process.env.VUE_APP_BUILD_MODE === 'TRAVIS' || process.env.NODE_ENV === 'development'
+      return process.env.VUE_APP_BUILD_MODE === 'TRAVIS'
     }
   },
   mounted () {
