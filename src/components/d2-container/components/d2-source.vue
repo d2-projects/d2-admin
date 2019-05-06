@@ -25,7 +25,7 @@ export default {
   watch: {
     $route: {
       handler (to) {
-        this.path = get(last(to.matched), 'components.default.__file')
+        this.path = get(last(to.matched), 'components.default.__source')
       },
       immediate: true
     }

@@ -1,4 +1,6 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const VueFilenameInjector = require('./tools/vue-filename-injector')
+
 
 // 拼接路径
 const resolve = dir => require('path').join(__dirname, dir)
@@ -46,14 +48,9 @@ module.exports = {
       )
       // TRAVIS 构建 vue-loader 添加 filename
       .when(process.env.VUE_APP_BUILD_MODE === 'TRAVIS' || process.env.NODE_ENV === 'development',
-        config => config.module
-          .rule('vue')
-          .use('vue-loader')
-          .loader('vue-loader')
-          .tap(options => {
-            options.exposeFilename = true
-            return options
-          })
+        VueFilenameInjector(config, {
+          propName: process.env.VUE_APP_SOURCE_VIEWER_PROP_NAME
+        })
       )
       // 非开发环境
       .when(process.env.NODE_ENV !== 'development', config => {
