@@ -65,6 +65,7 @@ export default {
       if (this.menu.icon === 'home') {
         return true
       }
+      return false
     }
   }
 }
