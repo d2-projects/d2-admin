@@ -122,7 +122,9 @@ export default {
     focus () {
       this.input = ''
       setTimeout(() => {
-        this.$refs.input.focus()
+        if (this.$refs.input) {
+          this.$refs.input.focus()
+        }
         // 还原
         this.searchText = ''
         this.results = []
