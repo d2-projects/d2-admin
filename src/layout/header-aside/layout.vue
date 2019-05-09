@@ -51,7 +51,7 @@
         <div class="d2-theme-container-main" flex-box="1" flex>
           <!-- 搜索 -->
           <transition name="fade-scale">
-            <div v-if="searchActive" class="d2-theme-container-main-layer" flex="dir:top">
+            <div v-if="searchActive" class="d2-theme-container-main-layer" flex>
               <d2-panel-search
                 ref="panelSearch"
                 @close="searchPanelClose"/>
