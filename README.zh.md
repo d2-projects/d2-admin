@@ -35,7 +35,7 @@
 
 ## 预览
 
-[预览地址](https://d2admin.fairyever.com)
+[国内预览](https://d2admin.fairyever.com) | [Netlify 预览](https://d2-admin.netlify.com)
 
 ## 码云仓库
 

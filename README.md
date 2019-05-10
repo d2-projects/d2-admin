@@ -31,11 +31,11 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 
 ## Document
 
-[document](https://doc.d2admin.fairyever.com)
+[Document](https://doc.d2admin.fairyever.com)
 
 ## Preview
 
-[preview](https://d2admin.fairyever.com)
+[Preview](https://d2admin.fairyever.com) | [Netlify preview](https://d2-admin.netlify.com)
 
 ## Features
 
