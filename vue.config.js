@@ -12,8 +12,6 @@ process.env.VUE_APP_BUILD_TIME = require('dayjs')().format('YYYY-M-D HH:mm:ss')
 // 基础路径 注意发布之前要先修改这里
 let publicPath = '/'
 
-if (process.env.VUE_APP_BUILD_MODE === 'NETLIFY') publicPath = '/dist/'
-
 module.exports = {
   publicPath, // 根据你的实际情况更改这里
   lintOnSave: true,
