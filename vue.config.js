@@ -1,7 +1,6 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const VueFilenameInjector = require('./tools/vue-filename-injector')
 
-
 // 拼接路径
 const resolve = dir => require('path').join(__dirname, dir)
 
