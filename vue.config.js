@@ -12,6 +12,8 @@ process.env.VUE_APP_BUILD_TIME = require('dayjs')().format('YYYY-M-D HH:mm:ss')
 // 基础路径 注意发布之前要先修改这里
 let publicPath = '/'
 
+if (process.env.VUE_APP_BUILD_MODE === 'NETLIFY') publicPath = '/dist/'
+
 module.exports = {
   publicPath, // 根据你的实际情况更改这里
   lintOnSave: true,
@@ -47,7 +49,7 @@ module.exports = {
         config => config.devtool('cheap-source-map')
       )
       // TRAVIS 构建 vue-loader 添加 filename
-      .when(process.env.VUE_APP_BUILD_MODE === 'TRAVIS' || process.env.NODE_ENV === 'development',
+      .when(process.env.VUE_APP_SCOURCE_LINK === 'TRUE',
         VueFilenameInjector(config, {
           propName: process.env.VUE_APP_SOURCE_VIEWER_PROP_NAME
         })
@@ -108,7 +110,7 @@ module.exports = {
       .set('@api', resolve('src/api'))
     // 判断环境加入模拟数据
     const entry = config.entry('app')
-    if (process.env.VUE_APP_BUILD_MODE !== 'nomock') {
+    if (process.env.VUE_APP_BUILD_MODE !== 'NOMOCK') {
       entry
         .add('@/mock')
         .end()

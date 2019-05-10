@@ -8,6 +8,7 @@
     "build": "vue-cli-service build",
     "build:nomock": "vue-cli-service build --mode nomock",
     "build:travis": "vue-cli-service build --mode travis",
+    "build:netlify": "vue-cli-service build --mode netlify",
     "lint": "vue-cli-service lint --fix",
     "test:unit": "vue-cli-service test:unit"
   },
