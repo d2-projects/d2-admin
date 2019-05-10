@@ -3,7 +3,6 @@
 <p align="center">
   <a><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/></a>
   <a><img src="https://img.shields.io/npm/v/@d2-admin/ice-scaffold.svg"/></a>
-  <a href="https://www.travis-ci.org/d2-projects/d2-admin"><img src="https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master"/></a>
   <a><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/></a>
   <a><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/></a>
 </p>
@@ -15,6 +14,15 @@
 	<a><img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg"/></a>
 	<a><img src="https://img.shields.io/github/forks/d2-projects/d2-admin.svg"/></a>
 	<a><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/></a>
+</p>
+
+<p align="center">
+	<a href="https://www.travis-ci.org/d2-projects/d2-admin">
+		<img src="https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master"/>
+	</a>
+	<a href="https://app.netlify.com/sites/d2-admin/deploys">
+		<img src="https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status"/>
+	</a>
 </p>
 
 D2Admin is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
