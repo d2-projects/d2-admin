@@ -13,8 +13,23 @@
         src="./image/darkblue@2x.png"
         alt="Fork me on GitHub">
     </a>
+    <div class="d2-mt" id="codefund"></div>
   </div>
 </template>
+
+<script>
+export default {
+  mounted () {
+    // 在指定环境加载 codefund 广告代码，这是 D2Admin 的一项开源收入支撑，广告只会在官方 Travis 构建和 Netlify 构建时显示，您可以删除掉这部分代码
+    if (process.env.VUE_APP_CODEFUND) {
+      let s = document.createElement('script')
+      s.type = 'text/javascript'
+      s.src = 'https://codefund.app/properties/284/funder.js'
+      document.getElementsByTagName('head')[0].appendChild(s)
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .d2-page-cover {
