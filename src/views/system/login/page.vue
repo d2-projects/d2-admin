@@ -72,7 +72,6 @@
           </p>
         </div>
       </div>
-      <div class="page-login--codefund" id="codefund"></div>
     </div>
     <el-dialog
       title="快速选择用户"
@@ -141,13 +140,6 @@ export default {
     this.timeInterval = setInterval(() => {
       this.refreshTime()
     }, 1000)
-    // 在指定环境加载 codefund 广告代码，这是 D2Admin 的一项开源收入支撑，广告只会在官方 Travis 构建和 Netlify 构建时显示，您可以删除掉这部分代码
-    if (process.env.VUE_APP_CODEFUND) {
-      let s = document.createElement('script')
-      s.type = 'text/javascript'
-      s.src = 'https://codefund.app/properties/284/funder.js'
-      document.getElementsByTagName('head')[0].appendChild(s)
-    }
   },
   beforeDestroy () {
     clearInterval(this.timeInterval)
@@ -237,12 +229,6 @@ export default {
         color: $color-text-sub;
       }
     }
-  }
-  // https://codefund.app
-  .page-login--codefund {
-    position: absolute;
-    top: 20px;
-    right: 20px;
   }
   // main
   .page-login--logo {
