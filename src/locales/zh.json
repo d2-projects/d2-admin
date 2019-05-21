@@ -1,1 +1,61 @@
-{}
+{
+	"public": {
+		"error-message": {
+			"form-not-valid": "表单校验失败"
+		},
+		"rules": {
+			"required": "请输入{name}"
+		}
+	},
+	"views": {
+		"system": {
+			"login": {
+				"footer": {
+					"button": {
+						"clause": "条款",
+						"help": "帮助",
+						"privacy": "隐私"
+					},
+					"copyright": {
+						"author": "FairyEver",
+						"content": "2018 D2 Projects 开源组织出品",
+						"copyright": "Copyright"
+					}
+				},
+				"form": {
+					"button": {
+						"login": "登录"
+					},
+					"label": {
+						"code": "验证码",
+						"password": "密码",
+						"username": "用户名"
+					},
+					"placeholder": {
+						"code": "- - - -",
+						"password": "密码",
+						"username": "用户名"
+					},
+					"prepend": {
+						"code": "验证码"
+					}
+				},
+				"motto": {
+					"text": "时间是一切财富中最宝贵的财富。"
+				},
+				"options": {
+					"forget-password": "忘记密码",
+					"register": "注册用户"
+				},
+				"quick-login": {
+					"dialog": {
+						"title": "快速选择用户"
+					},
+					"toggle-button": {
+						"text": "快速选择用户（测试功能）"
+					}
+				}
+			}
+		}
+	}
+}

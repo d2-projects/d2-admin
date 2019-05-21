@@ -1,1 +1,61 @@
-{}
+{
+	"public": {
+		"error-message": {
+			"form-not-valid": "Form Check Failure"
+		},
+		"rules": {
+			"required": "{name} is required"
+		}
+	},
+	"views": {
+		"system": {
+			"login": {
+				"footer": {
+					"button": {
+						"clause": "Terms",
+						"help": "Help",
+						"privacy": "Privacy"
+					},
+					"copyright": {
+						"author": "FairyEver",
+						"content": "2018 D2 Projects Open Source Organization",
+						"copyright": "copyright"
+					}
+				},
+				"form": {
+					"button": {
+						"login": "Log In"
+					},
+					"label": {
+						"code": "Verification code",
+						"password": "Password",
+						"username": "Username"
+					},
+					"placeholder": {
+						"code": "- - - -",
+						"password": "Password",
+						"username": "Username"
+					},
+					"prepend": {
+						"code": "Code"
+					}
+				},
+				"motto": {
+					"text": "Time is the most precious treasure of all wealth."
+				},
+				"options": {
+					"forget-password": "Forget password",
+					"register": "Registered user"
+				},
+				"quick-login": {
+					"dialog": {
+						"title": "Quickly select users"
+					},
+					"toggle-button": {
+						"text": "Quickly select users (test function)"
+					}
+				}
+			}
+		}
+	}
+}
