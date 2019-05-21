@@ -30,11 +30,11 @@
         </el-button-group>
         <el-row :gutter="20">
           <el-col :span="12">
-            <el-alert :closable="false" type="info" title="2000人QQ群 [ 推荐 ]" class="d2-mb"/>
+            <el-alert :closable="false" type="info" title="QQ群 [ 1500+ / 2000 人 ]" class="d2-mb"/>
             <img src="./image/qq.jpg" style="width: 100%;">
           </el-col>
           <el-col :span="12">
-            <el-alert :closable="false" type="info" title="与作者成为微信好友 邀请进微信群" class="d2-mb"/>
+            <el-alert :closable="false" type="info" title="与作者成为好友后邀请进微信群" class="d2-mb"/>
             <img src="./image/we.jpg" style="width: 100%;">
           </el-col>
         </el-row>
@@ -45,7 +45,6 @@
 
 <script>
 export default {
-  name: 'd2-page-cover',
   data () {
     return {
       dialogVisible: false
