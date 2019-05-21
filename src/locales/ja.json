@@ -1,0 +1,61 @@
+{
+	"public": {
+		"error-message": {
+			"form-not-valid": "フォームの検証に失敗しました"
+		},
+		"rules": {
+			"required": "を入力してください {name}"
+		}
+	},
+	"views": {
+		"system": {
+			"login": {
+				"footer": {
+					"button": {
+						"clause": "利用規約",
+						"help": "ヘルプ",
+						"privacy": "プライバシー"
+					},
+					"copyright": {
+						"author": "フェアリーエバー",
+						"content": "2018 D2プロジェクトオープンソース組織",
+						"copyright": "著作権"
+					}
+				},
+				"form": {
+					"button": {
+						"login": "ログイン"
+					},
+					"label": {
+						"code": "確認コード",
+						"password": "パスワード",
+						"username": "ユーザー名"
+					},
+					"placeholder": {
+						"code": " -   -   -   - ",
+						"password": "パスワード",
+						"username": "ユーザー名"
+					},
+					"prepend": {
+						"code": "確認コード"
+					}
+				},
+				"motto": {
+					"text": "時間はすべての富の中で最も貴重な資産です。"
+				},
+				"options": {
+					"forget-password": "パスワードを忘れた",
+					"register": "登録ユーザー"
+				},
+				"quick-login": {
+					"dialog": {
+						"title": "すばやくユーザーを選択"
+					},
+					"toggle-button": {
+						"text": "すばやくユーザーを選択（テスト機能）"
+					}
+				}
+			}
+		}
+	}
+}

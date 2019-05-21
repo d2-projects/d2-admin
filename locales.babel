@@ -35,6 +35,10 @@
                                         <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ja-JP</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -55,6 +59,10 @@
                                     </translation>
                                     <translation>
                                         <language>zh-CN</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ja-JP</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -93,6 +101,10 @@
                                                                 <language>zh-CN</language>
                                                                 <approved>false</approved>
                                                             </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
+                                                                <approved>false</approved>
+                                                            </translation>
                                                         </translations>
                                                     </concept_node>
                                                     <concept_node>
@@ -110,6 +122,10 @@
                                                                 <language>zh-CN</language>
                                                                 <approved>false</approved>
                                                             </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
+                                                                <approved>false</approved>
+                                                            </translation>
                                                         </translations>
                                                     </concept_node>
                                                     <concept_node>
@@ -125,6 +141,10 @@
                                                             </translation>
                                                             <translation>
                                                                 <language>zh-CN</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -149,6 +169,10 @@
                                                                 <language>zh-CN</language>
                                                                 <approved>false</approved>
                                                             </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
+                                                                <approved>false</approved>
+                                                            </translation>
                                                         </translations>
                                                     </concept_node>
                                                     <concept_node>
@@ -166,6 +190,10 @@
                                                                 <language>zh-CN</language>
                                                                 <approved>false</approved>
                                                             </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
+                                                                <approved>false</approved>
+                                                            </translation>
                                                         </translations>
                                                     </concept_node>
                                                     <concept_node>
@@ -181,6 +209,10 @@
                                                             </translation>
                                                             <translation>
                                                                 <language>zh-CN</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -210,6 +242,10 @@
                                                                 <language>zh-CN</language>
                                                                 <approved>false</approved>
                                                             </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
+                                                                <approved>false</approved>
+                                                            </translation>
                                                         </translations>
                                                     </concept_node>
                                                 </children>
@@ -232,6 +268,10 @@
                                                                 <language>zh-CN</language>
                                                                 <approved>false</approved>
                                                             </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
+                                                                <approved>false</approved>
+                                                            </translation>
                                                         </translations>
                                                     </concept_node>
                                                     <concept_node>
@@ -249,6 +289,10 @@
                                                                 <language>zh-CN</language>
                                                                 <approved>false</approved>
                                                             </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
+                                                                <approved>false</approved>
+                                                            </translation>
                                                         </translations>
                                                     </concept_node>
                                                     <concept_node>
@@ -264,6 +308,10 @@
                                                             </translation>
                                                             <translation>
                                                                 <language>zh-CN</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -288,6 +336,10 @@
                                                                 <language>zh-CN</language>
                                                                 <approved>false</approved>
                                                             </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
+                                                                <approved>false</approved>
+                                                            </translation>
                                                         </translations>
                                                     </concept_node>
                                                     <concept_node>
@@ -305,6 +357,10 @@
                                                                 <language>zh-CN</language>
                                                                 <approved>false</approved>
                                                             </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
+                                                                <approved>false</approved>
+                                                            </translation>
                                                         </translations>
                                                     </concept_node>
                                                     <concept_node>
@@ -320,6 +376,10 @@
                                                             </translation>
                                                             <translation>
                                                                 <language>zh-CN</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -342,6 +402,10 @@
                                                             </translation>
                                                             <translation>
                                                                 <language>zh-CN</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -368,6 +432,10 @@
                                                         <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>ja-JP</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                         </children>
@@ -390,6 +458,10 @@
                                                         <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>ja-JP</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -405,6 +477,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>ja-JP</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -432,6 +508,10 @@
                                                                 <language>zh-CN</language>
                                                                 <approved>false</approved>
                                                             </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
+                                                                <approved>false</approved>
+                                                            </translation>
                                                         </translations>
                                                     </concept_node>
                                                 </children>
@@ -452,6 +532,10 @@
                                                             </translation>
                                                             <translation>
                                                                 <language>zh-CN</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -476,6 +560,11 @@
             <source_file>src/locales/en.json</source_file>
         </language>
         <language>
+            <code>ja-JP</code>
+            <source_id></source_id>
+            <source_file>src/locales/ja.json</source_file>
+        </language>
+        <language>
             <code>zh-CN</code>
             <source_id></source_id>
             <source_file>src/locales/zh.json</source_file>
@@ -487,6 +576,9 @@
         </translation_file>
         <translation_file>
             <file>src/locales/zh.json</file>
+        </translation_file>
+        <translation_file>
+            <file>src/locales/ja.json</file>
         </translation_file>
     </translation_files>
     <editor_configuration>
