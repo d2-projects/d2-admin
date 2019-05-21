@@ -8,7 +8,6 @@ import d2LinkBtn from './d2-link-btn'
 Vue.component('d2-container', d2Container)
 Vue.component('d2-container-frame', d2ContainerFrame)
 Vue.component('d2-link-btn', d2LinkBtn)
-Vue.component('d2-page-cover', () => import('./d2-page-cover'))
 Vue.component('d2-count-up', () => import('./d2-count-up'))
 Vue.component('d2-highlight', () => import('./d2-highlight'))
 Vue.component('d2-icon', () => import('./d2-icon'))
