@@ -16,7 +16,7 @@
             <p class="d2-mt-0 d2-mb-10">D2Projects</p>
             <img src="./image/qr@2x.png" style="width: 172px;">
             <span slot="reference" class="btn-group__btn btn-group__btn--link">
-              <d2-icon name="wexin"/>
+              <d2-icon name="weixin"/>
               微信公众号
             </span>
             <p style="font-size: 12px; margin-top: 0px; margin-bottom: 0px;">
