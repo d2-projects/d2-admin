@@ -3,13 +3,14 @@
   "version": "1.7.0",
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "start": "npm run serve",
-    "dev": "npm run serve",
     "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint --fix",
+    "build:netlify": "vue-cli-service build --mode netlify",
     "build:nomock": "vue-cli-service build --mode nomock",
     "build:travis": "vue-cli-service build --mode travis",
-    "build:netlify": "vue-cli-service build --mode netlify",
-    "lint": "vue-cli-service lint --fix",
+    "dev": "npm run serve",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
+    "start": "npm run serve",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
@@ -45,6 +46,7 @@
     "v-contextmenu": "^2.8.0",
     "vue": "^2.6.10",
     "vue-grid-layout": "^2.3.4",
+    "vue-i18n": "^8.0.0",
     "vue-json-tree-view": "^2.1.4",
     "vue-router": "^3.0.3",
     "vue-splitpane": "^1.0.4",
@@ -52,6 +54,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.3.0",
     "@vue/cli-plugin-babel": "^3.6.0",
     "@vue/cli-plugin-eslint": "^3.6.0",
     "@vue/cli-plugin-unit-jest": "^3.6.0",
@@ -68,6 +71,7 @@
     "svg-sprite-loader": "^4.1.3",
     "text-loader": "0.0.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
+    "vue-cli-plugin-i18n": "^0.6.0",
     "vue-template-compiler": "^2.5.21"
   }
 }
