@@ -1,0 +1,51 @@
+<babeledit_project version="1.2">
+    <!--
+
+    BabelEdit project file
+    https://www.codeandweb.com/babeledit
+
+    This file contains meta data for all translations, but not the translation texts itself.
+    They are stored in framework-specific message files (.json / .vue / .yaml / .properties)
+
+    -->
+    <preset_collections/>
+    <framework>vue-json</framework>
+    <filename>locales.babel</filename>
+    <folder_node>
+        <name></name>
+        <children/>
+    </folder_node>
+    <isTemplateProject>false</isTemplateProject>
+    <languages>
+        <language>
+            <code>en-US</code>
+            <source_id></source_id>
+            <source_file>src/locales/en.json</source_file>
+        </language>
+        <language>
+            <code>zh-CN</code>
+            <source_id></source_id>
+            <source_file>src/locales/zh.json</source_file>
+        </language>
+    </languages>
+    <translation_files>
+        <translation_file>
+            <file>src/locales/en.json</file>
+        </translation_file>
+        <translation_file>
+            <file>src/locales/zh.json</file>
+        </translation_file>
+    </translation_files>
+    <editor_configuration>
+        <copy_templates>
+            <copy_template>$t('%1')</copy_template>
+            <copy_template></copy_template>
+            <copy_template></copy_template>
+        </copy_templates>
+    </editor_configuration>
+    <primary_language>zh-CN</primary_language>
+    <configuration>
+        <indent>tab</indent>
+        <format>namespaced-json</format>
+    </configuration>
+</babeledit_project>
