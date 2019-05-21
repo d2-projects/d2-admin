@@ -1,9 +1,7 @@
 <template>
   <d2-container class="page">
     <d2-page-cover>
-      <d2-icon-svg
-        class="logo"
-        name="d2-admin"/>
+      <d2-icon-svg class="logo" name="d2-admin"/>
       <template slot="footer">
         <div class="btn-group">
           <span class="btn-group__btn" @click="$open('https://github.com/d2-projects')">开源组织</span> |
