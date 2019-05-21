@@ -31,6 +31,7 @@ import d2VueFiltersDayjs from '@d2-admin/filters-dayjs'
 import router from './router'
 import { menuHeader, menuAside } from '@/menu'
 import { frameInRoutes } from '@/router/routes'
+import i18n from './i18n'
 
 // 核心插件
 Vue.use(d2Admin)
@@ -52,6 +53,7 @@ new Vue({
   router,
   store,
   render: h => h(App),
+
   created () {
     // 处理路由 得到每一级的路由设置
     this.$store.commit('d2admin/page/init', frameInRoutes)
@@ -60,6 +62,7 @@ new Vue({
     // 初始化菜单搜索功能
     this.$store.commit('d2admin/search/init', menuHeader)
   },
+
   mounted () {
     // 展示系统信息
     this.$store.commit('d2admin/releases/versionShow')
@@ -70,6 +73,9 @@ new Vue({
     // 初始化全屏监听
     this.$store.dispatch('d2admin/fullscreen/listen')
   },
+
+  i18n,
+
   watch: {
     // 检测路由变化切换侧边栏内容
     '$route.matched': {
