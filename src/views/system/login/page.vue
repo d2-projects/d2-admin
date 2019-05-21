@@ -16,7 +16,7 @@
         flex="dir:top main:justify cross:center box:justify">
         <div class="page-login--content-header">
           <p class="page-login--content-header-motto">
-            时间是一切财富中最宝贵的财富。 <span>—— 德奥弗拉斯多</span>
+            {{ $t('views.system.login.motto.text') }}
           </p>
         </div>
         <div
@@ -24,57 +24,84 @@
           flex="dir:top main:center cross:center">
           <!-- logo -->
           <img class="page-login--logo" src="./image/logo@2x.png">
-          <!-- 表单 -->
+          <!-- form -->
           <div class="page-login--form">
             <el-card shadow="never">
-              <el-form ref="loginForm" label-position="top" :rules="rules" :model="formLogin" size="default">
+              <el-form
+                ref="loginForm"
+                label-position="top"
+                :rules="rules"
+                :model="formLogin"
+                size="default">
                 <el-form-item prop="username">
-                  <el-input type="text" v-model="formLogin.username" placeholder="用户名">
+                  <el-input
+                    type="text"
+                    v-model="formLogin.username"
+                    :placeholder="$t('views.system.login.form.placeholder.username')">
                     <i slot="prepend" class="fa fa-user-circle-o"></i>
                   </el-input>
                 </el-form-item>
                 <el-form-item prop="password">
-                  <el-input type="password" v-model="formLogin.password" placeholder="密码">
+                  <el-input
+                    type="password"
+                    v-model="formLogin.password"
+                    :placeholder="$t('views.system.login.form.placeholder.password')">
                     <i slot="prepend" class="fa fa-keyboard-o"></i>
                   </el-input>
                 </el-form-item>
                 <el-form-item prop="code">
-                  <el-input type="text" v-model="formLogin.code" placeholder="- - - -">
-                    <template slot="prepend">验证码</template>
+                  <el-input
+                    type="text"
+                    v-model="formLogin.code"
+                    :placeholder="$t('views.system.login.form.placeholder.code')">
+                    <template slot="prepend">
+                      {{ $t('views.system.login.form.prepend.code') }}
+                    </template>
                     <template slot="append">
                       <img class="login-code" src="./image/login-code.png">
                     </template>
                   </el-input>
                 </el-form-item>
-                <el-button size="default" @click="submit" type="primary" class="button-login">登录</el-button>
+                <el-button
+                  size="default"
+                  @click="submit"
+                  type="primary"
+                  class="button-login">
+                  {{ $t('views.system.login.form.button.login') }}
+                </el-button>
               </el-form>
             </el-card>
             <p
               class="page-login--options"
               flex="main:justify cross:center">
-              <span><d2-icon name="question-circle"/> 忘记密码</span>
-              <span>注册用户</span>
+              <span><d2-icon name="question-circle"/> {{ $t('views.system.login.options.forget-password') }}</span>
+              <span>{{ $t('views.system.login.options.register') }}</span>
             </p>
-            <!-- 快速登录按钮 -->
+            <!-- quick login -->
             <el-button class="page-login--quick" size="default" type="info" @click="dialogVisible = true">
-              快速选择用户（测试功能）
+              {{ $t('views.system.login.quick-login.toggle-button.text') }}
             </el-button>
           </div>
         </div>
         <div class="page-login--content-footer">
           <p class="page-login--content-footer-options">
-            <a href="#">帮助</a>
-            <a href="#">隐私</a>
-            <a href="#">条款</a>
+            <a href="#">{{ $t('views.system.login.footer.button.help') }}</a>
+            <a href="#">{{ $t('views.system.login.footer.button.privacy') }}</a>
+            <a href="#">{{ $t('views.system.login.footer.button.clause') }}</a>
           </p>
           <p class="page-login--content-footer-copyright">
-            Copyright <d2-icon name="copyright"/> 2018 D2 Projects 开源组织出品 <a href="https://github.com/FairyEver">@FairyEver</a>
+            {{ $t('views.system.login.footer.copyright.copyright') }} 
+            <d2-icon name="copyright"/> 
+            {{ $t('views.system.login.footer.copyright.content') }} 
+            <a href="https://github.com/FairyEver">
+              @{{ $t('views.system.login.footer.copyright.author') }}
+            </a>
           </p>
         </div>
       </div>
     </div>
     <el-dialog
-      title="快速选择用户"
+      :title="$t('views.system.login.quick-login.dialog.title')"
       :visible.sync="dialogVisible"
       width="400px">
       <el-row :gutter="10" style="margin: -20px 0px -10px 0px;">
@@ -101,17 +128,17 @@ export default {
       dialogVisible: false,
       users: [
         {
-          name: '管理员',
+          name: 'Admin',
           username: 'admin',
           password: 'admin'
         },
         {
-          name: '编辑',
+          name: 'Editor',
           username: 'editor',
           password: 'editor'
         },
         {
-          name: '用户1',
+          name: 'User1',
           username: 'user1',
           password: 'user1'
         }
@@ -121,17 +148,39 @@ export default {
         username: 'admin',
         password: 'admin',
         code: 'v9am'
-      },
-      // 校验
-      rules: {
+      }
+    }
+  },
+  computed: {
+    // 校验
+    rules () {
+      return {
         username: [
-          { required: true, message: '请输入用户名', trigger: 'blur' }
+          {
+            required: true,
+            message: this.$t('public.rules.required', {
+              name: this.$t('views.system.login.form.label.username')
+            }),
+            trigger: 'blur'
+          }
         ],
         password: [
-          { required: true, message: '请输入密码', trigger: 'blur' }
+          {
+            required: true,
+            message: this.$t('public.rules.required', {
+              name: this.$t('views.system.login.form.label.password')
+            }),
+            trigger: 'blur'
+          }
         ],
         code: [
-          { required: true, message: '请输入验证码', trigger: 'blur' }
+          {
+            required: true,
+            message: this.$t('public.rules.required', {
+              name: this.$t('views.system.login.form.label.code')
+            }),
+            trigger: 'blur'
+          }
         ]
       }
     }
@@ -180,7 +229,7 @@ export default {
             })
         } else {
           // 登录表单校验失败
-          this.$message.error('表单校验失败')
+          this.$message.error(this.$t('public.error-message.form-not-valid'))
         }
       })
     }
@@ -225,9 +274,6 @@ export default {
       color: $color-text-normal;
       text-align: center;
       font-size: 12px;
-      span {
-        color: $color-text-sub;
-      }
     }
   }
   // main
