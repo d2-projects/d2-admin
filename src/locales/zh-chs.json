@@ -27,7 +27,7 @@
 			}
 		},
 		"rules": {
-			"required": "请输入{name}"
+			"required": "请输入 {name}"
 		}
 	},
 	"views": {

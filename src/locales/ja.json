@@ -12,16 +12,16 @@
 			"special": {
 				"upload": {
 					"error": {
-						"message": "",
-						"title": ""
+						"message": "データのアップロードに失敗しました",
+						"title": "アップロードに失敗しました"
 					},
 					"start": {
-						"message": "",
-						"title": ""
+						"message": "データをアップロードしています。しばらくお待ちください",
+						"title": "アップロードを開始"
 					},
 					"success": {
-						"message": "",
-						"title": ""
+						"message": "データのアップロードに成功しました",
+						"title": "アップロード成功"
 					}
 				}
 			}
@@ -68,22 +68,22 @@
 			"log": {
 				"notify": {
 					"more": {
-						"message": "",
-						"title": ""
+						"message": "ログ全体の内容がコンソールに出力されました",
+						"title": "ログ詳細"
 					}
 				},
 				"table": {
-					"empty-text": "",
+					"empty-text": "ログ情報はまだありません",
 					"label": {
-						"component": "",
-						"message": "",
-						"more": "",
-						"time": "",
-						"url": ""
+						"component": "トリガーコンポーネント",
+						"message": "情報",
+						"more": "詳細を見る",
+						"time": "時間",
+						"url": "トリガーページ"
 					}
 				},
 				"upload": {
-					"button": ""
+					"button": " {number} データをアップロード"
 				}
 			},
 			"login": {

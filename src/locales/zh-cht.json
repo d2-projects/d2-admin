@@ -12,22 +12,22 @@
 			"special": {
 				"upload": {
 					"error": {
-						"message": "",
-						"title": ""
+						"message": "數據上傳失敗",
+						"title": "上傳失敗"
 					},
 					"start": {
-						"message": "",
-						"title": ""
+						"message": "正在上傳數據，請稍後",
+						"title": "開始上傳"
 					},
 					"success": {
-						"message": "",
-						"title": ""
+						"message": "數據上傳成功",
+						"title": "上傳成功"
 					}
 				}
 			}
 		},
 		"rules": {
-			"required": "請輸入{name}"
+			"required": "請輸入 {name}"
 		}
 	},
 	"views": {
@@ -68,22 +68,22 @@
 			"log": {
 				"notify": {
 					"more": {
-						"message": "",
-						"title": ""
+						"message": "完整的日誌內容已經打印到控制台",
+						"title": "日誌詳情"
 					}
 				},
 				"table": {
-					"empty-text": "",
+					"empty-text": "暫無日誌信息",
 					"label": {
-						"component": "",
-						"message": "",
-						"more": "",
-						"time": "",
-						"url": ""
+						"component": "觸發組件",
+						"message": "信息",
+						"more": "查看詳細信息",
+						"time": "時間",
+						"url": "觸發頁面"
 					}
 				},
 				"upload": {
-					"button": ""
+					"button": "上傳 {number} 條數據"
 				}
 			},
 			"login": {
