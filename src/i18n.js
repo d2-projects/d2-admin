@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
+import util from '@/libs/util'
 
 Vue.use(VueI18n)
 
@@ -24,7 +25,7 @@ Vue.prototype.$languages = Object.keys(messages).map(langlage => ({
 }))
 
 export default new VueI18n({
-  locale: process.env.VUE_APP_I18N_LOCALE || 'en',
+  locale: util.cookies.get('lang') || process.env.VUE_APP_I18N_LOCALE,
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
   messages
 })
