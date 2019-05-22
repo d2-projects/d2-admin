@@ -9,6 +9,59 @@
 	},
 	"views": {
 		"system": {
+			"error": {
+				"404": {
+					"back": "返回首頁"
+				}
+			},
+			"index": {
+				"cover": {
+					"build-time": "構建時間",
+					"github-fork-alt": "Fork me on GitHub",
+					"sub-title": "優雅的中後台集成方案",
+					"title": "D2 Admin"
+				},
+				"help": {
+					"chat": {
+						"title": {
+							"qq": "QQ群 [ 1500 / 2000 人 ]",
+							"we": "與作者成為好友後邀請進微信群"
+						}
+					},
+					"link": {
+						"href": {
+							"doc": "https://doc.d2admin.fairyever.com/"
+						},
+						"text": {
+							"doc": "文檔",
+							"github": "主頁",
+							"issues": "issues",
+							"new-issue": "New issue"
+						}
+					},
+					"title": "幫助"
+				},
+				"page": {
+					"link": {
+						"href": {
+							"doc": "https://doc.d2admin.fairyever.com/zh/"
+						},
+						"text": {
+							"d2-projects": "開源組織",
+							"daily": "日報",
+							"doc": "文檔",
+							"ice": "飛冰",
+							"juejin": "掘金",
+							"start-kit": "簡化版"
+						}
+					},
+					"we": {
+						"button": "微信公眾號",
+						"introduce": "官方公眾號，主要推送前端技術類文章、框架資源、學習教程，以及 D2 系列項目更新信息",
+						"title": "今日前端"
+					}
+				}
+			},
 			"login": {
 				"footer": {
 					"button": {
