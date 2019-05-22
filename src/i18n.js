@@ -16,8 +16,15 @@ function loadLocaleMessages () {
   return messages
 }
 
+const messages = loadLocaleMessages()
+
+Vue.prototype.$languages = Object.keys(messages).map(langlage => ({
+  label: messages[langlage]._name,
+  value: langlage
+}))
+
 export default new VueI18n({
   locale: process.env.VUE_APP_I18N_LOCALE || 'en',
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
-  messages: loadLocaleMessages()
+  messages
 })

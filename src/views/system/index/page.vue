@@ -23,19 +23,16 @@
           </el-popover>
         </div>
         <d2-badge/>
-        <d2-help-btn/>
       </template>
     </d2-page-cover>
   </d2-container>
 </template>
 
 <script>
-import D2HelpBtn from './components/d2-help-btn'
 import D2Badge from './components/d2-badge'
 import D2PageCover from './components/d2-page-cover'
 export default {
   components: {
-    D2HelpBtn,
     D2Badge,
     D2PageCover
   },

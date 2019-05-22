@@ -1,4 +1,5 @@
 {
+	"_name": "简体中文",
 	"public": {
 		"error-message": {
 			"form-not-valid": "表单校验失败"
@@ -38,26 +39,6 @@
 					"github-fork-alt": "Fork me on GitHub",
 					"sub-title": "优雅的中后台集成方案",
 					"title": "D2 Admin"
-				},
-				"help": {
-					"chat": {
-						"title": {
-							"qq": "QQ群 [ 1500+ / 2000 人 ]",
-							"we": "与作者成为好友后邀请进微信群"
-						}
-					},
-					"link": {
-						"href": {
-							"doc": "https://doc.d2admin.fairyever.com/zh/"
-						},
-						"text": {
-							"doc": "文档",
-							"github": "主页",
-							"issues": "issues",
-							"new-issue": "New issue"
-						}
-					},
-					"title": "帮助"
 				},
 				"page": {
 					"link": {
