@@ -47,6 +47,10 @@
 				"help": {
 					"button": "need any help",
 					"dialog": {
+						"join": {
+							"qq": "QQ user group with 2000 people",
+							"we": "Invite the WeChat user group after becoming friends with the author"
+						},
 						"link": {
 							"text": {
 								"doc": "Document",
@@ -56,7 +60,7 @@
 						},
 						"sub-title": {
 							"doc": "Here are some references",
-							"join-chat-group": "Ask other users or authors"
+							"join": "Ask other users or authors"
 						},
 						"title": "Help"
 					}
