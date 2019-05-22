@@ -62,6 +62,37 @@
 					}
 				}
 			},
+			"log": {
+				"notify": {
+					"more": {
+						"message": "",
+						"title": ""
+					},
+					"upload": {
+						"start": {
+							"message": "",
+							"title": ""
+						},
+						"success": {
+							"message": "",
+							"title": ""
+						}
+					}
+				},
+				"table": {
+					"empty-text": "",
+					"label": {
+						"component": "",
+						"message": "",
+						"more": "",
+						"time": "",
+						"url": ""
+					}
+				},
+				"upload": {
+					"button": ""
+				}
+			},
 			"login": {
 				"footer": {
 					"button": {

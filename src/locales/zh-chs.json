@@ -62,6 +62,37 @@
 					}
 				}
 			},
+			"log": {
+				"notify": {
+					"more": {
+						"message": "完整的日志内容已经打印到控制台",
+						"title": "日志详情"
+					},
+					"upload": {
+						"start": {
+							"message": "开始上传 {number} 条日志",
+							"title": "日志上传"
+						},
+						"success": {
+							"message": "上传成功",
+							"title": "提示"
+						}
+					}
+				},
+				"table": {
+					"empty-text": "暂无日志信息",
+					"label": {
+						"component": "触发组件",
+						"message": "信息",
+						"more": "查看详细信息",
+						"time": "时间",
+						"url": "触发页面"
+					}
+				},
+				"upload": {
+					"button": "上传 {number} 条数据"
+				}
+			},
 			"login": {
 				"footer": {
 					"button": {
