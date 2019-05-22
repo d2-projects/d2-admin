@@ -105,12 +105,9 @@
 						"username": "用戶名"
 					},
 					"placeholder": {
-						"code": "- - - -",
+						"code": "驗證碼",
 						"password": "密碼",
 						"username": "用戶名"
-					},
-					"prepend": {
-						"code": "驗證碼"
 					}
 				},
 				"motto": {

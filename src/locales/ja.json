@@ -105,12 +105,9 @@
 						"username": "ユーザー名"
 					},
 					"placeholder": {
-						"code": " -   -   -   - ",
+						"code": "確認コード",
 						"password": "パスワード",
 						"username": "ユーザー名"
-					},
-					"prepend": {
-						"code": "確認コード"
 					}
 				},
 				"motto": {
