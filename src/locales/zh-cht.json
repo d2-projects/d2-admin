@@ -1,0 +1,61 @@
+{
+	"public": {
+		"error-message": {
+			"form-not-valid": "表單校驗失敗"
+		},
+		"rules": {
+			"required": "請輸入{name}"
+		}
+	},
+	"views": {
+		"system": {
+			"login": {
+				"footer": {
+					"button": {
+						"clause": "條款",
+						"help": "幫助",
+						"privacy": "隱私"
+					},
+					"copyright": {
+						"author": "FairyEver",
+						"content": "2018 D2 Projects 開源組織出品",
+						"copyright": "Copyright"
+					}
+				},
+				"form": {
+					"button": {
+						"login": "登錄"
+					},
+					"label": {
+						"code": "驗證碼",
+						"password": "密碼",
+						"username": "用戶名"
+					},
+					"placeholder": {
+						"code": "- - - -",
+						"password": "密碼",
+						"username": "用戶名"
+					},
+					"prepend": {
+						"code": "驗證碼"
+					}
+				},
+				"motto": {
+					"text": "時間是一切財富中最寶貴的財富。"
+				},
+				"options": {
+					"forget-password": "忘記密碼",
+					"register": "註冊用戶"
+				},
+				"quick-login": {
+					"dialog": {
+						"title": "快速選擇用戶"
+					},
+					"toggle-button": {
+						"text": "快速選擇用戶（測試功能）"
+					}
+				}
+			}
+		}
+	}
+}
