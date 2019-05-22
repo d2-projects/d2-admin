@@ -33,17 +33,22 @@
     margin: 0px;
     margin-bottom: 20px;
     font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
     color: $color-text-main;
   }
   .d2-page-cover__sub-title {
     margin: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 14px;
     color: $color-text-normal;
   }
   .d2-page-cover__build-time {
     margin: 0px;
     margin-bottom: 10px;
     font-size: 12px;
+    line-height: 12px;
     color: $color-text-placehoder;
   }
 }

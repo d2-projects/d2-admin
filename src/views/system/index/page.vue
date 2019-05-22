@@ -64,6 +64,7 @@ export default {
   .btn-group {
     color: $color-text-placehoder;
     font-size: 12px;
+    line-height: 12px;
     margin-top: 0px;
     margin-bottom: 20px;
     .btn-group__btn {
