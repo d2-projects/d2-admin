@@ -4,31 +4,31 @@
       :data="log"
       size="mini"
       style="width: 100%"
-      empty-text="暂无日志信息"
+      :empty-text="$t('views.system.log.table.empty-text')"
       stripe>
-      <!-- 时间 -->
+      <!-- time -->
       <el-table-column
         prop="time"
-        label="Time"
+        :label="$t('views.system.log.table.label.time')"
         width="140">
       </el-table-column>
-      <!-- 信息 -->
+      <!-- message -->
       <el-table-column
         prop="message"
-        label="Message">
+        :label="$t('views.system.log.table.label.message')">
       </el-table-column>
-      <!-- 触发页面 -->
+      <!-- url -->
       <el-table-column
-        label="Url"
+        :label="$t('views.system.log.table.label.url')"
         align="center"
         min-width="200">
         <template slot-scope="scope">
           {{get(scope.row, 'meta.url')}}
         </template>
       </el-table-column>
-      <!-- 触发组件 -->
+      <!-- componnet -->
       <el-table-column
-        label="Tag"
+        :label="$t('views.system.log.table.label.component')"
         align="center"
         min-width="120">
         <template slot-scope="scope">
@@ -40,11 +40,11 @@
           </el-tag>
         </template>
       </el-table-column>
-      <!-- 查看详情 -->
+      <!-- more -->
       <el-table-column
         fixed="right"
         align="center"
-        label="More"
+        :label="$t('views.system.log.table.label.more')"
         width="100">
         <template slot-scope="scope">
           <el-button
@@ -63,7 +63,7 @@
         :loading="uploading"
         @click="handleUpload">
         <d2-icon name="cloud-upload"/>
-        Upload {{log.length}} log data
+        {{ $t('views.system.log.upload.button', { number: log.length }) }}
       </el-button>
     </template>
   </d2-container>
@@ -86,11 +86,11 @@ export default {
   methods: {
     get,
     handleShowMore (log) {
-      // 打印一条日志的所有信息到控制台
+      // Print all information from a log to the console
       this.$notify({
         type: 'info',
-        title: '日志详情',
-        message: '完整的日志内容已经打印到控制台'
+        title: this.$t('views.system.log.notify.more.title'),
+        message: this.$t('views.system.log.notify.more.message')
       })
       this.$log.capsule('D2Admin', 'handleShowMore', 'primary')
       console.group(log.message)
@@ -99,20 +99,20 @@ export default {
       console.log(log.meta)
       console.groupEnd()
     },
-    // 日志上传
+    // Log upload
     handleUpload () {
       this.uploading = true
       this.$notify({
         type: 'info',
-        title: '日志上传',
-        message: `开始上传${this.log.length}条日志`
+        title: this.$t('views.system.log.notify.upload.start.title'),
+        message: this.$t('views.system.log.notify.upload.start.message', { number: this.log.length })
       })
       setTimeout(() => {
         this.uploading = false
         this.$notify({
           type: 'success',
-          title: '日志上传',
-          message: '上传成功'
+          title: this.$t('views.system.log.notify.upload.success.title'),
+          message: this.$t('views.system.log.notify.upload.success.message')
         })
       }, 3000)
     }
