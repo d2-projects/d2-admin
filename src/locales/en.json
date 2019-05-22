@@ -12,16 +12,16 @@
 			"special": {
 				"upload": {
 					"error": {
-						"message": "",
-						"title": ""
+						"message": "Data upload failed",
+						"title": "Upload failed"
 					},
 					"start": {
-						"message": "",
-						"title": ""
+						"message": "Uploading data, please wait",
+						"title": "Start upload"
 					},
 					"success": {
-						"message": "",
-						"title": ""
+						"message": "Successful data upload",
+						"title": "Successful upload"
 					}
 				}
 			}
@@ -68,22 +68,22 @@
 			"log": {
 				"notify": {
 					"more": {
-						"message": "",
-						"title": ""
+						"message": "The full log content has been printed to the console",
+						"title": "log details"
 					}
 				},
 				"table": {
-					"empty-text": "",
+					"empty-text": "No log information yet",
 					"label": {
-						"component": "",
-						"message": "",
-						"more": "",
-						"time": "",
-						"url": ""
+						"component": "Trigger component",
+						"message": "Information",
+						"more": "check the detail information",
+						"time": "time",
+						"url": "Trigger page"
 					}
 				},
 				"upload": {
-					"button": ""
+					"button": "Upload {number} data"
 				}
 			},
 			"login": {
