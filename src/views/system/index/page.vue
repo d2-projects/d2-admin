@@ -4,12 +4,24 @@
       <d2-icon-svg class="logo" name="d2-admin"/>
       <template slot="footer">
         <div class="btn-group">
-          <span class="btn-group__btn" @click="$open('https://github.com/d2-projects')">{{ $t('views.system.index.page.link.text.d2-projects') }}</span> |
-          <span class="btn-group__btn" @click="$open($t('views.system.index.page.link.href.doc'))">{{ $t('views.system.index.page.link.text.doc') }}</span> |
-          <span class="btn-group__btn" @click="$open('https://github.com/d2-projects/d2-admin-start-kit')">{{ $t('views.system.index.page.link.text.start-kit') }}</span> |
-          <span class="btn-group__btn" @click="$open('https://alibaba.github.io/ice/scaffold?type=vue')">{{ $t('views.system.index.page.link.text.ice') }}</span> |
-          <span class="btn-group__btn" @click="$open('https://juejin.im/user/57a48b632e958a006691b946/posts')">{{ $t('views.system.index.page.link.text.juejin') }}</span> |
-          <span class="btn-group__btn" @click="$open('https://daily.fairyever.com')">{{ $t('views.system.index.page.link.text.daily') }}</span> |
+          <span class="btn-group__btn" @click="$open('https://github.com/d2-projects')">
+            {{ $t('views.system.index.page.link.text.d2-projects') }}
+          </span> |
+          <span class="btn-group__btn" @click="$open($t('views.system.index.page.link.href.doc'))">
+            {{ $t('views.system.index.page.link.text.doc') }}
+          </span> |
+          <span class="btn-group__btn" @click="$open('https://github.com/d2-projects/d2-admin-start-kit')">
+            {{ $t('views.system.index.page.link.text.start-kit') }}
+          </span> |
+          <span class="btn-group__btn" @click="$open('https://alibaba.github.io/ice/scaffold?type=vue')">
+            {{ $t('views.system.index.page.link.text.ice') }}
+          </span> |
+          <span class="btn-group__btn" @click="$open('https://juejin.im/user/57a48b632e958a006691b946/posts')">
+            {{ $t('views.system.index.page.link.text.juejin') }}
+          </span> |
+          <span class="btn-group__btn" @click="$open('https://daily.fairyever.com')">
+            {{ $t('views.system.index.page.link.text.daily') }}
+          </span> |
           <el-popover :width="172" trigger="hover">
             <p class="d2-mt-0 d2-mb-10">{{ $t('views.system.index.page.we.title') }}</p>
             <img src="./image/qr@2x.png" style="width: 172px;">
