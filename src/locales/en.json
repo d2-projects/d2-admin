@@ -105,12 +105,9 @@
 						"username": "Username"
 					},
 					"placeholder": {
-						"code": "- - - -",
+						"code": "Verification code",
 						"password": "Password",
 						"username": "Username"
-					},
-					"prepend": {
-						"code": "Code"
 					}
 				},
 				"motto": {

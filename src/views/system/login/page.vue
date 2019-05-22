@@ -54,9 +54,6 @@
                     type="text"
                     v-model="formLogin.code"
                     :placeholder="$t('views.system.login.form.placeholder.code')">
-                    <template slot="prepend">
-                      {{ $t('views.system.login.form.prepend.code') }}
-                    </template>
                     <template slot="append">
                       <img class="login-code" src="./image/login-code.png">
                     </template>
