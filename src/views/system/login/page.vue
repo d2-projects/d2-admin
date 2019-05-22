@@ -235,7 +235,7 @@ export default {
             })
         } else {
           // 登录表单校验失败
-          this.$message.error(this.$t('public.error-message.form-not-valid'))
+          this.$message.error(this.$t('public.message.error.form.invalid'))
         }
       })
     }

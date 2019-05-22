@@ -1,8 +1,12 @@
 {
 	"_name": "English",
 	"public": {
-		"error-message": {
-			"form-not-valid": "Form Check Failure"
+		"message": {
+			"error": {
+				"form": {
+					"invalid": "Form verification failed, please check"
+				}
+			}
 		},
 		"notify": {
 			"special": {

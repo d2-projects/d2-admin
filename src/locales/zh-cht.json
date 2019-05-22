@@ -1,8 +1,12 @@
 {
 	"_name": "繁體中文",
 	"public": {
-		"error-message": {
-			"form-not-valid": "表單校驗失敗"
+		"message": {
+			"error": {
+				"form": {
+					"invalid": "表單校驗失敗，請檢查"
+				}
+			}
 		},
 		"notify": {
 			"special": {
