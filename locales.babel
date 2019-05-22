@@ -32,11 +32,15 @@
                                         <approved>false</approved>
                                     </translation>
                                     <translation>
-                                        <language>zh-CN</language>
+                                        <language>ja-JP</language>
                                         <approved>false</approved>
                                     </translation>
                                     <translation>
-                                        <language>ja-JP</language>
+                                        <language>zh-CHT</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CHS</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -58,11 +62,15 @@
                                         <approved>false</approved>
                                     </translation>
                                     <translation>
-                                        <language>zh-CN</language>
+                                        <language>ja-JP</language>
                                         <approved>false</approved>
                                     </translation>
                                     <translation>
-                                        <language>ja-JP</language>
+                                        <language>zh-CHT</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CHS</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -98,11 +106,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -119,11 +131,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -140,11 +156,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -166,11 +186,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -187,11 +211,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -208,11 +236,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -239,11 +271,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -265,11 +301,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -286,11 +326,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -307,11 +351,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -333,11 +381,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -354,11 +406,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -375,11 +431,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -401,11 +461,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -429,11 +493,15 @@
                                                         <approved>false</approved>
                                                     </translation>
                                                     <translation>
-                                                        <language>zh-CN</language>
+                                                        <language>ja-JP</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                     <translation>
-                                                        <language>ja-JP</language>
+                                                        <language>zh-CHT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CHS</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -455,11 +523,15 @@
                                                         <approved>false</approved>
                                                     </translation>
                                                     <translation>
-                                                        <language>zh-CN</language>
+                                                        <language>ja-JP</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                     <translation>
-                                                        <language>ja-JP</language>
+                                                        <language>zh-CHT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CHS</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -476,11 +548,15 @@
                                                         <approved>false</approved>
                                                     </translation>
                                                     <translation>
-                                                        <language>zh-CN</language>
+                                                        <language>ja-JP</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                     <translation>
-                                                        <language>ja-JP</language>
+                                                        <language>zh-CHT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CHS</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -505,11 +581,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -531,11 +611,15 @@
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>zh-CN</language>
+                                                                <language>ja-JP</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                             <translation>
-                                                                <language>ja-JP</language>
+                                                                <language>zh-CHT</language>
+                                                                <approved>false</approved>
+                                                            </translation>
+                                                            <translation>
+                                                                <language>zh-CHS</language>
                                                                 <approved>false</approved>
                                                             </translation>
                                                         </translations>
@@ -565,9 +649,14 @@
             <source_file>src/locales/ja.json</source_file>
         </language>
         <language>
-            <code>zh-CN</code>
+            <code>zh-CHS</code>
             <source_id></source_id>
-            <source_file>src/locales/zh.json</source_file>
+            <source_file>src/locales/zh-cns.json</source_file>
+        </language>
+        <language>
+            <code>zh-CHT</code>
+            <source_id></source_id>
+            <source_file>src/locales/zh-cht.json</source_file>
         </language>
     </languages>
     <translation_files>
@@ -575,10 +664,13 @@
             <file>src/locales/en.json</file>
         </translation_file>
         <translation_file>
-            <file>src/locales/zh.json</file>
+            <file>src/locales/ja.json</file>
         </translation_file>
         <translation_file>
-            <file>src/locales/ja.json</file>
+            <file>src/locales/zh-cht.json</file>
+        </translation_file>
+        <translation_file>
+            <file>src/locales/zh-cns.json</file>
         </translation_file>
     </translation_files>
     <editor_configuration>
