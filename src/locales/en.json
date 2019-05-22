@@ -44,6 +44,23 @@
 					"sub-title": "Elegant mid-background integration solution",
 					"title": "D2 Admin"
 				},
+				"help": {
+					"button": "need any help",
+					"dialog": {
+						"link": {
+							"text": {
+								"doc": "Document",
+								"issues": "Historical question",
+								"new-issue": "Ask a question on Github"
+							}
+						},
+						"sub-title": {
+							"doc": "Here are some references",
+							"join-chat-group": "Ask other users or authors"
+						},
+						"title": "Help"
+					}
+				},
 				"page": {
 					"link": {
 						"href": {

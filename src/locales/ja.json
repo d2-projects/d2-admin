@@ -44,6 +44,23 @@
 					"sub-title": "エレガントなミッドバックグラウンド統合ソリューション",
 					"title": "D2 Admin"
 				},
+				"help": {
+					"button": "助けが必要ですか？",
+					"dialog": {
+						"link": {
+							"text": {
+								"doc": "文書",
+								"issues": "歴史的な質問",
+								"new-issue": "Githubで質問する"
+							}
+						},
+						"sub-title": {
+							"doc": "ここにいくつかの参照があります",
+							"join-chat-group": "他のユーザーや作者に尋ねる"
+						},
+						"title": "ヘルプ"
+					}
+				},
 				"page": {
 					"link": {
 						"href": {
