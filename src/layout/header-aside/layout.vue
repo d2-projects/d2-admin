@@ -31,6 +31,7 @@
           <d2-header-fullscreen/>
           <d2-header-theme/>
           <d2-header-size/>
+          <d2-header-locales/>
           <d2-header-user/>
         </div>
       </div>
@@ -85,6 +86,7 @@ import d2MenuSide from './components/menu-side'
 import d2MenuHeader from './components/menu-header'
 import d2Tabs from './components/tabs'
 import d2HeaderFullscreen from './components/header-fullscreen'
+import d2HeaderLocales from './components/header-locales'
 import d2HeaderSearch from './components/header-search'
 import d2HeaderSize from './components/header-size'
 import d2HeaderTheme from './components/header-theme'
@@ -102,6 +104,7 @@ export default {
     d2MenuHeader,
     d2Tabs,
     d2HeaderFullscreen,
+    d2HeaderLocales,
     d2HeaderSearch,
     d2HeaderSize,
     d2HeaderTheme,
