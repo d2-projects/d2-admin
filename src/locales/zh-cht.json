@@ -3,6 +3,24 @@
 		"error-message": {
 			"form-not-valid": "表單校驗失敗"
 		},
+		"notify": {
+			"special": {
+				"upload": {
+					"error": {
+						"message": "",
+						"title": ""
+					},
+					"start": {
+						"message": "",
+						"title": ""
+					},
+					"success": {
+						"message": "",
+						"title": ""
+					}
+				}
+			}
+		},
 		"rules": {
 			"required": "請輸入{name}"
 		}
@@ -67,16 +85,6 @@
 					"more": {
 						"message": "",
 						"title": ""
-					},
-					"upload": {
-						"start": {
-							"message": "",
-							"title": ""
-						},
-						"success": {
-							"message": "",
-							"title": ""
-						}
 					}
 				},
 				"table": {

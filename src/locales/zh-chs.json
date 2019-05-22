@@ -3,6 +3,24 @@
 		"error-message": {
 			"form-not-valid": "表单校验失败"
 		},
+		"notify": {
+			"special": {
+				"upload": {
+					"error": {
+						"message": "数据上传失败",
+						"title": "上传失败"
+					},
+					"start": {
+						"message": "正在上传数据，请稍后",
+						"title": "开始上传"
+					},
+					"success": {
+						"message": "数据上传成功",
+						"title": "上传成功"
+					}
+				}
+			}
+		},
 		"rules": {
 			"required": "请输入{name}"
 		}
@@ -67,16 +85,6 @@
 					"more": {
 						"message": "完整的日志内容已经打印到控制台",
 						"title": "日志详情"
-					},
-					"upload": {
-						"start": {
-							"message": "开始上传 {number} 条日志",
-							"title": "日志上传"
-						},
-						"success": {
-							"message": "上传成功",
-							"title": "提示"
-						}
 					}
 				},
 				"table": {

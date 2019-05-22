@@ -104,15 +104,15 @@ export default {
       this.uploading = true
       this.$notify({
         type: 'info',
-        title: this.$t('views.system.log.notify.upload.start.title'),
-        message: this.$t('views.system.log.notify.upload.start.message', { number: this.log.length })
+        title: this.$t('public.notify.special.upload.start.title'),
+        message: this.$t('public.notify.special.upload.start.message')
       })
       setTimeout(() => {
         this.uploading = false
         this.$notify({
           type: 'success',
-          title: this.$t('views.system.log.notify.upload.success.title'),
-          message: this.$t('views.system.log.notify.upload.success.message')
+          title: this.$t('public.notify.special.upload.success.title'),
+          message: this.$t('public.notify.special.upload.success.message')
         })
       }, 3000)
     }
