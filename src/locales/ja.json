@@ -3,6 +3,24 @@
 		"error-message": {
 			"form-not-valid": "フォームの検証に失敗しました"
 		},
+		"notify": {
+			"special": {
+				"upload": {
+					"error": {
+						"message": "",
+						"title": ""
+					},
+					"start": {
+						"message": "",
+						"title": ""
+					},
+					"success": {
+						"message": "",
+						"title": ""
+					}
+				}
+			}
+		},
 		"rules": {
 			"required": "を入力してください {name}"
 		}
@@ -67,16 +85,6 @@
 					"more": {
 						"message": "",
 						"title": ""
-					},
-					"upload": {
-						"start": {
-							"message": "",
-							"title": ""
-						},
-						"success": {
-							"message": "",
-							"title": ""
-						}
 					}
 				},
 				"table": {
