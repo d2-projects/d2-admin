@@ -9,6 +9,59 @@
 	},
 	"views": {
 		"system": {
+			"error": {
+				"404": {
+					"back": "家に戻る"
+				}
+			},
+			"index": {
+				"cover": {
+					"build-time": "構築時間",
+					"github-fork-alt": "Fork me on GitHub",
+					"sub-title": "エレガントなミッドバックグラウンド統合ソリューション",
+					"title": "D2 Admin"
+				},
+				"help": {
+					"chat": {
+						"title": {
+							"qq": "QQグループ[1500/2000人]",
+							"we": "著者と友達になった後にWeChatグループに招待する"
+						}
+					},
+					"link": {
+						"href": {
+							"doc": "https://doc.d2admin.fairyever.com/"
+						},
+						"text": {
+							"doc": "文書",
+							"github": "ホームページ",
+							"issues": "問題",
+							"new-issue": "新しい号"
+						}
+					},
+					"title": "ヘルプ"
+				},
+				"page": {
+					"link": {
+						"href": {
+							"doc": "https://doc.d2admin.fairyever.com/"
+						},
+						"text": {
+							"d2-projects": "オープンソース組織",
+							"daily": "日刊新聞",
+							"doc": "文書",
+							"ice": "飛んでいる氷",
+							"juejin": "ナゲット",
+							"start-kit": "スターターバージョン"
+						}
+					},
+					"we": {
+						"button": "WeChatパブリック番号",
+						"introduce": "公式の公開番号。主にフロントエンドの技術記事、フレームワークリソース、学習チュートリアル、およびD2シリーズプロジェクトの更新情報をプッシュします。",
+						"title": "今日のフロントエンド"
+					}
+				}
+			},
 			"login": {
 				"footer": {
 					"button": {

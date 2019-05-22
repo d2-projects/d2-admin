@@ -9,6 +9,59 @@
 	},
 	"views": {
 		"system": {
+			"error": {
+				"404": {
+					"back": "Back to home"
+				}
+			},
+			"index": {
+				"cover": {
+					"build-time": "Build time",
+					"github-fork-alt": "Fork me on GitHub",
+					"sub-title": "Elegant mid-background integration solution",
+					"title": "D2 Admin"
+				},
+				"help": {
+					"chat": {
+						"title": {
+							"qq": "QQ group [ 1500 / 2000 people ]",
+							"we": "Invite into the WeChat group after becoming friends with the author"
+						}
+					},
+					"link": {
+						"href": {
+							"doc": "https://doc.d2admin.fairyever.com/"
+						},
+						"text": {
+							"doc": "Document",
+							"github": "Homepage",
+							"issues": "Issues",
+							"new-issue": "New issue"
+						}
+					},
+					"title": "Help"
+				},
+				"page": {
+					"link": {
+						"href": {
+							"doc": "https://doc.d2admin.fairyever.com/"
+						},
+						"text": {
+							"d2-projects": "Open source organization",
+							"daily": "Daily",
+							"doc": "Document",
+							"ice": "Flying ice",
+							"juejin": "Nuggets",
+							"start-kit": "Starter version"
+						}
+					},
+					"we": {
+						"button": "WeChat Public",
+						"introduce": "Official public number, mainly push front-end technical articles, framework resources, learning tutorials, and D2 series project update information",
+						"title": "JS Daily"
+					}
+				}
+			},
 			"login": {
 				"footer": {
 					"button": {
