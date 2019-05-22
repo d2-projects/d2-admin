@@ -10,7 +10,7 @@
     -->
     <preset_collections/>
     <framework>vue-json</framework>
-    <filename>locales.babel</filename>
+    <filename>d2-admin.babel</filename>
     <folder_node>
         <name></name>
         <children>
