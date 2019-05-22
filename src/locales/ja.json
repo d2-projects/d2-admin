@@ -1,8 +1,12 @@
 {
 	"_name": "日本語",
 	"public": {
-		"error-message": {
-			"form-not-valid": "フォームの検証に失敗しました"
+		"message": {
+			"error": {
+				"form": {
+					"invalid": "フォームの確認に失敗しました。確認してください"
+				}
+			}
 		},
 		"notify": {
 			"special": {

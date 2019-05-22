@@ -1,8 +1,12 @@
 {
 	"_name": "简体中文",
 	"public": {
-		"error-message": {
-			"form-not-valid": "表单校验失败"
+		"message": {
+			"error": {
+				"form": {
+					"invalid": "表单校验失败，请检查"
+				}
+			}
 		},
 		"notify": {
 			"special": {
