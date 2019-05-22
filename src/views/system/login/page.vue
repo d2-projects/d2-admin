@@ -13,7 +13,7 @@
     <div class="page-login--layer">
       <div
         class="page-login--content"
-        flex="dir:top main:justify cross:center box:justify">
+        flex="dir:top main:justify cross:stretch box:justify">
         <div class="page-login--content-header">
           <p class="page-login--content-header-motto">
             {{ $t('views.system.login.motto.text') }}
@@ -84,10 +84,14 @@
           </div>
         </div>
         <div class="page-login--content-footer">
-          <p class="page-login--content-footer-options">
-            <a href="#">{{ $t('views.system.login.footer.button.help') }}</a>
-            <a href="#">{{ $t('views.system.login.footer.button.privacy') }}</a>
-            <a href="#">{{ $t('views.system.login.footer.button.clause') }}</a>
+          <p class="page-login--content-footer-locales">
+            <a
+              v-for="language in $languages"
+              :key="language.value"
+              :command="language.value"
+              @click="$i18n.locale = language.value">
+              {{ language.label }}
+            </a>
           </p>
           <p class="page-login--content-footer-copyright">
             {{ $t('views.system.login.footer.copyright.copyright') }} 
@@ -96,6 +100,11 @@
             <a href="https://github.com/FairyEver">
               @{{ $t('views.system.login.footer.copyright.author') }}
             </a>
+          </p>
+          <p class="page-login--content-footer-options">
+            <a href="#">{{ $t('views.system.login.footer.button.help') }}</a>
+            <a href="#">{{ $t('views.system.login.footer.button.privacy') }}</a>
+            <a href="#">{{ $t('views.system.login.footer.button.clause') }}</a>
           </p>
         </div>
       </div>
@@ -344,24 +353,43 @@ export default {
   // footer
   .page-login--content-footer {
     padding: 1em 0;
-    .page-login--content-footer-options {
+    .page-login--content-footer-locales {
       padding: 0px;
       margin: 0px;
-      margin-bottom: 10px;
-      font-size: 14px;
+      margin-bottom: 15px;
+      font-size: 12px;
+      line-height: 12px;
       text-align: center;
+      color: $color-text-normal;
       a {
         color: $color-text-normal;
-        margin: 0 1em;
+        margin: 0 .5em;
+        &:hover {
+          color: $color-text-main;
+        }
       }
     }
     .page-login--content-footer-copyright {
       padding: 0px;
       margin: 0px;
+      margin-bottom: 10px;
       font-size: 12px;
+      line-height: 12px;
+      text-align: center;
       color: $color-text-normal;
       a {
         color: $color-text-normal;
+      }
+    }
+    .page-login--content-footer-options {
+      padding: 0px;
+      margin: 0px;
+      font-size: 12px;
+      line-height: 12px;
+      text-align: center;
+      a {
+        color: $color-text-normal;
+        margin: 0 1em;
       }
     }
   }
