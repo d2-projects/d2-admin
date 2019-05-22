@@ -44,6 +44,23 @@
 					"sub-title": "优雅的中后台集成方案",
 					"title": "D2 Admin"
 				},
+				"help": {
+					"button": "需要帮助吗",
+					"dialog": {
+						"link": {
+							"text": {
+								"doc": "文档",
+								"issues": "历史提问",
+								"new-issue": "在 Github 提问"
+							}
+						},
+						"sub-title": {
+							"doc": "这里有一些参考资料",
+							"join-chat-group": "询问其它使用者或作者"
+						},
+						"title": "帮助"
+					}
+				},
 				"page": {
 					"link": {
 						"href": {

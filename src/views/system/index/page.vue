@@ -35,6 +35,7 @@
           </el-popover>
         </div>
         <d2-badge/>
+        <d2-help/>
       </template>
     </d2-page-cover>
   </d2-container>
@@ -42,10 +43,12 @@
 
 <script>
 import D2Badge from './components/d2-badge'
+import D2Help from './components/d2-help'
 import D2PageCover from './components/d2-page-cover'
 export default {
   components: {
     D2Badge,
+    D2Help,
     D2PageCover
   },
   data () {
