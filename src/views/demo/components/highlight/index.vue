@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">代码高亮组件</template>
     <el-card shadow="never" class="d2-mb">
       <p slot="title">javascript</p>
@@ -28,7 +28,6 @@ import codeHTML from './code/html'
 export default {
   data () {
     return {
-      filename: __filename,
       codeJavascript,
       codeCSS,
       codeSCSS,

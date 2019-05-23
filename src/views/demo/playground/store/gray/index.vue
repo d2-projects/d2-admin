@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename" type="card" class="page">
+  <d2-container type="card" class="page">
     <template slot="header">
       <div class="colorful">{{grayActive ? 'GRAY' : 'COLORFUL'}}</div>
     </template>
@@ -43,7 +43,6 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
     return {
-      filename: __filename,
       dialogVisible: false
     }
   },

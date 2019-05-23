@@ -14,6 +14,7 @@
       <a href="https://www.travis-ci.org/d2-projects/d2-admin"><img src="https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master"/></a>
       <a><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/></a>
       <a><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/></a>
+      <a><img src="https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status"/></a>
     </p>
   </div>
 </template>
@@ -24,7 +25,7 @@
   p {
     margin: 0px;
     margin-bottom: 2px;
-    :nth-last-child() {
+    &:last-child {
       margin-bottom: 0px;
     }
     a {

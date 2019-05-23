@@ -4,7 +4,10 @@
       <slot name="header"/>
     </div>
     <div class="d2-container-ghost-bs__body" ref="wrapper">
-      <slot/>
+      <!-- https://github.com/d2-projects/d2-admin/issues/181 -->
+      <div>
+        <slot/>
+      </div>
     </div>
     <div v-if="$slots.footer" class="d2-container-ghost-bs__footer" ref="footer">
       <slot name="footer"/>

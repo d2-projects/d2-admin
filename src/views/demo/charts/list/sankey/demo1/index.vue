@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">一般</template>
     <div class="inner">
       <ve-sankey :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-sankey>
@@ -28,7 +28,6 @@ export default {
       ]
     }
     return {
-      filename: __filename,
       chartData: {
         columns: ['页面', '访问量'],
         rows: [

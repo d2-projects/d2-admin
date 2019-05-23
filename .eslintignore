@@ -3,6 +3,9 @@ build/
 tests/
 node_modules/
 
+# D2CRUD 演示
+src/views/demo/d2-crud/
+
 # node 覆盖率文件
 coverage/
 

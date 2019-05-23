@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename" type="card">
+  <d2-container type="card">
     <template slot="header">区域划分</template>
     <div style="height: 400px; margin: -16px;">
       <SplitPane :min-percent='20' :default-percent='30' split="vertical">
@@ -17,11 +17,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      filename: __filename
-    }
-  },
   mounted () {
     // 加载完成后显示提示
     this.showInfo()

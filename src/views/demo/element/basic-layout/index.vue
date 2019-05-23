@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
 
     <h1 class="d2-mt-0">基础布局</h1>
     <el-row>

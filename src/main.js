@@ -1,12 +1,11 @@
 // Vue
 import Vue from 'vue'
+import i18n from './i18n'
 import App from './App'
 // 核心插件
 import d2Admin from '@/plugin/d2admin'
 // store
 import store from '@/store/index'
-// 多国语
-import i18n from './i18n'
 
 // [ 可选组件 ]D2-Crud
 import D2Crud from '@d2-projects/d2-crud'

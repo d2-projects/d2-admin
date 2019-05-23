@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">剪贴板访问</template>
     <el-row :gutter="10">
       <el-col :span="12">
@@ -35,7 +35,6 @@ import * as clipboard from 'clipboard-polyfill'
 export default {
   data () {
     return {
-      filename: __filename,
       text: 'Hello ~',
       html: '<span style="background-color: #19be6b; color: #f8f8f9;">Hello</span><span style="background-color: #495060; color: #f8f8f9;">World</span>'
     }

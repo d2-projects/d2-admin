@@ -3,7 +3,6 @@
 <p align="center">
   <a><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/></a>
   <a><img src="https://img.shields.io/npm/v/@d2-admin/ice-scaffold.svg"/></a>
-  <a href="https://www.travis-ci.org/d2-projects/d2-admin"><img src="https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master"/></a>
   <a><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/></a>
   <a><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/></a>
 </p>
@@ -17,17 +16,27 @@
 	<a><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/></a>
 </p>
 
+<p align="center">
+	<a href="https://www.travis-ci.org/d2-projects/d2-admin">
+		<img src="https://www.travis-ci.org/d2-projects/d2-admin.svg?branch=master"/>
+	</a>
+	<a href="https://app.netlify.com/sites/d2-admin/deploys">
+		<img src="https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status"/>
+	</a>
+</p>
+
 D2Admin is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
 
 [中文介绍](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md) | **English**
 
 ## Document
 
-[document](https://doc.d2admin.fairyever.com)
+[Document](https://doc.d2admin.fairyever.com)
 
 ## Preview
 
-[preview](https://d2admin.fairyever.com)
+* [Preview](https://d2-admin.netlify.com) Deployed in Netlify CDN
+* [Preview For Chinese](https://d2admin.fairyever.com) Deployed in qiniu CDN
 
 ## Features
 
@@ -90,6 +99,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 | Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
 | Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://start-kit.d2admin.fairyever.com) |  |
+| D2 Admin Renren | [Github](https://github.com/d2-projects/d2-admin-renren-security-enterprise) | [Preview](https://renren.d2admin.fairyever.com) | [renren](https://www.renren.io) |
 | Alibaba Ice scaffold | [Ice](https://alibaba.github.io/ice/scaffold?type=vue) | [Preview](https://ice.d2admin.fairyever.com) | [Introduction](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
 ## Ecology

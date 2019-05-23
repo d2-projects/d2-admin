@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">设置样式</template>
     <div class="inner">
       <ve-map :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-map>
@@ -30,7 +30,6 @@ export default {
         },
         zoom: 1.2
       },
-      filename: __filename,
       chartData: {
         columns: ['位置', '人口'],
         rows: [

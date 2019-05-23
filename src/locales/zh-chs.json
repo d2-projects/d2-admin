@@ -1,0 +1,162 @@
+{
+	"_name": "简体中文",
+	"public": {
+		"message": {
+			"error": {
+				"form": {
+					"invalid": "表单校验失败，请检查"
+				}
+			}
+		},
+		"notify": {
+			"special": {
+				"upload": {
+					"error": {
+						"message": "数据上传失败",
+						"title": "上传失败"
+					},
+					"start": {
+						"message": "正在上传数据，请稍后",
+						"title": "开始上传"
+					},
+					"success": {
+						"message": "数据上传成功",
+						"title": "上传成功"
+					}
+				}
+			}
+		},
+		"rules": {
+			"required": "请输入 {name}"
+		}
+	},
+	"views": {
+		"system": {
+			"error": {
+				"404": {
+					"back": "返回首页"
+				}
+			},
+			"index": {
+				"cover": {
+					"build-time": "构建时间",
+					"github-fork-alt": "Fork me on GitHub",
+					"sub-title": "优雅的中后台集成方案",
+					"title": "D2 Admin"
+				},
+				"help": {
+					"button": "需要帮助吗",
+					"dialog": {
+						"join": {
+							"qq": {
+								"sub-title": "加入 2000 人用户大群共同交流",
+								"title": "请使用手机 QQ 扫面上方二维码"
+							},
+							"we": {
+								"sub-title": "添加作者微信好友，邀请加入微信群",
+								"title": "请使用手机微信扫面上方二维码"
+							}
+						},
+						"link": {
+							"text": {
+								"doc": "文档",
+								"issues": "历史提问",
+								"new-issue": "在 Github 提问"
+							}
+						},
+						"sub-title": {
+							"doc": "这里有一些参考资料",
+							"join": "询问其它使用者或作者"
+						},
+						"title": "帮助"
+					}
+				},
+				"page": {
+					"link": {
+						"href": {
+							"doc": "https://doc.d2admin.fairyever.com/zh/"
+						},
+						"text": {
+							"d2-projects": "开源组织",
+							"daily": "日报",
+							"doc": "文档",
+							"ice": "飞冰",
+							"juejin": "掘金",
+							"start-kit": "简化版"
+						}
+					},
+					"we": {
+						"button": "微信公众号",
+						"introduce": "官方公众号，主要推送前端技术类文章、框架资源、学习教程，以及 D2 系列项目更新信息",
+						"title": "今日前端"
+					}
+				}
+			},
+			"log": {
+				"notify": {
+					"more": {
+						"message": "完整的日志内容已经打印到控制台",
+						"title": "日志详情"
+					}
+				},
+				"table": {
+					"empty-text": "暂无日志信息",
+					"label": {
+						"component": "触发组件",
+						"message": "信息",
+						"more": "查看详细信息",
+						"time": "时间",
+						"url": "触发页面"
+					}
+				},
+				"upload": {
+					"button": "上传 {number} 条数据"
+				}
+			},
+			"login": {
+				"footer": {
+					"button": {
+						"clause": "条款",
+						"help": "帮助",
+						"privacy": "隐私"
+					},
+					"copyright": {
+						"author": "FairyEver",
+						"content": "2018 D2 Projects 开源组织出品",
+						"copyright": "Copyright"
+					}
+				},
+				"form": {
+					"button": {
+						"login": "登录"
+					},
+					"label": {
+						"code": "验证码",
+						"password": "密码",
+						"username": "用户名"
+					},
+					"placeholder": {
+						"code": "验证码",
+						"password": "密码",
+						"username": "用户名"
+					}
+				},
+				"motto": {
+					"text": "时间是一切财富中最宝贵的财富。"
+				},
+				"options": {
+					"forget-password": "忘记密码",
+					"register": "注册用户"
+				},
+				"quick-login": {
+					"dialog": {
+						"title": "快速选择用户"
+					},
+					"toggle-button": {
+						"text": "快速选择用户（测试功能）"
+					}
+				}
+			}
+		}
+	}
+}

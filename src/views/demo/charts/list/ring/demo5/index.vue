@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">设置环图半径</template>
     <div class="inner">
       <ve-ring :data="chartData" :settings="chartSettings" v-bind="pubSetting"></ve-ring>
@@ -22,7 +22,6 @@ export default {
       offsetY: 250
     }
     return {
-      filename: __filename,
       chartData: {
         columns: ['日期', '访问用户'],
         rows: [

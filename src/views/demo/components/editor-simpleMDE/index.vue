@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <d2-mde
       v-model="text"
       class="mde"/>
@@ -14,7 +14,6 @@ import text from './text'
 export default {
   data () {
     return {
-      filename: __filename,
       text
     }
   }

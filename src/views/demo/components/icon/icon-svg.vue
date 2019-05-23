@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">SVG图标组件</template>
     <el-row>
       <el-col class="icon-card" :span="4" v-for="(icon, index) in $IconSvg" :key="index">

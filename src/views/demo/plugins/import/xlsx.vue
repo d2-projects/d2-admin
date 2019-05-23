@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename" type="card">
+  <d2-container type="card">
     <template slot="header">导入 xlsx</template>
     <div class="d2-mb">
       <el-button @click="download">
@@ -30,7 +30,6 @@
 export default {
   data () {
     return {
-      filename: __filename,
       table: {
         columns: [],
         data: [],
