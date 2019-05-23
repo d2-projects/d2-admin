@@ -48,8 +48,14 @@
 					"button": "need any help",
 					"dialog": {
 						"join": {
-							"qq": "QQ user group with 2000 people",
-							"we": "Invite the WeChat user group after becoming friends with the author"
+							"qq": {
+								"sub-title": "Join 2,000 users and communicate with each other",
+								"title": "Please use your mobile phone QQ to scan the QR code above"
+							},
+							"we": {
+								"sub-title": "Add author WeChat friends, invite to join WeChat group",
+								"title": "Please use the mobile phone WeChat scan above the QR code"
+							}
 						},
 						"link": {
 							"text": {
