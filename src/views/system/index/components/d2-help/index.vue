@@ -9,7 +9,7 @@
       width="600px"
       :visible.sync="dialogVisible"
       :append-to-body="true">
-      <div style="margin-top: -25px; margin-bottom: -25px;">
+      <div style="margin-top: -25px;">
         <h2 class="d2-mt-0">
           {{ $t('views.system.index.help.dialog.sub-title.doc') }}
         </h2>
@@ -30,20 +30,18 @@
         <h2>{{ $t('views.system.index.help.dialog.sub-title.join') }}</h2>
         <el-row :gutter="20">
           <el-col :span="12">
-            <el-alert
-              :closable="false"
-              type="info"
-              :title="$t('views.system.index.help.dialog.join.qq')"
-              class="d2-mb"/>
-            <img src="./image/qq.jpg" style="width: 100%;">
+            <img src="./image/qq.png" style="width: 100%;">
+            <div class="d2-help--qr-info">
+              {{ $t('views.system.index.help.dialog.join.qq.title') }}<br/>
+              {{ $t('views.system.index.help.dialog.join.qq.sub-title') }}
+            </div>
           </el-col>
           <el-col :span="12">
-            <el-alert
-              :closable="false"
-              type="info"
-              :title="$t('views.system.index.help.dialog.join.we')"
-              class="d2-mb"/>
-            <img src="./image/we.jpg" style="width: 100%;">
+            <img src="./image/we.png" style="width: 100%;">
+            <div class="d2-help--qr-info">
+              {{ $t('views.system.index.help.dialog.join.we.title') }}<br/>
+              {{ $t('views.system.index.help.dialog.join.we.sub-title') }}
+            </div>
           </el-col>
         </el-row>
       </div>
@@ -60,3 +58,21 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.d2-help--qr-info {
+  background-color: #f4f4f5;
+  color: #909399;
+  width: 100%;
+  padding: 8px 16px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  transition: opacity .2s;
+}
+</style>
