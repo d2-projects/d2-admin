@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <d2-demo-article/>
   </d2-container>
 </template>

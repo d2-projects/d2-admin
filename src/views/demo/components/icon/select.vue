@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">图标选择器</template>
     <div class="title-group">
       <p class="title">一般用法</p>
@@ -30,7 +30,6 @@
 export default {
   data () {
     return {
-      filename: __filename,
       icon: '',
       icon2: ''
     }

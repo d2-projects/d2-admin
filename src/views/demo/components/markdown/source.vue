@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">指定资源</template>
     <d2-markdown :source="doc" highlight/>
   </d2-container>
@@ -10,7 +10,6 @@ import doc from './md/doc.md'
 export default {
   data () {
     return {
-      filename: __filename,
       doc
     }
   }

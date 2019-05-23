@@ -18,8 +18,6 @@ export default {
     { path: 'day', name: `${pre}day`, component: _import('demo/plugins/day'), meta: { ...meta, title: '日期计算' } },
     { path: 'export/table', name: `${pre}export-table`, component: _import('demo/plugins/export/table.vue'), meta: { ...meta, title: '导出表格' } },
     { path: 'export/txt', name: `${pre}export-txt`, component: _import('demo/plugins/export/txt.vue'), meta: { ...meta, title: '导出文本' } },
-    { path: 'i18n/demo1', name: `${pre}i18n-demo1`, component: _import('demo/plugins/i18n/demo1.vue'), meta: { ...meta, title: '多国语示例 1' } },
-    { path: 'i18n/demo2', name: `${pre}i18n-demo2`, component: _import('demo/plugins/i18n/demo2.vue'), meta: { ...meta, title: '多国语示例 2' } },
     { path: 'import/csv', name: `${pre}import-csv`, component: _import('demo/plugins/import/csv.vue'), meta: { ...meta, title: '导入 csv' } },
     { path: 'import/xlsx', name: `${pre}import-xlsx`, component: _import('demo/plugins/import/xlsx.vue'), meta: { ...meta, title: '导入 xlsx' } },
     { path: 'index', name: `${pre}index`, component: _import('demo/plugins/index'), meta: { ...meta, title: '插件首页' } },

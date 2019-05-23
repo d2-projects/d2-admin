@@ -1,0 +1,162 @@
+{
+	"_name": "日本語",
+	"public": {
+		"message": {
+			"error": {
+				"form": {
+					"invalid": "フォームの確認に失敗しました。確認してください"
+				}
+			}
+		},
+		"notify": {
+			"special": {
+				"upload": {
+					"error": {
+						"message": "データのアップロードに失敗しました",
+						"title": "アップロードに失敗しました"
+					},
+					"start": {
+						"message": "データをアップロードしています。しばらくお待ちください",
+						"title": "アップロードを開始"
+					},
+					"success": {
+						"message": "データのアップロードに成功しました",
+						"title": "アップロード成功"
+					}
+				}
+			}
+		},
+		"rules": {
+			"required": "を入力してください {name}"
+		}
+	},
+	"views": {
+		"system": {
+			"error": {
+				"404": {
+					"back": "家に戻る"
+				}
+			},
+			"index": {
+				"cover": {
+					"build-time": "構築時間",
+					"github-fork-alt": "Fork me on GitHub",
+					"sub-title": "エレガントなミッドバックグラウンド統合ソリューション",
+					"title": "D2 Admin"
+				},
+				"help": {
+					"button": "助けが必要ですか？",
+					"dialog": {
+						"join": {
+							"qq": {
+								"sub-title": "2,000人のユーザーに参加してお互いにコミュニケーション",
+								"title": "上記のQRコードをスキャンするには、携帯電話のQQを使用してください"
+							},
+							"we": {
+								"sub-title": "著者を追加するWeChat友達、WeChatグループに参加するよう招待する",
+								"title": "携帯電話のWeChatを使用してQRコードをスキャンしてください"
+							}
+						},
+						"link": {
+							"text": {
+								"doc": "文書",
+								"issues": "歴史的な質問",
+								"new-issue": "Githubで質問する"
+							}
+						},
+						"sub-title": {
+							"doc": "ここにいくつかの参照があります",
+							"join": "他のユーザーや作者に尋ねる"
+						},
+						"title": "ヘルプ"
+					}
+				},
+				"page": {
+					"link": {
+						"href": {
+							"doc": "https://doc.d2admin.fairyever.com/"
+						},
+						"text": {
+							"d2-projects": "オープンソース組織",
+							"daily": "日刊新聞",
+							"doc": "文書",
+							"ice": "飛んでいる氷",
+							"juejin": "ナゲット",
+							"start-kit": "スターターバージョン"
+						}
+					},
+					"we": {
+						"button": "WeChatパブリック番号",
+						"introduce": "公式の公開番号。主にフロントエンドの技術記事、フレームワークリソース、学習チュートリアル、およびD2シリーズプロジェクトの更新情報をプッシュします。",
+						"title": "今日のフロントエンド"
+					}
+				}
+			},
+			"log": {
+				"notify": {
+					"more": {
+						"message": "ログ全体の内容がコンソールに出力されました",
+						"title": "ログ詳細"
+					}
+				},
+				"table": {
+					"empty-text": "ログ情報はまだありません",
+					"label": {
+						"component": "トリガーコンポーネント",
+						"message": "情報",
+						"more": "詳細を見る",
+						"time": "時間",
+						"url": "トリガーページ"
+					}
+				},
+				"upload": {
+					"button": " {number} データをアップロード"
+				}
+			},
+			"login": {
+				"footer": {
+					"button": {
+						"clause": "利用規約",
+						"help": "ヘルプ",
+						"privacy": "プライバシー"
+					},
+					"copyright": {
+						"author": "フェアリーエバー",
+						"content": "2018 D2プロジェクトオープンソース組織",
+						"copyright": "著作権"
+					}
+				},
+				"form": {
+					"button": {
+						"login": "ログイン"
+					},
+					"label": {
+						"code": "確認コード",
+						"password": "パスワード",
+						"username": "ユーザー名"
+					},
+					"placeholder": {
+						"code": "確認コード",
+						"password": "パスワード",
+						"username": "ユーザー名"
+					}
+				},
+				"motto": {
+					"text": "時間はすべての富の中で最も貴重な資産です。"
+				},
+				"options": {
+					"forget-password": "パスワードを忘れた",
+					"register": "登録ユーザー"
+				},
+				"quick-login": {
+					"dialog": {
+						"title": "すばやくユーザーを選択"
+					},
+					"toggle-button": {
+						"text": "すばやくユーザーを選択（テスト機能）"
+					}
+				}
+			}
+		}
+	}
+}

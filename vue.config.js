@@ -1,4 +1,5 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const VueFilenameInjector = require('./tools/vue-filename-injector')
 
 // 拼接路径
 const resolve = dir => require('path').join(__dirname, dir)
@@ -11,7 +12,8 @@ process.env.VUE_APP_BUILD_TIME = require('dayjs')().format('YYYY-M-D HH:mm:ss')
 let publicPath = '/'
 
 module.exports = {
-  publicPath, // 根据你的实际情况更改这里
+  // 根据你的实际情况更改这里
+  publicPath,
   lintOnSave: true,
   devServer: {
     publicPath // 和 publicPath 保持一致
@@ -44,6 +46,12 @@ module.exports = {
         // sourcemap不包含列信息
         config => config.devtool('cheap-source-map')
       )
+      // TRAVIS 构建 vue-loader 添加 filename
+      .when(process.env.VUE_APP_SCOURCE_LINK === 'TRUE',
+        VueFilenameInjector(config, {
+          propName: process.env.VUE_APP_SOURCE_VIEWER_PROP_NAME
+        })
+      )
       // 非开发环境
       .when(process.env.NODE_ENV !== 'development', config => {
         config.optimization
@@ -53,7 +61,6 @@ module.exports = {
                 // 移除 console
                 // 其它优化选项 https://segmentfault.com/a/1190000010874406
                 compress: {
-                  warnings: false,
                   drop_console: true,
                   drop_debugger: true,
                   pure_funcs: ['console.log']
@@ -68,13 +75,6 @@ module.exports = {
       .test(/\.md$/)
       .use('text-loader')
       .loader('text-loader')
-      .end()
-    // i18n
-    config.module
-      .rule('i18n')
-      .resourceQuery(/blockType=i18n/)
-      .use('i18n')
-      .loader('@kazupon/vue-i18n-loader')
       .end()
     // svg
     const svgRule = config.module.rule('svg')
@@ -99,16 +99,21 @@ module.exports = {
     // 重新设置 alias
     config.resolve.alias
       .set('@api', resolve('src/api'))
-    // node
-    config.node
-      .set('__dirname', true)
-      .set('__filename', true)
     // 判断环境加入模拟数据
     const entry = config.entry('app')
-    if (process.env.VUE_APP_BUILD_MODE !== 'nomock') {
+    if (process.env.VUE_APP_BUILD_MODE !== 'NOMOCK') {
       entry
         .add('@/mock')
         .end()
+    }
+  },
+  // i18n
+  pluginOptions: {
+    i18n: {
+      locale: 'en',
+      fallbackLocale: 'zh-chs',
+      localeDir: 'locales',
+      enableInSFC: true
     }
   }
 }

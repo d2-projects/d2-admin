@@ -33,15 +33,6 @@ export default {
       ]
     },
     {
-      path: `${pre}i18n`,
-      title: '多国语',
-      icon: 'language',
-      children: [
-        { path: `${pre}i18n/demo1`, title: '示例1' },
-        { path: `${pre}i18n/demo2`, title: '示例2' }
-      ]
-    },
-    {
       path: `${pre}better-scroll`,
       title: '滚动扩展',
       icon: 'crosshairs',

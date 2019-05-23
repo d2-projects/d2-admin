@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">自定义加载状态</template>
     <el-button @click="handleLoading">点我切换加载状态</el-button>
     <d2-crud
@@ -27,7 +27,6 @@ import code from './code.js'
 export default {
   data () {
     return {
-      filename: __filename,
       doc,
       code,
       columns: [

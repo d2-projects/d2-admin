@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <div slot="header" flex="main:justify">
       <el-date-picker size="mini" type="datetime" v-model="value" placeholder="选择一个日期"/>
       <el-button size="mini" type="primary">原值 value : {{value}}</el-button>

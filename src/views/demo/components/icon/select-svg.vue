@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">svg 图标选择器</template>
     <div class="d2-mb">
       <p class="d2-mt-0 d2-mb-10">一般用法 | {{icon || '未选择'}}</p>
@@ -16,7 +16,6 @@
 export default {
   data () {
     return {
-      filename: __filename,
       icon: '',
       icon2: ''
     }

@@ -60,6 +60,12 @@ export default {
     }),
     handleChange (value) {
       this.sizeSet(value)
+      this.$notify({
+        title: '提示',
+        dangerouslyUseHTMLString: true,
+        message: '已更新页面内 <b>组件</b> 的 <b>默认尺寸</b><br/>例如按钮大小，<b>非字号</b>',
+        type: 'success'
+      })
     },
     iconName (name) {
       return name === this.value ? 'dot-circle-o' : 'circle-o'

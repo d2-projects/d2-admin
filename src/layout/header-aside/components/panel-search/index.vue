@@ -122,7 +122,9 @@ export default {
     focus () {
       this.input = ''
       setTimeout(() => {
-        this.$refs.input.focus()
+        if (this.$refs.input) {
+          this.$refs.input.focus()
+        }
         // 还原
         this.searchText = ''
         this.results = []
@@ -185,6 +187,7 @@ export default {
 <style lang="scss" scoped>
 .panel-search {
   margin: 20px;
+  width: 100%;
   .panel-search__input-group {
     height: 240px;
     .panel-search__logo {
@@ -212,6 +215,7 @@ export default {
   }
   .panel-search__results-group {
     overflow: auto;
+    margin-bottom: -20px;
     .panel-search__results-group-inner {
       margin: -20px;
     }

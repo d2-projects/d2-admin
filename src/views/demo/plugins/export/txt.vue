@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename" type="card">
+  <d2-container type="card">
     <template slot="header">导出文本</template>
     <el-input
       type="textarea"
@@ -20,7 +20,6 @@
 export default {
   data () {
     return {
-      filename: __filename,
       text: ''
     }
   },

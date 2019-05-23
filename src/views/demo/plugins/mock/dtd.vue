@@ -1,5 +1,5 @@
 <template>
-  <d2-container :filename="filename">
+  <d2-container>
     <template slot="header">数据模板</template>
     <d2-markdown :source="doc" class="d2-mb"/>
     <d2-demo-mock-card
@@ -44,7 +44,6 @@ export default {
   },
   data () {
     return {
-      filename: __filename,
       mockResult: [],
       settingDTD,
       settingDTDClone: cloneDeep(settingDTD),
