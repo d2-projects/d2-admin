@@ -1,15 +1,111 @@
 {
 	"_name": "日本語",
+	"layout": {
+		"header-aside": {
+			"header-fullscreen": {
+				"active": "全画面",
+				"exit": "全画面を終了"
+			},
+			"header-log": {
+				"empty": "ログや例外はありません",
+				"error-length": " {length} 個の例外が含まれています",
+				"log-length": "{length} 個のログ"
+			},
+			"header-size": {
+				"options": {
+					"default": "デフォルト",
+					"medium": "普通",
+					"mini": "最小",
+					"small": "小さい"
+				}
+			},
+			"header-theme": {
+				"dialog": {
+					"title": "テーマ"
+				},
+				"list": {
+					"button": {
+						"is-active": "有効化",
+						"select": "選ぶ"
+					},
+					"column": {
+						"label": {
+							"preview": "プレビュー"
+						}
+					}
+				},
+				"tooltip": {
+					"content": "テーマ"
+				}
+			},
+			"header-user": {
+				"hello": "こんにちは",
+				"log-off": "ログアウト"
+			},
+			"menu-item": {
+				"label-default": "名前のないメニュー"
+			},
+			"menu-side": {
+				"empty": "サイドバーメニューなし"
+			},
+			"message": {
+				"warning": {
+					"temporary-menu": "一時メニュー"
+				}
+			},
+			"panel-search": {
+				"autocomplete-placeholder": "検索ページ",
+				"tip": "ショートカット {open} で検索パネルを起動し、 {close} を押して閉じることができます"
+			},
+			"tabs": {
+				"close-all": "すべて閉じる",
+				"close-left": "左に閉じる",
+				"close-other": "その他を閉じる",
+				"close-right": "右に閉じる",
+				"label-default": "無名："
+			}
+		}
+	},
 	"public": {
+		"confirm": {
+			"special": {
+				"logout": {
+					"button": {
+						"cancel": "あきらめる",
+						"confirm": "ログアウトを確認"
+					},
+					"message": "現在のアカウントからログアウトできますか？開いているタブとユーザー設定が保存されます。",
+					"title": "確認操作"
+				}
+			}
+		},
 		"message": {
 			"error": {
 				"form": {
 					"invalid": "フォームの確認に失敗しました。確認してください"
+				},
+				"handle": {
+					"invalid": "無効な操作"
+				}
+			},
+			"special": {
+				"logout": {
+					"cancel": "ログアウトユーザーを放棄する"
 				}
 			}
 		},
 		"notify": {
 			"special": {
+				"component-size": {
+					"changed": {
+						"message": "グローバルコンポーネントサイズが変更されました",
+						"title": "プロンプト"
+					}
+				},
+				"show-log": {
+					"message": "ログ全体の内容がコンソールに出力されました",
+					"title": "ログ詳細"
+				},
 				"upload": {
 					"error": {
 						"message": "データのアップロードに失敗しました",
@@ -93,12 +189,6 @@
 				}
 			},
 			"log": {
-				"notify": {
-					"more": {
-						"message": "ログ全体の内容がコンソールに出力されました",
-						"title": "ログ詳細"
-					}
-				},
 				"table": {
 					"empty-text": "ログ情報はまだありません",
 					"label": {

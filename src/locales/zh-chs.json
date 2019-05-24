@@ -1,15 +1,111 @@
 {
 	"_name": "简体中文",
+	"layout": {
+		"header-aside": {
+			"header-fullscreen": {
+				"active": "全屏",
+				"exit": "退出全屏"
+			},
+			"header-log": {
+				"empty": "没有日志或异常",
+				"error-length": "包含 {length} 个异常",
+				"log-length": "{length} 条日志"
+			},
+			"header-size": {
+				"options": {
+					"default": "默认",
+					"medium": "中",
+					"mini": "最小",
+					"small": "小"
+				}
+			},
+			"header-theme": {
+				"dialog": {
+					"title": "主题"
+				},
+				"list": {
+					"button": {
+						"is-active": "已激活",
+						"select": "选择"
+					},
+					"column": {
+						"label": {
+							"preview": "预览"
+						}
+					}
+				},
+				"tooltip": {
+					"content": "主题"
+				}
+			},
+			"header-user": {
+				"hello": "你好",
+				"log-off": "注销"
+			},
+			"menu-item": {
+				"label-default": "未命名菜单"
+			},
+			"menu-side": {
+				"empty": "没有侧栏菜单"
+			},
+			"message": {
+				"warning": {
+					"temporary-menu": "临时菜单"
+				}
+			},
+			"panel-search": {
+				"autocomplete-placeholder": "搜索页面",
+				"tip": "你可以使用快捷键 {open} 唤醒搜索面板，按 {close} 关闭"
+			},
+			"tabs": {
+				"close-all": "全部关闭",
+				"close-left": "关闭左侧",
+				"close-other": "关闭其它",
+				"close-right": "关闭右侧",
+				"label-default": "未命名"
+			}
+		}
+	},
 	"public": {
+		"confirm": {
+			"special": {
+				"logout": {
+					"button": {
+						"cancel": "放弃",
+						"confirm": "确定注销"
+					},
+					"message": "注销当前账户吗?  打开的标签页和用户设置将会被保存。",
+					"title": "确认操作"
+				}
+			}
+		},
 		"message": {
 			"error": {
 				"form": {
 					"invalid": "表单校验失败，请检查"
+				},
+				"handle": {
+					"invalid": "无效的操作"
+				}
+			},
+			"special": {
+				"logout": {
+					"cancel": "放弃注销用户"
 				}
 			}
 		},
 		"notify": {
 			"special": {
+				"component-size": {
+					"changed": {
+						"message": "全局组件尺寸已经变更",
+						"title": "提示"
+					}
+				},
+				"show-log": {
+					"message": "完整的日志内容已经打印到控制台",
+					"title": "日志详情"
+				},
 				"upload": {
 					"error": {
 						"message": "数据上传失败",
@@ -93,12 +189,6 @@
 				}
 			},
 			"log": {
-				"notify": {
-					"more": {
-						"message": "完整的日志内容已经打印到控制台",
-						"title": "日志详情"
-					}
-				},
 				"table": {
 					"empty-text": "暂无日志信息",
 					"label": {

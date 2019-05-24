@@ -89,8 +89,8 @@ export default {
       // Print all information from a log to the console
       this.$notify({
         type: 'info',
-        title: this.$t('views.system.log.notify.more.title'),
-        message: this.$t('views.system.log.notify.more.message')
+        title: this.$t('public.notify.special.show-log.title'),
+        message: this.$t('public.notify.special.show-log.message')
       })
       this.$log.capsule('D2Admin', 'handleShowMore', 'primary')
       console.group(log.message)
