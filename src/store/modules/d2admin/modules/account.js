@@ -2,6 +2,7 @@ import { Message, MessageBox } from 'element-ui'
 import util from '@/libs/util.js'
 import router from '@/router'
 import { AccountLogin } from '@api/sys.login'
+import i18n from '../../../../i18n'
 
 export default {
   namespaced: true,
@@ -69,9 +70,9 @@ export default {
       // 判断是否需要确认
       if (confirm) {
         commit('d2admin/gray/set', true, { root: true })
-        MessageBox.confirm('注销当前账户吗?  打开的标签页和用户设置将会被保存。', '确认操作', {
-          confirmButtonText: '确定注销',
-          cancelButtonText: '放弃',
+        MessageBox.confirm(i18n.t('public.confirm.special.logout.message'), i18n.t('public.confirm.special.logout.title'), {
+          confirmButtonText: i18n.t('public.confirm.special.logout.button.confirm'),
+          cancelButtonText: i18n.t('public.confirm.special.logout.button.cancel'),
           type: 'warning'
         })
           .then(() => {
@@ -81,7 +82,7 @@ export default {
           .catch(() => {
             commit('d2admin/gray/set', false, { root: true })
             Message({
-              message: '放弃注销用户'
+              message: i18n.t('public.message.special.logout.cancel')
             })
           })
       } else {
