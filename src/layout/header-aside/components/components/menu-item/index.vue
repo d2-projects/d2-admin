@@ -3,7 +3,7 @@
     <i v-if="menu.icon" :class="`fa fa-${menu.icon}`"></i>
     <i v-if="menu.icon === undefined & !menu.iconSvg" class="fa fa-file-o"></i>
     <d2-icon-svg v-if="menu.iconSvg" :name="menu.iconSvg"/>
-    <span slot="title">{{menu.title || '未命名菜单'}}</span>
+    <span slot="title">{{menu.title || $t('layout.header-aside.menu-item.label-default')}}</span>
   </el-menu-item>
 </template>
 

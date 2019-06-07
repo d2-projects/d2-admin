@@ -1,6 +1,9 @@
 language: node_js
 node_js: stable
 
+notifications:
+   webhooks: https://oapi.dingtalk.com/robot/send?access_token=a0918ec1b0461056fb9953fe2b03ecc3074a629e88992f327cc94bae93349e9e
+
 cache:
   directories:
     - "node_modules"

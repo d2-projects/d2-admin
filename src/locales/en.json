@@ -1,15 +1,111 @@
 {
 	"_name": "English",
+	"layout": {
+		"header-aside": {
+			"header-fullscreen": {
+				"active": "full screen",
+				"exit": "Exit full screen"
+			},
+			"header-log": {
+				"empty": "No logs or exceptions",
+				"error-length": "Contains {length} exceptions",
+				"log-length": "{length} logs"
+			},
+			"header-size": {
+				"options": {
+					"default": "Default",
+					"medium": "in",
+					"mini": "Minimum",
+					"small": "Small"
+				}
+			},
+			"header-theme": {
+				"dialog": {
+					"title": "Theme"
+				},
+				"list": {
+					"button": {
+						"is-active": "Activated",
+						"select": "Select"
+					},
+					"column": {
+						"label": {
+							"preview": "Preview"
+						}
+					}
+				},
+				"tooltip": {
+					"content": "Theme"
+				}
+			},
+			"header-user": {
+				"hello": "Hello there",
+				"log-off": "Logout"
+			},
+			"menu-item": {
+				"label-default": "Unnamed menu"
+			},
+			"menu-side": {
+				"empty": "No sidebar menu"
+			},
+			"message": {
+				"warning": {
+					"temporary-menu": "Temporary menu"
+				}
+			},
+			"panel-search": {
+				"autocomplete-placeholder": "Search page",
+				"tip": "You can wake up the search panel with the shortcut {open} and press {close} to close"
+			},
+			"tabs": {
+				"close-all": "Close all",
+				"close-left": "Close left",
+				"close-other": "Close other",
+				"close-right": "Close right",
+				"label-default": "unnamed"
+			}
+		}
+	},
 	"public": {
+		"confirm": {
+			"special": {
+				"logout": {
+					"button": {
+						"cancel": "Give up",
+						"confirm": "Confirm logout"
+					},
+					"message": "Can I log out of my current account? The open tabs and user settings will be saved.",
+					"title": "Confirmation operation"
+				}
+			}
+		},
 		"message": {
 			"error": {
 				"form": {
 					"invalid": "Form verification failed, please check"
+				},
+				"handle": {
+					"invalid": "Invalid operation"
+				}
+			},
+			"special": {
+				"logout": {
+					"cancel": "Abandon logout user"
 				}
 			}
 		},
 		"notify": {
 			"special": {
+				"component-size": {
+					"changed": {
+						"message": "Global component size has changed",
+						"title": "prompt"
+					}
+				},
+				"show-log": {
+					"message": "The full log content has been printed to the console",
+					"title": "log details"
+				},
 				"upload": {
 					"error": {
 						"message": "Data upload failed",
@@ -93,12 +189,6 @@
 				}
 			},
 			"log": {
-				"notify": {
-					"more": {
-						"message": "The full log content has been printed to the console",
-						"title": "log details"
-					}
-				},
 				"table": {
 					"empty-text": "No log information yet",
 					"label": {
