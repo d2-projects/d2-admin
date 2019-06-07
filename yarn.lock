@@ -3101,10 +3101,9 @@ element-resize-detector@^1.1.10:
   dependencies:
     batch-processor "^1.0.0"
 
-element-ui@^2.9.1:
-  version "2.9.1"
-  resolved "https://registry.npm.taobao.org/element-ui/download/element-ui-2.9.1.tgz#a05f2e76023d529ba0dfa2d03ae16e5134b20c4e"
-  integrity sha1-oF8udgI9Upug36LQOuFuUTSyDE4=
+element-ui@^2.7.2:
+  version "2.8.2"
+  resolved "https://registry.npmjs.org/element-ui/-/element-ui-2.8.2.tgz#21a7a4cb92616b0f8b75d4d4e637d3a1cd8c09de"
   dependencies:
     async-validator "~1.8.1"
     babel-helper-vue-jsx-merge-props "^2.0.0"
@@ -9097,11 +9096,6 @@ webpack-sources@^1.1.0, webpack-sources@^1.3.0:
   dependencies:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
-
-webpack-theme-color-replacer@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.npm.taobao.org/webpack-theme-color-replacer/download/webpack-theme-color-replacer-1.2.1.tgz#6ab2ba55095b55ae41aebb06378238b712636623"
-  integrity sha1-arK6VQlbVa5BrrsGN4I4txJjZiM=
 
 "webpack@>=4 < 4.29":
   version "4.28.4"
