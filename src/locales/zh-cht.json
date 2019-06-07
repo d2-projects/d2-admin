@@ -1,15 +1,111 @@
 {
 	"_name": "繁體中文",
+	"layout": {
+		"header-aside": {
+			"header-fullscreen": {
+				"active": "全屏",
+				"exit": "退出全屏"
+			},
+			"header-log": {
+				"empty": "沒有日誌或異常",
+				"error-length": "包含 {length} 個異常",
+				"log-length": "{length} 條日誌"
+			},
+			"header-size": {
+				"options": {
+					"default": "默認",
+					"medium": "中",
+					"mini": "最小",
+					"small": "小"
+				}
+			},
+			"header-theme": {
+				"dialog": {
+					"title": "主題"
+				},
+				"list": {
+					"button": {
+						"is-active": "已激活",
+						"select": "選擇"
+					},
+					"column": {
+						"label": {
+							"preview": "預覽"
+						}
+					}
+				},
+				"tooltip": {
+					"content": "主題"
+				}
+			},
+			"header-user": {
+				"hello": "你好",
+				"log-off": "註銷"
+			},
+			"menu-item": {
+				"label-default": "未命名菜單"
+			},
+			"menu-side": {
+				"empty": "沒有側欄菜單"
+			},
+			"message": {
+				"warning": {
+					"temporary-menu": "臨時菜單"
+				}
+			},
+			"panel-search": {
+				"autocomplete-placeholder": "搜索頁面",
+				"tip": "你可以使用快捷鍵 {open} 喚醒搜索面板，按 {close} 關閉"
+			},
+			"tabs": {
+				"close-all": "全部關閉",
+				"close-left": "關閉左側",
+				"close-other": "關閉其它",
+				"close-right": "關閉右側",
+				"label-default": "未命名"
+			}
+		}
+	},
 	"public": {
+		"confirm": {
+			"special": {
+				"logout": {
+					"button": {
+						"cancel": "放棄",
+						"confirm": "確定註銷"
+					},
+					"message": "註銷當前賬戶嗎? 打開的標籤頁和用戶設置將會被保存。",
+					"title": "確認操作"
+				}
+			}
+		},
 		"message": {
 			"error": {
 				"form": {
 					"invalid": "表單校驗失敗，請檢查"
+				},
+				"handle": {
+					"invalid": "無效的操作"
+				}
+			},
+			"special": {
+				"logout": {
+					"cancel": "放棄註銷用戶"
 				}
 			}
 		},
 		"notify": {
 			"special": {
+				"component-size": {
+					"changed": {
+						"message": "全局組件尺寸已經變更",
+						"title": "提示"
+					}
+				},
+				"show-log": {
+					"message": "完整的日誌內容已經打印到控制台",
+					"title": "日誌詳情"
+				},
 				"upload": {
 					"error": {
 						"message": "數據上傳失敗",
@@ -93,12 +189,6 @@
 				}
 			},
 			"log": {
-				"notify": {
-					"more": {
-						"message": "完整的日誌內容已經打印到控制台",
-						"title": "日誌詳情"
-					}
-				},
 				"table": {
 					"empty-text": "暫無日誌信息",
 					"label": {

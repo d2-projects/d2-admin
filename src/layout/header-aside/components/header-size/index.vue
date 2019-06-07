@@ -15,20 +15,18 @@
 import { mapState, mapMutations, mapActions } from 'vuex'
 export default {
   name: 'd2-header-size',
-  data () {
-    return {
-      options: [
-        { label: '默认', value: 'default' },
-        { label: '中', value: 'medium' },
-        { label: '小', value: 'small' },
-        { label: '最小', value: 'mini' }
-      ]
-    }
-  },
   computed: {
     ...mapState('d2admin/size', [
       'value'
-    ])
+    ]),
+    options () {
+      return [
+        { label: this.$t('layout.header-aside.header-size.options.default'), value: 'default' },
+        { label: this.$t('layout.header-aside.header-size.options.medium'), value: 'medium' },
+        { label: this.$t('layout.header-aside.header-size.options.small'), value: 'small' },
+        { label: this.$t('layout.header-aside.header-size.options.mini'), value: 'mini' }
+      ]
+    }
   },
   watch: {
     // 注意 这里是关键
@@ -61,9 +59,9 @@ export default {
     handleChange (value) {
       this.sizeSet(value)
       this.$notify({
-        title: '提示',
+        title: this.$t('public.notify.special.component-size.changed.title'),
         dangerouslyUseHTMLString: true,
-        message: '已更新页面内 <b>组件</b> 的 <b>默认尺寸</b><br/>例如按钮大小，<b>非字号</b>',
+        message: this.$t('public.notify.special.component-size.changed.message'),
         type: 'success'
       })
     },

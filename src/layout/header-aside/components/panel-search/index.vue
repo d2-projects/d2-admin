@@ -15,7 +15,7 @@
         ref="input"
         v-model="searchText"
         suffix-icon="el-icon-search"
-        placeholder="搜索页面"
+        :placeholder="$t('layout.header-aside.panel-search.autocomplete-placeholder')"
         :fetch-suggestions="querySearch"
         :trigger-on-focus="false"
         :clearable="true"
@@ -26,11 +26,7 @@
           :item="item"/>
       </el-autocomplete>
       <div class="panel-search__tip">
-        您可以使用快捷键
-        <span class="panel-search__key">{{hotkey.open}}</span>
-        唤醒搜索面板，按
-        <span class="panel-search__key">{{hotkey.close}}</span>
-        关闭
+        {{ $t('layout.header-aside.panel-search.tip', { open: hotkey.open, close: hotkey.close }) }}
       </div>
     </div>
     <div
@@ -204,13 +200,6 @@ export default {
       margin-bottom: 40px;
       font-size: 12px;
       color: $color-text-sub;
-      .panel-search__key {
-        padding: 1px 5px;
-        margin: 0px 2px;
-        border-radius: 2px;
-        background-color: $color-text-normal;
-        color: $color-bg;
-      }
     }
   }
   .panel-search__results-group {
