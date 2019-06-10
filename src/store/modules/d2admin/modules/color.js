@@ -1,3 +1,6 @@
+import client from 'webpack-theme-color-replacer/client'
+import forElementUI from 'webpack-theme-color-replacer/forElementUI'
+
 export default {
   namespaced: true,
   state: {
@@ -10,8 +13,10 @@ export default {
      * @param {Object} state vuex state
      * @param {String} color 尺寸
      */
-    set ({ state, dispatch }, color) {
+    set ({ state, dispatch, commit }, color) {
       return new Promise(async resolve => {
+        // 记录上个值
+        const old = state.value
         // store 赋值
         state.value = color
         // 持久化
@@ -21,6 +26,11 @@ export default {
           value: state.value,
           user: true
         }, { root: true })
+        // 应用
+        commit('apply', {
+          oldColor: old,
+          newColor: state.value
+        })
         // end
         resolve()
       })
@@ -29,8 +39,10 @@ export default {
      * @description 从持久化数据读取颜色设置
      * @param {Object} state vuex state
      */
-    load ({ state, dispatch }) {
+    load ({ state, dispatch, commit }) {
       return new Promise(async resolve => {
+        // 记录上个值
+        const old = state.value
         // store 赋值
         state.value = await dispatch('d2admin/db/get', {
           dbName: 'sys',
@@ -38,9 +50,28 @@ export default {
           defaultValue: process.env.VUE_APP_ELEMENT_COLOR,
           user: true
         }, { root: true })
+        // 应用
+        commit('apply', {
+          oldColor: old,
+          newColor: state.value
+        })
         // end
         resolve()
       })
+    }
+  },
+  mutations: {
+    /**
+     * @description 将 vuex 中的主题颜色设置应用到系统中
+     * @param {Object} state vuex state
+     * @param {Object} payload 设置
+     */
+    apply (state, { oldColor, newColor }) {
+      var options = {
+        oldColors: [...forElementUI.getElementUISeries(oldColor)],
+        newColors: [...forElementUI.getElementUISeries(newColor)]
+      }
+      client.changer.changeColor(options)
     }
   }
 }
