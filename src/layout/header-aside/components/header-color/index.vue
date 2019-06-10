@@ -34,7 +34,7 @@ export default {
         oldColors: [...forElementUI.getElementUISeries(curColor)],
         newColors: [...forElementUI.getElementUISeries(newColor)]
       }
-      client.changer.changeColor(options, Promise)
+      client.changer.changeColor(options)
     }
   }
 }
