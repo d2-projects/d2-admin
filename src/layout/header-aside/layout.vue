@@ -32,6 +32,7 @@
           <d2-header-theme/>
           <d2-header-size/>
           <d2-header-locales/>
+          <d2-header-color/>
           <d2-header-user/>
         </div>
       </div>
@@ -92,6 +93,7 @@ import d2HeaderSize from './components/header-size'
 import d2HeaderTheme from './components/header-theme'
 import d2HeaderUser from './components/header-user'
 import d2HeaderLog from './components/header-log'
+import d2HeaderColor from './components/header-color'
 import { mapState, mapGetters, mapActions } from 'vuex'
 import mixinSearch from './mixins/search'
 export default {
@@ -109,7 +111,8 @@ export default {
     d2HeaderSize,
     d2HeaderTheme,
     d2HeaderUser,
-    d2HeaderLog
+    d2HeaderLog,
+    d2HeaderColor
   },
   data () {
     return {

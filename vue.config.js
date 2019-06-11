@@ -1,6 +1,9 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const VueFilenameInjector = require('./tools/vue-filename-injector')
 
+const ThemeColorReplacer = require('webpack-theme-color-replacer')
+const forElementUI = require('webpack-theme-color-replacer/forElementUI')
+
 // 拼接路径
 const resolve = dir => require('path').join(__dirname, dir)
 
@@ -25,6 +28,22 @@ module.exports = {
         data: `@import '~@/assets/style/public.scss';`
       }
     }
+  },
+  // node_modules 需要babel成es5的包
+  transpileDependencies: [
+    'webpack-theme-color-replacer'
+  ],
+  configureWebpack: {
+    plugins: [
+      new ThemeColorReplacer({
+        fileName: 'css/theme-colors.[contenthash:8].css',
+        matchColors: [
+          ...forElementUI.getElementUISeries(process.env.VUE_APP_ELEMENT_COLOR) // Element-ui主色系列
+        ],
+        externalCssFiles: [ './node_modules/element-ui/lib/theme-chalk/index.css' ], // optional, String or string array. Set external css files (such as cdn css) to extract colors.
+        changeSelector: forElementUI.changeSelector
+      })
+    ]
   },
   // 默认设置: https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js
   chainWebpack: config => {
