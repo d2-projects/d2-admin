@@ -91,9 +91,9 @@
             </a>
           </p>
           <p class="page-login--content-footer-copyright">
-            {{ $t('views.system.login.footer.copyright.copyright') }} 
-            <d2-icon name="copyright"/> 
-            {{ $t('views.system.login.footer.copyright.content') }} 
+            {{ $t('views.system.login.footer.copyright.copyright') }}
+            <d2-icon name="copyright"/>
+            {{ $t('views.system.login.footer.copyright.content') }}
             <a href="https://github.com/FairyEver">
               @{{ $t('views.system.login.footer.copyright.author') }}
             </a>
