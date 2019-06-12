@@ -18,7 +18,7 @@ export default {
         // 记录上个值
         const old = state.value
         // store 赋值
-        state.value = color
+        state.value = color || process.env.VUE_APP_ELEMENT_COLOR
         // 持久化
         await dispatch('d2admin/db/set', {
           dbName: 'sys',
