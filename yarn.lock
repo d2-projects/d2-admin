@@ -1862,10 +1862,10 @@ babel-core@^6.0.0, babel-core@^6.26.0:
     slash "^1.0.0"
     source-map "^0.5.7"
 
-babel-eslint@^10.0.1:
-  version "10.0.1"
-  resolved "https://registry.npm.taobao.org/babel-eslint/download/babel-eslint-10.0.1.tgz#919681dc099614cd7d31d45c8908695092a1faed"
-  integrity sha1-kZaB3AmWFM19MdRciQhpUJKh+u0=
+babel-eslint@^10.0.1, babel-eslint@^10.0.2:
+  version "10.0.2"
+  resolved "https://registry.npm.taobao.org/babel-eslint/download/babel-eslint-10.0.2.tgz#182d5ac204579ff0881684b040560fdcc1558456"
+  integrity sha1-GC1awgRXn/CIFoSwQFYP3MFVhFY=
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/parser" "^7.0.0"
@@ -10837,10 +10837,10 @@ webpack-sources@^1.1.0, webpack-sources@^1.3.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack-theme-color-replacer@^1.2.5:
-  version "1.2.7"
-  resolved "https://registry.npm.taobao.org/webpack-theme-color-replacer/download/webpack-theme-color-replacer-1.2.7.tgz#bb32d627e38f9e20432716c1f72866ca3f06bffb"
-  integrity sha1-uzLWJ+OPniBDJxbB9yhmyj8Gv/s=
+webpack-theme-color-replacer@^1.2.15:
+  version "1.2.15"
+  resolved "https://registry.npm.taobao.org/webpack-theme-color-replacer/download/webpack-theme-color-replacer-1.2.15.tgz?cache=0&sync_timestamp=1560616828199&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack-theme-color-replacer%2Fdownload%2Fwebpack-theme-color-replacer-1.2.15.tgz#f42ab038974d8a6ee85a074b65de0cfc17c9f472"
+  integrity sha1-9CqwOJdNim7oWgdLZd4M/BfJ9HI=
 
 "webpack@>=4 < 4.29":
   version "4.28.4"
