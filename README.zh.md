@@ -105,7 +105,7 @@
 | 名称 | Github / 主页  | 预览 | 介绍 |
 | --- | --- | --- | --- |
 | 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://start-kit.d2admin.fairyever.com) | 无 |
-| 人人开源适配 | [Github](https://github.com/d2-projects/d2-admin-renren-security-enterprise) | [预览](https://renren.d2admin.fairyever.com) | [人人开源](https://www.renren.io) |
+| 人人开源适配 | 应人人开源的要求，暂不公开 | [预览](https://renren.d2admin.fairyever.com) | [人人开源](https://www.renren.io) |
 | 飞冰脚手架 | [飞冰](https://alibaba.github.io/ice/scaffold?type=vue) | [预览](https://ice.d2admin.fairyever.com) | [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
 ## 生态
