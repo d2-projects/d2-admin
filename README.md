@@ -125,6 +125,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 
 | Name | technology | HomePage | Preview | Introduction |
 | --- | --- | --- | --- | --- |
+| **CareyShop** | ThinkPHP5 | [Github](https://github.com/dnyz520/careyshop-admin) | [Preview](https://demo.careyshop.cn/admin/#/index) | High Performance Mall Framework System for CareyShop |
 | **jiiiiiin-security** | Spring Boot + Spring Security | [Github](https://github.com/Jiiiiiin/jiiiiiin-security) | [Preview](https://github.com/Jiiiiiin/jiiiiiin-security) | Separate front-end and back-end content management infrastructure projects, focusing on user rights management functions |
 | **Taroco** | Spring Cloud | [Github](https://github.com/liuht777/Taroco) | [Preview](http://111.231.192.110/) | Complete microservice enterprise solution |
 | **Aooms** | Spring Cloud | [Gitee](https://gitee.com/cyb-javaer/Aooms) | [Preview](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
