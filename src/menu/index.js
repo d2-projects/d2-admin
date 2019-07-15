@@ -63,5 +63,13 @@ export const menuHeader = [
     ]
   },
   demoPlayground,
-  demoBusiness
+  demoBusiness,
+  // 恰饭
+  ...process.env.VUE_APP_BUILD_MODE === 'TRAVIS' ? [
+    {
+      path: 'https://gio.ren/w/nP2OALom',
+      title: 'Web进阶教程',
+      icon: 'book'
+    }
+  ] : []
 ]
