@@ -20,7 +20,7 @@ export default {
   actions: {
     /**
      * @class opened
-     * @description 从持久化数据载入分页列表
+     * @description 从持久化数据载入标签页列表
      * @param {Object} state vuex state
      */
     openedLoad ({ state, commit, dispatch }) {
