@@ -12,6 +12,8 @@ export default {
     pool: [],
     // 当前显示的多页面列表
     opened: setting.page.opened,
+    // 标记已经加载多标签页数据 https://github.com/d2-projects/d2-admin/issues/201
+    openedLoaded: false,
     // 当前页面
     current: '',
     // 需要缓存的页面 name
@@ -52,6 +54,8 @@ export default {
           // 新的数据中一般不会携带 params 和 query, 所以旧的参数会留存
           return Object.assign({}, opened, find)
         }).filter((opened, index) => valid[index] === 1)
+        // 标记已经加载多标签页数据 https://github.com/d2-projects/d2-admin/issues/201
+        state.openedLoaded = true
         // 根据 opened 数据生成缓存设置
         commit('keepAliveRefresh')
         // end
