@@ -23,7 +23,17 @@ const router = new VueRouter({
  * 路由拦截
  * 权限验证
  */
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
+  // 等待数据加载 https://github.com/d2-projects/d2-admin/issues/201
+  await new Promise (resolve => {
+    const timer = setInterval(() => {
+      if (store.state.d2admin.page.openedLoaded) {
+        resolve(clearInterval(timer))
+      }
+    }, 10)
+  })
+  // 等待加载组件尺寸 https://github.com/d2-projects/d2-admin/issues/198
+  await store.dispatch('d2admin/size/isLoaded')
   // 进度条
   NProgress.start()
   // 关闭搜索面板
@@ -55,17 +65,9 @@ router.beforeEach((to, from, next) => {
 
 
 
-router.afterEach(async to => {
+router.afterEach(to => {
   // 进度条
   NProgress.done()
-  // 等待数据加载 https://github.com/d2-projects/d2-admin/issues/201
-  await new Promise (resolve => {
-    const timer = setInterval(() => {
-      if (store.state.d2admin.page.openedLoaded) {
-        resolve(clearInterval(timer))
-      }
-    }, 10)
-  })
   // 多页控制 打开新的页面
   store.dispatch('d2admin/page/open', to)
   // 更改标题
