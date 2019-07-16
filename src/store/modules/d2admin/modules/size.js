@@ -1,3 +1,6 @@
+import Vue from 'vue'
+import router from '@/router'
+
 export default {
   namespaced: true,
   state: {
@@ -5,6 +8,30 @@ export default {
     value: '' // medium small mini
   },
   actions: {
+    /**
+     * @description 将当前的设置应用到 element
+     * @param {Boolean} refresh 是否在设置之后刷新页面
+     */
+    apply ({ state, commit }, refresh) {
+      Vue.prototype.$ELEMENT.size = state.value
+      if (refresh) {
+        commit('d2admin/page/keepAliveClean', null, { root: true })
+        router.replace('/refresh')
+      }
+    },
+    /**
+     * @description 确认组件尺寸已经加载 https://github.com/d2-projects/d2-admin/issues/198
+     */
+    isLoaded ({ state }) {
+      if (state.value) return Promise.resolve()
+      return new Promise(resolve => {
+        const timer = setInterval(() => {
+          if (state.value) {
+            resolve(clearInterval(timer))
+          }
+        }, 10)
+      })
+    },
     /**
      * @description 设置尺寸
      * @param {Object} state vuex state
@@ -14,6 +41,8 @@ export default {
       return new Promise(async resolve => {
         // store 赋值
         state.value = size
+        // 应用
+        dispatch('apply', true)
         // 持久化
         await dispatch('d2admin/db/set', {
           dbName: 'sys',
@@ -38,6 +67,8 @@ export default {
           defaultValue: 'default',
           user: true
         }, { root: true })
+        // 应用
+        dispatch('apply')
         // end
         resolve()
       })

@@ -28,27 +28,6 @@ export default {
       ]
     }
   },
-  watch: {
-    // 注意 这里是关键
-    // 因为需要访问 this.$ELEMENT 所以只能在这里使用这种方式
-    value: {
-      handler (val, oldVal) {
-        // https://github.com/d2-projects/d2-admin/pull/129
-        if (oldVal) {
-          // 这个情况在已经加载完页面 用户改变了尺寸时触发
-          this.$ELEMENT.size = val
-          // 由于已经加载过设置 需要清空缓存设置
-          this.pageKeepAliveClean()
-          // 由于已经加载过设置 需要刷新此页面
-          this.$router.replace('/refresh')
-        } else {
-          // 这个情况在刷新页面时触发
-          this.$ELEMENT.size = val
-        }
-      },
-      immediate: true
-    }
-  },
   methods: {
     ...mapMutations({
       pageKeepAliveClean: 'd2admin/page/keepAliveClean'
