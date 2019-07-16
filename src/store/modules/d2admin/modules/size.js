@@ -20,7 +20,7 @@ export default {
       }
     },
     /**
-     * @description 确认组件尺寸已经加载 https://github.com/d2-projects/d2-admin/issues/198
+     * @description 确认已经加载组件尺寸设置 https://github.com/d2-projects/d2-admin/issues/198
      */
     isLoaded ({ state }) {
       if (state.value) return Promise.resolve()
