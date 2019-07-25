@@ -97,6 +97,14 @@ export default {
         { path: `${pre}log/console`, title: '控制台日志', icon: 'lightbulb-o' }
       ]
     },
+    {
+      path: `${pre}add-routes`,
+      title: '动态添加路由',
+      icon: 'plus-square',
+      children: [
+        { path: `${pre}add-routes/routes`, title: '添加页面', icon: 'file-o' }
+      ]
+    },
     { path: `${pre}env`, title: '环境信息', icon: 'exclamation-circle' }
   ])('/demo/playground/')
 }
