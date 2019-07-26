@@ -23,7 +23,6 @@
 <script>
 import { cloneDeep } from 'lodash'
 import { mapState, mapMutations } from 'vuex'
-import router from '@/router'
 import { frameInRoutes } from '@/router/routes'
 import layoutHeaderAside from '@/layout/header-aside'
 export default {
