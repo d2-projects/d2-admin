@@ -1,37 +1,27 @@
-<template>
-  <div class="d2-layout-header-aside-menu-side">
-    <el-menu
-      :collapse="asideCollapse"
-      :unique-opened="true"
-      :default-active="active"
-      ref="menu"
-      @select="handleMenuSelect">
-      <template v-for="(menu, menuIndex) in aside">
-        <d2-layout-header-aside-menu-item v-if="menu.children === undefined" :menu="menu" :key="menuIndex"/>
-        <d2-layout-header-aside-menu-sub v-else :menu="menu" :key="menuIndex"/>
-      </template>
-    </el-menu>
-    <div v-if="aside.length === 0 && !asideCollapse" class="d2-layout-header-aside-menu-empty" flex="dir:top main:center cross:center">
-      <d2-icon name="inbox"/>
-      <span>{{ $t('layout.header-aside.menu-side.empty') }}</span>
-    </div>
-  </div>
-</template>
-
-<script>
 import { mapState } from 'vuex'
 import menuMixin from '../mixin/menu'
-import d2LayoutMainMenuItem from '../components/menu-item/index.vue'
-import d2LayoutMainMenuSub from '../components/menu-sub/index.vue'
+import { elMenuItem, elSubmenu } from '../libs/util.menu'
 import BScroll from 'better-scroll'
+
 export default {
   name: 'd2-layout-header-aside-menu-side',
   mixins: [
     menuMixin
   ],
-  components: {
-    'd2-layout-header-aside-menu-item': d2LayoutMainMenuItem,
-    'd2-layout-header-aside-menu-sub': d2LayoutMainMenuSub
+  render (createElement) {
+    return createElement('div', { attrs: { class: 'd2-layout-header-aside-menu-side' } }, [
+      createElement('el-menu', {
+        props: { collapse: this.asideCollapse, uniqueOpened: true, defaultActive: this.active },
+        ref: 'menu',
+        on: { select: this.handleMenuSelect }
+      }, this.aside.map(menu => (menu.children === undefined ? elMenuItem : elSubmenu).call(this, createElement, menu))),
+      ...this.aside.length === 0 && !this.asideCollapse ? [
+        createElement('div', { attrs: { class: 'd2-layout-header-aside-menu-empty', flex: 'dir:top main:center cross:center' } }, [
+          createElement('d2-icon', { props: { name: 'inbox' } }),
+          createElement('span', {}, this.$t('layout.header-aside.menu-side.empty'))
+        ])
+      ] : []
+    ])
   },
   data () {
     return {
@@ -96,4 +86,3 @@ export default {
     }
   }
 }
-</script>
