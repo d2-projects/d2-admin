@@ -45,14 +45,9 @@ export default {
       }, 500)
     },
     // 监听路由 控制侧边栏激活状态
-    '$route': {
-      handler ({ fullPath }) {
-        this.active = fullPath
-        this.$nextTick(() => {
-          if (this.aside.length > 0 && this.$refs.menu) {
-            this.$refs.menu.activeIndex = fullPath
-          }
-        })
+    '$route.fullPath': {
+      handler (value) {
+        this.active = value
       },
       immediate: true
     }
