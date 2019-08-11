@@ -158,6 +158,4 @@ At the same time, you can report your project to us. We will place the excellent
 
 ## License
 
-[MIT](https://github.com/d2-projects/d2-admin/blob/master/LICENSE)
-
-Copyright (c) 2018-present FairyEver
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin?ref=badge_large)
