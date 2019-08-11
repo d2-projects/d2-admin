@@ -1,6 +1,6 @@
 {
   "name": "@d2-admin/filters-dayjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/@d2-admin/filters-dayjs.common.js",
   "scripts": {
     "build": "vue-cli-service build --target lib --name @d2-admin/filters-dayjs --entry src/main.js"
