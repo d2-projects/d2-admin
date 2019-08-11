@@ -23,6 +23,7 @@
 	<a href="https://app.netlify.com/sites/d2-admin/deploys">
 		<img src="https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status"/>
 	</a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin.svg?type=shield"/></a>
 </p>
 
 D2Admin is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
@@ -161,3 +162,6 @@ At the same time, you can report your project to us. We will place the excellent
 [MIT](https://github.com/d2-projects/d2-admin/blob/master/LICENSE)
 
 Copyright (c) 2018-present FairyEver
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin?ref=badge_large)
