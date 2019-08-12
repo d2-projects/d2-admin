@@ -18,7 +18,7 @@ export default {
       ...this.aside.length === 0 && !this.asideCollapse ? [
         createElement('div', { attrs: { class: 'd2-layout-header-aside-menu-empty', flex: 'dir:top main:center cross:center' } }, [
           createElement('d2-icon', { props: { name: 'inbox' } }),
-          createElement('span', {}, this.$t('layout.header-aside.menu-side.empty'))
+          createElement('span', {}, '没有侧栏菜单')
         ])
       ] : []
     ])

@@ -7,8 +7,8 @@
       align="center"
       width="160"/>
     <el-table-column
-      width="120"
-      :label="$t('layout.header-aside.header-theme.list.column.label.preview')">
+      label="预览"
+      width="120">
       <div
         slot-scope="scope"
         class="theme-preview"
@@ -26,13 +26,13 @@
           type="success"
           icon="el-icon-check"
           round>
-          {{ $t('layout.header-aside.header-theme.list.button.is-active') }}
+          已激活
         </el-button>
         <el-button
           v-else
           round
           @click="handleSelectTheme(scope.row.name)">
-          {{ $t('layout.header-aside.header-theme.list.button.select') }}
+          使用
         </el-button>
       </template>
     </el-table-column>

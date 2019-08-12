@@ -34,9 +34,9 @@ export default {
     }),
     tooltipContent () {
       return this.logLength === 0
-        ? this.$t('layout.header-aside.header-log.empty')
-        : `${this.$t('layout.header-aside.header-log.log-length', { length: this.logLength })}${this.logLengthError > 0
-          ? ` | ${this.$t('layout.header-aside.header-log.error-length', { length: this.logLengthError })}`
+        ? '没有日志或异常'
+        : `${this.logLength} 条日志${this.logLengthError > 0
+          ? ` | 包含 ${this.logLengthError} 个异常`
           : ''}`
     }
   },

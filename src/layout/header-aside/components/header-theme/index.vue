@@ -2,8 +2,8 @@
   <div>
     <el-tooltip
       effect="dark"
-      placement="bottom"
-      :content="$t('layout.header-aside.header-theme.tooltip.content')">
+      content="主题"
+      placement="bottom">
       <el-button
         class="d2-ml-0 d2-mr btn-text can-hover"
         type="text"
@@ -14,8 +14,8 @@
       </el-button>
     </el-tooltip>
     <el-dialog
+      title="主题"
       width="600px"
-      :title="$t('layout.header-aside.header-theme.dialog.title')"
       :visible.sync="dialogVisible"
       :append-to-body="true">
       <d2-theme-list style="margin-top: -25px;"/>
