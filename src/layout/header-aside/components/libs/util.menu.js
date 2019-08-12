@@ -10,7 +10,7 @@ export function elMenuItem (createElement, menu) {
     ...menu.iconSvg ? [
       createElement('d2-icon-svg', { props: { name: menu.iconSvg } })
     ] : [],
-    createElement('span', { slot: 'title' }, menu.title || this.$t('layout.header-aside.menu-item.label-default'))
+    createElement('span', { slot: 'title' }, menu.title || '未命名菜单')
   ])
 }
 
@@ -26,7 +26,7 @@ export function elSubmenu (createElement, menu) {
     ...menu.iconSvg ? [
       createElement('d2-icon-svg', { slot: 'title', props: { name: menu.iconSvg } })
     ] : [],
-    createElement('span', { slot: 'title' }, menu.title || this.$t('layout.header-aside.menu-item.label-default')),
+    createElement('span', { slot: 'title' }, menu.title || '未命名菜单'),
     ...menu.children.map((child, childIndex) => (child.children === undefined ? elMenuItem : elSubmenu).call(this, createElement, child))
   ])
 }

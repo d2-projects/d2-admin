@@ -2,45 +2,45 @@
   <div>
     <el-button type="primary" @click="dialogVisible = true" plain round>
       <d2-icon name="question-circle-o" class="d2-mr-5"/>
-      {{ $t('views.system.index.help.button') }}
+      需要帮助吗
     </el-button>
     <el-dialog
-      :title="$t('views.system.index.help.dialog.title')"
+      title="帮助"
       width="600px"
       :visible.sync="dialogVisible"
       :append-to-body="true">
       <div style="margin-top: -25px;">
         <h2 class="d2-mt-0">
-          {{ $t('views.system.index.help.dialog.sub-title.doc') }}
+          这里有一些参考资料
         </h2>
         <el-button-group>
           <el-button @click="$open('https://doc.d2admin.fairyever.com/zh/')">
             <d2-icon name="book" class="d2-mr-5"/>
-            {{ $t('views.system.index.help.dialog.link.text.doc') }}
+            文档
           </el-button>
           <el-button @click="$open('https://github.com/d2-projects/d2-admin/issues?q=is%3Aissue+is%3Aclosed')">
             <d2-icon name="question" class="d2-mr-5"/>
-            {{ $t('views.system.index.help.dialog.link.text.issues') }}
+            历史提问
           </el-button>
           <el-button @click="$open('https://github.com/d2-projects/d2-admin/issues/new/choose')">
             <d2-icon name="plus" class="d2-mr-5"/>
-            {{ $t('views.system.index.help.dialog.link.text.new-issue') }}
+            提交问题
           </el-button>
         </el-button-group>
-        <h2>{{ $t('views.system.index.help.dialog.sub-title.join') }}</h2>
+        <h2>询问其它使用者或作者</h2>
         <el-row :gutter="20">
           <el-col :span="12">
             <img src="./image/qq.png" style="width: 100%;">
             <div class="d2-help--qr-info">
-              {{ $t('views.system.index.help.dialog.join.qq.title') }}<br/>
-              {{ $t('views.system.index.help.dialog.join.qq.sub-title') }}
+              请使用手机 QQ 扫面上方二维码<br/>
+              加入 2000 人用户大群共同交流
             </div>
           </el-col>
           <el-col :span="12">
             <img src="./image/we.png" style="width: 100%;">
             <div class="d2-help--qr-info">
-              {{ $t('views.system.index.help.dialog.join.we.title') }}<br/>
-              {{ $t('views.system.index.help.dialog.join.we.sub-title') }}
+              请使用手机微信扫面上方二维码<br/>
+              添加作者微信好友，邀请加入微信群
             </div>
           </el-col>
         </el-row>
