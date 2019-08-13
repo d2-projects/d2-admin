@@ -1,33 +1,6 @@
-import util from '@/libs/util'
 import router from '@/router'
 import { cloneDeep } from 'lodash'
-
-/**
- * @description 检查路径是否存在 不存在的话初始化
- * @param {Object} param dbName {String} 数据库名称
- * @param {Object} param path {String} 路径
- * @param {Object} param user {Boolean} 区分用户
- * @param {Object} param validator {Function} 数据校验钩子 返回 true 表示验证通过
- * @param {Object} param defaultValue {*} 初始化默认值
- * @returns {String} 可以直接使用的路径
- */
-function pathInit ({
-  dbName = 'database',
-  path = '',
-  user = true,
-  validator = () => true,
-  defaultValue = ''
-}) {
-  const uuid = util.cookies.get('uuid') || 'ghost-uuid'
-  const currentPath = `${dbName}.${user ? `user.${uuid}` : 'public'}${path ? `.${path}` : ''}`
-  const value = util.db.get(currentPath).value()
-  if (!(value !== undefined && validator(value))) {
-    util.db
-      .set(currentPath, defaultValue)
-      .write()
-  }
-  return currentPath
-}
+import { database as getDatabase, dbGet, dbSet } from '@/libs/util.db'
 
 export default {
   namespaced: true,
@@ -35,6 +8,7 @@ export default {
     /**
      * @description 将数据存储到指定位置 | 路径不存在会自动初始化
      * @description 效果类似于取值 dbName.path = value
+     * @param {Object} context context
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param value {*} 需要存储的值
@@ -46,15 +20,12 @@ export default {
       value = '',
       user = false
     }) {
-      util.db.set(pathInit({
-        dbName,
-        path,
-        user
-      }), value).write()
+      dbSet({ dbName, path, value, user })
     },
     /**
      * @description 获取数据
      * @description 效果类似于取值 dbName.path || defaultValue
+     * @param {Object} context context
      * @param {Object} param dbName {String} 数据库名称
      * @param {Object} param path {String} 存储路径
      * @param {Object} param defaultValue {*} 取值失败的默认值
@@ -66,14 +37,7 @@ export default {
       defaultValue = '',
       user = false
     }) {
-      return new Promise(resolve => {
-        resolve(cloneDeep(util.db.get(pathInit({
-          dbName,
-          path,
-          user,
-          defaultValue
-        })).value()))
-      })
+      return dbGet({ dbName, path, defaultValue, user })
     },
     /**
      * @description 获取存储数据库对象
@@ -83,13 +47,9 @@ export default {
     database (context, {
       user = false
     } = {}) {
-      return new Promise(resolve => {
-        resolve(util.db.get(pathInit({
-          dbName: 'database',
-          path: '',
-          user,
-          defaultValue: {}
-        })))
+      return getDatabase({
+        user,
+        defaultValue: {}
       })
     },
     /**
@@ -100,14 +60,10 @@ export default {
     databaseClear (context, {
       user = false
     } = {}) {
-      return new Promise(resolve => {
-        resolve(util.db.get(pathInit({
-          dbName: 'database',
-          path: '',
-          user,
-          validator: () => false,
-          defaultValue: {}
-        })))
+      return getDatabase({
+        user,
+        validator: () => false,
+        defaultValue: {}
       })
     },
     /**
@@ -120,13 +76,10 @@ export default {
       basis = 'fullPath',
       user = false
     } = {}) {
-      return new Promise(resolve => {
-        resolve(util.db.get(pathInit({
-          dbName: 'database',
-          path: `$page.${router.app.$route[basis]}`,
-          user,
-          defaultValue: {}
-        })))
+      return getDatabase({
+        path: `$page.${router.app.$route[basis]}`,
+        user,
+        defaultValue: {}
       })
     },
     /**
@@ -139,14 +92,11 @@ export default {
       basis = 'fullPath',
       user = false
     } = {}) {
-      return new Promise(resolve => {
-        resolve(util.db.get(pathInit({
-          dbName: 'database',
-          path: `$page.${router.app.$route[basis]}`,
-          user,
-          validator: () => false,
-          defaultValue: {}
-        })))
+      return getDatabase({
+        path: `$page.${router.app.$route[basis]}`,
+        user,
+        validator: () => false,
+        defaultValue: {}
       })
     },
     /**
@@ -161,14 +111,11 @@ export default {
       basis = 'fullPath',
       user = false
     }) {
-      return new Promise(resolve => {
-        resolve(util.db.get(pathInit({
-          dbName: 'database',
-          path: `$page.${router.app.$route[basis]}.$data`,
-          user,
-          validator: () => false,
-          defaultValue: cloneDeep(instance.$data)
-        })))
+      return getDatabase({
+        path: `$page.${router.app.$route[basis]}.$data`,
+        user,
+        validator: () => false,
+        defaultValue: cloneDeep(instance.$data)
       })
     },
     /**
@@ -183,13 +130,10 @@ export default {
       basis = 'fullPath',
       user = false
     }) {
-      return new Promise(resolve => {
-        resolve(cloneDeep(util.db.get(pathInit({
-          dbName: 'database',
-          path: `$page.${router.app.$route[basis]}.$data`,
-          user,
-          defaultValue: cloneDeep(instance.$data)
-        })).value()))
+      return dbGet({
+        path: `$page.${router.app.$route[basis]}.$data`,
+        user,
+        defaultValue: cloneDeep(instance.$data)
       })
     },
     /**
@@ -202,14 +146,11 @@ export default {
       basis = 'fullPath',
       user = false
     }) {
-      return new Promise(resolve => {
-        resolve(util.db.get(pathInit({
-          dbName: 'database',
-          path: `$page.${router.app.$route[basis]}.$data`,
-          user,
-          validator: () => false,
-          defaultValue: {}
-        })))
+      return getDatabase({
+        path: `$page.${router.app.$route[basis]}.$data`,
+        user,
+        validator: () => false,
+        defaultValue: {}
       })
     }
   }
