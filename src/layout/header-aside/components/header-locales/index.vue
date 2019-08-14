@@ -2,7 +2,7 @@
   <el-dropdown
     placement="bottom"
     size="small"
-    @command="command => $i18n.locale = command">
+    @command="onChangeLocale">
     <el-button class="d2-mr btn-text can-hover" type="text">
       <d2-icon name="language" style="font-size: 16px;"/>
     </el-button>
@@ -17,3 +17,18 @@
     </el-dropdown-menu>
   </el-dropdown>
 </template>
+
+<script>
+export default {
+  methods: {
+    onChangeLocale (command) {
+      this.$i18n.locale = command
+      this.$notify({
+        title: '提示',
+        dangerouslyUseHTMLString: true,
+        message: `当前语言：${this.$t('_name')} [ ${this.$i18n.locale} ]<br/>仅提供切换功能，没有具体的语言设置`
+      })
+    }
+  }  
+}
+</script>
