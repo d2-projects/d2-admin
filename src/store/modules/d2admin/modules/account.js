@@ -70,9 +70,9 @@ export default {
       // 判断是否需要确认
       if (confirm) {
         commit('d2admin/gray/set', true, { root: true })
-        MessageBox.confirm(i18n.t('public.confirm.special.logout.message'), i18n.t('public.confirm.special.logout.title'), {
-          confirmButtonText: i18n.t('public.confirm.special.logout.button.confirm'),
-          cancelButtonText: i18n.t('public.confirm.special.logout.button.cancel'),
+        MessageBox.confirm('确定要注销当前用户吗', '注销用户', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
           type: 'warning'
         })
           .then(() => {
@@ -82,7 +82,7 @@ export default {
           .catch(() => {
             commit('d2admin/gray/set', false, { root: true })
             Message({
-              message: i18n.t('public.message.special.logout.cancel')
+              message: '取消注销操作'
             })
           })
       } else {
