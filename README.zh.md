@@ -122,8 +122,9 @@
 
 | 名称 | Github / 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
-| d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [预览](http://jaycewu.coding.me/d2-admin-pm) | 基于 d2-admin 的 RBAC 权限管理解决方案 |
+| d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [预览](http://jaycewu.coding.me/d2-admin-pm) | 基于 D2Admin 的 RBAC 权限管理解决方案 |
 | LanBlog | [Github](https://github.com/sinksmell/LanBlog) | [预览](http://47.101.222.133/) | Vue + Beego restful api 开发的懒人博客 |
+| d2-admin-start-kit-plus | [Github](https://github.com/hank-cp/d2-admin-start-kit-plus) | [预览](https://github.com/hank-cp/d2-admin-start-kit-plus) | D2Admin 简化版模块化版本 |
 
 ## 开源后端实现
 
