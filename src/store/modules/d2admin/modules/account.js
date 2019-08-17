@@ -2,7 +2,6 @@ import { Message, MessageBox } from 'element-ui'
 import util from '@/libs/util.js'
 import router from '@/router'
 import { AccountLogin } from '@api/sys.login'
-import i18n from '../../../../i18n'
 
 export default {
   namespaced: true,
