@@ -25,8 +25,6 @@ import VueUeditorWrap from 'vue-ueditor-wrap'
 // [ 可选插件 ] 数据导入导出
 import pluginExport from '@d2-projects/vue-table-export'
 import pluginImport from '@d2-projects/vue-table-import'
-// [ 可选过滤器 ] 日期相关过滤器
-import d2VueFiltersDayjs from '@d2-admin/filters-dayjs'
 
 // 菜单和路由设置
 import router from './router'
@@ -43,7 +41,6 @@ Vue.use(contentmenu)
 Vue.use(vueJsonTreeView)
 Vue.use(pluginExport)
 Vue.use(pluginImport)
-Vue.use(d2VueFiltersDayjs)
 Vue.component('d2-grid-layout', GridLayout)
 Vue.component('d2-grid-item', GridItem)
 Vue.component('SplitPane', SplitPane)
