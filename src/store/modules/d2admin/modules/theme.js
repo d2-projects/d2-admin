@@ -12,7 +12,7 @@ export default {
   getters: {
     /**
      * @description 返回当前的主题信息 不是一个名字 而是当前激活主题的所有数据
-     * @param {Object} state vuex state
+     * @param {Object} state state
      */
     activeSetting (state) {
       return state.list.find(theme => theme.name === state.activeName)
@@ -21,7 +21,6 @@ export default {
   actions: {
     /**
      * @description 激活一个主题
-     * @param {Object} state vuex state
      * @param {String} themeValue 需要激活的主题名称
      */
     set ({ state, commit, dispatch }, themeName) {
@@ -42,8 +41,7 @@ export default {
       })
     },
     /**
-     * @description 从持久化数据加载主题设置
-     * @param {Object} state vuex state
+     * @description 从持久化数据加载主题设置     * @param {Object} context
      */
     load ({ state, commit, dispatch }) {
       return new Promise(async resolve => {
@@ -77,7 +75,7 @@ export default {
   mutations: {
     /**
      * @description 将 vuex 中的主题应用到 dom
-     * @param {Object} state vuex state
+     * @param {Object} state state
      */
     dom (state) {
       document.body.className = `theme-${state.activeName}`

@@ -10,6 +10,7 @@ export default {
   actions: {
     /**
      * @description 将当前的设置应用到 element
+     * @param {Object} context
      * @param {Boolean} refresh 是否在设置之后刷新页面
      */
     apply ({ state, commit }, refresh) {
@@ -21,6 +22,7 @@ export default {
     },
     /**
      * @description 确认已经加载组件尺寸设置 https://github.com/d2-projects/d2-admin/issues/198
+     * @param {Object} context
      */
     isLoaded ({ state }) {
       if (state.value) return Promise.resolve()
@@ -34,7 +36,7 @@ export default {
     },
     /**
      * @description 设置尺寸
-     * @param {Object} state vuex state
+     * @param {Object} context
      * @param {String} size 尺寸
      */
     set ({ state, dispatch }, size) {
@@ -56,7 +58,7 @@ export default {
     },
     /**
      * @description 从持久化数据读取尺寸设置
-     * @param {Object} state vuex state
+     * @param {Object} context
      */
     load ({ state, dispatch }) {
       return new Promise(async resolve => {

@@ -32,9 +32,10 @@ export default {
   actions: {
     /**
      * @description 添加一个日志
+     * @param {Object} context
      * @param {String} param message {String} 信息
      * @param {String} param type {String} 类型
-     * @param {Object} param meta {Object} 附带的信息
+     * @param {Object} payload meta {Object} 附带的信息
      */
     push ({ rootState, commit }, { message, type = 'info', meta }) {
       commit('push', {
@@ -59,7 +60,7 @@ export default {
   mutations: {
     /**
      * @description 添加日志
-     * @param {Object} state vuex state
+     * @param {Object} state state
      * @param {Object} log data
      */
     push (state, log) {
@@ -67,7 +68,7 @@ export default {
     },
     /**
      * @description 清空日志
-     * @param {Object} state vuex state
+     * @param {Object} state state
      */
     clean (state) {
       // store 赋值

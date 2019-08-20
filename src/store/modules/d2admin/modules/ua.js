@@ -9,7 +9,7 @@ export default {
   mutations: {
     /**
      * @description 记录 UA
-     * @param {Object} state vuex state
+     * @param {Object} state state
      */
     get (state) {
       state.data = new UaParser().getResult()

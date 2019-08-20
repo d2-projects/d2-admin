@@ -22,6 +22,7 @@ export default {
   actions: {
     /**
      * @description 确认已经加载多标签页数据 https://github.com/d2-projects/d2-admin/issues/201
+     * @param {Object} context
      */
     isLoaded ({ state }) {
       if (state.value) return Promise.resolve()
@@ -36,7 +37,7 @@ export default {
     /**
      * @class opened
      * @description 从持久化数据载入标签页列表
-     * @param {Object} state vuex state
+     * @param {Object} context
      */
     openedLoad ({ state, commit, dispatch }) {
       return new Promise(async resolve => {
@@ -77,7 +78,7 @@ export default {
     },
     /**
      * 将 opened 属性赋值并持久化 在这之前请先确保已经更新了 state.opened
-     * @param {Object} state vuex state
+     * @param {Object} context
      */
     opend2db ({ state, dispatch }) {
       return new Promise(async resolve => {
@@ -95,8 +96,8 @@ export default {
     /**
      * @class opened
      * @description 更新页面列表上的某一项
-     * @param {Object} state vuex state
-     * @param {Object} param { index, params, query, fullPath } 路由信息
+     * @param {Object} context
+     * @param {Object} payload { index, params, query, fullPath } 路由信息
      */
     openedUpdate ({ state, commit, dispatch }, { index, params, query, fullPath }) {
       return new Promise(async resolve => {
@@ -115,8 +116,8 @@ export default {
     /**
      * @class opened
      * @description 新增一个 tag (打开一个页面)
-     * @param {Object} state vuex state
-     * @param {Object} param new tag info
+     * @param {Object} context
+     * @param {Object} payload new tag info
      */
     add ({ state, commit, dispatch }, { tag, params, query, fullPath }) {
       return new Promise(async resolve => {
@@ -140,8 +141,8 @@ export default {
     /**
      * @class current
      * @description 打开一个新的页面
-     * @param {Object} state vuex state
-     * @param {Object} param 从路由钩子的 to 对象上获取 { name, params, query, fullPath } 路由信息
+     * @param {Object} context
+     * @param {Object} payload 从路由钩子的 to 对象上获取 { name, params, query, fullPath } 路由信息
      */
     open ({ state, commit, dispatch }, { name, params, query, fullPath }) {
       return new Promise(async resolve => {
@@ -183,8 +184,8 @@ export default {
     /**
      * @class opened
      * @description 关闭一个 tag (关闭一个页面)
-     * @param {Object} state vuex state
-     * @param {Object} param { tagName: 要关闭的标签名字 }
+     * @param {Object} context
+     * @param {Object} payload { tagName: 要关闭的标签名字 }
      */
     close ({ state, commit, dispatch }, { tagName }) {
       return new Promise(async resolve => {
@@ -233,8 +234,8 @@ export default {
     /**
      * @class opened
      * @description 关闭当前标签左边的标签
-     * @param {Object} state vuex state
-     * @param {Object} param { pageSelect: 当前选中的tagName }
+     * @param {Object} context
+     * @param {Object} payload { pageSelect: 当前选中的tagName }
      */
     closeLeft ({ state, commit, dispatch }, { pageSelect } = {}) {
       return new Promise(async resolve => {
@@ -262,8 +263,8 @@ export default {
     /**
      * @class opened
      * @description 关闭当前标签右边的标签
-     * @param {Object} state vuex state
-     * @param {Object} param { pageSelect: 当前选中的tagName }
+     * @param {Object} context
+     * @param {Object} payload { pageSelect: 当前选中的tagName }
      */
     closeRight ({ state, commit, dispatch }, { pageSelect } = {}) {
       return new Promise(async resolve => {
@@ -290,8 +291,8 @@ export default {
     /**
      * @class opened
      * @description 关闭当前激活之外的 tag
-     * @param {Object} state vuex state
-     * @param {Object} param { pageSelect: 当前选中的tagName }
+     * @param {Object} context
+     * @param {Object} payload { pageSelect: 当前选中的tagName }
      */
     closeOther ({ state, commit, dispatch }, { pageSelect } = {}) {
       return new Promise(async resolve => {
@@ -323,7 +324,7 @@ export default {
     /**
      * @class opened
      * @description 关闭所有 tag
-     * @param {Object} state vuex state
+     * @param {Object} context
      */
     closeAll ({ state, commit, dispatch }) {
       return new Promise(async resolve => {
@@ -346,14 +347,14 @@ export default {
     /**
      * @class keepAlive
      * @description 从已经打开的页面记录中更新需要缓存的页面记录
-     * @param {Object} state vuex state
+     * @param {Object} state state
      */
     keepAliveRefresh (state) {
       state.keepAlive = state.opened.filter(item => isKeepAlive(item)).map(e => e.name)
     },
     /**
      * @description 删除一个页面的缓存设置
-     * @param {Object} state vuex state
+     * @param {Object} state state
      * @param {String} name name
      */
     keepAliveRemove (state, name) {
@@ -367,7 +368,7 @@ export default {
     },
     /**
      * @description 增加一个页面的缓存设置
-     * @param {Object} state vuex state
+     * @param {Object} state state
      * @param {String} name name
      */
     keepAlivePush (state, name) {
@@ -377,7 +378,7 @@ export default {
     },
     /**
      * @description 清空页面缓存设置
-     * @param {Object} state vuex state
+     * @param {Object} state state
      */
     keepAliveClean (state) {
       state.keepAlive = []
@@ -385,7 +386,7 @@ export default {
     /**
      * @class current
      * @description 设置当前激活的页面 fullPath
-     * @param {Object} state vuex state
+     * @param {Object} state state
      * @param {String} fullPath new fullPath
      */
     currentSet (state, fullPath) {
@@ -394,7 +395,7 @@ export default {
     /**
      * @class pool
      * @description 保存 pool (候选池)
-     * @param {Object} state vuex state
+     * @param {Object} state state
      * @param {Array} routes routes
      */
     init (state, routes) {

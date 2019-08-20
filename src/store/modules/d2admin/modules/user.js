@@ -7,7 +7,7 @@ export default {
   actions: {
     /**
      * @description 设置用户数据
-     * @param {Object} state vuex state
+     * @param {Object} context
      * @param {*} info info
      */
     set ({ state, dispatch }, info) {
@@ -27,7 +27,7 @@ export default {
     },
     /**
      * @description 从数据库取用户数据
-     * @param {Object} state vuex state
+     * @param {Object} context
      */
     load ({ state, dispatch }) {
       return new Promise(async resolve => {

@@ -10,7 +10,7 @@ export default {
   actions: {
     /**
      * @description 设置开启状态
-     * @param {Object} state vuex state
+     * @param {Object} context
      * @param {Boolean} active 新的状态
      */
     set ({ state, dispatch }, active) {
@@ -30,7 +30,7 @@ export default {
     },
     /**
      * 从数据库读取页面过渡动画设置
-     * @param {Object} state vuex state
+     * @param {Object} context
      */
     load ({ state, dispatch }) {
       return new Promise(async resolve => {

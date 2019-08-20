@@ -16,14 +16,14 @@ export default {
   mutations: {
     /**
      * @description 切换激活状态
-     * @param {Object} state vuex state
+     * @param {Object} state state
      */
     toggle (state) {
       state.active = !state.active
     },
     /**
      * @description 设置激活模式
-     * @param {Object} state vuex state
+     * @param {Object} state state
      * @param {Boolean} active active
      */
     set (state, active) {
@@ -31,7 +31,7 @@ export default {
     },
     /**
      * @description 初始化
-     * @param {Object} state vuex state
+     * @param {Object} state state
      * @param {Array} menu menu
      */
     init (state, menu) {
