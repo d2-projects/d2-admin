@@ -9,6 +9,7 @@ export default {
   actions: {
     /**
      * @description 初始化监听
+     * @param {Object} context
      */
     listen ({ commit }) {
       return new Promise(resolve => {
@@ -26,6 +27,7 @@ export default {
     },
     /**
      * @description 切换全屏
+     * @param {Object} context
      */
     toggle ({ commit }) {
       return new Promise(resolve => {
@@ -44,7 +46,7 @@ export default {
   mutations: {
     /**
      * @description 设置 store 里的全屏状态
-     * @param {Object} state vuex state
+     * @param {Object} state state
      * @param {Boolean} active active
      */
     set (state, active) {

@@ -30,7 +30,7 @@ export default {
   actions: {
     /**
      * 设置侧边栏展开或者收缩
-     * @param {Object} state vuex state
+     * @param {Object} context
      * @param {Boolean} collapse is collapse
      */
     asideCollapseSet ({ state, dispatch }, collapse) {
@@ -50,7 +50,7 @@ export default {
     },
     /**
      * 切换侧边栏展开和收缩
-     * @param {Object} state vuex state
+     * @param {Object} context
      */
     asideCollapseToggle ({ state, dispatch }) {
       return new Promise(async resolve => {
@@ -69,7 +69,7 @@ export default {
     },
     /**
      * 从持久化数据读取侧边栏展开或者收缩
-     * @param {Object} state vuex state
+     * @param {Object} context
      */
     asideCollapseLoad ({ state, dispatch }) {
       return new Promise(async resolve => {
@@ -88,7 +88,7 @@ export default {
   mutations: {
     /**
      * @description 设置顶栏菜单
-     * @param {Object} state vuex state
+     * @param {Object} state state
      * @param {Array} menu menu setting
      */
     headerSet (state, menu) {
@@ -97,7 +97,7 @@ export default {
     },
     /**
      * @description 设置侧边栏菜单
-     * @param {Object} state vuex state
+     * @param {Object} state state
      * @param {Array} menu menu setting
      */
     asideSet (state, menu) {

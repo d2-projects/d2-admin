@@ -10,7 +10,7 @@ export default {
   actions: {
     /**
      * @description 设置颜色
-     * @param {Object} state vuex state
+     * @param {Object} context
      * @param {String} color 尺寸
      */
     set ({ state, dispatch, commit }, color) {
@@ -37,7 +37,7 @@ export default {
     },
     /**
      * @description 从持久化数据读取颜色设置
-     * @param {Object} state vuex state
+     * @param {Object} context
      */
     load ({ state, dispatch, commit }) {
       return new Promise(async resolve => {
@@ -63,8 +63,9 @@ export default {
   mutations: {
     /**
      * @description 将 vuex 中的主题颜色设置应用到系统中
-     * @param {Object} state vuex state
-     * @param {Object} payload 设置
+     * @param {Object} context
+     * @param {Object} payload oldColor {String} 旧的颜色
+     * @param {Object} payload newColor {String} 新颜色
      */
     apply (state, { oldColor, newColor }) {
       var options = {
