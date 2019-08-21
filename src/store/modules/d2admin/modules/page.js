@@ -402,7 +402,7 @@ export default {
       const pool = []
       const push = function (routes) {
         routes.forEach(route => {
-          if (route.children) {
+          if (route.children && route.children.length > 0) {
             push(route.children)
           } else {
             if (!route.hidden) {
