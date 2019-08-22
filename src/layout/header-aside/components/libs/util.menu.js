@@ -21,7 +21,7 @@ export function elSubmenu (createElement, menu) {
       createElement('i', { slot: 'title', attrs: { class: `fa fa-${menu.icon}` } })
     ] : [],
     ...menu.icon === undefined & !menu.iconSvg ? [
-      createElement('i', { slot: 'title', attrs: { class: 'fa fa-file-o' } })
+      createElement('i', { slot: 'title', attrs: { class: 'fa fa-folder-o' } })
     ] : [],
     ...menu.iconSvg ? [
       createElement('d2-icon-svg', { slot: 'title', props: { name: menu.iconSvg } })
