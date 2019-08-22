@@ -3,8 +3,18 @@
     <template slot="header">这个页面会被 keep-alive</template>
     <h2 class="d2-mt-0">编号：{{id}}</h2>
     <p class="d2-mt-0">在下面的输入框输入任意字符后，切换到其它页面，再回到此页时输入框文字保留，证明被缓存</p>
-    <el-input v-model="data.value" placeholder="input here" />
-    <input v-model="data.value" placeholder="input here" />
+    <el-row :gutter="10">
+      <el-col :span="12">
+        <p>el-input</p>
+        <el-input v-model="data.value" placeholder="input here" />
+      </el-col>
+      <el-col :span="12">
+        <p>html input</p>
+        <div class="el-input el-input--default">
+          <input v-model="data.value" placeholder="input here" class="el-input__inner" />
+        </div>
+      </el-col>
+    </el-row>
   </d2-container>
 </template>
 
@@ -39,7 +49,6 @@ export default {
   },
   // 第一次进入或从其他组件对应路由进入时触发
   beforeRouteEnter (to, from, next) {
-    console.log('beforeRouteEnter => ', to)
     const id = to.params.id
     if (id) {
       next(instance => instance.switchData(id))
@@ -49,7 +58,6 @@ export default {
   },
   // 在同一组件对应的多个路由间切换时触发
   beforeRouteUpdate (to, from, next) {
-    console.log('beforeRouteUpdate => ', to)
     const id = to.params.id
     if (id) {
       this.switchData(id)
