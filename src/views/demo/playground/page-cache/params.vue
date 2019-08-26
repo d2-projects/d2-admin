@@ -1,8 +1,14 @@
 <template>
   <d2-container type="card">
-    <template slot="header">这个页面会被 keep-alive</template>
-    <h2 class="d2-mt-0">编号：{{id}}</h2>
+    <template slot="header">
+      <el-button
+        size="mini"
+        type="primary">
+        props.id = {{id}}  
+      </el-button>
+    </template>
     <p class="d2-mt-0">在下面的输入框输入任意字符后，切换到其它页面，再回到此页时输入框文字保留，证明被缓存</p>
+    <p>注意：此页面根据不同 params 打开后数据不会混淆</p>
     <el-row :gutter="10">
       <el-col :span="12">
         <p>el-input</p>
