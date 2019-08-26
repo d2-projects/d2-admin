@@ -51,7 +51,7 @@ service.interceptors.request.use(
   error => {
     // 发送失败
     console.log(error)
-    Promise.reject(error)
+    return Promise.reject(error)
   }
 )
 
