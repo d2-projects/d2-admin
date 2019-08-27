@@ -164,6 +164,10 @@ At the same time, you can report your project to us. We will place the excellent
 
 > Total visitor since 2019.08.27
 
+## Star history
+
+[![Stargazers over time](https://starchart.cc/d2-projects/d2-admin.svg)](https://starchart.cc/d2-projects/d2-admin)
+
 ## License
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin?ref=badge_large)

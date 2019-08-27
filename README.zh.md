@@ -176,6 +176,10 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 
 > 自 2019-08-27 起
 
+## Star 历史
+
+[![Stargazers over time](https://starchart.cc/d2-projects/d2-admin.svg)](https://starchart.cc/d2-projects/d2-admin)
+
 ## License
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin?ref=badge_large)
