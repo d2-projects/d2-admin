@@ -149,7 +149,7 @@ Copy the following code into the README to:
 
 At the same time, you can report your project to us. We will place the excellent project in D2Admin and help you publicize it.
 
-## Important Contributor
+## Contributor
 
 * [@FairyEver](https://github.com/FairyEver)
 * [@sunhaoxiang](https://github.com/sunhaoxiang)

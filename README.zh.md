@@ -161,7 +161,7 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 
 ![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
 
-## 重要贡献者
+## 贡献
 
 * [@FairyEver](https://github.com/FairyEver)
 * [@sunhaoxiang](https://github.com/sunhaoxiang)
