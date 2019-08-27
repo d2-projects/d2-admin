@@ -1,19 +1,20 @@
 ![banner](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/banner.png)
 
 <p align="center">
-  <a><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/></a>
-  <a><img src="https://img.shields.io/npm/v/@d2-admin/ice-scaffold.svg"/></a>
-  <a><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/></a>
-  <a><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/></a>
+  <img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/>
+  <img src="https://img.shields.io/npm/v/@d2-admin/ice-scaffold.svg"/>
+  <img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin"/>
+  <img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/>
+  <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/>
 </p>
 
 <p align="center">
-	<a><img src="https://img.shields.io/github/issues/d2-projects/d2-admin.svg"/></a>
-	<a><img src="https://img.shields.io/github/issues-closed/d2-projects/d2-admin.svg"/></a>
-	<a><img src="https://img.shields.io/github/issues-pr/d2-projects/d2-admin.svg"/></a>
-	<a><img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg"/></a>
-	<a><img src="https://img.shields.io/github/forks/d2-projects/d2-admin.svg"/></a>
-	<a><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/></a>
+	<img src="https://img.shields.io/github/issues/d2-projects/d2-admin.svg"/>
+	<img src="https://img.shields.io/github/issues-closed/d2-projects/d2-admin.svg"/>
+	<img src="https://img.shields.io/github/issues-pr/d2-projects/d2-admin.svg"/>
+	<img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg"/>
+	<img src="https://img.shields.io/github/forks/d2-projects/d2-admin.svg"/>
+	<img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/>
 </p>
 
 <p align="center">
@@ -168,6 +169,12 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 * [@han-feng](https://github.com/han-feng)
 * [@rongxingsun](https://github.com/rongxingsun)
 * [@dnyz520](https://github.com/dnyz520)
+
+## 访问统计
+
+![](https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin)
+
+> 自 2019-08-27 起
 
 ## License
 

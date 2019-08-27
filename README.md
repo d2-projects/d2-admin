@@ -1,19 +1,20 @@
 ![banner](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/banner.png)
 
 <p align="center">
-  <a><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/></a>
-  <a><img src="https://img.shields.io/npm/v/@d2-admin/ice-scaffold.svg"/></a>
-  <a><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/></a>
-  <a><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/></a>
+  <img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/>
+  <img src="https://img.shields.io/npm/v/@d2-admin/ice-scaffold.svg"/>
+  <img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin"/>
+  <img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/>
+  <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/>
 </p>
 
 <p align="center">
-	<a><img src="https://img.shields.io/github/issues/d2-projects/d2-admin.svg"/></a>
-	<a><img src="https://img.shields.io/github/issues-closed/d2-projects/d2-admin.svg"/></a>
-	<a><img src="https://img.shields.io/github/issues-pr/d2-projects/d2-admin.svg"/></a>
-	<a><img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg"/></a>
-	<a><img src="https://img.shields.io/github/forks/d2-projects/d2-admin.svg"/></a>
-	<a><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/></a>
+	<img src="https://img.shields.io/github/issues/d2-projects/d2-admin.svg"/>
+	<img src="https://img.shields.io/github/issues-closed/d2-projects/d2-admin.svg"/>
+	<img src="https://img.shields.io/github/issues-pr/d2-projects/d2-admin.svg"/>
+	<img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg"/>
+	<img src="https://img.shields.io/github/forks/d2-projects/d2-admin.svg"/>
+	<img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/>
 </p>
 
 <p align="center">
@@ -156,6 +157,12 @@ At the same time, you can report your project to us. We will place the excellent
 * [@han-feng](https://github.com/han-feng)
 * [@rongxingsun](https://github.com/rongxingsun)
 * [@dnyz520](https://github.com/dnyz520)
+
+## Visitor
+
+![Total visitor](https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin)
+
+> Total visitor since 2019.08.27
 
 ## License
 
