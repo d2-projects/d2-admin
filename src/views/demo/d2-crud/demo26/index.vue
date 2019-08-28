@@ -25,9 +25,10 @@
       <h4>自定义组件 MyTag 代码：</h4>
       <d2-highlight :code="codeComponent"/>
     </el-card>
-    <template slot="footer">
-      <d2-link-btn title="文档" link="https://doc.d2admin.fairyever.com/zh/ecosystem-d2-crud/"/>
-    </template>
+    <d2-link-btn
+      slot="footer"
+      title="文档"
+      link="https://doc.d2admin.fairyever.com/zh/ecosystem-d2-crud/"/>
   </d2-container>
 </template>
 

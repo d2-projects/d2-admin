@@ -4,9 +4,10 @@
     <div class="inner">
       <ve-gauge :data="chartData" v-bind="pubSetting"></ve-gauge>
     </div>
-    <template slot="footer">
-      <d2-link-btn title="更多示例和文档" link="https://v-charts.js.org"/>
-    </template>
+    <d2-link-btn
+      slot="footer"
+      title="更多示例和文档"
+      link="https://v-charts.js.org"/>
   </d2-container>
 </template>
 

@@ -35,9 +35,10 @@
         </div>
       </el-col>
     </el-row>
-    <template slot="footer">
-      <d2-link-btn title="文档" link="http://ustbhuangyi.github.io/better-scroll/doc/zh-hans/"/>
-    </template>
+    <d2-link-btn
+      slot="footer"
+      title="文档"
+      link="http://ustbhuangyi.github.io/better-scroll/doc/zh-hans/"/>
   </d2-container>
 </template>
 

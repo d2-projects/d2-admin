@@ -58,21 +58,20 @@
       :key="i"
       :style="articleStyle"
       long/>
-    <template slot="footer">
-      <el-form
-        :inline="true"
-        size="mini">
-        <el-form-item class="d2-mb-0">
-          <el-button @click="$refs.container.scrollBy(0, 30)">相对滚动 (0, 30) 像素</el-button>
-        </el-form-item>
-        <el-form-item class="d2-mb-0">
-          <el-button @click="$refs.container.scrollTo(0, 100)">滚动到 (0, 100) 像素位置</el-button>
-        </el-form-item>
-        <el-form-item class="d2-mb-0">
-          <el-button @click="$refs.container.scrollTop(100)">滚动到垂直位置 100</el-button>
-        </el-form-item>
-      </el-form>
-    </template>
+    <el-form
+      slot="footer"
+      :inline="true"
+      size="mini">
+      <el-form-item class="d2-mb-0">
+        <el-button @click="$refs.container.scrollBy(0, 30)">相对滚动 (0, 30) 像素</el-button>
+      </el-form-item>
+      <el-form-item class="d2-mb-0">
+        <el-button @click="$refs.container.scrollTo(0, 100)">滚动到 (0, 100) 像素位置</el-button>
+      </el-form-item>
+      <el-form-item class="d2-mb-0">
+        <el-button @click="$refs.container.scrollTop(100)">滚动到垂直位置 100</el-button>
+      </el-form-item>
+    </el-form>
   </d2-container>
 </template>
 

@@ -24,9 +24,12 @@
         尝试激活主题 'err-theme'
       </el-button>
     </div>
-    <template slot="footer">
-      <el-button type="primary" size="small">当前激活主题 {{activeName}}</el-button>
-    </template>
+    <el-button
+      slot="footer"
+      type="primary"
+      size="small">
+      当前激活主题 {{activeName}}
+    </el-button>
   </d2-container>
 </template>
 
