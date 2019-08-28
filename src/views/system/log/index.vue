@@ -56,16 +56,15 @@
         </template>
       </el-table-column>
     </el-table>
-    <template slot="footer">
-      <el-button
-        type="primary"
-        size="mini"
-        :loading="uploading"
-        @click="handleUpload">
-        <d2-icon name="cloud-upload"/>
-        Upload {{log.length}} log data
-      </el-button>
-    </template>
+    <el-button
+      slot="footer"
+      type="primary"
+      size="mini"
+      :loading="uploading"
+      @click="handleUpload">
+      <d2-icon name="cloud-upload"/>
+      Upload {{log.length}} log data
+    </el-button>
   </d2-container>
 </template>
 
