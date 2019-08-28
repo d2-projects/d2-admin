@@ -38,6 +38,7 @@ export default {
     { path: 'log/error', name: `${pre}log-error`, component: _import('demo/playground/log/error'), meta: { ...meta, title: '错误捕捉' } },
     { path: 'log/log', name: `${pre}log-log`, component: _import('demo/playground/log/log'), meta: { ...meta, title: '日志记录' } },
     { path: 'add-routes/routes', name: `${pre}add-routes-routes`, component: _import('demo/playground/add-routes/routes'), meta: { ...meta, title: '添加页面' } },
-    { path: 'env', name: `${pre}env`, component: _import('demo/playground/env'), meta: { ...meta, title: '环境信息' } }
+    { path: 'env', name: `${pre}env`, component: _import('demo/playground/env'), meta: { ...meta, title: '环境信息' } },
+    { path: 'locales', name: `${pre}locales`, component: _import('demo/playground/locales'), meta: { ...meta, title: '国际化' } }
   ])('demo-playground-')
 }
