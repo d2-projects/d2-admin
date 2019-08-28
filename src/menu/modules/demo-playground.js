@@ -105,6 +105,7 @@ export default {
         { path: `${pre}add-routes/routes`, title: '添加页面', icon: 'file-o' }
       ]
     },
-    { path: `${pre}env`, title: '环境信息', icon: 'exclamation-circle' }
+    { path: `${pre}env`, title: '环境信息', icon: 'exclamation-circle' },
+    { path: `${pre}locales`, title: '国际化', icon: 'language' }
   ])('/demo/playground/')
 }
