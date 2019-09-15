@@ -11,8 +11,9 @@ export default {
   render (createElement) {
     return createElement('div', { attrs: { class: 'd2-layout-header-aside-menu-side' } }, [
       createElement('el-menu', {
-        props: { collapse: this.asideCollapse, uniqueOpened: true, defaultActive: this.active },
+        props: { collapse: this.asideCollapse, collapseTransition: false, uniqueOpened: true, defaultActive: this.active },
         ref: 'menu',
+        key: new Date().getTime(),
         on: { select: this.handleMenuSelect }
       }, this.aside.map(menu => (menu.children === undefined ? elMenuItem : elSubmenu).call(this, createElement, menu))),
       ...this.aside.length === 0 && !this.asideCollapse ? [
