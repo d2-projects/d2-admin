@@ -13,7 +13,7 @@ export default {
       createElement('el-menu', {
         props: { collapse: this.asideCollapse, collapseTransition: false, uniqueOpened: true, defaultActive: this.active },
         ref: 'menu',
-        key: new Date().getTime(),
+        key: this.menuKey,
         on: { select: this.handleMenuSelect }
       }, this.aside.map(menu => (menu.children === undefined ? elMenuItem : elSubmenu).call(this, createElement, menu))),
       ...this.aside.length === 0 && !this.asideCollapse ? [
@@ -27,6 +27,7 @@ export default {
   data () {
     return {
       active: '',
+      menuKey: new Date().getTime(),
       asideHeight: 300,
       BS: null
     }
@@ -38,6 +39,9 @@ export default {
     ])
   },
   watch: {
+    aside () {
+      this.menuKey = new Date().getTime()
+    },
     // 折叠和展开菜单的时候销毁 better scroll
     asideCollapse (val) {
       this.scrollDestroy()
