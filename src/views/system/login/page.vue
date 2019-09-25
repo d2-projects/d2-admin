@@ -85,8 +85,7 @@
             <a
               v-for="language in $languages"
               :key="language.value"
-              :command="language.value"
-              @click="$i18n.locale = language.value">
+              @click="onChangeLocale(language.value)">
               {{ language.label }}
             </a>
           </p>
@@ -125,7 +124,11 @@
 <script>
 import dayjs from 'dayjs'
 import { mapActions } from 'vuex'
+import localeMixin from '@/locales/mixin.js'
 export default {
+  mixins: [
+    localeMixin
+  ],
   data () {
     return {
       timeInterval: null,
