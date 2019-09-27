@@ -120,6 +120,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 | d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [Preview](http://jaycewu.coding.me/d2-admin-pm) | RBAC privilege management solution based on D2Admin |
 | LanBlog | [Github](https://github.com/sinksmell/LanBlog) | [Preview](http://47.101.222.133/) | Vue + Beego restful api personal blog system |
 | d2-admin-start-kit-plus | [Github](https://github.com/hank-cp/d2-admin-start-kit-plus) | [Preview](https://github.com/hank-cp/d2-admin-start-kit-plus) | D2Admin Start kit modular version |
+| d2-crud-plus | [Github](https://github.com/greper/d2-crud-plus) | [Preview](http://qiniu.veryreader.com/D2CrudPlusExample/index.html#/index) | Easy development of crud function |
 
 ## Open source backend implementation
 
