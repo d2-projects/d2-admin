@@ -6,11 +6,20 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 import store from '@/store/index'
-
 import util from '@/libs/util.js'
 
 // 路由数据
 import routes from './routes'
+
+// fix vue-router NavigationDuplicated
+const VueRouterPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push (location) {
+  return VueRouterPush.call(this, location).catch(err => err)
+}
+const VueRouterReplace = VueRouter.prototype.replace
+VueRouter.prototype.replace = function replace (location) {
+  return VueRouterReplace.call(this, location).catch(err => err)
+}
 
 Vue.use(VueRouter)
 
