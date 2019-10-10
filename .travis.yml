@@ -16,12 +16,10 @@ script:
   - yarn run build:travis
 
 before_install:
-  - ./qshell account $AK $SK $NAME
+  - ./qshell account $AK $SK
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
 
 after_success:
-  - ./qshell listbucket d2-admin -o cdn-files.txt
-  - ./qshell batchdelete --force d2-admin -i cdn-files.txt
   - ./qshell qupload qiniu-config
   - ./qshell cdnrefresh -dirs cdnrefresh-dirs.txt
