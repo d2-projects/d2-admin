@@ -17,6 +17,6 @@
     <d2-link-btn
       slot="footer"
       title="文档"
-      link="https://fairyever.com/d2-admin/doc//zh/sys-locales/"/>
+      link="https://fairyever.com/d2-admin/doc/zh/sys-locales/"/>
   </d2-container>
 </template>
