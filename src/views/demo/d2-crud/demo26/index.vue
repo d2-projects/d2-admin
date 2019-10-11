@@ -28,7 +28,7 @@
     <d2-link-btn
       slot="footer"
       title="文档"
-      link="https://doc.d2admin.fairyever.com/zh/ecosystem-d2-crud/"/>
+      link="https://fairyever.com/d2-admin/doc//zh/ecosystem-d2-crud/"/>
   </d2-container>
 </template>
 

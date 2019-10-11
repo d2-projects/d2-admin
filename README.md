@@ -32,7 +32,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 
 ## Document
 
-[Document](https://doc.d2admin.fairyever.com)
+[Document](https://fairyever.com/d2-admin/doc/)
 
 ## Preview
 

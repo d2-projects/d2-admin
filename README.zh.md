@@ -32,7 +32,7 @@
 
 ## 文档
 
-[文档](https://doc.d2admin.fairyever.com)
+[文档](https://fairyever.com/d2-admin/doc/)
 
 ## 预览
 
