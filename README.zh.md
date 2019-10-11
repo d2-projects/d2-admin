@@ -36,7 +36,7 @@
 
 ## 预览
 
-* [预览 | 中国](https://d2admin.fairyever.com) 在七牛 CDN 部署
+* [预览 | 中国](https://fairyever.com/d2-admin/preview/) 在七牛 CDN 部署
 * [预览 | 其它国家](https://d2-admin.netlify.com) 在 Netlify CDN 部署
 
 ## 码云仓库
@@ -114,7 +114,7 @@
 | 名称 | Github / 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
 | D2 日报 | [Github](https://github.com/d2-projects/d2-awesome) | [网站](https://awesome.fairyever.com/daily/) | 每天更新设计与技术圈的新闻和资源 |
-| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://d2admin.fairyever.com/#/demo/d2-crud/index) | 表格常用操作封装 |
+| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://fairyever.com/d2-admin/preview/#/demo/d2-crud/index) | 表格常用操作封装 |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
 
 ## 衍生开源项目
