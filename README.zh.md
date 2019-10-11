@@ -2,7 +2,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/>
-  <img src="https://img.shields.io/npm/v/@d2-admin/ice-scaffold.svg"/>
   <img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin"/>
   <img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/>
   <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/>
@@ -111,7 +110,6 @@
 | --- | --- | --- | --- |
 | 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://fairyever.com/d2-admin-start-kit/preview/) | 无 |
 | 人人开源适配 | 应人人开源的要求，暂不公开 | [预览](https://fairyever.com/d2-admin-renren-security-enterprise/preview/) | [人人开源](https://www.renren.io) |
-| 飞冰脚手架 | [飞冰](https://alibaba.github.io/ice/scaffold?type=vue) | [预览](https://ice.d2admin.fairyever.com) | [介绍](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
 ## 生态
 
