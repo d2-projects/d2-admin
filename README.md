@@ -99,7 +99,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 
 | Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://start-kit.d2admin.fairyever.com) |  |
+| Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://fairyever.com/d2-admin-start-kit/preview/) |  |
 | D2 Admin Renren | Private project | [Preview](https://renren.d2admin.fairyever.com) | [renren](https://www.renren.io) |
 | Alibaba Ice scaffold | [Ice](https://alibaba.github.io/ice/scaffold?type=vue) | [Preview](https://ice.d2admin.fairyever.com) | [Introduction](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
