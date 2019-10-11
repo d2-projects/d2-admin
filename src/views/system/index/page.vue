@@ -13,9 +13,6 @@
           <span class="btn-group__btn" @click="$open('https://github.com/d2-projects/d2-admin-start-kit')">
             简化版
           </span> |
-          <span class="btn-group__btn" @click="$open('https://alibaba.github.io/ice/scaffold?type=vue')">
-            飞冰
-          </span> |
           <span class="btn-group__btn" @click="$open('https://juejin.im/user/57a48b632e958a006691b946/posts')">
             掘金
           </span> |

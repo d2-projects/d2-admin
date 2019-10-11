@@ -2,7 +2,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"/>
-  <img src="https://img.shields.io/npm/v/@d2-admin/ice-scaffold.svg"/>
   <img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin"/>
   <img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"/>
   <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/>
@@ -105,7 +104,6 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 | --- | --- | --- | --- |
 | Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://fairyever.com/d2-admin-start-kit/preview/) |  |
 | D2 Admin Renren | Private project | [Preview](https://fairyever.com/d2-admin-renren-security-enterprise/preview/) | [renren](https://www.renren.io) |
-| Alibaba Ice scaffold | [Ice](https://alibaba.github.io/ice/scaffold?type=vue) | [Preview](https://ice.d2admin.fairyever.com) | [Introduction](https://juejin.im/post/5b6349716fb9a04f834669d6) |
 
 ## Ecology
 
