@@ -37,7 +37,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 ## Preview
 
 * [Preview](https://d2-admin.netlify.com) Deployed in Netlify CDN
-* [Preview For Chinese](https://d2admin.fairyever.com) Deployed in qiniu CDN
+* [Preview For Chinese](https://fairyever.com/d2-admin/preview/) Deployed in qiniu CDN
 
 ## Features
 
@@ -108,7 +108,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 | Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
 | D2 Daily | [Github](https://github.com/d2-projects/d2-awesome) | [Site](https://awesome.fairyever.com/daily/) | Update news and resources in the design and technology circles every day |
-| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [Preview](https://d2admin.fairyever.com/#/demo/d2-crud/index) | Table common operation package |
+| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [Preview](https://fairyever.com/d2-admin/preview/#/demo/d2-crud/index) | Table common operation package |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [Preview](https://github.com/d2-projects/d2-ribbons) | Open source project logo library |
 
 ## Derived open source projects
