@@ -7,7 +7,7 @@
           <span class="btn-group__btn" @click="$open('https://github.com/d2-projects')">
             开源组织
           </span> |
-          <span class="btn-group__btn" @click="$open('https://doc.d2admin.fairyever.com/zh/')">
+          <span class="btn-group__btn" @click="$open('https://fairyever.com/d2-admin/doc//zh/')">
             文档
           </span> |
           <span class="btn-group__btn" @click="$open('https://github.com/d2-projects/d2-admin-start-kit')">
