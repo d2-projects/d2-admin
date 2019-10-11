@@ -39,6 +39,10 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 * [Preview](https://d2-admin.netlify.com) Deployed in Netlify CDN
 * [Preview For Chinese](https://fairyever.com/d2-admin/preview/) Deployed in qiniu CDN
 
+## Become a sponsor
+
+[Sponsor me on afdian.net](https://afdian.net/@fairyever)
+
 ## Features
 
 * Build with vue-cli3

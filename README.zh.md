@@ -39,6 +39,10 @@
 * [预览 | 中国](https://fairyever.com/d2-admin/preview/) 在七牛 CDN 部署
 * [预览 | 其它国家](https://d2-admin.netlify.com) 在 Netlify CDN 部署
 
+## 成为赞助者
+
+[在 "爱发电" 上赞助我](https://afdian.net/@fairyever)
+
 ## 码云仓库
 
 [码云](https://gitee.com/fairyever/d2-admin)
