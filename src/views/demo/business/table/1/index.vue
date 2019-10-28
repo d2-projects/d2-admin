@@ -43,7 +43,11 @@ export default {
         title: '分页变化',
         message: `当前第${val.current}页 共${val.total}条 每页${val.size}条`
       })
-      this.page = val
+      this.page = {
+        pageCurrent: val.current,
+        pageSize: val.size,
+        pageTotal: val.total
+      }
       // nextTick 只是为了优化示例中 notify 的显示
       this.$nextTick(() => {
         this.$refs.header.handleFormSubmit()
