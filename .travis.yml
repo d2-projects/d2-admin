@@ -22,4 +22,4 @@ before_install:
 after_success:
   - ./qshell account $AK $SK liyang
   - ./qshell qupload qiniu-config
-  - ./qshell cdnrefresh -dirs cdnrefresh-dirs.txt
+  - ./qshell cdnrefresh --dirs -i cdnrefresh-dirs.txt
