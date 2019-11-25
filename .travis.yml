@@ -16,10 +16,10 @@ script:
   - yarn run build:travis
 
 before_install:
-  - ./qshell account $AK $SK
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
 
 after_success:
+  - ./qshell account $AK $SK liyang
   - ./qshell qupload qiniu-config
   - ./qshell cdnrefresh -dirs cdnrefresh-dirs.txt
