@@ -20,6 +20,6 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
 
 after_success:
-  - ./qshell account $AK $SK liyang
-  - ./qshell qupload qiniu-config
-  - ./qshell cdnrefresh --dirs -i cdnrefresh-dirs.txt
+  - ./deploy/qshell account $AK $SK liyang
+  - ./deploy/qshell qupload ./deploy/upload.conf
+  - ./deploy/qshell cdnrefresh --dirs -i ./deploy/cdnrefresh.txt
