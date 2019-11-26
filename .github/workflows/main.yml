@@ -13,10 +13,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: test
-      run: echo $HOME
+      run: echo $GITHUB_WORKSPACE
     - name: test folder
       run: |
-        cd $HOME
+        cd $GITHUB_WORKSPACE
         ls
     - uses: actions/setup-node@v1
       with:
