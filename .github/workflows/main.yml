@@ -26,6 +26,6 @@ jobs:
         dist=$GITHUB_WORKSPACE/dist
         bucket=fairyever-site
         prefix=d2-admin/preview/
-        ./deploy/qshell qupload2 --src-dir=$dist --bucket=$bucket --key-prefix=$prefix --overwrite=true --rescan-local=true
+        ./deploy/qshell qupload2 --src-dir=$dist --bucket=$bucket --key-prefix=$prefix --overwrite=true --check_exists=true --check_hash=true --check_size=true --rescan-local=true
     - name: refresn CDN
       run: ./deploy/qshell cdnrefresh --dirs -i ./deploy/cdnrefresh.txt
