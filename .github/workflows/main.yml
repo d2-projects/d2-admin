@@ -16,7 +16,7 @@ jobs:
       run: echo ${{ HOME }}
     - name: test folder
       run: |
-        cd ${{ HOME }}
+        cd $HOME
         ls
     - uses: actions/setup-node@v1
       with:
