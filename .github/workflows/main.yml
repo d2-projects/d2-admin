@@ -15,15 +15,17 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - name: Install packages
+    - name: install packages
       run: npm i
-    - name: Build Code
+    - name: build
       run: npm run build:github
-    - name: Deploy to CDN
+    - name: qiniu login
+      run: ./deploy/qshell account ${{ secrets.AK }} ${{ secrets.SK }} liyang
+    - name: qiniu upload
       run: |
         dist=$GITHUB_WORKSPACE/dist
-        prefix=d2-admin/preview/
         bucket=fairyever-site
-        ./deploy/qshell account ${{ secrets.AK }} ${{ secrets.SK }} liyang
+        prefix=d2-admin/preview/
         ./deploy/qshell qupload2 --src-dir=$dist --bucket=$bucket --key-prefix=$prefix --overwrite=true --rescan-local=true
-        ./deploy/qshell cdnrefresh --dirs -i ./deploy/cdnrefresh.txt
+    - name: refresn CDN
+      run: ./deploy/qshell cdnrefresh --dirs -i ./deploy/cdnrefresh.txt
