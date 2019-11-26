@@ -15,9 +15,14 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: Install Yarn
       run: |
-        node
-        1+1
+        curl -o- -L https://yarnpkg.com/install.sh | bash
+        export PATH=$HOME/.yarn/bin:$PATH
+    - name: Build Code
+      run: yarn run build:travis
+    - name: Deploy to CDN
+      run: |
+        ./deploy/qshell account ${{ secrets.AK }} ${{ secrets.SK }} liyang
+        ./deploy/qshell qupload ./deploy/upload.conf
+        ./deploy/qshell cdnrefresh --dirs -i ./deploy/cdnrefresh.txt
