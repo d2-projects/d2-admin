@@ -29,12 +29,9 @@ jobs:
       run: yarn
     - name: Build Code
       run: yarn run build:github
-    - name: test folder
-      run: |
-        cd $GITHUB_WORKSPACE/dist
-        ls
     - name: Deploy to CDN
       run: |
+        dist=$GITHUB_WORKSPACE/dist
         ./deploy/qshell account ${{ secrets.AK }} ${{ secrets.SK }} liyang
-        ./deploy/qshell qupload2 --src-dir=GITHUB_WORKSPACE/dist --bucket=fairyever-site --key-prefix=d2-admin/preview/ --ignore-dir=false --overwrite=true --check-exists=true --check-hash=true --check-size=true --rescan-local=true
+        ./deploy/qshell qupload2 --src-dir=$dist --bucket=fairyever-site --key-prefix=d2-admin/preview/ --ignore-dir=false --overwrite=true --check-exists=true --check-hash=true --check-size=true --rescan-local=true
         ./deploy/qshell cdnrefresh --dirs -i ./deploy/cdnrefresh.txt
