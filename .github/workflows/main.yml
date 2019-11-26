@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: test
-      run: echo ${{ HOME }}
+      run: echo $HOME
     - name: test folder
       run: |
         cd $HOME
