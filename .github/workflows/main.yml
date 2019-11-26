@@ -1,4 +1,4 @@
-name: Deploy
+name: Build and upload to qiniu CDN
 
 on:
   push:
@@ -12,26 +12,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: test
-      run: echo $GITHUB_WORKSPACE
-    - name: test folder
-      run: |
-        cd $GITHUB_WORKSPACE
-        ls
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - name: Install Yarn
-      run: |
-        curl -o- -L https://yarnpkg.com/install.sh | bash
-        export PATH=$HOME/.yarn/bin:$PATH
     - name: Install packages
-      run: yarn
+      run: npm i
     - name: Build Code
-      run: yarn run build:github
+      run: npm run build:github
     - name: Deploy to CDN
       run: |
         dist=$GITHUB_WORKSPACE/dist
+        prefix=d2-admin/preview/
+        bucket=fairyever-site
         ./deploy/qshell account ${{ secrets.AK }} ${{ secrets.SK }} liyang
-        ./deploy/qshell qupload2 --src-dir=$dist --bucket=fairyever-site --key-prefix=d2-admin/preview/ --ignore-dir=false --overwrite=true --check-exists=true --check-hash=true --check-size=true --rescan-local=true
+        ./deploy/qshell qupload2 --src-dir=$dist --bucket=$bucket --key-prefix=$prefix --overwrite=true --rescan-local=true
         ./deploy/qshell cdnrefresh --dirs -i ./deploy/cdnrefresh.txt
