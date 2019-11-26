@@ -22,7 +22,7 @@ jobs:
     - name: Install packages
       run: yarn
     - name: Build Code
-      run: yarn run build:travis
+      run: yarn run build:github
     - name: Deploy to CDN
       run: |
         ./deploy/qshell account ${{ secrets.AK }} ${{ secrets.SK }} liyang

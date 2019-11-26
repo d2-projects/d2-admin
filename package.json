@@ -8,6 +8,7 @@
     "build:netlify": "vue-cli-service build --mode netlify",
     "build:nomock": "vue-cli-service build --mode nomock",
     "build:travis": "vue-cli-service build --mode travis",
+    "build:github": "NODE_OPTIONS=--max_old_space_size=4096 yarn run build:travis",
     "dev": "npm run serve",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "start": "npm run serve",
