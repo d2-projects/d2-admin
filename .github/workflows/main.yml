@@ -23,7 +23,7 @@ jobs:
       run: ./deploy/qshell account ${{ secrets.AK }} ${{ secrets.SK }} liyang
     - name: qiniu upload
       run: |
-        dist=$GITHUB-WORKSPACE/dist
+        dist=$GITHUB_WORKSPACE/dist
         bucket=fairyever-site
         prefix=d2-admin/preview/
         ./deploy/qshell qupload2 --src-dir=$dist --bucket=$bucket --key-prefix=$prefix --overwrite=true --check-exists=true --check-hash=true --check-size=true --rescan-local=true
