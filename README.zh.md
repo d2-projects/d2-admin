@@ -176,6 +176,10 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 * [@rongxingsun](https://github.com/rongxingsun)
 * [@dnyz520](https://github.com/dnyz520)
 
+## 赞助
+
+**cochlea**
+
 ## 访问统计
 
 ![](https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin)
