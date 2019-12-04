@@ -1,0 +1,17 @@
+name: feedback
+
+on: [fork, watch, issues]
+
+jobs:
+  feedback:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: feedback
+      id: feedback
+      uses: d2-projects/repo-email-feedback@v1.3
+      with:
+        repo: ${{ github.repository }}
+        actor: ${{ github.actor }}
+        token: ${{ secrets.GITHUB_TOKEN }}
