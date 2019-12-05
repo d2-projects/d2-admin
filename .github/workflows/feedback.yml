@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: feedback
       id: feedback
-      uses: d2-projects/repo-email-feedback@master
+      uses: d2-projects/repo-email-feedback@v1.0
       with:
         repo: ${{ github.repository }}
         actor: ${{ github.actor }}
