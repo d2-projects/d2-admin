@@ -5,7 +5,7 @@ on:
     types: [started]
 
 jobs:
-  build:
+  bark:
 
     runs-on: ubuntu-latest
 
