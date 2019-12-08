@@ -3,6 +3,7 @@
 </template>
 
 <script>
+// https://github.com/inorganik/CountUp.js
 import { CountUp } from 'countup.js'
 export default {
   name: 'd2-count-up',
@@ -57,14 +58,12 @@ export default {
   methods: {
     init () {
       if (!this.c) {
-        this.c = new CountUp(
-          this.$el,
-          this.start,
-          this.end,
-          this.decimals,
-          this.duration,
-          this.options
-        )
+        this.c = new CountUp(this.$el, this.end, {
+          startVal: this.start,
+          decimalPlaces: this.decimals,
+          duration: this.duration,
+          ...this.options
+        })
         this.c.start(() => {
           this.callback(this.c)
         })
