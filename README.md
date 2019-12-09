@@ -42,6 +42,11 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 
 [Sponsor me on afdian.net](https://afdian.net/@fairyever)
 
+## Other synchronous repositories
+
+* [gitee](https://gitee.com/fairyever/d2-admin)
+* [coding](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git)
+
 ## Features
 
 * Build with vue-cli3

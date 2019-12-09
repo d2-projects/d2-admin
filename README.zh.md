@@ -42,9 +42,10 @@
 
 [在 "爱发电" 上赞助我](https://afdian.net/@fairyever)
 
-## 码云仓库
+## 其它同步仓库
 
-[码云](https://gitee.com/fairyever/d2-admin)
+* [码云](https://gitee.com/fairyever/d2-admin)
+* [coding](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git)
 
 > 如果您在 github 仓库下载很慢，可以尝试使用我们的码云仓库克隆代码
 
