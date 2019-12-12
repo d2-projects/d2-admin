@@ -17,9 +17,6 @@ jobs:
       run: |
         npm install
         npm run build:github
-    - name: Var
-      run: |
-        REMOTE_DIR=/www/${GITHUB_REPOSITORY//*\//}/preview
     - name: Deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:
@@ -29,5 +26,5 @@ jobs:
         METHOD: sftp
         PORT: ${{ secrets.FTP_PORT }}
         LOCAL_DIR: dist
-        REMOTE_DIR: $REMOTE_DIR
+        REMOTE_DIR: /www/d2-admin/preview
         ARGS: --delete --verbose --parallel=100
