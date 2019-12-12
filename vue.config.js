@@ -37,12 +37,55 @@ module.exports = {
     }
   },
   configureWebpack: {
+    // 关闭文件过大提示，利于打包加快速度
+    performance: {
+      hints: 'warning',
+      // 入口起点的最大体积
+      maxEntrypointSize: 50000000,
+      // 生成文件的最大体积
+      maxAssetSize: 30000000,
+      // 只给出 js 文件的性能提示
+      assetFilter: function(assetFilename) {
+        return assetFilename.endsWith('.js');
+      }
+    },
+    // 公共代码抽离和代码分割
     optimization: {
       runtimeChunk: 'single',
+      splitChunks: {
+        cacheGroups: {
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            minSize: 30000,
+            minChunks: 1,
+            chunks: 'initial',
+            priority: 1 // 设置处理的优先级，数值越大越优先处理
+          },
+          commons: {
+            test: /[\\/]src[\\/]common[\\/]/,
+            name: 'commons',
+            minSize: 30000,
+            minChunks: 3,
+            chunks: 'initial',
+            priority: -1,
+            reuseExistingChunk: true // 允许使用已经存在的代码块
+          },
+          styles: {
+            name: 'styles',
+            test: /\.(sa|sc|c)ss$/,
+            chunks: 'all',
+            enforce: true
+          },
+          runtimeChunk: {
+            name: 'manifest'
+          }
+        }
+      },
       minimizer: [
         // 自定义js优化配置，将会覆盖默认配置
         new UglifyJsPlugin({
-          exclude: /\.min\.js$/, // 过滤掉以".min.js"结尾的文件，我们认为这个后缀本身就是已经压缩好的代码，没必要进行二次压缩
+          exclude: /\.min\.js$/, // 过滤掉以 '.min.js' 结尾的文件，我们认为这个后缀本身就是已经压缩好的代码，没必要进行二次压缩
           cache: true,
           parallel: true, // 开启并行压缩，充分利用cpu
           sourceMap: false,
@@ -50,7 +93,9 @@ module.exports = {
           uglifyOptions: {
             compress: {
               unused: true,
-              drop_debugger: true
+              drop_console: true,
+              drop_debugger: true,
+              pure_funcs: ['console.log']
             },
             output: {
               comments: false
