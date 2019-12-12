@@ -15,6 +15,64 @@ process.env.VUE_APP_BUILD_TIME = require('dayjs')().format('YYYY-M-D HH:mm:ss')
 // 基础路径 注意发布之前要先修改这里
 let publicPath = process.env.VUE_APP_PUBLIC_PATH || '/'
 
+const externals = {
+  'vue': 'Vue',
+  'vue-router': 'VueRouter',
+  'vuex': 'Vuex',
+  'axios': 'axios',
+  'element-ui': 'ELEMENT',
+  'js-cookie': 'Cookies',
+  'nprogress': 'NProgress',
+  'vue-i18n': 'VueI18n',
+  'better-scroll': 'BScroll',
+  'mockjs': 'Mock',
+  'dayjs': 'dayjs',
+  'fuse.js': 'Fuse',
+  'ua-parser-js': 'UAParser',
+  'hotkeys-js': 'hotkeys'
+}
+
+// 引入文件的 cdn 链接
+const cdn = {
+  // 开发环境
+  dev: {
+    css: [
+      'https://unpkg.com/element-ui@2.4.4/lib/theme-chalk/index.css',
+      'https://cdn.bootcss.com/nprogress/0.2.0/nprogress.css',
+      'https://unpkg.com/flex.css@1.1.7/dist/flex.css'
+    ],
+    js: [
+
+    ]
+  },
+  // 生产环境
+  build: {
+    css: [
+      'https://unpkg.com/element-ui@2.4.4/lib/theme-chalk/index.css',
+      'https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css',
+      'https://unpkg.com/flex.css@1.1.7/dist/flex.css'
+    ],
+    js: [
+      'https://unpkg.com/vue@2.5.17/dist/vue.min.js',
+      'https://cdn.jsdelivr.net/npm/vue-router@3.0.1/dist/vue-router.min.js',
+      'https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.min.js',
+      'https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js',
+      'https://unpkg.com/element-ui/lib/index.js',
+      'https://cdn.bootcss.com/js-cookie/2.2.0/js.cookie.min.js',
+      'https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js',
+      'https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js',
+      'https://unpkg.com/vue-i18n@7.4.2/dist/vue-i18n.min.js',
+      'https://unpkg.com/better-scroll@1.12.1/dist/bscroll.min.js',
+      'https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js',
+      'https://unpkg.com/mockjs@1.0.1-beta3/dist/mock.js',
+      'https://unpkg.com/dayjs@1.6.7/dayjs.min.js',
+      'https://unpkg.com/fuse.js@3.2.1/dist/fuse.js',
+      'https://cdn.jsdelivr.net/npm/ua-parser-js@0.7.18/dist/ua-parser.min.js',
+      'https://unpkg.com/hotkeys-js@3.3.6/dist/hotkeys.min.js'
+    ]
+  }
+}
+
 module.exports = {
   // 根据你的实际情况更改这里
   publicPath,
@@ -30,20 +88,43 @@ module.exports = {
       }
     }
   },
-  configureWebpack: {
-    plugins: [
-      // gzip
-      new CompressionWebpackPlugin({
-        filename: '[path].gz[query]',
-        test: new RegExp('\\.(js|css|svg|woff|ttf|json|html)$'),
-        threshold: 10240,
-        minRatio: 0.8,
-        deleteOriginalAssets: false
-      })
-    ]
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      return {
+        externals: externals,
+        plugins: [
+          // gzip
+          new CompressionWebpackPlugin({
+            filename: '[path].gz[query]',
+            test: new RegExp('\\.(js|css|svg|woff|ttf|json|html)$'),
+            threshold: 10240,
+            minRatio: 0.8,
+            deleteOriginalAssets: false
+          })
+        ]
+      }
+    } else {
+      return {
+        devServer: {
+          disableHostCheck: true
+        }
+      }
+    }
   },
   // 默认设置: https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js
   chainWebpack: config => {
+    /**
+     * 添加CDN参数到 htmlWebpackPlugin 配置中
+     */
+    config.plugin('html').tap(args => {
+      if (process.env.NODE_ENV === 'production') {
+        args[0].cdn = cdn.build
+      }
+      if (process.env.NODE_ENV === 'development') {
+        args[0].cdn = cdn.dev
+      }
+      return args
+    })
     /**
      * 删除懒加载模块的 prefetch preload，降低带宽压力
      * https://cli.vuejs.org/zh/guide/html-and-static-assets.html#prefetch
