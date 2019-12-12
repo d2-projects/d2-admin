@@ -64,12 +64,10 @@
     "compression-webpack-plugin": "^3.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.2",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "sass": "^1.21.0",
     "sass-loader": "^7.1.0",
     "svg-sprite-loader": "^4.1.6",
     "text-loader": "0.0.1",
-    "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-cli-plugin-i18n": "^0.6.0",
     "vue-template-compiler": "^2.6.10",
     "webpack-theme-color-replacer": "^1.2.15"
