@@ -37,6 +37,11 @@ module.exports = {
     }
   },
   configureWebpack: {
+    externals: {
+      'vue': 'Vue',
+      'vue-router': 'VueRouter',
+      'vuex': 'Vuex'
+    },
     // 关闭文件过大提示，利于打包加快速度
     performance: {
       hints: 'warning',
