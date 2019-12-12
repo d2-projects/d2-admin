@@ -58,7 +58,7 @@ module.exports = {
         // sourcemap不包含列信息
         config => config.devtool('cheap-source-map')
       )
-      // TRAVIS 构建 vue-loader 添加 filename
+      // 预览环境构建 vue-loader 添加 filename
       .when(process.env.VUE_APP_SCOURCE_LINK === 'TRUE',
         VueFilenameInjector(config, {
           propName: process.env.VUE_APP_SOURCE_VIEWER_PROP_NAME
