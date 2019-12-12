@@ -5,15 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>icon.ico">
-    <!-- 使用CDN加速的CSS文件，配置在vue.config.js下 -->
-    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
-    <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="preload" as="style">
-    <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet">
-    <% } %>
-    <!-- 使用CDN加速的JS文件，配置在vue.config.js下 -->
-    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
-    <link href="<%= htmlWebpackPlugin.options.cdn.js[i] %>" rel="preload" as="script">
-    <% } %>
     <title><%= VUE_APP_TITLE %></title>
     <style>
       html, body, #app { height: 100%; margin: 0px; padding: 0px; width: 100%; }
@@ -52,9 +43,5 @@
         </div>
       </div>
     </div>
-    <!-- 使用CDN加速的JS文件，配置在vue.config.js下 -->
-    <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
-    <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
-    <% } %>
   </body>
 </html>
