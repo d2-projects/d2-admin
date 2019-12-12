@@ -1,3 +1,5 @@
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
+
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 
 const ThemeColorReplacer = require('webpack-theme-color-replacer')
@@ -27,6 +29,18 @@ module.exports = {
         data: `@import '~@/assets/style/public.scss';`
       }
     }
+  },
+  configureWebpack: {
+    plugins: [
+      // gzip
+      new CompressionWebpackPlugin({
+        filename: '[path].gz[query]',
+        test: new RegExp('\\.(js|css|svg|woff|ttf|json|html)$'),
+        threshold: 10240,
+        minRatio: 0.8,
+        deleteOriginalAssets: false
+      })
+    ]
   },
   // 默认设置: https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js
   chainWebpack: config => {
@@ -102,6 +116,8 @@ module.exports = {
         .end()
     }
   },
+  // 不输出 map 文件
+  productionSourceMap: false,
   // i18n
   pluginOptions: {
     i18n: {
