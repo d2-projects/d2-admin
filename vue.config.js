@@ -1,5 +1,11 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin')
+
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 
 const ThemeColorReplacer = require('webpack-theme-color-replacer')
@@ -31,7 +37,53 @@ module.exports = {
     }
   },
   configureWebpack: {
+    optimization: {
+      runtimeChunk: 'single',
+      minimizer: [
+        // 自定义js优化配置，将会覆盖默认配置
+        new UglifyJsPlugin({
+          exclude: /\.min\.js$/, // 过滤掉以".min.js"结尾的文件，我们认为这个后缀本身就是已经压缩好的代码，没必要进行二次压缩
+          cache: true,
+          parallel: true, // 开启并行压缩，充分利用cpu
+          sourceMap: false,
+          extractComments: false, // 移除注释
+          uglifyOptions: {
+            compress: {
+              unused: true,
+              drop_debugger: true
+            },
+            output: {
+              comments: false
+            },
+            warnings: false
+          }
+        }),
+        // 用于优化css文件
+        new OptimizeCssAssetsPlugin({
+          assetNameRegExp: /\.css$/g,
+          cssProcessorOptions: {
+            safe: true,
+            autoprefixer: { disable: true }, 
+            mergeLonghand: false,
+            discardComments: {
+              removeAll: true // 移除注释
+            }
+          },
+          canPrint: true
+        })
+      ]
+    },
     plugins: [
+      // runtime 相关的代码嵌入 indexe.html
+      new HtmlWebpackPlugin({
+        title: 'fle-cli',
+        filename: 'index.html',
+        inject: true,
+        chunks: ['runtime', 'app'],
+        chunksSortMode: 'dependency',
+        minify: {/* */}
+      }),
+      new InlineManifestWebpackPlugin('runtime'),
       // gzip
       new CompressionWebpackPlugin({
         filename: '[path].gz[query]',
