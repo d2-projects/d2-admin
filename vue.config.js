@@ -3,9 +3,6 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin')
-
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 
 const ThemeColorReplacer = require('webpack-theme-color-replacer')
@@ -124,16 +121,6 @@ module.exports = {
       ]
     },
     plugins: [
-      // runtime 相关的代码嵌入 indexe.html
-      new HtmlWebpackPlugin({
-        title: 'fle-cli',
-        filename: 'index.html',
-        inject: true,
-        chunks: ['runtime', 'app'],
-        chunksSortMode: 'dependency',
-        minify: {/* */}
-      }),
-      new InlineManifestWebpackPlugin('runtime'),
       // gzip
       new CompressionWebpackPlugin({
         filename: '[path].gz[query]',
