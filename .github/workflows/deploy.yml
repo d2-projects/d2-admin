@@ -1,50 +1,30 @@
-name: Build and upload to qiniu CDN
+name: Deploy
 
 on:
   push:
     branches:
       - master
 
-env:
-  SITE: https://fairyever.com/
-  QINIU_BUCKET: fairyever-site
-  DIST_FOLDER: /dist
-  PATH_SUFFIX: /preview
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - name: Download qshell
-      run: |
-        wget http://devtools.qiniu.com/qshell-linux-x86-v2.4.0.zip
-        unzip qshell-linux-x86-v2.4.0.zip
-        mv qshell-linux-x86-v2.4.0 qshell
-    - name: Install packages
-      run: npm i
     - name: Build
-      run: npm run build:github
-    - name: CDN login
-      run: ./qshell account ${{ secrets.AK }} ${{ secrets.SK }} GITHUB_ACTION
-    - name: CDN upload
       run: |
-        REPO=${GITHUB_REPOSITORY//*\//}
-        REFRESH_URL=$SITE$REPO$PATH_SUFFIX/
-        echo $REFRESH_URL > cdnrefresh.txt
-        ./qshell qupload2\
-         --src-dir=$GITHUB_WORKSPACE$DIST_FOLDER\
-         --bucket=$QINIU_BUCKET\
-         --key-prefix=$REPO$PATH_SUFFIX/\
-         --overwrite=true\
-         --check-exists=true\
-         --check-hash=true\
-         --check-size=true\
-         --rescan-local=true
-    - name: CDN refresh
-      run: ./qshell cdnrefresh --dirs -i ./cdnrefresh.txt
+        npm install
+        npm run build:github
+    - name: Deploy
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      env:
+        FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        METHOD: sftp
+        PORT: ${{ secrets.FTP_PORT }}
+        LOCAL_DIR: dist
+        REMOTE_DIR: /www/${GITHUB_REPOSITORY//*\//}/preview
+        ARGS: --delete --verbose --parallel=100
