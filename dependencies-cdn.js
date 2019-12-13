@@ -51,7 +51,7 @@ module.exports = [
     name: 'element-ui',
     library: 'ELEMENT',
     css: 'https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/theme-chalk/index.css',
-    js: 'https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.min.js'
+    js: 'https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.js'
   },
   {
     name: 'vue-grid-layout',
@@ -60,16 +60,10 @@ module.exports = [
     js: 'https://unpkg.com/vue-grid-layout@2.3.4/dist/vue-grid-layout.umd.min.js'
   },
   {
-    name: 'highlight.js',
-    library: 'hljs',
-    css: 'https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/styles/github.min.css',
-    js: 'https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/lib/index.min.js'
-  },
-  {
     name: 'mockjs',
     library: 'Mock',
     css: '',
-    js: 'https://cdn.jsdelivr.net/npm/mockjs@1.1.0/dist/mock-min.js'
+    js: 'https://cdn.jsdelivr.net/npm/mockjs@1.1.0/dist/mock.min.js'
   },
   {
     name: 'lodash',
@@ -117,6 +111,6 @@ module.exports = [
     name: 'hotkeys-js',
     library: 'hotkeys',
     css: '',
-    js: 'https://cdn.jsdelivr.net/npm/hotkeys-js@3.7.3/dist/hotkeys.min.js'
+    js: 'https://cdn.jsdelivr.net/npm/hotkeys-js@3.7.3/dist/hotkeys.js'
   }
 ]

@@ -8,6 +8,7 @@
 // http://highlightjs.readthedocs.io/en/latest/api.html#configure-options
 import highlight from 'highlight.js'
 import htmlFormat from './libs/htmlFormat'
+import './libs/style.github.css'
 export default {
   name: 'd2-highlight',
   props: {
