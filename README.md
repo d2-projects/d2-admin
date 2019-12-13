@@ -16,13 +16,7 @@
 	<img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/>
 </p>
 
-<p align="center">
-	<a href="https://app.netlify.com/sites/d2-admin/deploys">
-		<img src="https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status"/>
-	</a>
-</p>
-
-D2Admin is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
+D2Admin is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, javascript files loading of local first screen less than 60kb, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
 
 [中文介绍](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md) | **English**
 

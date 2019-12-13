@@ -4,21 +4,10 @@
       <d2-icon-svg class="logo" name="d2-admin"/>
       <template slot="footer">
         <div class="btn-group">
-          <span class="btn-group__btn" @click="$open('https://github.com/d2-projects')">
-            开源组织
-          </span> |
-          <span class="btn-group__btn" @click="$open('https://fairyever.com/d2-admin/doc/zh/')">
-            文档
-          </span> |
-          <span class="btn-group__btn" @click="$open('https://github.com/d2-projects/d2-admin-start-kit')">
-            简化版
-          </span> |
-          <span class="btn-group__btn" @click="$open('https://juejin.im/user/57a48b632e958a006691b946/posts')">
-            掘金
-          </span> |
-          <span class="btn-group__btn" @click="$open('https://daily.fairyever.com')">
-            日报
-          </span> |
+          <span class="btn-group__btn" @click="$open('https://github.com/d2-projects')">开源组织</span> |
+          <span class="btn-group__btn" @click="$open('https://fairyever.com/d2-admin/doc/zh/')">文档</span> |
+          <span class="btn-group__btn" @click="$open('https://github.com/d2-projects/d2-admin-start-kit')">简化版</span> |
+          <span class="btn-group__btn" @click="$open('https://juejin.im/user/57a48b632e958a006691b946/posts')">掘金</span> |
           <el-popover :width="172" trigger="hover">
             <p class="d2-mt-0 d2-mb-10">今日前端</p>
             <img src="./image/qr@2x.png" style="width: 172px;">

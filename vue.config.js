@@ -1,5 +1,4 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
-const productionGzipExtensions = ['js', 'css']
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 const ThemeColorReplacer = require('webpack-theme-color-replacer')
 const forElementUI = require('webpack-theme-color-replacer/forElementUI')
@@ -47,7 +46,7 @@ module.exports = {
         // gzip
         new CompressionWebpackPlugin({
           filename: '[path].gz[query]',
-          test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
+          test: new RegExp('\\.(' + ['js', 'css'].join('|') + ')$'),
           threshold: 10240,
           minRatio: 0.8,
           deleteOriginalAssets: false
@@ -98,9 +97,8 @@ module.exports = {
         changeSelector: forElementUI.changeSelector
       }])
     config
-      // 开发环境
+      // 开发环境 sourcemap 不包含列信息
       .when(process.env.NODE_ENV === 'development',
-        // sourcemap不包含列信息
         config => config.devtool('cheap-source-map')
       )
       // 预览环境构建 vue-loader 添加 filename

@@ -16,13 +16,7 @@
 	<img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"/>
 </p>
 
-<p align="center">
-	<a href="https://app.netlify.com/sites/d2-admin/deploys">
-		<img src="https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status"/>
-	</a>
-</p>
-
-[D2Admin](https://github.com/d2-projects/d2-admin) 是一个完全 **开源免费** 的企业中后台产品前端集成方案，使用最新的前端技术栈，已经做好大部分项目前期准备工作，并且带有大量示例代码，助力管理系统敏捷开发。
+[D2Admin](https://github.com/d2-projects/d2-admin) 是一个完全 **开源免费** 的企业中后台产品前端集成方案，使用最新的前端技术栈，小于 60kb 的本地首屏 js 加载，已经做好大部分项目前期准备工作，并且带有大量示例代码，助力管理系统敏捷开发。
 
 **中文介绍** | [English](https://github.com/d2-projects/d2-admin)
 
