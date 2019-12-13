@@ -77,5 +77,11 @@ module.exports = [
     library: 'VueGridLayout',
     css: '',
     js: 'https://unpkg.com/vue-grid-layout@2.3.4/dist/vue-grid-layout.umd.min.js'
+  },
+  {
+    name: 'highlight.js',
+    library: 'hljs',
+    css: 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/github-gist.min.css',
+    js: 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js'
   }
 ]
