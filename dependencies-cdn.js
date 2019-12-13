@@ -54,12 +54,6 @@ module.exports = [
     js: 'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js'
   },
   {
-    name: 'vue-json-tree-view',
-    library: 'TreeView',
-    css: '',
-    js: 'https://unpkg.com/vue-json-tree-view@2.1.4/dist/vue-json-tree-view.min.js'
-  },
-  {
     name: 'ua-parser-js',
     library: 'UAParser',
     css: '',

@@ -5,6 +5,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import vueJsonTreeView from 'vue-json-tree-view'
+Vue.use(vueJsonTreeView)
 import packJson from '../../../../../package.json'
 export default {
   data () {

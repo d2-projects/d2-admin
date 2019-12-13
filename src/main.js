@@ -7,13 +7,6 @@ import d2Admin from '@/plugin/d2admin'
 // store
 import store from '@/store/index'
 
-// [ 可选组件 ] JSON 树状视图
-import vueJsonTreeView from 'vue-json-tree-view'
-// [ 可选组件 ] 区域划分
-import SplitPane from 'vue-splitpane'
-// [ 可选组件 ] UEditor
-import VueUeditorWrap from 'vue-ueditor-wrap'
-
 // 菜单和路由设置
 import router from './router'
 import { menuHeader, menuAside } from '@/menu'
@@ -21,11 +14,6 @@ import { frameInRoutes } from '@/router/routes'
 
 // 核心插件
 Vue.use(d2Admin)
-
-// 可选插件组件
-Vue.use(vueJsonTreeView)
-Vue.component('SplitPane', SplitPane)
-Vue.component('VueUeditorWrap', VueUeditorWrap)
 
 new Vue({
   router,

@@ -16,6 +16,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import SplitPane from 'vue-splitpane'
+Vue.component('SplitPane', SplitPane)
 export default {
   mounted () {
     // 加载完成后显示提示
