@@ -10,7 +10,6 @@
 <script>
 import marked from 'marked'
 import highlight from 'highlight.js'
-import '../highlight-styles/github-gist.css'
 import bandupan from './plugin/baidupan'
 import 'github-markdown-css'
 import { ComponentsMarkdownBase } from '@api/components.markdown'
