@@ -10,7 +10,8 @@
     "dev": "npm run serve",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "start": "npm run serve",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "analyz": "npm_config_report=true npm run build"
   },
   "dependencies": {
     "@d2-projects/d2-crud": "^2.1.2",
@@ -70,6 +71,7 @@
     "text-loader": "0.0.1",
     "vue-cli-plugin-i18n": "^0.6.0",
     "vue-template-compiler": "^2.6.10",
+    "webpack-bundle-analyzer": "^3.6.0",
     "webpack-theme-color-replacer": "^1.2.15"
   }
 }
