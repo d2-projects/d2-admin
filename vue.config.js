@@ -1,5 +1,7 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
+const productionGzipExtensions = ['js', 'css']
+
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 
 const ThemeColorReplacer = require('webpack-theme-color-replacer')
@@ -35,7 +37,7 @@ module.exports = {
       // gzip
       new CompressionWebpackPlugin({
         filename: '[path].gz[query]',
-        test: new RegExp('\\.(js|css|svg|woff|ttf|json|html)$'),
+        test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
         threshold: 10240,
         minRatio: 0.8,
         deleteOriginalAssets: false
