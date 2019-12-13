@@ -17,6 +17,30 @@ process.env.VUE_APP_BUILD_TIME = require('dayjs')().format('YYYY-M-D HH:mm:ss')
 // 基础路径 注意发布之前要先修改这里
 let publicPath = process.env.VUE_APP_PUBLIC_PATH || '/'
 
+const externals = {
+  'vue': 'Vue',
+  'vue-router': 'VueRouter',
+  'vuex': 'Vuex',
+  '@d2-projects/d2-crud': 'D2Crud',
+  '@d2-projects/vue-table-export': 'VueTableExport',
+  '@d2-projects/vue-table-import': 'VueTableImport'
+}
+
+// 引入文件的 cdn 链接
+const cdn = {
+  css: [
+    'https://unpkg.com/element-ui@2.11.1/lib/theme-chalk/index.css'
+  ],
+  js: [
+    'https://unpkg.com/vue@2.6.10/dist/vue.min.js',
+    'https://cdn.jsdelivr.net/npm/vue-router@3.0.6/dist/vue-router.min.js',
+    'https://cdn.jsdelivr.net/npm/vuex@3.1.1/dist/vuex.min.js',
+    'https://cdn.d2.pub/packages/@d2-projects/d2-crud@2.0.5/d2-crud.js',
+    'https://cdn.d2.pub/packages/@d2-projects/vue-table-export@1.0.1/vue-table-export.js',
+    'https://cdn.d2.pub/packages/@d2-projects/vue-table-import@1.0.0/vue-table-import.js'
+  ]
+}
+
 module.exports = {
   // 根据你的实际情况更改这里
   publicPath,
@@ -32,20 +56,42 @@ module.exports = {
       }
     }
   },
-  configureWebpack: {
-    plugins: [
-      // gzip
-      new CompressionWebpackPlugin({
-        filename: '[path].gz[query]',
-        test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
-        threshold: 10240,
-        minRatio: 0.8,
-        deleteOriginalAssets: false
-      })
-    ]
+  configureWebpack: config => {
+    const configNew = {}
+    if (process.env.NODE_ENV === 'production') {
+      configNew.externals = externals
+      configNew.plugins = [
+        // gzip
+        new CompressionWebpackPlugin({
+          filename: '[path].gz[query]',
+          test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
+          threshold: 10240,
+          minRatio: 0.8,
+          deleteOriginalAssets: false
+        })
+      ]
+    }
+    if (process.env.NODE_ENV === 'development') {
+      // 关闭 host check，方便使用 ngrok 之类的内网转发工具
+      configNew.devServer = {
+        disableHostCheck: true
+      }
+    }
+    return configNew
   },
   // 默认设置: https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js
   chainWebpack: config => {
+    /**
+     * 添加 CDN 参数到 htmlWebpackPlugin 配置中
+     */
+    config.plugin('html').tap(args => {
+      if (process.env.NODE_ENV === 'production') {
+        args[0].cdn = cdn
+      } else {
+        args[0].cdn = []
+      }
+      return args
+    })
     /**
      * 删除懒加载模块的 prefetch preload，降低带宽压力
      * https://cli.vuejs.org/zh/guide/html-and-static-assets.html#prefetch
