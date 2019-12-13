@@ -7,12 +7,8 @@ import d2Admin from '@/plugin/d2admin'
 // store
 import store from '@/store/index'
 
-// [ 可选组件 ] 图表
-import VCharts from 'v-charts'
 // [ 可选组件 ] JSON 树状视图
 import vueJsonTreeView from 'vue-json-tree-view'
-// [ 可选组件 ] 网格布局
-import { GridLayout, GridItem } from 'vue-grid-layout'
 // [ 可选组件 ] 区域划分
 import SplitPane from 'vue-splitpane'
 // [ 可选组件 ] UEditor
@@ -27,10 +23,7 @@ import { frameInRoutes } from '@/router/routes'
 Vue.use(d2Admin)
 
 // 可选插件组件
-Vue.use(VCharts)
 Vue.use(vueJsonTreeView)
-Vue.component('d2-grid-layout', GridLayout)
-Vue.component('d2-grid-item', GridItem)
 Vue.component('SplitPane', SplitPane)
 Vue.component('VueUeditorWrap', VueUeditorWrap)
 

@@ -36,28 +36,10 @@ module.exports = [
     js: 'https://cdn.jsdelivr.net/npm/better-scroll@1.15.2/dist/bscroll.min.js'
   },
   {
-    name: 'echarts',
-    library: 'echarts',
-    css: '',
-    js: 'https://cdn.jsdelivr.net/npm/echarts@4.5.0/dist/echarts.min.js'
-  },
-  {
-    name: 'v-charts',
-    library: 'VeIndex',
-    css: 'https://cdn.jsdelivr.net/npm/v-charts@1.19.0/lib/style.min.css',
-    js: 'https://cdn.jsdelivr.net/npm/v-charts@1.19.0/lib/index.min.js'
-  },
-  {
     name: 'element-ui',
     library: 'ELEMENT',
     css: 'https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/theme-chalk/index.css',
     js: 'https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.js'
-  },
-  {
-    name: 'vue-grid-layout',
-    library: 'VueGridLayout',
-    css: '',
-    js: 'https://unpkg.com/vue-grid-layout@2.3.4/dist/vue-grid-layout.umd.min.js'
   },
   {
     name: 'mockjs',
