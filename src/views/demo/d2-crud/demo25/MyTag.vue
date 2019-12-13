@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import '../install'
 export default {
   props: {
     value: {

@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import '../install'
 import doc from './doc.md'
 import code from './code.js'
 

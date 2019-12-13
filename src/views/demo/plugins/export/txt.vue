@@ -17,6 +17,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import pluginExport from '@d2-projects/vue-table-export'
+Vue.use(pluginExport)
 export default {
   data () {
     return {

@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import '../install'
 import doc from './doc.md'
 import codeOverall from './codeOverall.js'
 import codePart from './codePart.js'

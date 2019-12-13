@@ -9,67 +9,49 @@ module.exports = [
     name: 'vue-i18n',
     library: 'VueI18n',
     css: '',
-    js: 'https://unpkg.com/vue-i18n@8.15.1/dist/vue-i18n.js'
+    js: 'https://cdn.jsdelivr.net/npm/vue-i18n@8.15.1/dist/vue-i18n.js'
   },
   {
     name: 'vue-router',
     library: 'VueRouter',
     css: '',
-    js: 'https://unpkg.com/vue-router@3.0.6/dist/vue-router.js'
+    js: 'https://cdn.jsdelivr.net/npm/vue-router@3.1.3/dist/vue-router.js'
   },
   {
     name: 'vuex',
     library: 'Vuex',
     css: '',
-    js: 'https://unpkg.com/vuex@3.1.1/dist/vuex.js'
-  },
-  {
-    name: '@d2-projects/d2-crud',
-    library: 'D2Crud',
-    css: '',
-    js: 'https://unpkg.com/@d2-projects/d2-crud@2.1.2/dist/d2-crud.js'
-  },
-  {
-    name: '@d2-projects/vue-table-export',
-    library: 'VueTableExport',
-    css: '',
-    js: 'https://unpkg.com/@d2-projects/vue-table-export@1.0.1/dist/vue-table-export.js'
-  },
-  {
-    name: '@d2-projects/vue-table-import',
-    library: 'VueTableImport',
-    css: '',
-    js: 'https://unpkg.com/@d2-projects/vue-table-import@1.0.0/dist/vue-table-import.js'
+    js: 'https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.js'
   },
   {
     name: 'axios',
     library: 'axios',
     css: '',
-    js: 'https://unpkg.com/axios@0.19.0/dist/axios.min.js'
+    js: 'https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js'
   },
   {
     name: 'better-scroll',
     library: 'BScroll',
     css: '',
-    js: 'https://unpkg.com/better-scroll@1.15.2/dist/bscroll.min.js'
+    js: 'https://cdn.jsdelivr.net/npm/better-scroll@1.15.2/dist/bscroll.min.js'
   },
   {
     name: 'echarts',
     library: 'echarts',
     css: '',
-    js: 'https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js'
+    js: 'https://cdn.jsdelivr.net/npm/echarts@4.5.0/dist/echarts.min.js'
   },
   {
     name: 'v-charts',
     library: 'VeIndex',
-    css: 'https://cdn.jsdelivr.net/npm/v-charts/lib/style.min.css',
-    js: 'https://cdn.jsdelivr.net/npm/v-charts/lib/index.min.js'
+    css: 'https://cdn.jsdelivr.net/npm/v-charts@1.19.0/lib/style.min.css',
+    js: 'https://cdn.jsdelivr.net/npm/v-charts@1.19.0/lib/index.min.js'
   },
   {
     name: 'element-ui',
     library: 'ELEMENT',
-    css: 'https://unpkg.com/element-ui@2.13.0/lib/theme-chalk/index.css',
-    js: 'https://unpkg.com/element-ui@2.13.0/lib/index.js'
+    css: 'https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/theme-chalk/index.css',
+    js: 'https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.min.js'
   },
   {
     name: 'vue-grid-layout',
@@ -80,14 +62,14 @@ module.exports = [
   {
     name: 'highlight.js',
     library: 'hljs',
-    css: 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/github-gist.min.css',
-    js: 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js'
+    css: 'https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/styles/github.min.css',
+    js: 'https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/lib/index.min.js'
   },
   {
     name: 'mockjs',
     library: 'Mock',
     css: '',
-    js: 'https://unpkg.com/mockjs@1.1.0/dist/mock.js'
+    js: 'https://cdn.jsdelivr.net/npm/mockjs@1.1.0/dist/mock-min.js'
   },
   {
     name: 'lodash',
@@ -116,8 +98,8 @@ module.exports = [
   {
     name: 'nprogress',
     library: 'NProgress',
-    css: 'https://unpkg.com/nprogress@0.2.0/nprogress.css',
-    js: 'https://unpkg.com/nprogress@0.2.0/nprogress.js'
+    css: 'https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css',
+    js: 'https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js'
   },
   {
     name: 'dayjs',
@@ -129,12 +111,12 @@ module.exports = [
     name: 'fuse.js',
     library: 'Fuse',
     css: '',
-    js: 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js'
+    js: 'https://cdn.jsdelivr.net/npm/fuse.js@3.4.6/dist/fuse.min.js'
   },
   {
     name: 'hotkeys-js',
     library: 'hotkeys',
     css: '',
-    js: 'https://unpkg.com/hotkeys-js@3.7.3/dist/hotkeys.min.js'
+    js: 'https://cdn.jsdelivr.net/npm/hotkeys-js@3.7.3/dist/hotkeys.min.js'
   }
 ]
