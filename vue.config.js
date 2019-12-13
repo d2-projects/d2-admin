@@ -3,7 +3,7 @@ const productionGzipExtensions = ['js', 'css']
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 const ThemeColorReplacer = require('webpack-theme-color-replacer')
 const forElementUI = require('webpack-theme-color-replacer/forElementUI')
-const dependencies = require('./dependencies')
+const cdnDependencies = require('./dependencies-cdn')
 
 // 拼接路径
 const resolve = dir => require('path').join(__dirname, dir)
@@ -16,12 +16,12 @@ process.env.VUE_APP_BUILD_TIME = require('dayjs')().format('YYYY-M-D HH:mm:ss')
 let publicPath = process.env.VUE_APP_PUBLIC_PATH || '/'
 
 let externals = {}
-dependencies.forEach(package => { externals[package.name] = package.library })
+cdnDependencies.forEach(package => { externals[package.name] = package.library })
 
 // 引入文件的 cdn 链接
 const cdn = {
-  css: dependencies.map(e => e.css).filter(e => e),
-  js: dependencies.map(e => e.js).filter(e => e)
+  css: cdnDependencies.map(e => e.css).filter(e => e),
+  js: cdnDependencies.map(e => e.js).filter(e => e)
 }
 
 module.exports = {

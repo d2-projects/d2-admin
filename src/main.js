@@ -11,9 +11,6 @@ import store from '@/store/index'
 import D2Crud from '@d2-projects/d2-crud'
 // [ 可选组件 ] 图表
 import VCharts from 'v-charts'
-// [ 可选组件 ] 右键菜单
-import contentmenu from 'v-contextmenu'
-import 'v-contextmenu/dist/index.css'
 // [ 可选组件 ] JSON 树状视图
 import vueJsonTreeView from 'vue-json-tree-view'
 // [ 可选组件 ] 网格布局
@@ -37,7 +34,6 @@ Vue.use(d2Admin)
 // 可选插件组件
 Vue.use(D2Crud)
 Vue.use(VCharts)
-Vue.use(contentmenu)
 Vue.use(vueJsonTreeView)
 Vue.use(pluginExport)
 Vue.use(pluginImport)

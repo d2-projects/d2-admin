@@ -27,19 +27,19 @@ module.exports = [
     name: '@d2-projects/d2-crud',
     library: 'D2Crud',
     css: '',
-    js: 'https://cdn.d2.pub/packages/@d2-projects/d2-crud@2.0.5/d2-crud.js'
+    js: 'https://unpkg.com/@d2-projects/d2-crud@2.1.2/dist/d2-crud.js'
   },
   {
     name: '@d2-projects/vue-table-export',
     library: 'VueTableExport',
     css: '',
-    js: 'https://cdn.d2.pub/packages/@d2-projects/vue-table-export@1.0.1/vue-table-export.js'
+    js: 'https://unpkg.com/@d2-projects/vue-table-export@1.0.1/dist/vue-table-export.js'
   },
   {
     name: '@d2-projects/vue-table-import',
     library: 'VueTableImport',
     css: '',
-    js: 'https://cdn.d2.pub/packages/@d2-projects/vue-table-import@1.0.0/vue-table-import.js'
+    js: 'https://unpkg.com/@d2-projects/vue-table-import@1.0.0/dist/vue-table-import.js'
   },
   {
     name: 'axios',
@@ -70,13 +70,6 @@ module.exports = [
     library: 'ELEMENT',
     css: 'https://unpkg.com/element-ui@2.13.0/lib/theme-chalk/index.css',
     js: 'https://unpkg.com/element-ui@2.13.0/lib/index.js'
-  },
-  // https://github.com/heynext/v-contextmenu/pull/72/commits
-  {
-    name: 'v-contextmenu',
-    library: 'VContextmenu',
-    css: 'https://unpkg.com/v-contextmenu/dist/index.css',
-    js: 'https://unpkg.com/v-contextmenu/dist/index.js'
   },
   {
     name: 'vue-grid-layout',

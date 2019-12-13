@@ -82,19 +82,6 @@ export default {
         { path: `${pre}markdown/url`, title: '异步加载文件' }
       ]
     },
-    {
-      path: `${pre}contextmenu`,
-      title: '右键菜单',
-      icon: 'mouse-pointer',
-      children: [
-        { path: `${pre}contextmenu/simple`, title: '基础' },
-        { path: `${pre}contextmenu/divier`, title: '分割线' },
-        { path: `${pre}contextmenu/group`, title: '按钮组' },
-        { path: `${pre}contextmenu/submenu`, title: '子菜单' },
-        { path: `${pre}contextmenu/disabled`, title: '禁用' },
-        { path: `${pre}contextmenu/custom-trigger`, title: '自定义事件' }
-      ]
-    },
     { path: `${pre}countup`, title: '数字动画', icon: 'motorcycle' },
     { path: `${pre}highlight`, title: '代码高亮显示', icon: 'code' },
     { path: `${pre}json-tree`, title: 'JSON 展示', icon: 'sitemap' }
