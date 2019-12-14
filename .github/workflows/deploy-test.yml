@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  REPO: ${{ GITHUB_REPOSITORY//*\// }}
+  REPO: ${{ $GITHUB_REPOSITORY//*\// }}
 
 jobs:
   build:
