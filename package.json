@@ -8,6 +8,7 @@
     "build:nomock": "vue-cli-service build --mode nomock",
     "build:preview": "NODE_OPTIONS=--max_old_space_size=4096 vue-cli-service build --mode preview",
     "build:github": "NODE_OPTIONS=--max_old_space_size=4096 vue-cli-service build --mode github",
+    "build:netlify": "NODE_OPTIONS=--max_old_space_size=4096 vue-cli-service build --mode netlify",
     "dev": "npm run serve",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "start": "npm run serve",
