@@ -1,4 +1,4 @@
-name: feedback
+name: Feedback
 on: [fork, watch, issues]
 jobs:
   feedback:

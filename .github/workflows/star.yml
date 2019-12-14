@@ -1,4 +1,4 @@
-name: Send message on star
+name: Star notice
 
 on:
   watch:
