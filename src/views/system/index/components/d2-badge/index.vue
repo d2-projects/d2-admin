@@ -31,7 +31,7 @@ export default {
         [
           { img: 'https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin', link: linkD2Admin },
           { img: 'https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin', link: linkD2Admin },
-          { img: 'https://img.shields.io/github/release/d2-projects/d2-admin.svg', link: linkD2Admin }
+          { img: 'https://img.shields.io/github/release/d2-projects/d2-admin.svg', link: `${linkD2Admin}/releases` }
         ]
       ]
     }

@@ -20,7 +20,7 @@
 		<img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg">
 	</a>
 </p>
-	<p align="center">
+<p align="center">
 	<a href="https://github.com/d2-projects/d2-admin" target="_blank">
 		<img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg">
 	</a>
@@ -31,14 +31,14 @@
 		<img src="https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg">
 	</a>
 </p>
-	<p align="center">
+<p align="center">
 	<a href="https://github.com/d2-projects/d2-admin" target="_blank">
 		<img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin">
 	</a>
 	<a href="https://github.com/d2-projects/d2-admin" target="_blank">
 		<img src="https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin">
 	</a>
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank">
+	<a href="https://github.com/d2-projects/d2-admin/releases" target="_blank">
 		<img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg">
 	</a>
 </p>
@@ -53,8 +53,8 @@
 
 ## 预览
 
-* [预览 | 中国](https://fairyever.com/d2-admin/preview/) 在七牛 CDN 部署
-* [预览 | 其它国家](https://d2-admin.netlify.com) 在 Netlify CDN 部署
+* [https://d2.pub/d2-admin/preview/](https://d2.pub/d2-admin/preview/)
+* [https://d2-projects.github.io/d2-admin/](https://d2-projects.github.io/d2-admin/)
 
 ## 成为赞助者
 
