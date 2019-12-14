@@ -29,6 +29,6 @@ jobs:
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         METHOD: sftp
         PORT: ${{ secrets.FTP_PORT }}
-        LOCAL_DIR: $LOCAL_DIR
-        REMOTE_DIR: $REMOTE_DIR
+        LOCAL_DIR: ${{ $LOCAL_DIR }}
+        REMOTE_DIR: ${{ $REMOTE_DIR }}
         ARGS: --delete --verbose --parallel=100
