@@ -32,11 +32,9 @@ jobs:
       run: npm run build:preview
     - name: CDN login
       run: ./qshell account ${{ secrets.AK }} ${{ secrets.SK }} GITHUB_ACTION
-    - name: Set variable
-      run: |
-        REPO=${GITHUB_REPOSITORY//*\//}
     - name: CDN upload
       run: |
+        REPO=${GITHUB_REPOSITORY//*\//}
         echo $SITE > cdnrefresh.txt
         ./qshell qupload2 \
         --src-dir=$GITHUB_WORKSPACE$DIST_FOLDER \
@@ -47,8 +45,10 @@ jobs:
         --check-hash=true \
         --check-size=true \
         --rescan-local=true \
-        --thread-count=32
+        --thread-count=1024
     - name: CDN refresh
       run: ./qshell cdnrefresh --dirs -i ./cdnrefresh.txt
     - name: Notice
-      run: curl https://api.day.app/EweNWLE36rvVR8EFfWGq7k/$REPO/${GITHUB_WORKFLOW}%20Done
+      run: |
+        REPO=${GITHUB_REPOSITORY//*\//}
+        curl https://api.day.app/EweNWLE36rvVR8EFfWGq7k/$REPO/${GITHUB_WORKFLOW}%20Done
