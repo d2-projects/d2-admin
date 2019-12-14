@@ -35,7 +35,7 @@ jobs:
     - name: CDN upload
       run: |
         REPO=${GITHUB_REPOSITORY//*\//}
-        REFRESH_URL=$SITE$REPO$PATH_SUFFIX/
+        REFRESH_URL=$SITE
         echo $REFRESH_URL > cdnrefresh.txt
         ./qshell qupload2\
         --src-dir=$GITHUB_WORKSPACE$DIST_FOLDER\
