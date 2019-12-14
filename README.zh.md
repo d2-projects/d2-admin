@@ -17,7 +17,7 @@
 
 [D2Admin](https://github.com/d2-projects/d2-admin) 是一个完全 **开源免费** 的企业中后台产品前端集成方案，使用最新的前端技术栈，小于 60kb 的本地首屏 js 加载，已经做好大部分项目前期准备工作，并且带有大量示例代码，助力管理系统敏捷开发。
 
-**中文介绍** | [English](https://github.com/d2-projects/d2-admin)
+**中文** | [English](https://github.com/d2-projects/d2-admin)
 
 ## 文档
 
@@ -38,8 +38,10 @@
 
 ## 其它同步仓库
 
-* [码云](https://gitee.com/fairyever/d2-admin)
-* [coding](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git)
+| 位置 | 链接 |
+| --- | --- | --- |
+| 码云 | [https://gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin) |
+| coding | [https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git) |
 
 > 如果您在 github 仓库下载很慢，可以尝试使用我们的码云仓库克隆代码
 
@@ -98,6 +100,9 @@
 * 页面载入进度条 `1.4.1 +`
 * 自适应的顶部菜单栏 `1.4.7 +`
 * 数据导出 xslx 时支持合并单元格 `1.5.4 +`
+* 多标签页支持拖拽排序 `1.8.0 +`
+* 优化生产环境构建，首页只加载小于 60kb 的本地 js 代码 `1.8.0 +`
+* 内置了构建文件体积检查工具 `1.8.0 +`
 
 ## 其它版本
 

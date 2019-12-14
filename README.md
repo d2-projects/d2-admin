@@ -17,7 +17,7 @@
 
 D2Admin is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, javascript files loading of local first screen less than 60kb, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
 
-[中文介绍](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md) | **English**
+[中文](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md) | **English**
 
 ## Document
 
@@ -38,8 +38,10 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 
 ## Other synchronous repositories
 
-* [gitee](https://gitee.com/fairyever/d2-admin)
-* [coding](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git)
+| type | link |
+| --- | --- | --- |
+| gitee | [https://gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin) |
+| coding | [https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git) |
 
 ## Features
 
@@ -96,6 +98,9 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 * Page loading progress bar `1.4.1 +`
 * Adaptive top menu bar `1.4.7 +`
 * Support for merging cells when exporting xslx `1.5.4 +`
+* Multiple tabs support drag and drop sorting `1.8.0 +`
+* Optimize the construction of production environment, load only local JavaScript code less than 60kb on the homepage `1.8.0 +`
+* Built in build file volume checking tool `1.8.0 +`
 
 ## Other version
 
