@@ -48,7 +48,3 @@ jobs:
         --thread-count=1024
     - name: CDN refresh
       run: ./qshell cdnrefresh --dirs -i ./cdnrefresh.txt
-    - name: Notice
-      run: |
-        REPO=${GITHUB_REPOSITORY//*\//}
-        curl https://api.day.app/EweNWLE36rvVR8EFfWGq7k/$REPO/${GITHUB_WORKFLOW}%20Done
