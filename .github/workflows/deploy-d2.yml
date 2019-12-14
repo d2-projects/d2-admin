@@ -8,9 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      LOCAL_DIR: dist
-      REMOTE_DIR: /www/d2-admin/preview
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
@@ -28,6 +25,6 @@ jobs:
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         METHOD: sftp
         PORT: ${{ secrets.FTP_PORT }}
-        LOCAL_DIR: ${{ LOCAL_DIR }}
-        REMOTE_DIR: ${{ REMOTE_DIR }}
+        LOCAL_DIR: dist
+        REMOTE_DIR: /www/d2-admin/preview
         ARGS: --delete --verbose --parallel=100

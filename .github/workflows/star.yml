@@ -1,0 +1,17 @@
+name: Star notice
+
+on:
+  watch:
+    types: [started]
+
+jobs:
+  bark:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: send bark message
+      run: |
+        repo=${GITHUB_REPOSITORY//\//:}
+        actor=$GITHUB_ACTOR
+        curl https://api.day.app/EweNWLE36rvVR8EFfWGq7k/$actor%20star%20了你的仓库/$repo
