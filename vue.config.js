@@ -35,7 +35,7 @@ module.exports = {
     loaderOptions: {
       // 设置 scss 公用变量文件
       sass: {
-        data: `@import '~@/assets/style/public.scss';`
+        prependData: `@import '~@/assets/style/public.scss';`
       }
     }
   },

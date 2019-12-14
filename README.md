@@ -19,29 +19,18 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 
 [中文](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md) | **English**
 
+## Preview
+
+| server | link | server | status |
+| --- | --- | --- | --- |
+| d2.pub | [d2.pub/d2-admin/preview](https://d2.pub/d2-admin/preview) | China server | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fd2.pub%22) |
+| cdn.d2.pub | [cdn.d2.pub/d2-admin/preview](https://cdn.d2.pub/d2-admin/preview) | qiniu CDN | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20cdn/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+cdn%22) |
+| github | [d2-projects.github.io/d2-admin](https://d2-projects.github.io/d2-admin) | GitHub pages | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+Github%22) |
+| netlify | [d2-admin.netlify.com](https://d2-admin.netlify.com) | Netlify CDN | [![](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys) |
+
 ## Document
 
 [Document](https://fairyever.com/d2-admin/doc/)
-
-## Preview
-
-| server | link | info | status |
-| --- | --- | --- | --- |
-| d2.pub | [d2.pub](https://d2.pub/d2-admin/preview/) | China server | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fd2.pub%22) |
-| cdn.d2.pub | [cdn.d2.pub](https://cdn.d2.pub/d2-admin/preview/) | Using qiniu CDN whole station | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20cdn/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+cdn%22) |
-| github | [d2-projects.github.io](https://d2-projects.github.io/d2-admin/) | Deploy on GitHub pages | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+Github%22) |
-| netlify | [netlify.com](https://d2-admin.netlify.com/) | Deploy on Netlify CDN | [![](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys) |
-
-## Become a sponsor
-
-[Sponsor me on afdian.net](https://afdian.net/@fairyever)
-
-## Other synchronous repositories
-
-| type | link |
-| --- | --- |
-| gitee | [https://gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin) |
-| coding | [https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git) |
 
 ## Features
 
@@ -102,12 +91,19 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 * Optimize the construction of production environment, load only local JavaScript code less than 60kb on the homepage `1.8.0 +`
 * Built in build file volume checking tool `1.8.0 +`
 
+## Other synchronous repositories
+
+| type | link |
+| --- | --- |
+| gitee | [https://gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin) |
+| coding | [https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git) |
+
 ## Other version
 
 | Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://fairyever.com/d2-admin-start-kit/preview/) |  |
-| D2 Admin Renren | Private project | [Preview](https://fairyever.com/d2-admin-renren-security-enterprise/preview/) | [renren](https://www.renren.io) |
+| Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://fairyever.com/d2-admin-start-kit/preview) |  |
+| D2 Admin Renren | Private project | [Preview](https://fairyever.com/d2-admin-renren-security-enterprise/preview) | [renren](https://www.renren.io) |
 
 ## Ecology
 
@@ -161,9 +157,14 @@ At the same time, you can report your project to us. We will place the excellent
 * [@FairyEver](https://github.com/FairyEver)
 * [@sunhaoxiang](https://github.com/sunhaoxiang)
 * [@Aysnine](https://github.com/Aysnine)
+* [@luchaohai](https://github.com/luchaohai)
 * [@han-feng](https://github.com/han-feng)
 * [@rongxingsun](https://github.com/rongxingsun)
 * [@dnyz520](https://github.com/dnyz520)
+
+## Become a sponsor
+
+[Sponsor me on afdian.net](https://afdian.net/@fairyever)
 
 ## Sponsor
 

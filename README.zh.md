@@ -19,31 +19,18 @@
 
 **中文** | [English](https://github.com/d2-projects/d2-admin)
 
+## 预览
+
+| 位置 | 链接 | 部署位置 | 状态 |
+| --- | --- | --- | --- |
+| d2.pub | [d2.pub/d2-admin/preview](https://d2.pub/d2-admin/preview) | 中国服务器 | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fd2.pub%22) |
+| cdn.d2.pub | [cdn.d2.pub/d2-admin/preview](https://cdn.d2.pub/d2-admin/preview) | 七牛云 CDN | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20cdn/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+cdn%22) |
+| github | [d2-projects.github.io/d2-admin](https://d2-projects.github.io/d2-admin) | GitHub pages | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+Github%22) |
+| netlify | [d2-admin.netlify.com](https://d2-admin.netlify.com) | Netlify CDN | [![](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys) |
+
 ## 文档
 
 [文档](https://fairyever.com/d2-admin/doc/)
-
-## 预览
-
-| 位置 | 链接 | 介绍 | 状态 |
-| --- | --- | --- | --- |
-| d2.pub | [d2.pub](https://d2.pub/d2-admin/preview/) | 中国服务器，部分 CDN 依赖 | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fd2.pub%22) |
-| cdn.d2.pub | [cdn.d2.pub](https://cdn.d2.pub/d2-admin/preview/) | 全站七牛云 CDN | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20cdn/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+cdn%22) |
-| github | [d2-projects.github.io](https://d2-projects.github.io/d2-admin/) | 部署在 GitHub pages | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+Github%22) |
-| netlify | [netlify.com](https://d2-admin.netlify.com/) | 部署在 Netlify CDN | [![](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys) |
-
-## 成为赞助者
-
-[在 "爱发电" 上赞助我](https://afdian.net/@fairyever)
-
-## 其它同步仓库
-
-| 位置 | 链接 |
-| --- | --- |
-| 码云 | [https://gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin) |
-| coding | [https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git) |
-
-> 如果您在 github 仓库下载很慢，可以尝试使用我们的码云仓库克隆代码
 
 ## 功能
 
@@ -104,12 +91,21 @@
 * 优化生产环境构建，首页只加载小于 60kb 的本地 js 代码 `1.8.0 +`
 * 内置了构建文件体积检查工具 `1.8.0 +`
 
+## 其它同步仓库
+
+| 位置 | 链接 |
+| --- | --- |
+| 码云 | [https://gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin) |
+| coding | [https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git) |
+
+> 如果您在 github 仓库下载很慢，可以尝试使用我们的码云仓库克隆代码
+
 ## 其它版本
 
 | 名称 | Github / 主页  | 预览 | 介绍 |
 | --- | --- | --- | --- |
-| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://fairyever.com/d2-admin-start-kit/preview/) | 无 |
-| 人人开源适配 | 应人人开源的要求，暂不公开 | [预览](https://fairyever.com/d2-admin-renren-security-enterprise/preview/) | [人人开源](https://www.renren.io) |
+| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://fairyever.com/d2-admin-start-kit/preview) | 无 |
+| 人人开源适配 | 应人人开源的要求，暂不公开 | [预览](https://fairyever.com/d2-admin-renren-security-enterprise/preview) | [人人开源](https://www.renren.io) |
 
 ## 生态
 
@@ -142,6 +138,15 @@
 | Aooms | Spring Cloud | [码云](https://gitee.com/cyb-javaer/Aooms) | [预览](https://www.yuboon.com/Aooms) | 极速微服务开发，不止像JFinal一样简单 |
 | GOA | Beego | [Github](https://github.com/Qsnh/goa) | [预览](http://goaio.vip/) | 基于 Beego + Vue 开发的在线问答系统 |
 
+## 加入我们
+
+D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行管理系统开发，同时也提供 QQ 交流群和微信群，前后端的朋友可以相互答疑，项目组成员全部在内，所有 D2 相关项目使用问题欢迎在群内提问。
+
+* QQ 1 群 `806395827` ( 2000 人已满 )
+* QQ 2 群 `592981556`
+
+![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
+
 ## 徽章
 
 如果您的开源项目基于 D2Admin 开发，请在您的 README 添加下面的徽章：
@@ -158,23 +163,19 @@
 
 同时您可以将您的项目汇报给我们，优秀项目我们会放置在 D2Admin 相关位置并帮助您宣传。
 
-## 加入我们
-
-D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行管理系统开发，同时也提供 QQ 交流群和微信群，前后端的朋友可以相互答疑，项目组成员全部在内，所有 D2 相关项目使用问题欢迎在群内提问。
-
-* QQ 1 群 `806395827` ( 2000 人已满 )
-* QQ 2 群 `592981556`
-
-![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
-
 ## 贡献
 
 * [@FairyEver](https://github.com/FairyEver)
 * [@sunhaoxiang](https://github.com/sunhaoxiang)
 * [@Aysnine](https://github.com/Aysnine)
+* [@luchaohai](https://github.com/luchaohai)
 * [@han-feng](https://github.com/han-feng)
 * [@rongxingsun](https://github.com/rongxingsun)
 * [@dnyz520](https://github.com/dnyz520)
+
+## 成为赞助者
+
+[在 "爱发电" 上赞助我](https://afdian.net/@fairyever)
 
 ## 赞助
 
