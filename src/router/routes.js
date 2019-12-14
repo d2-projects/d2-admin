@@ -26,6 +26,7 @@ const frameIn = [
         path: 'index',
         name: 'index',
         meta: {
+          title: '首页',
           auth: true
         },
         component: _import('system/index')

@@ -115,6 +115,24 @@ export default {
     },
     /**
      * @class opened
+     * @description 重排页面列表上的某一项
+     * @param {Object} context
+     * @param {Object} payload { oldIndex, newIndex } 位置信息
+     */
+    openedSort ({ state, commit, dispatch }, { oldIndex, newIndex }) {
+      return new Promise(async resolve => {
+        // 重排页面列表某一项
+        let page = state.opened[oldIndex]
+        state.opened.splice(oldIndex, 1)
+        state.opened.splice(newIndex, 0, page)
+        // 持久化
+        await dispatch('opened2db')
+        // end
+        resolve()
+      })
+    },
+    /**
+     * @class opened
      * @description 新增一个 tag (打开一个页面)
      * @param {Object} context
      * @param {Object} payload new tag info
