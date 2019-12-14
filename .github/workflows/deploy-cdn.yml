@@ -38,13 +38,14 @@ jobs:
         REFRESH_URL=$SITE$REPO$PATH_SUFFIX/
         echo $REFRESH_URL > cdnrefresh.txt
         ./qshell qupload2\
-         --src-dir=$GITHUB_WORKSPACE$DIST_FOLDER\
-         --bucket=$QINIU_BUCKET\
-         --key-prefix=$REPO$PATH_SUFFIX/\
-         --overwrite=true\
-         --check-exists=true\
-         --check-hash=true\
-         --check-size=true\
-         --rescan-local=true
+        --src-dir=$GITHUB_WORKSPACE$DIST_FOLDER\
+        --bucket=$QINIU_BUCKET\
+        --key-prefix=$REPO$PATH_SUFFIX/\
+        --overwrite=true\
+        --check-exists=true\
+        --check-hash=true\
+        --check-size=true\
+        --rescan-local=true \
+        --thread-count=32
     - name: CDN refresh
       run: ./qshell cdnrefresh --dirs -i ./cdnrefresh.txt
