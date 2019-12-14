@@ -1,4 +1,4 @@
-name: Deploy FTP
+name: Deploy https://d2.pub
 
 on:
   push:
