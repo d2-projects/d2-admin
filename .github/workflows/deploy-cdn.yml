@@ -35,8 +35,9 @@ jobs:
     - name: CDN upload
       run: |
         REPO=${GITHUB_REPOSITORY//*\//}
-        REFRESH_URL=$SITE
-        echo $REFRESH_URL > cdnrefresh.txt
+    - name: CDN upload
+      run: |
+        echo $SITE > cdnrefresh.txt
         ./qshell qupload2\
         --src-dir=$GITHUB_WORKSPACE$DIST_FOLDER\
         --bucket=$QINIU_BUCKET\
@@ -49,3 +50,5 @@ jobs:
         --thread-count=32
     - name: CDN refresh
       run: ./qshell cdnrefresh --dirs -i ./cdnrefresh.txt
+    - name: Notice
+      run: curl https://api.day.app/EweNWLE36rvVR8EFfWGq7k/$REPO/${GITHUB_WORKFLOW}%20Done
