@@ -1,46 +1,18 @@
 ![banner](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/banner.png)
 
 <p align="center">
-	<a href="https://github.com/d2-projects/d2-admin/stargazers" target="_blank">
-		<img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/network/members" target="_blank">
-		<img src="https://img.shields.io/github/forks/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/issues" target="_blank">
-		<img src="https://img.shields.io/github/issues/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/issues?q=is%3Aissue+is%3Aclosed" target="_blank">
-		<img src="https://img.shields.io/github/issues-closed/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/pulls" target="_blank">
-		<img src="https://img.shields.io/github/issues-pr/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/pulls?q=is%3Apr+is%3Aclosed" target="_blank">
-		<img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg">
-	</a>
+	<a href="https://github.com/d2-projects/d2-admin/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin/network/members" target="_blank"><img src="https://img.shields.io/github/forks/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin/issues" target="_blank"><img src="https://img.shields.io/github/issues/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin/issues?q=is%3Aissue+is%3Aclosed" target="_blank"><img src="https://img.shields.io/github/issues-closed/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin/pulls" target="_blank"><img src="https://img.shields.io/github/issues-pr/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin/pulls?q=is%3Apr+is%3Aclosed" target="_blank"><img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"></a>
 </p>
 <p align="center">
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank">
-		<img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://d2.pub" target="_blank">
-		<img src="https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg">
-	</a>
-	<a href="https://d2-projects.github.io/d2-admin/" target="_blank">
-		<img src="https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg">
-	</a>
-</p>
-<p align="center">
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank">
-		<img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank">
-		<img src="https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/releases" target="_blank">
-		<img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg">
-	</a>
+	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin"></a>
+	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin"></a>
+	<a href="https://github.com/d2-projects/d2-admin/releases" target="_blank"><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"></a>
 </p>
 
 D2Admin is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, javascript files loading of local first screen less than 60kb, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
@@ -53,8 +25,11 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 
 ## Preview
 
-* [Preview](https://d2-admin.netlify.com) Deployed in Netlify CDN
-* [Preview For Chinese](https://fairyever.com/d2-admin/preview/) Deployed in qiniu CDN
+| server | link | info | status |
+| --- | --- | --- | --- |
+| d2.pub | [d2.pub](https://d2.pub/d2-admin/preview/) | China server | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fd2.pub%22) |
+| github | [d2-projects.github.io](https://d2-projects.github.io/d2-admin/) | Deploy on GitHub pages | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+Github%22) |
+| netlify | [netlify.com](https://d2-admin.netlify.com/) | Deploy on Netlify CDN | [![](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys) |
 
 ## Become a sponsor
 

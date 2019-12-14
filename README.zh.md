@@ -1,46 +1,18 @@
 ![banner](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/banner.png)
 
 <p align="center">
-	<a href="https://github.com/d2-projects/d2-admin/stargazers" target="_blank">
-		<img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/network/members" target="_blank">
-		<img src="https://img.shields.io/github/forks/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/issues" target="_blank">
-		<img src="https://img.shields.io/github/issues/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/issues?q=is%3Aissue+is%3Aclosed" target="_blank">
-		<img src="https://img.shields.io/github/issues-closed/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/pulls" target="_blank">
-		<img src="https://img.shields.io/github/issues-pr/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/pulls?q=is%3Apr+is%3Aclosed" target="_blank">
-		<img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg">
-	</a>
+	<a href="https://github.com/d2-projects/d2-admin/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin/network/members" target="_blank"><img src="https://img.shields.io/github/forks/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin/issues" target="_blank"><img src="https://img.shields.io/github/issues/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin/issues?q=is%3Aissue+is%3Aclosed" target="_blank"><img src="https://img.shields.io/github/issues-closed/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin/pulls" target="_blank"><img src="https://img.shields.io/github/issues-pr/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin/pulls?q=is%3Apr+is%3Aclosed" target="_blank"><img src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-admin.svg"></a>
+	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"></a>
 </p>
 <p align="center">
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank">
-		<img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg">
-	</a>
-	<a href="https://d2.pub" target="_blank">
-		<img src="https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg">
-	</a>
-	<a href="https://d2-projects.github.io/d2-admin/" target="_blank">
-		<img src="https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg">
-	</a>
-</p>
-<p align="center">
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank">
-		<img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank">
-		<img src="https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin">
-	</a>
-	<a href="https://github.com/d2-projects/d2-admin/releases" target="_blank">
-		<img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg">
-	</a>
+	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin"></a>
+	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin"></a>
+	<a href="https://github.com/d2-projects/d2-admin/releases" target="_blank"><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"></a>
 </p>
 
 [D2Admin](https://github.com/d2-projects/d2-admin) 是一个完全 **开源免费** 的企业中后台产品前端集成方案，使用最新的前端技术栈，小于 60kb 的本地首屏 js 加载，已经做好大部分项目前期准备工作，并且带有大量示例代码，助力管理系统敏捷开发。
@@ -53,8 +25,11 @@
 
 ## 预览
 
-* [https://d2.pub/d2-admin/preview/](https://d2.pub/d2-admin/preview/)
-* [https://d2-projects.github.io/d2-admin/](https://d2-projects.github.io/d2-admin/)
+| 位置 | 链接 | 介绍 | 状态 |
+| --- | --- | --- | --- |
+| d2.pub | [d2.pub](https://d2.pub/d2-admin/preview/) | 中国服务器，部分 cdn 依赖 | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fd2.pub%22) |
+| github | [d2-projects.github.io](https://d2-projects.github.io/d2-admin/) | 部署在 GitHub pages | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+Github%22) |
+| netlify | [netlify.com](https://d2-admin.netlify.com/) | 部署在 Netlify CDN | [![](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys) |
 
 ## 成为赞助者
 
