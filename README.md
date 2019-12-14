@@ -39,7 +39,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 ## Other synchronous repositories
 
 | type | link |
-| --- | --- | --- |
+| --- | --- |
 | gitee | [https://gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin) |
 | coding | [https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git](https://d2-projects.coding.net/p/d2-admin/d/d2-admin/git) |
 
