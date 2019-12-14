@@ -88,7 +88,7 @@ D2Admin is a fully open source and free enterprise back-end product front-end in
 * Adaptive top menu bar `1.4.7 +`
 * Support for merging cells when exporting xslx `1.5.4 +`
 * Multiple tabs support drag and drop sorting `1.8.0 +`
-* Optimize the construction of production environment, load only local JavaScript code less than 60kb on the homepage `1.8.0 +`
+* load only local JavaScript code less than 60kb on the homepage `1.8.0 +`
 * Built in build file volume checking tool `1.8.0 +`
 
 ## Other synchronous repositories
