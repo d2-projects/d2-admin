@@ -32,20 +32,20 @@ jobs:
       run: npm run build:preview
     - name: CDN login
       run: ./qshell account ${{ secrets.AK }} ${{ secrets.SK }} GITHUB_ACTION
-    - name: CDN upload
+    - name: Set variable
       run: |
         REPO=${GITHUB_REPOSITORY//*\//}
     - name: CDN upload
       run: |
         echo $SITE > cdnrefresh.txt
-        ./qshell qupload2\
-        --src-dir=$GITHUB_WORKSPACE$DIST_FOLDER\
-        --bucket=$QINIU_BUCKET\
-        --key-prefix=$REPO$PATH_SUFFIX/\
-        --overwrite=true\
-        --check-exists=true\
-        --check-hash=true\
-        --check-size=true\
+        ./qshell qupload2 \
+        --src-dir=$GITHUB_WORKSPACE$DIST_FOLDER \
+        --bucket=$QINIU_BUCKET \
+        --key-prefix=$REPO$PATH_SUFFIX/ \
+        --overwrite=true \
+        --check-exists=true \
+        --check-hash=true \
+        --check-size=true \
         --rescan-local=true \
         --thread-count=32
     - name: CDN refresh
