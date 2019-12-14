@@ -29,5 +29,5 @@ jobs:
         METHOD: sftp
         PORT: ${{ secrets.FTP_PORT }}
         LOCAL_DIR: dist
-        REMOTE_DIR: ${{ /www/${GITHUB_REPOSITORY//*\//}/preview }}
+        REMOTE_DIR: /www/${GITHUB_REPOSITORY//*\//}/preview
         ARGS: --delete --verbose --parallel=100
