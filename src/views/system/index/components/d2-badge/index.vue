@@ -10,7 +10,6 @@
 
 <script>
 const linkD2Admin = 'https://github.com/d2-projects/d2-admin'
-const linkD2AdminAction = 'https://github.com/d2-projects/d2-admin/actions'
 export default {
   data () {
     return {
