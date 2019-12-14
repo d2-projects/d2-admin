@@ -45,6 +45,6 @@ jobs:
         --check-hash=true \
         --check-size=true \
         --rescan-local=true \
-        --thread-count=1024
+        --thread-count=32
     - name: CDN refresh
       run: ./qshell cdnrefresh --dirs -i ./cdnrefresh.txt
