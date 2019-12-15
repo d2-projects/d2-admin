@@ -1,5 +1,5 @@
 <template>
-  <d2-container-frame src="https://fairyever.com/d2-admin/doc/zh/"/>
+  <d2-container-frame src="https://d2.pub/zh/doc/d2-admin"/>
 </template>
 
 <script>

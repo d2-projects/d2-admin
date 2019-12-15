@@ -30,7 +30,7 @@
 
 ## 文档
 
-[文档](https://fairyever.com/d2-admin/doc/)
+[文档](https://d2.pub/zh/doc/d2-admin)
 
 ## 功能
 
@@ -104,14 +104,13 @@
 
 | 名称 | Github / 主页  | 预览 | 介绍 |
 | --- | --- | --- | --- |
-| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://fairyever.com/d2-admin-start-kit/preview) | 无 |
-| 人人开源适配 | 应人人开源的要求，暂不公开 | [预览](https://fairyever.com/d2-admin-renren-security-enterprise/preview) | [人人开源](https://www.renren.io) |
+| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://d2.pub/d2-admin-start-kit/preview) | 无 |
 
 ## 生态
 
 | 名称 | Github / 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
-| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://fairyever.com/d2-admin/preview/#/demo/d2-crud/index) | 表格常用操作封装 |
+| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://d2.pub/d2-admin/preview/#/demo/d2-crud/index) | 表格常用操作封装 |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
 
 ## 衍生开源项目

@@ -30,7 +30,7 @@
 
 ## Document
 
-[Document](https://fairyever.com/d2-admin/doc/)
+[Document](https://d2.pub/zh/doc/d2-admin)
 
 ## Features
 
@@ -102,14 +102,13 @@
 
 | Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://fairyever.com/d2-admin-start-kit/preview) |  |
-| D2 Admin Renren | Private project | [Preview](https://fairyever.com/d2-admin-renren-security-enterprise/preview) | [renren](https://www.renren.io) |
+| Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://d2.pub/d2-admin-start-kit/preview) |  |
 
 ## Ecology
 
 | Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [Preview](https://fairyever.com/d2-admin/preview/#/demo/d2-crud/index) | Table common operation package |
+| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [Preview](https://d2.pub/d2-admin/preview/#/demo/d2-crud/index) | Table common operation package |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [Preview](https://github.com/d2-projects/d2-ribbons) | Open source project logo library |
 
 ## Derived open source projects
