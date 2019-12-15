@@ -111,7 +111,6 @@
 
 | 名称 | Github / 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
-| D2 日报 | [Github](https://github.com/d2-projects/d2-awesome) | [网站](https://awesome.fairyever.com/daily/) | 每天更新设计与技术圈的新闻和资源 |
 | D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://fairyever.com/d2-admin/preview/#/demo/d2-crud/index) | 表格常用操作封装 |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
 

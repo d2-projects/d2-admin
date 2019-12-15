@@ -109,7 +109,6 @@
 
 | Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| D2 Daily | [Github](https://github.com/d2-projects/d2-awesome) | [Site](https://awesome.fairyever.com/daily/) | Update news and resources in the design and technology circles every day |
 | D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [Preview](https://fairyever.com/d2-admin/preview/#/demo/d2-crud/index) | Table common operation package |
 | D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [Preview](https://github.com/d2-projects/d2-ribbons) | Open source project logo library |
 
