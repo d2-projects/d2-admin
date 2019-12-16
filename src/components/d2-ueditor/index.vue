@@ -9,9 +9,11 @@
 
 <script>
 // 参考 https://github.com/HaoChuan9421/vue-ueditor-wrap
+import Vue from 'vue'
+import VueUeditorWrap from 'vue-ueditor-wrap'
 import config from './ueditor.config'
 import buttonD2admin from './button/d2admin'
-
+Vue.component('VueUeditorWrap', VueUeditorWrap)
 export default {
   props: {
     value: {
