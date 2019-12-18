@@ -1,4 +1,4 @@
-name: Deploy cdn
+name: Deploy https://cdn.d2.pub
 
 on:
   push:
