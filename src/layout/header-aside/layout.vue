@@ -1,20 +1,11 @@
 <template>
-  <div
-    class="d2-layout-header-aside-group"
-    :style="styleLayoutMainGroup"
-    :class="{grayMode: grayActive}">
+  <div class="d2-layout-header-aside-group" :style="styleLayoutMainGroup" :class="{grayMode: grayActive}">
     <!-- 半透明遮罩 -->
     <div class="d2-layout-header-aside-mask"></div>
     <!-- 主体内容 -->
     <div class="d2-layout-header-aside-content" flex="dir:top">
       <!-- 顶栏 -->
-      <div
-        class="d2-theme-header"
-        :style="{
-          opacity: this.searchActive ? 0.5 : 1
-        }"
-        flex-box="0"
-        flex>
+      <div class="d2-theme-header" :style="{ opacity: this.searchActive ? 0.5 : 1 }" flex-box="0" flex>
         <router-link to="/index" class="logo-group" :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}" flex-box="0">
           <img v-if="asideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
           <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/all.png`">
@@ -39,14 +30,7 @@
       <!-- 下面 主体 -->
       <div class="d2-theme-container" flex-box="1" flex>
         <!-- 主体 侧边栏 -->
-        <div
-          flex-box="0"
-          ref="aside"
-          class="d2-theme-container-aside"
-          :style="{
-            width: asideCollapse ? asideWidthCollapse : asideWidth,
-            opacity: this.searchActive ? 0.5 : 1
-          }">
+        <div flex-box="0" ref="aside" class="d2-theme-container-aside" :style="{ width: asideCollapse ? asideWidthCollapse : asideWidth, opacity: this.searchActive ? 0.5 : 1 }">
           <d2-menu-side/>
         </div>
         <!-- 主体 -->
@@ -54,9 +38,7 @@
           <!-- 搜索 -->
           <transition name="fade-scale">
             <div v-if="searchActive" class="d2-theme-container-main-layer" flex>
-              <d2-panel-search
-                ref="panelSearch"
-                @close="searchPanelClose"/>
+              <d2-panel-search ref="panelSearch" @close="searchPanelClose"/>
             </div>
           </transition>
           <!-- 内容 -->
@@ -136,11 +118,9 @@ export default {
      * @description 最外层容器的背景图片样式
      */
     styleLayoutMainGroup () {
-      return {
-        ...this.themeActiveSetting.backgroundImage ? {
-          backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')`
-        } : {}
-      }
+      return this.themeActiveSetting.backgroundImage
+        ? { backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')` }
+        : {}
     }
   },
   methods: {

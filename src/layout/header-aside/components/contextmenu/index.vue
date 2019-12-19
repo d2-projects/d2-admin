@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="d2-contextmenu"
-    v-show="flag"
-    :style="style">
+  <div class="d2-contextmenu" v-show="flag" :style="style">
     <slot/>
   </div>
 </template>

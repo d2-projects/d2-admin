@@ -1,15 +1,7 @@
 <template>
-  <div
-    class="panel-search"
-    flex="dir:top">
-    <div
-      class="panel-search__input-group"
-      flex-box="0"
-      flex="dir:top main:center cross:center"
-      @click.self="handlePanelClick">
-      <d2-icon-svg
-        class="panel-search__logo"
-        name="d2-admin-text"/>
+  <div class="panel-search" flex="dir:top">
+    <div class="panel-search__input-group" flex-box="0" flex="dir:top main:center cross:center" @click.self="handlePanelClick">
+      <d2-icon-svg class="panel-search__logo" name="d2-admin-text"/>
       <el-autocomplete
         class="panel-search__input"
         ref="input"
@@ -21,9 +13,7 @@
         :clearable="true"
         @keydown.esc.native="handleEsc"
         @select="handleSelect">
-        <d2-panel-search-item
-          slot-scope="{ item }"
-          :item="item"/>
+        <d2-panel-search-item slot-scope="{ item }" :item="item"/>
       </el-autocomplete>
       <div class="panel-search__tip">
         您可以使用快捷键
@@ -33,10 +23,7 @@
         关闭
       </div>
     </div>
-    <div
-      v-if="resultsList.length > 0"
-      class="panel-search__results-group"
-      flex-box="1">
+    <div v-if="resultsList.length > 0" class="panel-search__results-group" flex-box="1">
       <el-card>
         <div class="panel-search__results-group-inner">
           <d2-panel-search-item
