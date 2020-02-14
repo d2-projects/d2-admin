@@ -117,6 +117,7 @@
 
 | Name | Github / HomePage | Preview | Introduction |
 | --- | --- | --- | --- |
+| d2-admin-xiya-go-cms | [Github](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [预览](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + authority system + dynamic router |
 | d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [Preview](http://jaycewu.coding.me/d2-admin-pm) | RBAC privilege management solution based on D2Admin |
 | LanBlog | [Github](https://github.com/sinksmell/LanBlog) | [Preview](http://47.101.222.133/) | Vue + Beego restful api personal blog system |
 | d2-admin-start-kit-plus | [Github](https://github.com/hank-cp/d2-admin-start-kit-plus) | [Preview](https://github.com/hank-cp/d2-admin-start-kit-plus) | D2Admin Start kit modular version |
