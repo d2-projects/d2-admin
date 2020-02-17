@@ -98,8 +98,9 @@ module.exports = {
         config => config.devtool('cheap-source-map')
       )
       // 预览环境构建 vue-loader 添加 filename
-      .when(process.env.VUE_APP_SCOURCE_LINK === 'TRUE',
-        VueFilenameInjector(config, {
+      .when(
+        process.env.VUE_APP_SCOURCE_LINK === 'TRUE',
+        config => VueFilenameInjector(config, {
           propName: process.env.VUE_APP_SOURCE_VIEWER_PROP_NAME
         })
       )
