@@ -29,7 +29,8 @@ module.exports = {
   publicPath,
   lintOnSave: true,
   devServer: {
-    publicPath // 和 publicPath 保持一致
+    publicPath, // 和 publicPath 保持一致
+    disableHostCheck: process.env.NODE_ENV === 'development' // 关闭 host check，方便使用 ngrok 之类的内网转发工具
   },
   css: {
     loaderOptions: {
@@ -53,12 +54,6 @@ module.exports = {
           deleteOriginalAssets: false
         })
       ]
-    }
-    if (process.env.NODE_ENV === 'development') {
-      // 关闭 host check，方便使用 ngrok 之类的内网转发工具
-      configNew.devServer = {
-        disableHostCheck: true
-      }
     }
     return configNew
   },
