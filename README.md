@@ -115,7 +115,7 @@
 
 > These projects are contributed by the open source community and are not guaranteed to use the latest version of D2Admin. Please contact their open source authors for related usage questions.
 
-| Name | Github / HomePage | Preview | Introduction |
+| Name | HomePage | Preview | Introduction |
 | --- | --- | --- | --- |
 | d2-admin-xiya-go-cms | [Github](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [Preview](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + authority system + dynamic router |
 | d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [Preview](http://jaycewu.coding.me/d2-admin-pm) | RBAC privilege management solution based on D2Admin |
