@@ -132,10 +132,11 @@
 | 名称 | 技术 | Github / 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- | --- |
 | CareyShop | ThinkPHP5 | [Github](https://github.com/dnyz520/careyshop-admin) | [预览](https://demo.careyshop.cn/admin/#/index) | 适用于 CareyShop 的高性能商城框架系统 |
-| jiiiiiin-security | Spring Boot + Spring Security | [Github](https://github.com/Jiiiiiin/jiiiiiin-security) | [预览](https://github.com/Jiiiiiin/jiiiiiin-security) | 前后端分离的内容管理基础项目，注重用户权限管理功能 |
+| jiiiiiin-security | Spring Boot | [Github](https://github.com/Jiiiiiin/jiiiiiin-security) | [预览](https://github.com/Jiiiiiin/jiiiiiin-security) | 前后端分离的内容管理基础项目，注重用户权限管理功能 |
 | Taroco | Spring Cloud | [Github](https://github.com/liuht777/Taroco) | [预览](http://111.231.192.110/) | 整套微服务企业级解决方案 |
 | Aooms | Spring Cloud | [码云](https://gitee.com/cyb-javaer/Aooms) | [预览](https://www.yuboon.com/Aooms) | 极速微服务开发，不止像JFinal一样简单 |
 | GOA | Beego | [Github](https://github.com/Qsnh/goa) | [预览](http://goaio.vip/) | 基于 Beego + Vue 开发的在线问答系统 |
+| CMDB | Django | [Github](https://github.com/CJFJack/django_vue_cmdb) | [预览](https://mp.weixin.qq.com/s?__biz=MzU1OTYzODA4Mw==&mid=2247484250&idx=1&sn=981024ac0580d8a3eba95742bd32b268) | 分用户加载不同菜单和权限 |
 
 ## 加入我们
 

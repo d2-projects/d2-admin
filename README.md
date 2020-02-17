@@ -134,6 +134,7 @@
 | **Taroco** | Spring Cloud | [Github](https://github.com/liuht777/Taroco) | [Preview](http://111.231.192.110/) | Complete microservice enterprise solution |
 | **Aooms** | Spring Cloud | [Gitee](https://gitee.com/cyb-javaer/Aooms) | [Preview](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
 | **GOA** | Beego | [Github](https://github.com/Qsnh/goa) | [Preview](http://goaio.vip/) | Online question answering system based on Beego + Vue |
+| **CMDB** | Django | [Github](https://github.com/CJFJack/django_vue_cmdb) | [Preview](https://mp.weixin.qq.com/s?__biz=MzU1OTYzODA4Mw==&mid=2247484250&idx=1&sn=981024ac0580d8a3eba95742bd32b268) | authority system with dynamic menu |
 
 ## Badge
 
