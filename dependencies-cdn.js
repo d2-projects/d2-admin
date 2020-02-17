@@ -18,5 +18,5 @@ module.exports = [
   { name: 'lowdb', library: 'low', js: 'https://cdn.jsdelivr.net/npm/lowdb@1.0.0/dist/low.min.js', css: '' },
   { name: 'lowdb/adapters/LocalStorage', library: 'LocalStorage', js: 'https://cdn.jsdelivr.net/npm/lowdb@1.0.0/dist/LocalStorage.min.js', css: '' },
   { name: 'screenfull', library: 'screenfull', js: 'https://cdn.jsdelivr.net/npm/screenfull@5.0.0/dist/screenfull.min.js', css: '' },
-  { name: 'sortablejs', library: 'Sortable', js: 'https://cdn.jsdelivr.net/npm/sortablejs@1.10.1/Sortable.min.js', css: '' },
+  { name: 'sortablejs', library: 'Sortable', js: 'https://cdn.jsdelivr.net/npm/sortablejs@1.10.1/Sortable.min.js', css: '' }
 ]
