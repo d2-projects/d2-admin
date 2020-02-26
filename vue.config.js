@@ -3,7 +3,7 @@ const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 const ThemeColorReplacer = require('webpack-theme-color-replacer')
 const forElementUI = require('webpack-theme-color-replacer/forElementUI')
 const cdnDependencies = require('./dependencies-cdn')
-const { chain, set, each } = require('lodash')
+const { chain, set, each, keys } = require('lodash')
 
 // 拼接路径
 const resolve = dir => require('path').join(__dirname, dir)
@@ -146,11 +146,13 @@ module.exports = {
     config.resolve.alias
       .set('@api', resolve('src/api'))
     // 判断环境加入模拟数据
-    const entry = config.entry('app')
+    // 已适配多页
     if (process.env.VUE_APP_BUILD_MODE !== 'NOMOCK') {
-      entry
-        .add('@/mock')
-        .end()
+      const multiEntry = keys(pages || {})
+      const entrys = multiEntry.length ? multiEntry : ['app']
+      each(entrys, entry => {
+        config.entry(entry).add('@/mock').end()
+      })
     }
     // 分析工具
     if (process.env.npm_config_report) {
