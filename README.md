@@ -100,7 +100,7 @@
 | gitee | [https://gitee.com/fairyever/d2-admin](https://gitee.com/fairyever/d2-admin) |
 | coding | [https://d2-projects.coding.net/p/d2-projects/d/d2-admin/git](https://d2-projects.coding.net/p/d2-projects/d/d2-admin/git) |
 
-## Other version
+## Other versions
 
 | Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
