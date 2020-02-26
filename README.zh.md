@@ -30,7 +30,9 @@
 
 ## 文档
 
-[文档](https://d2.pub/zh/doc/d2-admin)
+[在 https://d2.pub 上的本项目文档](https://d2.pub/zh/doc/d2-admin/)
+
+> d2.pub CDN 镜像部署 [https://cdn.d2.pub](https://cdn.d2.pub)
 
 ## 功能
 

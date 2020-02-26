@@ -23,14 +23,16 @@
 
 | server | link | server | status |
 | --- | --- | --- | --- |
-| d2.pub | [d2.pub/d2-admin/preview](https://d2.pub/d2-admin/preview) | China server | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fd2.pub%22) |
-| cdn.d2.pub | [cdn.d2.pub/d2-admin/preview](https://cdn.d2.pub/d2-admin/preview) | qiniu CDN | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fcdn.d2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fcdn.d2.pub%22) |
-| github | [d2-projects.github.io/d2-admin](https://d2-projects.github.io/d2-admin) | GitHub pages | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+Github%22) |
-| netlify | [d2-admin.netlify.com](https://d2-admin.netlify.com) | Netlify CDN | [![](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys) |
+| d2.pub | [preview](https://d2.pub/d2-admin/preview) | China server | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fd2.pub%22) |
+| cdn.d2.pub | [preview](https://cdn.d2.pub/d2-admin/preview) | qiniu CDN | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fcdn.d2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fcdn.d2.pub%22) |
+| github | [preview](https://d2-projects.github.io/d2-admin) | GitHub pages | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+Github%22) |
+| netlify | [preview](https://d2-admin.netlify.com) | Netlify CDN | [![](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys) |
 
 ## Document
 
-[Document](https://d2.pub/zh/doc/d2-admin)
+[document on https://d2.pub](https://d2.pub/zh/doc/d2-admin/)
+
+> d2.pub CDN mirror deployment [https://cdn.d2.pub](https://cdn.d2.pub)
 
 ## Features
 
@@ -102,14 +104,14 @@
 
 | Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [Preview](https://d2.pub/d2-admin-start-kit/preview) |  |
+| Starter template | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [preview](https://d2.pub/d2-admin-start-kit/preview) | The simplest version |
 
 ## Ecology
 
 | Name | HomePage  | Preview | Introduction |
 | --- | --- | --- | --- |
-| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [Preview](https://d2.pub/d2-admin/preview/#/demo/d2-crud/index) | Table common operation package |
-| D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [Preview](https://github.com/d2-projects/d2-ribbons) | Open source project logo library |
+| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [preview](https://d2.pub/d2-admin/preview/#/demo/d2-crud/index) | Table common operation package |
+| D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [preview](https://github.com/d2-projects/d2-ribbons) | Open source project logo library |
 
 ## Derived open source projects
 
@@ -117,11 +119,11 @@
 
 | Name | HomePage | Preview | Introduction |
 | --- | --- | --- | --- |
-| d2-admin-xiya-go-cms | [Github](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [Preview](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + authority system + dynamic router |
-| d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [Preview](http://jaycewu.coding.me/d2-admin-pm) | RBAC privilege management solution based on D2Admin |
-| LanBlog | [Github](https://github.com/sinksmell/LanBlog) | [Preview](http://47.101.222.133/) | Vue + Beego restful api personal blog system |
-| d2-admin-start-kit-plus | [Github](https://github.com/hank-cp/d2-admin-start-kit-plus) | [Preview](https://github.com/hank-cp/d2-admin-start-kit-plus) | D2Admin Start kit modular version |
-| d2-crud-plus | [Github](https://github.com/greper/d2-crud-plus) | [Preview](http://qiniu.veryreader.com/D2CrudPlusExample/index.html#/index) | Easy development of crud function |
+| d2-admin-xiya-go-cms | [Github](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [preview](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + authority system + dynamic router |
+| d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [preview](http://jaycewu.coding.me/d2-admin-pm) | RBAC privilege management solution based on D2Admin |
+| LanBlog | [Github](https://github.com/sinksmell/LanBlog) | [preview](http://47.101.222.133/) | Vue + Beego restful api personal blog system |
+| d2-admin-start-kit-plus | [Github](https://github.com/hank-cp/d2-admin-start-kit-plus) | [preview](https://github.com/hank-cp/d2-admin-start-kit-plus) | D2Admin Start kit modular version |
+| d2-crud-plus | [Github](https://github.com/greper/d2-crud-plus) | [preview](http://qiniu.veryreader.com/D2CrudPlusExample/index.html#/index) | Easy development of crud function |
 
 ## Open source backend implementation
 
@@ -129,12 +131,12 @@
 
 | Name | technology | HomePage | Preview | Introduction |
 | --- | --- | --- | --- | --- |
-| **CareyShop** | ThinkPHP5 | [Github](https://github.com/dnyz520/careyshop-admin) | [Preview](https://demo.careyshop.cn/admin/#/index) | High Performance Mall Framework System for CareyShop |
-| **jiiiiiin-security** | Spring Boot | [Github](https://github.com/Jiiiiiin/jiiiiiin-security) | [Preview](https://github.com/Jiiiiiin/jiiiiiin-security) | Separate front-end and back-end content management infrastructure projects, focusing on user rights management functions |
-| **Taroco** | Spring Cloud | [Github](https://github.com/liuht777/Taroco) | [Preview](http://111.231.192.110/) | Complete microservice enterprise solution |
-| **Aooms** | Spring Cloud | [Gitee](https://gitee.com/cyb-javaer/Aooms) | [Preview](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
-| **GOA** | Beego | [Github](https://github.com/Qsnh/goa) | [Preview](http://goaio.vip/) | Online question answering system based on Beego + Vue |
-| **CMDB** | Django | [Github](https://github.com/CJFJack/django_vue_cmdb) | [Preview](https://mp.weixin.qq.com/s?__biz=MzU1OTYzODA4Mw==&mid=2247484250&idx=1&sn=981024ac0580d8a3eba95742bd32b268) | authority system with dynamic menu |
+| **CareyShop** | ThinkPHP5 | [Github](https://github.com/dnyz520/careyshop-admin) | [preview](https://demo.careyshop.cn/admin/#/index) | High Performance Mall Framework System for CareyShop |
+| **jiiiiiin-security** | Spring Boot | [Github](https://github.com/Jiiiiiin/jiiiiiin-security) | [preview](https://github.com/Jiiiiiin/jiiiiiin-security) | Separate front-end and back-end content management infrastructure projects, focusing on user rights management functions |
+| **Taroco** | Spring Cloud | [Github](https://github.com/liuht777/Taroco) | [preview](http://111.231.192.110/) | Complete microservice enterprise solution |
+| **Aooms** | Spring Cloud | [Gitee](https://gitee.com/cyb-javaer/Aooms) | [preview](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
+| **GOA** | Beego | [Github](https://github.com/Qsnh/goa) | [preview](http://goaio.vip/) | Online question answering system based on Beego + Vue |
+| **CMDB** | Django | [Github](https://github.com/CJFJack/django_vue_cmdb) | [preview](https://mp.weixin.qq.com/s?__biz=MzU1OTYzODA4Mw==&mid=2247484250&idx=1&sn=981024ac0580d8a3eba95742bd32b268) | authority system with dynamic menu |
 
 ## Badge
 
