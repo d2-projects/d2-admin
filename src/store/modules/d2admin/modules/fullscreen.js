@@ -12,18 +12,11 @@ export default {
      * @param {Object} context
      */
     listen ({ commit }) {
-      return new Promise(resolve => {
-        if (screenfull.enabled) {
-          screenfull.on('change', () => {
-            console.log('1')
-            if (!screenfull.isFullscreen) {
-              commit('set', false)
-            }
-          })
-        }
-        // end
-        resolve()
-      })
+      if (screenfull.isEnabled) {
+        screenfull.on('change', () => {
+          if (!screenfull.isFullscreen) commit('set', false)
+        })
+      }
     },
     /**
      * @description 切换全屏
