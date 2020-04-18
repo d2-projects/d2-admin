@@ -16,7 +16,9 @@ jobs:
     - name: Set vue cli env
       shell: bash
       run: |
-        echo -e "VUE_APP_BUILD_MODE=PREVIEW\nVUE_APP_SCOURCE_LINK=TRUE\nVUE_APP_PUBLIC_PATH=/d2-admin/preview/" > .env.local
+        echo -e "VUE_APP_BUILD_MODE=PREVIEW\n\
+        VUE_APP_SCOURCE_LINK=TRUE\n\
+        VUE_APP_PUBLIC_PATH=/d2-admin/preview/" > .env.local
         cat .env.local | while read line
         do
           echo $line
@@ -56,7 +58,11 @@ jobs:
     - name: Set vue cli env
       shell: bash
       run: |
-        echo -e "VUE_APP_BUILD_MODE=PREVIEW\nVUE_APP_SCOURCE_LINK=TRUE\nVUE_APP_PUBLIC_PATH=/d2-admin/preview/" > .env.local
+        echo -e\
+        "VUE_APP_BUILD_MODE=PREVIEW\n\
+        VUE_APP_SCOURCE_LINK=TRUE\n\
+        VUE_APP_PUBLIC_PATH=/d2-admin/preview/" > \
+        .env.local
         cat .env.local | while read line
         do
           echo $line
@@ -84,7 +90,11 @@ jobs:
     - name: Set vue cli env
       shell: bash
       run: |
-        echo -e VUE_APP_BUILD_MODE=PREVIEW\nVUE_APP_SCOURCE_LINK=TRUE\nVUE_APP_PUBLIC_PATH=/d2-admin/ > .env.local
+        echo -e "\
+        VUE_APP_BUILD_MODE=PREVIEW\n\
+        VUE_APP_SCOURCE_LINK=TRUE\n\
+        VUE_APP_PUBLIC_PATH=/d2-admin/\
+        " > .env.local
         cat .env.local | while read line
         do
           echo $line
