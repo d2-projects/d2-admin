@@ -40,6 +40,10 @@ jobs:
     #     --thread-count=32
     - name: CDN refresh
       run: |
+      cat cdnrefresh.txt | while read line
+      do
+        echo $line
+      done
         echo "https://cdn.d2.pub/${GITHUB_REPOSITORY//*\//}/preview/" > cdnrefresh.txt
         ./qshell cdnrefresh --dirs -i ./cdnrefresh.txt
   
