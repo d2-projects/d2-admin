@@ -10,15 +10,6 @@ jobs:
     if: "! contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: bahmutov/npm-install@v1
-    - name: Check lint
-      run: yarn lint:strict
-    - name: Check unit test
-      run: yarn test:unit:ci
-    - name: Build
-      run: yarn build
-
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v2
       with:
@@ -27,7 +18,6 @@ jobs:
           @semantic-release/git@7.0.18
       env:
         GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   # !TRICKY
   # https://github.community/t5/GitHub-Actions/Workflow-is-failing-if-no-job-can-be-ran-due-to-condition/td-p/38085
