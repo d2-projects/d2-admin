@@ -13,8 +13,19 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: bahmutov/npm-install@v1
+    - name: Set vue cli env
+      run: |
+        echo \
+        "VUE_APP_BUILD_MODE=PREVIEW\n\
+        VUE_APP_SCOURCE_LINK=TRUE\n\
+        VUE_APP_PUBLIC_PATH=/d2-admin/preview/" > \
+        .env.local
+        cat .env.local | while read line
+        do
+          echo $line
+        done
     - name: Build
-      run: npm run build:preview
+      run: yarn build --report
     - name: CDN download qshell
       run: |
         wget http://devtools.qiniu.com/qshell-linux-x86-v2.4.0.zip
@@ -45,8 +56,19 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: bahmutov/npm-install@v1
+    - name: Set vue cli env
+      run: |
+        echo \
+        "VUE_APP_BUILD_MODE=PREVIEW\n\
+        VUE_APP_SCOURCE_LINK=TRUE\n\
+        VUE_APP_PUBLIC_PATH=/d2-admin/preview/" > \
+        .env.local
+        cat .env.local | while read line
+        do
+          echo $line
+        done
     - name: Build
-      run: npm run build:preview
+      run: yarn build --report
     - name: Deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:
@@ -65,8 +87,19 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: bahmutov/npm-install@v1
+    - name: Set vue cli env
+      run: |
+        echo \
+        "VUE_APP_BUILD_MODE=PREVIEW\n\
+        VUE_APP_SCOURCE_LINK=TRUE\n\
+        VUE_APP_PUBLIC_PATH=/d2-admin/" > \
+        .env.local
+        cat .env.local | while read line
+        do
+          echo $line
+        done
     - name: Build
-      run: yarn build:github
+      run: yarn build --report
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
       env:
