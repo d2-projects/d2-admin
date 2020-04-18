@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.2](https://github.com/d2-projects/d2-admin/compare/v1.8.1...v1.8.2) (2020-04-18)
+
+
+### Bug Fixes
+
+* **screenfull:** fix fullscreen bug ([4d96301](https://github.com/d2-projects/d2-admin/commit/4d963011448387af98a1cdbd4f98c5e4474ea497)), closes [#264](https://github.com/d2-projects/d2-admin/issues/264)
+
 # [1.6.0](https://github.com/d2-projects/d2-admin/compare/v1.5.0...v1.6.0) (2020-04-18)
 
 
