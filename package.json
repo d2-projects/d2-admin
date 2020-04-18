@@ -82,5 +82,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d2-projects/d2-admin.git"
   }
 }
