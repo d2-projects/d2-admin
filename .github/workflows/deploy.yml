@@ -24,8 +24,8 @@ jobs:
     #   run: npm i
     # - name: Build
     #   run: npm run build:preview
-    # - name: CDN login
-    #   run: ./qshell account ${{ secrets.AK }} ${{ secrets.SK }} GITHUB_ACTION
+    - name: CDN login
+      run: ./qshell account ${{ secrets.AK }} ${{ secrets.SK }} GITHUB_ACTION
     # - name: CDN upload
     #   run: |
     #     ./qshell qupload2 \
