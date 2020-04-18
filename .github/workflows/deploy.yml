@@ -12,18 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - name: Download qshell
+    - uses: bahmutov/npm-install@v1
+    - name: Build
+      run: npm run build:preview
+    - name: CDN download qshell
       run: |
         wget http://devtools.qiniu.com/qshell-linux-x86-v2.4.0.zip
         unzip qshell-linux-x86-v2.4.0.zip
         mv qshell-linux-x86-v2.4.0 qshell
-    - name: Install packages
-      run: npm i
-    - name: Build
-      run: npm run build:preview
     - name: CDN login
       run: ./qshell account ${{ secrets.AK }} ${{ secrets.SK }} GITHUB_ACTION
     - name: CDN upload
@@ -48,13 +44,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
+    - uses: bahmutov/npm-install@v1
     - name: Build
-      run: |
-        npm install
-        npm run build:preview
+      run: npm run build:preview
     - name: Deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:
