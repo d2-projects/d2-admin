@@ -17,8 +17,6 @@ jobs:
       shell: bash
       run: |
         echo -e "\
-        VUE_APP_BUILD_MODE=PREVIEW\n\
-        VUE_APP_SCOURCE_LINK=TRUE\n\
         VUE_APP_PUBLIC_PATH=/d2-admin/preview/\
         " > .env.local
         cat .env.local | while read line
@@ -26,7 +24,7 @@ jobs:
           echo $line
         done
     - name: Build
-      run: yarn build --report
+      run: yarn build:preview --report
     - name: CDN download qshell
       run: |
         wget http://devtools.qiniu.com/qshell-linux-x86-v2.4.0.zip
@@ -61,8 +59,6 @@ jobs:
       shell: bash
       run: |
         echo -e "\
-        VUE_APP_BUILD_MODE=PREVIEW\n\
-        VUE_APP_SCOURCE_LINK=TRUE\n\
         VUE_APP_PUBLIC_PATH=/d2-admin/preview/\
         " > .env.local
         cat .env.local | while read line
@@ -70,7 +66,7 @@ jobs:
           echo $line
         done
     - name: Build
-      run: yarn build --report
+      run: yarn build:preview --report
     - name: Deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:
@@ -93,8 +89,6 @@ jobs:
       shell: bash
       run: |
         echo -e "\
-        VUE_APP_BUILD_MODE=PREVIEW\n\
-        VUE_APP_SCOURCE_LINK=TRUE\n\
         VUE_APP_PUBLIC_PATH=/d2-admin/\
         " > .env.local
         cat .env.local | while read line
@@ -102,7 +96,7 @@ jobs:
           echo $line
         done
     - name: Build
-      run: yarn build --report
+      run: yarn build:preview --report
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
       env:
