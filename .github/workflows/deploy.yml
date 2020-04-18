@@ -18,8 +18,8 @@ jobs:
       run: |
         echo -e "\
         VUE_APP_PUBLIC_PATH=/d2-admin/preview/\
-        " > .env.local
-        cat .env.local | while read line
+        " > .env.preview.local
+        cat .env.preview.local | while read line
         do
           echo $line
         done
@@ -60,8 +60,8 @@ jobs:
       run: |
         echo -e "\
         VUE_APP_PUBLIC_PATH=/d2-admin/preview/\
-        " > .env.local
-        cat .env.local | while read line
+        " > .env.preview.local
+        cat .env.preview.local | while read line
         do
           echo $line
         done
@@ -90,8 +90,8 @@ jobs:
       run: |
         echo -e "\
         VUE_APP_PUBLIC_PATH=/d2-admin/\
-        " > .env.local
-        cat .env.local | while read line
+        " > .env.preview.local
+        cat .env.preview.local | while read line
         do
           echo $line
         done
