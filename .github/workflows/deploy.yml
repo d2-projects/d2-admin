@@ -40,8 +40,7 @@ jobs:
         --thread-count=32
     - name: CDN refresh
       run: |
-        REFRESH_URL=https://cdn.d2.pub/${GITHUB_REPOSITORY//*\//}/preview/
-        echo $REFRESH_URL > cdnrefresh.txt
+        echo https://cdn.d2.pub/${GITHUB_REPOSITORY//*\//}/preview/ > cdnrefresh.txt
         ./qshell cdnrefresh --dirs -i ./cdnrefresh.txt
   
   ftp:
