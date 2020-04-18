@@ -1,4 +1,4 @@
-![banner](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/banner.png)
+![banner](https://raw.githubusercontent.com/FairyEver/d2-admin/master/docs/image/banner.png)
 
 <p align="center">
 	<a href="https://github.com/d2-projects/d2-admin/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"></a>
@@ -147,20 +147,20 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 * QQ 1 群 `806395827` ( 2000 人已满 )
 * QQ 2 群 `592981556`
 
-![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/join@2x.png)
+![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/docs/image/join@2x.png)
 
 ## 徽章
 
 如果您的开源项目基于 D2Admin 开发，请在您的 README 添加下面的徽章：
 
 <a href="https://github.com/d2-projects/d2-admin" target="_blank">
-	<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/d2-admin@2x.png" width="200">
+	<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/docs/image/d2-admin@2x.png" width="200">
 </a>
 
 复制下面代码加入到 README 中即可：
 
 ``` html
-<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/d2-admin@2x.png" width="200"></a>
+<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/docs/image/d2-admin@2x.png" width="200"></a>
 ```
 
 同时您可以将您的项目汇报给我们，优秀项目我们会放置在 D2Admin 相关位置并帮助您宣传。
@@ -197,4 +197,4 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fd2-projects%2Fd2-admin?ref=badge_large)
 
-![](https://raw.githubusercontent.com/FairyEver/d2-admin/master/doc/image/give-a-star@2x.png)
+![](https://raw.githubusercontent.com/FairyEver/d2-admin/master/docs/image/give-a-star@2x.png)
