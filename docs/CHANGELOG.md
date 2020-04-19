@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.4](https://github.com/d2-projects/d2-admin/compare/v1.8.3...v1.8.4) (2020-04-19)
+
+
+### Bug Fixes
+
+* 更新演示表格下载地址和下载方式 ([be64607](https://github.com/d2-projects/d2-admin/commit/be64607cec294337fbcbe7622550846ffcdd351a)), closes [#259](https://github.com/d2-projects/d2-admin/issues/259)
+
 ## [1.8.3](https://github.com/d2-projects/d2-admin/compare/v1.8.2...v1.8.3) (2020-04-19)
 
 
