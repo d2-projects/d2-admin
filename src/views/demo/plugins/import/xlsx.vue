@@ -58,7 +58,7 @@ export default {
       return false
     },
     download () {
-      window.location.href = 'http://fairyever.qiniudn.com/d2-admin-import-xlsx-demo.xlsx'
+      this.$open('https://cdn.d2.pub/files/d2-admin/demo-table.xlsx')
     }
   }
 }
