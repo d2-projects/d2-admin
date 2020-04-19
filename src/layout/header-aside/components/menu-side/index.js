@@ -11,7 +11,7 @@ export default {
   render (createElement) {
     return createElement('div', { attrs: { class: 'd2-layout-header-aside-menu-side' } }, [
       createElement('el-menu', {
-        props: { collapse: this.asideCollapse, uniqueOpened: true, defaultActive: this.active },
+        props: { collapse: this.asideCollapse, uniqueOpened: true, defaultActive: this.$route.fullPath },
         ref: 'menu',
         on: { select: this.handleMenuSelect }
       }, this.aside.map(menu => (menu.children === undefined ? elMenuItem : elSubmenu).call(this, createElement, menu))),
@@ -25,7 +25,6 @@ export default {
   },
   data () {
     return {
-      active: '',
       asideHeight: 300,
       BS: null
     }
@@ -43,13 +42,6 @@ export default {
       setTimeout(() => {
         this.scrollInit()
       }, 500)
-    },
-    // 监听路由 控制侧边栏激活状态
-    '$route.fullPath': {
-      handler (value) {
-        this.active = value
-      },
-      immediate: true
     }
   },
   mounted () {
