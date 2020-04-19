@@ -21,12 +21,15 @@
 
 ## Preview
 
-| server | link | server | status |
-| --- | --- | --- | --- |
-| d2.pub | [preview](https://d2.pub/d2-admin/preview) | China server | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fd2.pub%22) |
-| cdn.d2.pub | [preview](https://cdn.d2.pub/d2-admin/preview) | qiniu CDN | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fcdn.d2.pub/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fcdn.d2.pub%22) |
-| github | [preview](https://d2-projects.github.io/d2-admin) | GitHub pages | [![](https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg)](https://github.com/d2-projects/d2-admin/actions?query=workflow%3A%22Deploy+Github%22) |
-| netlify | [preview](https://d2-admin.netlify.com) | Netlify CDN | [![](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys) |
+![Deploy preview](https://github.com/d2-projects/d2-admin/workflows/Deploy%20preview/badge.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys)
+
+| server | link | server |
+| --- | --- | --- |
+| d2.pub | [preview](https://d2.pub/d2-admin/preview) | China server |
+| cdn.d2.pub | [preview](https://cdn.d2.pub/d2-admin/preview) | qiniu CDN |
+| github | [preview](https://d2-projects.github.io/d2-admin) | GitHub pages |
+| netlify | [preview](https://d2-admin.netlify.com) | Netlify CDN |
 
 ## Document
 
