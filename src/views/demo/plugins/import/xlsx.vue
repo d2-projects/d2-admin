@@ -1,12 +1,11 @@
 <template>
   <d2-container type="card">
-    <template slot="header">导入 xlsx</template>
-    <div class="d2-mb">
+    <template slot="header">
       <el-button @click="download">
         <d2-icon name="download"/>
         下载演示 .xlsx 表格
       </el-button>
-    </div>
+    </template>
     <div class="d2-mb">
       <el-upload :before-upload="handleUpload" action="default">
         <el-button type="success">
