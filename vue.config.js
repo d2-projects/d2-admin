@@ -149,8 +149,8 @@ module.exports = {
     // 已适配多页
     if (process.env.VUE_APP_BUILD_MODE !== 'NOMOCK') {
       const multiEntry = keys(pages || {})
-      const entrys = multiEntry.length ? multiEntry : ['app']
-      each(entrys, entry => {
+      const entries = multiEntry.length ? multiEntry : ['app']
+      each(entries, entry => {
         config.entry(entry).add('@/mock').end()
       })
     }
