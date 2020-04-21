@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.5](https://github.com/d2-projects/d2-admin/compare/v1.8.4...v1.8.5) (2020-04-21)
+
+
+### Bug Fixes
+
+* **tab:** 修复多标签页拖拽排序后首页 tab 变为可关闭的状态，并使用更合理的方法控制首页标签不可关闭 ([606e143](https://github.com/d2-projects/d2-admin/commit/606e14380d66709b0a18bfedb5dd11cf973e81f9))
+
 ## [1.8.4](https://github.com/d2-projects/d2-admin/compare/v1.8.3...v1.8.4) (2020-04-19)
 
 
