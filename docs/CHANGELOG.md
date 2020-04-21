@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.9.0](https://github.com/d2-projects/d2-admin/compare/v1.8.5...v1.9.0) (2020-04-21)
+
+
+### Features
+
+* **demo:** 更新色盘样式 ([32421fe](https://github.com/d2-projects/d2-admin/commit/32421fe351d47e56ed1d81e5fd8e5a17c361b1f2))
+* 移除无用的 __filename 设置 ([c19ff32](https://github.com/d2-projects/d2-admin/commit/c19ff32287204db680b76999d1c4ae500a6d44a4))
+* **message:** 增强 message 提示的配色对比 ([c36fd8e](https://github.com/d2-projects/d2-admin/commit/c36fd8e5a27b574180aa4f055a55a4e12960e0f5)), closes [#243](https://github.com/d2-projects/d2-admin/issues/243)
+* 移除无用的 d2-crud v1 提示 ([a494560](https://github.com/d2-projects/d2-admin/commit/a494560c8a6bab6a17bce423286e5593de0f3b8f))
+* **element demo:** 移除内置的 elementUI demo ([8b37d3e](https://github.com/d2-projects/d2-admin/commit/8b37d3e77ffd9d713dc8f0a18d416f5606d14c21))
+* **search panel:** 关闭搜索面板中列表容器的阴影 ([eb08ca1](https://github.com/d2-projects/d2-admin/commit/eb08ca19d4db485eded5f92491b420d74d3188ef))
+
 ## [1.8.5](https://github.com/d2-projects/d2-admin/compare/v1.8.4...v1.8.5) (2020-04-21)
 
 
