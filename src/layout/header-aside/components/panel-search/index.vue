@@ -24,7 +24,7 @@
       </div>
     </div>
     <div v-if="resultsList.length > 0" class="panel-search__results-group" flex-box="1">
-      <el-card>
+      <el-card shadow="never">
         <div class="panel-search__results-group-inner">
           <d2-panel-search-item
             v-for="(item, index) in resultsList"
