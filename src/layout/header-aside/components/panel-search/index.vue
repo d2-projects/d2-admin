@@ -132,16 +132,15 @@ export default {
     /**
      * @description 接收用户在下拉菜单中选中事件
      */
-    handleSelect ({ path }) {
+    async handleSelect ({ path }) {
       // 如果用户选择的就是当前页面 就直接关闭搜索面板
       if (path === this.$route.path) {
         this.handleEsc()
         return
       }
       // 用户选择的是其它页面
-      this.$nextTick(() => {
-        this.handleMenuSelect(path)
-      })
+      await this.$nextTick()
+      this.handleMenuSelect(path)
     },
     /**
      * @augments 关闭输入框的下拉菜单
@@ -161,11 +160,10 @@ export default {
     /**
      * @augments 接收用户触发的关闭
      */
-    handleEsc () {
+    async handleEsc () {
       this.closeSuggestion()
-      this.$nextTick(() => {
-        this.$emit('close')
-      })
+      await this.$nextTick()
+      this.$emit('close')
     }
   }
 }

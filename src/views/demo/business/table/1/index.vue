@@ -38,7 +38,7 @@ export default {
     }
   },
   methods: {
-    handlePaginationChange (val) {
+    async handlePaginationChange (val) {
       this.$notify({
         title: '分页变化',
         message: `当前第${val.current}页 共${val.total}条 每页${val.size}条`
@@ -49,9 +49,8 @@ export default {
         pageTotal: val.total
       }
       // nextTick 只是为了优化示例中 notify 的显示
-      this.$nextTick(() => {
-        this.$refs.header.handleFormSubmit()
-      })
+      await this.$nextTick()
+      this.$refs.header.handleFormSubmit()
     },
     handleSubmit (form) {
       this.loading = true
