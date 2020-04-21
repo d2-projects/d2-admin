@@ -84,12 +84,12 @@ export default {
     // 清空当前页缓存并刷新此页面
     handleCleanCacheAndRefreshCurrent () {
       this.keepAliveRemove(this.$route.fullPath)
-      this.$nextTick(this.$router.replace('/refresh'))
+      this.$nextTick(() => this.$router.replace('/refresh'))
     },
     // 清空所有的缓存并刷新此页面
     handleCleanCacheAndRefreshAll () {
       this.keepAliveClean()
-      this.$nextTick(this.$router.replace('/refresh'))
+      this.$nextTick(() => this.$router.replace('/refresh'))
     }
   }
 }
