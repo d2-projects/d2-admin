@@ -1,6 +1,14 @@
 // 每个主题特有的设置
 .theme-#{$theme-name} {
 
+  .el-message {
+    &.el-message--info {
+      background-color: $theme-message-info-background-color;
+      color: $theme-message-info-text-color;
+      border-color: $theme-message-info-border-color;
+    }
+  }
+
   .el-card {
     &.d2-card {
       border: $theme-container-border-outer;
