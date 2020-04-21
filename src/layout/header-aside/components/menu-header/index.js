@@ -8,39 +8,39 @@ export default {
   mixins: [
     menuMixin
   ],
-  render (createElement) {
-    return createElement('div', {
+  render (h) {
+    return h('div', {
       attrs: { flex: 'cross:center' },
       class: { 'd2-theme-header-menu': true, 'is-scrollable': this.isScroll },
       ref: 'page'
     }, [
-      createElement('div', {
+      h('div', {
         attrs: { class: 'd2-theme-header-menu__content', flex: '', 'flex-box': '1' },
         ref: 'content'
       }, [
-        createElement('div', {
+        h('div', {
           attrs: { class: 'd2-theme-header-menu__scroll', 'flex-box': '0' },
           style: { transform: `translateX(${this.currentTranslateX}px)` },
           ref: 'scroll'
         }, [
-          createElement('el-menu', {
+          h('el-menu', {
             props: { mode: 'horizontal', defaultActive: this.active },
             on: { select: this.handleMenuSelect }
-          }, this.header.map(menu => (menu.children === undefined ? elMenuItem : elSubmenu).call(this, createElement, menu)))
+          }, this.header.map(menu => (menu.children === undefined ? elMenuItem : elSubmenu).call(this, h, menu)))
         ])
       ]),
       ...this.isScroll ? [
-        createElement('div', {
+        h('div', {
           attrs: { class: 'd2-theme-header-menu__prev', flex: 'main:center cross:center', 'flex-box': '0' },
           on: { click: () => this.scroll('left') }
         }, [
-          createElement('i', { attrs: { class: 'el-icon-arrow-left' } })
+          h('i', { attrs: { class: 'el-icon-arrow-left' } })
         ]),
-        createElement('div', {
+        h('div', {
           attrs: { class: 'd2-theme-header-menu__next', flex: 'main:center cross:center', 'flex-box': '0' },
           on: { click: () => this.scroll('right') }
         }, [
-          createElement('i', { attrs: { class: 'el-icon-arrow-right' } })
+          h('i', { attrs: { class: 'el-icon-arrow-right' } })
         ])
       ] : []
     ])
