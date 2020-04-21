@@ -12,16 +12,6 @@
   </d2-container>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      filename: __filename
-    }
-  }
-}
-</script>
-
 <style lang="scss" scoped>
 .icon-card {
   display: flex;

@@ -4,13 +4,3 @@
     <d2-markdown url="markdown/demo.md"/>
   </d2-container>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      filename: __filename
-    }
-  }
-}
-</script>
