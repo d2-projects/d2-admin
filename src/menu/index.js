@@ -6,8 +6,6 @@ import demoPlugins from './modules/demo-plugins'
 import demoComponents from './modules/demo-components'
 // 组件
 import demoCharts from './modules/demo-charts'
-// 组件库
-import demoElement from './modules/demo-element'
 // 试验台
 import demoPlayground from './modules/demo-playground'
 // 示例
@@ -37,7 +35,6 @@ export const menuAside = supplementPath([
   demoComponents,
   demoPlugins,
   demoCharts,
-  demoElement,
   demoPlayground,
   demoBusiness,
   demoD2Crud,
@@ -57,7 +54,6 @@ export const menuHeader = supplementPath([
     children: [
       demoD2Crud,
       demoComponents,
-      demoElement,
       demoCharts,
       demoPlugins,
       demoFrame,

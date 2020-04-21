@@ -4,7 +4,6 @@ import d2Crud from './modules/d2-crud'
 import plugins from './modules/plugins'
 import charts from './modules/charts'
 import components from './modules/components'
-import element from './modules/element'
 import business from './modules/business'
 
 import layoutHeaderAside from '@/layout/header-aside'
@@ -63,7 +62,6 @@ const frameIn = [
   plugins,
   charts,
   components,
-  element,
   business
 ]
 
