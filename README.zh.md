@@ -24,6 +24,8 @@
 ![Deploy preview](https://github.com/d2-projects/d2-admin/workflows/Deploy%20preview/badge.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status)](https://app.netlify.com/sites/d2-admin/deploys)
 
+下列访问地址均由最新的 master 分支代码同时构建部署，访问效果完全一致，请根据自身网络情况选择合适的访问链接。
+
 | 位置 | 链接 | 部署位置 |
 | --- | --- | --- |
 | d2.pub | [preview](https://d2.pub/d2-admin/preview) | 中国服务器 |
