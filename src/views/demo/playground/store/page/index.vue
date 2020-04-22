@@ -83,7 +83,7 @@ export default {
     },
     // 清空当前页缓存并刷新此页面
     async handleCleanCacheAndRefreshCurrent () {
-      this.keepAliveRemove(this.$route.fullPath)
+      this.keepAliveRemove(this.$route.name)
       await this.$nextTick()
       this.$router.replace('/refresh')
     },

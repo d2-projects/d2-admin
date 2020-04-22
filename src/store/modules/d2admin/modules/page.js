@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import { cloneDeep, uniq, get } from 'lodash'
 import router from '@/router'
 import setting from '@/setting.js'
 
@@ -160,9 +160,9 @@ export default {
      * @class current
      * @description 打开一个新的页面
      * @param {Object} context
-     * @param {Object} payload 从路由钩子的 to 对象上获取 { name, params, query, fullPath } 路由信息
+     * @param {Object} payload 从路由钩子的 to 对象上获取 { name, params, query, fullPath, meta } 路由信息
      */
-    open ({ state, commit, dispatch }, { name, params, query, fullPath }) {
+    open ({ state, commit, dispatch }, { name, params, query, fullPath, meta }) {
       return new Promise(async resolve => {
         // 已经打开的页面
         let opened = state.opened
@@ -194,6 +194,11 @@ export default {
             })
           }
         }
+        // 如果这个页面需要缓存 将其添加到缓存设置
+        if (isKeepAlive({ meta })) {
+          commit('keepAlivePush', name)
+        }
+        // 设置当前的页面
         commit('currentSet', fullPath)
         // end
         resolve()
@@ -390,9 +395,9 @@ export default {
      * @param {String} name name
      */
     keepAlivePush (state, name) {
-      const keep = [ ...state.keepAlive ]
+      const keep = cloneDeep(state.keepAlive)
       keep.push(name)
-      state.keepAlive = keep
+      state.keepAlive = uniq(keep)
     },
     /**
      * @description 清空页面缓存设置
