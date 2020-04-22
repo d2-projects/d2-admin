@@ -183,17 +183,16 @@ export default {
      * @param {Object} payload { tagName: 要关闭的标签名字 }
      */
     async close ({ state, commit, dispatch }, { tagName }) {
-      // 下个新的页面
-      let newPage = state.opened[0]
+      // 预定下个新页面
+      let newPage = {}
       const isCurrent = state.current === tagName
       // 如果关闭的页面就是当前显示的页面
       if (isCurrent) {
         // 去找一个新的页面
         let len = state.opened.length
-        for (let i = 1; i < len; i++) {
+        for (let i = 0; i < len; i++) {
           if (state.opened[i].fullPath === tagName) {
-            if (i < len - 1) newPage = state.opened[i + 1]
-            else newPage = state.opened[i - 1] 
+            newPage = i < len - 1 ? state.opened[i + 1] : state.opened[i - 1]
             break
           }
         }
@@ -210,7 +209,7 @@ export default {
       await dispatch('opened2db')
       // 最后需要判断是否需要跳到首页
       if (isCurrent) {
-        const { name = '', params = {}, query = {} } = newPage
+        const { name = 'index', params = {}, query = {} } = newPage
         let routerObj = {
           name,
           params,
@@ -233,7 +232,14 @@ export default {
       })
       if (currentIndex > 0) {
         // 删除打开的页面 并在缓存设置中删除
-        state.opened.splice(1, currentIndex - 1).forEach(({ name }) => commit('keepAliveRemove', name))
+        for (let i = state.opened.length - 1; i >= 0; i--) {
+          if (state.opened[i].name === 'index' || i >= currentIndex) {
+            continue
+          }
+
+          commit('keepAliveRemove', state.opened[i].name)
+          state.opened.splice(i, 1)
+        }
       }
       state.current = pageAim
       if (router.app.$route.fullPath !== pageAim) router.push(pageAim)
@@ -253,7 +259,14 @@ export default {
         if (page.fullPath === pageAim) currentIndex = index
       })
       // 删除打开的页面 并在缓存设置中删除
-      state.opened.splice(currentIndex + 1).forEach(({ name }) => commit('keepAliveRemove', name))
+      for (let i = state.opened.length - 1; i >= 0; i--) {
+        if (state.opened[i].name === 'index' || currentIndex >= i) {
+          continue
+        }
+
+        commit('keepAliveRemove', state.opened[i].name)
+        state.opened.splice(i, 1)
+      }
       // 设置当前的页面
       state.current = pageAim
       if (router.app.$route.fullPath !== pageAim) router.push(pageAim)
@@ -273,11 +286,13 @@ export default {
         if (page.fullPath === pageAim) currentIndex = index
       })
       // 删除打开的页面数据 并更新缓存设置
-      if (currentIndex === 0) {
-        state.opened.splice(1).forEach(({ name }) => commit('keepAliveRemove', name))
-      } else {
-        state.opened.splice(currentIndex + 1).forEach(({ name }) => commit('keepAliveRemove', name))
-        state.opened.splice(1, currentIndex - 1).forEach(({ name }) => commit('keepAliveRemove', name))
+      for (let i = state.opened.length - 1; i >= 0; i--) {
+        if (state.opened[i].name === 'index' || currentIndex === i) {
+          continue
+        }
+
+        commit('keepAliveRemove', state.opened[i].name)
+        state.opened.splice(i, 1)
       }
       // 设置新的页面
       state.current = pageAim
@@ -292,7 +307,14 @@ export default {
      */
     async closeAll ({ state, commit, dispatch }) {
       // 删除打开的页面 并在缓存设置中删除
-      state.opened.splice(1).forEach(({ name }) => commit('keepAliveRemove', name))
+      for (let i = state.opened.length - 1; i >= 0; i--) {
+        if (state.opened[i].name === 'index') {
+          continue
+        }
+
+        commit('keepAliveRemove', state.opened[i].name)
+        state.opened.splice(i, 1)
+      }
       // 持久化
       await dispatch('opened2db')
       // 关闭所有的标签页后需要判断一次现在是不是在首页
