@@ -1,13 +1,13 @@
-// 设置文件
+import { get } from 'lodash'
 import setting from '@/setting.js'
 
 export default {
   namespaced: true,
   state: {
     // 主题
-    list: setting.theme.list,
+    list: get(setting, 'theme.list', []),
     // 现在激活的主题 这应该是一个名字 不是对象
-    activeName: setting.theme.list[0].name
+    activeName: get(setting, 'theme.list[0].name', 'd2')
   },
   getters: {
     /**
@@ -23,12 +23,35 @@ export default {
      * @description 激活一个主题
      * @param {String} themeValue 需要激活的主题名称
      */
-    set ({ state, commit, dispatch }, themeName) {
-      return new Promise(async resolve => {
-        // 检查这个主题在主题列表里是否存在
-        state.activeName = state.list.find(e => e.name === themeName) ? themeName : state.list[0].name
-        // 将 vuex 中的主题应用到 dom
-        commit('dom')
+    async set ({ state, commit, dispatch }, themeName) {
+      // 检查这个主题在主题列表里是否存在
+      state.activeName = state.list.find(e => e.name === themeName) ? themeName : state.list[0].name
+      // 将 vuex 中的主题应用到 dom
+      commit('dom')
+      // 持久化
+      await dispatch('d2admin/db/set', {
+        dbName: 'sys',
+        path: 'theme.activeName',
+        value: state.activeName,
+        user: true
+      }, { root: true })
+    },
+    /**
+     * @description 从持久化数据加载主题设置     * @param {Object} context
+     */
+    async load ({ state, commit, dispatch }) {
+      // store 赋值
+      let activeName = await dispatch('d2admin/db/get', {
+        dbName: 'sys',
+        path: 'theme.activeName',
+        defaultValue: state.list[0].name,
+        user: true
+      }, { root: true })
+      // 检查这个主题在主题列表里是否存在
+      if (state.list.find(e => e.name === activeName)) {
+        state.activeName = activeName
+      } else {
+        state.activeName = state.list[0].name
         // 持久化
         await dispatch('d2admin/db/set', {
           dbName: 'sys',
@@ -36,40 +59,9 @@ export default {
           value: state.activeName,
           user: true
         }, { root: true })
-        // end
-        resolve()
-      })
-    },
-    /**
-     * @description 从持久化数据加载主题设置     * @param {Object} context
-     */
-    load ({ state, commit, dispatch }) {
-      return new Promise(async resolve => {
-        // store 赋值
-        let activeName = await dispatch('d2admin/db/get', {
-          dbName: 'sys',
-          path: 'theme.activeName',
-          defaultValue: state.list[0].name,
-          user: true
-        }, { root: true })
-        // 检查这个主题在主题列表里是否存在
-        if (state.list.find(e => e.name === activeName)) {
-          state.activeName = activeName
-        } else {
-          state.activeName = state.list[0].name
-          // 持久化
-          await dispatch('d2admin/db/set', {
-            dbName: 'sys',
-            path: 'theme.activeName',
-            value: state.activeName,
-            user: true
-          }, { root: true })
-        }
-        // 将 vuex 中的主题应用到 dom
-        commit('dom')
-        // end
-        resolve()
-      })
+      }
+      // 将 vuex 中的主题应用到 dom
+      commit('dom')
     }
   },
   mutations: {

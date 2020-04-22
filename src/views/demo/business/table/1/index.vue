@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { BusinessTable1List } from '@api/demo.business.table.1'
+import { businessTable1List } from '@api/demo.business.table.1'
 export default {
   // name 值和本页的 $route.name 一致才可以缓存页面
   name: 'demo-business-table-1',
@@ -57,7 +57,7 @@ export default {
       this.$notify({
         title: '开始请求模拟表格数据'
       })
-      BusinessTable1List({
+      businessTable1List({
         ...form,
         ...this.page
       })

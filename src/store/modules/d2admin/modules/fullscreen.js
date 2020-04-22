@@ -23,17 +23,13 @@ export default {
      * @param {Object} context
      */
     toggle ({ commit }) {
-      return new Promise(resolve => {
-        if (screenfull.isFullscreen) {
-          screenfull.exit()
-          commit('set', false)
-        } else {
-          screenfull.request()
-          commit('set', true)
-        }
-        // end
-        resolve()
-      })
+      if (screenfull.isFullscreen) {
+        screenfull.exit()
+        commit('set', false)
+      } else {
+        screenfull.request()
+        commit('set', true)
+      }
     }
   },
   mutations: {

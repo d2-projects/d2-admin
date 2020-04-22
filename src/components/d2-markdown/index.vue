@@ -12,7 +12,7 @@ import marked from 'marked'
 import highlight from 'highlight.js'
 import bandupan from './plugin/baidupan'
 import 'github-markdown-css'
-import { ComponentsMarkdownBase } from '@api/components.markdown'
+import { componentsMarkdownBase } from '@api/components.markdown'
 export default {
   name: 'd2-markdown',
   props: {
@@ -64,7 +64,7 @@ export default {
     },
     // 从 url 加载原始数据
     async getReadme (url) {
-      const data = await ComponentsMarkdownBase(url)
+      const data = await componentsMarkdownBase(url)
       return this.marked(data)
     },
     marked (data) {

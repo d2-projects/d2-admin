@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { PluginMocksAjax } from '@api/demo.plugins.mocks.ajax'
+import { pluginMocksAjax } from '@api/demo.plugins.mocks.ajax'
 export default {
   name: 'demo-plugins-mock-ajax',
   data () {
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     ajax () {
-      PluginMocksAjax()
+      pluginMocksAjax()
         .then(res => {
           this.table.columns = Object.keys(res.list[0]).map(e => ({
             label: e,

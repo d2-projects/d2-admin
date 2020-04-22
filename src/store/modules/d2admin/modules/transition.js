@@ -13,37 +13,29 @@ export default {
      * @param {Object} context
      * @param {Boolean} active 新的状态
      */
-    set ({ state, dispatch }, active) {
-      return new Promise(async resolve => {
-        // store 赋值
-        state.active = active
-        // 持久化
-        await dispatch('d2admin/db/set', {
-          dbName: 'sys',
-          path: 'transition.active',
-          value: state.active,
-          user: true
-        }, { root: true })
-        // end
-        resolve()
-      })
+    async set ({ state, dispatch }, active) {
+      // store 赋值
+      state.active = active
+      // 持久化
+      await dispatch('d2admin/db/set', {
+        dbName: 'sys',
+        path: 'transition.active',
+        value: state.active,
+        user: true
+      }, { root: true })
     },
     /**
      * 从数据库读取页面过渡动画设置
      * @param {Object} context
      */
-    load ({ state, dispatch }) {
-      return new Promise(async resolve => {
-        // store 赋值
-        state.active = await dispatch('d2admin/db/get', {
-          dbName: 'sys',
-          path: 'transition.active',
-          defaultValue: setting.transition.active,
-          user: true
-        }, { root: true })
-        // end
-        resolve()
-      })
+    async load ({ state, dispatch }) {
+      // store 赋值
+      state.active = await dispatch('d2admin/db/get', {
+        dbName: 'sys',
+        path: 'transition.active',
+        defaultValue: setting.transition.active,
+        user: true
+      }, { root: true })
     }
   }
 }
