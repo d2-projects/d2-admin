@@ -207,15 +207,11 @@ export default {
       }
       // 持久化
       await dispatch('opened2db')
-      // 最后需要判断是否需要跳到首页
+      // 决定最后停留的页面
       if (isCurrent) {
         const { name = 'index', params = {}, query = {} } = newPage
-        let routerObj = {
-          name,
-          params,
-          query
-        }
-        router.push(routerObj)
+        let routerObj = { name, params, query }
+        await router.push(routerObj)
       }
     },
     /**
@@ -241,10 +237,11 @@ export default {
           state.opened.splice(i, 1)
         }
       }
-      state.current = pageAim
-      if (router.app.$route.fullPath !== pageAim) router.push(pageAim)
       // 持久化
       await dispatch('opened2db')
+      // 设置当前的页面
+      state.current = pageAim
+      if (router.app.$route.fullPath !== pageAim) await router.push(pageAim)
     },
     /**
      * @class opened
@@ -267,11 +264,11 @@ export default {
         commit('keepAliveRemove', state.opened[i].name)
         state.opened.splice(i, 1)
       }
-      // 设置当前的页面
-      state.current = pageAim
-      if (router.app.$route.fullPath !== pageAim) router.push(pageAim)
       // 持久化
       await dispatch('opened2db')
+      // 设置当前的页面
+      state.current = pageAim
+      if (router.app.$route.fullPath !== pageAim) await router.push(pageAim)
     },
     /**
      * @class opened
@@ -294,11 +291,11 @@ export default {
         commit('keepAliveRemove', state.opened[i].name)
         state.opened.splice(i, 1)
       }
-      // 设置新的页面
-      state.current = pageAim
-      if (router.app.$route.fullPath !== pageAim) router.push(pageAim)
       // 持久化
       await dispatch('opened2db')
+      // 设置新的页面
+      state.current = pageAim
+      if (router.app.$route.fullPath !== pageAim) await router.push(pageAim)
     },
     /**
      * @class opened
@@ -319,7 +316,7 @@ export default {
       await dispatch('opened2db')
       // 关闭所有的标签页后需要判断一次现在是不是在首页
       if (router.app.$route.name !== 'index') {
-        router.push({ name: 'index' })
+        await router.push({ name: 'index' })
       }
     }
   },
