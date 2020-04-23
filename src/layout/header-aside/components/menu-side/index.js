@@ -11,7 +11,7 @@ export default {
   render (h) {
     return h('div', { attrs: { class: 'd2-layout-header-aside-menu-side' } }, [
       h('el-menu', {
-        props: { collapse: this.asideCollapse, uniqueOpened: true, defaultActive: this.$route.fullPath },
+        props: { collapse: this.asideCollapse, collapseTransition: this.asideTransition, uniqueOpened: true, defaultActive: this.$route.fullPath },
         ref: 'menu',
         on: { select: this.handleMenuSelect }
       }, this.aside.map(menu => (menu.children === undefined ? elMenuItem : elSubmenu).call(this, h, menu))),
@@ -32,7 +32,8 @@ export default {
   computed: {
     ...mapState('d2admin/menu', [
       'aside',
-      'asideCollapse'
+      'asideCollapse',
+      'asideTransition'
     ])
   },
   watch: {

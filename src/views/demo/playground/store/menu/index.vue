@@ -12,6 +12,7 @@
         <el-button-group class="d2-mb">
           <el-button @click="handleAsideSet">设置侧栏空菜单</el-button>
           <el-button @click="asideReset">恢复侧栏菜单</el-button>
+          <el-button @click="asideTransitionToggle()">{{`${asideTransition ? '关闭' : '开启'}侧栏动画效果`}}</el-button>
         </el-button-group>
         <d2-highlight :code="JSON.stringify(aside, null, 2)"/>
       </el-tab-pane>
@@ -21,7 +22,7 @@
 
 <script>
 import { cloneDeep } from 'lodash'
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -51,7 +52,8 @@ export default {
   computed: {
     ...mapState('d2admin/menu', [
       'header',
-      'aside'
+      'aside',
+      'asideTransition'
     ])
   },
   created () {
@@ -91,6 +93,9 @@ export default {
     ...mapMutations('d2admin/menu', [
       'headerSet',
       'asideSet'
+    ]),
+    ...mapActions('d2admin/menu', [
+      'asideTransitionToggle'
     ]),
     /**
      * 修改顶栏菜单

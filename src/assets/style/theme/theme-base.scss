@@ -74,12 +74,14 @@
     }
     .d2-theme-container {
       .d2-theme-container-aside {
-        transition: width .3s;
         position: relative;
         .d2-layout-header-aside-menu-side {
           @extend %full;
           overflow: hidden;
         }
+      }
+      .d2-theme-container-transition {
+        transition: width .3s;
       }
       .d2-theme-container-main {
         padding: 0px;
@@ -116,12 +118,14 @@
     .d2-theme-header {
       // logo区域
       .logo-group {
-        transition: width .3s;
         float: left;
         text-align: center;
         img {
           height: 60px;
         }
+      }
+      .logo-transition {
+        transition: width .3s;
       }
       // 折叠侧边栏切换按钮
       .toggle-aside-btn {

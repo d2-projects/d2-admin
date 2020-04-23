@@ -77,8 +77,8 @@ export default {
       await dispatch('d2admin/transition/load', null, { root: true })
       // 持久化数据加载上次退出时的多页列表
       await dispatch('d2admin/page/openedLoad', null, { root: true })
-      // 持久化数据加载侧边栏折叠状态
-      await dispatch('d2admin/menu/asideCollapseLoad', null, { root: true })
+      // 持久化数据加载侧边栏配置
+      await dispatch('d2admin/menu/asideLoad', null, { root: true })
       // 持久化数据加载全局尺寸
       await dispatch('d2admin/size/load', null, { root: true })
       // 持久化数据加载颜色设置
