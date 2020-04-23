@@ -17,3 +17,15 @@
 .el-tabs__item:focus.is-active.is-focus:not(:active) {
   box-shadow: none !important;
 }
+
+// 修复IE宽度不能撑满
+.el-table__body,
+.el-table__header {
+  width: 100% !important;
+}
+
+// Chrome下表格头部错位修复
+.el-table th.gutter,
+.el-table colgroup.gutter {
+  display: table-cell !important;
+}
