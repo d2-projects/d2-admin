@@ -88,9 +88,8 @@ export default {
         defaultValue: setting.menu,
         user: true
       }, { root: true })
-
-      state.asideCollapse = menu.asideCollapse
-      state.asideTransition = menu.asideTransition
+      state.asideCollapse = menu.asideCollapse !== undefined ? menu.asideCollapse : setting.menu.asideCollapse
+      state.asideTransition = menu.asideTransition !== undefined ? menu.asideTransition : setting.menu.asideTransition
     }
   },
   mutations: {
