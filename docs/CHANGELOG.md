@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.9.1](https://github.com/d2-projects/d2-admin/compare/v1.9.0...v1.9.1) (2020-04-23)
+
+
+### Bug Fixes
+
+* 修复"增加侧边栏菜单折叠动画效果切换与设置"提交中遗留的问题 ([0e4f61c](https://github.com/d2-projects/d2-admin/commit/0e4f61c05965411e9013dcef0281517fba7a6635))
+
 # [1.9.0](https://github.com/d2-projects/d2-admin/compare/v1.8.5...v1.9.0) (2020-04-22)
 
 
