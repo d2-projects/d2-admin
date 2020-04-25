@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.9.2](https://github.com/d2-projects/d2-admin/compare/v1.9.1...v1.9.2) (2020-04-25)
+
+
+### Bug Fixes
+
+* **dependencies-cdn:** 修复生产环境中 CDN 没有引用 .min 的问题 ([f1f7b91](https://github.com/d2-projects/d2-admin/commit/f1f7b91c3f0fcdceca3815b700343b38194805c9))
+
 ## [1.9.1](https://github.com/d2-projects/d2-admin/compare/v1.9.0...v1.9.1) (2020-04-23)
 
 
