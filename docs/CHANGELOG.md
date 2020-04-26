@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.10.0](https://github.com/d2-projects/d2-admin/compare/v1.9.2...v1.10.0) (2020-04-26)
+
+
+### Bug Fixes
+
+* 升级 cdn 依赖版本 ([771031d](https://github.com/d2-projects/d2-admin/commit/771031d7d39a3ab2d013cbf5d8d18ee949f64b97))
+
+
+### Features
+
+* add theme chester ([e3fd543](https://github.com/d2-projects/d2-admin/commit/e3fd543573d42f2f06c0214d34dea6263f8c3294))
+
 ## [1.9.2](https://github.com/d2-projects/d2-admin/compare/v1.9.1...v1.9.2) (2020-04-25)
 
 
