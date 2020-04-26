@@ -38,6 +38,11 @@ export default {
         preview: 'image/theme/d2/preview@2x.png'
       },
       {
+        title: 'Chester',
+        name: 'chester',
+        preview: 'image/theme/chester/preview@2x.png'
+      },
+      {
         title: '紫罗兰',
         name: 'violet',
         preview: 'image/theme/violet/preview@2x.png'

@@ -1,0 +1,64 @@
+// 主题名称
+$theme-name: 'chester';
+// 主题背景颜色
+$theme-bg-color: #2C3643;
+// 主题背景图片遮罩
+$theme-bg-mask: rgba(#000, 0);
+
+// 消息提示
+$theme-message-info-background-color: #FFFFFF;
+$theme-message-info-text-color: #222A34;
+$theme-message-info-border-color: #222A34;
+
+// container组件
+$theme-container-background-color: rgba(#FFF, 1);
+$theme-container-header-footer-background-color: #FFF;
+$theme-container-border-inner: 1px solid #CFD7E5;
+$theme-container-border-outer: 1px solid #2A2D2E;
+
+$theme-multiple-page-control-color: #CCCCCC;
+$theme-multiple-page-control-color-active: #242D38;
+$theme-multiple-page-control-nav-prev-color: #CCCCCC;
+$theme-multiple-page-control-nav-next-color: #CCCCCC;
+$theme-multiple-page-control-border-color: #2A2D2E;
+$theme-multiple-page-control-border-color-active: #FFFFFF;
+$theme-multiple-page-control-background-color: #242D38;
+$theme-multiple-page-control-background-color-active: #FFFFFF;
+
+// 顶栏和侧边栏中展开的菜单 hover 状态下
+$theme-menu-item-color-hover: #CCCCCC;
+$theme-menu-item-background-color-hover: #2A2D2E;
+
+// 顶栏上的文字颜色
+$theme-header-item-color: #CCCCCC;
+$theme-header-item-background-color: transparent;
+// 顶栏上的项目在 hover 时
+$theme-header-item-color-hover: #CCCCCC;
+$theme-header-item-background-color-hover: #2A2D2E;
+// 顶栏上的项目在 focus 时
+$theme-header-item-color-focus: #CCCCCC;
+$theme-header-item-background-color-focus: #222A34;
+// 顶栏上的项目在 active 时
+$theme-header-item-color-active: #FFFFFF;
+$theme-header-item-background-color-active: #222A34;
+
+// 侧边栏上的文字颜色
+$theme-aside-item-color: #CCCCCC;
+$theme-aside-item-background-color: transparent;
+// 侧边栏上的项目在 hover 时
+$theme-aside-item-color-hover: #CCCCCC;
+$theme-aside-item-background-color-hover: #2A2D2E;
+// 侧边栏上的项目在 focus 时
+$theme-aside-item-color-focus: #CCCCCC;
+$theme-aside-item-background-color-focus: #222A34;
+// 侧边栏上的项目在 active 时
+$theme-aside-item-color-active: #FFFFFF;
+$theme-aside-item-background-color-active: #222A34;
+
+// 侧边栏菜单为空的时候显示的元素
+$theme-aside-menu-empty-icon-color: #CCCCCC;
+$theme-aside-menu-empty-text-color: #CCCCCC;
+$theme-aside-menu-empty-background-color: #242D38;
+$theme-aside-menu-empty-icon-color-hover: #FFFFFF;
+$theme-aside-menu-empty-text-color-hover: #FFFFFF;
+$theme-aside-menu-empty-background-color-hover: #242D38;
