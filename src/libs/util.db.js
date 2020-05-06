@@ -77,14 +77,12 @@ export function dbGet ({
   defaultValue = '',
   user = false
 }) {
-  return new Promise(resolve => {
-    resolve(cloneDeep(db.get(pathInit({
-      dbName,
-      path,
-      user,
-      defaultValue
-    })).value()))
-  })
+  return cloneDeep(db.get(pathInit({
+    dbName,
+    path,
+    user,
+    defaultValue
+  })).value())
 }
 
 /**
@@ -98,9 +96,7 @@ export function database ({
   validator = () => true,
   defaultValue = ''
 } = {}) {
-  return new Promise(resolve => {
-    resolve(db.get(pathInit({
-      dbName, path, user, validator, defaultValue
-    })))
-  })
+  return db.get(pathInit({
+    dbName, path, user, validator, defaultValue
+  }))
 }
