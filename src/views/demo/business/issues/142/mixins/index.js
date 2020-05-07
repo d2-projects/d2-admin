@@ -27,7 +27,7 @@ export default {
       this.resetFormData()
       // 请求数据
       try {
-        const res = await this.$api.DEMO_BUSINESS_ISSUE_142_DETAIL({ id })
+        const res = await this.$api.DEMO_BUSINESS_ISSUE_142_DETAIL(id)
         const { name, address } = res
         this.form = { name, address }
         this.$message.success('getFormData')

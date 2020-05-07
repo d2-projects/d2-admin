@@ -63,7 +63,7 @@ export default {
     },
     // 从 url 加载原始数据
     async getReadme (url) {
-      const data = await this.$api.COMPONENT_MARKDOWN_GET({ url })
+      const data = await this.$api.FILE_GET(url)
       return this.marked(data)
     },
     marked (data) {

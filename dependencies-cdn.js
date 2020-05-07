@@ -6,6 +6,7 @@ module.exports = [
   { name: 'axios', library: 'axios', js: 'https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js', css: '' },
   { name: 'better-scroll', library: 'BScroll', js: 'https://cdn.jsdelivr.net/npm/better-scroll@1.15.2/dist/bscroll.min.js', css: '' },
   { name: 'element-ui', library: 'ELEMENT', js: 'https://cdn.jsdelivr.net/npm/element-ui@2.13.1/lib/index.js', css: 'https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/theme-chalk/index.css' },
+  { name: 'axios-mock-adapter', library: 'AxiosMockAdapter', js: 'https://cdn.jsdelivr.net/npm/axios-mock-adapter@1.18.1/dist/axios-mock-adapter.min.js', css: '' },
   { name: 'lodash', library: '_', js: 'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js', css: '' },
   { name: 'ua-parser-js', library: 'UAParser', js: 'https://cdn.jsdelivr.net/npm/ua-parser-js@0.7.20/dist/ua-parser.min.js', css: '' },
   { name: 'js-cookie', library: 'Cookies', js: 'https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js', css: '' },

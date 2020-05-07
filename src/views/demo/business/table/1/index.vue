@@ -65,6 +65,7 @@ export default {
           this.$notify({
             title: '模拟表格数据请求完毕'
           })
+          console.log(res)
           this.table = res.list
           this.page.pageTotal = res.page.total
         })

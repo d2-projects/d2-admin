@@ -52,7 +52,7 @@ export default {
     // 请求表格数据
     async getTableData () {
       try {
-        const res = this.$api.DEMO_BUSINESS_ISSUE_142_LIST()
+        const res = await this.$api.DEMO_BUSINESS_ISSUE_142_LIST()
         this.crud.data = res.list
       } catch (error) {
         console.log(error)

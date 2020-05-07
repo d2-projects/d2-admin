@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Adapter from 'axios-mock-adapter'
 import { Message } from 'element-ui'
 import { get } from 'lodash'
 import util from '@/libs/util'
@@ -96,6 +97,8 @@ service.interceptors.response.use(
     return Promise.reject(error)
   }
 )
+
+export const mock = new Adapter(service)
 
 export function request (config) {
   const token = util.cookies.get('token')
