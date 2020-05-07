@@ -66,7 +66,7 @@ export default {
             {
               path,
               name,
-              component: () => import(`@/views/demo/playground/add-routes/alternates/${component}.vue`),
+              component: () => import('@/views/demo/playground/add-routes/alternates/' + component + '.vue'),
               meta: {
                 title
               }
