@@ -13,11 +13,6 @@
 </template>
 
 <script>
-// API
-import {
-  fetch
-} from '@/api/demo.business.issues.142'
-
 export default {
   data () {
     return {
@@ -55,12 +50,13 @@ export default {
   },
   methods: {
     // 请求表格数据
-    getTableData () {
-      fetch()
-        .then(res => {
-          this.crud.data = res.list
-        })
-        .catch(err => console.log(err))
+    async getTableData () {
+      try {
+        const res = this.$api.DEMO_BUSINESS_ISSUE_142_LIST()
+        this.crud.data = res.list
+      } catch (error) {
+        console.log(error)
+      }
     },
     // 跳转到编辑页面
     goToEditPage (name, id) {

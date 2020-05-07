@@ -24,7 +24,6 @@
 import '../install'
 import doc from './doc.md'
 import code from './code.js'
-import { businessTable1List } from '@api/demo.business.table.1'
 
 export default {
   data () {
@@ -73,7 +72,7 @@ export default {
     },
     fetchData () {
       this.loading = true
-      businessTable1List({
+      this.$api.DEMO_BUSINESS_TABLE_1_LIST({
         ...this.pagination
       }).then(res => {
         this.data = res.list

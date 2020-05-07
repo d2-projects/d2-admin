@@ -8,11 +8,10 @@
 </template>
 
 <script>
-import { getInvalidUrl } from '@api/demo.playground.log.ajax.js'
 export default {
   methods: {
     handleClick () {
-      getInvalidUrl()
+      this.$api.DEMO_LOG_AJAX()
     }
   }
 }
