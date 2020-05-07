@@ -5,16 +5,6 @@ export default {
   children: (pre => [
     { path: `${pre}index`, title: '插件', icon: 'home' },
     {
-      path: `${pre}mock`,
-      title: '模拟数据',
-      icon: 'globe',
-      children: [
-        { path: `${pre}mock/ajax`, title: '拦截异步请求' },
-        { path: `${pre}mock/dpd`, title: 'DPD 规则' },
-        { path: `${pre}mock/dtd`, title: 'DTD 规则' }
-      ]
-    },
-    {
       path: `${pre}import`,
       title: '导入',
       icon: 'download',

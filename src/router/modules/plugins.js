@@ -21,9 +21,6 @@ export default {
     { path: 'import/csv', name: `${pre}import-csv`, component: _import('demo/plugins/import/csv.vue'), meta: { ...meta, title: '导入 csv' } },
     { path: 'import/xlsx', name: `${pre}import-xlsx`, component: _import('demo/plugins/import/xlsx.vue'), meta: { ...meta, title: '导入 xlsx' } },
     { path: 'index', name: `${pre}index`, component: _import('demo/plugins/index'), meta: { ...meta, title: '插件首页' } },
-    { path: 'js-cookie', name: `${pre}js-cookie`, component: _import('demo/plugins/js-cookie'), meta: { ...meta, title: 'Cookie' } },
-    { path: 'mock/ajax', name: `${pre}mock-ajax`, component: _import('demo/plugins/mock/ajax.vue'), meta: { ...meta, title: '模拟数据' } },
-    { path: 'mock/dpd', name: `${pre}mock-dpd`, component: _import('demo/plugins/mock/dpd.vue'), meta: { ...meta, title: 'mock dpd规则' } },
-    { path: 'mock/dtd', name: `${pre}mock-dtd`, component: _import('demo/plugins/mock/dtd.vue'), meta: { ...meta, title: 'mock dtd规则' } }
+    { path: 'js-cookie', name: `${pre}js-cookie`, component: _import('demo/plugins/js-cookie'), meta: { ...meta, title: 'Cookie' } }
   ])('demo-plugins-')
 }
