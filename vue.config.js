@@ -3,7 +3,7 @@ const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 const ThemeColorReplacer = require('webpack-theme-color-replacer')
 const forElementUI = require('webpack-theme-color-replacer/forElementUI')
 const cdnDependencies = require('./dependencies-cdn')
-const { chain, set, each, keys } = require('lodash')
+const { chain, set, each } = require('lodash')
 
 // 拼接路径
 const resolve = dir => require('path').join(__dirname, dir)
@@ -13,10 +13,10 @@ process.env.VUE_APP_VERSION = require('./package.json').version
 process.env.VUE_APP_BUILD_TIME = require('dayjs')().format('YYYY-M-D HH:mm:ss')
 
 // 基础路径 注意发布之前要先修改这里
-let publicPath = process.env.VUE_APP_PUBLIC_PATH || '/'
+const publicPath = process.env.VUE_APP_PUBLIC_PATH || '/'
 
 // 设置不参与构建的库
-let externals = {}
+const externals = {}
 cdnDependencies.forEach(pkg => { externals[pkg.name] = pkg.library })
 
 // 引入文件的 cdn 链接
@@ -44,7 +44,7 @@ module.exports = {
     loaderOptions: {
       // 设置 scss 公用变量文件
       sass: {
-        prependData: `@import '~@/assets/style/public.scss';`
+        prependData: '@import \'~@/assets/style/public.scss\';'
       }
     }
   },
@@ -100,7 +100,7 @@ module.exports = {
         matchColors: [
           ...forElementUI.getElementUISeries(process.env.VUE_APP_ELEMENT_COLOR) // Element-ui主色系列
         ],
-        externalCssFiles: [ './node_modules/element-ui/lib/theme-chalk/index.css' ], // optional, String or string array. Set external css files (such as cdn css) to extract colors.
+        externalCssFiles: ['./node_modules/element-ui/lib/theme-chalk/index.css'], // optional, String or string array. Set external css files (such as cdn css) to extract colors.
         changeSelector: forElementUI.changeSelector
       }])
     config

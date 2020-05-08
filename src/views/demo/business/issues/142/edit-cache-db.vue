@@ -80,7 +80,7 @@ export default {
         user: true
       })
       for (const key in data) {
-        if (data.hasOwnProperty(key)) this[key] = data[key]
+        this[key] = data[key]
       }
       this.$message.success('loadDataFromDb')
     }

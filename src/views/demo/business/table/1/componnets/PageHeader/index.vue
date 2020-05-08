@@ -72,8 +72,8 @@ export default {
         note: ''
       },
       rules: {
-        type: [ { required: true, message: '请选择一个状态', trigger: 'change' } ],
-        user: [ { required: true, message: '请输入用户', trigger: 'change' } ]
+        type: [{ required: true, message: '请选择一个状态', trigger: 'change' }],
+        user: [{ required: true, message: '请输入用户', trigger: 'change' }]
       }
     }
   },

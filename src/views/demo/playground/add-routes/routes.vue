@@ -81,7 +81,7 @@ export default {
         ...route
       ])
       // 演示更新菜单
-      let menuGroup = {
+      const menuGroup = {
         title: '临时菜单',
         icon: 'plus-square',
         children: []
@@ -91,7 +91,7 @@ export default {
         title,
         icon: 'file-o'
       }
-      let header = cloneDeep(this.header)
+      const header = cloneDeep(this.header)
       const menuGroupIndex = header.findIndex(e => e.title === menuGroup.title)
       // 如果顶栏菜单已经有这个组，就在组里添加项目，反之新建一个菜单组
       if (menuGroupIndex >= 0) {

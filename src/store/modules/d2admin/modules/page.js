@@ -93,7 +93,7 @@ export default {
      */
     async openedUpdate ({ state, commit, dispatch }, { index, params, query, fullPath }) {
       // 更新页面列表某一项
-      let page = state.opened[index]
+      const page = state.opened[index]
       page.params = params || page.params
       page.query = query || page.query
       page.fullPath = fullPath || page.fullPath
@@ -109,7 +109,7 @@ export default {
      */
     async openedSort ({ state, commit, dispatch }, { oldIndex, newIndex }) {
       // 重排页面列表某一项
-      let page = state.opened[oldIndex]
+      const page = state.opened[oldIndex]
       state.opened.splice(oldIndex, 1)
       state.opened.splice(newIndex, 0, page)
       // 持久化
@@ -123,7 +123,7 @@ export default {
      */
     async add ({ state, commit, dispatch }, { tag, params, query, fullPath }) {
       // 设置新的 tag 在新打开一个以前没打开过的页面时使用
-      let newTag = tag
+      const newTag = tag
       newTag.params = params || newTag.params
       newTag.query = query || newTag.query
       newTag.fullPath = fullPath || newTag.fullPath
@@ -142,7 +142,7 @@ export default {
      */
     async open ({ state, commit, dispatch }, { name, params, query, fullPath, meta }) {
       // 已经打开的页面
-      let opened = state.opened
+      const opened = state.opened
       // 判断此页面是否已经打开 并且记录位置
       let pageOpendIndex = 0
       const pageOpend = opened.find((page, index) => {
@@ -160,7 +160,7 @@ export default {
         })
       } else {
         // 页面以前没有打开过
-        let page = state.pool.find(t => t.name === name)
+        const page = state.pool.find(t => t.name === name)
         // 如果这里没有找到 page 代表这个路由虽然在框架内 但是不参与标签页显示
         if (page) {
           await dispatch('add', {
@@ -189,7 +189,7 @@ export default {
       // 如果关闭的页面就是当前显示的页面
       if (isCurrent) {
         // 去找一个新的页面
-        let len = state.opened.length
+        const len = state.opened.length
         for (let i = 0; i < len; i++) {
           if (state.opened[i].fullPath === tagName) {
             newPage = i < len - 1 ? state.opened[i + 1] : state.opened[i - 1]
@@ -210,7 +210,7 @@ export default {
       // 决定最后停留的页面
       if (isCurrent) {
         const { name = 'index', params = {}, query = {} } = newPage
-        let routerObj = { name, params, query }
+        const routerObj = { name, params, query }
         await router.push(routerObj)
       }
     },

@@ -88,7 +88,7 @@ export default {
   async created () {
     const data = await this.pageGet({ instance: this })
     for (const key in data) {
-      if (data.hasOwnProperty(key)) this[key] = data[key]
+      this[key] = data[key]
     }
   },
   watch: {

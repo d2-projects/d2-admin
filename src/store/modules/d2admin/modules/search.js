@@ -39,11 +39,11 @@ export default {
       const push = function (menu, titlePrefix = []) {
         menu.forEach(m => {
           if (m.children) {
-            push(m.children, [ ...titlePrefix, m.title ])
+            push(m.children, [...titlePrefix, m.title])
           } else {
             pool.push({
               ...m,
-              fullTitle: [ ...titlePrefix, m.title ].join(' / ')
+              fullTitle: [...titlePrefix, m.title].join(' / ')
             })
           }
         })
