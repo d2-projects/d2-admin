@@ -12,7 +12,7 @@ module.exports = [
   { name: 'js-cookie', library: 'Cookies', js: 'https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js', css: '' },
   { name: 'nprogress', library: 'NProgress', js: 'https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js', css: 'https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css' },
   { name: 'dayjs', library: 'dayjs', js: 'https://cdn.jsdelivr.net/npm/dayjs@1.8.17/dayjs.min.js', css: '' },
-  { name: 'fuse.js', library: 'Fuse', js: 'https://cdn.jsdelivr.net/npm/fuse.js@3.4.6/dist/fuse.min.js', css: '' },
+  { name: 'fuse.js', library: 'Fuse', js: 'https://cdn.jsdelivr.net/npm/fuse.js@5.2.3/dist/fuse.min.js', css: '' },
   { name: 'hotkeys-js', library: 'hotkeys', js: 'https://cdn.jsdelivr.net/npm/hotkeys-js@3.7.3/dist/hotkeys.min.js', css: '' },
   { name: 'lowdb', library: 'low', js: 'https://cdn.jsdelivr.net/npm/lowdb@1.0.0/dist/low.min.js', css: '' },
   { name: 'lowdb/adapters/LocalStorage', library: 'LocalStorage', js: 'https://cdn.jsdelivr.net/npm/lowdb@1.0.0/dist/LocalStorage.min.js', css: '' },

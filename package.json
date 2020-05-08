@@ -25,7 +25,7 @@
     "element-ui": "^2.13.1",
     "faker": "^4.1.0",
     "flex.css": "^1.1.7",
-    "fuse.js": "^3.4.6",
+    "fuse.js": "^5.2.3",
     "github-markdown-css": "^4.0.0",
     "highlight.js": "^10.0.2",
     "hotkeys-js": "^3.7.3",
