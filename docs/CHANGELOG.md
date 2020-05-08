@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.11.0](https://github.com/d2-projects/d2-admin/compare/v1.10.0...v1.11.0) (2020-05-08)
+
+
+### Features
+
+* fuse.js from 3.6.1 to 5.2.3 & 完善页面搜索相关代码 ([79e43a6](https://github.com/d2-projects/d2-admin/commit/79e43a69d878d7b31f60d0d7a61f67c9217a4e1e))
+* github-markdown-css from 3.0.1 to 4.0.0 ([46d3649](https://github.com/d2-projects/d2-admin/commit/46d3649f0096cb7752ab682cc2087536b663901b))
+* highlight.js from 9.18.1 to 10.0.2 ([9e61f30](https://github.com/d2-projects/d2-admin/commit/9e61f306f20ab58af1a76f0d3d9c94f16141a860))
+* marked 0.8.2 to 1.0.0 ([8968fd4](https://github.com/d2-projects/d2-admin/commit/8968fd45cb16d0d9c792dfc05e6a7bdd24e91090))
+* update devDependencies ([ef9ab55](https://github.com/d2-projects/d2-admin/commit/ef9ab5545f6ceef9a19e59400b31225cce245b5f))
+* 优化接口配置设计,注册的网络请求会自动注册到 vue 原型 $api 上,修改了一些旧的接口调用方式 ([28acfdb](https://github.com/d2-projects/d2-admin/commit/28acfdbb04cb12079981dc495d1f95f5c6cad0aa))
+* 使用 axios 扩展的方式实现 mock 数据 ([ac9b1ea](https://github.com/d2-projects/d2-admin/commit/ac9b1ea26dc9924ac97582033df6f747579ac2f7))
+* 全局错误捕捉 ([60349f0](https://github.com/d2-projects/d2-admin/commit/60349f03445c9cab21ea378a9311e6191471b835))
+* 更新 eslint 后，修复新检查出的错误 ([f4a10ed](https://github.com/d2-projects/d2-admin/commit/f4a10ed3c3c28f735af9f7e3538c6cc507caa2f9))
+* 移除 mockjs 以及相关示例 ([804f66e](https://github.com/d2-projects/d2-admin/commit/804f66eb0581a20c3601f17ea0e384700c114e6b))
+* 简化错误捕捉插件代码 ([6628f1b](https://github.com/d2-projects/d2-admin/commit/6628f1b462733f319cbd89a7a7ddf1dc1ca745ce))
+* **theme:** add element theme ([97f00c2](https://github.com/d2-projects/d2-admin/commit/97f00c21ddd678789d1b88bfe2466e2bd9cf0c81))
+
 # [1.10.0](https://github.com/d2-projects/d2-admin/compare/v1.9.2...v1.10.0) (2020-04-26)
 
 
