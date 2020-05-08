@@ -49,7 +49,7 @@ export default {
         type: 'danger',
         meta: {
           error,
-          trace: error.stack,
+          trace: error && error.stack,
           source: `${source}@${lineno}:${colno}`,
           event: event
         }
