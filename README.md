@@ -137,6 +137,7 @@ The following access addresses are built and deployed by the latest master branc
 
 | Name | technology | HomePage | Preview | Introduction |
 | --- | --- | --- | --- | --- |
+| **FlaskPermission** | Flask | [Github](https://github.com/huguodong/flask-permission) | [preview](http://47.97.218.139:9999) | Permission management based on Flask |
 | **CareyShop** | ThinkPHP5 | [Github](https://github.com/dnyz520/careyshop-admin) | [preview](https://demo.careyshop.cn/admin/#/index) | High Performance Mall Framework System for CareyShop |
 | **jiiiiiin-security** | Spring Boot | [Github](https://github.com/Jiiiiiin/jiiiiiin-security) | [preview](https://github.com/Jiiiiiin/jiiiiiin-security) | Separate front-end and back-end content management infrastructure projects, focusing on user rights management functions |
 | **Taroco** | Spring Cloud | [Github](https://github.com/liuht777/Taroco) | [preview](http://111.231.192.110/) | Complete microservice enterprise solution |
