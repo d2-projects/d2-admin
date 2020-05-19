@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.12.1](https://github.com/d2-projects/d2-admin/compare/v1.12.0...v1.12.1) (2020-05-19)
+
+
+### Bug Fixes
+
+* :bug: 修复静态资源请求错误 ([1983506](https://github.com/d2-projects/d2-admin/commit/1983506e46b117a064d959ee5b189e20168b5d71)), closes [#280](https://github.com/d2-projects/d2-admin/issues/280)
+
 # [1.12.0](https://github.com/d2-projects/d2-admin/compare/v1.11.0...v1.12.0) (2020-05-19)
 
 
