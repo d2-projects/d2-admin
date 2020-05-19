@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.12.0](https://github.com/d2-projects/d2-admin/compare/v1.11.0...v1.12.0) (2020-05-19)
+
+
+### Features
+
+* :bulb: 分离用于真实网络请求和模拟请求的 service ([d6704da](https://github.com/d2-projects/d2-admin/commit/d6704dad5c2fd4ebea611aaccd714d0003f64935))
+
 # [1.11.0](https://github.com/d2-projects/d2-admin/compare/v1.10.0...v1.11.0) (2020-05-08)
 
 
