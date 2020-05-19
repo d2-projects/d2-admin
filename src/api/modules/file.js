@@ -4,7 +4,7 @@ export default ({ service, request, serviceForMock, requestForMock, mock, faker,
    * @param {String} url 文件地址
    */
   FILE_GET (url = '') {
-    return requestForMock({
+    return request({
       baseURL: process.env.BASE_URL,
       url,
       method: 'get'
