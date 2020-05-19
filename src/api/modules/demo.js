@@ -7,7 +7,7 @@ const businessIssue142Db = [
   { id: '4', name: '用户 4', address: '上海市普陀区金沙江路 1516 弄' }
 ]
 
-export default ({ request, faker, mock, tools }) => ({
+export default ({ service, request, serviceForMock, requestForMock, mock, faker, tools }) => ({
   /**
    * @description https://d2.pub/d2-admin/preview/#/demo/business/issues/142
    * @description 列表
@@ -18,7 +18,7 @@ export default ({ request, faker, mock, tools }) => ({
       .onAny('/demo/business/issues/142/fetch')
       .reply(...tools.responseSuccess({ list: businessIssue142Db }))
     // 接口请求
-    return request({
+    return requestForMock({
       url: '/demo/business/issues/142/fetch',
       method: 'get'
     })
@@ -34,7 +34,7 @@ export default ({ request, faker, mock, tools }) => ({
       .onAny('/demo/business/issues/142/detail')
       .reply(config => tools.responseSuccess(find(businessIssue142Db, { id: config.params.id })))
     // 接口请求
-    return request({
+    return requestForMock({
       url: '/demo/business/issues/142/detail',
       method: 'get',
       params: {
@@ -66,7 +66,7 @@ export default ({ request, faker, mock, tools }) => ({
         }))
       }))
     // 接口请求
-    return request({
+    return requestForMock({
       url: '/demo/business/table/1/fetch',
       method: 'get',
       params
@@ -77,7 +77,7 @@ export default ({ request, faker, mock, tools }) => ({
    */
   DEMO_LOG_AJAX () {
     // 接口请求
-    return request({
+    return requestForMock({
       url: '/invalid-url',
       method: 'get'
     })

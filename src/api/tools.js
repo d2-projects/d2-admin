@@ -1,3 +1,7 @@
+import { Message } from 'element-ui'
+import store from '@/store'
+import util from '@/libs/util'
+
 /**
  * @description 安全地解析 json 字符串
  * @param {String} jsonString 需要解析的 json 字符串
@@ -43,4 +47,40 @@ export function responseSuccess (data = {}, msg = '成功') {
  */
 export function responseError (data = {}, msg = '请求失败', code = 500) {
   return response(data, msg, code)
+}
+
+/**
+ * @description 记录和显示错误
+ * @param {Error} error 错误对象
+ */
+export function errorLog (error) {
+  // 添加到日志
+  store.dispatch('d2admin/log/push', {
+    message: '数据请求异常',
+    type: 'danger',
+    meta: {
+      error
+    }
+  })
+  // 打印到控制台
+  if (process.env.NODE_ENV === 'development') {
+    util.log.danger('>>>>>> Error >>>>>>')
+    console.log(error)
+  }
+  // 显示提示
+  Message({
+    message: error.message,
+    type: 'error',
+    duration: 5 * 1000
+  })
+}
+
+/**
+ * @description 创建一个错误
+ * @param {String} msg 错误信息
+ */
+export function errorCreate (msg) {
+  const error = new Error(msg)
+  errorLog(error)
+  throw error
 }

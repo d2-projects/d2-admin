@@ -6,7 +6,7 @@ const users = [
   { username: 'user1', password: 'user1', uuid: 'user1-uuid', name: 'User1' }
 ]
 
-export default ({ request, faker, mock, tools }) => ({
+export default ({ service, request, serviceForMock, requestForMock, mock, faker, tools }) => ({
   /**
    * @description 登录
    * @param {Object} data 登录携带的信息
@@ -22,7 +22,7 @@ export default ({ request, faker, mock, tools }) => ({
           : tools.responseError({}, '账号或密码不正确')
       })
     // 接口请求
-    return request({
+    return requestForMock({
       url: '/login',
       method: 'post',
       data
