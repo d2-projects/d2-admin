@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.13.0](https://github.com/d2-projects/d2-admin/compare/v1.12.1...v1.13.0) (2020-06-04)
+
+
+### Features
+
+* :arrow_up: upgrade element-ui 2.13.2 ([b43f472](https://github.com/d2-projects/d2-admin/commit/b43f472db2d5970f51a8e002d54f400e5359a01a))
+
 ## [1.12.1](https://github.com/d2-projects/d2-admin/compare/v1.12.0...v1.12.1) (2020-05-19)
 
 
