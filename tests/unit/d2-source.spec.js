@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import D2Source from '@/components/d2-container/components/d2-source.vue'
 
 describe('d2-source', () => {
