@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.14.0](https://github.com/d2-projects/d2-admin/compare/v1.13.0...v1.14.0) (2020-06-08)
+
+
+### Bug Fixes
+
+* :bug: d2-count-up 组件删除错误代码和无用代码 ([93414eb](https://github.com/d2-projects/d2-admin/commit/93414ebc86093fedc62eb0b8d72bf2d51ecb009c))
+* :bug: 修复示例代码中错误的 required 属性 ([a657395](https://github.com/d2-projects/d2-admin/commit/a6573955335456d9de65f5ba795f9a7df8897f49))
+
+
+### Features
+
+* :art: 解决关于 error 信息的检查遗漏提示 ([b1ea3e8](https://github.com/d2-projects/d2-admin/commit/b1ea3e81a6f2de93080427c9ee648a4015e06821))
+* :art: 解决关于 page 是否存在判断不合理的问题 ([7062d06](https://github.com/d2-projects/d2-admin/commit/7062d0622ea74bea1397e24ba6b318b1a4a2dbcc))
+* :sparkles: menu-header 和 menu-side 组件使用 jsx 重写 render ([0e54179](https://github.com/d2-projects/d2-admin/commit/0e541795a90ebff825bf1add3a147ef46809076b))
+
 # [1.13.0](https://github.com/d2-projects/d2-admin/compare/v1.12.1...v1.13.0) (2020-06-04)
 
 
