@@ -1,6 +1,6 @@
 import { mapState } from 'vuex'
 import menuMixin from '../mixin/menu'
-import { elMenuItem, elSubmenu } from '../libs/util.menu'
+import { createMenu } from '../libs/util.menu'
 import BScroll from 'better-scroll'
 
 export default {
@@ -9,19 +9,25 @@ export default {
     menuMixin
   ],
   render (h) {
-    return h('div', { attrs: { class: 'd2-layout-header-aside-menu-side' } }, [
-      h('el-menu', {
-        props: { collapse: this.asideCollapse, collapseTransition: this.asideTransition, uniqueOpened: true, defaultActive: this.$route.fullPath },
-        ref: 'menu',
-        on: { select: this.handleMenuSelect }
-      }, this.aside.map(menu => (menu.children === undefined ? elMenuItem : elSubmenu).call(this, h, menu))),
-      ...this.aside.length === 0 && !this.asideCollapse ? [
-        h('div', { attrs: { class: 'd2-layout-header-aside-menu-empty', flex: 'dir:top main:center cross:center' } }, [
-          h('d2-icon', { props: { name: 'inbox' } }),
-          h('span', {}, '没有侧栏菜单')
-        ])
-      ] : []
-    ])
+    return <div class="d2-layout-header-aside-menu-side">
+      <el-menu
+        collapse={ this.asideCollapse }
+        collapseTransition={ this.asideTransition }
+        uniqueOpened={ true }
+        defaultActive={ this.$route.fullPath }
+        ref="menu"
+        onSelect={ this.handleMenuSelect }>
+        { this.aside.map(menu => createMenu.call(this, h, menu)) }
+      </el-menu>
+      {
+        this.aside.length === 0 && !this.asideCollapse
+          ? <div class="d2-layout-header-aside-menu-empty" flex="dir:top main:center cross:center">
+            <d2-icon name="inbox"></d2-icon>
+            <span>没有侧栏菜单</span>
+          </div>
+          : null
+      }
+    </div>
   },
   data () {
     return {
