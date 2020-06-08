@@ -48,8 +48,9 @@ function createService () {
       }
     },
     error => {
-      if (error && error.response) {
-        switch (error.response.status) {
+      if (error) {
+        const status = get(error, 'response.status')
+        switch (status) {
           case 400: error.message = '请求错误'; break
           case 401: error.message = '未授权，请登录'; break
           case 403: error.message = '拒绝访问'; break
