@@ -38,22 +38,22 @@ export default {
     }
   },
   render (h) {
-    const slots = [this.$slots.default]
-    if (this.$slots.header) slots.push(h('template', { slot: 'header' }, [this.$slots.header]))
-    if (this.$slots.footer) slots.push(h('template', { slot: 'footer' }, [this.$slots.footer]))
-    return h('div', {
-      ref: 'container',
-      class: 'container-component'
-    }, [
-      h(this.component, {
-        ref: 'component',
-        props: this.$attrs,
-        on: {
-          scroll: e => this.$emit('scroll', e)
-        }
-      }, slots),
-      h(d2Source)
-    ])
+    const slots = [
+      this.$slots.default,
+      this.$slots.header ? <template slot="header">{ this.$slots.header }</template> : null,
+      this.$slots.footer ? <template slot="footer">{ this.$slots.footer }</template> : null
+    ]
+    return <div
+      ref="container"
+      class="container-component">
+      <this.component
+        ref="component"
+        { ...{ attrs: this.$attrs } }
+        onScroll={ e => this.$emit('scroll', e) }>
+        { slots }
+      </this.component>
+      <d2Source/>
+    </div>
   },
   methods: {
     // 返回顶部
