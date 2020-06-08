@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.15.0](https://github.com/d2-projects/d2-admin/compare/v1.14.0...v1.15.0) (2020-06-08)
+
+
+### Features
+
+* :sparkles: jsx 重写 d2-container 的 render ([f64b267](https://github.com/d2-projects/d2-admin/commit/f64b267ee92172ec0b25d8b2c19294360b83ed5e))
+
 # [1.14.0](https://github.com/d2-projects/d2-admin/compare/v1.13.0...v1.14.0) (2020-06-08)
 
 
