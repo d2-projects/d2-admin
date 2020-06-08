@@ -9,7 +9,7 @@ export default {
   props: {
     value: {
       type: Boolean,
-      require: true
+      required: true
     }
   },
   computed: {

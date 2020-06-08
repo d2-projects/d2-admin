@@ -10,7 +10,7 @@ export default {
   props: {
     value: {
       type: Boolean,
-      require: true
+      required: true
     },
     scope: {
       default: null

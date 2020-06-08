@@ -9,7 +9,7 @@ export default {
   props: {
     value: {
       type: Boolean,
-      require: true
+      required: true
     },
     // 本行的所有数据，此字段不需要额外配置
     scope: {
