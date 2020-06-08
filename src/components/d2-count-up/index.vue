@@ -10,34 +10,26 @@ export default {
   props: {
     start: {
       type: Number,
-      required: false,
       default: 0
     },
     end: {
       type: Number,
-      required: true
+      default: 0
     },
     decimals: {
       type: Number,
-      required: false,
       default: 0
     },
     duration: {
       type: Number,
-      required: false,
       default: 2
     },
     options: {
       type: Object,
-      required: false,
-      default () {
-        return {}
-      }
+      default: () => ({})
     },
     callback: {
-      type: Function,
-      required: false,
-      default: () => {}
+      type: Function
     }
   },
   data () {
@@ -47,9 +39,7 @@ export default {
   },
   watch: {
     end (value) {
-      if (this.c && this.c.update) {
-        this.c.update(value)
-      }
+      if (this.c && this.c.update) this.c.update(value)
     }
   },
   mounted () {
@@ -65,37 +55,9 @@ export default {
           ...this.options
         })
         this.c.start(() => {
-          this.callback(this.c)
+          if (this.callback) this.callback(this.c)
         })
       }
-    },
-    destroy () {
-      this.c = null
-    }
-  },
-  beforeDestroy () {
-    this.destroy()
-  },
-  start (callback) {
-    if (this.c && this.c.start) {
-      this.c.start(() => {
-        callback && callback(this.c)
-      })
-    }
-  },
-  pauseResume () {
-    if (this.c && this.c.pauseResume) {
-      this.c.pauseResume()
-    }
-  },
-  reset () {
-    if (this.c && this.c.reset) {
-      this.c.reset()
-    }
-  },
-  update (newEndVal) {
-    if (this.c && this.c.update) {
-      this.c.update(newEndVal)
     }
   }
 }
