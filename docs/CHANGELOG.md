@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.16.0](https://github.com/d2-projects/d2-admin/compare/v1.15.0...v1.16.0) (2020-06-08)
+
+
+### Features
+
+* :sparkles: 移除对 error 的无用判断 ([079fd1c](https://github.com/d2-projects/d2-admin/commit/079fd1c2809ea7f47d3f835a65d94a39ed9a8cf6))
+
 # [1.15.0](https://github.com/d2-projects/d2-admin/compare/v1.14.0...v1.15.0) (2020-06-08)
 
 
