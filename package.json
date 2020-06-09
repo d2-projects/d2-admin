@@ -5,7 +5,7 @@
     "serve": "vue-cli-service serve --open",
     "start": "npm run serve",
     "dev": "npm run serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --report",
     "build:preview": "NODE_OPTIONS=--max_old_space_size=4096 vue-cli-service build --mode preview",
     "lint": "vue-cli-service lint --fix",
     "test:unit": "vue-cli-service test:unit"
