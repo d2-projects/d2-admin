@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.17.0](https://github.com/d2-projects/d2-admin/compare/v1.16.0...v1.17.0) (2020-06-18)
+
+
+### Features
+
+* :sparkles: 增加构建分析页面示例 ([099fde5](https://github.com/d2-projects/d2-admin/commit/099fde59e74c3aba8bef744d02a0047d48c559af))
+
 # [1.16.0](https://github.com/d2-projects/d2-admin/compare/v1.15.0...v1.16.0) (2020-06-08)
 
 
