@@ -1,4 +1,3 @@
-import { get } from 'lodash'
 import d2Source from './components/d2-source.vue'
 
 const containers = {
@@ -29,7 +28,7 @@ export default {
   computed: {
     // 始终返回渲染组件
     component () {
-      return get(containers, `${this.type}${this.betterScroll ? 'bs' : ''}`, 'div')
+      return containers[`${this.type}${this.betterScroll ? 'bs' : ''}`] || 'div'
     }
   },
   render (h) {
