@@ -1,11 +1,14 @@
-// 组件
-import d2ContainerFull from './components/d2-container-full.vue'
-import d2ContainerFullBs from './components/d2-container-full-bs.vue'
-import d2ContainerGhost from './components/d2-container-ghost.vue'
-import d2ContainerGhostBs from './components/d2-container-ghost-bs.vue'
-import d2ContainerCard from './components/d2-container-card.vue'
-import d2ContainerCardBs from './components/d2-container-card-bs.vue'
+import { get } from 'lodash'
 import d2Source from './components/d2-source.vue'
+
+const containers = {
+  full: () => import('./components/d2-container-full.vue'),
+  fullbs: () => import('./components/d2-container-full-bs.vue'),
+  ghost: () => import('./components/d2-container-ghost.vue'),
+  ghostbs: () => import('./components/d2-container-ghost-bs.vue'),
+  card: () => import('./components/d2-container-card.vue'),
+  cardbs: () => import('./components/d2-container-card-bs.vue')
+}
 
 export default {
   name: 'd2-container',
@@ -26,15 +29,7 @@ export default {
   computed: {
     // 始终返回渲染组件
     component () {
-      if (this.type === 'card' && !this.betterScroll) return d2ContainerCard
-      if (this.type === 'card' && this.betterScroll) return d2ContainerCardBs
-      if (this.type === 'ghost' && !this.betterScroll) return d2ContainerGhost
-      if (this.type === 'ghost' && this.betterScroll) return d2ContainerGhostBs
-      if (this.type === 'full' && !this.betterScroll) return d2ContainerFull
-      if (this.type === 'full' && this.betterScroll) return d2ContainerFullBs
-      else {
-        return 'div'
-      }
+      return get(containers, `${this.type}${this.betterScroll ? 'bs' : ''}`, 'div')
     }
   },
   render (h) {
