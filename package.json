@@ -30,7 +30,7 @@
     "highlight.js": "^10.0.2",
     "hotkeys-js": "^3.7.3",
     "js-cookie": "^2.2.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "lowdb": "^1.0.0",
     "marked": "^1.0.0",
     "nprogress": "^0.2.0",
