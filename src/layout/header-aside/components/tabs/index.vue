@@ -27,9 +27,6 @@
       </div>
     </div>
     <div class="d2-multiple-page-control-btn" flex-box="0">
-      <el-button  @click="handleRefresh">
-        <d2-icon name="refresh"/>
-      </el-button>
       <el-dropdown
         size="default"
         split-button
@@ -77,6 +74,7 @@ export default {
         { icon: 'times-circle', title: '关闭全部', value: 'all' }
       ],
       contextmenuList: [
+        { icon: 'refresh', title: '刷新', value: 'refresh' },
         { icon: 'arrow-left', title: '关闭左侧', value: 'left' },
         { icon: 'arrow-right', title: '关闭右侧', value: 'right' },
         { icon: 'times', title: '关闭其它', value: 'other' },
@@ -100,14 +98,6 @@ export default {
       'closeAll',
       'openedSort'
     ]),
-    /**
-     * @description 仅刷新当前router组件 不影响其他已缓存的组件
-     */
-    handleRefresh () {
-      this.$router.push({
-        name: 'refresh'
-      })
-    },
     /**
      * @description 计算某个标签页是否可关闭
      * @param {Object} page 其中一个标签页
@@ -153,6 +143,7 @@ export default {
       if (tagName) this.contextmenuFlag = false
       const params = { pageSelect: tagName }
       switch (command) {
+        case 'refresh': this.$router.push({ name: 'refresh' }); break
         case 'left': this.closeLeft(params); break
         case 'right': this.closeRight(params); break
         case 'other': this.closeOther(params); break
