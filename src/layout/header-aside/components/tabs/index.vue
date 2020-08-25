@@ -27,6 +27,9 @@
       </div>
     </div>
     <div class="d2-multiple-page-control-btn" flex-box="0">
+      <el-button  @click="handleRefresh">
+        <d2-icon name="refresh"/>
+      </el-button>
       <el-dropdown
         size="default"
         split-button
@@ -97,6 +100,14 @@ export default {
       'closeAll',
       'openedSort'
     ]),
+    /**
+     * @description 仅刷新当前router组件 不影响其他已缓存的组件
+     */
+    handleRefresh () {
+      this.$router.push({
+        name: 'refresh'
+      })
+    },
     /**
      * @description 计算某个标签页是否可关闭
      * @param {Object} page 其中一个标签页
