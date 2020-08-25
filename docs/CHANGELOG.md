@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.18.0](https://github.com/d2-projects/d2-admin/compare/v1.17.0...v1.18.0) (2020-08-25)
+
+
+### Features
+
+* :sparkles: 优化合并的代码 完成刷新单页面功能 ([5e3eadf](https://github.com/d2-projects/d2-admin/commit/5e3eadf0eb844e2090a28174ff63feda3b82edbe))
+
 # [1.17.0](https://github.com/d2-projects/d2-admin/compare/v1.16.0...v1.17.0) (2020-06-18)
 
 
