@@ -216,7 +216,7 @@ export default {
     },
     /**
      * @class opened
-     * @description 关闭一个 tag (关闭一个页面)
+     * @description 更新一个 tag title
      * @param {Object} context
      * @param {Object} payload { tagName: 要更新的标签名字, title: 新的标签名字 }
      */
