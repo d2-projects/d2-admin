@@ -216,6 +216,21 @@ export default {
     },
     /**
      * @class opened
+     * @description 更新一个 tag title
+     * @param {Object} context
+     * @param {Object} payload { tagName: 要更新的标签名字, title: 新的标签名字 }
+     */
+    update ({ state }, { tagName, title }) {
+      const index = state.opened.findIndex(page => page.fullPath === tagName)
+      if (index === 0) {
+        return
+      }
+      if (title && state.opened[index]) {
+        state.opened[index].meta.title = title
+      }
+    },
+    /**
+     * @class opened
      * @description 关闭当前标签左边的标签
      * @param {Object} context
      * @param {Object} payload { pageSelect: 当前选中的tagName }
