@@ -12,6 +12,8 @@ import demoPlayground from './modules/demo-playground'
 import demoBusiness from './modules/demo-business'
 // CRUD
 import demoD2Crud from './modules/demo-d2-crud'
+// CRUD PLUS
+import demoD2CrudPlus from './modules/demo-d2-crud-plus'
 // 第三方网页
 import demoFrame from './modules/demo-frame'
 
@@ -38,6 +40,7 @@ export const menuAside = supplementPath([
   demoPlayground,
   demoBusiness,
   demoD2Crud,
+  demoD2CrudPlus,
   demoFrame
 ])
 
@@ -53,6 +56,7 @@ export const menuHeader = supplementPath([
     icon: 'puzzle-piece',
     children: [
       demoD2Crud,
+      demoD2CrudPlus,
       demoComponents,
       demoCharts,
       demoPlugins,
