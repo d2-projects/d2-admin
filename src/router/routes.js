@@ -1,6 +1,7 @@
 import playground from './modules/playground'
 import frame from './modules/frame'
 import d2Crud from './modules/d2-crud'
+import d2CrudPlus from './modules/d2-crud-plus'
 import plugins from './modules/plugins'
 import charts from './modules/charts'
 import components from './modules/components'
@@ -59,6 +60,7 @@ const frameIn = [
   playground,
   frame,
   d2Crud,
+  d2CrudPlus,
   plugins,
   charts,
   components,
