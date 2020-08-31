@@ -39,6 +39,9 @@ export default {
     { path: 'log/log', name: `${pre}log-log`, component: _import('demo/playground/log/log'), meta: { ...meta, title: '日志记录' } },
     { path: 'add-routes/routes', name: `${pre}add-routes-routes`, component: _import('demo/playground/add-routes/routes'), meta: { ...meta, title: '添加页面' } },
     { path: 'env', name: `${pre}env`, component: _import('demo/playground/env'), meta: { ...meta, title: '环境信息' } },
-    { path: 'locales', name: `${pre}locales`, component: _import('demo/playground/locales'), meta: { ...meta, title: '国际化' } }
+    { path: 'locales', name: `${pre}locales`, component: _import('demo/playground/locales'), meta: { ...meta, title: '国际化' } },
+    { path: 'frame/html', name: `${pre}frame-html`, component: _import('demo/playground/frame/html'), meta: { ...meta, title: '静态 HTML' } },
+    { path: 'frame/report', name: `${pre}frame-report`, component: _import('demo/playground/frame/report'), meta: { ...meta, title: 'Size report' } },
+    { path: 'frame/d2-doc', name: `${pre}frame-d2-doc`, component: _import('demo/playground/frame/d2-doc'), meta: { ...meta, title: 'D2Admin 中文文档' } }
   ])('demo-playground-')
 }

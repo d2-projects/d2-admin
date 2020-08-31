@@ -14,8 +14,6 @@ import demoBusiness from './modules/demo-business'
 import demoD2Crud from './modules/demo-d2-crud'
 // CRUD PLUS
 import demoD2CrudPlus from './modules/demo-d2-crud-plus'
-// 第三方网页
-import demoFrame from './modules/demo-frame'
 
 /**
  * @description 给菜单数据补充上 path 字段
@@ -40,8 +38,7 @@ export const menuAside = supplementPath([
   demoPlayground,
   demoBusiness,
   demoD2Crud,
-  demoD2CrudPlus,
-  demoFrame
+  demoD2CrudPlus
 ])
 
 // 菜单 顶栏
@@ -60,7 +57,6 @@ export const menuHeader = supplementPath([
       demoComponents,
       demoCharts,
       demoPlugins,
-      demoFrame,
       {
         title: '新窗口打开链接',
         icon: 'link',

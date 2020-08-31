@@ -38,6 +38,16 @@ export default {
       ]
     },
     {
+      path: `${pre}frame`,
+      title: '内嵌网页',
+      icon: 'globe',
+      children: [
+        { path: `${pre}frame/d2-doc`, title: 'D2Admin 中文文档', iconSvg: 'd2-admin' },
+        { path: `${pre}frame/html`, title: '静态 HTML', icon: 'code' },
+        { path: `${pre}frame/report`, title: '构建分析', icon: 'pie-chart' }
+      ]
+    },
+    {
       path: `${pre}store`,
       title: '全局状态管理',
       icon: 'bolt',
