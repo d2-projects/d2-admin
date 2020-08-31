@@ -1,7 +1,7 @@
 export default {
   path: '/demo/business',
   title: '示例',
-  icon: 'flask',
+  icon: 'terminal',
   children: (pre => [
     { path: `${pre}index`, title: '示例', icon: 'home' },
     {

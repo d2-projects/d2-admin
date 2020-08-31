@@ -1,9 +1,9 @@
 export default {
   path: '/demo/playground',
-  title: '试验台',
+  title: '功能',
   icon: 'flask',
   children: (pre => [
-    { path: `${pre}index`, title: '试验台', icon: 'home' },
+    { path: `${pre}index`, title: '功能', icon: 'home' },
     {
       title: 'svg 菜单图标',
       iconSvg: 'd2-admin',

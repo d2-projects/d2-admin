@@ -6,7 +6,7 @@ import demoPlugins from './modules/demo-plugins'
 import demoComponents from './modules/demo-components'
 // 组件
 import demoCharts from './modules/demo-charts'
-// 试验台
+// 功能
 import demoPlayground from './modules/demo-playground'
 // 示例
 import demoBusiness from './modules/demo-business'
@@ -48,15 +48,15 @@ export const menuHeader = supplementPath([
     title: '首页',
     icon: 'home'
   },
+  demoComponents,
+  demoCharts,
+  demoPlugins,
   {
-    title: '功能',
+    title: '社区插件',
     icon: 'puzzle-piece',
     children: [
       demoD2Crud,
-      demoD2CrudPlus,
-      demoComponents,
-      demoCharts,
-      demoPlugins
+      demoD2CrudPlus
     ]
   },
   demoPlayground,
