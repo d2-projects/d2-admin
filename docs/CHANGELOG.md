@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.20.0](https://github.com/d2-projects/d2-admin/compare/v1.19.0...v1.20.0) (2020-09-01)
+
+
+### Bug Fixes
+
+* 修复请求缺少/api不走fake的问题 ([02d6db3](https://github.com/d2-projects/d2-admin/commit/02d6db3bebf56008dfb47faef1d44c15c41b03ca))
+
+
+### Features
+
+* :sparkles: api 配置文件新增 .api.js 命名规则 ([cb98286](https://github.com/d2-projects/d2-admin/commit/cb9828605f77b0e74f62732b6a3e68fff087d897))
+* :sparkles: 移除了 d2-container 组件上的 betterScrollOptions 不必要声明 ([0accc40](https://github.com/d2-projects/d2-admin/commit/0accc401e7f88ae4313698ec41ccd7ccec329ee1))
+
 # [1.19.0](https://github.com/d2-projects/d2-admin/compare/v1.18.0...v1.19.0) (2020-09-01)
 
 
