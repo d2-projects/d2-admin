@@ -23,11 +23,6 @@ export default {
       type: Boolean,
       required: false,
       default: false
-    },
-    betterScrollOptions: {
-      type: Object,
-      required: false,
-      default: () => ({})
     }
   },
   computed: {
@@ -47,7 +42,6 @@ export default {
       class="container-component">
       <this.component
         ref="component"
-        betterScrollOptions={this.betterScrollOptions}
         { ...{ attrs: this.$attrs } }
         onScroll={ e => this.$emit('scroll', e) }>
         { slots }
