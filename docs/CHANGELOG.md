@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.19.0](https://github.com/d2-projects/d2-admin/compare/v1.18.0...v1.19.0) (2020-09-01)
+
+
+### Features
+
+* :sparkles: d2-crud-plus 演示首页优化 ([d505583](https://github.com/d2-projects/d2-admin/commit/d505583b35901afe5f4943895d6fadef808a3dce))
+* :sparkles: 在扫描 src/api/modules 下的接口配置时 支持多级文件夹下的文件 ([bb8ece7](https://github.com/d2-projects/d2-admin/commit/bb8ece7d25efc79d2f435cd44216763a3db96c3f))
+* :sparkles: 提供better-scroll 配置项 ([b785d92](https://github.com/d2-projects/d2-admin/commit/b785d92b2e0689ae69fdccfba77be4a3f50d0098))
+* :sparkles: 新窗口打开链接 入口位置迁移 ([ebc9cf7](https://github.com/d2-projects/d2-admin/commit/ebc9cf78ccaad91b9dec86b251d4f4bc5963b13c))
+* :sparkles: 更新 d2-crud-plus logo ([c4f85c9](https://github.com/d2-projects/d2-admin/commit/c4f85c9f007a026dbb8e740cce15548c927819fa))
+* :sparkles: 移除废弃页面 ([d88d393](https://github.com/d2-projects/d2-admin/commit/d88d393e2979dcf5e914aead38b5177c98a0b7f4))
+* :sparkles: 简化 d2-crud-plus 演示 ([bcf3ffa](https://github.com/d2-projects/d2-admin/commit/bcf3ffa7d08787e6b189ac921461eb10214afaa1))
+* :sparkles: 路由调整 菜单调整 删除无用演示 ([ec0d6f3](https://github.com/d2-projects/d2-admin/commit/ec0d6f38196feca594f43c4cb4c42088e6a2ecaa))
+* :sparkles: 迁移嵌套页面演示 ([9485aab](https://github.com/d2-projects/d2-admin/commit/9485aabf31ddc669e185bc6729b3300daf307c7c))
+* :sparkles: 顶栏菜单调整 ([0c3601d](https://github.com/d2-projects/d2-admin/commit/0c3601ddbabdccfdb5cd7fe1e60679d12ce63cc7))
+* 增加d2-crud-plus示例 ([8e7d750](https://github.com/d2-projects/d2-admin/commit/8e7d7501a5461e0f00fbcab51c0db186151dc4ff))
+
 # [1.18.0](https://github.com/d2-projects/d2-admin/compare/v1.17.0...v1.18.0) (2020-08-25)
 
 
