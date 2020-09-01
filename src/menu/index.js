@@ -4,12 +4,8 @@ import { uniqueId } from 'lodash'
 import demoPlugins from './modules/demo-plugins'
 // 组件
 import demoComponents from './modules/demo-components'
-// 组件
-import demoCharts from './modules/demo-charts'
 // 功能
 import demoPlayground from './modules/demo-playground'
-// 示例
-import demoBusiness from './modules/demo-business'
 // CRUD
 import demoD2Crud from './modules/demo-d2-crud'
 // CRUD PLUS
@@ -34,9 +30,7 @@ function supplementPath (menu) {
 export const menuAside = supplementPath([
   demoComponents,
   demoPlugins,
-  demoCharts,
   demoPlayground,
-  demoBusiness,
   demoD2Crud,
   demoD2CrudPlus
 ])
@@ -48,8 +42,8 @@ export const menuHeader = supplementPath([
     title: '首页',
     icon: 'home'
   },
+  demoPlayground,
   demoComponents,
-  demoCharts,
   demoPlugins,
   {
     title: '社区插件',
@@ -58,7 +52,5 @@ export const menuHeader = supplementPath([
       demoD2Crud,
       demoD2CrudPlus
     ]
-  },
-  demoPlayground,
-  demoBusiness
+  }
 ])
