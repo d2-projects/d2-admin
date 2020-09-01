@@ -11,7 +11,7 @@ const apiList = req(require.context('../', true, /mock\.js$/))
 apiList.forEach(apiFile => {
   for (const item of apiFile) {
     mock
-      .onAny(new RegExp('^' + item.path))
+      .onAny(new RegExp('^/api' + item.path))
       .reply(config => {
         console.log('------------fake request start -------------')
         console.log('request:', config)
