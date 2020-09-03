@@ -81,7 +81,10 @@ Vue.use(D2pFileUploader)
 Vue.use(D2pUploader, {
   defaultType: 'form',
   form: {
-    action: 'http://qiniu.veryreader.com/D2CrudPlusExample/upload/form/upload',
-    name: 'file'
+    action: 'http://d2p.veryreader.com:7070/api/upload/form/upload',
+    name: 'file',
+    successHandle (res) { // 上传成功后，后台返回结果处理
+      return { url: 'http://d2p.veryreader.com:7070' + res.data } // data是该文件的url
+    }
   }
 })
