@@ -4,16 +4,12 @@ import { uniqueId } from 'lodash'
 import demoPlugins from './modules/demo-plugins'
 // 组件
 import demoComponents from './modules/demo-components'
-// 组件
-import demoCharts from './modules/demo-charts'
-// 试验台
+// 功能
 import demoPlayground from './modules/demo-playground'
-// 示例
-import demoBusiness from './modules/demo-business'
 // CRUD
 import demoD2Crud from './modules/demo-d2-crud'
-// 第三方网页
-import demoFrame from './modules/demo-frame'
+// CRUD PLUS
+import demoD2CrudPlus from './modules/demo-d2-crud-plus'
 
 /**
  * @description 给菜单数据补充上 path 字段
@@ -34,11 +30,9 @@ function supplementPath (menu) {
 export const menuAside = supplementPath([
   demoComponents,
   demoPlugins,
-  demoCharts,
   demoPlayground,
-  demoBusiness,
   demoD2Crud,
-  demoFrame
+  demoD2CrudPlus
 ])
 
 // 菜单 顶栏
@@ -48,29 +42,15 @@ export const menuHeader = supplementPath([
     title: '首页',
     icon: 'home'
   },
+  demoPlayground,
+  demoComponents,
+  demoPlugins,
   {
-    title: '功能',
+    title: '社区插件',
     icon: 'puzzle-piece',
     children: [
       demoD2Crud,
-      demoComponents,
-      demoCharts,
-      demoPlugins,
-      demoFrame,
-      {
-        title: '新窗口打开链接',
-        icon: 'link',
-        children: [
-          { path: 'https://github.com/d2-projects/d2-admin', title: 'D2Admin Github', icon: 'github' },
-          { path: 'https://juejin.im/user/57a48b632e958a006691b946/posts', title: '掘金', icon: 'globe' },
-          { path: 'https://my.oschina.net/u/3871516', title: '开源中国', icon: 'globe' },
-          { path: 'https://www.zhihu.com/people/fairy-ever/activities', title: '知乎', icon: 'globe' },
-          { path: 'https://segmentfault.com/blog/liyang-note-book', title: 'segmentfault 专栏', icon: 'globe' },
-          { path: 'http://www.fairyever.com/', title: 'www.fairyever.com', icon: 'globe' }
-        ]
-      }
+      demoD2CrudPlus
     ]
-  },
-  demoPlayground,
-  demoBusiness
+  }
 ])
