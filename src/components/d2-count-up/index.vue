@@ -9,11 +9,11 @@ export default {
   name: 'd2-count-up',
   props: {
     start: {
-      type: Number,
+      type: [Number, String],
       default: 0
     },
     end: {
-      type: Number,
+      type: [Number, String],
       default: 0
     },
     decimals: {
