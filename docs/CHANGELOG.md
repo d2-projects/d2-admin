@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.20.1](https://github.com/d2-projects/d2-admin/compare/v1.20.0...v1.20.1) (2020-09-27)
+
+
+### Bug Fixes
+
+* :bug: 组件mounted钩子执行时 页面可能已经onload 导致 滚动校验不成功 ([93d4267](https://github.com/d2-projects/d2-admin/commit/93d4267567a02eeb28f86c8612c0d645ccd853f1))
+
+
+### Performance Improvements
+
+* 升级d2-crud-plus版本，分组示例增加图片上传和富文本 ([09b9baa](https://github.com/d2-projects/d2-admin/commit/09b9baa5399f57d0ee2551ff4f06ef6edb6df724))
+
 # [1.20.0](https://github.com/d2-projects/d2-admin/compare/v1.19.0...v1.20.0) (2020-09-01)
 
 
