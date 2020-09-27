@@ -128,7 +128,7 @@ export default {
   mounted () {
     // 初始化判断
     // 默认判断父元素和子元素的大小，以确定初始情况是否显示滚动
-    window.addEventListener('load', this.checkScroll)
+    this.checkScroll()
     // 全局窗口变化监听，判断父元素和子元素的大小，从而控制isScroll的开关
     this.throttledCheckScroll = throttle(this.checkScroll, 300)
     window.addEventListener('resize', this.throttledCheckScroll)
@@ -136,6 +136,5 @@ export default {
   beforeDestroy () {
     // 取消监听
     window.removeEventListener('resize', this.throttledCheckScroll)
-    window.removeEventListener('load', this.checkScroll)
   }
 }

@@ -27,21 +27,17 @@ export const crudOptions = {
       search: { disabled: false },
       sortable: true
     },
-    // {
-    //   title: '图片',
-    //   key: 'images',
-    //   sortable: true,
-    //   type: 'image-uploader',
-    //   form: {
-    //     component: {
-    //       props: {
-    //         uploader: {
-    //           type: 'form'
-    //         }
-    //       }
-    //     }
-    //   }
-    // },
+    {
+      title: '图片',
+      key: 'images',
+      sortable: true,
+      type: 'image-uploader',
+      form: {
+        component: {
+          span: 24
+        }
+      }
+    },
     {
       title: '价格',
       key: 'price',
@@ -59,13 +55,13 @@ export const crudOptions = {
       sortable: true,
       type: 'text-area'
     },
-    // {
-    //   title: '详情',
-    //   key: 'content',
-    //   sortable: true,
-    //   type: 'editor-ueditor',
-    //   disabled: true
-    // },
+    {
+      title: '详情',
+      key: 'content',
+      sortable: true,
+      type: 'editor-quill',
+      disabled: true
+    },
     {
       title: '自定义',
       key: 'custom',

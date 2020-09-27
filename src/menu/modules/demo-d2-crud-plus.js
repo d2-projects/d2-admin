@@ -18,6 +18,11 @@ export default {
       path: `${pre}synthesize`
     },
     {
+      title: '权限管理',
+      icon: 'link',
+      path: 'http://qiniu.veryreader.com/D2CrudPlusExample/#/permission/resource'
+    },
+    {
       title: '更多示例',
       icon: 'link',
       path: 'http://qiniu.veryreader.com/D2CrudPlusExample/'
