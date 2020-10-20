@@ -25,10 +25,6 @@
 </template>
 
 <script>
-/**
- * 带参路由多组参数使用同一个组件实例，需要在组件内部对多个参数的情况进行统一处理
- * 这里简单演示如何根据 id 管理多组数据对象
- */
 export default {
   name: 'demo-playground-page-cache-params',
   props: {
