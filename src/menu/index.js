@@ -6,10 +6,6 @@ import demoPlugins from './modules/demo-plugins'
 import demoComponents from './modules/demo-components'
 // 功能
 import demoPlayground from './modules/demo-playground'
-// CRUD
-import demoD2Crud from './modules/demo-d2-crud'
-// CRUD PLUS
-import demoD2CrudPlus from './modules/demo-d2-crud-plus'
 
 /**
  * @description 给菜单数据补充上 path 字段
@@ -30,9 +26,7 @@ function supplementPath (menu) {
 export const menuAside = supplementPath([
   demoComponents,
   demoPlugins,
-  demoPlayground,
-  demoD2Crud,
-  demoD2CrudPlus
+  demoPlayground
 ])
 
 // 菜单 顶栏
@@ -44,13 +38,5 @@ export const menuHeader = supplementPath([
   },
   demoPlayground,
   demoComponents,
-  demoPlugins,
-  {
-    title: '社区插件',
-    icon: 'puzzle-piece',
-    children: [
-      demoD2Crud,
-      demoD2CrudPlus
-    ]
-  }
+  demoPlugins
 ])

@@ -1,6 +1,4 @@
 import playground from './modules/playground'
-import d2Crud from './modules/d2-crud'
-import d2CrudPlus from './modules/d2-crud-plus'
 import plugins from './modules/plugins'
 import components from './modules/components'
 
@@ -55,8 +53,6 @@ const frameIn = [
     ]
   },
   playground,
-  d2Crud,
-  d2CrudPlus,
   plugins,
   components
 ]

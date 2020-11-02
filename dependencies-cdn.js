@@ -25,6 +25,5 @@ module.exports = [
   { name: 'vue-grid-layout', library: 'VueGridLayout', js: 'https://cdn.jsdelivr.net/npm/vue-grid-layout@2.3.7/dist/vue-grid-layout.umd.min.js', css: '' },
   { name: 'quill', library: 'Quill', js: 'https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js', css: '' },
   { name: 'simplemde', library: 'SimpleMDE', js: 'https://cdn.jsdelivr.net/npm/simplemde@1.11.2/dist/simplemde.min.js', css: 'https://cdn.jsdelivr.net/npm/simplemde@1.11.2/dist/simplemde.min.css' },
-  { name: 'vue-json-tree-view', library: 'TreeView', js: 'https://cdn.jsdelivr.net/npm/vue-json-tree-view@2.1.4/dist/vue-json-tree-view.min.js', css: '' },
-  { name: '@d2-projects/d2-crud', library: 'D2Crud', js: 'https://cdn.jsdelivr.net/npm/@d2-projects/d2-crud@2.1.2/dist/d2-crud.js', css: '' }
+  { name: 'vue-json-tree-view', library: 'TreeView', js: 'https://cdn.jsdelivr.net/npm/vue-json-tree-view@2.1.4/dist/vue-json-tree-view.min.js', css: '' }
 ]
