@@ -18,8 +18,6 @@ module.exports = [
   { name: 'lowdb/adapters/LocalStorage', library: 'LocalStorage', js: 'https://cdn.jsdelivr.net/npm/lowdb@1.0.0/dist/LocalStorage.min.js', css: '' },
   { name: 'screenfull', library: 'screenfull', js: 'https://cdn.jsdelivr.net/npm/screenfull@5.0.2/dist/screenfull.min.js', css: '' },
   { name: 'sortablejs', library: 'Sortable', js: 'https://cdn.jsdelivr.net/npm/sortablejs@1.10.1/Sortable.min.js', css: '' },
-  { name: 'echarts', library: 'echarts', js: 'https://cdn.jsdelivr.net/npm/echarts@4.5.0/dist/echarts.min.js' },
-  { name: 'v-charts', library: 'VeIndex', js: 'https://cdn.jsdelivr.net/npm/v-charts@1.19.0/lib/index.min.js', css: 'https://cdn.jsdelivr.net/npm/v-charts@1.19.0/lib/style.min.css' },
   { name: '@d2-projects/vue-table-export', library: 'VueTableExport', js: 'https://cdn.jsdelivr.net/npm/@d2-projects/vue-table-export@1.0.1/dist/vue-table-export.js', css: '' },
   { name: '@d2-projects/vue-table-import', library: 'VueTableImport', js: 'https://cdn.jsdelivr.net/npm/@d2-projects/vue-table-import@1.0.0/dist/vue-table-import.js', css: '' },
   { name: 'vue-grid-layout', library: 'VueGridLayout', js: 'https://cdn.jsdelivr.net/npm/vue-grid-layout@2.3.7/dist/vue-grid-layout.umd.min.js', css: '' },
