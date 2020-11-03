@@ -110,7 +110,7 @@
 
 ## 其它版本
 
-| 名称 | Github / 主页  | 预览 | 介绍 |
+| 名称 | 主页  | 预览 | 介绍 |
 | --- | --- | --- | --- |
 | 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://d2.pub/d2-admin-start-kit/preview) | 无 |
 
@@ -118,7 +118,7 @@
 
 > 这些项目由开源社区贡献，不保证使用 D2Admin 最新版本，相关使用问题请联系其开源作者。
 
-| 名称 | Github / 主页 | 预览 | 介绍 |
+| 名称 | 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
 | d2-admin-xiya-go-cms | [Github](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [预览](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + 权限系统 + 动态路由 |
 | d2-advance | [Github](https://github.com/d2-projects/d2-advance) | [预览](https://d2.pub/d2-advance/preview) | 由 D2Admin 启发的技术探索 |
@@ -133,7 +133,7 @@
 
 > 后端由开源社区贡献，不保证使用 D2Admin 最新版本，相关使用问题请联系其开源作者。
 
-| 名称 | 技术 | Github / 主页 | 预览 | 介绍 |
+| 名称 | 技术 | 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- | --- |
 | FlaskPermission | Flask | [Github](https://github.com/huguodong/flask-permission) | [预览](http://47.97.218.139:9999) | 基于 Python Flask 的权限管理 |
 | CareyShop | ThinkPHP5 | [Github](https://github.com/dnyz520/careyshop-admin) | [预览](https://demo.careyshop.cn/admin/#/index) | 适用于 CareyShop 的高性能商城框架系统 |
