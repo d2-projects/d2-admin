@@ -114,14 +114,7 @@
 | --- | --- | --- | --- |
 | 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://d2.pub/d2-admin-start-kit/preview) | 无 |
 
-## 生态
-
-| 名称 | Github / 主页 | 预览 | 介绍 |
-| --- | --- | --- | --- |
-| D2 CRUD | [Github](https://github.com/d2-projects/d2-crud) | [预览](https://d2.pub/d2-admin/preview/#/demo/d2-crud/index) | 表格常用操作封装 |
-| D2 Ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
-
-## 衍生开源项目
+## 社区项目
 
 > 这些项目由开源社区贡献，不保证使用 D2Admin 最新版本，相关使用问题请联系其开源作者。
 
@@ -129,10 +122,12 @@
 | --- | --- | --- | --- |
 | d2-admin-xiya-go-cms | [Github](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [预览](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + 权限系统 + 动态路由 |
 | d2-advance | [Github](https://github.com/d2-projects/d2-advance) | [预览](https://d2.pub/d2-advance/preview) | 由 D2Admin 启发的技术探索 |
+| d2-crud-plus | [Github](https://github.com/greper/d2-crud-plus) | [预览](http://qiniu.veryreader.com/D2CrudPlusExample/index.html) | 简化d2-crud配置，快速开发crud功能 |
+| d2-crud | [Github](https://github.com/d2-projects/d2-crud) | [预览]() | 表格常用操作封装 |
 | d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [预览](http://jaycewu.coding.me/d2-admin-pm) | 基于 D2Admin 的 RBAC 权限管理解决方案 |
 | LanBlog | [Github](https://github.com/sinksmell/LanBlog) | [预览](http://47.101.222.133/) | Vue + Beego restful api 开发的懒人博客 |
 | d2-admin-start-kit-plus | [Github](https://github.com/hank-cp/d2-admin-start-kit-plus) | [预览](https://github.com/hank-cp/d2-admin-start-kit-plus) | D2Admin 简化版模块化版本 |
-| d2-crud-plus | [Github](https://github.com/greper/d2-crud-plus) | [预览](http://qiniu.veryreader.com/D2CrudPlusExample/index.html#/index) | 简化d2-crud配置，快速开发crud功能 |
+| d2-ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
 
 ## 开源后端实现
 
@@ -152,7 +147,7 @@
 
 D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行管理系统开发，同时也提供 QQ 交流群和微信群，前后端的朋友可以相互答疑，项目组成员全部在内，所有 D2 相关项目使用问题欢迎在群内提问。
 
-* QQ 1 群 `806395827` ( 2000 人已满 )
+* QQ 1 群 `806395827`
 * QQ 2 群 `592981556`
 
 ![join](https://raw.githubusercontent.com/FairyEver/d2-admin/master/docs/image/join@2x.png)
