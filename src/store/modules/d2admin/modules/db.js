@@ -1,5 +1,5 @@
 import router from '@/router'
-import { cloneDeep } from 'lodash'
+import { cloneDeep } from 'lodash-es'
 import { database as getDatabase, dbGet, dbSet } from '@/libs/util.db'
 
 export default {

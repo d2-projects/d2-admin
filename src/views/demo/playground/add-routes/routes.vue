@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { cloneDeep } from 'lodash'
+import { cloneDeep } from 'lodash-es'
 import { mapState, mapMutations } from 'vuex'
 import { frameInRoutes } from '@/router/routes'
 import layoutHeaderAside from '@/layout/header-aside'

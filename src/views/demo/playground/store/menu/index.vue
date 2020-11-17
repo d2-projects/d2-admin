@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { cloneDeep } from 'lodash'
+import { cloneDeep } from 'lodash-es'
 import { mapState, mapMutations, mapActions } from 'vuex'
 export default {
   data () {

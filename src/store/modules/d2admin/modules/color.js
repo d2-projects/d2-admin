@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash'
+import { cloneDeep } from 'lodash-es'
 import client from 'webpack-theme-color-replacer/client'
 import forElementUI from 'webpack-theme-color-replacer/forElementUI'
 

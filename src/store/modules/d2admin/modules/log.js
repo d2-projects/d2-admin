@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { get } from 'lodash'
+import { get } from 'lodash-es'
 import util from '@/libs/util.js'
 
 export default {
