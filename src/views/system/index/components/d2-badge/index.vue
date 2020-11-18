@@ -30,8 +30,7 @@ export default {
           { img: 'https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status', link: 'https://app.netlify.com/sites/d2-admin/deploys' }
         ],
         [
-          { img: 'https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin', link: linkD2Admin },
-          { img: 'https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin', link: linkD2Admin },
+          { img: 'https://visitor-badge.glitch.me/badge?page_id=d2-projects.d2-admin', link: linkD2Admin },
           { img: 'https://img.shields.io/github/release/d2-projects/d2-admin.svg', link: `${linkD2Admin}/releases` }
         ]
       ]

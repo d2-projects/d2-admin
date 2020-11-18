@@ -10,8 +10,7 @@
 	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"></a>
 </p>
 <p align="center">
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin"></a>
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin"></a>
+	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://visitor-badge.glitch.me/badge?page_id=d2-projects.d2-admin"></a>
 	<a href="https://github.com/d2-projects/d2-admin/releases" target="_blank"><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"></a>
 	<a href="https://deepscan.io/dashboard#view=project&tid=8014&pid=10161&bid=136697"><img src="https://deepscan.io/api/teams/8014/projects/10161/branches/136697/badge/grade.svg" alt="DeepScan grade"></a>
 </p>
@@ -188,7 +187,7 @@ D2Admin 是完全开源免费的项目，旨在帮助开发者更方便地进行
 
 ## 访问统计
 
-![](https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin)
+![](https://visitor-badge.glitch.me/badge?page_id=d2-projects.d2-admin)
 
 > 自 2019-08-27 起
 

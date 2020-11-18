@@ -10,8 +10,7 @@
 	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://img.shields.io/github/last-commit/d2-projects/d2-admin.svg"></a>
 </p>
 <p align="center">
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://visitor-count-badge.herokuapp.com/today.svg?repo_id=d2-projects.d2-admin"></a>
-	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin"></a>
+	<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://visitor-badge.glitch.me/badge?page_id=d2-projects.d2-admin"></a>
 	<a href="https://github.com/d2-projects/d2-admin/releases" target="_blank"><img src="https://img.shields.io/github/release/d2-projects/d2-admin.svg"></a>
 	<a href="https://deepscan.io/dashboard#view=project&tid=8014&pid=10161&bid=136697"><img src="https://deepscan.io/api/teams/8014/projects/10161/branches/136697/badge/grade.svg" alt="DeepScan grade"></a>
 </p>
@@ -177,7 +176,7 @@ At the same time, you can report your project to us. We will place the excellent
 
 ## Visitor
 
-![Total visitor](https://visitor-count-badge.herokuapp.com/total.svg?repo_id=d2-projects.d2-admin)
+![Total visitor](https://visitor-badge.glitch.me/badge?page_id=d2-projects.d2-admin)
 
 > Total visitor since 2019.08.27
 
