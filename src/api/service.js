@@ -136,8 +136,8 @@ function createRequest (service) {
     // 处理 get 请求的参数
     // 请根据实际需要修改
     if (!isEmpty(option.params)) {
-      option.params = {}
       option.url = option.url + '?' + stringify(option.params)
+      option.params = {}
     }
     // 当需要以 form 形式发送时 处理发送的数据
     // 请根据实际需要修改
