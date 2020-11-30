@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.21.0](https://github.com/d2-projects/d2-admin/compare/v1.20.1...v1.21.0) (2020-11-30)
+
+
+### Features
+
+* :package: lodash to lodash-es ([f539271](https://github.com/d2-projects/d2-admin/commit/f53927121ecbcc24afdd243c8fad02374ac5f21d))
+* update visitor count badge ([abcd573](https://github.com/d2-projects/d2-admin/commit/abcd5738347ce317f28e10f81d36965a02019110))
+* 移除已经不需要的页面注册 index.js ([041fe66](https://github.com/d2-projects/d2-admin/commit/041fe66ae76c8a4611f0b9619b5aa4298a7005e5))
+* 调整 createRequest 中 params 处理顺序 ([bf7ed65](https://github.com/d2-projects/d2-admin/commit/bf7ed65e231d766869247e7590b1fd269d38aa84))
+* 默认 layout 使用处理过的 element 滚动条组件替代 better-scroll ([a93e966](https://github.com/d2-projects/d2-admin/commit/a93e9664573c08aa87b299a1f492524dc2ba3e88))
+* **api:** :sparkles: 完善 service 代码，request 现在会根据需要自动序列化参数 ([886a4a8](https://github.com/d2-projects/d2-admin/commit/886a4a863821f69cebc27860db97a0b59bc10d9c))
+
 ## [1.20.1](https://github.com/d2-projects/d2-admin/compare/v1.20.0...v1.20.1) (2020-09-27)
 
 
