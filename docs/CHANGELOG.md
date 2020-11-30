@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.22.0](https://github.com/d2-projects/d2-admin/compare/v1.21.0...v1.22.0) (2020-11-30)
+
+
+### Bug Fixes
+
+* :package: lodash-es to lodash (lowdb存在导致lodash无法移除) ([136e6cd](https://github.com/d2-projects/d2-admin/commit/136e6cd040f1a2bc74a830f7e94f91c6a5680609))
+
+
+### Features
+
+* :package: update @d2-projects/vue-table-export and @d2-projects/vue-table-import ([0d4f315](https://github.com/d2-projects/d2-admin/commit/0d4f315a27d74b1318a916888d0cf3500d590fd8))
+
 # [1.21.0](https://github.com/d2-projects/d2-admin/compare/v1.20.1...v1.21.0) (2020-11-30)
 
 
