@@ -70,7 +70,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { get } from 'lodash-es'
+import { get } from 'lodash'
 export default {
   data () {
     return {

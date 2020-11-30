@@ -1,7 +1,7 @@
 import { Message } from 'element-ui'
 import axios from 'axios'
 import Adapter from 'axios-mock-adapter'
-import { get, isEmpty } from 'lodash-es'
+import { get, isEmpty } from 'lodash'
 import qs from 'qs'
 import util from '@/libs/util'
 import store from '@/store'

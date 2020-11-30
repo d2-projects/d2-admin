@@ -1,4 +1,4 @@
-import { find, assign } from 'lodash-es'
+import { find, assign } from 'lodash'
 
 const users = [
   { username: 'admin', password: 'admin', uuid: 'admin-uuid', name: 'Admin' },

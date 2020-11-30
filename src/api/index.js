@@ -1,4 +1,4 @@
-import { assign, map } from 'lodash-es'
+import { assign, map } from 'lodash'
 import faker from 'faker/locale/zh_CN'
 import { service, request, serviceForMock, requestForMock, mock } from './service'
 import * as tools from './tools'

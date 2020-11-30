@@ -1,4 +1,4 @@
-import { cloneDeep, uniq, get } from 'lodash-es'
+import { cloneDeep, uniq, get } from 'lodash'
 import router from '@/router'
 import setting from '@/setting.js'
 

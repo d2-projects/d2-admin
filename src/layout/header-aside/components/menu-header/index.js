@@ -1,4 +1,4 @@
-import { throttle } from 'lodash-es'
+import { throttle } from 'lodash'
 import { mapState } from 'vuex'
 import menuMixin from '../mixin/menu'
 import { createMenu } from '../libs/util.menu'

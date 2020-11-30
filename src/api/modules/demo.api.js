@@ -1,4 +1,4 @@
-import { find, map, random } from 'lodash-es'
+import { find, map, random } from 'lodash'
 
 const businessIssue142Db = [
   { id: '1', name: '用户 1', address: '上海市普陀区金沙江路 1518 弄' },

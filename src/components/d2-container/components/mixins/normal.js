@@ -1,7 +1,7 @@
 // 提供滚动方面的功能
 // 非滚动优化模式通用
 
-import { throttle } from 'lodash-es'
+import { throttle } from 'lodash'
 
 // 生成滚动事件的 handler
 function handleMaker (wait) {

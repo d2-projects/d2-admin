@@ -1,4 +1,4 @@
-import { uniqueId } from 'lodash-es'
+import { uniqueId } from 'lodash'
 
 // 插件
 import demoPlugins from './modules/demo-plugins'

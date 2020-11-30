@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { uniqueId } from 'lodash-es'
+import { uniqueId } from 'lodash'
 import { mapActions } from 'vuex'
 export default {
   data () {

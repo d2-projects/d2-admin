@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { last, get } from 'lodash-es'
+import { last, get } from 'lodash'
 export default {
   data () {
     return {

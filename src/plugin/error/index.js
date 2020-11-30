@@ -1,4 +1,4 @@
-import { get, isObject } from 'lodash-es'
+import { get, isObject } from 'lodash'
 import store from '@/store'
 import util from '@/libs/util'
 
