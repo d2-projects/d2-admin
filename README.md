@@ -97,6 +97,8 @@ The following access addresses are built and deployed by the latest master branc
 * Multiple tabs support drag and drop sorting `1.8.0 +`
 * load only local JavaScript code less than 60kb on the homepage `1.8.0 +`
 * Built in build file volume checking tool `1.8.0 +`
+* Example of multi page `1.23.0 +`
+* Split chunks `1.23.0 +`
 
 ## Other synchronous repositories
 

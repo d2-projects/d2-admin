@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+  <link rel="icon" href="<%= BASE_URL %>icon.ico">
+  <!-- 使用 CDN 加速的 CSS 文件，配置在 vue.config.js 下 -->
+  <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
+  <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet">
+  <% } %>
+  <title><%= VUE_APP_TITLE %></title>
+  <!-- 统计代码 帮助 D2Admin 作者大致统计使用此框架的用户数量 -->
+  <script>
+    var _hmt = _hmt || [];
+    var hmid = "bc38887aa5588add05a38704342ad7e8";
+    (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?" + hmid; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <!-- 使用 CDN 加速的 JS 文件，配置在 vue.config.js 下 -->
+  <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
+  <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+  <% } %>
+</body>
+</html>
