@@ -117,7 +117,6 @@ The following access addresses are built and deployed by the latest master branc
 
 | Name | HomePage | Preview | Introduction |
 | --- | --- | --- | --- |
-| boot-admin | [Github](https://github.com/hb0730/boot-admin) | [Link](http://admin.hb0730.com/) | Management system based on SpringBoot |
 | d2-admin-xiya-go-cms | [Link](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [Link](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + authority system + dynamic router |
 | d2-advance | [Link](https://github.com/d2-projects/d2-advance) | [Link](https://d2.pub/d2-advance/preview) | Technical exploration inspired by D2Admin |
 | d2-crud-plus | [Link](https://github.com/greper/d2-crud-plus) | [Link](http://qiniu.veryreader.com/D2CrudPlusExample/index.html) | Easy development of crud function |
@@ -133,13 +132,14 @@ The following access addresses are built and deployed by the latest master branc
 
 | Name | technology | HomePage | Preview | Introduction |
 | --- | --- | --- | --- | --- |
-| **FlaskPermission** | Flask | [Link](https://github.com/huguodong/flask-permission) | [Link](http://47.97.218.139:9999) | Permission management based on Flask |
-| **CareyShop** | ThinkPHP5 | [Link](https://github.com/dnyz520/careyshop-admin) | [Link](https://demo.careyshop.cn/admin/) | High Performance Mall Framework System for CareyShop |
-| **jiiiiiin-security** | Spring Boot | [Link](https://github.com/Jiiiiiin/jiiiiiin-security) | [Link](https://github.com/Jiiiiiin/jiiiiiin-security) | Content management infrastructure projects |
-| **Taroco** | Spring Cloud | [Link](https://github.com/liuht777/Taroco) | [Link](http://111.231.192.110/) | Complete microservice enterprise solution |
-| **Aooms** | Spring Cloud | [Link](https://gitee.com/cyb-javaer/Aooms) | [Link](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
-| **GOA** | Beego | [Link](https://github.com/Qsnh/goa) | [Link](http://goaio.vip/) | Online question answering system based on Beego + Vue |
-| **CMDB** | Django | [Link](https://github.com/CJFJack/django_vue_cmdb) | [Link](https://mp.weixin.qq.com/s?__biz=MzU1OTYzODA4Mw==&mid=2247484250&idx=1&sn=981024ac0580d8a3eba95742bd32b268) | authority system with dynamic menu |
+| boot-admin | SpringBoot | [Link](https://github.com/hb0730/boot-admin) | [Link](http://admin.hb0730.com/) | Management system based on SpringBoot |
+| FlaskPermission | Flask | [Link](https://github.com/huguodong/flask-permission) | [Link](http://47.97.218.139:9999) | Permission management based on Flask |
+| CareyShop | ThinkPHP5 | [Link](https://github.com/dnyz520/careyshop-admin) | [Link](https://demo.careyshop.cn/admin/) | High Performance Mall Framework System for CareyShop |
+| jiiiiiin-security | Spring Boot | [Link](https://github.com/Jiiiiiin/jiiiiiin-security) | [Link](https://github.com/Jiiiiiin/jiiiiiin-security) | Content management infrastructure projects |
+| Taroco | Spring Cloud | [Link](https://github.com/liuht777/Taroco) | [Link](http://111.231.192.110/) | Complete microservice enterprise solution |
+| Aooms | Spring Cloud | [Link](https://gitee.com/cyb-javaer/Aooms) | [Link](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
+| GOA | Beego | [Link](https://github.com/Qsnh/goa) | [Link](http://goaio.vip/) | Online question answering system based on Beego + Vue |
+| CMDB | Django | [Link](https://github.com/CJFJack/django_vue_cmdb) | [Link](https://mp.weixin.qq.com/s?__biz=MzU1OTYzODA4Mw==&mid=2247484250&idx=1&sn=981024ac0580d8a3eba95742bd32b268) | authority system with dynamic menu |
 
 ## Badge
 

@@ -119,7 +119,6 @@
 
 | 名称 | 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
-| boot-admin | [Github](https://github.com/hb0730/boot-admin) | [预览](http://admin.hb0730.com/) | 基于 SpringBoot 前后端分离的后台管理系统 |
 | d2-admin-xiya-go-cms | [Github](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [预览](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + 权限系统 + 动态路由 |
 | d2-advance | [Github](https://github.com/d2-projects/d2-advance) | [预览](https://d2.pub/d2-advance/preview) | 由 D2Admin 启发的技术探索 |
 | d2-crud-plus | [Github](https://github.com/greper/d2-crud-plus) | [预览](http://qiniu.veryreader.com/D2CrudPlusExample/index.html) | 简化d2-crud配置，快速开发crud功能 |
@@ -135,6 +134,7 @@
 
 | 名称 | 技术 | 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- | --- |
+| boot-admin | SpringBoot | [Github](https://github.com/hb0730/boot-admin) | [预览](http://admin.hb0730.com/) | 基于 SpringBoot 前后端分离的后台管理系统 |
 | FlaskPermission | Flask | [Github](https://github.com/huguodong/flask-permission) | [预览](http://47.97.218.139:9999) | 基于 Python Flask 的权限管理 |
 | CareyShop | ThinkPHP5 | [Github](https://github.com/dnyz520/careyshop-admin) | [预览](https://demo.careyshop.cn/admin/#/index) | 适用于 CareyShop 的高性能商城框架系统 |
 | jiiiiiin-security | Spring Boot | [Github](https://github.com/Jiiiiiin/jiiiiiin-security) | [预览](https://github.com/Jiiiiiin/jiiiiiin-security) | 前后端分离的内容管理基础项目，注重用户权限管理功能 |
