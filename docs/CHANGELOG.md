@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.23.0](https://github.com/d2-projects/d2-admin/compare/v1.22.0...v1.23.0) (2020-12-03)
+
+
+### Features
+
+* :sparkles: 提供多页面构建示例，优化了打包分包，取消CDN加载依赖但保留了设置入口 ([41a7e02](https://github.com/d2-projects/d2-admin/commit/41a7e02eb5709c2a3faf4c4727bcd54fbf84c525))
+
 # [1.22.0](https://github.com/d2-projects/d2-admin/compare/v1.21.0...v1.22.0) (2020-11-30)
 
 
