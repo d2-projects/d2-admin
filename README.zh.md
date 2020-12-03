@@ -119,6 +119,7 @@
 
 | 名称 | 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
+| boot-admin | [Github](https://github.com/hb0730/boot-admin) | [预览](http://admin.hb0730.com/) | 基于 SpringBoot 前后端分离的后台管理系统 |
 | d2-admin-xiya-go-cms | [Github](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [预览](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + 权限系统 + 动态路由 |
 | d2-advance | [Github](https://github.com/d2-projects/d2-advance) | [预览](https://d2.pub/d2-advance/preview) | 由 D2Admin 启发的技术探索 |
 | d2-crud-plus | [Github](https://github.com/greper/d2-crud-plus) | [预览](http://qiniu.veryreader.com/D2CrudPlusExample/index.html) | 简化d2-crud配置，快速开发crud功能 |

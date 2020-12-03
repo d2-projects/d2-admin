@@ -117,6 +117,7 @@ The following access addresses are built and deployed by the latest master branc
 
 | Name | HomePage | Preview | Introduction |
 | --- | --- | --- | --- |
+| boot-admin | [Github](https://github.com/hb0730/boot-admin) | [Link](http://admin.hb0730.com/) | Management system based on SpringBoot |
 | d2-admin-xiya-go-cms | [Link](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [Link](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + authority system + dynamic router |
 | d2-advance | [Link](https://github.com/d2-projects/d2-advance) | [Link](https://d2.pub/d2-advance/preview) | Technical exploration inspired by D2Admin |
 | d2-crud-plus | [Link](https://github.com/greper/d2-crud-plus) | [Link](http://qiniu.veryreader.com/D2CrudPlusExample/index.html) | Easy development of crud function |
