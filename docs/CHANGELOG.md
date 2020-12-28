@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.24.0](https://github.com/d2-projects/d2-admin/compare/v1.23.0...v1.24.0) (2020-12-28)
+
+
+### Features
+
+* :sparkles: 更改 api 引入的方法更合理化 ([e02f490](https://github.com/d2-projects/d2-admin/commit/e02f4909d05bdb4e3e8e3f79f6a1a4c10023437f))
+
 # [1.23.0](https://github.com/d2-projects/d2-admin/compare/v1.22.0...v1.23.0) (2020-12-03)
 
 
