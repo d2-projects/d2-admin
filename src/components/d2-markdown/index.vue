@@ -12,6 +12,16 @@ import marked from 'marked'
 import highlight from 'highlight.js'
 import bandupan from './plugin/baidupan'
 import 'github-markdown-css'
+import { request } from '@/api/_service.js'
+
+function FILE_GET (url = '') {
+  return request({
+    baseURL: process.env.BASE_URL,
+    url,
+    method: 'get'
+  })
+}
+
 export default {
   name: 'd2-markdown',
   props: {
@@ -63,7 +73,7 @@ export default {
     },
     // 从 url 加载原始数据
     async getReadme (url) {
-      const data = await this.$api.FILE_GET(url)
+      const data = await FILE_GET(url)
       return this.marked(data)
     },
     marked (data) {
