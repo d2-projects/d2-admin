@@ -85,7 +85,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: '@import \'~@/assets/style/public.scss\';'
+        additionalData: '@use "@/assets/style/public.scss" as *;'
       },
       less: {
         lessOptions: {

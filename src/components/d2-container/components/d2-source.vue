@@ -46,12 +46,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
+
 .d2-source {
   $borderRadius: 4px;
   $paddingLR: 15px;
   $paddingTB: 7px;
   $fontSize: 12px;
-  $rightOuter: $paddingLR / 2;
+  $rightOuter: math.div($paddingLR, 2);
   opacity: 0;
   position: fixed;
   z-index: 9999;
