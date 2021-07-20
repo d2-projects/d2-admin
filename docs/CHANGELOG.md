@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.24.1](https://github.com/d2-projects/d2-admin/compare/v1.24.0...v1.24.1) (2021-07-20)
+
+
+### Bug Fixes
+
+* update sass and options ([ba795d0](https://github.com/d2-projects/d2-admin/commit/ba795d0887686284bd22d5f882a74da83240d3cc))
+
 # [1.24.0](https://github.com/d2-projects/d2-admin/compare/v1.23.0...v1.24.0) (2020-12-28)
 
 
