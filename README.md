@@ -17,6 +17,8 @@
 
 [D2Admin](https://github.com/d2-projects/d2-admin) is a fully open source and free enterprise back-end product front-end integration solution, using the latest front-end technology stack, javascript files loading of local first screen less than 60kb, has prepared most of the project preparations, and with a lot of sample code to help the management system agile development.
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/d2-projects/d2-admin)
+
 [中文](https://github.com/d2-projects/d2-admin/blob/master/README.zh.md) | **English**
 
 ## Preview
