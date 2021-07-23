@@ -3,8 +3,10 @@
 </template>
 
 <script>
+import { merge } from 'lodash'
 import SimpleMDE from 'simplemde'
 import 'simplemde/dist/simplemde.min.css'
+
 export default {
   name: 'd2-mde',
   props: {
@@ -44,7 +46,7 @@ export default {
     // 初始化
     init () {
       // 合并参数
-      const config = Object.assign({}, this.defaultConfig, this.config)
+      const config = merge({}, this.defaultConfig, this.config)
       // 初始化
       this.mde = new SimpleMDE({
         ...config,

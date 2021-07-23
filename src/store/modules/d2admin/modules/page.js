@@ -1,4 +1,4 @@
-import { cloneDeep, uniq, get } from 'lodash'
+import { cloneDeep, uniq, get, merge } from 'lodash'
 import router from '@/router'
 import setting from '@/setting.js'
 
@@ -64,7 +64,7 @@ export default {
           valid.push(find ? 1 : 0)
           // 返回合并后的数据 新的覆盖旧的
           // 新的数据中一般不会携带 params 和 query, 所以旧的参数会留存
-          return Object.assign({}, opened, find)
+          return merge({}, opened, find)
         })
         .filter((opened, index) => valid[index] === 1)
       // 标记已经加载多标签页数据 https://github.com/d2-projects/d2-admin/issues/201
@@ -164,7 +164,7 @@ export default {
         // 如果这里没有找到 page 代表这个路由虽然在框架内 但是不参与标签页显示
         if (page) {
           await dispatch('add', {
-            tag: Object.assign({}, page),
+            tag: merge({}, page),
             params,
             query,
             fullPath

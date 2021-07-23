@@ -1,3 +1,4 @@
+import { merge } from 'lodash'
 import Cookies from 'js-cookie'
 
 const cookies = {}
@@ -12,7 +13,7 @@ cookies.set = function (name = 'default', value = '', cookieSetting = {}) {
   const currentCookieSetting = {
     expires: 1
   }
-  Object.assign(currentCookieSetting, cookieSetting)
+  merge(currentCookieSetting, cookieSetting)
   Cookies.set(`d2admin-${process.env.VUE_APP_VERSION}-${name}`, value, currentCookieSetting)
 }
 

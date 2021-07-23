@@ -1,4 +1,6 @@
+import { merge } from 'lodash'
 import BScroll from 'better-scroll'
+
 export default {
   props: {
     // 滚动优化的选项
@@ -22,7 +24,7 @@ export default {
   methods: {
     scrollInit () {
       // 初始化 bs
-      this.BS = new BScroll(this.$refs.wrapper, Object.assign({
+      this.BS = new BScroll(this.$refs.wrapper, merge({
         mouseWheel: true,
         click: true,
         scrollbar: {

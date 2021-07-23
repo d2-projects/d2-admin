@@ -1,7 +1,7 @@
 import { Message } from 'element-ui'
 import axios from 'axios'
 import Adapter from 'axios-mock-adapter'
-import { get, isEmpty } from 'lodash'
+import { get, isEmpty, merge } from 'lodash'
 import qs from 'qs'
 import util from '@/libs/util'
 import store from '@/store'
@@ -132,7 +132,7 @@ function createRequest (service) {
       baseURL: process.env.VUE_APP_API,
       data: {}
     }
-    const option = Object.assign(configDefault, config)
+    const option = merge(configDefault, config)
     // 处理 get 请求的参数
     // 请根据实际需要修改
     if (!isEmpty(option.params)) {
