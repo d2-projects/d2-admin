@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.24.2](https://github.com/d2-projects/d2-admin/compare/v1.24.1...v1.24.2) (2021-07-23)
+
+
+### Bug Fixes
+
+* merge replaced Object.assign ([37f63bf](https://github.com/d2-projects/d2-admin/commit/37f63bf20c51312b48ca5b468f10514729948a97))
+
 ## [1.24.1](https://github.com/d2-projects/d2-admin/compare/v1.24.0...v1.24.1) (2021-07-20)
 
 
