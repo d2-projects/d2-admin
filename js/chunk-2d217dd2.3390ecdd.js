@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d217dd2"],{c917:function(n,p){n.exports="## vue.js\n\n**易用**\n\n已经会了 HTML、CSS、JavaScript？即刻阅读指南开始构建应用！\n\n**灵活**\n\n不断繁荣的生态系统，可以在一个库和一套完整框架之间自如伸缩。\n\n**高效**\n\n20kB min+gzip 运行大小\n\n超快虚拟 DOM\n\n最省心的优化"}}]);

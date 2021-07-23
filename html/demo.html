@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+  body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 900px;
+    background-color: #FFF;
+  }
+  .cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 10s linear infinite;
+  }
+  .cube:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateY(50px) translateZ(-50px);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .cube div {
+    background-color: rgba(64, 158, 255, 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(27, 99, 170);
+    box-shadow: 0 0 60px rgba(64, 158, 255, 0.7);
+  }
+  .cube div:nth-child(1) {
+    transform: translateZ(-50px);
+    animation: shade 10s -5s linear infinite;
+  }
+  .cube div:nth-child(2) {
+    transform: translateZ(50px) rotateY(180deg);
+    animation: shade 10s linear infinite;
+  }
+  .cube div:nth-child(3) {
+    transform-origin: right;
+    transform: translateZ(50px) rotateY(270deg);
+    animation: shade 10s -2.5s linear infinite;
+  }
+  .cube div:nth-child(4) {
+    transform-origin: left;
+    transform: translateZ(50px) rotateY(90deg);
+    animation: shade 10s -7.5s linear infinite;
+  }
+  .cube div:nth-child(5) {
+    transform-origin: bottom;
+    transform: translateZ(50px) rotateX(90deg);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .cube div:nth-child(6) {
+    transform-origin: top;
+    transform: translateZ(50px) rotateX(270deg);
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotateX(-15deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(-15deg) rotateY(360deg);
+    }
+  }
+  @keyframes shade {
+    50% {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+  </style>
+  <title>demo</title>
+</head>
+<body>
+  <div class="cube">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>
