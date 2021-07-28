@@ -115,6 +115,22 @@ The following access addresses are built and deployed by the latest master branc
 | --- | --- | --- | --- |
 | Starter template | [Link](https://github.com/d2-projects/d2-admin-start-kit) | [Link](https://d2.pub/d2-admin-start-kit/preview) | The simplest version |
 
+## Open source backend implementation
+
+> The backend is contributed by the open source community. The latest version of D2Admin is not guaranteed. Please contact its open source author for related usage issues.
+
+| Name | technology | HomePage | Preview | Introduction |
+| --- | --- | --- | --- | --- |
+| django-vue-admin-pro | Django | [Link](https://github.com/dvadmin-pro/django-vue-admin-pro) | [Link](http://demo.pro.django-vue-admin.com) | Django + Jwt + D2Admin |
+| boot-admin | SpringBoot | [Link](https://github.com/hb0730/boot-admin) | [Link](http://admin.hb0730.com/) | Management system based on SpringBoot |
+| FlaskPermission | Flask | [Link](https://github.com/huguodong/flask-permission) | [Link](http://47.97.218.139:9999) | Permission management based on Flask |
+| CareyShop | ThinkPHP5 | [Link](https://github.com/dnyz520/careyshop-admin) | [Link](https://demo.careyshop.cn/admin/) | High Performance Mall Framework System for CareyShop |
+| jiiiiiin-security | Spring Boot | [Link](https://github.com/Jiiiiiin/jiiiiiin-security) | [Link](https://github.com/Jiiiiiin/jiiiiiin-security) | Content management infrastructure projects |
+| Taroco | Spring Cloud | [Link](https://github.com/liuht777/Taroco) | [Link](http://111.231.192.110/) | Complete microservice enterprise solution |
+| Aooms | Spring Cloud | [Link](https://gitee.com/cyb-javaer/Aooms) | [Link](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
+| GOA | Beego | [Link](https://github.com/Qsnh/goa) | [Link](http://goaio.vip/) | Online question answering system based on Beego + Vue |
+| CMDB | Django | [Link](https://github.com/CJFJack/django_vue_cmdb) | [Link](https://mp.weixin.qq.com/s?__biz=MzU1OTYzODA4Mw==&mid=2247484250&idx=1&sn=981024ac0580d8a3eba95742bd32b268) | authority system with dynamic menu |
+
 ## Community projects
 
 > These projects are contributed by the open source community and are not guaranteed to use the latest version of D2Admin. Please contact their open source authors for related usage questions.
@@ -129,21 +145,6 @@ The following access addresses are built and deployed by the latest master branc
 | LanBlog | [Link](https://github.com/sinksmell/LanBlog) | [Link](http://47.101.222.133/) | Vue + Beego restful api personal blog system |
 | d2-admin-start-kit-plus | [Link](https://github.com/hank-cp/d2-admin-start-kit-plus) | [Link](https://github.com/hank-cp/d2-admin-start-kit-plus) | D2Admin Start kit modular version |
 | d2-ribbons | [Link](https://github.com/d2-projects/d2-ribbons) | [Link](https://github.com/d2-projects/d2-ribbons) | Open source project logo Library |
-
-## Open source backend implementation
-
-> The backend is contributed by the open source community. The latest version of D2Admin is not guaranteed. Please contact its open source author for related usage issues.
-
-| Name | technology | HomePage | Preview | Introduction |
-| --- | --- | --- | --- | --- |
-| boot-admin | SpringBoot | [Link](https://github.com/hb0730/boot-admin) | [Link](http://admin.hb0730.com/) | Management system based on SpringBoot |
-| FlaskPermission | Flask | [Link](https://github.com/huguodong/flask-permission) | [Link](http://47.97.218.139:9999) | Permission management based on Flask |
-| CareyShop | ThinkPHP5 | [Link](https://github.com/dnyz520/careyshop-admin) | [Link](https://demo.careyshop.cn/admin/) | High Performance Mall Framework System for CareyShop |
-| jiiiiiin-security | Spring Boot | [Link](https://github.com/Jiiiiiin/jiiiiiin-security) | [Link](https://github.com/Jiiiiiin/jiiiiiin-security) | Content management infrastructure projects |
-| Taroco | Spring Cloud | [Link](https://github.com/liuht777/Taroco) | [Link](http://111.231.192.110/) | Complete microservice enterprise solution |
-| Aooms | Spring Cloud | [Link](https://gitee.com/cyb-javaer/Aooms) | [Link](https://www.yuboon.com/Aooms) | Extremely fast microservice development, not just as simple as JFinal |
-| GOA | Beego | [Link](https://github.com/Qsnh/goa) | [Link](http://goaio.vip/) | Online question answering system based on Beego + Vue |
-| CMDB | Django | [Link](https://github.com/CJFJack/django_vue_cmdb) | [Link](https://mp.weixin.qq.com/s?__biz=MzU1OTYzODA4Mw==&mid=2247484250&idx=1&sn=981024ac0580d8a3eba95742bd32b268) | authority system with dynamic menu |
 
 ## Badge
 

@@ -117,6 +117,22 @@
 | --- | --- | --- | --- |
 | 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://d2.pub/d2-admin-start-kit/preview) | 无 |
 
+## 开源后端实现
+
+> 后端由开源社区贡献，不保证使用 D2Admin 最新版本，相关使用问题请联系其开源作者。
+
+| 名称 | 技术 | 主页 | 预览 | 介绍 |
+| --- | --- | --- | --- | --- |
+| django-vue-admin-pro | Django | [Github](https://github.com/dvadmin-pro/django-vue-admin-pro) | [预览](http://demo.pro.django-vue-admin.com) | Django + Jwt + D2Admin |
+| boot-admin | SpringBoot | [Github](https://github.com/hb0730/boot-admin) | [预览](http://admin.hb0730.com/) | 基于 SpringBoot 前后端分离的后台管理系统 |
+| FlaskPermission | Flask | [Github](https://github.com/huguodong/flask-permission) | [预览](http://47.97.218.139:9999) | 基于 Python Flask 的权限管理 |
+| CareyShop | ThinkPHP5 | [Github](https://github.com/dnyz520/careyshop-admin) | [预览](https://demo.careyshop.cn/admin/#/index) | 适用于 CareyShop 的高性能商城框架系统 |
+| jiiiiiin-security | Spring Boot | [Github](https://github.com/Jiiiiiin/jiiiiiin-security) | [预览](https://github.com/Jiiiiiin/jiiiiiin-security) | 前后端分离的内容管理基础项目，注重用户权限管理功能 |
+| Taroco | Spring Cloud | [Github](https://github.com/liuht777/Taroco) | [预览](http://111.231.192.110/) | 整套微服务企业级解决方案 |
+| Aooms | Spring Cloud | [码云](https://gitee.com/cyb-javaer/Aooms) | [预览](https://www.yuboon.com/Aooms) | 极速微服务开发，不止像JFinal一样简单 |
+| GOA | Beego | [Github](https://github.com/Qsnh/goa) | [预览](http://goaio.vip/) | 基于 Beego + Vue 开发的在线问答系统 |
+| CMDB | Django | [Github](https://github.com/CJFJack/django_vue_cmdb) | [预览](https://mp.weixin.qq.com/s?__biz=MzU1OTYzODA4Mw==&mid=2247484250&idx=1&sn=981024ac0580d8a3eba95742bd32b268) | 分用户加载不同菜单和权限 |
+
 ## 社区项目
 
 > 这些项目由开源社区贡献，不保证使用 D2Admin 最新版本，相关使用问题请联系其开源作者。
@@ -131,21 +147,6 @@
 | LanBlog | [Github](https://github.com/sinksmell/LanBlog) | [预览](http://47.101.222.133/) | Vue + Beego restful api 开发的懒人博客 |
 | d2-admin-start-kit-plus | [Github](https://github.com/hank-cp/d2-admin-start-kit-plus) | [预览](https://github.com/hank-cp/d2-admin-start-kit-plus) | D2Admin 简化版模块化版本 |
 | d2-ribbons | [Github](https://github.com/d2-projects/d2-ribbons) | [预览](https://github.com/d2-projects/d2-ribbons) | 开源项目徽标库 |
-
-## 开源后端实现
-
-> 后端由开源社区贡献，不保证使用 D2Admin 最新版本，相关使用问题请联系其开源作者。
-
-| 名称 | 技术 | 主页 | 预览 | 介绍 |
-| --- | --- | --- | --- | --- |
-| boot-admin | SpringBoot | [Github](https://github.com/hb0730/boot-admin) | [预览](http://admin.hb0730.com/) | 基于 SpringBoot 前后端分离的后台管理系统 |
-| FlaskPermission | Flask | [Github](https://github.com/huguodong/flask-permission) | [预览](http://47.97.218.139:9999) | 基于 Python Flask 的权限管理 |
-| CareyShop | ThinkPHP5 | [Github](https://github.com/dnyz520/careyshop-admin) | [预览](https://demo.careyshop.cn/admin/#/index) | 适用于 CareyShop 的高性能商城框架系统 |
-| jiiiiiin-security | Spring Boot | [Github](https://github.com/Jiiiiiin/jiiiiiin-security) | [预览](https://github.com/Jiiiiiin/jiiiiiin-security) | 前后端分离的内容管理基础项目，注重用户权限管理功能 |
-| Taroco | Spring Cloud | [Github](https://github.com/liuht777/Taroco) | [预览](http://111.231.192.110/) | 整套微服务企业级解决方案 |
-| Aooms | Spring Cloud | [码云](https://gitee.com/cyb-javaer/Aooms) | [预览](https://www.yuboon.com/Aooms) | 极速微服务开发，不止像JFinal一样简单 |
-| GOA | Beego | [Github](https://github.com/Qsnh/goa) | [预览](http://goaio.vip/) | 基于 Beego + Vue 开发的在线问答系统 |
-| CMDB | Django | [Github](https://github.com/CJFJack/django_vue_cmdb) | [预览](https://mp.weixin.qq.com/s?__biz=MzU1OTYzODA4Mw==&mid=2247484250&idx=1&sn=981024ac0580d8a3eba95742bd32b268) | 分用户加载不同菜单和权限 |
 
 ## 加入我们
 
