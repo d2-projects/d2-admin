@@ -1,4 +1,4 @@
-![banner](https://raw.githubusercontent.com/FairyEver/d2-admin/master/docs/image/banner.png)
+![banner](https://raw.githubusercontent.com/d2-projects/d2-admin/master/docs/image/banner.png)
 
 <p align="center">
 	<a href="https://github.com/d2-projects/d2-admin/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/d2-projects/d2-admin.svg"></a>
@@ -151,13 +151,13 @@ The following access addresses are built and deployed by the latest master branc
 If your open source project is based on D2Admin development, please add the following badge to your README:
 
 <a href="https://github.com/d2-projects/d2-admin" target="_blank">
-	<img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/docs/image/d2-admin@2x.png" width="200">
+	<img src="https://raw.githubusercontent.com/d2-projects/d2-admin/master/docs/image/d2-admin@2x.png" width="200">
 </a>
 
 Copy the following code into the README to:
 
 ``` html
-<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://raw.githubusercontent.com/FairyEver/d2-admin/master/docs/image/d2-admin@2x.png" width="200"></a>
+<a href="https://github.com/d2-projects/d2-admin" target="_blank"><img src="https://raw.githubusercontent.com/d2-projects/d2-admin/master/docs/image/d2-admin@2x.png" width="200"></a>
 ```
 
 At the same time, you can report your project to us. We will place the excellent project in D2Admin and help you publicize it.
