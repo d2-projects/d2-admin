@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.24.3](https://github.com/d2-projects/d2-admin/compare/v1.24.2...v1.24.3) (2022-08-23)
+
+
+### Bug Fixes
+
+* 🐛 注销用户清空vuex用户信息失效 ([a7784d4](https://github.com/d2-projects/d2-admin/commit/a7784d4a321138e712a0c2434e2c8a5334de359d))
+* remove never used code ([57534be](https://github.com/d2-projects/d2-admin/commit/57534be3fbec2796f998192e26aea3616be2b87c))
+* remove simplemde ([dd99b57](https://github.com/d2-projects/d2-admin/commit/dd99b57b6e1330c58c33c57da5785ae4e256847c))
+
 ## [1.24.2](https://github.com/d2-projects/d2-admin/compare/v1.24.1...v1.24.2) (2021-07-23)
 
 
