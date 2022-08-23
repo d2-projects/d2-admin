@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.25.0](https://github.com/d2-projects/d2-admin/compare/v1.24.3...v1.25.0) (2022-08-23)
+
+
+### Features
+
+* update packages minor ([85bdc01](https://github.com/d2-projects/d2-admin/commit/85bdc019ea5e2c7afde157fd278a98add7868c03))
+* update packages patch ([24a2f64](https://github.com/d2-projects/d2-admin/commit/24a2f64d275e7e5992588b305bafdf99be40b5c6))
+
 ## [1.24.3](https://github.com/d2-projects/d2-admin/compare/v1.24.2...v1.24.3) (2022-08-23)
 
 
