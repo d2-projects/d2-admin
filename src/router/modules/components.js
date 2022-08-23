@@ -25,7 +25,6 @@ export default {
     { path: 'countup', name: 'demo-components-countup', component: _import('demo/components/countup'), meta: { ...meta, title: '数字动画' } },
     { path: 'editor-ueditor', name: 'demo-components-editor-ueditor', component: _import('demo/components/editor-ueditor'), meta: { ...meta, title: 'UEditor' } },
     { path: 'editor-quill', name: 'demo-components-editor-quill', component: _import('demo/components/editor-quill'), meta: { ...meta, title: '富文本编辑器' } },
-    { path: 'editor-simpleMDE', name: 'demo-components-editor-simpleMDE', component: _import('demo/components/editor-simpleMDE'), meta: { ...meta, title: 'markdown编辑器' } },
     { path: 'highlight', name: 'demo-components-highlight', component: _import('demo/components/highlight'), meta: { ...meta, title: '代码高亮组件' } },
     { path: 'icon/icon', name: 'demo-components-icon-icon', component: _import('demo/components/icon/icon.vue'), meta: { ...meta, title: '图标组件' } },
     { path: 'icon/icon-svg', name: 'demo-components-icon-icon-svg', component: _import('demo/components/icon/icon-svg.vue'), meta: { ...meta, title: 'svg 图标' } },

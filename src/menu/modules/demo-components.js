@@ -57,8 +57,7 @@ export default {
       icon: 'pencil-square-o',
       children: [
         { path: '/demo/components/editor-ueditor', title: 'UEditor', icon: '' },
-        { path: '/demo/components/editor-quill', title: 'Quill', icon: '' },
-        { path: '/demo/components/editor-simpleMDE', title: 'simpleMDE', icon: '' }
+        { path: '/demo/components/editor-quill', title: 'Quill', icon: '' }
       ]
     },
     {
