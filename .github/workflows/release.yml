@@ -10,13 +10,13 @@ jobs:
     if: "! contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: Semantic Release
-      uses: cycjimmy/semantic-release-action@v2
+      uses: cycjimmy/semantic-release-action@v3
       with:
         extra_plugins: |
-          @semantic-release/changelog@3.0.6
-          @semantic-release/git@7.0.18
+          @semantic-release/changelog
+          @semantic-release/git
       env:
         GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
