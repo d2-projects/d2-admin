@@ -1,6 +1,6 @@
 import { find, assign } from 'lodash'
 import faker from 'faker/locale/zh_CN'
-import { service, serviceForMock, request, requestForMock, mock } from '@/api/_service.js'
+import { requestForMock, mock } from '@/api/_service.js'
 import * as tools from '@/api/_tools.js'
 
 const users = [
