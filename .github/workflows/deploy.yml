@@ -6,51 +6,6 @@ on:
 
 jobs:
 
-  cdn:
-    name: CDN
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - uses: bahmutov/npm-install@v1
-    - name: Set vue cli env
-      shell: bash
-      run: |
-        echo -e "\
-        VUE_APP_PUBLIC_PATH=/d2-admin/preview/\
-        " > .env.preview.local
-        cat .env.preview.local | while read line
-        do
-          echo $line
-        done
-    - name: Build
-      run: yarn build:preview --report
-    - name: Setup qshell
-      uses: foxundermoon/setup-qshell@v1
-      env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-      with:
-        qshell-version: '2.4.0'
-    - name: Test qshell
-      run: qshell version
-    - name: Login
-      run: qshell account ${{ secrets.AK }} ${{ secrets.SK }} GITHUB_ACTION
-    - name: CDN upload
-      run: |
-        qshell qupload2 \
-        --src-dir=$GITHUB_WORKSPACE/dist \
-        --bucket=d2-cdn \
-        --key-prefix=${GITHUB_REPOSITORY//*\//}/preview/ \
-        --overwrite=true \
-        --check-exists=true \
-        --check-hash=true \
-        --check-size=true \
-        --rescan-local=true \
-        --thread-count=32
-    - name: CDN refresh
-      run: |
-        echo "https://cdn.d2.pub/${GITHUB_REPOSITORY//*\//}/preview/" > cdnrefresh.txt
-        qshell cdnrefresh --dirs -i ./cdnrefresh.txt
-  
   ftp:
     name: FTP
     runs-on: ubuntu-latest

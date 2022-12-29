@@ -31,15 +31,12 @@
 | 位置 | 链接 | 部署位置 |
 | --- | --- | --- |
 | d2.pub | [preview](https://d2.pub/d2-admin/preview) | 中国服务器 |
-| cdn.d2.pub | [preview](https://cdn.d2.pub/d2-admin/preview) | 七牛云 CDN |
 | github | [preview](https://d2-projects.github.io/d2-admin) | GitHub pages |
 | netlify | [preview](https://d2-admin.netlify.com) | Netlify CDN |
 
 ## 文档
 
 [在 https://d2.pub 上的本项目文档](https://d2.pub/zh/doc/d2-admin/)
-
-> d2.pub CDN 镜像部署 [https://cdn.d2.pub](https://cdn.d2.pub)
 
 ## 功能
 

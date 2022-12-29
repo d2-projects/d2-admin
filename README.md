@@ -31,15 +31,12 @@ The following access addresses are built and deployed by the latest master branc
 | server | link | server |
 | --- | --- | --- |
 | d2.pub | [Link](https://d2.pub/d2-admin/preview) | China server |
-| cdn.d2.pub | [Link](https://cdn.d2.pub/d2-admin/preview) | qiniu CDN |
 | github | [Link](https://d2-projects.github.io/d2-admin) | GitHub pages |
 | netlify | [Link](https://d2-admin.netlify.com) | Netlify CDN |
 
 ## Document
 
 [document on https://d2.pub](https://d2.pub/zh/doc/d2-admin/)
-
-> d2.pub CDN mirror deployment [https://cdn.d2.pub](https://cdn.d2.pub)
 
 ## Features
 

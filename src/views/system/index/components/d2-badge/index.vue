@@ -25,7 +25,6 @@ export default {
         ],
         [
           { img: 'https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fd2.pub/badge.svg', link: `${linkD2Admin}/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fd2.pub%22` },
-          { img: 'https://github.com/d2-projects/d2-admin/workflows/Deploy%20https%3A%2F%2Fcdn.d2.pub/badge.svg', link: `${linkD2Admin}/actions?query=workflow%3A%22Deploy+https%3A%2F%2Fcdn.d2.pub%22` },
           { img: 'https://github.com/d2-projects/d2-admin/workflows/Deploy%20Github/badge.svg', link: `${linkD2Admin}/actions?query=workflow%3A%22Deploy+Github%22` },
           { img: 'https://api.netlify.com/api/v1/badges/a5dd4bbd-da3f-4145-98a9-8012577bdcf5/deploy-status', link: 'https://app.netlify.com/sites/d2-admin/deploys' }
         ],

@@ -55,7 +55,7 @@ export default {
       return false
     },
     download () {
-      this.$open('https://cdn.d2.pub/files/d2-admin/demo-csv.csv')
+      this.$open('https://file.d2.pub/document/d2-admin/demo-csv.csv')
     }
   }
 }
