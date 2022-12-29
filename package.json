@@ -53,7 +53,7 @@
     "@vue/cli-plugin-babel": "^4.5.19",
     "@vue/cli-plugin-eslint": "^4.5.19",
     "@vue/cli-plugin-router": "^4.5.19",
-    "@vue/cli-plugin-unit-jest": "^4.5.19",
+    "@vue/cli-plugin-unit-jest": "^5.0.8",
     "@vue/cli-plugin-vuex": "^4.5.19",
     "@vue/cli-service": "^4.5.19",
     "@vue/eslint-config-standard": "^5.1.2",
