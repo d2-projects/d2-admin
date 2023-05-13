@@ -1,0 +1,30 @@
+{
+  "name": "@d2-framework/utils",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "rollup --config --watch",
+    "build": "rollup --config"
+  },
+  "devDependencies": {
+    "@rollup/plugin-multi-entry": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "rollup": "^2.75.7",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  }
+}
