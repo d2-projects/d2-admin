@@ -1,0 +1,9 @@
+{
+  "name": "d2-framework",
+  "private": true,
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "clear": "pnpm -r exec rm -rf node_modules",
+    "clear:dist": "pnpm -r exec rm -rf dist"
+  }
+}
