@@ -1,9 +1,10 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import multi from '@rollup/plugin-multi-entry'
+import typescript from '@rollup/plugin-typescript'
 
 export default {
-  input: 'src/**/*.js',
+  input: 'src/**/*.ts',
   output: [
     {
       file: 'dist/index.umd.js',
@@ -17,6 +18,7 @@ export default {
   ],
   plugins: [
     nodeResolve(),
+    typescript(),
     multi(),
     terser({
       format: {
