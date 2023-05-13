@@ -42,6 +42,9 @@ importers:
 
   templates/dashboard:
     dependencies:
+      '@d2-framework/utils':
+        specifier: workspace:^
+        version: link:../../packages/utils
       vue:
         specifier: ^3.3.2
         version: 3.3.2
