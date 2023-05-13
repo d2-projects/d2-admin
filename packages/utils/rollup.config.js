@@ -7,7 +7,7 @@ export default {
   output: [
     {
       file: 'dist/index.umd.js',
-      name: 'D2UtilsCommon',
+      name: 'D2Utils',
       format: 'umd'
     },
     {
