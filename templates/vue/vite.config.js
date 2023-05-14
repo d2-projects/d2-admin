@@ -5,6 +5,7 @@ import Jsx from '@vitejs/plugin-vue-jsx'
 import { d2LogoSvg } from '@d2-framework/assets'
 import VirtualHtml from 'vite-plugin-virtual-html'
 import { visualizer } from 'rollup-plugin-visualizer'
+import { scanApps } from './build/utils/app.js'
 
 const res = path => resolve(__dirname, path)
 
@@ -12,24 +13,28 @@ const pages = {
   index: '/projects/index/index.html'
 }
 
-export default defineConfig({
-  plugins: [
-    Vue(),
-    Jsx(),
-    VirtualHtml({
-      pages,
-      indexPage: 'index',
-      data: {
-        icon: d2LogoSvg
+export default defineConfig(async () => {
+  const apps = await scanApps()
+  console.log(apps)
+  return {
+    plugins: [
+      Vue(),
+      Jsx(),
+      VirtualHtml({
+        pages,
+        indexPage: 'index',
+        data: {
+          icon: d2LogoSvg
+        }
+      }),
+      visualizer({
+        open: false
+      })
+    ],
+    resolve: {
+      alias: {
+        'projects': res('projects')
       }
-    }),
-    visualizer({
-      open: false
-    })
-  ],
-  resolve: {
-    alias: {
-      'projects': res('projects')
     }
   }
 })
