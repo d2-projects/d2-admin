@@ -1,5 +1,15 @@
 # D2 Framework
 
+## Development
+
+``` sh
+pnpm install
+```
+
+cd to any package folder and run
+
+``` sh
+
 ## Update
 
 ``` sh
