@@ -15,8 +15,8 @@
     }
   },
   "scripts": {
-    "dev": "rollup --config --watch",
-    "build": "rollup --config"
+    "build": "rollup --config",
+    "build:watch": "rollup --config --watch"
   },
   "devDependencies": {
     "@rollup/plugin-multi-entry": "^4.1.0",
