@@ -1,8 +1,10 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
+import Jsx from '@vitejs/plugin-vue-jsx'
 import { d2LogoSvg } from '@d2-framework/assets'
 import VirtualHtml from 'vite-plugin-virtual-html'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 const res = path => resolve(__dirname, path)
 
@@ -12,13 +14,17 @@ const pages = {
 
 export default defineConfig({
   plugins: [
-    vue(),
+    Vue(),
+    Jsx(),
     VirtualHtml({
       pages,
       indexPage: 'index',
       data: {
         icon: d2LogoSvg
       }
+    }),
+    visualizer({
+      open: true
     })
   ],
   resolve: {
