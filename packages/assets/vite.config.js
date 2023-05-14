@@ -16,12 +16,6 @@ export default defineConfig({
       entry: path.resolve(__dirname, 'lib/index.js'),
       name: 'D2Assets',
       fileName: 'index',
-    },
-    rollupOptions: {
-      output: {
-        entryFileNames: `[name].[format].js`,
-        assetFileNames: '[ext]/[name].[ext]'
-      }
     }
   }
 })
