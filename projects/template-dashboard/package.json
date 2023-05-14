@@ -7,6 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@d2-framework/assets": "workspace:^",
     "@d2-framework/utils": "workspace:^",
     "vue": "^3.3.2"
   },

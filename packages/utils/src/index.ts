@@ -9,5 +9,3 @@ export function test () {
   const obj2 = pick(obj, ['a', 'b'])
   console.log(obj2)
 }
-
-test()

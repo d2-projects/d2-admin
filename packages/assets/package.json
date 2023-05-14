@@ -1,0 +1,11 @@
+{
+  "name": "@d2-framework/assets",
+  "version": "0.0.0",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./*": "./dist/*"
+  }
+}
