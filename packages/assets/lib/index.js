@@ -1,7 +1,7 @@
-import svgIcon from './assets/icon.svg'
-import svgTitle from './assets/title.svg'
-import svgTitleWrap from './assets/title-wrap.svg'
+import logo from './assets/icon.svg'
+import title from './assets/title.svg'
+import titleWrap from './assets/title-wrap.svg'
 
-export const icon = svgIcon
-export const title = svgTitle
-export const titleWrap = svgTitleWrap
+export const d2LogoSvg = logo
+export const d2TitleSvg = title
+export const d2TitleWrapSvg = titleWrap

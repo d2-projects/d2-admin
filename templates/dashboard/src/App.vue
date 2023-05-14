@@ -1,10 +1,10 @@
 <template>
-  <img :src="icon">
+  <img :src="d2LogoSvg">
 </template>
 
 <script setup>
 import { test } from '@d2-framework/utils'
-import { icon } from '@d2-framework/assets'
+import { d2LogoSvg } from '@d2-framework/assets'
 
 test()
 </script>

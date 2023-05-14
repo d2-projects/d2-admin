@@ -18,11 +18,11 @@ export default defineConfig({
       name: 'D2Assets',
       fileName: 'index',
     },
-    // rollupOptions: {
-    //   output: {
-    //     entryFileNames: `js/[name].[format].js`,
-    //     assetFileNames: '[ext]/[name].[ext]'
-    //   }
-    // }
+    rollupOptions: {
+      output: {
+        entryFileNames: `[name].[format].js`,
+        assetFileNames: '[ext]/[name].[ext]'
+      }
+    }
   }
 })
