@@ -19,6 +19,7 @@
     "build:watch": "rollup --config --watch"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-multi-entry": "^4.1.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-terser": "^0.4.1",
@@ -29,6 +30,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "ascii-table": "^0.0.9",
     "lodash-es": "^4.17.21"
   }
 }
