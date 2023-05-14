@@ -1,5 +1,5 @@
 <template>
-  second
+  first
 </template>
 
 <script setup>
