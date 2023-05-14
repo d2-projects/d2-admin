@@ -1,5 +1,5 @@
 {
-  "name": "@d2-framework/template-dashboard",
+  "name": "@d2-framework/template-vue",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

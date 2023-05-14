@@ -58,7 +58,7 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
 
-  projects/template-dashboard:
+  projects/template-vue:
     dependencies:
       '@d2-framework/assets':
         specifier: workspace:^
