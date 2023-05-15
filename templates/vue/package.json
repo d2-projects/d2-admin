@@ -5,7 +5,8 @@
     "dev": "esno build/dev.js",
     "dev:test": "npm run dev -- --mode build.test",
     "dev:prod": "npm run dev -- --mode build.prod",
-    "build": "esno build/build.js"
+    "build": "esno build/build.js",
+    "build:dashboard": "esno build/build.js -- --project dashboard --index"
   },
   "dependencies": {
     "@d2-framework/assets": "workspace:^",
