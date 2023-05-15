@@ -58,62 +58,6 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
 
-  projects/template-vue:
-    dependencies:
-      '@d2-framework/assets':
-        specifier: workspace:^
-        version: link:../../packages/assets
-      '@d2-framework/utils':
-        specifier: workspace:^
-        version: link:../../packages/utils
-      vue:
-        specifier: ^3.3.2
-        version: 3.3.2
-    devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^4.1.0
-        version: 4.1.0(vite@4.3.2)(vue@3.3.2)
-      ejs:
-        specifier: ^3.1.9
-        version: 3.1.9
-      vite:
-        specifier: ^4.3.2
-        version: 4.3.2
-      vite-plugin-virtual-html:
-        specifier: ^1.1.8
-        version: 1.1.8
-
-  templates/dashboard:
-    dependencies:
-      '@d2-framework/assets':
-        specifier: workspace:^
-        version: link:../../packages/assets
-      '@d2-framework/utils':
-        specifier: workspace:^
-        version: link:../../packages/utils
-      vue:
-        specifier: ^3.3.2
-        version: 3.3.2
-    devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^4.1.0
-        version: 4.1.0(vite@4.3.2)(vue@3.3.2)
-      '@vitejs/plugin-vue-jsx':
-        specifier: ^3.0.1
-        version: 3.0.1(vite@4.3.2)(vue@3.3.2)
-      ejs:
-        specifier: ^3.1.9
-        version: 3.1.9
-      rollup-plugin-visualizer:
-        specifier: ^5.9.0
-        version: 5.9.0
-      vite:
-        specifier: ^4.3.2
-        version: 4.3.2
-      vite-plugin-virtual-html:
-        specifier: ^1.1.8
-        version: 1.1.8
-
   templates/vue:
     dependencies:
       '@d2-framework/assets':

@@ -1,4 +1,5 @@
 import { resolve } from 'path'
+import { fromPairs } from 'lodash'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Jsx from '@vitejs/plugin-vue-jsx'
@@ -9,19 +10,15 @@ import { scanProjects } from './build/utils/app.js'
 
 const res = path => resolve(__dirname, path)
 
-const pages = {
-  index: '/projects/index/index.html'
-}
-
 export default defineConfig(async () => {
   const projects = await scanProjects()
-  console.log(projects)
+  console.log()
   return {
     plugins: [
       Vue(),
       Jsx(),
       VirtualHtml({
-        pages,
+        pages: fromPairs(projects.map(project => [project.name, project.entry])),
         indexPage: 'index',
         data: {
           icon: d2LogoSvg
