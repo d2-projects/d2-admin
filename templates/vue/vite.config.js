@@ -5,7 +5,7 @@ import Jsx from '@vitejs/plugin-vue-jsx'
 import { d2LogoSvg } from '@d2-framework/assets'
 import VirtualHtml from 'vite-plugin-virtual-html'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { scanApps } from './build/utils/app.js'
+import { scanProjects } from './build/utils/app.js'
 
 const res = path => resolve(__dirname, path)
 
@@ -14,7 +14,7 @@ const pages = {
 }
 
 export default defineConfig(async () => {
-  const apps = await scanApps()
+  const apps = await scanProjects()
   console.log(apps)
   return {
     plugins: [
