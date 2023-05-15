@@ -6,17 +6,19 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "rollup --config",
-    "build:watch": "rollup --config --watch"
+    "build": "rollup --config && pnpm run dts",
+    "build:watch": "rollup --config --watch",
+    "dts": "dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.0",
@@ -25,6 +27,7 @@
     "@rollup/plugin-terser": "^0.4.1",
     "@rollup/plugin-typescript": "^11.1.1",
     "@types/lodash-es": "^4.17.7",
+    "dts-bundle-generator": "^8.0.1",
     "rollup": "^2.75.7",
     "tslib": "^2.5.0",
     "typescript": "^5.0.4"

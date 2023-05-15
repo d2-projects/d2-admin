@@ -48,6 +48,9 @@ importers:
       '@types/lodash-es':
         specifier: ^4.17.7
         version: 4.17.7
+      dts-bundle-generator:
+        specifier: ^8.0.1
+        version: 8.0.1
       rollup:
         specifier: ^2.75.7
         version: 2.79.1
@@ -1660,6 +1663,15 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       is-obj: 2.0.0
+    dev: true
+
+  /dts-bundle-generator@8.0.1:
+    resolution: {integrity: sha512-9JVw78/OXdKfq+RUrmpLm6WAUJp+aOUGEHimVqIlOEH2VugRt1I8CVIoQZlirWZko+/SVZkNgpWCyZubUuzzPA==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      typescript: 5.0.4
+      yargs: 17.7.2
     dev: true
 
   /eastasianwidth@0.2.0:

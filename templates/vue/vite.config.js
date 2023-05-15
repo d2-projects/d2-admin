@@ -6,7 +6,15 @@ import Jsx from '@vitejs/plugin-vue-jsx'
 import { d2LogoSvg } from '@d2-framework/assets'
 import VirtualHtml from 'vite-plugin-virtual-html'
 import { visualizer } from 'rollup-plugin-visualizer'
+import { objectToAscii } from '@d2-framework/utils'
 import { scanProjects } from './build/utils/app.js'
+
+console.log(objectToAscii({
+  title: 'Vite config',
+  data: {
+    name: 'Liy'
+  }
+}))
 
 // https://github.com/vuejs/core/issues/8303
 var __defProp = Object.defineProperty

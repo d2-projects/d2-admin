@@ -5,22 +5,22 @@ import typescript from '@rollup/plugin-typescript'
 import commonjs from '@rollup/plugin-commonjs'
 
 export default {
-  input: 'src/**/*.ts',
+  input: 'src/index.ts',
   output: [
     {
-      file: 'dist/index.umd.js',
+      file: 'dist/index.js',
       name: 'D2Utils',
       format: 'umd'
     },
     {
-      file: 'dist/index.es.js',
+      file: 'dist/index.esm.js',
       format: 'esm'
     }
   ],
   plugins: [
     nodeResolve(),
     typescript(),
-    multi(),
+    // multi(),
     commonjs(),
     terser({
       format: {
