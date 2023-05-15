@@ -8,6 +8,11 @@ import VirtualHtml from 'vite-plugin-virtual-html'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { scanProjects } from './build/utils/app.js'
 
+// https://github.com/vuejs/core/issues/8303
+var __defProp = Object.defineProperty
+var __name = (target, value) => __defProp(target, 'name', { value, configurable: true })
+globalThis.__name = __name
+
 const res = path => resolve(__dirname, path)
 
 export default defineConfig(async () => {
