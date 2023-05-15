@@ -3,7 +3,7 @@ import minimist from 'minimist'
 import buildOptions from 'minimist-options'
 
 const minimistOptions = buildOptions({
-  // dev test beta prod
+  // dev test prod
 	mode: {
 		type: 'string',
     alias: 'm',
