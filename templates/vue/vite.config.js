@@ -14,8 +14,8 @@ const pages = {
 }
 
 export default defineConfig(async () => {
-  const apps = await scanProjects()
-  console.log(apps)
+  const projects = await scanProjects()
+  console.log(projects)
   return {
     plugins: [
       Vue(),
