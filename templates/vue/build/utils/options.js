@@ -9,9 +9,9 @@ const minimistOptions = buildOptions({
     alias: 'm',
 		default: 'development'
 	},
-	app: {
+	project: {
 		type: 'string-array',
-    alias: 'a',
+    alias: 'p',
 		default: []
 	},
   index: {
@@ -23,8 +23,8 @@ const minimistOptions = buildOptions({
 
 function getArgs () {
   const args = minimist(process.argv.slice(2), minimistOptions)
-  if (!isArray(args.app)) {
-    args.app = args.app ? [args.app] : []
+  if (!isArray(args.project)) {
+    args.project = args.project ? [args.project] : []
   }
   return args
 }
