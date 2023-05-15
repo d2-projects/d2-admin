@@ -8,15 +8,6 @@ const metaDefault = {
   description: '',
 }
 
-// projects
-// [
-//   {
-//     name: 'project1',
-//     entry: 'project1/main.js',
-//     build: true,
-//     output: 'project1'
-//   }
-// ]
 export async function scanProjects ({} = {}) {
   const entries = await glob('projects/*/index.html')
   const projects = entries.map(entry => {
