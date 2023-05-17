@@ -1,4 +1,9 @@
-import { tableToAscii, objectToAscii, TableToAsciiParams, ObjectToAsciiParams } from './ascii.ts'
+import {
+  tableToAscii,
+  objectToAscii,
+  TableToAsciiParams,
+  ObjectToAsciiParams
+} from './ascii.ts'
 
 export function logTableAsAscii(params: TableToAsciiParams) {
   const text: string = tableToAscii(params)
