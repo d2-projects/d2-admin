@@ -1,23 +1,23 @@
 
 import AsciiTable from 'ascii-table'
 
-interface Column {
+export interface Column {
   label: string;
   key: string;
 }
 
-interface Formatter {
+export interface Formatter {
   [key: string]: (value: any) => string;
 }
 
-interface TableToAsciiParams {
+export interface TableToAsciiParams {
   title: string;
   columns: Column[];
   data: any[];
   formatters?: Formatter;
 }
 
-interface ObjectToAsciiParams {
+export interface ObjectToAsciiParams {
   title: string;
   data: { [key: string]: any };
 }

@@ -1,15 +1,11 @@
-import { tableToAscii } from './ascii.ts'
+import { tableToAscii, objectToAscii, TableToAsciiParams, ObjectToAsciiParams } from './ascii.ts'
 
-export function logTable({
-  title,
-  columns,
-  data,
-  formatters = {}
-}: {
-  title: string;
-  columns: { label: string; key: string }[];
-  data: any[];
-  formatters?: { [key: string]: (value: any) => string };
-}) {
-  console.log(tableToAscii({ title, columns, data, formatters }))
+export function logTableAsAscii(params: TableToAsciiParams) {
+  const text: string = tableToAscii(params)
+  console.log(text)
+}
+
+export function logObjectAsAscii(params: ObjectToAsciiParams) {
+  const text: string = objectToAscii(params)
+  console.log(text)
 }
