@@ -36,7 +36,7 @@
 
 ## 文档
 
-[在 https://d2.pub 上的本项目文档](https://d2.pub/zh/doc/d2-admin/)
+[在 https://d2.pub 上的本项目文档](https://d2.pub/doc/d2-admin/)
 
 ## 功能
 

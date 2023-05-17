@@ -36,7 +36,7 @@ The following access addresses are built and deployed by the latest master branc
 
 ## Document
 
-[document on https://d2.pub](https://d2.pub/zh/doc/d2-admin/)
+[document on https://d2.pub](https://d2.pub/doc/d2-admin/)
 
 ## Features
 

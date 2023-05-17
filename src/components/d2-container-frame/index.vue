@@ -14,7 +14,7 @@ export default {
     src: {
       type: String,
       required: false,
-      default: 'https://d2.pub/zh/doc/d2-admin'
+      default: 'https://d2.pub/doc/d2-admin'
     }
   }
 }
