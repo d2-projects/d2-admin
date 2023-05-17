@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "module": "ES2015",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "declaration": true,
     "declarationDir": "dist",
   }
