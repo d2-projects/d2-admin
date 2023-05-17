@@ -1,12 +1,13 @@
 {
   "name": "@d2-framework/template-vue",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "esno build/dev.js",
+    "dev": "node build/dev.mjs",
     "dev:test": "npm run dev -- --mode build.test",
     "dev:prod": "npm run dev -- --mode build.prod",
-    "build": "esno build/build.js",
-    "build:dashboard": "esno build/build.js -- --project dashboard --index",
+    "build": "node build/build.mjs",
+    "build:dashboard": "node build/build.mjs -- --project dashboard --index",
     "update": "pnpm npm-check-updates"
   },
   "dependencies": {
@@ -18,10 +19,10 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "ejs": "^3.1.9",
-    "esno": "^0.16.3",
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.1",
     "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "minimist": "^1.2.8",
     "minimist-options": "^4.1.0",
     "npm-check-updates": "^16.10.12",

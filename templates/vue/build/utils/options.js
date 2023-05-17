@@ -1,4 +1,4 @@
-import { isArray } from 'lodash'
+import { isArray } from 'lodash-es'
 import minimist from 'minimist'
 import buildOptions from 'minimist-options'
 

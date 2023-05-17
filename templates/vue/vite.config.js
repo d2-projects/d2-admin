@@ -1,6 +1,7 @@
 import { resolve } from 'path'
-import { fromPairs } from 'lodash'
+import { fromPairs } from 'lodash-es'
 import { defineConfig } from 'vite'
+import ejs from 'ejs'
 import Vue from '@vitejs/plugin-vue'
 import Jsx from '@vitejs/plugin-vue-jsx'
 import { d2LogoSvg } from '@d2-framework/assets'
@@ -9,12 +10,6 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import { objectToAscii, tableToAscii } from '@d2-framework/utils'
 import { options } from './build/utils/options.js'
 import { scanProjects } from './build/utils/app.js'
-
-// https://github.com/vuejs/core/issues/8303
-// https://github.com/esbuild-kit/tsx/issues/242
-var __defProp = Object.defineProperty
-var __name = (target, value) => __defProp(target, 'name', { value, configurable: true })
-globalThis.__name = __name
 
 const res = path => resolve(__dirname, path)
 
@@ -41,15 +36,16 @@ export default defineConfig(async () => {
   }))
   return {
     plugins: [
-      Vue(),
-      Jsx(),
       VirtualHtml({
         pages: fromPairs(projects.map(project => [project.name, project.entry])),
         indexPage: 'index',
         data: {
           icon: d2LogoSvg
-        }
+        },
+        render: (template, data) => ejs.render(template, data)
       }),
+      Vue(),
+      Jsx(),
       visualizer({
         open: false
       })
