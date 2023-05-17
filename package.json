@@ -4,10 +4,6 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "clear": "pnpm -r exec rm -rf node_modules",
-    "clear:dist": "pnpm -r exec rm -rf dist",
-    "update": "pnpm npm-check-updates"
-  },
-  "devDependencies": {
-    "npm-check-updates": "^16.10.12"
+    "clear:dist": "pnpm -r exec rm -rf dist"
   }
 }

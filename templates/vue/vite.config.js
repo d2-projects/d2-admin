@@ -11,6 +11,7 @@ import { options } from './build/utils/options.js'
 import { scanProjects } from './build/utils/app.js'
 
 // https://github.com/vuejs/core/issues/8303
+// https://github.com/esbuild-kit/tsx/issues/242
 var __defProp = Object.defineProperty
 var __name = (target, value) => __defProp(target, 'name', { value, configurable: true })
 globalThis.__name = __name
