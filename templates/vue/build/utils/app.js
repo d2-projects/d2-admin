@@ -14,17 +14,13 @@ export async function scanProjects ({} = {}) {
   const projects = await Promise.all(entries.map(async entry => {
     const name = entry.match(/projects\/(.+)\/index.html/)[1]
     const meta = await import(resolve(entry, '../project.js'))
-    printAsciiObject({
-      title: 'meta',
-      data: meta
-    })
-    const build = options.project.length === 0 || options.project.includes(name)
+    const join = options.project.length === 0 || options.project.includes(name)
     return {
       name,
       entry: '/' + entry,
-      build,
+      join,
       meta: Object.assign({}, metaDefault, meta),
-      output: build ? name : '',
+      output: join ? name : '',
     }
   }))
   if (options.index && options.project.length === 1) {
@@ -39,11 +35,11 @@ export async function scanProjects ({} = {}) {
     columns: [
       { label: 'project', key: 'name'   },
       { label: 'entry'  , key: 'entry'  },
-      { label: 'build'  , key: 'build'  },
+      { label: 'join'   , key: 'join'   },
       { label: 'output' , key: 'output' },
     ],
     formatters: {
-      build: value => value ? 'yes' : 'no',
+      join: value => value ? 'yes' : 'no',
       output: value => value || '-'
     },
     data: projects,
