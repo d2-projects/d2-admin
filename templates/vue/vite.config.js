@@ -1,6 +1,5 @@
 import ejs from 'ejs'
 import { resolve } from 'path'
-import { fromPairs } from 'lodash-es'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Jsx from '@vitejs/plugin-vue-jsx'
@@ -10,11 +9,11 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import { scanProjects } from './build/utils/app.js'
 
 export default defineConfig(async () => {
-  const projects = await scanProjects()
+  const { pages } = await scanProjects()
   return {
     plugins: [
       VirtualHtml({
-        pages: fromPairs(projects.map(project => [project.name, project.entry])),
+        pages,
         indexPage: 'index',
         data: {
           icon: d2LogoSvg

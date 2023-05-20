@@ -1,4 +1,5 @@
 import { resolve } from 'path'
+import { fromPairs } from 'lodash-es'
 import glob from 'fast-glob'
 import { options } from './options.js'
 import { printAsciiObject, printAsciiTable } from '@d2-framework/utils'
@@ -14,7 +15,7 @@ export async function scanProjects ({} = {}) {
   const projects = await Promise.all(entries.map(async entry => {
     const name = entry.match(/projects\/(.+)\/index.html/)[1]
     const meta = await import(resolve(entry, '../project.js'))
-    const join = options.project.length === 0 || options.project.includes(name)
+    const join = options.projects.length === 0 || options.projects.includes(name)
     return {
       name,
       entry: '/' + entry,
@@ -23,8 +24,8 @@ export async function scanProjects ({} = {}) {
       output: join ? name : '',
     }
   }))
-  if (options.index && options.project.length === 1) {
-    projects[projects.findIndex(project => project.name === options.project[0])].output = 'index'
+  if (options.index && options.projects.length === 1) {
+    projects[projects.findIndex(p => p.name === options.projects[0])].output = 'index'
   }
   printAsciiObject({
     title: 'arguments',
@@ -39,10 +40,21 @@ export async function scanProjects ({} = {}) {
       { label: 'output' , key: 'output' },
     ],
     formatters: {
-      join: value => value ? 'yes' : 'no',
+      join: value => value ? 'yes' : '-',
       output: value => value || '-'
     },
     data: projects,
   })
-  return projects
+  const pages = fromPairs(
+    projects
+      .filter(project => project.join)
+      .map(project => [
+        project.output,
+        project.entry
+      ])
+  )
+  return {
+    projects,
+    pages,
+  }
 }

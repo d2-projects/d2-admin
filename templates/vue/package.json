@@ -4,10 +4,10 @@
   "type": "module",
   "scripts": {
     "dev": "node build/dev.mjs",
-    "dev:test": "npm run dev -- --mode build.test",
-    "dev:prod": "npm run dev -- --mode build.prod",
-    "build": "node build/build.mjs",
-    "build:dashboard": "node build/build.mjs -- --project dashboard --index",
+    "dev:test": "npm run dev --mode build.test",
+    "dev:prod": "npm run dev --mode build.prod",
+    "build": "node build/build.mjs --mode build.prod",
+    "build:dashboard": "node build/build.mjs --mode build.prod --projects dashboard --index",
     "update": "pnpm npm-check-updates"
   },
   "dependencies": {
