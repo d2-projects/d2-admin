@@ -5,7 +5,7 @@ import Vue from '@vitejs/plugin-vue'
 import Jsx from '@vitejs/plugin-vue-jsx'
 import { d2LogoSvg } from '@d2-framework/assets'
 import VirtualHtml from 'vite-plugin-virtual-html'
-import { visualizer } from 'rollup-plugin-visualizer'
+import { visualizer as Visualizer } from 'rollup-plugin-visualizer'
 import { scanProjects } from './build/utils/app.js'
 
 export default defineConfig(async () => {
@@ -22,7 +22,7 @@ export default defineConfig(async () => {
       }),
       Vue(),
       Jsx(),
-      visualizer({
+      Visualizer({
         open: false
       })
     ],
