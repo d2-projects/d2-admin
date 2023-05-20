@@ -16,6 +16,9 @@ export async function scanProjects ({} = {}) {
     const { default: meta } = await import(resolve(entry, '../project.js'));
     console.log('meta')
     console.log(meta);
+    // 打印时间戳
+    console.log('打印时间戳')
+    console.log(new Date().getTime())
     const build = options.project.length === 0 || options.project.includes(name);
     return {
       name,
