@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import glob from 'fast-glob'
 import { options } from './options.js'
-import { objectToAscii, tableToAscii } from '@d2-framework/utils'
+import { printAsciiObject, printAsciiTable } from '@d2-framework/utils'
 
 const metaDefault = {
   title: '',
@@ -14,10 +14,10 @@ export async function scanProjects ({} = {}) {
   const projects = await Promise.all(entries.map(async entry => {
     const name = entry.match(/projects\/(.+)\/index.html/)[1]
     const meta = await import(resolve(entry, '../project.js'))
-    console.log(objectToAscii({
+    printAsciiObject({
       title: 'meta',
       data: meta
-    }))
+    })
     const build = options.project.length === 0 || options.project.includes(name)
     return {
       name,
@@ -30,11 +30,11 @@ export async function scanProjects ({} = {}) {
   if (options.index && options.project.length === 1) {
     projects[projects.findIndex(project => project.name === options.project[0])].output = 'index'
   }
-  console.log(objectToAscii({
+  printAsciiObject({
     title: 'arguments',
     data: options
-  }))
-  console.log(tableToAscii({
+  })
+  printAsciiTable({
     title: 'projects',
     columns: [
       { label: 'project', key: 'name'   },
@@ -47,6 +47,6 @@ export async function scanProjects ({} = {}) {
       output: value => value || '-'
     },
     data: projects,
-  }))
+  })
   return projects
 }
