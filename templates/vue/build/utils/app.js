@@ -14,6 +14,10 @@ export async function scanProjects ({} = {}) {
   const projects = await Promise.all(entries.map(async entry => {
     const name = entry.match(/projects\/(.+)\/index.html/)[1]
     const meta = await import(resolve(entry, '../project.js'))
+    console.log(objectToAscii({
+      title: 'meta',
+      data: meta
+    }))
     const build = options.project.length === 0 || options.project.includes(name)
     return {
       name,
