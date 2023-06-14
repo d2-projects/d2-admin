@@ -12,8 +12,4 @@ cd to any package folder and run
 
 ## Update
 
-``` sh
-pnpm update
-```
-
-mode see [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)
+see [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)
