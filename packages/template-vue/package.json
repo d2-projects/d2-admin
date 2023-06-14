@@ -11,7 +11,7 @@
     "update": "pnpm npm-check-updates"
   },
   "dependencies": {
-    "@d2-framework/assets": "workspace:^",
+    "@d2-framework/design-assets": "workspace:^",
     "@d2-framework/utils": "workspace:^",
     "vue": "^3.3.2"
   },

@@ -59,7 +59,7 @@ importers:
 
   templates/vue:
     dependencies:
-      '@d2-framework/assets':
+      '@d2-framework/design-assets':
         specifier: workspace:^
         version: link:../../packages/assets
       '@d2-framework/utils':
