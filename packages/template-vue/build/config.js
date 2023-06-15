@@ -1,12 +1,18 @@
+import { resolve, dirname } from 'path'
+import { fileURLToPath } from 'url'
+// packages
 import ejs from 'ejs'
-import { resolve } from 'path'
+// vite
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Jsx from '@vitejs/plugin-vue-jsx'
-import { d2LogoSvg } from '@d2-framework/design-assets'
 import VirtualHtml from 'vite-plugin-virtual-html'
 import { visualizer as Visualizer } from 'rollup-plugin-visualizer'
-import { scanProjects } from './build/utils/app.js'
+// assets
+import { d2LogoSvg } from '@d2-framework/design-assets'
+import { scanProjects } from './utils/app.js'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig(async () => {
   const { pages } = await scanProjects()
@@ -28,7 +34,7 @@ export default defineConfig(async () => {
     ],
     resolve: {
       alias: {
-        'projects': resolve(__dirname, 'projects')
+        'projects': resolve(__dirname, '../projects'),
       }
     }
   }

@@ -11,7 +11,9 @@ const metaDefault = {
 }
 
 export async function scanProjects ({} = {}) {
+  console.log(1)
   const entries = await glob('projects/*/index.html')
+  console.log(entries)
   const projects = await Promise.all(entries.map(async entry => {
     const name = entry.match(/projects\/(.+)\/index.html/)[1]
     const meta = await import(resolve(entry, '../project.js'))
