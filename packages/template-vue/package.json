@@ -6,8 +6,10 @@
     "dev": "node build/dev.mjs",
     "dev:mode-test": "npm run dev --mode build.test",
     "dev:mode-prod": "npm run dev --mode build.prod",
-    "build": "node build/build.mjs --mode build.prod",
-    "build:dashboard": "node build/build.mjs --mode build.prod --projects dashboard --index",
+    "build:mode-test": "node build/build.mjs --mode build.test",
+    "build:mode-prod": "node build/build.mjs --mode build.prod",
+    "build:dashboard:mode-test": "node build/build.mjs --mode build.test --projects dashboard --index",
+    "build:dashboard:mode-prod": "node build/build.mjs --mode build.prod --projects dashboard --index",
     "check-update": "pnpm npm-check-updates"
   },
   "dependencies": {
