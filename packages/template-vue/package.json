@@ -4,16 +4,16 @@
   "type": "module",
   "scripts": {
     "dev": "node build/dev.mjs",
-    "dev:test": "npm run dev --mode build.test",
-    "dev:prod": "npm run dev --mode build.prod",
+    "dev:mode-test": "npm run dev --mode build.test",
+    "dev:mode-prod": "npm run dev --mode build.prod",
     "build": "node build/build.mjs --mode build.prod",
     "build:dashboard": "node build/build.mjs --mode build.prod --projects dashboard --index",
-    "update": "pnpm npm-check-updates"
+    "check-update": "pnpm npm-check-updates"
   },
   "dependencies": {
     "@d2-framework/design-assets": "workspace:^",
     "@d2-framework/utils": "workspace:^",
-    "vue": "^3.3.2"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
@@ -26,8 +26,8 @@
     "minimist": "^1.2.8",
     "minimist-options": "^4.1.0",
     "npm-check-updates": "^16.10.12",
-    "rollup-plugin-visualizer": "^5.9.0",
-    "vite": "^4.3.7",
-    "vite-plugin-virtual-html": "^1.1.8"
+    "rollup-plugin-visualizer": "^5.9.2",
+    "vite": "^4.3.9",
+    "vite-plugin-virtual-html": "^1.1.9"
   }
 }
