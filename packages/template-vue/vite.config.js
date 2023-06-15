@@ -8,6 +8,10 @@ import VirtualHtml from 'vite-plugin-virtual-html'
 import { visualizer as Visualizer } from 'rollup-plugin-visualizer'
 import { scanProjects } from './build/utils/app.js'
 
+import { get } from 'lodash-es'
+
+console.log(get({ a: 1 }, 'a'))
+
 export default defineConfig(async () => {
   const { pages } = await scanProjects()
   return {
