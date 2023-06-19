@@ -6,6 +6,11 @@ export default defineConfig({
   plugins: [
     vue()
   ],
+  resolve: {
+    alias: {
+      lib: resolve(__dirname, 'lib'),
+    }
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'lib/index.js'),
