@@ -7,12 +7,12 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/index.js',
+      file: 'dist/d2-utils.js',
       name: 'D2Utils',
       format: 'umd'
     },
     {
-      file: 'dist/index.esm.js',
+      file: 'dist/d2-utils.esm.js',
       format: 'esm'
     }
   ],

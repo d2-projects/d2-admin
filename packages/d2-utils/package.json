@@ -6,19 +6,19 @@
   "files": [
     "dist"
   ],
-  "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
-  "module": "./dist/index.esm.js",
+  "types": "./dist/d2-utils.d.ts",
+  "main": "./dist/d2-utils.js",
+  "module": "./dist/d2-utils.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
+      "import": "./dist/d2-utils.esm.js",
+      "require": "./dist/d2-utils.js"
     }
   },
   "scripts": {
     "build": "rollup --config && pnpm run dts",
     "build:watch": "rollup --config --watch",
-    "dts": "dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts"
+    "dts": "dts-bundle-generator -o ./dist/d2-utils.d.ts ./src/index.ts"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.0",
