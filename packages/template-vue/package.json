@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@d2-framework/d2-design-assets": "workspace:^",
-    "@d2-framework/utils": "workspace:^",
+    "@d2-framework/d2-utils": "workspace:^",
     "vue": "^3.3.4"
   },
   "devDependencies": {

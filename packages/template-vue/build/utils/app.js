@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import { fromPairs } from 'lodash-es'
 import glob from 'fast-glob'
 import { options } from './options.js'
-import { printAsciiObject, printAsciiTable } from '@d2-framework/utils'
+import { printAsciiObject, printAsciiTable } from '@d2-framework/d2-utils'
 
 const metaDefault = {
   title: '',

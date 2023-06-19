@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .: {}
@@ -17,14 +21,51 @@ importers:
         specifier: ^4.3.2
         version: 4.3.7
 
+  packages/d2-utils:
+    dependencies:
+      ascii-table:
+        specifier: ^0.0.9
+        version: 0.0.9
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+    devDependencies:
+      '@rollup/plugin-commonjs':
+        specifier: ^25.0.0
+        version: 25.0.0(rollup@2.79.1)
+      '@rollup/plugin-node-resolve':
+        specifier: ^15.0.2
+        version: 15.0.2(rollup@2.79.1)
+      '@rollup/plugin-terser':
+        specifier: ^0.4.1
+        version: 0.4.1(rollup@2.79.1)
+      '@rollup/plugin-typescript':
+        specifier: ^11.1.1
+        version: 11.1.1(rollup@2.79.1)(tslib@2.5.0)(typescript@5.0.4)
+      '@types/lodash-es':
+        specifier: ^4.17.7
+        version: 4.17.7
+      dts-bundle-generator:
+        specifier: ^8.0.1
+        version: 8.0.1
+      rollup:
+        specifier: ^2.75.7
+        version: 2.79.1
+      tslib:
+        specifier: ^2.5.0
+        version: 2.5.0
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+
   packages/template-vue:
     dependencies:
       '@d2-framework/d2-design-assets':
         specifier: workspace:^
         version: link:../d2-design-assets
-      '@d2-framework/utils':
+      '@d2-framework/d2-utils':
         specifier: workspace:^
-        version: link:../utils
+        version: link:../d2-utils
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -65,46 +106,6 @@ importers:
       vite-plugin-virtual-html:
         specifier: ^1.1.9
         version: 1.1.9
-
-  packages/utils:
-    dependencies:
-      ascii-table:
-        specifier: ^0.0.9
-        version: 0.0.9
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
-    devDependencies:
-      '@rollup/plugin-commonjs':
-        specifier: ^25.0.0
-        version: 25.0.0(rollup@2.79.1)
-      '@rollup/plugin-multi-entry':
-        specifier: ^4.1.0
-        version: 4.1.0(rollup@2.79.1)
-      '@rollup/plugin-node-resolve':
-        specifier: ^15.0.2
-        version: 15.0.2(rollup@2.79.1)
-      '@rollup/plugin-terser':
-        specifier: ^0.4.1
-        version: 0.4.1(rollup@2.79.1)
-      '@rollup/plugin-typescript':
-        specifier: ^11.1.1
-        version: 11.1.1(rollup@2.79.1)(tslib@2.5.0)(typescript@5.0.4)
-      '@types/lodash-es':
-        specifier: ^4.17.7
-        version: 4.17.7
-      dts-bundle-generator:
-        specifier: ^8.0.1
-        version: 8.0.1
-      rollup:
-        specifier: ^2.75.7
-        version: 2.79.1
-      tslib:
-        specifier: ^2.5.0
-        version: 2.5.0
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
 
 packages:
 
@@ -812,17 +813,6 @@ packages:
       rollup: 2.79.1
     dev: true
 
-  /@rollup/plugin-multi-entry@4.1.0(rollup@2.79.1):
-    resolution: {integrity: sha512-nellK5pr50W0JA2+bDJbG8F79GBP802J40YRoC0wyfpTAeAn5mJ4eaFiB/MN+YoX9hgb/6RJoZl9leDjZnUFKw==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0 || ^2.0.0
-    dependencies:
-      '@rollup/plugin-virtual': 2.1.0(rollup@2.79.1)
-      matched: 5.0.1
-      rollup: 2.79.1
-    dev: true
-
   /@rollup/plugin-node-resolve@15.0.2(rollup@2.79.1):
     resolution: {integrity: sha512-Y35fRGUjC3FaurG722uhUuG8YHOJRJQbI6/CkbRkdPotSpDj9NtIN85z1zrcyDcCQIW4qp5mgG72U+gJ0TAFEg==}
     engines: {node: '>=14.0.0'}
@@ -874,15 +864,6 @@ packages:
       rollup: 2.79.1
       tslib: 2.5.0
       typescript: 5.0.4
-    dev: true
-
-  /@rollup/plugin-virtual@2.1.0(rollup@2.79.1):
-    resolution: {integrity: sha512-CPPAtlKT53HFqC8jFHb/V5WErpU8Hrq2TyCR0A7kPQMlF2wNUf0o1xuAc+Qxj8NCZM0Z3Yvl+FbUXfJjVWqDwA==}
-    engines: {node: '>=8.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0
-    dependencies:
-      rollup: 2.79.1
     dev: true
 
   /@rollup/pluginutils@5.0.2(rollup@2.79.1):
@@ -2410,14 +2391,6 @@ packages:
       ssri: 10.0.4
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /matched@5.0.1:
-    resolution: {integrity: sha512-E1fhSTPRyhAlNaNvGXAgZQlq1hL0bgYMTk/6bktVlIhzUnX/SZs7296ACdVeNJE8xFNGSuvd9IpI7vSnmcqLvw==}
-    engines: {node: '>=10'}
-    dependencies:
-      glob: 7.2.3
-      picomatch: 2.3.1
     dev: true
 
   /merge2@1.4.1:

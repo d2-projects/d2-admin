@@ -1,5 +1,5 @@
 import { groupBy, mapValues } from 'lodash'
-import { mapTree } from '../../common/utils/array.js'
+import { mapTree } from '../../common/d2-utils/array.js'
 
 const replaceRoutes = (routes, scope) => mapTree(routes, route => {
   if (route.name) {

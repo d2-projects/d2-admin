@@ -1,6 +1,5 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
-import multi from '@rollup/plugin-multi-entry'
 import typescript from '@rollup/plugin-typescript'
 import commonjs from '@rollup/plugin-commonjs'
 
@@ -20,7 +19,6 @@ export default {
   plugins: [
     nodeResolve(),
     typescript(),
-    // multi(),
     commonjs(),
     terser({
       format: {
