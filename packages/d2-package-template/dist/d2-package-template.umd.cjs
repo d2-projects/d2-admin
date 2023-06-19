@@ -1,0 +1,1 @@
+(function(e,t){typeof exports=="object"&&typeof module<"u"?t(exports):typeof define=="function"&&define.amd?define(["exports"],t):(e=typeof globalThis<"u"?globalThis:e||self,t(e.D2PackageTemplate={}))})(this,function(e){"use strict";const t="d2-package-template";e.name=t,Object.defineProperty(e,Symbol.toStringTag,{value:"Module"})});
