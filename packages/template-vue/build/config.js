@@ -9,7 +9,7 @@ import Jsx from '@vitejs/plugin-vue-jsx'
 import VirtualHtml from 'vite-plugin-virtual-html'
 import { visualizer as Visualizer } from 'rollup-plugin-visualizer'
 // assets
-import { d2LogoSvg } from '@d2-framework/design-assets'
+import { d2LogoSvg } from '@d2-framework/d2-design-assets'
 import { scanProjects } from './utils/app.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))

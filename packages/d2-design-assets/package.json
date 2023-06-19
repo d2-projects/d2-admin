@@ -1,17 +1,17 @@
 {
-  "name": "@d2-framework/design-assets",
+  "name": "@d2-framework/d2-design-assets",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/index.umd.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/d2-design-assets.umd.cjs",
+  "module": "./dist/d2-design-assets.js",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
+      "import": "./dist/d2-design-assets.js",
+      "require": "./dist/d2-design-assets.umd.cjs"
     }
   },
   "scripts": {

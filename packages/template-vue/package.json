@@ -13,7 +13,7 @@
     "check-update": "pnpm npm-check-updates"
   },
   "dependencies": {
-    "@d2-framework/design-assets": "workspace:^",
+    "@d2-framework/d2-design-assets": "workspace:^",
     "@d2-framework/utils": "workspace:^",
     "vue": "^3.3.4"
   },
