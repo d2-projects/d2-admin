@@ -15,7 +15,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'lib/index.js'),
       name: 'D2PackageTemplate',
-      fileName: 'd2-package-template',
+      fileName: 'package-template',
     }
   }
 })

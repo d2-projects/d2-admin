@@ -1,17 +1,17 @@
 {
-  "name": "@d2-framework/d2-package-template",
+  "name": "@d2-framework/package-template",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/d2-package-template.umd.cjs",
-  "module": "./dist/d2-package-template.js",
+  "main": "./dist/package-template.umd.cjs",
+  "module": "./dist/package-template.js",
   "exports": {
     ".": {
-      "import": "./dist/d2-package-template.js",
-      "require": "./dist/d2-package-template.umd.cjs"
+      "import": "./dist/package-template.js",
+      "require": "./dist/package-template.umd.cjs"
     }
   },
   "scripts": {

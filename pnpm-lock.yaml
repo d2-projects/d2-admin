@@ -21,7 +21,7 @@ importers:
         specifier: ^4.3.2
         version: 4.3.7
 
-  packages/d2-package-template:
+  packages/package-template:
     dependencies:
       vue:
         specifier: ^3.2.47
