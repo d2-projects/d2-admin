@@ -17,7 +17,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:watch": "vite build --watch"
+    "build:watch": "vite build --watch",
+    "release": "release-it"
   },
   "dependencies": {
     "vue": "^3.2.47"
