@@ -30,7 +30,6 @@
 
 | 位置 | 链接 | 部署位置 |
 | --- | --- | --- |
-| d2.pub | [preview](https://d2.pub/d2-admin/preview) | 中国服务器 |
 | github | [preview](https://d2-projects.github.io/d2-admin) | GitHub pages |
 | netlify | [preview](https://d2-admin.netlify.com) | Netlify CDN |
 

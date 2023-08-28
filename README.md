@@ -30,7 +30,6 @@ The following access addresses are built and deployed by the latest master branc
 
 | server | link | server |
 | --- | --- | --- |
-| d2.pub | [Link](https://d2.pub/d2-admin/preview) | China server |
 | github | [Link](https://d2-projects.github.io/d2-admin) | GitHub pages |
 | netlify | [Link](https://d2-admin.netlify.com) | Netlify CDN |
 
