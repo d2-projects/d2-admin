@@ -17,6 +17,6 @@
     <d2-link-btn
       slot="footer"
       title="文档"
-      link="https://d2.pub/zh/doc/d2-admin/locales"/>
+      link="https://d2.pub/doc/d2-admin/locales"/>
   </d2-container>
 </template>

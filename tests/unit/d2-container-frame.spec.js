@@ -26,10 +26,10 @@ describe('d2-container-frame', () => {
     const wrapper = mount(D2ContainerFrame, {
       stubs: ['d2-container'],
       propsData: {
-        src: 'https://d2.pub/zh/doc/d2-admin'
+        src: 'https://d2.pub/doc/d2-admin'
       }
     })
 
-    expect(wrapper.props().src).toEqual('https://d2.pub/zh/doc/d2-admin')
+    expect(wrapper.props().src).toEqual('https://d2.pub/doc/d2-admin')
   })
 })

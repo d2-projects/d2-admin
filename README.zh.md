@@ -35,7 +35,7 @@
 
 ## 文档
 
-[在 https://d2.pub 上的本项目文档](https://d2.pub/zh/doc/d2-admin/)
+[在 https://d2.pub 上的本项目文档](https://d2.pub/doc/d2-admin/)
 
 ## 功能
 
@@ -111,7 +111,7 @@
 
 | 名称 | 主页  | 预览 | 介绍 |
 | --- | --- | --- | --- |
-| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | [预览](https://d2.pub/d2-admin-start-kit/preview) | 无 |
+| 简化版模板 | [Github](https://github.com/d2-projects/d2-admin-start-kit) | - | 无 |
 
 ## 开源后端实现
 
@@ -135,8 +135,8 @@
 
 | 名称 | 主页 | 预览 | 介绍 |
 | --- | --- | --- | --- |
-| d2-admin-xiya-go-cms | [Github](https://github.com/d2-projects/d2-admin-xiya-go-cms) | [预览](https://d2.pub/d2-admin-xiya-go-cms/preview) | D2Admin + 权限系统 + 动态路由 |
-| d2-advance | [Github](https://github.com/d2-projects/d2-advance) | [预览](https://d2.pub/d2-advance/preview) | 由 D2Admin 启发的技术探索 |
+| d2-admin-xiya-go-cms | [Github](https://github.com/d2-projects/d2-admin-xiya-go-cms) | - | D2Admin + 权限系统 + 动态路由 |
+| d2-advance | [Github](https://github.com/d2-projects/d2-advance) | - | 由 D2Admin 启发的技术探索 |
 | d2-crud-plus | [Github](https://github.com/greper/d2-crud-plus) | [预览](http://qiniu.veryreader.com/D2CrudPlusExample/index.html) | 简化d2-crud配置，快速开发crud功能 |
 | d2-crud | [Github](https://github.com/d2-projects/d2-crud) | [预览]() | 表格常用操作封装 |
 | d2-admin-pm | [Github](https://github.com/wjkang/d2-admin-pm) | [预览](http://jaycewu.coding.me/d2-admin-pm) | 基于 D2Admin 的 RBAC 权限管理解决方案 |

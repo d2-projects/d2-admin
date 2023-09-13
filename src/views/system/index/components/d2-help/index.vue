@@ -14,7 +14,7 @@
           这里有一些参考资料
         </h2>
         <el-button-group>
-          <el-button @click="$open('https://d2.pub/zh/doc/d2-admin')">
+          <el-button @click="$open('https://d2.pub/doc/d2-admin')">
             <d2-icon name="book" class="d2-mr-5"/>
             文档
           </el-button>
