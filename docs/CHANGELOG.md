@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.26.0](https://github.com/d2-projects/d2-admin/compare/v1.25.0...v1.26.0) (2023-09-13)
+
+
+### Features
+
+* update badges ([0575b8a](https://github.com/d2-projects/d2-admin/commit/0575b8a73cdb90dab383fbb16fc3da91f704b1f5))
+* update lock ([b386840](https://github.com/d2-projects/d2-admin/commit/b3868401d9d31d157ae960c7a8ec01a5867fbe3c))
+* update send bark message ([e644bfc](https://github.com/d2-projects/d2-admin/commit/e644bfc12922a9e9243c7af50d117b81e125999b))
+* 不再使用 action 部署 ([58e5cef](https://github.com/d2-projects/d2-admin/commit/58e5cef45b178bbe17977fc2bae14790aab286b7))
+* 更新文档 ([37cae60](https://github.com/d2-projects/d2-admin/commit/37cae6021796c8d261467326f9fd556ed5ff062e))
+* 更新链接地址 ([22b9be1](https://github.com/d2-projects/d2-admin/commit/22b9be11549036196e1c80fa9172d15556a651a4))
+
 # [1.25.0](https://github.com/d2-projects/d2-admin/compare/v1.24.3...v1.25.0) (2022-08-23)
 
 
