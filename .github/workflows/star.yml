@@ -14,4 +14,4 @@ jobs:
       run: |
         repo=${GITHUB_REPOSITORY//\//:}
         actor=$GITHUB_ACTOR
-        curl https://api.day.app/rwVK7e3nsZtopouwhRpVvM/$actor%20star%20了你的仓库/$repo
+        curl https://api.day.app/B3H8T6rF2p5Mj6z6oha82K/$actor%20star%20了你的仓库/$repo
