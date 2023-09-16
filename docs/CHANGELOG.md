@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.27.0](https://github.com/d2-projects/d2-admin/compare/v1.26.0...v1.27.0) (2023-09-16)
+
+
+### Features
+
+* ${{ !contains(github.event.head_commit.message, '[skip ci]') }} ([40d1ed1](https://github.com/d2-projects/d2-admin/commit/40d1ed196dd858b1546100c63970c993fa0e96c2))
+* contains ([f0bf16e](https://github.com/d2-projects/d2-admin/commit/f0bf16e2f316feec5f40a5b27091a6b07cf0f290))
+* if ([dbd461f](https://github.com/d2-projects/d2-admin/commit/dbd461f2bdc5581796852eae3b1e8c57d68f7943))
+* if ([c1b220d](https://github.com/d2-projects/d2-admin/commit/c1b220d08cc5a76e3af36929ff2befe8c82d4047))
+* secrets.GITHUB_TOKEN ([ec74266](https://github.com/d2-projects/d2-admin/commit/ec742660bffe350113d5c7a4f3fae738a602f931))
+
 # [1.26.0](https://github.com/d2-projects/d2-admin/compare/v1.25.0...v1.26.0) (2023-09-13)
 
 
