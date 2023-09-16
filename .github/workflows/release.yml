@@ -18,7 +18,7 @@ jobs:
           @semantic-release/changelog
           @semantic-release/git
       env:
-        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # !TRICKY
   # https://github.community/t5/GitHub-Actions/Workflow-is-failing-if-no-job-can-be-ran-due-to-condition/td-p/38085
