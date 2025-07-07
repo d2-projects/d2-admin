@@ -1,27 +1,31 @@
-// 过渡动画 横向渐变
+/* Transverse Fade Transition (横向渐变) */
 .fade-transverse-leave-active,
 .fade-transverse-enter-active {
-  transition: all .5s;
-}
-.fade-transverse-enter {
-  opacity: 0;
-  transform: translateX(-30px);
-}
-.fade-transverse-leave-to {
-  opacity: 0;
-  transform: translateX(30px);
+  transition: all 0.5s ease-in-out;
 }
 
-// 过渡动画 缩放渐变
+.fade-transverse-enter {
+  opacity: 0;
+  transform: translateX(-40px); /* increased for more visible slide-in */
+}
+
+.fade-transverse-leave-to {
+  opacity: 0;
+  transform: translateX(40px); /* smoother exit */
+}
+
+/* Scale Fade Transition (缩放渐变) */
 .fade-scale-leave-active,
 .fade-scale-enter-active {
-  transition: all .3s;
+  transition: all 0.3s ease-in-out;
 }
+
 .fade-scale-enter {
   opacity: 0;
-  transform: scale(1.2);
+  transform: scale(1.1); /* toned down scale for subtler effect */
 }
+
 .fade-scale-leave-to {
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(0.9);
 }
